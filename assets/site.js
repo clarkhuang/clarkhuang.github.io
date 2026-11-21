@@ -72,39 +72,56 @@
     });
   });
 
-  // ---------- audiobook: cookie "book_pos" = "<chapter>:<seconds>"
-  var audio = document.getElementById("book-audio");
-  if (audio) {
-    var resumeEl = document.getElementById("book-resume");
+  // ---------- audiobook: cookie "book_pos" = "<chapter>:<seconds>[,<chapter>:<seconds>...]"
+  function parseBookPos() {
+    var map = {};
+    var raw = getCookie("book_pos");
+    if (!raw) return map;
+    raw.split(",").forEach(function (part) {
+      var i = part.indexOf(":");
+      if (i > 0) map[part.slice(0, i)] = part.slice(i + 1);
+    });
+    return map;
+  }
+  function writeBookPos(map) {
+    var parts = [];
+    Object.keys(map).forEach(function (k) { parts.push(k + ":" + map[k]); });
+    setCookie("book_pos", parts.join(","));
+  }
+  document.querySelectorAll("audio[data-chapter]").forEach(function (audio) {
     var chapter = audio.getAttribute("data-chapter");
-    var saved = getCookie("book_pos").split(":");
+    var resumeEl = document.getElementById("book-resume-" + chapter) ||
+                   (chapter === "intro" ? document.getElementById("book-resume") : null);
+    var saved = parseBookPos();
     var lastSave = 0;
     function save(force) {
       var now = Date.now();
       if (!force && now - lastSave < 3000) return;
       lastSave = now;
-      setCookie("book_pos", chapter + ":" + audio.currentTime.toFixed(1));
+      var map = parseBookPos();
+      map[chapter] = audio.currentTime.toFixed(1);
+      writeBookPos(map);
     }
     audio.addEventListener("loadedmetadata", function () {
-      if (saved[0] === chapter) {
-        var t = parseFloat(saved[1]);
-        if (t > 2 && t < audio.duration - 2) {
-          audio.currentTime = t;
-          if (resumeEl) resumeEl.textContent = "Bookmark restored: resuming at " + fmt(t) + ".";
-        }
+      var t = parseFloat(saved[chapter]);
+      if (t > 2 && t < audio.duration - 2) {
+        audio.currentTime = t;
+        if (resumeEl) resumeEl.textContent = "Bookmark restored: resuming at " + fmt(t) + ".";
       }
     });
     audio.addEventListener("timeupdate", function () { save(false); });
     audio.addEventListener("pause", function () { save(true); });
     audio.addEventListener("ended", function () {
-      setCookie("book_pos", chapter + ":0");
+      var map = parseBookPos();
+      map[chapter] = "0";
+      writeBookPos(map);
       if (resumeEl) resumeEl.textContent = "Finished. The full audiobook is coming in 2027.";
     });
     window.addEventListener("pagehide", function () { if (!audio.paused) save(true); });
-    if (saved[0] === chapter && parseFloat(saved[1]) > 2 && resumeEl) {
-      resumeEl.textContent = "Bookmark found at " + fmt(parseFloat(saved[1])) + ". Press play to resume.";
+    if (parseFloat(saved[chapter]) > 2 && resumeEl) {
+      resumeEl.textContent = "Bookmark found at " + fmt(parseFloat(saved[chapter])) + ". Press play to resume.";
     }
-  }
+  });
 
   paint();
 })();

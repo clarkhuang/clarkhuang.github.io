@@ -34,7 +34,7 @@
     "It is an honest look at what “good” really means when there is always someone smarter, richer, more experienced, or wiser in the room, and at the habits that last anyway: stay humble, stay passionate and curious, learn deeply, and keep going."
   ],
   "audio": {
-    "bookmark_cookie": "book_pos=<chapter>:<seconds>",
+    "bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]",
     "chapters": [
       {
         "id": "intro",
@@ -42,6 +42,13 @@
         "status": "available",
         "url": "https://clarkhuang.github.io/audio/book-intro-preview.mp3",
         "duration_seconds": 76.9
+      },
+      {
+        "id": "math1a",
+        "title": "Preview: Math 1A",
+        "status": "available",
+        "url": "https://clarkhuang.github.io/audio/book-preview-math1a.mp3",
+        "duration_seconds": 87.5
       },
       {
         "id": "full",
@@ -56,6 +63,12 @@
       "format": "MP3",
       "status": "preview available",
       "url": "https://clarkhuang.github.io/audio/book-intro-preview.mp3"
+    },
+    {
+      "format": "MP3",
+      "title": "Math 1A preview",
+      "status": "preview available",
+      "url": "https://clarkhuang.github.io/audio/book-preview-math1a.mp3"
     },
     {
       "format": "MP3 (full)",
