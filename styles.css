@@ -154,3 +154,4 @@ a.fmt:hover{border-color:#355042;text-decoration:none}
 @keyframes climb{0%,8%{transform:translateY(0)}38%,48%{transform:translateY(-34px)}78%,92%{transform:translateY(-62px)}100%{transform:translateY(0)}}
 @keyframes limb{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
 @media (prefers-reduced-motion:reduce){.climber,.climber .arm,.climber .leg{animation:none}}
+.disclaimer{margin:0;font-size:14px;color:var(--amber);font-style:italic}
