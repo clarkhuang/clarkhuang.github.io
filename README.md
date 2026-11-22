@@ -10,7 +10,7 @@ This repository is a [template](https://docs.github.com/en/repositories/creating
 
 - [AI Tips](https://clarkhuang.github.io/ai-tips/) — short video lessons on working with AI tools.
 - [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/) — fundamentals for AI-native software work.
-- [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress.
+- [Software Engineering 201: From Loops to Building Systems](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress: from single AI loops to designing and running whole systems of work (lesson 1 is out; lessons 2–8 are outlines).
 - [Silicon Valley C Players](https://clarkhuang.github.io/book/) — a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization that may or may not be based on true stories.
 
 ## For people and for AI

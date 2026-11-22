@@ -19,6 +19,7 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Book teaser rewrite and matching videobook preview
 - OpenBook working source, issue templates, and self-updating agent workflow
 - Site design upgrade
+- Software Engineering 201 reframed as “From Loops to Building Systems”: new intro and an eight-lesson outline (lesson 1, From Loop to Graph, is unchanged; lessons 2–8 are outlines)
 
 ## [v0.1-wip] — 2026-11-22
 

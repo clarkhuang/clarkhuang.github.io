@@ -8,7 +8,7 @@ Contributions (issues and pull requests) are welcome now. Reaching out to people
 
 Milestone: [v0.1 Teaser](https://github.com/clarkhuang/clarkhuang.github.io/milestone/1)
 
-- Production-ready public site: bio, AI Tips, Software Engineering 101, Software Engineering 201 lesson 1
+- Production-ready public site: bio, AI Tips, Software Engineering 101, Software Engineering 201 (From Loops to Building Systems) lesson 1, with lessons 2–8 outlined
 - AI-friendly layer (`llms.txt`, `AGENTS.md`, Markdown twins, “Use this page with your AI”)
 - Book teaser and matching videobook preview, with the OpenBook framing and the fiction disclaimer (names changed)
 - Issue tracker, labels, and the self-updating workflow (approve → agent PR into `next-revision` → Clark merges)

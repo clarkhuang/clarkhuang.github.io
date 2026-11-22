@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Run Loops in Parallel — Software Engineering 201 — Clark Huang</title>
+  <meta name="description" content="Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, ">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="Run Loops in Parallel — Software Engineering 201 — Clark Huang">
+  <meta property="og:description" content="Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, ">
+  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Run Loops in Parallel — Software Engineering 201 — Clark Huang">
+  <meta name="twitter:description" content="Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, ">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main" class="lesson">
+    <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/index.md (plus https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+        </div>
+      </details>
+      <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 3</p>
+      <h1>Run Loops in Parallel <span class="badge soon">Coming soon</span></h1>
+      <div class="placeholder"><div><strong>Video coming soon</strong>This lesson is in planning. The video will appear here when it's ready.</div></div>
+      <div class="grid2" style="margin-top:34px">
+        <section>
+          <h2 class="label">The idea</h2>
+          <p>Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, and plan the moment the pieces come back together.</p>
+        </section>
+        <aside>
+          <h2 class="label">The premise of 201</h2>
+          <p class="muted">101 was about one piece of work: one fix or one feature, done right with an AI loop of plan, build, and verify. 201 is about everything around that loop. Real work is never just one loop. It is many of them: split into pieces, some waiting on others, some running side by side, with a person deciding at the moments that matter, and feedback that makes each run better than the last. And once you have run the same loop a few times, you stop running it by hand. You write it down and build it into a system that keeps working: a skill, a routine, a pipeline, or an agent. That is the move from loops to building systems.</p>
+        </aside>
+      </div>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/02-find-the-real-dependencies/"><small>Previous</small>Lesson 2: Find the Real Dependencies</a><a class="next" href="/software-engineering-201/04-where-a-person-decides/"><small>Next</small>Lesson 4: Where a Person Decides</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+      <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+      <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+      <nav class="footer-links" aria-label="Elsewhere"><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

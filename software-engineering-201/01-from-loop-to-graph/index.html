@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>From Loop to Graph — Software Engineering 201 — Clark Huang</title>
-  <meta name="description" content="A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering ">
+  <meta name="description" content="The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph d">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
@@ -12,18 +12,19 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Clark Huang">
   <meta property="og:title" content="From Loop to Graph — Software Engineering 201 — Clark Huang">
-  <meta property="og:description" content="A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering ">
+  <meta property="og:description" content="The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph d">
   <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/">
   <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="From Loop to Graph — Software Engineering 201 — Clark Huang">
-  <meta name="twitter:description" content="A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering ">
+  <meta name="twitter:description" content="The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph d">
   <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
   <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
   <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
 </head>
@@ -32,7 +33,7 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
-      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a></nav>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
     </div>
   </header>
   <main id="main" class="lesson">
@@ -60,7 +61,7 @@
       <div class="grid2">
         <section>
           <h2 class="label">The lesson</h2>
-          <p>A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.</p>
+          <p>The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.</p>
           <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-01">Before any job with more than one part, write down the pieces, and which can run at the same time. Then run each piece as its own loop, checked on its own.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-01" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div><p class="muted credit">Related reading: the loop-and-graph framing for agent work also appears in “Loops and Graphs” by Hanako (@hanakoxbt, August 2026).</p>
         </section>
         <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>Three pieces</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=56.9" data-seek="56.9" data-target="lesson-video"><span class="ts">0:56</span><span>Loop and graph</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=89.2" data-seek="89.2" data-target="lesson-video"><span class="ts">1:29</span><span>An everyday graph</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=105.7" data-seek="105.7" data-target="lesson-video"><span class="ts">1:45</span><span>In practice</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=139.2" data-seek="139.2" data-target="lesson-video"><span class="ts">2:19</span><span>The rule</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=152.1" data-seek="152.1" data-target="lesson-video"><span class="ts">2:32</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
@@ -73,7 +74,7 @@
       <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
       <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
       <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
-      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/book/">Book preview</a></nav>
+      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
       <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
       <nav class="footer-links" aria-label="Elsewhere"><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
     </div>
