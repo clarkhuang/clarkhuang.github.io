@@ -17,12 +17,12 @@ This lesson is in planning. The video is not available yet.
 
 ## The lesson
 
-Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them to the systems the business already runs on through clear interfaces, and make every step leave a record you can check and replay.
+A skill still waits for someone to start it. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them to the systems the business already runs on through clear interfaces, and make every step leave a record you can check and replay.
 
 ## Related lessons
 
 - Lesson 1: [Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/01-build-the-whole-system-ai-native/index.md) (available)
-- Lesson 2: [From Loop to Graph: Decompose the System](https://clarkhuang.github.io/software-engineering-201/02-from-loop-to-graph/index.md) (outline)
+- Lesson 2: [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline)
 - Lesson 3: [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (outline)
 - Lesson 4: [Governance: Where People Decide](https://clarkhuang.github.io/software-engineering-201/04-governance-where-people-decide/index.md) (outline)
 - Lesson 5: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/05-quality-feedback-and-observability/index.md) (outline)
