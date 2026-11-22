@@ -33,25 +33,25 @@
   },
   "introduction": [
     "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
-    "I still remember the dream. CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night. And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip. All three of us had the same dream. Real life bled into our dreams.",
-    "College was not all dreams. Math 1A. The professor said we were all stupid American kids. First midterm: Cs and Ds. For everybody. No curve. It hit hard.",
-    "A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus. The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was livid. I'm not saying I was smarter than he was. He was brilliant. It's all relative, how smart you are. I just kept going. And I kept doing my best.",
-    "I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin. This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.",
-    "Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.",
-    "I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
-    "This book is a free OpenBook. The name is a metaphor: I want to be an open book about this, the way open-source software is open. When version one is ready, anyone who recognizes a story, or is related to me, can add their side, and stories I may have forgotten.",
-    "The book begins with that green-screen dream. It ends by dreaming about AI. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written."
+    "This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.",
+    "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
+    "From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.",
+    "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
+    "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
+    "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
+    "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
+    "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written."
   ],
   "back_cover": [
-    "An embellished fictional dramatization that begins in a college lab, dreaming in green, and ends by dreaming about AI. A free OpenBook, like open-source software.",
-    "Math 1A. Stupid American kids. Cs and Ds. No curve. Then a first job at seventy thousand dollars in the dot-com boom, and a three-million-dollar exit at twenty-five. Some of it may be based on true stories. Some of it definitely isn't.",
+    "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
+    "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
     "The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.",
     "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027."
   ],
   "video": {
     "title": "Videobook preview",
     "url": "https://clarkhuang.github.io/videos/book-preview.mp4",
-    "duration_seconds": 159.4,
+    "duration_seconds": 144.7,
     "poster_url": "https://clarkhuang.github.io/videos/posters/book-preview.jpg",
     "captions_url": "https://clarkhuang.github.io/videos/book-preview.vtt",
     "chapters_url": "https://clarkhuang.github.io/videos/book-preview-chapters.json",
@@ -92,7 +92,7 @@
         "title": "Book preview",
         "status": "available",
         "url": "https://clarkhuang.github.io/audio/book-preview.mp3",
-        "duration_seconds": 159.4
+        "duration_seconds": 144.7
       },
       {
         "id": "full",

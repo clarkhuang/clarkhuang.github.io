@@ -1,6 +1,7 @@
 # Silicon Valley C Players — preview transcript
 
-Full spoken text of the audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
+Full spoken text of the mid-book audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
+This excerpt is from Part Three and the turn into Part Four: C players, the gap between applause and the work, platforms over products, and the claim that AI came for the code writers first.
 
 ## Fair warning (0:00)
 
@@ -10,55 +11,55 @@ Fair warning. This is an embellished fictional dramatization that may or may not
 
 Silicon Valley C Players.
 
-## CS150 (0:19)
+## The middle of the book (0:20)
 
-CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night.
+This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.
 
-## Dreaming in green (0:27)
+## The A-player myth (0:27)
 
-And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip.
+Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work.
 
-## The same dream (0:38)
+## The straight-line myth (0:36)
 
-All three of us had the same dream. Real life bled into our dreams.
+The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-## Math 1A (0:43)
+## What people saw (0:46)
 
-College was not all dreams. Math 1A. The professor said we were all stupid American kids. First midterm: Cs and Ds. For everybody. No curve. It hit hard.
+From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.
 
-## The grades (0:56)
+## A C player (0:56)
 
-A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus.
+A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.
 
-## The A-minus (1:04)
+## Platforms, not products (1:08)
 
-The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was livid. I'm not saying I was smarter than he was. He was brilliant.
+The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that.
 
-## I just kept going (1:19)
+## Building blocks (1:19)
 
-It's all relative, how smart you are. I just kept going. And I kept doing my best.
+You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-## First job (1:26)
+## I just kept going (1:30)
 
-I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin.
+It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
 
-## Ground level (1:39)
+## The turn (1:39)
 
-This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.
+Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest.
 
-## Also in the book (1:47)
+## The thesis (1:47)
 
-Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.
+A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
 
-## AI came for the code writers first (1:58)
-
-I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest. A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
-
-## How to work now (2:10)
+## How to work now (1:53)
 
 So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use A.I.
 
-## A free OpenBook (2:23)
+## The story is still being written (2:04)
 
-The book begins with that green-screen dream. It ends by dreaming about A.I. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written. Silicon Valley C Players. Coming in 2027.
+The book begins with a green-screen dream. It ends by dreaming about A.I. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+
+## Coming in 2027 (2:20)
+
+Silicon Valley C Players. Coming in 2027.
 

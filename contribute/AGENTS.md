@@ -14,5 +14,3 @@ Read `index.md` for the page content. Do not invent stories, quotes, numbers, or
 The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/contribute/index.md (plus https://clarkhuang.github.io/contribute/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.
-
-The public GitMCP endpoint (`https://gitmcp.io/clarkhuang/clarkhuang.github.io`) is read-only. It cannot open issues or merge pull requests. Config snippets are in [mcp-section.md](https://clarkhuang.github.io/contribute/mcp-section.md) and on the HTML page under “Connect your AI (MCP)”.

@@ -32,20 +32,11 @@ If 101 is the loop, 201 is the graph: how work is split, run in parallel, and im
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
 
-## Ask, connect, and credits
-
-- [Ask the Book](https://clarkhuang.github.io/ask/index.md): search the lessons and the OpenBook preview in your browser, or send a cited prompt to your own AI.
-- Connect your AI with the public, read-only GitMCP endpoint: `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. Config snippets: https://clarkhuang.github.io/ask/#mcp and https://clarkhuang.github.io/contribute/mcp-section.md. GitMCP is a free third-party service; contributions still go through GitHub issues.
-- [Contributor credits](https://clarkhuang.github.io/credits/index.md) ([credits.json](https://clarkhuang.github.io/credits.json)): listed by GitHub handle.
-
 ## For agents
 
 - Site index: https://clarkhuang.github.io/llms.txt
 - Site agents: https://clarkhuang.github.io/AGENTS.md
 - Lesson catalog (JSON): https://clarkhuang.github.io/lessons.json
 - Book catalog (JSON): https://clarkhuang.github.io/book.json
-- Full site text: https://clarkhuang.github.io/llms-full.txt
-- Search index: https://clarkhuang.github.io/search-index.json
-- GitMCP: https://gitmcp.io/clarkhuang/clarkhuang.github.io
 
 Start with `llms.txt`, then open the `index.md` for the page or series the reader cares about.
