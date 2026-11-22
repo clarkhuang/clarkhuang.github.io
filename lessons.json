@@ -6,6 +6,8 @@
       "id": "ai-tips",
       "title": "AI Tips",
       "page": "https://clarkhuang.github.io/ai-tips/",
+      "markdown_url": "https://clarkhuang.github.io/ai-tips/index.md",
+      "agents_url": "https://clarkhuang.github.io/ai-tips/AGENTS.md",
       "status": "in progress",
       "summary": "Short, practical lessons on working with AI assistants and agents. Each one names a common failure, explains why it happens, and leaves you with one habit to fix it.",
       "lessons": [
@@ -14,12 +16,14 @@
           "number": 1,
           "title": "Paste First, Ask Second",
           "status": "available",
-          "summary": "When an AI gives you a useless answer, it is usually not the AI's fault: you described your problem instead of showing it. Without the real material, it can only guess. With a screenshot, the document, or the full error message in front of it, the same question gets a specific, usable answer.",
+          "summary": "When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message, or email thread first, and the same question gets a specific, usable answer.",
           "rule": "Paste first, ask second. Hand over the screenshot, document, error message, or email thread before you type a single word of your question.",
           "page_url": "https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-01-paste-first-ask-second.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-01-paste-first-ask-second.jpg",
-          "duration_seconds": 66.6,
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/AGENTS.md",
+          "duration_seconds": 70.5,
           "chapters": []
         },
         {
@@ -27,27 +31,29 @@
           "number": 2,
           "title": "Ask for Proof, Not “Done”",
           "status": "available",
-          "summary": "When a bot says “done”, it is usually reporting the status of the step it ran, not whether the outcome you wanted is true. Five short examples show the gap. None of them is a bot misbehaving: each reported honestly on the step it ran. The fix is to ask for something only a real result can produce.",
+          "summary": "When a bot says “done”, it is usually reporting the status of the step it ran, not whether the outcome you wanted is true. Five short examples show the gap, and none of them is a bot misbehaving. The fix is to ask for something only a real result can produce.",
           "rule": "Ask for the artifact, not the status: the ticket numbers, a screenshot on the actual device, counts per item instead of a job status, a link you can click yourself. No artifact means it hasn't happened yet.",
           "page_url": "https://clarkhuang.github.io/ai-tips/02-ask-for-proof/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-02-ask-for-proof.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-02-ask-for-proof.jpg",
-          "duration_seconds": 151.4,
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/02-ask-for-proof/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/02-ask-for-proof/AGENTS.md",
+          "duration_seconds": 139.3,
           "chapters": [
             {
               "start_seconds": 0.0,
               "title": "The problem"
             },
             {
-              "start_seconds": 22.7,
+              "start_seconds": 26.6,
               "title": "Five ways it shows up"
             },
             {
-              "start_seconds": 89.5,
+              "start_seconds": 82.6,
               "title": "The pattern"
             },
             {
-              "start_seconds": 103.7,
+              "start_seconds": 94.7,
               "title": "The habit"
             }
           ]
@@ -62,6 +68,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/03-define-the-number-before-you-ask-for-it/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-03-define-the-number-before-you-ask-for-it.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-03-define-the-number-before-you-ask-for-it.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/03-define-the-number-before-you-ask-for-it/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/03-define-the-number-before-you-ask-for-it/AGENTS.md",
           "duration_seconds": 126.9,
           "chapters": [
             {
@@ -92,6 +100,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-04-know-what-the-bot-can-actually-reach.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-04-know-what-the-bot-can-actually-reach.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/AGENTS.md",
           "duration_seconds": 125.3,
           "chapters": [
             {
@@ -122,6 +132,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/05-dont-trust-i-cant/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-05-dont-trust-i-cant.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-05-dont-trust-i-cant.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/05-dont-trust-i-cant/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/05-dont-trust-i-cant/AGENTS.md",
           "duration_seconds": 157.6,
           "chapters": [
             {
@@ -152,6 +164,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/06-teach-it-once/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-06-teach-it-once.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-06-teach-it-once.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/06-teach-it-once/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/06-teach-it-once/AGENTS.md",
           "duration_seconds": 153.5,
           "chapters": [
             {
@@ -194,6 +208,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/07-the-second-message/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-07-the-second-message.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-07-the-second-message.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/07-the-second-message/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/07-the-second-message/AGENTS.md",
           "duration_seconds": 90.5,
           "chapters": [
             {
@@ -224,6 +240,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-08-stop-re-explaining-yourself.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-08-stop-re-explaining-yourself.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/AGENTS.md",
           "duration_seconds": 138.1,
           "chapters": [
             {
@@ -250,6 +268,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/09-claude-code-isnt-just-for-developers/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-09-claude-code-isnt-just-for-developers.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-09-claude-code-isnt-just-for-developers.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/09-claude-code-isnt-just-for-developers/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/09-claude-code-isnt-just-for-developers/AGENTS.md",
           "duration_seconds": 133.0,
           "chapters": [
             {
@@ -288,6 +308,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/10-the-label-is-not-the-definition/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-10-the-label-is-not-the-definition.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-10-the-label-is-not-the-definition.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/10-the-label-is-not-the-definition/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/10-the-label-is-not-the-definition/AGENTS.md",
           "duration_seconds": 115.5,
           "chapters": [
             {
@@ -318,6 +340,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/11-your-bot-in-the-meeting/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-11-your-bot-in-the-meeting.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-11-your-bot-in-the-meeting.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/11-your-bot-in-the-meeting/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/11-your-bot-in-the-meeting/AGENTS.md",
           "duration_seconds": 138.0,
           "chapters": [
             {
@@ -356,6 +380,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/12-brief-the-next-chat/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-12-brief-the-next-chat.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-12-brief-the-next-chat.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/12-brief-the-next-chat/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/12-brief-the-next-chat/AGENTS.md",
           "duration_seconds": 98.4,
           "chapters": [
             {
@@ -390,6 +416,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/13-open-the-source/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-13-open-the-source.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-13-open-the-source.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/13-open-the-source/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/13-open-the-source/AGENTS.md",
           "duration_seconds": 104.5,
           "chapters": [
             {
@@ -424,6 +452,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-14-ask-it-to-disagree.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-14-ask-it-to-disagree.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/AGENTS.md",
           "duration_seconds": 99.5,
           "chapters": [
             {
@@ -458,6 +488,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-15-treat-memory-like-notes.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-15-treat-memory-like-notes.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/AGENTS.md",
           "duration_seconds": 98.1,
           "chapters": [
             {
@@ -492,6 +524,8 @@
           "page_url": "https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/",
           "video_url": "https://clarkhuang.github.io/videos/ai-tips-16-dont-fire-and-forget.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-16-dont-fire-and-forget.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/AGENTS.md",
           "duration_seconds": 106.7,
           "chapters": [
             {
@@ -522,6 +556,8 @@
       "id": "se101",
       "title": "Software Engineering 101",
       "page": "https://clarkhuang.github.io/software-engineering-101/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-101/index.md",
+      "agents_url": "https://clarkhuang.github.io/software-engineering-101/AGENTS.md",
       "status": "in progress",
       "summary": "Ten short lessons on building software when AI agents do much of the building. Each lesson ends with one rule, written so your agents can follow it too.",
       "lessons": [
@@ -530,43 +566,45 @@
           "number": 1,
           "title": "Plan, Build, Verify (and When to Skip It)",
           "status": "available",
-          "summary": "How do you fix code you don't understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.",
+          "summary": "How do you fix code you don't understand when you only get one shot? Split the work into four roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Loop until the verifier runs out of serious things to say. Then: what that costs, and when a lighter path is good enough.",
           "rule": "If a change can't be rolled back, and the person asking can't check it themselves, it gets an independent review, on a different model, before it ships. That's the floor. The longer list, of when to use the full pattern, is judgment.",
           "page_url": "https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/",
           "video_url": "https://clarkhuang.github.io/videos/se101-01-plan-build-verify.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-01-plan-build-verify.jpg",
-          "duration_seconds": 281.9,
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/AGENTS.md",
+          "duration_seconds": 215.9,
           "chapters": [
             {
               "start_seconds": 0.0,
               "title": "One shot"
             },
             {
-              "start_seconds": 34.7,
+              "start_seconds": 28.1,
               "title": "Why this one"
             },
             {
-              "start_seconds": 70.5,
+              "start_seconds": 57.9,
               "title": "Four roles"
             },
             {
-              "start_seconds": 117.5,
+              "start_seconds": 94.3,
               "title": "The loop"
             },
             {
-              "start_seconds": 169.9,
+              "start_seconds": 138.9,
               "title": "The cost"
             },
             {
-              "start_seconds": 192.6,
+              "start_seconds": 152.2,
               "title": "When to use it"
             },
             {
-              "start_seconds": 242.3,
+              "start_seconds": 185.6,
               "title": "The rule"
             },
             {
-              "start_seconds": 267.3,
+              "start_seconds": 203.1,
               "title": "Your turn"
             }
           ]
@@ -576,43 +614,45 @@
           "number": 2,
           "title": "Rigor Follows Risk",
           "status": "available",
-          "summary": "A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn't undo what the code did. Sort work into two kinds. Product shape is uncertain and easy to change, so ship it rough behind a flag. Correctness you can't undo means money, customer data, and messages, so find the root cause.",
+          "summary": "A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn't undo what the code did. Product shape is uncertain and easy to change, so ship it rough behind a flag. Correctness you can't undo, meaning money, customer data, and messages, gets the root cause.",
           "rule": "Rough is fine for product shape. It is never fine for money, customer data, or anything that can't be undone. If a piece of work is both, the stricter standard wins. For that kind of work: stop any live damage first, then find the root cause, and give the estimate in usage, not in days.",
           "page_url": "https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/",
           "video_url": "https://clarkhuang.github.io/videos/se101-02-rigor-follows-risk.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-02-rigor-follows-risk.jpg",
-          "duration_seconds": 255.8,
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/AGENTS.md",
+          "duration_seconds": 208.3,
           "chapters": [
             {
               "start_seconds": 0.0,
               "title": "The choice"
             },
             {
-              "start_seconds": 23.3,
+              "start_seconds": 17.6,
               "title": "Half the question"
             },
             {
-              "start_seconds": 60.6,
+              "start_seconds": 49.2,
               "title": "Two kinds of work"
             },
             {
-              "start_seconds": 98.8,
+              "start_seconds": 84.8,
               "title": "Ship it rough"
             },
             {
-              "start_seconds": 120.8,
+              "start_seconds": 99.9,
               "title": "Get it right"
             },
             {
-              "start_seconds": 179.4,
+              "start_seconds": 141.3,
               "title": "The sort"
             },
             {
-              "start_seconds": 215.0,
+              "start_seconds": 172.6,
               "title": "The rule"
             },
             {
-              "start_seconds": 241.5,
+              "start_seconds": 195.6,
               "title": "Your turn"
             }
           ]
@@ -627,6 +667,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/03-principles-over-languages/",
           "video_url": "https://clarkhuang.github.io/videos/se101-03-principles-over-languages.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-03-principles-over-languages.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/03-principles-over-languages/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/03-principles-over-languages/AGENTS.md",
           "duration_seconds": 140.4,
           "chapters": [
             {
@@ -669,6 +711,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/04-abstraction-ladder/",
           "video_url": "https://clarkhuang.github.io/videos/se101-04-abstraction-ladder.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-04-abstraction-ladder.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/04-abstraction-ladder/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/04-abstraction-ladder/AGENTS.md",
           "duration_seconds": 173.0,
           "chapters": [
             {
@@ -707,6 +751,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/",
           "video_url": "https://clarkhuang.github.io/videos/se101-05-understand-before-you-change.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-05-understand-before-you-change.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/AGENTS.md",
           "duration_seconds": 134.0,
           "chapters": [
             {
@@ -749,6 +795,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/",
           "video_url": "https://clarkhuang.github.io/videos/se101-06-say-what-not-how.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-06-say-what-not-how.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/AGENTS.md",
           "duration_seconds": 149.7,
           "chapters": [
             {
@@ -787,6 +835,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/",
           "video_url": "https://clarkhuang.github.io/videos/se101-07-old-patterns-new-clothes.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-07-old-patterns-new-clothes.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/AGENTS.md",
           "duration_seconds": 139.3,
           "chapters": [
             {
@@ -821,6 +871,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/08-agile-at-agent-speed/",
           "video_url": "https://clarkhuang.github.io/videos/se101-08-agile-at-agent-speed.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-08-agile-at-agent-speed.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/08-agile-at-agent-speed/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/08-agile-at-agent-speed/AGENTS.md",
           "duration_seconds": 157.8,
           "chapters": [
             {
@@ -859,6 +911,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/09-know-what-it-costs/",
           "video_url": "https://clarkhuang.github.io/videos/se101-09-know-what-it-costs.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-09-know-what-it-costs.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/09-know-what-it-costs/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/09-know-what-it-costs/AGENTS.md",
           "duration_seconds": 158.3,
           "chapters": [
             {
@@ -897,6 +951,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/",
           "video_url": "https://clarkhuang.github.io/videos/se101-10-strict-about-data.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se101-10-strict-about-data.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/AGENTS.md",
           "duration_seconds": 192.5,
           "chapters": [
             {
@@ -931,6 +987,8 @@
       "id": "se201",
       "title": "Software Engineering 201",
       "page": "https://clarkhuang.github.io/software-engineering-201/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/index.md",
+      "agents_url": "https://clarkhuang.github.io/software-engineering-201/AGENTS.md",
       "status": "in progress",
       "summary": "101 was about one piece of work: getting one fix or one feature right. That's the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That's the graph.",
       "lessons": [
@@ -944,6 +1002,8 @@
           "page_url": "https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/",
           "video_url": "https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se201-01-from-loop-to-graph.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/AGENTS.md",
           "duration_seconds": 163.3,
           "chapters": [
             {
@@ -980,13 +1040,21 @@
           "summary": "“And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other.",
           "rule": null,
           "page_url": "https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/",
-          "video_url": null
+          "video_url": null,
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/AGENTS.md"
         }
       ]
     }
   ],
   "book": "https://clarkhuang.github.io/book.json",
-  "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction.",
+  "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction. Markdown twins and AGENTS.md live next to every HTML page; the site index for language models is /llms.txt.",
+  "ai_readable": {
+    "llms_txt": "https://clarkhuang.github.io/llms.txt",
+    "agents_md": "https://clarkhuang.github.io/AGENTS.md",
+    "home_md": "https://clarkhuang.github.io/index.md",
+    "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder."
+  },
   "cookies": {
     "watched": "watched=<lesson id>,<lesson id>...",
     "video_position": "vpos=<lesson id>:<seconds>[,...] (resume offer, cleared when the video ends)"

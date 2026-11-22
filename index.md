@@ -1,0 +1,49 @@
+# Clark Huang — AI-native software learning
+
+HTML page: https://clarkhuang.github.io/
+
+The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, Grok Bot, or any other chat tool:
+
+> Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/index.md (plus https://clarkhuang.github.io/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.
+
+Clark Huang is a software engineer and technology executive with more than 30 years in the field. He studied computer science, with a minor in music, at the University of California, Berkeley from 1993 to 1997. He is Chief Technology Officer at Truly Free and Truly Free Home, a role he has held since 2025, and Co-Founder and CTO of eCIO, a nonprofit investment advisor, and its sister company eVestech, where he oversees technology strategy and operational efficiency. A seasoned technologist and serial founder, he champions AI-native engineering, building teams and workflows where people and AI agents plan, build, and verify software together. He is also an active investor in private equity and special purpose vehicles focused on AI and technology.
+
+## Series
+
+### [AI Tips](https://clarkhuang.github.io/ai-tips/index.md)
+
+Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results.
+
+16 of 16 lessons available.
+
+### [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/index.md)
+
+How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct.
+
+10 of 10 lessons available.
+
+### [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/index.md)
+
+If 101 is the loop, 201 is the graph: how work is split, run in parallel, and improved between runs.
+
+1 of 2 lessons available.
+
+### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
+
+A memoir about the gap between how things look and what they really are. Self-published, written and interviewed by AI. Preview; coming in 2027.
+
+## Behind the scenes
+
+- [Production playbook](https://clarkhuang.github.io/playbook/index.md): how the videos, narration, and these pages are made and reviewed
+- [Next AI Tips, ranked](https://clarkhuang.github.io/ai-tips/research/index.md): candidate lessons from user research, with sources
+- [Interview plan](https://clarkhuang.github.io/interview-plan/index.md): the working plan for the voice interviews behind the memoir and Software Engineering 201
+- [Three builds, one brief](https://clarkhuang.github.io/compare/index.md): the same site built independently by three AI models, side by side
+
+## For agents
+
+- Site index: https://clarkhuang.github.io/llms.txt
+- Site agents: https://clarkhuang.github.io/AGENTS.md
+- Lesson catalog (JSON): https://clarkhuang.github.io/lessons.json
+- Book catalog (JSON): https://clarkhuang.github.io/book.json
+
+Start with `llms.txt`, then open the `index.md` for the page or series the reader cares about.

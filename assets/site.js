@@ -211,7 +211,7 @@
       b.addEventListener("click", function () {
         var src = doc.getElementById(b.getAttribute("data-copy"));
         navigator.clipboard.writeText(src.textContent.trim()).then(function () {
-          say(b, "Rule copied.");
+          say(b, "Copied.");
         }, function () { say(b, "Copy failed. Select the text and copy it instead."); });
       });
     });

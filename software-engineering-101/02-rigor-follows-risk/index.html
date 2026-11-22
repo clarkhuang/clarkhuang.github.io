@@ -12,6 +12,8 @@
   <meta property="og:description" content="A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn&#x27;t undo what the cod">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -23,6 +25,17 @@
   </header>
   <main id="main">
     <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, Grok Bot, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/index.md (plus https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a></p>
+        </div>
+      </details>
       <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-101/">Software Engineering 101</a> / Lesson 2</p>
       <p class="kicker">Software Engineering 101 · Lesson 2</p>
       <h1>Rigor Follows Risk</h1>
@@ -30,16 +43,16 @@
         <source src="/videos/se101-02-rigor-follows-risk.mp4" type="video/mp4">
         Your browser can't play this video. <a href="/videos/se101-02-rigor-follows-risk.mp4">Download the MP4</a>.
       </video></div>
-      <div class="lesson-meta" data-watch-id="se101/02" data-status-scope><span><time datetime="PT4M16S">4:15</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se101-02-rigor-follows-risk.mp4" download>Download MP4</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se101/02" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
+      <div class="lesson-meta" data-watch-id="se101/02" data-status-scope><span><time datetime="PT3M28S">3:28</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se101-02-rigor-follows-risk.mp4" download>Download MP4</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se101/02" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
       <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
       <p class="upnext-after">Up next: <a href="/software-engineering-101/03-principles-over-languages/">Lesson 3: Principles Over Languages</a></p>
       <div class="grid2">
         <section>
           <h2 class="label">The lesson</h2>
-          <p>A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn&#x27;t undo what the code did. Sort work into two kinds. Product shape is uncertain and easy to change, so ship it rough behind a flag. Correctness you can&#x27;t undo means money, customer data, and messages, so find the root cause.</p>
+          <p>A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn&#x27;t undo what the code did. Product shape is uncertain and easy to change, so ship it rough behind a flag. Correctness you can&#x27;t undo, meaning money, customer data, and messages, gets the root cause.</p>
           <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se101-02">Rough is fine for product shape. It is never fine for money, customer data, or anything that can&#x27;t be undone. If a piece of work is both, the stricter standard wins. For that kind of work: stop any live damage first, then find the root cause, and give the estimate in usage, not in days.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se101-02" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>
         </section>
-        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The choice</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=23.3" data-seek="23.3" data-target="lesson-video"><span class="ts">0:23</span><span>Half the question</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=60.6" data-seek="60.6" data-target="lesson-video"><span class="ts">1:00</span><span>Two kinds of work</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=98.8" data-seek="98.8" data-target="lesson-video"><span class="ts">1:38</span><span>Ship it rough</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=120.8" data-seek="120.8" data-target="lesson-video"><span class="ts">2:00</span><span>Get it right</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=179.4" data-seek="179.4" data-target="lesson-video"><span class="ts">2:59</span><span>The sort</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=215.0" data-seek="215.0" data-target="lesson-video"><span class="ts">3:34</span><span>The rule</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=241.5" data-seek="241.5" data-target="lesson-video"><span class="ts">4:01</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
+        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The choice</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=17.6" data-seek="17.6" data-target="lesson-video"><span class="ts">0:17</span><span>Half the question</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=49.2" data-seek="49.2" data-target="lesson-video"><span class="ts">0:49</span><span>Two kinds of work</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=84.8" data-seek="84.8" data-target="lesson-video"><span class="ts">1:24</span><span>Ship it rough</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=99.9" data-seek="99.9" data-target="lesson-video"><span class="ts">1:39</span><span>Get it right</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=141.3" data-seek="141.3" data-target="lesson-video"><span class="ts">2:21</span><span>The sort</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=172.6" data-seek="172.6" data-target="lesson-video"><span class="ts">2:52</span><span>The rule</span></a></li><li><a href="/videos/se101-02-rigor-follows-risk.mp4#t=195.6" data-seek="195.6" data-target="lesson-video"><span class="ts">3:15</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
       </div>
       <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-101/01-plan-build-verify/"><small>← Previous</small>Lesson 1: Plan, Build, Verify (and When to Skip It)</a><a class="next" href="/software-engineering-101/03-principles-over-languages/"><small>Next →</small>Lesson 3: Principles Over Languages</a></nav>
     </div>
@@ -48,6 +61,7 @@
     <div class="wrap">
       <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
       <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a></p>
       <nav class="footer-links" aria-label="Elsewhere"><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
     </div>
   </footer>

@@ -1,0 +1,69 @@
+# Clark Huang
+
+> Public learning pages on AI-native software workflows: short video lessons (AI Tips, Software Engineering 101 and 201) and a memoir preview, Silicon Valley C Players.
+
+The HTML pages are for people. Every page also has an `index.md` twin and an `AGENTS.md` that an AI tool can fetch directly, so you can summarize the material and navigate the site from a single link, without using a browser.
+
+Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang.github.io/AGENTS.md) for how to help a reader, then come back here for the catalog.
+
+## Site
+
+- [Home](https://clarkhuang.github.io/index.md): about Clark Huang and the series on this site
+- [AGENTS.md](https://clarkhuang.github.io/AGENTS.md): how to navigate and what not to invent
+- [lessons.json](https://clarkhuang.github.io/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations
+- [book.json](https://clarkhuang.github.io/book.json): memoir preview catalog
+
+## AI Tips
+
+- [Series index](https://clarkhuang.github.io/ai-tips/index.md): Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results.
+
+- [Lesson 1: Paste First, Ask Second](https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md): When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message,…
+- [Lesson 2: Ask for Proof, Not “Done”](https://clarkhuang.github.io/ai-tips/02-ask-for-proof/index.md): When a bot says “done”, it is usually reporting the status of the step it ran, not whether the outcome you wanted is true. Five short examples show the gap, and none of them is a bot misbehaving. The fix is to ask…
+- [Lesson 3: Define the Number Before You Ask for It](https://clarkhuang.github.io/ai-tips/03-define-the-number-before-you-ask-for-it/index.md): Ask a bot for a number with a loose word in it and it will quietly pick a meaning, then hand you a confident, wrong answer. This tip shows how one word like "got" or "orders" can mean several populations, and the one…
+- [Lesson 4: Know What the Bot Can Actually Reach](https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/index.md): A bot's usefulness is bounded by what it's connected to, and it almost never tells you where that boundary is. Five generic examples show how a missing link, an unread thread reply or a doc it can't write turns into…
+- [Lesson 5: Don't Trust "I Can't"](https://clarkhuang.github.io/ai-tips/05-dont-trust-i-cant/index.md): A bot's "I can't" is often a prediction, not a test. It hasn't tried, or it guessed at your role. This tip shows how to tell a soft refusal from a real limit, so you push on the right ones and never around a genuine…
+- [Lesson 6: Teach It Once](https://clarkhuang.github.io/ai-tips/06-teach-it-once/index.md): Knowledge is what a bot has picked up. Skills are jobs you've written down for it. This tip shows how to save what a bot works out so nobody repeats it, why a good skill is mostly guardrails, and how saved rules can…
+- [Lesson 7: The Second Message](https://clarkhuang.github.io/ai-tips/07-the-second-message/index.md): Most people read the first answer and stop. Either they settle for it or give up on the tool. One follow-up line in the same chat usually turns a generic draft into a usable one, and asking the A.I. to interview you…
+- [Lesson 8: Stop Re-Explaining Yourself](https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/index.md): If every Claude chat starts with you re-explaining your job and re-attaching the same file, a Project fixes it: shared knowledge and instructions in one place. This tip covers what sharing a project hands over (and…
+- [Lesson 9: Claude Code Isn't Just for Developers](https://clarkhuang.github.io/ai-tips/09-claude-code-isnt-just-for-developers/index.md): Claude Code's name keeps most non-developers away, but it works on any folder of ordinary files, driven by plain-English requests. This tip shows what it can do with screenshots, invoices and transcripts, what "it's…
+- [Lesson 10: The Label Is Not the Definition](https://clarkhuang.github.io/ai-tips/10-the-label-is-not-the-definition/index.md): The most common mistake in six weeks of bots' self-written lessons: trusting what a field is called instead of what it counts. A number with the wrong definition still ties out and reconciles, so nothing looks wrong…
+- [Lesson 11: Your Bot in the Meeting](https://clarkhuang.github.io/ai-tips/11-your-bot-in-the-meeting/index.md): A notetaker records one call and summarises it. A bot that's connected to your team's work can answer questions live, turn action items into real tickets, and remember what was decided last week. This tip shows how…
+- [Lesson 12: Brief the Next Chat](https://clarkhuang.github.io/ai-tips/12-brief-the-next-chat/index.md): Long chats drift without warning: early decisions count for less and can fall out of view. When a chat gets long, have it write a handoff and carry on in a fresh chat.
+- [Lesson 13: Open the Source](https://clarkhuang.github.io/ai-tips/13-open-the-source/index.md): AI-supplied citations can be perfectly formatted and completely invented, and pushed on a dead link a model may insist the page changed. A reference you haven't opened is a claim, not a source.
+- [Lesson 14: Ask It to Disagree](https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/index.md): Models lean toward the view already in your question, so a yes to a leading question isn't a second opinion. Ask for the case against before you ask for advice: a review, not a fight.
+- [Lesson 15: Treat Memory Like Notes](https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/index.md): AI memory is a small set of saved notes, not a mind. Notes can be never saved, saved wrong, off-topic or stale, and they won't keep up unless you update them.
+- [Lesson 16: Don't Fire and Forget](https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md): Agents act on real systems, and a rule typed into a prompt is not a lock. Put the lock in access and approval settings, and keep the judgment for steps you can't undo.
+
+## Software Engineering 101
+
+- [Series index](https://clarkhuang.github.io/software-engineering-101/index.md): How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct.
+
+- [Lesson 1: Plan, Build, Verify (and When to Skip It)](https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/index.md): How do you fix code you don't understand when you only get one shot? Split the work into four roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and…
+- [Lesson 2: Rigor Follows Risk](https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/index.md): A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn't undo what the code did. Product shape is uncertain and easy to change, so ship…
+- [Lesson 3: Principles Over Languages](https://clarkhuang.github.io/software-engineering-101/03-principles-over-languages/index.md): Why a computer science education built on ideas, not languages, still pays off, and why it matters more now that agents write the syntax.
+- [Lesson 4: The Abstraction Ladder](https://clarkhuang.github.io/software-engineering-101/04-abstraction-ladder/index.md): AI coding is one more rung on a ladder that runs from logic gates up. Stay at the top, and know when to send your agent down a rung.
+- [Lesson 5: Understand Before You Change](https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/index.md): A perfect fix for the wrong problem is still wrong. Own the problem, restate it, reproduce and trace it, then fix the cause.
+- [Lesson 6: Say What, Not How](https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/index.md): Like a database optimizer, an agent does its best work when you state the outcome and the limits, not the steps. Too tight and too loose both cost you.
+- [Lesson 7: Old Patterns, New Clothes](https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/index.md): Pair programming, test-first and code review still work with agents in the seats. Cheaper tests change the trade, and three anti-patterns to watch for.
+- [Lesson 8: Agile at Agent Speed](https://clarkhuang.github.io/software-engineering-101/08-agile-at-agent-speed/index.md): Keep every scrum ceremony, but run the loop daily. Deploy continuously, ship features switched off behind a flag, and write down what you learned.
+- [Lesson 9: Know What It Costs](https://clarkhuang.github.io/software-engineering-101/09-know-what-it-costs/index.md): AI usage is the new currency of software. See the spend, the limit and a priced forecast before you start, and remember that owning software costs more than building it.
+- [Lesson 10: Strict About Data, Relaxed About the Perimeter](https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/index.md): Be uncompromising about customer personal data and card data, pragmatic about where internal apps live, and see the whole series on one screen.
+
+## Software Engineering 201
+
+- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): If 101 is the loop, 201 is the graph: how work is split, run in parallel, and improved between runs.
+
+- [Lesson 1: From Loop to Graph](https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md): A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
+- [Lesson 2: Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline): “And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other.
+
+## Book
+
+- [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): memoir and audiobook, coming in 2027. Written and interviewed by AI.
+
+## Also on this site
+
+- [Production playbook](https://clarkhuang.github.io/playbook/index.md): How the videos, narration, and these pages are made and reviewed
+- [Next AI Tips, ranked](https://clarkhuang.github.io/ai-tips/research/index.md): Candidate lessons drawn from where people trip up with AI, with sources
+- [Interview plan](https://clarkhuang.github.io/interview-plan/index.md): Working plan for the voice interviews behind the memoir and Software Engineering 201
+- [Three builds, one brief](https://clarkhuang.github.io/compare/index.md): The same site built independently by three AI models, side by side
+
