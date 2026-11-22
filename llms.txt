@@ -53,7 +53,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Software Engineering 201
 
-- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): From loop to enterprise systems: 101 gets one piece of work right with an AI loop. 201 builds whole apps and systems AI-native, and climbs to agents that operate enterprise systems with governance, permissions, and an audit trail.
+- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 builds whole apps and systems AI-native, and climbs to agents that operate enterprise systems with governance, permissions, and an audit trail.
 
 - [Lesson 1: Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/01-build-the-whole-system-ai-native/index.md): What changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a…
 - [Lesson 2: From Loop to Graph: Decompose the System](https://clarkhuang.github.io/software-engineering-201/02-from-loop-to-graph/index.md) (outline): An enterprise system is too big for one loop. Draw it as a graph: split the system into parts with clear boundaries and owners, then find the real dependencies. “And then” is not a dependency; if nothing crosses…
