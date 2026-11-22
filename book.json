@@ -35,6 +35,7 @@
   ],
   "audio": {
     "bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]",
+    "resume": "offered as a 'Resume from m:ss' button; cleared when the track ends",
     "chapters": [
       {
         "id": "intro",

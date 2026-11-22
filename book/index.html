@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silicon Valley C Players — a memoir by Clark Huang (preview)</title>
   <meta name="description" content="Silicon Valley C Players, a self-published memoir and audiobook by Clark Huang, written and interviewed by AI. Preview; coming in 2027.">
-  <meta name="theme-color" content="#0e1419">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0e1419" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Silicon Valley C Players — a memoir by Clark Huang (preview)">
   <meta property="og:description" content="Silicon Valley C Players, a self-published memoir and audiobook by Clark Huang, written and interviewed by AI. Preview; coming in 2027.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -45,15 +47,15 @@
               <div class="fmt">
                 <div class="card-meta"><span class="card-num">Format 2</span><span class="badge soon">Coming in 2027</span></div>
                 <svg class="climb" viewBox="0 0 220 120" role="img" aria-label="Animated teaser: a stick figure climbing a ladder of letter grades from C to A">
-                  <g stroke="#3b4b59" stroke-width="3" stroke-linecap="round"><line x1="70" y1="112" x2="70" y2="8"/><line x1="110" y1="112" x2="110" y2="8"/>
+                  <g class="rails" stroke-width="3" stroke-linecap="round"><line x1="70" y1="112" x2="70" y2="8"/><line x1="110" y1="112" x2="110" y2="8"/>
                   <line x1="70" y1="96" x2="110" y2="96"/><line x1="70" y1="62" x2="110" y2="62"/><line x1="70" y1="28" x2="110" y2="28"/></g>
-                  <g font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16"><text x="122" y="101" fill="#f5aa3c">C</text><text x="122" y="67" fill="#9aa8b3">B</text><text x="122" y="33" fill="#4ade80">A</text></g>
-                  <g class="climber" stroke="#f2f6f8" stroke-width="3" stroke-linecap="round" fill="none">
+                  <g font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16"><text class="g-c" x="122" y="101">C</text><text class="g-b" x="122" y="67">B</text><text class="g-a" x="122" y="33">A</text></g>
+                  <g class="climber" stroke-width="3" stroke-linecap="round" fill="none">
                     <circle cx="90" cy="70" r="6"/><line x1="90" y1="76" x2="90" y2="94"/>
                     <line class="arm" x1="90" y1="81" x2="78" y2="72"/><line class="arm2" x1="90" y1="81" x2="102" y2="88"/>
                     <line class="leg" x1="90" y1="94" x2="80" y2="106"/><line class="leg2" x1="90" y1="94" x2="100" y2="104"/>
                   </g>
-                  <path d="M168 112 l10 -22 l8 10 l10 -30 l10 42 z" fill="#18212a" stroke="#26333f"/>
+                  <path class="hill" d="M168 112 l10 -22 l8 10 l10 -30 l10 42 z"/>
                 </svg>
                 <h3>Videobook</h3>
                 <p>The same narration, brought to life with playful, simple stick-figure animations and graphics that keep the story moving, wherever it goes.</p>
@@ -68,11 +70,12 @@
               <source src="/audio/book-intro-preview.mp3" type="audio/mpeg">
               Your browser can't play this audio. <a href="/audio/book-intro-preview.mp3">Download the preview MP3</a>.
             </audio>
-            <p class="resume" id="book-resume" aria-live="polite"></p>
+            <p class="resume" data-resume="book-audio" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+            <p class="resume-msg" id="book-resume" aria-live="polite"></p>
             <h3 class="label" style="margin-top:14px">Chapters</h3>
             <ol class="chapters">
-              <li><button type="button" class="now" data-seek="0" data-target="book-audio"><span class="ts">1:16</span><span>Introduction · preview</span></button></li>
-              <li><button type="button" class="off" disabled aria-disabled="true"><span class="ts">2027</span><span>Full audiobook · coming in 2027</span></button></li>
+              <li><a href="/audio/book-intro-preview.mp3#t=0" data-seek="0" data-target="book-audio"><span class="ts">1:16</span><span>Introduction · preview</span></a></li>
+              <li><span class="off"><span class="ts">2027</span><span>Full audiobook · coming in 2027</span></span></li>
             </ol>
             <h3 class="label" style="margin-top:20px">Downloads</h3>
             <div class="downloads">
@@ -91,7 +94,8 @@
               <source src="/audio/book-preview-math1a.mp3" type="audio/mpeg">
               Your browser can't play this audio. <a href="/audio/book-preview-math1a.mp3">Download the preview MP3</a>.
             </audio>
-            <p class="resume" id="book-resume-math1a" aria-live="polite"></p>
+            <p class="resume" data-resume="book-audio-math1a" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+            <p class="resume-msg" id="book-resume-math1a" aria-live="polite"></p>
             <p class="disclaimer">A preview excerpt. Some stories may have been dramatized a bit.</p>
             <h3 class="label" style="margin-top:20px">Downloads</h3>
             <div class="downloads">

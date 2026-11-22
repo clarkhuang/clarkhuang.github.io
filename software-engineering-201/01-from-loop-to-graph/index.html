@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>From Loop to Graph — Software Engineering 201 — Clark Huang</title>
-  <meta name="description" content="A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.">
-  <meta name="theme-color" content="#0e1419">
+  <meta name="description" content="A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering ">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0e1419" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="From Loop to Graph — Software Engineering 201 — Clark Huang">
-  <meta property="og:description" content="A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.">
+  <meta property="og:description" content="A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering ">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -23,18 +25,21 @@
     <div class="wrap">
       <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 1</p>
       <p class="kicker">Software Engineering 201 · Lesson 1</p>
-      <h1>From Loop to Graph <span class="badge soon">Coming soon</span></h1>
-      <div class="placeholder"><div><strong>Video coming soon</strong>This lesson is in planning. The video will appear here when it's ready.</div></div>
-      <div class="grid2" style="margin-top:34px">
+      <h1>From Loop to Graph</h1>
+      <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="/videos/posters/se201-01-from-loop-to-graph.jpg" data-lesson-id="se201/01" aria-label="Lesson video: From Loop to Graph">
+        <source src="/videos/se201-01-from-loop-to-graph.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="/videos/se201-01-from-loop-to-graph.mp4">Download the MP4</a>.
+      </video></div>
+      <div class="lesson-meta" data-watch-id="se201/01" data-status-scope><span><time datetime="PT2M43S">2:43</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se201-01-from-loop-to-graph.mp4" download>Download MP4</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se201/01" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
+      <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+      <p class="upnext-after">Up next: <a href="/software-engineering-201/02-find-the-real-dependencies/">Lesson 2: Find the Real Dependencies</a> (outline)</p>
+      <div class="grid2">
         <section>
-          <h2 class="label">The idea</h2>
-          <p>A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.</p>
-          <p class="muted">Draft outline. Titles and ideas may change before the lesson is made.</p>
+          <h2 class="label">The lesson</h2>
+          <p>A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.</p>
+          <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-01">Before any job with more than one part, write down the pieces, and which can run at the same time. Then run each piece as its own loop, checked on its own.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-01" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div><p class="muted credit">Related reading: the loop-and-graph framing for agent work also appears in “Loops and Graphs” by Hanako (@hanakoxbt, August 2026).</p>
         </section>
-        <aside>
-          <h2 class="label">The premise of 201</h2>
-          <p class="muted">101 was about one piece of work: getting one fix or one feature right. That&#x27;s the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That&#x27;s the graph.</p>
-        </aside>
+        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>Three pieces</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=56.9" data-seek="56.9" data-target="lesson-video"><span class="ts">0:56</span><span>Loop and graph</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=89.2" data-seek="89.2" data-target="lesson-video"><span class="ts">1:29</span><span>An everyday graph</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=105.7" data-seek="105.7" data-target="lesson-video"><span class="ts">1:45</span><span>In practice</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=139.2" data-seek="139.2" data-target="lesson-video"><span class="ts">2:19</span><span>The rule</span></a></li><li><a href="/videos/se201-01-from-loop-to-graph.mp4#t=152.1" data-seek="152.1" data-target="lesson-video"><span class="ts">2:32</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
       </div>
       <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/"><small>← Back</small>All Software Engineering 201 lessons</a><a class="next" href="/software-engineering-201/02-find-the-real-dependencies/"><small>Next →</small>Lesson 2: Find the Real Dependencies</a></nav>
     </div>

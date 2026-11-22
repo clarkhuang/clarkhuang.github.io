@@ -229,65 +229,309 @@
           "id": "se101/03",
           "number": 3,
           "title": "Principles Over Languages",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "Why a computer science education built on ideas, not languages, still pays off, and why it matters more now that agents write the syntax.",
+          "rule": "When you make a design choice, explain the principle behind it, in plain words. Not just the framework feature you used.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/03-principles-over-languages/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-03-principles-over-languages.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-03-principles-over-languages.jpg",
+          "duration_seconds": 140.4,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "Quick question"
+            },
+            {
+              "start_seconds": 30.0,
+              "title": "Built it, not used it"
+            },
+            {
+              "start_seconds": 66.1,
+              "title": "Why it lasts"
+            },
+            {
+              "start_seconds": 93.9,
+              "title": "With agents"
+            },
+            {
+              "start_seconds": 106.9,
+              "title": "Try it"
+            },
+            {
+              "start_seconds": 119.2,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 129.5,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/04",
           "number": 4,
           "title": "The Abstraction Ladder",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "AI coding is one more rung on a ladder that runs from logic gates up. Stay at the top, and know when to send your agent down a rung.",
+          "rule": "Break a task into small pieces that each do one thing. And when something on one layer doesn't add up, look at the layer below, before you change anything.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/04-abstraction-ladder/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-04-abstraction-ladder.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-04-abstraction-ladder.jpg",
+          "duration_seconds": 173.0,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The ladder"
+            },
+            {
+              "start_seconds": 54.1,
+              "title": "The idea"
+            },
+            {
+              "start_seconds": 77.6,
+              "title": "The catch"
+            },
+            {
+              "start_seconds": 104.2,
+              "title": "The skill"
+            },
+            {
+              "start_seconds": 121.0,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 132.8,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/05",
           "number": 5,
           "title": "Understand Before You Change",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "A perfect fix for the wrong problem is still wrong. Own the problem, restate it, reproduce and trace it, then fix the cause.",
+          "rule": "Before planning, restate the problem in plain words, and confirm it with the person who gave you the task. They own the problem. Before fixing, reproduce it if you can, and trace what actually happens. Then fix the cause, not the symptom.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-05-understand-before-you-change.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-05-understand-before-you-change.jpg",
+          "duration_seconds": 134.0,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The worst fix"
+            },
+            {
+              "start_seconds": 28.4,
+              "title": "The one job"
+            },
+            {
+              "start_seconds": 48.3,
+              "title": "The old habit"
+            },
+            {
+              "start_seconds": 64.3,
+              "title": "Today’s version"
+            },
+            {
+              "start_seconds": 85.7,
+              "title": "The split"
+            },
+            {
+              "start_seconds": 106.5,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 123.4,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/06",
           "number": 6,
           "title": "Say What, Not How",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "Like a database optimizer, an agent does its best work when you state the outcome and the limits, not the steps. Too tight and too loose both cost you.",
+          "rule": "A spec states the outcome, and what must not break. It doesn't dictate steps, unless a step is itself a requirement. And before you start the work, give a cost forecast.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-06-say-what-not-how.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-06-say-what-not-how.jpg",
+          "duration_seconds": 149.7,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "A slow query"
+            },
+            {
+              "start_seconds": 32.4,
+              "title": "The idea"
+            },
+            {
+              "start_seconds": 61.6,
+              "title": "The dial"
+            },
+            {
+              "start_seconds": 92.3,
+              "title": "In practice"
+            },
+            {
+              "start_seconds": 125.9,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 139.4,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/07",
           "number": 7,
           "title": "Old Patterns, New Clothes",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "Pair programming, test-first and code review still work with agents in the seats. Cheaper tests change the trade, and three anti-patterns to watch for.",
+          "rule": "Write the failing test before the fix. No bug fix merges without a test that would have caught the bug. And the agent that wrote the code never approves it.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-07-old-patterns-new-clothes.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-07-old-patterns-new-clothes.jpg",
+          "duration_seconds": 139.3,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "Nothing new"
+            },
+            {
+              "start_seconds": 58.1,
+              "title": "I changed my mind"
+            },
+            {
+              "start_seconds": 84.3,
+              "title": "Anti-patterns"
+            },
+            {
+              "start_seconds": 118.5,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 130.8,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/08",
           "number": 8,
           "title": "Agile at Agent Speed",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "Keep every scrum ceremony, but run the loop daily. Deploy continuously, ship features switched off behind a flag, and write down what you learned.",
+          "rule": "Ship small changes continuously, once the automated checks pass. New features ship switched off, behind a flag. A person decides when each one turns on, for one client or a small group first. And end every session with a short written note on what was learned.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/08-agile-at-agent-speed/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-08-agile-at-agent-speed.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-08-agile-at-agent-speed.jpg",
+          "duration_seconds": 157.8,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The sprint"
+            },
+            {
+              "start_seconds": 42.3,
+              "title": "The clock"
+            },
+            {
+              "start_seconds": 67.9,
+              "title": "Shipping"
+            },
+            {
+              "start_seconds": 105.8,
+              "title": "The shift"
+            },
+            {
+              "start_seconds": 130.2,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 149.3,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/09",
           "number": 9,
           "title": "Know What It Costs",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "AI usage is the new currency of software. See the spend, the limit and a priced forecast before you start, and remember that owning software costs more than building it.",
+          "rule": "Before any sizable task, show the spend so far, the limit, and a forecast for each path. If you can't see a number, say so, and label an estimate as an estimate. Afterward, record what it actually cost. And before you build something new, check what already exists.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/09-know-what-it-costs/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-09-know-what-it-costs.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-09-know-what-it-costs.jpg",
+          "duration_seconds": 158.3,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "What did this cost?"
+            },
+            {
+              "start_seconds": 30.3,
+              "title": "A new currency"
+            },
+            {
+              "start_seconds": 46.0,
+              "title": "Three numbers"
+            },
+            {
+              "start_seconds": 86.4,
+              "title": "Build, buy or borrow"
+            },
+            {
+              "start_seconds": 130.4,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 149.2,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se101/10",
           "number": 10,
           "title": "Strict About Data, Relaxed About the Perimeter",
-          "status": "coming soon",
-          "page_url": null,
-          "video_url": null
+          "status": "available",
+          "summary": "Be uncompromising about customer personal data and card data, pragmatic about where internal apps live, and see the whole series on one screen.",
+          "rule": "Never store, log, or send raw card data. Customer personal data stays out of logs, errors, test data, and your own working notes. Internal apps sit behind company sign-in, on every route. And any change that touches personal data or payments gets an independent review.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-10-strict-about-data.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-10-strict-about-data.jpg",
+          "duration_seconds": 192.5,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "Two lines"
+            },
+            {
+              "start_seconds": 50.4,
+              "title": "The pragmatic side"
+            },
+            {
+              "start_seconds": 84.2,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 104.7,
+              "title": "The whole series"
+            },
+            {
+              "start_seconds": 164.7,
+              "title": "What’s next"
+            },
+            {
+              "start_seconds": 181.9,
+              "title": "Your turn"
+            }
+          ]
         }
       ]
     },
@@ -295,18 +539,46 @@
       "id": "se201",
       "title": "Software Engineering 201",
       "page": "https://clarkhuang.github.io/software-engineering-201/",
-      "status": "coming soon",
+      "status": "in progress",
       "summary": "101 was about one piece of work: getting one fix or one feature right. That's the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That's the graph.",
       "lessons": [
         {
           "id": "se201/01",
           "number": 1,
           "title": "From Loop to Graph",
-          "status": "coming soon",
-          "summary": "A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.",
-          "rule": null,
+          "status": "available",
+          "summary": "A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.",
+          "rule": "Before any job with more than one part, write down the pieces, and which can run at the same time. Then run each piece as its own loop, checked on its own.",
           "page_url": "https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/",
-          "video_url": null
+          "video_url": "https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se201-01-from-loop-to-graph.jpg",
+          "duration_seconds": 163.3,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "Three pieces"
+            },
+            {
+              "start_seconds": 56.9,
+              "title": "Loop and graph"
+            },
+            {
+              "start_seconds": 89.2,
+              "title": "An everyday graph"
+            },
+            {
+              "start_seconds": 105.7,
+              "title": "In practice"
+            },
+            {
+              "start_seconds": 139.2,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 152.1,
+              "title": "Your turn"
+            }
+          ]
         },
         {
           "id": "se201/02",
@@ -322,5 +594,9 @@
     }
   ],
   "book": "https://clarkhuang.github.io/book.json",
-  "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction."
+  "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction.",
+  "cookies": {
+    "watched": "watched=<lesson id>,<lesson id>...",
+    "video_position": "vpos=<lesson id>:<seconds>[,...] (resume offer, cleared when the video ends)"
+  }
 }
