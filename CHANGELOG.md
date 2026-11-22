@@ -22,6 +22,7 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Software Engineering 201 retitled “From Loop to Enterprise Systems”: new intro and a re-planned eight-lesson path from one AI loop to AI-native enterprise systems
 - New Software Engineering 201 lesson 1, “Build the Whole System, AI-Native” (video, captions, transcript, and build source in `lesson-sources/se201-01/`). The earlier lesson 1, “From Loop to Graph”, is folded into lesson 2 (outline); old lesson URLs redirect to their new pages
 - Software Engineering 201 path tightened: lesson 2 is now “Decompose the System into a Graph” (old address redirects), lesson 1, 6, and 7 summaries tie each step to the path from one loop to enterprise systems, and lesson 1's chapter sources in `sitegen/content.json` point at `lesson-sources/se201-01/`
+- Software Engineering 201 lessons 2 and 3 recorded: “Decompose the System into a Graph” and “Parallel Agents, One Integration” (video, captions, chapters, rule, transcript, and build source in `lesson-sources/se201-02/` and `lesson-sources/se201-03/`). The series now has 3 of 8 lessons available; lesson 2 keeps its related-reading credit and the link to the earlier recording
 - Workflow fixes: `cut-edition.yml` parse error; contributor-credits PRs now target `next-revision`
 
 ## [v0.1-wip] — 2026-11-22

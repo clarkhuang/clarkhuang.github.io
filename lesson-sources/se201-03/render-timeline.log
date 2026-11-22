@@ -1,0 +1,18 @@
+15 scenes, 222.76s, 6682 frames
+  01_title                 0.50s  + 6.88s
+  02_quiz                  7.38s  +18.76s
+  03_broken               26.15s  +23.64s
+  04_first                49.78s  + 8.11s
+  05a_contract            57.89s  +21.21s
+  05b_agents              79.10s  + 8.71s
+  05c_merge               87.81s  +14.49s
+  05d_test               102.30s  + 8.71s
+  06_example             111.01s  +13.89s
+  07_together            124.90s  +31.87s
+  08_cost                156.77s  +17.54s
+  09_recap               174.31s  +10.84s
+  10_rule                185.16s  +18.76s
+  11_ask                 203.92s  + 9.62s
+  12_close               213.54s  + 9.22s
+
+-> /workspace/legacy/build/se101/03-parallel-agents-one-integration/SE201_03_Parallel-Agents-One-Integration_public.mp4
