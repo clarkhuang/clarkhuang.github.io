@@ -523,6 +523,35 @@ Labels: `correction`, `feature` / `new-story`, and `refactor`. New stories also 
 5. Only Clark merges `next-revision` into `main`. The live site then rebuilds from `main`. Previous editions stay up as tagged GitHub Releases (`book-v0.1`, `book-v1.0`, ...). Details: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md and https://clarkhuang.github.io/REBUILD.md
 
 More: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/CONTRIBUTING.md
+
+## Ask, connect, and credits
+
+- **Ask the Book:** https://clarkhuang.github.io/ask/ — instant in-browser search over https://clarkhuang.github.io/search-index.json, plus “Ask your AI” buttons that open ChatGPT, Claude, Grok, or Perplexity with a prefilled prompt. The prompt points at https://clarkhuang.github.io/llms-full.txt and the GitMCP URL, and asks the tool to answer only from this site with citations. For book questions, it may use the tone of Charlie Hack, the OpenBook's fictional narrator. There is a copy-prompt fallback. A compact version of this widget also appears on the book page and on lesson pages.
+- **Full site text:** https://clarkhuang.github.io/llms-full.txt
+- **Contributor credits:** https://clarkhuang.github.io/credits/ (JSON: https://clarkhuang.github.io/credits.json). People are listed by GitHub handle only.
+- **Connect your AI (MCP):** public, read-only GitMCP endpoint at `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. GitMCP is a free third-party service. It prefers `llms.txt`. It cannot open issues or merge pull requests; contributions still go through GitHub issues, and only Clark Huang approves and merges.
+
+Claude Code: `claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io`
+
+Cursor (`~/.cursor/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "clarkhuang": {
+      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"
+    }
+  }
+}
+```
+
+Claude Desktop can use the same URL, or the `mcp-remote` bridge (`npx mcp-remote https://gitmcp.io/clarkhuang/clarkhuang.github.io`). ChatGPT and other MCP clients: paste the GitMCP URL as the connector / Streamable HTTP URL.
+
+Full snippets: https://clarkhuang.github.io/contribute/#mcp and https://clarkhuang.github.io/ask/#mcp
+
+### Future: a hosted Charlie Hack chat (not built)
+
+A later option is a small “talk to Charlie Hack” box that calls a serverless proxy, so the static GitHub Pages site never holds an API key. That needs Clark to choose a host and to add his own key as a secret on that host — not in this repository. Do not build or wire that proxy unless Clark approves it. Until then, use local search and the “Ask your AI” buttons.
 """)
 
 def write_llms_txt(site, series, extras=None):
@@ -645,6 +674,10 @@ def write_llms_full(site, series, intro, back):
         "",
         f"- [Contribute with your AI]({BASE}/contribute/index.md)",
         f"- [Copy this for yourself]({BASE}/copy-this/index.md)",
+        f"- [Ask the Book]({BASE}/ask/index.md)",
+        f"- [Contributor credits]({BASE}/credits/index.md)",
+        f"- GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io",
+        f"- Search index: {BASE}/search-index.json",
         "",
         "Do not invent stories or biography beyond this file. Do not identify real people or companies behind the fictional names. Staging (https://clarkhuang.github.io/staging/) is a preview of the next-revision branch and is not the live site.",
         "",

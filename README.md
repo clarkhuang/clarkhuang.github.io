@@ -19,6 +19,10 @@ Every page has a Markdown twin (`index.md`) and an `AGENTS.md`. Start at [`llms.
 
 - [`lessons.json`](https://clarkhuang.github.io/lessons.json): every series and lesson, with its rule, page URL, and video URL.
 - [`book.json`](https://clarkhuang.github.io/book.json): the book preview catalog.
+- [`llms.txt`](https://clarkhuang.github.io/llms.txt) and [`llms-full.txt`](https://clarkhuang.github.io/llms-full.txt): catalogs and full text for language models.
+- [Ask the Book](https://clarkhuang.github.io/ask/): in-browser search and “Ask your AI” prompts.
+- [Credits](https://clarkhuang.github.io/credits/): contributors, by GitHub handle ([`credits.json`](https://clarkhuang.github.io/credits.json)).
+- GitMCP (read-only, third-party): `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. See [the MCP section](https://clarkhuang.github.io/contribute/#mcp).
 
 ## How this project runs
 

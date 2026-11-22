@@ -1,0 +1,21 @@
+{
+  "site": "https://clarkhuang.github.io",
+  "repository": "https://github.com/clarkhuang/clarkhuang.github.io",
+  "generated": "2026-11-22 9:42 AM ET (America/Detroit)",
+  "generated_by": "scripts/build_credits.py",
+  "note": "Credits are generated from GitHub issues and pull requests. People are listed by GitHub handle only. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges.",
+  "author": {
+    "login": "clarkhuang",
+    "url": "https://github.com/clarkhuang"
+  },
+  "contributors": [
+    {
+      "login": "clarkhuang",
+      "url": "https://github.com/clarkhuang",
+      "roles": [
+        "author"
+      ],
+      "contributions": {}
+    }
+  ]
+}

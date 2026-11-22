@@ -24,15 +24,17 @@
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
   <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
   <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <link rel="alternate" type="text/markdown" href="mcp-section.md" title="Connect your AI (MCP)">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
-      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/book/">Book</a></nav>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
     </div>
   </header>
   <main id="main">
@@ -81,6 +83,50 @@
       <p class="involve-links"><a class="btn" href="https://github.com/clarkhuang/clarkhuang.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">See starter issues</a><a class="btn ghost" href="/copy-this/">Copy this site for yourself</a></p>
       <p class="muted">If something in the book or on this site affects you, please use a <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=takedown-request.yml">takedown request</a> instead. Full policy: the takedown note in the repository.</p>
 
+      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">
+        <h2 id="mcp-h">Connect your AI (MCP)</h2>
+        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>
+        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>
+        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>
+        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>
+        <h3>Claude Code</h3>
+        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>
+        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>
+        <h3>Claude Desktop</h3>
+        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>
+        <pre class="config" id="mcp-claude-desktop" tabindex="0">{
+  "mcpServers": {
+    "clarkhuang": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]
+    }
+  }
+}</pre>
+        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>
+        <h3>Cursor</h3>
+        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>
+        <pre class="config" id="mcp-cursor" tabindex="0">{
+  "mcpServers": {
+    "clarkhuang": {
+      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"
+    }
+  }
+}</pre>
+        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>
+        <h3>ChatGPT and other connectors</h3>
+        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>
+        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>
+        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>
+        <h3>Example prompts</h3>
+        <ul>
+          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>
+          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>
+          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>
+        </ul>
+        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>
+      </section>
+
+
     </div>
   </main>
   <footer class="site-footer">
@@ -88,8 +134,8 @@
       <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
       <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
       <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
-      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/book/">Book preview</a></nav>
-      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="mcp-section.md">mcp-section.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
       <nav class="footer-links" aria-label="Elsewhere"><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
     </div>
   </footer>

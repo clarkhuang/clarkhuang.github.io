@@ -219,6 +219,23 @@
     });
   }
 
+
+  /* Ask the Book compact widget on lesson pages (book page includes the script itself). */
+  (function loadAskBook() {
+    var path = location.pathname || "";
+    var lesson = /\/(ai-tips|software-engineering-101|software-engineering-201)\/[0-9]/.test(path);
+    if (!lesson) return;
+    if (doc.querySelector("script[src$='ask-book.js']")) return;
+    var link = doc.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "/assets/ask-book.css";
+    doc.head.appendChild(link);
+    var s = doc.createElement("script");
+    s.src = "/assets/ask-book.js";
+    s.defer = true;
+    (doc.body || doc.documentElement).appendChild(s);
+  })();
+
   paint();
 })();
 
