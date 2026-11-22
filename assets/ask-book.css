@@ -1,0 +1,77 @@
+/* Ask the Book: local search + "Ask your AI" buttons.
+   Uses the same color tokens as styles.css so it follows dark/light themes.
+   Loaded only on /ask/, /book/, and lesson pages (and any page that includes it). */
+
+.ask-book{
+  margin:28px 0 8px;
+  padding:20px 20px 18px;
+  background:linear-gradient(180deg,var(--panel),var(--panel-lo));
+  border:1px solid var(--line);
+  border-radius:var(--radius,14px);
+}
+.ask-book h2{margin:0 0 6px}
+.ask-book .ask-book-lede{color:var(--dim);font-size:15px;margin:0 0 14px;max-width:40em}
+.ask-book-form{margin:0 0 12px}
+.ask-book-form label{display:block;font-size:13px;font-weight:600;margin:0 0 6px;color:var(--dim)}
+.ask-book-form input[type="search"],
+.ask-book-form textarea{
+  width:100%;
+  font:inherit;
+  color:var(--text);
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.ask-book-form input[type="search"]:focus,
+.ask-book-form textarea:focus{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+  border-color:var(--accent-line);
+}
+.ask-book-form textarea{min-height:5.5em;resize:vertical;line-height:1.45}
+.ask-book-results{list-style:none;margin:0 0 16px;padding:0}
+.ask-book-results li{margin:0 0 8px}
+.ask-book-results a{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:var(--bg);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.ask-book-results a:hover{border-color:var(--accent-line);text-decoration:none}
+.ask-book-results .ask-title{color:var(--text);font-weight:600;font-size:16px}
+.ask-book-results .ask-meta{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin:0 0 4px}
+.ask-book-results .ask-snippet{display:block;color:var(--dim);font-size:14px;margin-top:4px}
+.ask-book-empty,.ask-book-status{color:var(--dimmer);font-size:14px;margin:0 0 12px}
+.ask-ai-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ask-ai-row .btn{text-decoration:none;display:inline-flex;align-items:center}
+.ask-ai-row .btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.ask-book .tools{margin:8px 0 0}
+.ask-book-compact{margin:24px 0}
+.ask-book-compact h2{font-size:20px}
+.ask-prompt-preview{
+  margin:0 0 8px;
+  padding:12px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:8px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  font:13px/1.5 var(--mono, ui-monospace, Menlo, Consolas, monospace);
+  color:var(--text);
+  max-height:12em;
+  overflow:auto;
+}
+.ask-book-note{color:var(--dimmer);font-size:13px;margin:8px 0 0}
+code.config{display:block;white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:13px/1.5 var(--mono, ui-monospace, Menlo, Consolas, monospace);overflow:auto}
+.mcp-block h3{font-size:18px;margin:22px 0 8px}
+.credit-list{padding-left:1.2em}
+.credit-list li{margin:0 0 6px}
+
+@media (max-width:640px){
+  .ask-book{padding:16px}
+  .ask-ai-row .btn{flex:1 1 calc(50% - 8px);justify-content:center}
+}

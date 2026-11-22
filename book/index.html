@@ -24,6 +24,7 @@
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
   <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
   <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
 </head>
@@ -118,6 +119,13 @@
           </section>
         </div>
       </div>
+
+      <section aria-labelledby="ask-connect-book-h" style="margin-top:36px">
+        <h2 id="ask-connect-book-h">Ask, connect, contribute</h2>
+        <p>Search this preview, or send a question to your own AI, from <a href="/ask/">Ask the Book</a>. For book questions, you can ask the tool to answer in the tone of Charlie Hack, the book's fictional narrator. Story chapters are an embellished fictional dramatization; they are not facts about real people.</p>
+        <p>Connect an AI assistant with the public, read-only GitMCP endpoint <code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code>. Config snippets for Claude Code, Claude Desktop, Cursor, and ChatGPT are on the <a href="/ask/#mcp">Ask the Book page</a>. GitMCP is a free third-party service and cannot change the book; contributions go through GitHub issues. <a href="/credits/">Contributor credits</a> are listed by GitHub handle.</p>
+        <div data-ask-book-mount></div>
+      </section>
     </div>
   </main>
   <footer class="site-footer">
@@ -131,5 +139,6 @@
     </div>
   </footer>
   <script src="/assets/site.js" defer></script>
+  <script src="/assets/ask-book.js" defer></script>
 </body>
 </html>
