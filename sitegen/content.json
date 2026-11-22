@@ -331,9 +331,13 @@
     "slug": "02-decompose-the-system-into-a-graph",
     "id": "se201/02",
     "title": "Decompose the System into a Graph",
-    "video": null,
-    "summary": "An enterprise system is too big for one loop. Draw it as a graph: split the system into parts with clear boundaries and owners, then find the real dependencies. “And then” is not a dependency; if nothing crosses between two parts, they don't need to wait for each other. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.",
-    "rule": null,
+    "video": "se201-02-decompose-the-system-into-a-graph.mp4",
+    "captions": "se201-02-decompose-the-system-into-a-graph.vtt",
+    "summary": "An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two steps is what crosses between them, and “and then” is not a dependency. The worked example is this site: four parts that share one generator, and one lesson's build, a strict chain that forks after the render. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.",
+    "rule": "Before any job with more than one part, draw the graph. Name the parts, and give each one a boundary and an owner. Draw an arrow only where something crosses from one part to another; “and then” is not a dependency. Anything two parts share becomes its own node, with one owner. Run the parts with no arrow between them at the same time, and give every part its own plan, build, and verify loop, with its own finish line and its own check.",
+    "log": "lesson-sources/se201-02/render-timeline.log",
+    "script": "lesson-sources/se201-02/se201-02-decompose.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-02",
     "credit_html": "Related reading: the loop-and-graph framing for agent work also appears in “Loops and Graphs” by Hanako (@hanakoxbt, August 2026)."
    },
    {
@@ -341,9 +345,13 @@
     "slug": "03-parallel-agents-one-integration",
     "id": "se201/03",
     "title": "Parallel Agents, One Integration",
-    "video": null,
-    "summary": "Once the parts are independent, run agents on them at the same time, each with its own brief, its own finish line, and its own check. Parallel work is only fast if it comes back together cleanly, so plan the integration first: shared contracts and interfaces, one place where the pieces merge, and tests that run on the whole system, not just on each part.",
-    "rule": null
+    "video": "se201-03-parallel-agents-one-integration.mp4",
+    "captions": "se201-03-parallel-agents-one-integration.vtt",
+    "summary": "Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it comes back together cleanly, so plan the integration first: a shared contract written before the work starts, one merge point used early, and tests on the whole system. The worked example is Software Engineering 101, lessons 3 to 5: built at the same time, then brought together through one shared script format, one content file, and one generator, and shipped in one change. Today the same path adds a whole-site check and a pull request to staging that a person approves.",
+    "rule": "Before you run agents in parallel, plan how the work comes back together. Write the shared contract first: the interfaces, the formats, the names, and who owns which files; when it has to change, change it in one place. Give each agent its own brief, its own finish line, and its own check, and make matching the contract part of that check. Merge early, in one place, and test the whole system, not just each part. If two parts keep needing each other's answers, they are not parallel work: go back to the graph.",
+    "log": "lesson-sources/se201-03/render-timeline.log",
+    "script": "lesson-sources/se201-03/se201-03-parallel.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-03"
    },
    {
     "n": 4,

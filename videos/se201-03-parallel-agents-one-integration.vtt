@@ -1,0 +1,247 @@
+WEBVTT
+
+NOTE SE201 Lesson 3: Parallel agents, one integration — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:04.037
+Software engineering 201. Lesson three.
+
+2
+00:00:04.037 --> 00:00:07.030
+Parallel agents, one integration.
+
+3
+00:00:07.380 --> 00:00:11.524
+Quick question. Three agents each build one part of a system.
+
+4
+00:00:11.524 --> 00:00:15.124
+All three say, done. All three pass their own checks.
+
+5
+00:00:15.124 --> 00:00:17.298
+Is the system done? Yes? Almost?
+
+6
+00:00:17.298 --> 00:00:20.152
+Or does nobody know yet? Nobody knows yet.
+
+7
+00:00:20.152 --> 00:00:22.801
+Each check proves one part works alone.
+
+8
+00:00:22.801 --> 00:00:25.790
+Not one of them has seen the parts together.
+
+9
+00:00:26.150 --> 00:00:29.719
+Picture a team that splits one feature across three agents.
+
+10
+00:00:29.719 --> 00:00:33.107
+One builds the screen. One builds the service behind it.
+
+11
+00:00:33.107 --> 00:00:38.370
+One changes the database. Each part gets finished, and each part is correct on its own.
+
+12
+00:00:38.370 --> 00:00:42.786
+Then the parts meet. The screen asks for a field the service never sends.
+
+13
+00:00:42.786 --> 00:00:45.145
+Two of the agents edited the same file.
+
+14
+00:00:45.145 --> 00:00:49.440
+And nobody finds out until the very end, when it costs the most to fix.
+
+15
+00:00:49.780 --> 00:00:53.896
+Parallel work is only fast if it comes back together cleanly.
+
+16
+00:00:53.896 --> 00:00:55.921
+So plan the integration first.
+
+17
+00:00:55.921 --> 00:00:57.540
+Before any agent starts.
+
+18
+00:00:57.890 --> 00:01:00.318
+Three things. First, a shared contract.
+
+19
+00:01:00.318 --> 00:01:07.043
+Write down what crosses between the parts: the interfaces, the formats, the names, and who owns which files.
+
+20
+00:01:07.043 --> 00:01:10.032
+At enterprise scale, that's an API, or a schema.
+
+21
+00:01:10.032 --> 00:01:13.955
+It can be one page. But it has to exist before the work starts.
+
+22
+00:01:13.955 --> 00:01:18.750
+And when it has to change, change it in one place, where every agent sees it.
+
+23
+00:01:19.100 --> 00:01:23.987
+Then every agent gets its own brief, its own finish line, and its own check.
+
+24
+00:01:23.987 --> 00:01:27.460
+And part of that check is: does it match the contract?
+
+25
+00:01:27.810 --> 00:01:31.688
+Second, one merge point. One place where the parts come together.
+
+26
+00:01:31.688 --> 00:01:35.566
+So when something doesn't fit, there's exactly one place to look.
+
+27
+00:01:35.566 --> 00:01:39.265
+And use it early. Join rough versions of the parts on day one.
+
+28
+00:01:39.265 --> 00:01:41.950
+Don't let the first meeting be the last step.
+
+29
+00:01:42.300 --> 00:01:44.109
+Third, test the whole system.
+
+30
+00:01:44.109 --> 00:01:47.603
+Not just each part. The assembled thing, running as one.
+
+31
+00:01:47.603 --> 00:01:50.660
+That's the check no single agent could run alone.
+
+32
+00:01:51.010 --> 00:01:57.325
+Here's a real one. Lessons three, four and five of software engineering 101 were built at the same time.
+
+33
+00:01:57.325 --> 00:02:00.421
+Three scripts, three renders, running side by side.
+
+34
+00:02:00.421 --> 00:02:04.550
+The three finished videos landed within forty seconds of each other.
+
+35
+00:02:04.900 --> 00:02:07.500
+And they came back together in one place.
+
+36
+00:02:07.500 --> 00:02:14.223
+The contract already existed: the same script format the first two lessons used, and the same page fields.
+
+37
+00:02:14.223 --> 00:02:19.296
+One merge point: one content file, read by one generator that builds every page.
+
+38
+00:02:19.296 --> 00:02:21.897
+And they shipped together, in one change.
+
+39
+00:02:21.897 --> 00:02:24.116
+Today that path has two more gates.
+
+40
+00:02:24.116 --> 00:02:29.253
+One check that walks the whole site: every link, and every file a page points to.
+
+41
+00:02:29.253 --> 00:02:32.361
+And a pull request to staging, for me to approve.
+
+42
+00:02:32.361 --> 00:02:36.420
+This lesson and the one before it were drafted in parallel, too.
+
+43
+00:02:36.770 --> 00:02:39.616
+Parallel isn't free. You pay for it at the merge.
+
+44
+00:02:39.616 --> 00:02:44.958
+With the integration planned first, three agents finish sooner than one working down a list.
+
+45
+00:02:44.958 --> 00:02:48.211
+Without a plan, the time you saved comes back as rework.
+
+46
+00:02:48.211 --> 00:02:52.740
+And if two parts keep needing each other's answers, they aren't parallel work.
+
+47
+00:02:52.740 --> 00:02:53.960
+Go back to the graph.
+
+48
+00:02:54.310 --> 00:02:57.532
+So, to recap. Split only where nothing crosses.
+
+49
+00:02:57.532 --> 00:03:00.275
+Agree the contract before anyone starts.
+
+50
+00:03:00.275 --> 00:03:04.800
+Merge early, in one place. And test the whole, not just the parts.
+
+51
+00:03:05.160 --> 00:03:07.880
+Which gives us rule three, for your agents.
+
+52
+00:03:07.880 --> 00:03:12.499
+Before you run agents in parallel, plan how the work comes back together.
+
+53
+00:03:12.499 --> 00:03:14.523
+Write the shared contract first.
+
+54
+00:03:14.523 --> 00:03:18.952
+Give each agent its own brief, its own finish line, and its own check.
+
+55
+00:03:18.952 --> 00:03:23.570
+Merge early, in one place. And test the whole system, not just each part.
+
+56
+00:03:23.920 --> 00:03:29.297
+Now, your turn. Think of the last time work was split, across agents, or across people.
+
+57
+00:03:29.297 --> 00:03:31.212
+Where did the parts first meet?
+
+58
+00:03:31.212 --> 00:03:33.190
+And who checked the whole thing?
+
+59
+00:03:33.540 --> 00:03:37.298
+At that merge point, someone still has to say yes.
+
+60
+00:03:37.298 --> 00:03:40.681
+That's next. Governance: where people decide.
+
+61
+00:03:40.681 --> 00:03:42.410
+See you in lesson four.
