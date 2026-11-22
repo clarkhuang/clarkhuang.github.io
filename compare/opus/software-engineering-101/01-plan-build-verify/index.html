@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan, Build, Verify (and When to Skip It) — Software Engineering 101 — Clark Huang</title>
+<meta name="description" content="How do you fix code you don&#x27;t understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Plan, Build, Verify (and When to Skip It) — Software Engineering 101 — Clark Huang">
+<meta property="og:description" content="How do you fix code you don&#x27;t understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.">
+<link rel="canonical" href="https://clarkhuang.github.io/compare/opus/software-engineering-101/01-plan-build-verify/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="../../">Clark Huang <span>· AI-native software learning</span></a>
+<nav class="site-nav" aria-label="Primary"><ul><li><a href="../../">Home</a></li><li><a href="../../ai-tips/">AI Tips</a></li><li><a href="../../software-engineering-101/" aria-current="true">SE 101</a></li><li><a href="../../software-engineering-201/">SE 201</a></li><li><a href="../../book/">Book</a></li></ul></nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../software-engineering-101/">Software Engineering 101</a></li><li aria-current="page">Lesson 1</li></ol></nav>
+<header class="page-head" style="margin-bottom:1.25rem">
+<p class="eyebrow">Software Engineering 101 · Lesson 1</p>
+<h1>Plan, Build, Verify (and When to Skip It)</h1>
+</header>
+<div class="player-block">
+<div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1920" height="1080" poster="/videos/posters/se101-01-plan-build-verify.jpg" data-lesson="se101/01" aria-label="Lesson video: Plan, Build, Verify (and When to Skip It)">
+<source src="/videos/se101-01-plan-build-verify.mp4" type="video/mp4">
+<p>Your browser can't play this video. <a href="/videos/se101-01-plan-build-verify.mp4">Download the MP4</a>.</p>
+</video></div>
+<div class="under-player" data-watch-id="se101/01"><span>4:41</span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span class="badge quiet unwatched">Not watched</span><span class="badge watch-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><a href="/videos/se101-01-plan-build-verify.mp4" download>Download MP4</a></div>
+<p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+</div>
+<div class="split">
+<section aria-labelledby="lesson-h">
+<h2 id="lesson-h" class="eyebrow">The lesson</h2>
+<p class="prose">How do you fix code you don&#x27;t understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.</p>
+<figure class="rule" data-status-scope>
+<figcaption class="eyebrow">The rule · for your agents</figcaption>
+<blockquote id="rule-se101-01"><p style="margin:0">If a change can&#x27;t be rolled back, and the person asking can&#x27;t check it themselves, it gets an independent review, on a different model, before it ships. That&#x27;s the floor. The longer list, of when to use the full pattern, is judgment.</p></blockquote>
+<p class="tools small" style="margin-bottom:0"><button type="button" class="btn ghost" data-copy="rule-se101-01" hidden>Copy rule</button> <span role="status" data-status></span></p>
+</figure>
+</section>
+<aside aria-labelledby="ch-h"><h2 id="ch-h" class="eyebrow">Chapters</h2><ol class="chapters"><li><a href="/videos/se101-01-plan-build-verify.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>One shot</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=34.7" data-seek="34.7" data-target="lesson-video"><span class="ts">0:34</span><span>Why this one</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=70.5" data-seek="70.5" data-target="lesson-video"><span class="ts">1:10</span><span>Four roles</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=117.5" data-seek="117.5" data-target="lesson-video"><span class="ts">1:57</span><span>The loop</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=169.9" data-seek="169.9" data-target="lesson-video"><span class="ts">2:49</span><span>The cost</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=192.6" data-seek="192.6" data-target="lesson-video"><span class="ts">3:12</span><span>When to use it</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=242.3" data-seek="242.3" data-target="lesson-video"><span class="ts">4:02</span><span>The rule</span></a></li><li><a href="/videos/se101-01-plan-build-verify.mp4#t=267.3" data-seek="267.3" data-target="lesson-video"><span class="ts">4:27</span><span>Your turn</span></a></li></ol><p class="small dim" style="margin-top:.8rem">Select a chapter to jump there in the video.</p></aside>
+</div>
+<nav class="pager" aria-label="Lesson navigation"><a class="prev" href="../"><small>← Back</small>All Software Engineering 101 lessons</a><a class="next" href="../02-rigor-follows-risk/"><small>Next →</small>Lesson 2: Rigor Follows Risk</a></nav>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+<p>Variant built by Claude Opus 5.5 (claude-opus-5-5). Plain HTML, one stylesheet, one small script. Progress and listening bookmarks are kept only in first-party cookies in your browser. No analytics, no third-party scripts.</p>
+<ul>
+<li><a href="https://github.com/clarkhuang">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a></li>
+<li><a href="../../lessons.json">lessons.json</a></li>
+<li><a href="../../book.json">book.json</a></li>
+</ul>
+</div>
+</footer>
+</body>
+</html>

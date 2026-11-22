@@ -10,6 +10,10 @@ Public pages for educational content on AI-native software workflows and process
 - [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/): lessons 1 and 2 available as video.
 - [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/): coming soon, two lesson outlines.
 - [Silicon Valley C Players](https://clarkhuang.github.io/book/): memoir and audiobook preview, coming in 2027.
+- [Compare](https://clarkhuang.github.io/compare/): the same site built independently by Grok, Claude Opus 5.5 and Claude Fable 5.2, side by side.
+- [Playbook](https://clarkhuang.github.io/playbook/): how the videos, narration and pages are produced and reviewed.
+- [AI Tips research](https://clarkhuang.github.io/ai-tips/research/): twelve candidate lessons, ranked, with sources.
+- [Interview plan](https://clarkhuang.github.io/interview-plan/): the working plan behind the memoir and SE 201.
 
 ## For agents
 

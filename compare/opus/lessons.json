@@ -1,0 +1,335 @@
+{
+  "site": "https://clarkhuang.github.io/compare/opus",
+  "generated_by": "AI processes, directed by Clark Huang",
+  "series": [
+    {
+      "id": "ai-tips",
+      "title": "AI Tips",
+      "page": "https://clarkhuang.github.io/compare/opus/ai-tips/",
+      "status": "in progress",
+      "summary": "Short, practical lessons on working with AI assistants and agents. Each one names a common failure, explains why it happens, and leaves you with one habit to fix it.",
+      "lessons": [
+        {
+          "id": "ai-tips/01",
+          "number": 1,
+          "title": "Paste First, Ask Second",
+          "status": "available",
+          "summary": "When an AI gives you a useless answer, it is usually not the AI's fault: you described your problem instead of showing it. Without the real material, it can only guess. With a screenshot, the document, or the full error message in front of it, the same question gets a specific, usable answer.",
+          "rule": "Paste first, ask second. Hand over the screenshot, document, error message, or email thread before you type a single word of your question.",
+          "page_url": "https://clarkhuang.github.io/compare/opus/ai-tips/01-paste-first-ask-second/",
+          "video_url": "https://clarkhuang.github.io/videos/ai-tips-01-paste-first-ask-second.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-01-paste-first-ask-second.jpg",
+          "duration_seconds": 66.6,
+          "chapters": []
+        },
+        {
+          "id": "ai-tips/02",
+          "number": 2,
+          "title": "Ask for Proof, Not “Done”",
+          "status": "available",
+          "summary": "When a bot says “done”, it is usually reporting the status of the step it ran, not whether the outcome you wanted is true. Five short examples show the gap. None of them is a bot misbehaving: each reported honestly on the step it ran. The fix is to ask for something only a real result can produce.",
+          "rule": "Ask for the artifact, not the status: the ticket numbers, a screenshot on the actual device, counts per item instead of a job status, a link you can click yourself. No artifact means it hasn't happened yet.",
+          "page_url": "https://clarkhuang.github.io/compare/opus/ai-tips/02-ask-for-proof/",
+          "video_url": "https://clarkhuang.github.io/videos/ai-tips-02-ask-for-proof.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-02-ask-for-proof.jpg",
+          "duration_seconds": 151.4,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The problem"
+            },
+            {
+              "start_seconds": 22.7,
+              "title": "Five ways it shows up"
+            },
+            {
+              "start_seconds": 89.5,
+              "title": "The pattern"
+            },
+            {
+              "start_seconds": 103.7,
+              "title": "The habit"
+            }
+          ]
+        },
+        {
+          "id": "ai-tips/03",
+          "number": 3,
+          "title": "Define the Number Before You Ask for It",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/04",
+          "number": 4,
+          "title": "Know What the Bot Can Actually Reach",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/05",
+          "number": 5,
+          "title": "Don't Trust “I Can't”",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/06",
+          "number": 6,
+          "title": "Teach It Once",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/07",
+          "number": 7,
+          "title": "The Second Message",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/08",
+          "number": 8,
+          "title": "Stop Re-Explaining Yourself",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/09",
+          "number": 9,
+          "title": "AI Coding Tools Aren't Just for Developers",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/10",
+          "number": 10,
+          "title": "The Label Is Not the Definition",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "ai-tips/11",
+          "number": 11,
+          "title": "Your Bot in the Meeting",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        }
+      ]
+    },
+    {
+      "id": "se101",
+      "title": "Software Engineering 101",
+      "page": "https://clarkhuang.github.io/compare/opus/software-engineering-101/",
+      "status": "in progress",
+      "summary": "Ten short lessons on building software when AI agents do much of the building. Each lesson ends with one rule, written so your agents can follow it too.",
+      "lessons": [
+        {
+          "id": "se101/01",
+          "number": 1,
+          "title": "Plan, Build, Verify (and When to Skip It)",
+          "status": "available",
+          "summary": "How do you fix code you don't understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.",
+          "rule": "If a change can't be rolled back, and the person asking can't check it themselves, it gets an independent review, on a different model, before it ships. That's the floor. The longer list, of when to use the full pattern, is judgment.",
+          "page_url": "https://clarkhuang.github.io/compare/opus/software-engineering-101/01-plan-build-verify/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-01-plan-build-verify.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-01-plan-build-verify.jpg",
+          "duration_seconds": 281.9,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "One shot"
+            },
+            {
+              "start_seconds": 34.7,
+              "title": "Why this one"
+            },
+            {
+              "start_seconds": 70.5,
+              "title": "Four roles"
+            },
+            {
+              "start_seconds": 117.5,
+              "title": "The loop"
+            },
+            {
+              "start_seconds": 169.9,
+              "title": "The cost"
+            },
+            {
+              "start_seconds": 192.6,
+              "title": "When to use it"
+            },
+            {
+              "start_seconds": 242.3,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 267.3,
+              "title": "Your turn"
+            }
+          ]
+        },
+        {
+          "id": "se101/02",
+          "number": 2,
+          "title": "Rigor Follows Risk",
+          "status": "available",
+          "summary": "A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn't undo what the code did. Sort work into two kinds. Product shape is uncertain and easy to change, so ship it rough behind a flag. Correctness you can't undo means money, customer data, and messages, so find the root cause.",
+          "rule": "Rough is fine for product shape. It is never fine for money, customer data, or anything that can't be undone. If a piece of work is both, the stricter standard wins. For that kind of work: stop any live damage first, then find the root cause, and give the estimate in usage, not in days.",
+          "page_url": "https://clarkhuang.github.io/compare/opus/software-engineering-101/02-rigor-follows-risk/",
+          "video_url": "https://clarkhuang.github.io/videos/se101-02-rigor-follows-risk.mp4",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se101-02-rigor-follows-risk.jpg",
+          "duration_seconds": 255.8,
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The choice"
+            },
+            {
+              "start_seconds": 23.3,
+              "title": "Half the question"
+            },
+            {
+              "start_seconds": 60.6,
+              "title": "Two kinds of work"
+            },
+            {
+              "start_seconds": 98.8,
+              "title": "Ship it rough"
+            },
+            {
+              "start_seconds": 120.8,
+              "title": "Get it right"
+            },
+            {
+              "start_seconds": 179.4,
+              "title": "The sort"
+            },
+            {
+              "start_seconds": 215.0,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 241.5,
+              "title": "Your turn"
+            }
+          ]
+        },
+        {
+          "id": "se101/03",
+          "number": 3,
+          "title": "Principles Over Languages",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/04",
+          "number": 4,
+          "title": "The Abstraction Ladder",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/05",
+          "number": 5,
+          "title": "Understand Before You Change",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/06",
+          "number": 6,
+          "title": "Say What, Not How",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/07",
+          "number": 7,
+          "title": "Old Patterns, New Clothes",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/08",
+          "number": 8,
+          "title": "Agile at Agent Speed",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/09",
+          "number": 9,
+          "title": "Know What It Costs",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        },
+        {
+          "id": "se101/10",
+          "number": 10,
+          "title": "Strict About Data, Relaxed About the Perimeter",
+          "status": "coming soon",
+          "page_url": null,
+          "video_url": null
+        }
+      ]
+    },
+    {
+      "id": "se201",
+      "title": "Software Engineering 201",
+      "page": "https://clarkhuang.github.io/compare/opus/software-engineering-201/",
+      "status": "coming soon",
+      "summary": "101 was about one piece of work: getting one fix or one feature right. That's the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That's the graph.",
+      "lessons": [
+        {
+          "id": "se201/01",
+          "number": 1,
+          "title": "From Loop to Graph",
+          "status": "coming soon",
+          "summary": "A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.",
+          "rule": null,
+          "page_url": "https://clarkhuang.github.io/compare/opus/software-engineering-201/01-from-loop-to-graph/",
+          "video_url": null
+        },
+        {
+          "id": "se201/02",
+          "number": 2,
+          "title": "Find the Real Dependencies",
+          "status": "coming soon",
+          "summary": "“And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other.",
+          "rule": null,
+          "page_url": "https://clarkhuang.github.io/compare/opus/software-engineering-201/02-find-the-real-dependencies/",
+          "video_url": null
+        }
+      ]
+    }
+  ],
+  "book": "https://clarkhuang.github.io/compare/opus/book.json",
+  "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction.",
+  "variant": {
+    "name": "opus",
+    "built_by": "Claude Opus 5.5 (claude-opus-5-5)",
+    "media_origin": "https://clarkhuang.github.io",
+    "cookies": {
+      "watched": "opus_watched=<lesson id>[,<lesson id>...]",
+      "video_positions": "opus_vpos=<lesson id>:<seconds>[,...]"
+    }
+  }
+}

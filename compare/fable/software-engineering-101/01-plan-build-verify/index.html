@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Plan, Build, Verify (and When to Skip It) — Software Engineering 101 — Clark Huang</title>
+  <meta name="description" content="How do you fix code you don&#x27;t understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../"><strong>Clark Huang</strong> <span>AI-native software learning</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../ai-tips/">AI Tips</a></li>
+          <li><a href="../../software-engineering-101/" aria-current="page">SE 101</a></li>
+          <li><a href="../../software-engineering-201/">SE 201</a></li>
+          <li><a href="../../book/">Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../software-engineering-101/">Software Engineering 101</a></li><li><span aria-current="page">Lesson 1</span></li></ol></nav>
+      <article>
+        <p class="kicker">Software Engineering 101 · Lesson 1</p>
+        <h1>Plan, Build, Verify (and When to Skip It)</h1>
+        <div class="player">
+          <video id="lesson-video" controls preload="metadata" playsinline width="1920" height="1080" poster="/videos/posters/se101-01-plan-build-verify.jpg" data-lesson="se101/01">
+            <source src="/videos/se101-01-plan-build-verify.mp4" type="video/mp4">
+            Your browser can't play this video. <a href="/videos/se101-01-plan-build-verify.mp4">Download the MP4</a>.
+          </video>
+        </div>
+        <p class="resume small" data-resume-for="se101/01" aria-live="polite" hidden></p>
+        <div class="lesson-meta">
+          <span><time datetime="PT4M41S">4:41</time> · Narrated in Clark's AI voice</span>
+          <span class="badge" data-state="se101/01" hidden>Not watched</span>
+          <button type="button" class="btn plain" data-toggle-watched="se101/01" hidden>Mark as watched</button>
+          <a href="/videos/se101-01-plan-build-verify.mp4" download>Download the MP4</a>
+        </div>
+        <div class="split">
+          <section aria-labelledby="lesson-h">
+            <h2 class="kicker" id="lesson-h">The lesson</h2>
+            <p class="prose">How do you fix code you don't understand when you only get one shot? Split the work into roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Then loop until the verifier runs out of serious things to say. The lesson also covers what that costs, and when a lighter path is good enough.</p>
+            <div class="rule">
+              <h2 class="kicker">The rule · for your agents</h2>
+              <blockquote id="rule-text">If a change can't be rolled back, and the person asking can't check it themselves, it gets an independent review, on a different model, before it ships. That's the floor. The longer list, of when to use the full pattern, is judgment.</blockquote>
+              <button type="button" class="btn quiet" data-copy="rule-text" hidden>Copy the rule</button>
+            </div>
+          </section>
+          <aside>
+          <nav aria-labelledby="chapters-h"><h2 class="kicker" id="chapters-h">Chapters</h2>
+          <ol class="chapters" data-for="lesson-video">
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=0.0" data-t="0.0"><time datetime="PT0M0S">0:00</time> <span>One shot</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=34.7" data-t="34.7"><time datetime="PT0M34S">0:34</time> <span>Why this one</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=70.5" data-t="70.5"><time datetime="PT1M10S">1:10</time> <span>Four roles</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=117.5" data-t="117.5"><time datetime="PT1M57S">1:57</time> <span>The loop</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=169.9" data-t="169.9"><time datetime="PT2M49S">2:49</time> <span>The cost</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=192.6" data-t="192.6"><time datetime="PT3M12S">3:12</time> <span>When to use it</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=242.3" data-t="242.3"><time datetime="PT4M2S">4:02</time> <span>The rule</span></a></li>
+            <li><a href="/videos/se101-01-plan-build-verify.mp4#t=267.3" data-t="267.3"><time datetime="PT4M27S">4:27</time> <span>Your turn</span></a></li>
+          </ol>
+          <p class="muted small">Select a chapter to jump there in the video.</p></nav>
+          </aside>
+        </div>
+      </article>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="../"><small>← Back</small>All Software Engineering 101 lessons</a><a class="next" href="../02-rigor-follows-risk/" rel="next"><small>Next →</small>Lesson 2: Rigor Follows Risk</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+      <p>Variant built by Claude Fable 5.2 (claude-fable-5-2). © 2026 Clark Huang. Progress and bookmarks are saved only in first-party cookies in your browser. No analytics, no third-party scripts.</p>
+      <nav aria-label="Elsewhere and data">
+        <ul>
+          <li><a href="https://github.com/clarkhuang">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a></li>
+          <li><a href="../../lessons.json">lessons.json</a></li>
+          <li><a href="../../book.json">book.json</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>From Loop to Graph — Software Engineering 201 — Clark Huang</title>
+  <meta name="description" content="A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../"><strong>Clark Huang</strong> <span>AI-native software learning</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../ai-tips/">AI Tips</a></li>
+          <li><a href="../../software-engineering-101/">SE 101</a></li>
+          <li><a href="../../software-engineering-201/" aria-current="page">SE 201</a></li>
+          <li><a href="../../book/">Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../software-engineering-201/">Software Engineering 201</a></li><li><span aria-current="page">Lesson 1</span></li></ol></nav>
+      <article>
+        <p class="kicker">Software Engineering 201 · Lesson 1</p>
+        <h1>From Loop to Graph <span class="badge soon">Coming soon</span></h1>
+        <figure class="teaser">
+        <svg class="art" viewBox="0 0 640 280" role="img" aria-label="Animated placeholder: a single loop of plan, build and verify on the left; on the right, a graph where one step fans out into three that run at the same time and join again.">
+          <circle class="mute dash" cx="150" cy="140" r="62"/>
+          <g class="orbit"><circle class="fill-hot" cx="150" cy="78" r="8"/></g>
+          <text x="150" y="60" font-size="14">Plan</text><text x="238" y="190" font-size="14">Build</text><text x="60" y="190" font-size="14">Verify</text>
+          <path class="mute" d="M258 140 H296 M286 132 l10 8 l-10 8"/>
+          <line class="edge hot d1" pathLength="1" x1="352" y1="131" x2="428" y2="79"/><line class="edge hot d1" pathLength="1" x1="355" y1="140" x2="425" y2="140"/><line class="edge hot d1" pathLength="1" x1="352" y1="149" x2="428" y2="201"/><line class="edge hot d3" pathLength="1" x1="452" y1="79" x2="528" y2="131"/><line class="edge hot d3" pathLength="1" x1="455" y1="140" x2="525" y2="140"/><line class="edge hot d3" pathLength="1" x1="452" y1="201" x2="528" y2="149"/>
+          <circle class="node solid " cx="340" cy="140" r="13"/><circle class="node solid d2" cx="440" cy="70" r="13"/><circle class="node solid d2" cx="440" cy="140" r="13"/><circle class="node solid d2" cx="440" cy="210" r="13"/><circle class="node solid d4" cx="540" cy="140" r="13"/>
+          <text class="label" x="150" y="258">101 · the loop</text><text class="label" x="440" y="258">201 · the graph</text>
+        </svg>
+        <figcaption><span class="badge soon">Coming soon</span> No video yet. This animation is a placeholder drawn in SVG and CSS.</figcaption>
+      </figure>
+        <div class="split">
+          <section aria-labelledby="idea-h">
+            <h2 class="kicker" id="idea-h">The idea</h2>
+            <p class="lede">A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.</p>
+            <p class="muted">This lesson is in planning. The video will appear here when it's ready.</p>
+            <p class="muted">Draft outline. Titles and ideas may change before the lesson is made.</p>
+          </section>
+          <aside aria-labelledby="premise-h">
+            <h2 class="kicker" id="premise-h">The premise of 201</h2>
+            <p class="muted">101 was about one piece of work: getting one fix or one feature right. That's the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That's the graph.</p>
+          </aside>
+        </div>
+      </article>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="../"><small>← Back</small>All Software Engineering 201 lessons</a><a class="next" href="../02-find-the-real-dependencies/" rel="next"><small>Next →</small>Lesson 2: Find the Real Dependencies</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+      <p>Variant built by Claude Fable 5.2 (claude-fable-5-2). © 2026 Clark Huang. Progress and bookmarks are saved only in first-party cookies in your browser. No analytics, no third-party scripts.</p>
+      <nav aria-label="Elsewhere and data">
+        <ul>
+          <li><a href="https://github.com/clarkhuang">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a></li>
+          <li><a href="../../lessons.json">lessons.json</a></li>
+          <li><a href="../../book.json">book.json</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

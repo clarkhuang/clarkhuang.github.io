@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Loop to Graph — Software Engineering 201 — Clark Huang</title>
+<meta name="description" content="A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="From Loop to Graph — Software Engineering 201 — Clark Huang">
+<meta property="og:description" content="A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.">
+<link rel="canonical" href="https://clarkhuang.github.io/compare/opus/software-engineering-201/01-from-loop-to-graph/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="../../">Clark Huang <span>· AI-native software learning</span></a>
+<nav class="site-nav" aria-label="Primary"><ul><li><a href="../../">Home</a></li><li><a href="../../ai-tips/">AI Tips</a></li><li><a href="../../software-engineering-101/">SE 101</a></li><li><a href="../../software-engineering-201/" aria-current="true">SE 201</a></li><li><a href="../../book/">Book</a></li></ul></nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../software-engineering-201/">Software Engineering 201</a></li><li aria-current="page">Lesson 1</li></ol></nav>
+<header class="page-head" style="margin-bottom:1.25rem">
+<p class="eyebrow">Software Engineering 201 · Lesson 1</p>
+<h1>From Loop to Graph <span class="badge soon">Coming soon</span></h1>
+</header>
+
+<figure class="stage g201" style="margin:0">
+<span class="badge soon tag">Coming soon</span>
+<svg viewBox="0 0 640 300" role="img" aria-labelledby="g201-t">
+<title id="g201-t">Animated teaser: a single plan, build, verify loop on the left becomes a graph of work on the right, where work is split, runs in parallel, meets a point where a person decides, and feeds back into the next run.</title>
+<g fill="none" stroke-width="2.5" stroke-linecap="round">
+  <circle cx="120" cy="150" r="62" class="ink" opacity=".25"/>
+  <g class="spin"><path d="M120 88 a62 62 0 0 1 53.7 31" class="acc" stroke-width="4"/><circle cx="173.7" cy="119" r="5" fill="currentColor" class="acc" style="fill:var(--accent)"/></g>
+</g>
+<text x="120" y="74" text-anchor="middle">Plan</text>
+<text x="196" y="200" text-anchor="middle">Build</text>
+<text x="44" y="200" text-anchor="middle">Verify</text>
+<text x="120" y="155" text-anchor="middle" class="lbl">LOOP</text>
+<text x="120" y="270" text-anchor="middle" class="lbl">101 · ONE PIECE OF WORK</text>
+<path d="M232 150 h36 m-10 -8 l10 8 l-10 8" fill="none" class="ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+<g fill="none" stroke-width="2.5" stroke-linecap="round">
+  <line class="edge e1 ink" x1="334" y1="150" x2="396" y2="94"/>
+  <line class="edge e1 ink" x1="334" y1="150" x2="396" y2="150"/>
+  <line class="edge e1 ink" x1="334" y1="150" x2="396" y2="206"/>
+  <line class="edge e3 ink" x1="424" y1="94" x2="486" y2="146"/>
+  <line class="edge e3 ink" x1="424" y1="150" x2="484" y2="150"/>
+  <line class="edge e3 ink" x1="424" y1="206" x2="486" y2="154"/>
+  <line class="edge e5 ink" x1="516" y1="150" x2="572" y2="150"/>
+  <path class="amb" d="M586 134 C 560 40, 360 40, 334 134" stroke-dasharray="6 6" opacity=".8"/>
+</g>
+<circle class="node pulse" cx="320" cy="150" r="14"/>
+<circle class="node pulse p2" cx="410" cy="94" r="14"/>
+<circle class="node pulse p2" cx="410" cy="150" r="14"/>
+<circle class="node pulse p2" cx="410" cy="206" r="14"/>
+<path class="human pulse p3" d="M500 132 l18 18 l-18 18 l-18 -18 z"/>
+<circle class="node pulse p4" cx="586" cy="150" r="14"/>
+<text x="320" y="186" text-anchor="middle">split</text>
+<text x="410" y="244" text-anchor="middle">in parallel</text>
+<text x="500" y="192" text-anchor="middle">a person decides</text>
+<text x="460" y="58" text-anchor="middle">each run improves the next</text>
+<text x="455" y="270" text-anchor="middle" class="lbl">201 · THE GRAPH</text>
+</svg>
+<figcaption class="stage-cap">Teaser, built in SVG and CSS. The Software Engineering 201 videos are coming soon.</figcaption>
+</figure>
+<div class="split" style="margin-top:2.2rem">
+<section aria-labelledby="idea-h">
+<h2 id="idea-h" class="eyebrow">The idea</h2>
+<p class="prose" style="font-size:1.15rem">A loop makes one unit of work correct. A graph decides which units exist, and which of them can run at the same time.</p>
+<p class="dim small">Draft outline. Titles and ideas may change before the lesson is made.</p>
+</section>
+<aside aria-labelledby="prem-h">
+<h2 id="prem-h" class="eyebrow">The premise of 201</h2>
+<p class="dim">101 was about one piece of work: getting one fix or one feature right. That&#x27;s the loop. 201 is the layer above: how work is split, what runs in parallel, where a person decides, and how each run makes the next one better. That&#x27;s the graph.</p>
+</aside>
+</div>
+<nav class="pager" aria-label="Lesson navigation"><a class="prev" href="../"><small>← Back</small>All Software Engineering 201 lessons</a><a class="next" href="../02-find-the-real-dependencies/"><small>Next →</small>Lesson 2: Find the Real Dependencies</a></nav>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+<p>Variant built by Claude Opus 5.5 (claude-opus-5-5). Plain HTML, one stylesheet, one small script. Progress and listening bookmarks are kept only in first-party cookies in your browser. No analytics, no third-party scripts.</p>
+<ul>
+<li><a href="https://github.com/clarkhuang">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a></li>
+<li><a href="../../lessons.json">lessons.json</a></li>
+<li><a href="../../book.json">book.json</a></li>
+</ul>
+</div>
+</footer>
+</body>
+</html>
