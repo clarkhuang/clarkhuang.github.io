@@ -74,7 +74,7 @@ Each chapter opens with a short story, then the rules. Site lessons are the prim
 | 29 | The Ladder | AI coding is one more rung, from first principles up. | SE 101 Lessons 3, 4, 6 | PARTIAL |
 | 30 | Old Patterns at Agent Speed | Pairing, TDD, and small ships still work; they just run faster. | SE 101 Lessons 7, 8 | PARTIAL |
 | 31 | Money and Data | Treat AI usage carefully; never risk customer data. | SE 101 Lessons 9, 10 | PARTIAL |
-| 32 | The Graph | 101 is the loop; 201 is the graph: split work, find real dependencies. | SE 201 Lessons 1–10 | PARTIAL |
+| 32 | From Loops to Systems | 101 is the loop; 201 builds systems: split work, find real dependencies, run loops in parallel, decide where a person decides, feed back each run, and turn repeated loops into skills, routines, pipelines, and agents. | SE 201 Lessons 1–8 | PARTIAL |
 | 33 | How Companies Should Use AI | From one engineer and an agent to a company running a fleet. | New material | NEED |
 
 ## Back matter

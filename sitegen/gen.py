@@ -347,7 +347,7 @@ def build():
             if l["video"]:
                 l["_vpath"], l["_poster"], l["_dur"], l["_ch"] = media_info(l, old)
         avail = [l for l in s["lessons"] if l["video"]]
-        sj = {"id": s["key"], "title": s["title"], "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
+        sj = {"id": s["key"], "title": s["title"], **({"subtitle": s["subtitle"]} if s.get("subtitle") else {}), "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
               "agents_url": f"{BASE}/{skey}/AGENTS.md",
               "status": "in progress" if avail else "coming soon",
               "summary": s["intro"], "lessons": []}
@@ -467,12 +467,13 @@ def build():
         total = len(s["lessons"]) + len(s["soon"])
         body = f"""      <p class="crumbs"><a href="/">Home</a> / {E(s['title'])}</p>
       <h1>{E(s['title'])} {status}</h1>
+      {('<p class="label">' + E(s['subtitle']) + '</p>') if s.get('subtitle') else ''}
       <p class="lede">{E(s['intro'])}</p>
       <div class="rule-line"></div>
       <div class="section-head"><h2>Lessons</h2><p class="section-note">{len(avail)} of {total} available</p></div>
       {prog}
       <ol class="lessons">{rows}</ol>"""
-        page(f"{skey}/index.html", f"{s['title']} — Clark Huang", s["intro"][:155], body, skey)
+        page(f"{skey}/index.html", f"{s['title']}" + (f": {s['subtitle']}" if s.get("subtitle") else "") + " — Clark Huang", s["intro"][:155], body, skey)
         AF.write_series_twins(SITE, skey, s)
 
     # index
@@ -488,7 +489,7 @@ def build():
         if avail:
             badge = '<span class="badge">Available</span>' if complete else '<span class="badge">In progress</span>'
             meta = f'<span class="card-num">{len(avail)} of {total} lessons</span>{badge}'
-            prog = f'<p class="progress">{plural(len(avail), "video lesson")}' + (f', {plural(len(outlines), "coming soon")}' if outlines else "") + '</p>'
+            prog = f'<p class="progress">{plural(len(avail), "video lesson")}' + (f', {f"{len(outlines)} coming soon"}' if outlines else "") + '</p>'
             prog += meter([l["id"] for l in avail], s["title"] + " lessons watched")
             links = upnext(avail, lambda l, skey=skey: f"/{skey}/{l['slug']}/", "upnext card-upnext")
         else:

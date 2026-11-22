@@ -27,7 +27,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 ## The lesson
 
-A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
+The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
 
 ## The rule
 
@@ -86,6 +86,12 @@ See you in lesson two.
 ## Related lessons
 
 - Lesson 2: [Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline)
+- Lesson 3: [Run Loops in Parallel](https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/index.md) (outline)
+- Lesson 4: [Where a Person Decides](https://clarkhuang.github.io/software-engineering-201/04-where-a-person-decides/index.md) (outline)
+- Lesson 5: [Feedback That Improves Every Run](https://clarkhuang.github.io/software-engineering-201/05-feedback-that-improves-every-run/index.md) (outline)
+- Lesson 6: [Turn a Repeated Loop into a Skill](https://clarkhuang.github.io/software-engineering-201/06-turn-a-loop-into-a-skill/index.md) (outline)
+- Lesson 7: [Routines and Pipelines](https://clarkhuang.github.io/software-engineering-201/07-routines-and-pipelines/index.md) (outline)
+- Lesson 8: [Agents That Run the System](https://clarkhuang.github.io/software-engineering-201/08-agents-that-run-the-system/index.md) (outline)
 
 ## For agents
 
