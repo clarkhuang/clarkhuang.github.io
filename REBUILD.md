@@ -30,6 +30,12 @@ SITE=/workspace/legacy/site python3 /workspace/legacy/build/sitegen/gen.py
 
 Do not run `gen_extra.py` for a public build. It would add private pages that must not ship.
 
+### Lesson video sources
+
+Lessons that ship with their build source keep it in `lesson-sources/<lesson>/` (for example `lesson-sources/se201-01/`): the script generator, the scene script, the brief, a facts file listing every claim and where to check it, the caption builder, and the render timeline. Each folder has `BUILD.md`, `index.md`, and `AGENTS.md`. Lesson captions (`.vtt`) sit next to the MP4 in `videos/` and are set with the lesson's `captions` field in `sitegen/content.json`.
+
+When a lesson slug changes, leave a small redirect page (`index.html` with `noindex`, a canonical link, and a refresh to the new page, plus `index.md` and `AGENTS.md` pointing at the new address) in the old folder so live links keep working.
+
 ### Cover and book preview
 
 ```bash

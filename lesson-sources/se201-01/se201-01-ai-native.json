@@ -1,0 +1,265 @@
+{
+ "id": "se201-01-ai-native",
+ "title": "SE201 Lesson 1: Build the whole system, AI-native",
+ "output": "01-build-the-whole-system-ai-native/SE201_01_Build-The-Whole-System-AI-Native_public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_title",
+   "text": "Software engineering two oh one. From loop, to enterprise systems. Lesson one. [pause] Build the whole system, A.I. native.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "SOFTWARE ENGINEERING 201  ·  LESSON 1",
+    "headline": "Build the whole system,\nAI-native.",
+    "sub": "From loop to enterprise systems  •  clarkhuang.github.io"
+   }
+  },
+  {
+   "id": "02_quiz",
+   "text": "Quick question to start. You're asking agents to build a whole app, not just one fix. What matters most? [pause] The smartest model? The longest prompt? Or a system the agents can read, check, and rebuild on their own? [pause] <emphasis>The system they can read.</emphasis> A smarter model still guesses when the project lives in someone's head. A long prompt is gone after one chat. What's written into the system is there for every run, and every agent.",
+   "visual": "quiz",
+   "chapter": "THE QUESTION",
+   "data": {
+    "question": "Agents are building a whole app.\nWhat matters most?",
+    "options": [
+     "The smartest model",
+     "The longest prompt",
+     "A system they can read"
+    ],
+    "answer": 2,
+    "why": "Written into\nthe system,\nfor every run."
+   }
+  },
+  {
+   "id": "03_shift",
+   "text": "In one oh one, the unit of work was one loop. Plan, build, verify. One fix. One feature. [pause] In two oh one, the unit of work is the system. Many parts. Many people. Years of history. And now, agents working in it right alongside the people.",
+   "visual": "loop_to_graph",
+   "chapter": "ONE LOOP TO A SYSTEM",
+   "data": {
+    "left_tag": "101  ·  THE LOOP",
+    "left": "One piece\nof work",
+    "left_sub": "made correct",
+    "right_tag": "201  ·  THE SYSTEM",
+    "split": "Split",
+    "merge": "Ship",
+    "node": "loop",
+    "caption": "Many loops, many people, one system."
+   }
+  },
+  {
+   "id": "04_define",
+   "text": "So what does A.I. native actually mean? Here's the definition this series uses. A system is A.I. native when agents and people can <emphasis>both</emphasis> read it, find their way around it, contribute to it, and rebuild it. [pause] Not only the person who wrote it. Not only whoever knows the history.",
+   "visual": "statement",
+   "chapter": "WHAT AI-NATIVE MEANS",
+   "data": {
+    "headline": "AI-native: agents and people\ncan both read it, navigate it,\ncontribute to it, and rebuild it.",
+    "size": 80
+   }
+  },
+  {
+   "id": "05_four",
+   "text": "That takes four things. One. Every page people read has a twin an agent can read: plain Markdown, an index of the whole system, and an agents file that says how to work there. Two. Specs and briefs are the source. Change the brief, and the build follows. Three. Tests and checks are the contract. An agent is done when the checks pass, not when it says it's done. And four. Every change goes to staging first, and a person approves it before it reaches production.",
+   "visual": "recap",
+   "chapter": "WHAT AI-NATIVE MEANS",
+   "data": {
+    "label": "WHAT MAKES A SYSTEM AI-NATIVE",
+    "rows": [
+     "A twin agents can read: Markdown,\nan index, an AGENTS.md",
+     "Specs and briefs are the source",
+     "Tests and checks are the contract",
+     "Staging, then a person approves\nbefore production"
+    ],
+    "upto": 4,
+    "new_from": 0
+   }
+  },
+  {
+   "id": "06_example",
+   "text": "And this isn't hypothetical. The site you're on right now is built exactly this way.",
+   "visual": "statement",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "headline": "The worked example:\nthis site.",
+    "size": 112
+   }
+  },
+  {
+   "id": "07_files",
+   "text": "Every page has an index dot M D twin, and every folder has an agents dot M D file. There's an L L M S dot T X T that indexes the whole site, a machine-readable lesson catalog, and a read-only connector A.I. tools can plug into. [pause] The pages are generated from one content file, and the rebuild steps are written down, so an agent can regenerate every page.",
+   "visual": "folder_transform",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "label": "CLARKHUANG.GITHUB.IO  ·  WHAT AN AGENT CAN READ",
+    "folder": "clarkhuang.github.io/",
+    "files": [
+     "index.md  (every page)",
+     "AGENTS.md  (every folder)",
+     "llms.txt",
+     "lessons.json",
+     "sitegen/content.json",
+     "REBUILD.md"
+    ],
+    "ask": "Read it, navigate it,\nrebuild it.",
+    "result": "Readable by agents and people",
+    "punch": "Plus a read-only connector AI tools can use."
+   }
+  },
+  {
+   "id": "08_flow",
+   "text": "And here's the part that matters most. Agents open pull requests into a staging branch. Staging is a full preview of the site, hidden from search. [pause] And only I merge into production.",
+   "visual": "rule",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "headline": "How a change ships here",
+    "items": [
+     "An agent opens a pull request",
+     "It lands on staging, a full preview",
+     "Checks run on every deploy",
+     "Only the owner merges to production"
+    ]
+   }
+  },
+  {
+   "id": "09a_cook",
+   "text": "Think of a kitchen with one great cook. The recipes are in their head. Only they know where everything is. And every plate waits on them.",
+   "visual": "sorter",
+   "chapter": "AT ENTERPRISE SCALE",
+   "data": {
+    "left_header": "ONE GREAT COOK",
+    "left_sub": "It's all in their head",
+    "left": [
+     "Recipes in memory",
+     "Only they know where things are",
+     "Every plate waits on them"
+    ],
+    "right_header": "A BIG KITCHEN",
+    "right_sub": "It's written into the place",
+    "right": [
+     "Recipes on cards",
+     "Every station labeled",
+     "The chef checks at the pass"
+    ],
+    "animate": "left"
+   },
+   "group": "kitchen"
+  },
+  {
+   "id": "09b_kitchen",
+   "text": "Now picture a big restaurant kitchen. The recipes are written down. Every station is labeled. A cook on a brand new shift can work from the cards. [pause] And nothing leaves the pass until the head chef looks at it. That's what lets a kitchen grow past one great cook.",
+   "visual": "sorter",
+   "chapter": "AT ENTERPRISE SCALE",
+   "data": {
+    "left_header": "ONE GREAT COOK",
+    "left_sub": "It's all in their head",
+    "left": [
+     "Recipes in memory",
+     "Only they know where things are",
+     "Every plate waits on them"
+    ],
+    "right_header": "A BIG KITCHEN",
+    "right_sub": "It's written into the place",
+    "right": [
+     "Recipes on cards",
+     "Every station labeled",
+     "The chef checks at the pass"
+    ],
+    "animate": "right"
+   },
+   "group": "kitchen"
+  },
+  {
+   "id": "10_enterprise",
+   "text": "Now scale that up. An enterprise system isn't one repo. It's dozens of services, data that has to stay private, and people who need to know who changed what, and why. [pause] The same four things still hold. They just matter <emphasis>more</emphasis>. Without them, every agent starts from zero, and every person becomes the bottleneck.",
+   "visual": "split",
+   "chapter": "AT ENTERPRISE SCALE",
+   "data": {
+    "label": "THE SAME SYSTEM, BUILT TWO WAYS",
+    "left_header": "KNOWLEDGE IN PEOPLE’S HEADS",
+    "reported": "Agents guess.\nPeople become the bottleneck.",
+    "left_tone": "dim",
+    "right_header": "KNOWLEDGE IN THE SYSTEM",
+    "actually": "Agents read and check.\nPeople decide.",
+    "right_tone": "accent"
+   }
+  },
+  {
+   "id": "11_path",
+   "text": "That's the path for this series. Today: build the whole system, A.I. native. Then, decompose it into a graph. Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. Turn repeated work into skills. Wire it into routines and pipelines. [pause] And finally, agents that operate enterprise systems, with real permissions, and a full audit trail.",
+   "visual": "recap",
+   "chapter": "THE PATH",
+   "data": {
+    "label": "SOFTWARE ENGINEERING 201  ·  FROM LOOP TO ENTERPRISE SYSTEMS",
+    "rows": [
+     "Build the whole system AI-native",
+     "Decompose it into a graph",
+     "Parallel agents, one integration",
+     "Governance: where people decide",
+     "Quality, feedback, observability",
+     "Skills as building blocks",
+     "Routines, pipelines, integration",
+     "Agents that operate\nenterprise systems"
+    ],
+    "upto": 8,
+    "new_from": 0
+   }
+  },
+  {
+   "id": "12_rule",
+   "text": "Which gives us rule one, for your agents. Before you build anything bigger than one fix, make it readable: a Markdown twin, an index, and an agents file. Keep the specs as the source, and the checks as the contract. And send every change through staging, for a person to approve before production.",
+   "visual": "rule_card",
+   "chapter": "THE RULE",
+   "data": {
+    "kicker": "RULE 1  ·  FOR YOUR AGENTS",
+    "size": 54,
+    "lines": [
+     {
+      "text": "Before you build anything bigger than one fix,"
+     },
+     {
+      "text": "make it readable: a Markdown twin,",
+      "tone": "accent"
+     },
+     {
+      "text": "an index, and an AGENTS.md.",
+      "tone": "accent"
+     },
+     {
+      "text": "Specs are the source. Checks are the contract."
+     },
+     {
+      "text": "Every change goes through staging,",
+      "tone": "accent"
+     },
+     {
+      "text": "and a person approves it before production.",
+      "tone": "accent"
+     }
+    ],
+    "foot": "THE FULL RULE IS ON THE LESSON PAGE"
+   }
+  },
+  {
+   "id": "13_ask",
+   "text": "Now, your turn. Pick a system you work on. If a brand new agent showed up tomorrow, what could it read? [pause] And what would it have to guess?",
+   "visual": "statement",
+   "chapter": "YOUR TURN",
+   "data": {
+    "headline": "Your turn. A new agent shows up\ntomorrow. What could it read?\nWhat would it have to guess?",
+    "size": 84
+   }
+  },
+  {
+   "id": "14_close",
+   "text": "See you in lesson two.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "See you in\nlesson two.",
+    "sub": "clarkhuang.github.io • Software Engineering 201"
+   }
+  }
+ ]
+}

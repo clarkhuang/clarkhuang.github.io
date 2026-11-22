@@ -64,7 +64,7 @@ def chapters_from_log(log, script):
     for sc in spec["scenes"]:
         c = sc.get("chapter","")
         if c and c not in seen:
-            seen.append(c); out.append([starts[sc["id"]], c.capitalize()])
+            seen.append(c); out.append([starts[sc["id"]], AF.chapter_case(c)])
     if out: out[0][0] = 0.0
     return out
 
@@ -383,14 +383,17 @@ def build():
                     rid = "rule-" + re.sub(r"[^a-z0-9]+", "-", l["id"].lower())
                     rule = (f'<div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="{rid}">{E(l["rule"])}</p>'
                             f'<p class="tools"><button type="button" class="btn ghost" data-copy="{rid}" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>')
+                cap_track = (f'\n        <track kind="captions" srclang="en" label="English" src="/videos/{l["captions"]}" default>' if l.get("captions") else "")
+                cap_meta = (f'<span aria-hidden="true">·</span><a href="/videos/{l["captions"]}">Captions (VTT)</a>' if l.get("captions") else "")
+                cap_meta += (f'<span aria-hidden="true">·</span><a href="{E(l["source_url"])}">How it was built</a>' if l.get("source_url") else "")
                 dur_meta = f'<span><time datetime="{iso_dur(dur)}">{dur_txt}</time></span><span aria-hidden="true">·</span>' if dur else ""
                 body = f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/{skey}/">{E(s['title'])}</a> / Lesson {l['n']}</p>
       <h1>{E(l['title'])}</h1>
       <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="{poster}" data-lesson-id="{l['id']}" aria-label="Lesson video: {E(l['title'])}">
-        <source src="{vpath}" type="video/mp4">
+        <source src="{vpath}" type="video/mp4">{cap_track}
         Your browser can't play this video. <a href="{vpath}">Download the MP4</a>.
       </video></div>
-      <div class="lesson-meta" data-watch-id="{l['id']}" data-status-scope>{dur_meta}<span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="{vpath}" download>Download MP4</a>{watch_state(l['id'])}<span class="status" role="status" data-status></span></div>
+      <div class="lesson-meta" data-watch-id="{l['id']}" data-status-scope>{dur_meta}<span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="{vpath}" download>Download MP4</a>{cap_meta}{watch_state(l['id'])}<span class="status" role="status" data-status></span></div>
       <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
       {after}
       <div class="grid2">
@@ -406,7 +409,9 @@ def build():
                     "summary": l["summary"], "rule": l["rule"], "page_url": BASE + url, "video_url": BASE + vpath,
                     "poster_url": BASE + poster, "markdown_url": BASE + url + "index.md", "agents_url": BASE + url + "AGENTS.md",
                     "duration_seconds": round(dur, 1) if dur else None,
-                    "chapters": [{"start_seconds": round(t, 1), "title": c} for t, c in ch]})
+                    "chapters": [{"start_seconds": round(t, 1), "title": c} for t, c in ch],
+                    **({"captions_url": f"{BASE}/videos/{l['captions']}"} if l.get("captions") else {}),
+                    **({"source_url": l["source_url"]} if l.get("source_url") else {})})
             else:
                 premise = s.get("premise_label") or f"The premise of {s['short']}"
                 body = f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/{skey}/">{E(s['title'])}</a> / Lesson {l['n']}</p>

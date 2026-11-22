@@ -1,0 +1,18 @@
+15 scenes, 233.72s, 7011 frames
+  01_title                 0.50s  + 8.40s
+  02_quiz                  8.90s  +24.26s
+  03_shift                33.16s  +17.85s
+  04_define               51.01s  +18.16s
+  05_four                 69.17s  +28.82s
+  06_example              97.99s  + 4.75s
+  07_files               102.74s  +23.95s
+  08_flow                126.69s  +11.16s
+  09a_cook               137.84s  + 8.40s
+  09b_kitchen            146.24s  +14.80s
+  10_enterprise          161.04s  +18.45s
+  11_path                179.50s  +25.46s
+  12_rule                204.96s  +17.85s
+  13_ask                 222.81s  + 8.40s
+  14_close               231.20s  + 2.52s
+
+-> /workspace/legacy/build/se101/01-build-the-whole-system-ai-native/SE201_01_Build-The-Whole-System-AI-Native_public.mp4
