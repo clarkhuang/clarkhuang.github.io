@@ -1,0 +1,42 @@
+# Changelog
+
+## book-v0.1 — 2026-11-22
+
+First public teaser for a smaller test audience, before a wider social launch.
+
+- Production site: learning series (AI Tips, Software Engineering 101 and 201) plus the Silicon Valley C Players preview.
+- Narrator in the story chapters is the fictional Charlie Hack (initials C.H.), with Clark Huang as author. Takedown requests: clark75-7bw9ct@mail.grokbot.com.
+- Videobook and audiobook preview (about 2:33), narrated in Clark's AI voice. Names of private people and real companies have been removed from the teaser; the book is framed as an embellished fictional dramatization.
+- OpenBook contribution path: "Contribute with your AI" and "Copy this for yourself" pages, issue templates, and contributor terms.
+- Corrections and takedown policy published. Previous editions will be kept as named tagged releases.
+
+All notable changes to the site and to *Silicon Valley C Players* are listed here. The book is versioned like software. Edition tags look like `book-v0.1`.
+
+## [Unreleased]
+
+Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
+
+- Book teaser rewrite and matching videobook preview
+- OpenBook working source, issue templates, and self-updating agent workflow
+- Site design upgrade
+
+## [v0.1-wip] — 2026-11-22
+
+What is live on [clarkhuang.github.io](https://clarkhuang.github.io) today, before the first tagged book edition.
+
+### Added
+
+- AI Tips, lessons 1–16
+- Software Engineering 101, lessons 1–10
+- Software Engineering 201, lesson 1 (lesson 2 is still an outline)
+- AI-friendly layer: `llms.txt`, `AGENTS.md` at every level, Markdown `index.md` twins, and a copy-paste “Use this page with your AI” prompt
+- Public book teaser page for *Silicon Valley C Players*
+
+### Changed
+
+- AI Tips lessons 1–2 and Software Engineering 101 lessons 1–2 re-recorded in the current Clark voice, so the series sound consistent
+
+## Unreleased: fiction framing (Nov 22, 2026)
+
+- The book is now framed as an **embellished fictional dramatization** that may or may not be based on true stories. Added `DISCLAIMER.md`, `TAKEDOWN.md`, `book-source/NAMING-POLICY.md`, a `takedown-request` issue template, and contributor terms (DCO sign-off, warranties, consent to fictionalization) in `CONTRIBUTING.md`.
+- Story-world names in the outline and issues replaced with fictional ones.

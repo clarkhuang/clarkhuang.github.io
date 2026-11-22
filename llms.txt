@@ -1,6 +1,6 @@
 # Clark Huang
 
-> Public learning pages on AI-native software workflows: short video lessons (AI Tips, Software Engineering 101 and 201) and a memoir preview, Silicon Valley C Players.
+> Public learning pages on AI-native software workflows: short video lessons (AI Tips, Software Engineering 101 and 201) and a preview of Silicon Valley C Players, a free OpenBook.
 
 The HTML pages are for people. Every page also has an `index.md` twin and an `AGENTS.md` that an AI tool can fetch directly, so you can summarize the material and navigate the site from a single link, without using a browser.
 
@@ -10,8 +10,10 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 - [Home](https://clarkhuang.github.io/index.md): about Clark Huang and the series on this site
 - [AGENTS.md](https://clarkhuang.github.io/AGENTS.md): how to navigate and what not to invent
+- [llms-full.txt](https://clarkhuang.github.io/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog
 - [lessons.json](https://clarkhuang.github.io/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations
-- [book.json](https://clarkhuang.github.io/book.json): memoir preview catalog
+- [book.json](https://clarkhuang.github.io/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters
+- [REBUILD.md](https://clarkhuang.github.io/REBUILD.md): how to rebuild production and staging
 
 ## AI Tips
 
@@ -58,12 +60,15 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Book
 
-- [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): memoir and audiobook, coming in 2027. Written and interviewed by AI.
+- [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI.
+- [Preview transcript](https://clarkhuang.github.io/book-source/preview/transcript.md): full spoken text, with timestamps
+- [Preview captions](https://clarkhuang.github.io/videos/book-preview.vtt): WebVTT for the videobook
+- [Preview chapters](https://clarkhuang.github.io/videos/book-preview-chapters.json): chapter titles and start times
+- [Preview scene scripts](https://clarkhuang.github.io/book-source/preview/scenes/): one markdown file per scene
+- [Cover brief](https://clarkhuang.github.io/book-source/cover/PROMPT.md): how to describe or rebuild the cover
 
 ## Also on this site
 
-- [Production playbook](https://clarkhuang.github.io/playbook/index.md): How the videos, narration, and these pages are made and reviewed
-- [Next AI Tips, ranked](https://clarkhuang.github.io/ai-tips/research/index.md): Candidate lessons drawn from where people trip up with AI, with sources
-- [Interview plan](https://clarkhuang.github.io/interview-plan/index.md): Working plan for the voice interviews behind the memoir and Software Engineering 201
-- [Three builds, one brief](https://clarkhuang.github.io/compare/index.md): The same site built independently by three AI models, side by side
+- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): A copy-paste prompt and GitHub issue forms for a correction, a new story, or a refactor.
+- [Copy this for yourself](https://clarkhuang.github.io/copy-this/index.md): How to fork or use this site as a template for your own OpenBook or learning series.
 

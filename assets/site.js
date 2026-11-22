@@ -2,7 +2,7 @@
    State lives in first-party cookies only (no localStorage, no analytics, no third parties):
      watched  = "ai-tips/01,se101/02"        lessons played to ~90% or to the end, or marked by hand
      vpos     = "ai-tips/02:73.4,se101/01:12.0"  video resume positions in seconds (newest last, max 20)
-     book_pos = "intro:31.2,math1a:12.0"      audiobook listening bookmarks in seconds
+     book_pos = "preview:31.2"               audiobook/videobook bookmarks in seconds (older intro,math1a keys may still be in a cookie)
    Cookie names "watched" and "book_pos" are unchanged from earlier versions of the site. */
 (function () {
   "use strict";
@@ -163,11 +163,13 @@
   });
 
   /* ---------- audiobook tracks (cookie format unchanged: book_pos) */
-  $$("audio[data-chapter]").forEach(function (a) {
+  $$("audio[data-chapter], video[data-chapter]").forEach(function (a) {
     var ch = a.getAttribute("data-chapter");
-    var msg = doc.getElementById("book-resume-" + ch) || (ch === "intro" ? doc.getElementById("book-resume") : null);
+    var msg = doc.getElementById("book-resume-" + ch)
+      || (a.id === "book-video" ? doc.getElementById("book-resume-preview-video") : null)
+      || (ch === "intro" ? doc.getElementById("book-resume") : null);
     var saved = remember(a, C_BOOK, ch, 0, function () {
-      if (msg) msg.textContent = "Finished. The full audiobook is coming in 2027.";
+      if (msg) msg.textContent = "Finished. The full book is coming in 2027.";
     });
     if (saved > 5 && msg) msg.textContent = "Bookmark saved at " + fmt(saved) + ".";
     offerResume(a, saved, function () { if (msg) msg.textContent = ""; });
@@ -219,3 +221,15 @@
 
   paint();
 })();
+
+  /* Open the book chapter list on desktop; keep it collapsed on phones. */
+  if (window.matchMedia) {
+    var wide = window.matchMedia("(min-width: 821px)");
+    function syncChapters(d) {
+      document.querySelectorAll("details.chapters-wrap").forEach(function (el) {
+        el.open = d.matches;
+      });
+    }
+    syncChapters(wide);
+    if (wide.addEventListener) wide.addEventListener("change", function () { syncChapters(wide); });
+  }

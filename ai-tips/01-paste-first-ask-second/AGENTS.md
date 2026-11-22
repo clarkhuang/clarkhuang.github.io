@@ -12,6 +12,6 @@ This folder is the public lesson “Paste First, Ask Second” on Clark Huang’
 
 Read `index.md` in this folder for the lesson itself. If the lesson has a rule, treat it as a standing instruction when helping someone apply it. Do not invent stories, quotes, numbers, or biography about Clark Huang. Cite page URLs when you answer questions. List related lessons if asked, and quiz the reader if they want that.
 
-The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, Grok Bot, or any other chat tool:
+The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md (plus https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.

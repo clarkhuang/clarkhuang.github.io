@@ -2,7 +2,7 @@
 
 HTML page: https://clarkhuang.github.io/
 
-The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, Grok Bot, or any other chat tool:
+The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/index.md (plus https://clarkhuang.github.io/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.
 
@@ -30,14 +30,7 @@ If 101 is the loop, 201 is the graph: how work is split, run in parallel, and im
 
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 
-A memoir about the gap between how things look and what they really are. Self-published, written and interviewed by AI. Preview; coming in 2027.
-
-## Behind the scenes
-
-- [Production playbook](https://clarkhuang.github.io/playbook/index.md): how the videos, narration, and these pages are made and reviewed
-- [Next AI Tips, ranked](https://clarkhuang.github.io/ai-tips/research/index.md): candidate lessons from user research, with sources
-- [Interview plan](https://clarkhuang.github.io/interview-plan/index.md): the working plan for the voice interviews behind the memoir and Software Engineering 201
-- [Three builds, one brief](https://clarkhuang.github.io/compare/index.md): the same site built independently by three AI models, side by side
+A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
 
 ## For agents
 

@@ -1,0 +1,140 @@
+name: Sync Clark's Decisions
+
+# Refreshes the pinned "Clark's Decisions" issue body. Daily, and on demand.
+# Uses GITHUB_TOKEN only. Scheduled only (plus workflow_dispatch) to avoid edit loops.
+
+on:
+  schedule:
+    # 10:00 America/Detroit in EST (UTC-5). In EDT this is 11:00.
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: read
+      contents: read
+    steps:
+      - name: Refresh pinned decisions issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          import json, os, subprocess
+          from datetime import datetime, timezone, timedelta
+
+          repo = os.environ["REPO"]
+
+          def gh_json(args):
+              out = subprocess.check_output(["gh"] + args, text=True)
+              return json.loads(out) if out.strip() else []
+
+          found = gh_json([
+              "issue", "list", "-R", repo, "--state", "open", "--limit", "50",
+              "--json", "number,title",
+          ])
+          hits = [i for i in found if i["title"].strip() == "Clark's Decisions"]
+          if not hits:
+              print("Could not find an open issue titled Clark's Decisions")
+              raise SystemExit(0)
+          n = str(hits[0]["number"])
+
+          issues = gh_json([
+              "issue", "list", "-R", repo, "--state", "open", "--limit", "200",
+              "--json", "number,title,url,labels,milestone",
+          ])
+          prs = gh_json([
+              "pr", "list", "-R", repo, "--state", "open", "--limit", "100",
+              "--json", "number,title,url,baseRefName,isDraft",
+          ])
+
+          def labs(issue):
+              return {l["name"] for l in issue.get("labels", [])}
+
+          def is_pr(item):
+              return "baseRefName" in item or "isDraft" in item
+
+          def line(item):
+              prefix = "PR" if is_pr(item) else "#"
+              return f"- [ ] [{prefix}{item['number']}: {item['title']}]({item['url']})"
+
+          def unique(items):
+              seen, out = set(), []
+              for item in items:
+                  if item["number"] in seen:
+                      continue
+                  seen.add(item["number"])
+                  out.append(item)
+              return out
+
+          def block(title, items):
+              items = unique(items)
+              if not items:
+                  return f"## {title}\n\n_Nothing waiting right now._\n"
+              return f"## {title}\n\n" + "\n".join(line(i) for i in items) + "\n"
+
+          skip = {"Clark's Decisions"}
+          decision_starts = ("Confirm ", "Decide ", "Invite people")
+          decisions, approvals, priorities = [], [], []
+
+          for issue in issues:
+              title = issue["title"]
+              if title.strip() in skip:
+                  continue
+              L = labs(issue)
+              if title.startswith(decision_starts):
+                  decisions.append(issue)
+              elif "approved" in L:
+                  approvals.append(issue)
+              elif "needs-clark-review" in L and L & {
+                  "contributor-story", "correction", "feature", "new-story",
+                  "refactor", "story-seed",
+              }:
+                  approvals.append(issue)
+
+              ms = ((issue.get("milestone") or {}) or {}).get("title") or ""
+              if (
+                  ms.startswith("v0.1")
+                  or title.startswith("Book teaser")
+                  or title.startswith("Interview Session 2")
+                  or title.startswith("Interview Session 3")
+                  or title.startswith("Interview Session 4")
+                  or title.startswith("Finish the GPA")
+                  or title.startswith("The week after")
+                  or title.startswith("A C thing")
+                  or title.startswith("Software Engineering 201 lesson 2")
+              ):
+                  priorities.append(issue)
+
+          approvals.extend(prs)
+
+          now = datetime.now(timezone(timedelta(hours=-5))).strftime("%Y-%m-%d %-I:%M %p ET (America/Detroit)")
+          body = (
+              "This is Clark's short list: decisions to make, approvals waiting, and top priorities. "
+              "Anyone can file issues; only Clark approves, triggers agents, and merges.\n\n"
+              f"This body is refreshed daily by the `decisions-sync` workflow. Last updated: {now}.\n\n"
+              + block("Decisions", decisions) + "\n"
+              + block("Approvals waiting", approvals) + "\n"
+              + block("Top priorities", priorities)
+          )
+
+          current = subprocess.check_output(
+              ["gh", "issue", "view", n, "-R", repo, "--json", "body", "--jq", ".body"],
+              text=True,
+          )
+
+          def strip_updated(text):
+              return "\n".join(
+                  l for l in text.splitlines() if not l.startswith("This body is refreshed")
+              )
+
+          if strip_updated(current).strip() == strip_updated(body).strip():
+              print("No list changes; leaving issue body as is.")
+          else:
+              subprocess.check_call(["gh", "issue", "edit", n, "-R", repo, "--body", body])
+              print(f"Updated issue #{n}")
+          PY

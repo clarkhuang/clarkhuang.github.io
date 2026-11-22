@@ -1,0 +1,7 @@
+# Add to the repo .gitignore: never commit private maps or notes
+*.private.md
+legal/
+interviews/
+
+__pycache__/
+*.pyc

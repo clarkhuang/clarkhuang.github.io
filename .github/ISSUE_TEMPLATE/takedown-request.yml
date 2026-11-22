@@ -1,0 +1,40 @@
+name: Takedown or privacy request
+description: Something in the book, site, or this repo identifies you or someone you represent, or includes private or confidential information.
+title: "Takedown request: "
+labels: ["takedown-request", "needs-clark-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for telling us. **Please don't repeat the sensitive detail here** — just point us to where it is. We acknowledge within 7 days, and credible requests are hidden while we review. See [TAKEDOWN.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). Prefer to ask privately? Email clark75-7bw9ct@mail.grokbot.com with the subject Takedown request, or say so below and leave the rest short.
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Chapter or page link, audiobook/video timestamp, or the issue/PR/comment link.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of request?
+      options:
+        - A character or scene identifies me or someone I represent
+        - Private or confidential information (personal or company)
+        - Something false that could hurt someone's reputation
+        - Copyright
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: ask
+    attributes:
+      label: What would you like changed?
+      description: Rename, change details, remove, or something else. Keep sensitive details out of this public form.
+  - type: dropdown
+    id: contact
+    attributes:
+      label: Would you like to talk privately?
+      options:
+        - No, this issue is fine
+        - Yes, please contact me privately

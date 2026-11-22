@@ -1,0 +1,92 @@
+[
+  {
+    "id": "01_disclaimer",
+    "title": "Fair warning",
+    "start_seconds": 0.0,
+    "duration_seconds": 17.47
+  },
+  {
+    "id": "02_title",
+    "title": "Silicon Valley C Players",
+    "start_seconds": 17.47,
+    "duration_seconds": 1.92
+  },
+  {
+    "id": "03_cs150",
+    "title": "CS150",
+    "start_seconds": 19.39,
+    "duration_seconds": 8.33
+  },
+  {
+    "id": "04_dream",
+    "title": "Dreaming in green",
+    "start_seconds": 27.72,
+    "duration_seconds": 11.06
+  },
+  {
+    "id": "05_same_dream",
+    "title": "The same dream",
+    "start_seconds": 38.78,
+    "duration_seconds": 4.68
+  },
+  {
+    "id": "06_math1a",
+    "title": "Math 1A",
+    "start_seconds": 43.46,
+    "duration_seconds": 12.6
+  },
+  {
+    "id": "07_grades",
+    "title": "The grades",
+    "start_seconds": 56.06,
+    "duration_seconds": 8.64
+  },
+  {
+    "id": "08_lab_partner",
+    "title": "The A-minus",
+    "start_seconds": 64.7,
+    "duration_seconds": 15.02
+  },
+  {
+    "id": "09_kept_going",
+    "title": "I just kept going",
+    "start_seconds": 79.73,
+    "duration_seconds": 6.79
+  },
+  {
+    "id": "10_first_job",
+    "title": "First job",
+    "start_seconds": 86.52,
+    "duration_seconds": 12.89
+  },
+  {
+    "id": "11_ground_level",
+    "title": "Ground level",
+    "start_seconds": 99.41,
+    "duration_seconds": 8.02
+  },
+  {
+    "id": "12_teasers",
+    "title": "Also in the book",
+    "start_seconds": 107.42,
+    "duration_seconds": 10.78
+  },
+  {
+    "id": "13_thesis",
+    "title": "AI came for the code writers first",
+    "start_seconds": 118.2,
+    "duration_seconds": 12.6
+  },
+  {
+    "id": "14_how_to_work",
+    "title": "How to work now",
+    "start_seconds": 130.8,
+    "duration_seconds": 12.29
+  },
+  {
+    "id": "15_bookend",
+    "title": "A free OpenBook",
+    "start_seconds": 143.09,
+    "duration_seconds": 16.25
+  }
+]

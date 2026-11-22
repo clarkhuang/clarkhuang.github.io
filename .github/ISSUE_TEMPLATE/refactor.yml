@@ -1,0 +1,29 @@
+name: Refactor (cleanup / improvement)
+description: A cleanup or improvement that does not change the facts of a story.
+title: "Refactor: "
+labels: ["refactor", "needs-clark-review", "openbook"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for structure, wording, typography, chapter order, or other cleanup that does not add or change facts. Clark reviews every proposal. An agent only starts work after he adds the `approved` label. The change lands on `next-revision` until he cuts the next edition.
+  - type: input
+    id: area
+    attributes:
+      label: What to improve
+      description: Chapter, page, or area of the site or book source.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's messy or unclear now
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Keep the facts the same. Say what you would change and why it helps a reader.
+    validations:
+      required: true

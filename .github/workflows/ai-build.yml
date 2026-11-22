@@ -1,0 +1,78 @@
+name: AI build
+
+# Builds an approved issue or a @claude request from clarkhuang only.
+# Opens a PR against next-revision. Never pushes to main.
+# Requires repo secret ANTHROPIC_API_KEY (Clark adds this himself)
+# and the Claude GitHub App installed on the repository.
+# Official action: anthropics/claude-code-action@v1
+# Docs: https://code.claude.com/docs/en/github-actions
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  claude:
+    if: |
+      github.actor == 'clarkhuang' && (
+        (github.event_name == 'issues' && github.event.label.name == 'approved') ||
+        (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude'))
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout next-revision
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: next-revision
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          trigger_phrase: "@claude"
+          label_trigger: "approved"
+          include_comments_by_actor: "clarkhuang"
+          base_branch: next-revision
+          branch_prefix: "claude/"
+          prompt: |
+            You are working in clarkhuang/clarkhuang.github.io, the monorepo for Clark Huang's public learning site and the OpenBook Silicon Valley C Players.
+
+            Follow AGENTS.md (especially "How to contribute") and book-source/OUTLINE.md and book-source/VERSIONING.md.
+
+            Standing rules (the playbook, said plainly):
+            - Do not invent facts, events, quotes, or biography about Clark Huang or about other people or companies.
+            - Use only approved story content: what is in the triggering issue, what Clark has already published, or what is already in the book source. If a detail is missing, leave a clearly marked gap instead of filling it in.
+            - The story chapters are an embellished fictional dramatization. Follow book-source/NAMING-POLICY.md exactly: fictional narrator (Charlie Hack), no real names of private people, companies, schools, products, or venues; change identifying details or use composites; never attach negative conduct to a traceable real person or company; no public figures by name; no confidential, NDA, customer, security, deal, or financial details. Never ask for, guess, or reconstruct the real identities behind characters.
+            - Part Five and the Foreword are nonfiction: never dramatize technical claims, numbers, or sourced facts there.
+            - Complete the fiction/legal checklist in the pull request template. If an issue carries the takedown-request label, do not build it; leave it for Clark.
+            - Keep writing public-safe. Do not add private details.
+            - No laugh or chuckle tags in any narration you draft.
+
+            Branching:
+            - Create a new working branch from next-revision.
+            - Open a pull request into next-revision, not main.
+            - Never push to main. Never merge the pull request yourself.
+
+            When you change a public page, keep its Markdown twin (index.md) and llms.txt in sync. If the site generator is in the repository, use it to regenerate those files. Then run a link check on the pages you touched.
+
+            Link the triggering issue in the pull request (for example Closes #N) and label the pull request needs-clark-review. Also label it ai-build and agent:claude if those labels exist.
+
+            If this run was triggered because Clark added the approved label, implement that issue.
+            If this run was triggered by a @claude comment from clarkhuang, follow the comment, still under the rules above.

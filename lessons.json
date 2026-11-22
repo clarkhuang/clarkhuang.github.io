@@ -1051,9 +1051,11 @@
   "agent_rules_note": "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction. Markdown twins and AGENTS.md live next to every HTML page; the site index for language models is /llms.txt.",
   "ai_readable": {
     "llms_txt": "https://clarkhuang.github.io/llms.txt",
+    "llms_full_txt": "https://clarkhuang.github.io/llms-full.txt",
     "agents_md": "https://clarkhuang.github.io/AGENTS.md",
     "home_md": "https://clarkhuang.github.io/index.md",
-    "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder."
+    "rebuild_md": "https://clarkhuang.github.io/REBUILD.md",
+    "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder. Staging lives at /staging/ and is not listed here."
   },
   "cookies": {
     "watched": "watched=<lesson id>,<lesson id>...",

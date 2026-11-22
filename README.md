@@ -1,29 +1,31 @@
 # Clark Huang
 
-Public pages for educational content on AI-native software workflows and processes.
+Public learning pages on AI-native software work, and a free OpenBook, *Silicon Valley C Players*.
 
 **Live site:** [https://clarkhuang.github.io/](https://clarkhuang.github.io/)
 
+This repository is a [template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). You can [copy it for yourself](https://clarkhuang.github.io/copy-this/) or [contribute with your AI](https://clarkhuang.github.io/contribute/).
+
 ## What's here
 
-- [AI Tips](https://clarkhuang.github.io/ai-tips/): lessons 1 and 2 available as video.
-- [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/): lessons 1 and 2 available as video.
-- [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/): coming soon, two lesson outlines.
-- [Silicon Valley C Players](https://clarkhuang.github.io/book/): memoir and audiobook preview, coming in 2027.
-- [Compare](https://clarkhuang.github.io/compare/): the same site built independently by Grok, Claude Opus 5.5 and Claude Fable 5.2, side by side.
-- [Playbook](https://clarkhuang.github.io/playbook/): how the videos, narration and pages are produced and reviewed.
-- [AI Tips research](https://clarkhuang.github.io/ai-tips/research/): twelve candidate lessons, ranked, with sources.
-- [Interview plan](https://clarkhuang.github.io/interview-plan/): the working plan behind the memoir and SE 201.
+- [AI Tips](https://clarkhuang.github.io/ai-tips/) — short video lessons on working with AI tools.
+- [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/) — fundamentals for AI-native software work.
+- [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress.
+- [Silicon Valley C Players](https://clarkhuang.github.io/book/) — a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization that may or may not be based on true stories.
 
-## For agents
+## For people and for AI
 
-- [`lessons.json`](https://clarkhuang.github.io/lessons.json): every series and lesson, with its rule, page URL, video URL and chapters.
-- [`book.json`](https://clarkhuang.github.io/book.json): the book preview's metadata.
+Every page has a Markdown twin (`index.md`) and an `AGENTS.md`. Start at [`llms.txt`](https://clarkhuang.github.io/llms.txt). There is a copy-paste prompt at the top of each page.
 
-## About this repository
+- [`lessons.json`](https://clarkhuang.github.io/lessons.json): every series and lesson, with its rule, page URL, and video URL.
+- [`book.json`](https://clarkhuang.github.io/book.json): the book preview catalog.
 
-A static GitHub Pages site served from the `main` branch root: plain HTML, one CSS file and one small script (`assets/site.js`). Lesson videos live in `videos/`.
+## How this project runs
 
-Watched progress (`watched` cookie) and the audiobook bookmark (`book_pos` cookie) are first-party cookies stored only in the visitor's browser. There are no analytics and no third-party scripts.
+Issues, pull requests, and tagged editions work like a software project. Anyone can open an issue from day one. Only Clark Huang approves work, starts the build agents, and merges. See [CONTRIBUTING.md](CONTRIBUTING.md), [DISCLAIMER.md](DISCLAIMER.md), [TAKEDOWN.md](TAKEDOWN.md), and [book-source/VERSIONING.md](book-source/VERSIONING.md).
+
+The live site is static: plain HTML, CSS, and a small script (`assets/site.js`), served from the `main` branch root. The generator is in [`sitegen/`](sitegen/). Watched progress and bookmarks are first-party cookies in your browser. There are no analytics and no third-party scripts.
 
 This entire site and its content were created by AI processes, directed by Clark Huang.
+
+Book text is licensed [CC BY-NC-SA 4.0](book-source/LICENSE).

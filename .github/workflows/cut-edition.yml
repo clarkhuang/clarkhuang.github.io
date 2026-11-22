@@ -1,0 +1,105 @@
+name: Cut edition
+
+# Manual only. Clark approves cutting the next book revision:
+# tag it, open a PR from next-revision into main, and create a
+# GitHub Release that can hold that edition's audiobook and videobook.
+# Never pushes to main. Only clarkhuang can run it.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Edition version without the book-v prefix, for example 0.1 or 1.0"
+        required: true
+        type: string
+      title:
+        description: "Release title (optional). Default: Silicon Valley C Players vVERSION"
+        required: false
+        type: string
+      notes:
+        description: "Release notes"
+        required: false
+        type: string
+      open_pr_to_main:
+        description: "Open a pull request from next-revision into main for Clark to merge"
+        required: true
+        type: boolean
+        default: true
+      create_release:
+        description: "Create tag book-vVERSION on next-revision and a GitHub Release (prior releases are left in place)"
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  cut:
+    if: github.actor == 'clarkhuang'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout next-revision
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: next-revision
+
+      - name: Cut the edition
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ inputs.version }}
+          REL_TITLE: ${{ inputs.title }}
+          NOTES: ${{ inputs.notes }}
+          OPEN_PR: ${{ inputs.open_pr_to_main }}
+          CREATE_RELEASE: ${{ inputs.create_release }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          VERSION="${VERSION#book-v}"
+          VERSION="${VERSION#v}"
+          TAG="book-v${VERSION}"
+          TITLE="${REL_TITLE:-Silicon Valley C Players v${VERSION}}"
+          git fetch origin main next-revision
+
+          if [ "$CREATE_RELEASE" = "true" ]; then
+            if gh release view "$TAG" -R "$REPO" >/dev/null 2>&1; then
+              echo "Release $TAG already exists; leaving it in place."
+            else
+              git tag -a "$TAG" -m "$TITLE"
+              git push origin "$TAG"
+              ASSETS=()
+              if [ -d book-source/releases/"$TAG" ]; then
+                while IFS= read -r f; do
+                  ASSETS+=("$f")
+                done < <(find book-source/releases/"$TAG" -type f)
+              fi
+              NOTE_FILE="$(mktemp)"
+              {
+                echo "${NOTES:-Edition $TAG of Silicon Valley C Players.}"
+                echo
+                echo "Previous editions stay available as earlier tags and GitHub Releases."
+                echo "The published site updates when the next-revision pull request is merged into main."
+              } > "$NOTE_FILE"
+              if [ "${#ASSETS[@]}" -gt 0 ]; then
+                gh release create "$TAG" -R "$REPO" --title "$TITLE" --notes-file "$NOTE_FILE" "${ASSETS[@]}"
+              else
+                gh release create "$TAG" -R "$REPO" --title "$TITLE" --notes-file "$NOTE_FILE"
+                echo "No media files found under book-source/releases/$TAG; created the release without attachments. Attach the audiobook and videobook after they are rendered for this approved cut."
+              fi
+            fi
+          fi
+
+          if [ "$OPEN_PR" = "true" ]; then
+            existing="$(gh pr list -R "$REPO" --base main --head next-revision --state open --json number --jq '.[0].number // empty')"
+            if [ -n "$existing" ]; then
+              echo "A pull request from next-revision into main is already open: #$existing"
+            else
+              body="Clark approved cutting edition \`$TAG\`.
+
+This pull request publishes the next-revision branch to main (the live site).
+Audiobook and videobook assets belong on the GitHub Release for \`$TAG\`, which keeps prior editions in place.
+Do not force-push. After merge, the book page should link Previous editions to the Releases list."
+              gh pr create -R "$REPO" --base main --head next-revision --title "Cut edition $TAG" --body "$body"
+            fi
+          fi

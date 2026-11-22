@@ -1,0 +1,52 @@
+name: Share a story (feature)
+description: A new story, a story Clark may have forgotten, or a new chapter idea.
+title: "Story: "
+labels: ["feature", "new-story", "contributor-story", "story-seed", "needs-clark-review", "openbook"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome — anyone can share a story from day one. Clark reviews every submission. An agent only starts work after he adds the `approved` label, and nothing is published until he merges the pull request into the `next-revision` branch.
+  - type: input
+    id: who
+    attributes:
+      label: How you know this story
+      description: Your relationship to the story, for example "I was on that team". No real names of other people.
+    validations:
+      required: true
+  - type: input
+    id: when_where
+    attributes:
+      label: When and where
+      description: Approximate time and place.
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: The story
+      description: What happened, in your own words. Describe people and companies by role (my manager, a payments startup), not by name. Don't invent details you're unsure of; the author does the embellishing.
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter (if you know it)
+      description: Optional. See book-source/OUTLINE.md.
+  - type: input
+    id: credit
+    attributes:
+      label: Credit (optional)
+      description: The name or handle to list under Contributors. You won't be named as a character; the book is fiction and everyone in it is renamed.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Contributor terms
+      description: See CONTRIBUTING.md (Contributor terms).
+      options:
+        - label: I have the right to share this, and it contains no confidential, NDA, customer, security, or deal information.
+          required: true
+        - label: I haven't used real names of private people, companies, or venues, and I'm not knowingly stating false facts about anyone.
+          required: true
+        - label: I agree this may be renamed, fictionalized, combined, exaggerated, rewritten, or not used, and I license it under the project's terms in CONTRIBUTING.md.
+          required: true

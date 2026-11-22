@@ -1,0 +1,70 @@
+{
+  "id": "book-preview-arc",
+  "title": "Silicon Valley C Players \u2014 preview",
+  "voice": "4lbl0krw73vf",
+  "language": "en",
+  "speed": 1.05,
+  "scenes": [
+    {
+      "id": "01_disclaimer",
+      "text": "Fair warning. [pause] This is an embellished fictional dramatization that <emphasis>may or may not</emphasis> be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously."
+    },
+    {
+      "id": "02_title",
+      "text": "Silicon Valley C Players."
+    },
+    {
+      "id": "03_cs150",
+      "text": "CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night."
+    },
+    {
+      "id": "04_dream",
+      "text": "And at night, I dreamed in green. [pause] Black screens, glowing green lines, like <emphasis>Tron</emphasis>. AND gates, XOR gates, NAND gates, waiting to be burned into a chip."
+    },
+    {
+      "id": "05_same_dream",
+      "text": "<emphasis>All three of us</emphasis> had the same dream. Real life bled into our dreams."
+    },
+    {
+      "id": "06_math1a",
+      "text": "College was not all dreams. Math 1A. The professor said we were all <emphasis>stupid American kids</emphasis>. First midterm: Cs and Ds. For everybody. <slow>No curve.</slow> It hit hard."
+    },
+    {
+      "id": "07_grades",
+      "text": "A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus."
+    },
+    {
+      "id": "08_lab_partner",
+      "text": "The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was <emphasis>livid</emphasis>. I'm not saying I was smarter than he was. He was brilliant.",
+      "title": "The A-minus"
+    },
+    {
+      "id": "09_kept_going",
+      "text": "<slow>It's all relative, how smart you are.</slow> [pause] <emphasis>I just kept going.</emphasis> And I kept doing my best."
+    },
+    {
+      "id": "10_first_job",
+      "text": "I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin."
+    },
+    {
+      "id": "11_ground_level",
+      "text": "This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see."
+    },
+    {
+      "id": "12_teasers",
+      "text": "Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five."
+    },
+    {
+      "id": "13_thesis",
+      "text": "I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>. A.I. came after the code writers first. [pause] In my view, A.I. now writes essentially all of the code."
+    },
+    {
+      "id": "14_how_to_work",
+      "text": "So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use A.I."
+    },
+    {
+      "id": "15_bookend",
+      "text": "The book begins with that green-screen dream. It ends by dreaming about A.I. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written.\n\nSilicon Valley C Players. Coming in 2027."
+    }
+  ]
+}

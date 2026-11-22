@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the site
+    url: https://clarkhuang.github.io
+    about: The public learning site and book teaser.
+  - name: How to contribute
+    url: https://clarkhuang.github.io/AGENTS.md
+    about: How to file a correction, a new story, or a refactor.
+  - name: Privacy, identification, or takedown
+    url: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md
+    about: Something identifies you or includes private or confidential information.

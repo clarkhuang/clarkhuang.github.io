@@ -1,0 +1,44 @@
+name: Chapter task
+description: Track writing or interview work on a book chapter (mostly for maintainers).
+title: "Chapter: "
+labels: ["chapter", "openbook"]
+body:
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter number and title
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: Part
+      options:
+        - Front matter
+        - Part 1
+        - Part 2
+        - Part 3
+        - Part 4
+        - Part 5
+        - Back matter
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - NEED
+        - PARTIAL
+        - HAVE
+    validations:
+      required: true
+  - type: textarea
+    id: hook
+    attributes:
+      label: One-line hook
+  - type: textarea
+    id: needed
+    attributes:
+      label: What's still needed
+      description: Interviews, decisions, or writing still outstanding. Public-safe wording only.

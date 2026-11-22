@@ -1,0 +1,75 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main, next-revision]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (production)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: prod
+      - name: Checkout next-revision (staging)
+        uses: actions/checkout@v4
+        with:
+          ref: next-revision
+          path: staging-src
+      - name: Compose production at / and staging at /staging/
+        run: |
+          set -euo pipefail
+          # Prefer the compose script from main (production). Fall back to
+          # next-revision, then to this run's default workspace if present.
+          SCRIPT=""
+          for candidate in prod/sitegen/compose_pages.py staging-src/sitegen/compose_pages.py; do
+            if [ -f "$candidate" ]; then
+              SCRIPT="$candidate"
+              break
+            fi
+          done
+          if [ -z "$SCRIPT" ]; then
+            echo "compose_pages.py not found on main or next-revision" >&2
+            exit 1
+          fi
+          python3 "$SCRIPT" --prod prod --staging-src staging-src --out _site
+          # Safety checks
+          test -f _site/index.html
+          test -f _site/staging/index.html
+          grep -q 'Disallow: /staging/' _site/robots.txt
+          grep -q 'noindex' _site/staging/index.html
+          grep -q 'Staging preview' _site/staging/index.html
+          # Production robots and sitemap must not advertise staging pages
+          if grep -q 'clarkhuang.github.io/staging' _site/sitemap.xml _site/llms.txt 2>/dev/null; then
+            echo "production sitemap or llms.txt mentions /staging/" >&2
+            exit 1
+          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
