@@ -95,11 +95,16 @@ jobs:
             if [ -n "$existing" ]; then
               echo "A pull request from next-revision into main is already open: #$existing"
             else
-              body="Clark approved cutting edition \`$TAG\`.
-
-This pull request publishes the next-revision branch to main (the live site).
-Audiobook and videobook assets belong on the GitHub Release for \`$TAG\`, which keeps prior editions in place.
-Do not force-push. After merge, the book page should link Previous editions to the Releases list."
-              gh pr create -R "$REPO" --base main --head next-revision --title "Cut edition $TAG" --body "$body"
+              body="$(printf '%s\n' \
+                "Clark approved cutting edition \`$TAG\`." \
+                "" \
+                "This pull request publishes the next-revision branch to main (the live site)." \
+                "Audiobook and videobook assets belong on the GitHub Release for \`$TAG\`, which keeps prior editions in place." \
+                "Do not force-push. After merge, the book page should link Previous editions to the Releases list.")"
+              if ! gh pr create -R "$REPO" --base main --head next-revision --title "Cut edition $TAG" --body "$body"; then
+                url="https://github.com/${REPO}/compare/main...next-revision?expand=1"
+                echo "::warning::Could not open the pull request automatically (GitHub Actions may not be allowed to create pull requests in this repository). Open it here: $url"
+                echo "Open the edition pull request: $url" >> "$GITHUB_STEP_SUMMARY"
+              fi
             fi
           fi
