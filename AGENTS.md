@@ -21,7 +21,7 @@ Start here:
 
 - **AI Tips** — short lessons on working with AI tools. Index: https://clarkhuang.github.io/ai-tips/index.md
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
-- **Software Engineering 201** — the next series, in progress. Index: https://clarkhuang.github.io/software-engineering-201/index.md
+- **Software Engineering 201: From Loops to Building Systems** — the next series, in progress: from single AI loops to designing and running whole systems of work. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
