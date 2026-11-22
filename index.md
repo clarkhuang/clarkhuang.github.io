@@ -24,7 +24,7 @@ How to think about building software now that AI agents do much of the building.
 
 ### [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/index.md)
 
-From loops to building systems: 101 gets one piece of work right with an AI loop. 201 designs and runs whole systems of work, and turns the loops you repeat into skills, routines, pipelines, and agents.
+From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 builds whole apps and systems AI-native, and climbs to agents that operate enterprise systems with governance, permissions, and an audit trail.
 
 1 of 8 lessons available.
 

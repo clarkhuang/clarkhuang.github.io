@@ -112,6 +112,13 @@ def load_scenes(script_path):
     except (OSError, ValueError):
         return []
 
+def chapter_case(c):
+    """Sentence case for an ALL-CAPS chapter label, keeping acronyms such as AI and SE upper case."""
+    out = c.capitalize()
+    for w in ("ai", "se", "llm", "llms", "mcp", "api"):
+        out = re.sub(rf"\b{w}\b", w.upper(), out, flags=re.I)
+    return out
+
 def transcript_md(script_path):
     scenes = load_scenes(script_path)
     if not scenes:
@@ -121,7 +128,7 @@ def transcript_md(script_path):
     for sc in scenes:
         ch = (sc.get("chapter") or "").strip()
         if ch and ch != last_ch:
-            lines += [f"### {ch.capitalize()}", ""]
+            lines += [f"### {chapter_case(ch)}", ""]
             last_ch = ch
         text = spoken(sc.get("text") or "")
         if text:
@@ -173,6 +180,10 @@ def write_lesson_twins(site, skey, series, lesson):
         poster = lesson.get("_poster")
         if poster:
             bits += [f"- Poster: {BASE}{poster}"]
+        if lesson.get("captions"):
+            bits += [f"- Captions (WebVTT): {BASE}/videos/{lesson['captions']}"]
+        if lesson.get("source_url"):
+            bits += [f"- How it was built (script source, facts, prompts): {lesson['source_url']}"]
         ch = lesson.get("_ch") or []
         if ch:
             bits += ["", "## Chapters", ""] + [f"- [{mmss(t)}] {c}" for t, c in ch]
@@ -471,7 +482,7 @@ Start here:
 
 - **AI Tips** — short lessons on working with AI tools. Index: https://clarkhuang.github.io/ai-tips/index.md
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
-- **Software Engineering 201: From Loops to Building Systems** — the next series, in progress: from single AI loops to designing and running whole systems of work. Index: https://clarkhuang.github.io/software-engineering-201/index.md
+- **Software Engineering 201: From Loop to Enterprise Systems** — the next series, in progress: from one AI loop to whole apps and systems built AI-native, ending with agents that operate enterprise systems. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
