@@ -10,7 +10,7 @@ This repository is a [template](https://docs.github.com/en/repositories/creating
 
 - [AI Tips](https://clarkhuang.github.io/ai-tips/) — short video lessons on working with AI tools.
 - [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/) — fundamentals for AI-native software work.
-- [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress.
+- [Software Engineering 201: From Loops to Building Systems](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress: from single AI loops to designing and running whole systems of work (lesson 1 is out; lessons 2–8 are outlines).
 - [Silicon Valley C Players](https://clarkhuang.github.io/book/) — a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization that may or may not be based on true stories.
 
 ## For people and for AI
@@ -19,6 +19,10 @@ Every page has a Markdown twin (`index.md`) and an `AGENTS.md`. Start at [`llms.
 
 - [`lessons.json`](https://clarkhuang.github.io/lessons.json): every series and lesson, with its rule, page URL, and video URL.
 - [`book.json`](https://clarkhuang.github.io/book.json): the book preview catalog.
+- [`llms.txt`](https://clarkhuang.github.io/llms.txt) and [`llms-full.txt`](https://clarkhuang.github.io/llms-full.txt): catalogs and full text for language models.
+- [Ask the Book](https://clarkhuang.github.io/ask/): in-browser search and “Ask your AI” prompts.
+- [Credits](https://clarkhuang.github.io/credits/): contributors, by GitHub handle ([`credits.json`](https://clarkhuang.github.io/credits.json)).
+- GitMCP (read-only, third-party): `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. See [the MCP section](https://clarkhuang.github.io/contribute/#mcp).
 
 ## How this project runs
 

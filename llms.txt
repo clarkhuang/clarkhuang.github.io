@@ -53,10 +53,16 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Software Engineering 201
 
-- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): If 101 is the loop, 201 is the graph: how work is split, run in parallel, and improved between runs.
+- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): From loops to building systems: 101 gets one piece of work right with an AI loop. 201 designs and runs whole systems of work, and turns the loops you repeat into skills, routines, pipelines, and agents.
 
-- [Lesson 1: From Loop to Graph](https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md): A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
-- [Lesson 2: Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline): “And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other.
+- [Lesson 1: From Loop to Graph](https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md): The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph decides which pieces exist and which can run at the same time.…
+- [Lesson 2: Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline): “And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other. Find what really has to come first, and everything else can start now.
+- [Lesson 3: Run Loops in Parallel](https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/index.md) (outline): Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, and plan the moment the pieces come back together.
+- [Lesson 4: Where a Person Decides](https://clarkhuang.github.io/software-engineering-201/04-where-a-person-decides/index.md) (outline): A system still needs people, just not everywhere. Put a person at the few points where judgment, risk, or taste matter, make those stops easy to review, and let the rest run without waiting.
+- [Lesson 5: Feedback That Improves Every Run](https://clarkhuang.github.io/software-engineering-201/05-feedback-that-improves-every-run/index.md) (outline): A system gets better only if each run teaches the next one. Keep what went wrong, what a reviewer fixed, and what it cost, and feed it back into the brief, the checks, and the plan.
+- [Lesson 6: Turn a Repeated Loop into a Skill](https://clarkhuang.github.io/software-engineering-201/06-turn-a-loop-into-a-skill/index.md) (outline): The third time you explain the same job, write it down once: the steps, the checks, and the traps. A good skill lets any person or agent run the loop the same way, without starting from scratch.
+- [Lesson 7: Routines and Pipelines](https://clarkhuang.github.io/software-engineering-201/07-routines-and-pipelines/index.md) (outline): Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, and make every step leave a record you can check.
+- [Lesson 8: Agents That Run the System](https://clarkhuang.github.io/software-engineering-201/08-agents-that-run-the-system/index.md) (outline): The last step is handing a whole system to an agent: the graph, the skills, the routines, and the points where a person decides. Give it a clear job, clear limits, and a way to show its work, and you own the outcome.
 
 ## Book
 
@@ -69,6 +75,9 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Also on this site
 
-- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): A copy-paste prompt and GitHub issue forms for a correction, a new story, or a refactor.
+- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): A copy-paste prompt, GitHub issue forms, and a Connect your AI (MCP) section.
 - [Copy this for yourself](https://clarkhuang.github.io/copy-this/index.md): How to fork or use this site as a template for your own OpenBook or learning series.
+- [Ask the Book](https://clarkhuang.github.io/ask/index.md): In-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI.
+- [Contributor credits](https://clarkhuang.github.io/credits/index.md): People who have contributed, listed by GitHub handle.
+- [search-index.json](https://clarkhuang.github.io/search-index.json): Local search index used by Ask the Book.
 

@@ -19,27 +19,27 @@ A portrait book cover (864 × 1152 pixels, 3:4) on a deep navy background. Acros
 
 Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
-I still remember the dream. CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night. And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip. All three of us had the same dream. Real life bled into our dreams.
+This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.
 
-College was not all dreams. Math 1A. The professor said we were all stupid American kids. First midterm: Cs and Ds. For everybody. No curve. It hit hard.
+Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus. The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was livid. I'm not saying I was smarter than he was. He was brilliant. It's all relative, how smart you are. I just kept going. And I kept doing my best.
+From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.
 
-I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin. This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.
+A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.
 
-Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.
+The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
+It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
 
-This book is a free OpenBook. The name is a metaphor: I want to be an open book about this, the way open-source software is open. When version one is ready, anyone who recognizes a story, or is related to me, can add their side, and stories I may have forgotten.
+Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
 
-The book begins with that green-screen dream. It ends by dreaming about AI. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
 ## From the back cover
 
-An embellished fictional dramatization that begins in a college lab, dreaming in green, and ends by dreaming about AI. A free OpenBook, like open-source software.
+An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.
 
-Math 1A. Stupid American kids. Cs and Ds. No curve. Then a first job at seventy thousand dollars in the dot-com boom, and a three-million-dollar exit at twenty-five. Some of it may be based on true stories. Some of it definitely isn't.
+This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.
 
 The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.
 
@@ -47,21 +47,21 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Preview chapters
 
-- Fair warning (0:00) — id `01_disclaimer`, 17.47s
-- Silicon Valley C Players (0:17) — id `02_title`, 1.92s
-- CS150 (0:19) — id `03_cs150`, 8.33s
-- Dreaming in green (0:27) — id `04_dream`, 11.06s
-- The same dream (0:38) — id `05_same_dream`, 4.68s
-- Math 1A (0:43) — id `06_math1a`, 12.6s
-- The grades (0:56) — id `07_grades`, 8.64s
-- The A-minus (1:04) — id `08_lab_partner`, 15.02s
-- I just kept going (1:19) — id `09_kept_going`, 6.79s
-- First job (1:26) — id `10_first_job`, 12.89s
-- Ground level (1:39) — id `11_ground_level`, 8.02s
-- Also in the book (1:47) — id `12_teasers`, 10.78s
-- AI came for the code writers first (1:58) — id `13_thesis`, 12.6s
-- How to work now (2:10) — id `14_how_to_work`, 12.29s
-- A free OpenBook (2:23) — id `15_bookend`, 16.25s
+- Fair warning (0:00) — id `01_disclaimer`, 17.78s
+- Silicon Valley C Players (0:17) — id `02_title`, 2.23s
+- The middle of the book (0:20) — id `03_middle`, 7.1s
+- The A-player myth (0:27) — id `04_myth`, 8.93s
+- The straight-line myth (0:36) — id `05_straight`, 10.15s
+- What people saw (0:46) — id `05_outside`, 10.46s
+- A C player (0:56) — id `06_c_player`, 11.98s
+- Platforms, not products (1:08) — id `07_platforms`, 11.06s
+- Building blocks (1:19) — id `08_blocks`, 11.06s
+- I just kept going (1:30) — id `09_kept_going`, 8.93s
+- The turn (1:39) — id `10_turn`, 7.73s
+- The thesis (1:47) — id `11_thesis`, 5.88s
+- How to work now (1:53) — id `12_how_to`, 11.38s
+- The story is still being written (2:04) — id `13_bookend`, 16.25s
+- Coming in 2027 (2:20) — id `14_close`, 3.74s
 
 Captions: https://clarkhuang.github.io/videos/book-preview.vtt
 Scene scripts: https://clarkhuang.github.io/book-source/preview/scenes/
@@ -69,7 +69,8 @@ How to rebuild the preview: https://clarkhuang.github.io/book-source/preview/REB
 
 # Silicon Valley C Players — preview transcript
 
-Full spoken text of the audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
+Full spoken text of the mid-book audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
+This excerpt is from Part Three and the turn into Part Four: C players, the gap between applause and the work, platforms over products, and the claim that AI came for the code writers first.
 
 ## Fair warning (0:00)
 
@@ -79,57 +80,57 @@ Fair warning. This is an embellished fictional dramatization that may or may not
 
 Silicon Valley C Players.
 
-## CS150 (0:19)
+## The middle of the book (0:20)
 
-CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night.
+This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.
 
-## Dreaming in green (0:27)
+## The A-player myth (0:27)
 
-And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip.
+Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work.
 
-## The same dream (0:38)
+## The straight-line myth (0:36)
 
-All three of us had the same dream. Real life bled into our dreams.
+The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-## Math 1A (0:43)
+## What people saw (0:46)
 
-College was not all dreams. Math 1A. The professor said we were all stupid American kids. First midterm: Cs and Ds. For everybody. No curve. It hit hard.
+From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.
 
-## The grades (0:56)
+## A C player (0:56)
 
-A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus.
+A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.
 
-## The A-minus (1:04)
+## Platforms, not products (1:08)
 
-The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was livid. I'm not saying I was smarter than he was. He was brilliant.
+The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that.
 
-## I just kept going (1:19)
+## Building blocks (1:19)
 
-It's all relative, how smart you are. I just kept going. And I kept doing my best.
+You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-## First job (1:26)
+## I just kept going (1:30)
 
-I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin.
+It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
 
-## Ground level (1:39)
+## The turn (1:39)
 
-This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.
+Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest.
 
-## Also in the book (1:47)
+## The thesis (1:47)
 
-Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.
+A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
 
-## AI came for the code writers first (1:58)
-
-I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest. A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
-
-## How to work now (2:10)
+## How to work now (1:53)
 
 So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use A.I.
 
-## A free OpenBook (2:23)
+## The story is still being written (2:04)
 
-The book begins with that green-screen dream. It ends by dreaming about A.I. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written. Silicon Valley C Players. Coming in 2027.
+The book begins with a green-screen dream. It ends by dreaming about A.I. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+
+## Coming in 2027 (2:20)
+
+Silicon Valley C Players. Coming in 2027.
 
 ## Lessons
 
@@ -199,13 +200,23 @@ Index: https://clarkhuang.github.io/software-engineering-101/index.md
 
 Index: https://clarkhuang.github.io/software-engineering-201/index.md
 
-- Lesson 1: [From Loop to Graph](https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md) — A loop makes one piece of work correct. A graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
+- Lesson 1: [From Loop to Graph](https://clarkhuang.github.io/software-engineering-201/01-from-loop-to-graph/index.md) — The first step from a loop to a system: before a job with more than one part, draw the work as a graph. A loop makes one piece of work correct. The graph decides which pieces exist and which can run at the same time. Built around how three Software Engineering 101 lessons were made side by side, each with its own review.
   - Rule: Before any job with more than one part, write down the pieces, and which can run at the same time. Then run each piece as its own loop, checked on its own.
-- Lesson 2: [Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline) — “And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other.
+- Lesson 2: [Find the Real Dependencies](https://clarkhuang.github.io/software-engineering-201/02-find-the-real-dependencies/index.md) (outline) — “And then” is not a dependency. If nothing crosses between two steps, they don't need to wait for each other. Find what really has to come first, and everything else can start now.
+- Lesson 3: [Run Loops in Parallel](https://clarkhuang.github.io/software-engineering-201/03-run-loops-in-parallel/index.md) (outline) — Once the pieces are independent, run them at the same time, each as its own loop with its own check. Give every run a clear brief and a clear finish line, and plan the moment the pieces come back together.
+- Lesson 4: [Where a Person Decides](https://clarkhuang.github.io/software-engineering-201/04-where-a-person-decides/index.md) (outline) — A system still needs people, just not everywhere. Put a person at the few points where judgment, risk, or taste matter, make those stops easy to review, and let the rest run without waiting.
+- Lesson 5: [Feedback That Improves Every Run](https://clarkhuang.github.io/software-engineering-201/05-feedback-that-improves-every-run/index.md) (outline) — A system gets better only if each run teaches the next one. Keep what went wrong, what a reviewer fixed, and what it cost, and feed it back into the brief, the checks, and the plan.
+- Lesson 6: [Turn a Repeated Loop into a Skill](https://clarkhuang.github.io/software-engineering-201/06-turn-a-loop-into-a-skill/index.md) (outline) — The third time you explain the same job, write it down once: the steps, the checks, and the traps. A good skill lets any person or agent run the loop the same way, without starting from scratch.
+- Lesson 7: [Routines and Pipelines](https://clarkhuang.github.io/software-engineering-201/07-routines-and-pipelines/index.md) (outline) — Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, and make every step leave a record you can check.
+- Lesson 8: [Agents That Run the System](https://clarkhuang.github.io/software-engineering-201/08-agents-that-run-the-system/index.md) (outline) — The last step is handing a whole system to an agent: the graph, the skills, the routines, and the points where a person decides. Give it a clear job, clear limits, and a way to show its work, and you own the outcome.
 
 ## Also on this site
 
 - [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md)
 - [Copy this for yourself](https://clarkhuang.github.io/copy-this/index.md)
+- [Ask the Book](https://clarkhuang.github.io/ask/index.md)
+- [Contributor credits](https://clarkhuang.github.io/credits/index.md)
+- GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io
+- Search index: https://clarkhuang.github.io/search-index.json
 
 Do not invent stories or biography beyond this file. Do not identify real people or companies behind the fictional names. Staging (https://clarkhuang.github.io/staging/) is a preview of the next-revision branch and is not the live site.

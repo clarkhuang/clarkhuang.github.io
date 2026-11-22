@@ -113,7 +113,7 @@ FOOT_LINKS = [("GitHub","https://github.com/clarkhuang"),("LinkedIn","https://ww
 
 # Public nav only. Behind-the-scenes pages (compare, playbook, research, interview plan) are not published.
 NAV = [("Home","/",""),("AI Tips","/ai-tips/","ai-tips"),("SE 101","/software-engineering-101/","software-engineering-101"),
-       ("SE 201","/software-engineering-201/","software-engineering-201"),("Book","/book/","book")]
+       ("SE 201","/software-engineering-201/","software-engineering-201"),("Book","/book/","book"),("Ask","/ask/","ask")]
 NAV_EXTRA = []
 
 def nav_items():
@@ -215,7 +215,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/llms.txt", BASE + "/llms-full.txt"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -239,6 +239,11 @@ def page(path, title, desc, body, current="", main_class=""):
     canon = page_url(path)
     main_attr = f' class="{main_class}"' if main_class else ""
     share = BASE + "/assets/share.jpg"
+    extra_head = extra_js = ""
+    if current in {"book", "ask", "credits", "contribute"} or main_class == "lesson":
+        extra_head = '  <link rel="stylesheet" href="/assets/ask-book.css">\n'
+    if current in {"book", "ask"}:
+        extra_js = '  <script src="/assets/ask-book.js" defer></script>\n'
     doc = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -263,7 +268,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <meta name="twitter:image" content="{share}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 {font_links()}  <link rel="stylesheet" href="/styles.css">
-{AF.head_links()}</head>
+{extra_head}{AF.head_links()}</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -282,12 +287,12 @@ def page(path, title, desc, body, current="", main_class=""):
       <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
       <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
       <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
-      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/book/">Book preview</a></nav>
+      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
 {AF.footer_twins()}      <nav class="footer-links" aria-label="Elsewhere">{links}</nav>
     </div>
   </footer>
   <script src="/assets/site.js" defer></script>
-</body>
+{extra_js}</body>
 </html>
 """
     full = os.path.join(SITE, path)
@@ -342,7 +347,7 @@ def build():
             if l["video"]:
                 l["_vpath"], l["_poster"], l["_dur"], l["_ch"] = media_info(l, old)
         avail = [l for l in s["lessons"] if l["video"]]
-        sj = {"id": s["key"], "title": s["title"], "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
+        sj = {"id": s["key"], "title": s["title"], **({"subtitle": s["subtitle"]} if s.get("subtitle") else {}), "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
               "agents_url": f"{BASE}/{skey}/AGENTS.md",
               "status": "in progress" if avail else "coming soon",
               "summary": s["intro"], "lessons": []}
@@ -462,12 +467,13 @@ def build():
         total = len(s["lessons"]) + len(s["soon"])
         body = f"""      <p class="crumbs"><a href="/">Home</a> / {E(s['title'])}</p>
       <h1>{E(s['title'])} {status}</h1>
+      {('<p class="label">' + E(s['subtitle']) + '</p>') if s.get('subtitle') else ''}
       <p class="lede">{E(s['intro'])}</p>
       <div class="rule-line"></div>
       <div class="section-head"><h2>Lessons</h2><p class="section-note">{len(avail)} of {total} available</p></div>
       {prog}
       <ol class="lessons">{rows}</ol>"""
-        page(f"{skey}/index.html", f"{s['title']} — Clark Huang", s["intro"][:155], body, skey)
+        page(f"{skey}/index.html", f"{s['title']}" + (f": {s['subtitle']}" if s.get("subtitle") else "") + " — Clark Huang", s["intro"][:155], body, skey)
         AF.write_series_twins(SITE, skey, s)
 
     # index
@@ -483,7 +489,7 @@ def build():
         if avail:
             badge = '<span class="badge">Available</span>' if complete else '<span class="badge">In progress</span>'
             meta = f'<span class="card-num">{len(avail)} of {total} lessons</span>{badge}'
-            prog = f'<p class="progress">{plural(len(avail), "video lesson")}' + (f', {plural(len(outlines), "coming soon")}' if outlines else "") + '</p>'
+            prog = f'<p class="progress">{plural(len(avail), "video lesson")}' + (f', {f"{len(outlines)} coming soon"}' if outlines else "") + '</p>'
             prog += meter([l["id"] for l in avail], s["title"] + " lessons watched")
             links = upnext(avail, lambda l, skey=skey: f"/{skey}/{l['slug']}/", "upnext card-upnext")
         else:
@@ -508,14 +514,25 @@ def build():
         <div class="section-head"><h2 id="series-heading">Learn</h2><p class="section-note">Short video lessons on AI-native software work. Your progress is remembered on this device. <button type="button" class="reset" data-reset-progress hidden>Reset progress</button><span class="status" role="status" data-status></span></p></div>
         <div class="cards">{cards}</div>
         <p class="section-note">This site is also an open project. <a href="/contribute/">Contribute with your AI</a>, or <a href="/copy-this/">copy this for yourself</a>.</p>
+      </section>
+      <section aria-labelledby="ask-connect-heading">
+        <div class="section-head"><h2 id="ask-connect-heading">Ask, connect, contribute</h2><p class="section-note">Search the lessons and the book preview, or hook your own AI to this site.</p></div>
+        <div class="cards">
+          <a class="card" href="/ask/"><div class="card-meta"><span class="card-num">Ask</span></div><h3>Ask the Book</h3><p>Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.</p><span class="card-cta">Ask a question</span></a>
+          <a class="card" href="/contribute/#mcp"><div class="card-meta"><span class="card-num">MCP</span></div><h3>Connect your AI</h3><p>A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.</p><span class="card-cta">Get the config</span></a>
+          <a class="card" href="/credits/"><div class="card-meta"><span class="card-num">OpenBook</span></div><h3>Contributor credits</h3><p>People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.</p><span class="card-cta">See the list</span></a>
+        </div>
       </section>"""
     page("index.html", "Clark Huang — AI-native software learning",
          "Public learning pages by Clark Huang on AI-native software workflows: AI Tips, Software Engineering 101 and 201, and Silicon Valley C Players, a free OpenBook (an embellished fictional dramatization).", body, "")
     AF.write_home_twin(SITE, SERIES, BIO)
     AF.write_root_agents(SITE)
     AF.write_llms_txt(SITE, SERIES, extras=[
-        ("contribute/index.md", "Contribute with your AI", "A copy-paste prompt and GitHub issue forms for a correction, a new story, or a refactor."),
+        ("contribute/index.md", "Contribute with your AI", "A copy-paste prompt, GitHub issue forms, and a Connect your AI (MCP) section."),
         ("copy-this/index.md", "Copy this for yourself", "How to fork or use this site as a template for your own OpenBook or learning series."),
+        ("ask/index.md", "Ask the Book", "In-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI."),
+        ("credits/index.md", "Contributor credits", "People who have contributed, listed by GitHub handle."),
+        ("search-index.json", "search-index.json", "Local search index used by Ask the Book."),
     ])
 
     lessons_json["book"] = f"{BASE}/book.json"
@@ -538,25 +555,29 @@ def build():
     write_404()
     write_robots_and_sitemap(SERIES)
     remove_private_pages()
+    idx = os.path.join(HERE, "..", "scripts", "build_ai_index.py")
+    if os.path.isfile(idx):
+        subprocess.check_call([sys.executable, idx, "--search-only"], cwd=SITE)
     print(f"ok: {sum(len(s['lessons']) for s in SERIES.values())} lesson pages in {SITE}" + (f", {len(WARN)} warning(s)" if WARN else ""))
 
 INTRO = [
  "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
- "I still remember the dream. CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night. And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip. All three of us had the same dream. Real life bled into our dreams.",
- "College was not all dreams. Math 1A. The professor said we were all stupid American kids. First midterm: Cs and Ds. For everybody. No curve. It hit hard.",
- "A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus. The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was livid. I'm not saying I was smarter than he was. He was brilliant. It's all relative, how smart you are. I just kept going. And I kept doing my best.",
- "I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin. This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.",
- "Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.",
- "I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
- "This book is a free OpenBook. The name is a metaphor: I want to be an open book about this, the way open-source software is open. When version one is ready, anyone who recognizes a story, or is related to me, can add their side, and stories I may have forgotten.",
- "The book begins with that green-screen dream. It ends by dreaming about AI. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
+ "This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.",
+ "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
+ "From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.",
+ "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
+ "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
+ "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
+ "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
+ "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
 ]
 BACK = [
- "An embellished fictional dramatization that begins in a college lab, dreaming in green, and ends by dreaming about AI. A free OpenBook, like open-source software.",
- "Math 1A. Stupid American kids. Cs and Ds. No curve. Then a first job at seventy thousand dollars in the dot-com boom, and a three-million-dollar exit at twenty-five. Some of it may be based on true stories. Some of it definitely isn't.",
+ "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
+ "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
  "The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.",
  "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.",
 ]
+
 
 def book_preview_chapters():
     path = f"{SITE}/videos/book-preview-chapters.json"
@@ -649,7 +670,7 @@ def build_book():
 
           <section class="audiobox preview-lead" id="preview" aria-labelledby="preview-h">
             <h2 id="preview-h">Preview</h2>
-            <p class="muted" style="font-size:14px;margin:0 0 12px">The new preview of the book, in Clark's voice, about {mmss(dur)}.</p>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">A mid-book preview, in Clark's voice, about {mmss(dur)}. From Part Three and the turn that follows.</p>
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
           </section>
 
@@ -695,7 +716,13 @@ def build_book():
             <p class="muted" style="font-size:14px;margin:0 0 10px">A free OpenBook. Self-published. Written and interviewed by AI. Coming in 2027.</p>
           </section>
         </div>
-      </div>"""
+      </div>
+      <section aria-labelledby="ask-connect-book-h" style="margin-top:36px">
+        <h2 id="ask-connect-book-h">Ask, connect, contribute</h2>
+        <p>Search this preview, or send a question to your own AI, from <a href="/ask/">Ask the Book</a>. For book questions, you can ask the tool to answer in the tone of Charlie Hack, the book's fictional narrator. Story chapters are an embellished fictional dramatization; they are not facts about real people.</p>
+        <p>Connect an AI assistant with the public, read-only GitMCP endpoint <code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code>. Config snippets for Claude Code, Claude Desktop, Cursor, and ChatGPT are on the <a href="/contribute/#mcp">Contribute</a> and <a href="/ask/#mcp">Ask the Book</a> pages. GitMCP is a free third-party service and cannot change the book; contributions go through GitHub issues. <a href="/credits/">Contributor credits</a> are listed by GitHub handle.</p>
+        <div data-ask-book-mount></div>
+      </section>"""
     page("book/index.html", "Silicon Valley C Players — a free OpenBook by Clark Huang (preview)",
          "Silicon Valley C Players, a free OpenBook by Clark Huang: an embellished fictional dramatization, with an audiobook and videobook preview. Written and interviewed by AI. Coming in 2027.", body, "book")
     video_meta = None
@@ -777,6 +804,8 @@ CONTRIBUTE_PROMPT = """Please help me contribute to Clark Huang's free OpenBook 
 5. Do not invent stories or details. Do not use real names of private people, or real company names, in story submissions. Describe people by role and companies in general terms. Stick to what I actually tell you.
 """
 
+MCP_HTML = '\n      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">\n        <h2 id="mcp-h">Connect your AI (MCP)</h2>\n        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>\n        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>\n        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>\n        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>\n        <h3>Claude Code</h3>\n        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>\n        <h3>Claude Desktop</h3>\n        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>\n        <pre class="config" id="mcp-claude-desktop" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "command": "npx",\n      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>Cursor</h3>\n        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>\n        <pre class="config" id="mcp-cursor" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>ChatGPT and other connectors</h3>\n        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>\n        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>\n        <h3>Example prompts</h3>\n        <ul>\n          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>\n          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>\n          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>\n        </ul>\n        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>\n      </section>\n'
+
 def build_involve_pages():
     prompt = E(CONTRIBUTE_PROMPT.strip())
     body = f"""      <p class="crumbs"><a href="/">Home</a> / Contribute</p>
@@ -800,6 +829,7 @@ def build_involve_pages():
       <p class="involve-links"><a class="btn" href="https://github.com/clarkhuang/clarkhuang.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">See starter issues</a><a class="btn ghost" href="/copy-this/">Copy this site for yourself</a></p>
       <p class="muted">If something in the book or on this site affects you, please use a <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=takedown-request.yml">takedown request</a> instead. Full policy: the takedown note in the repository.</p>
 """
+    body += MCP_HTML
     page("contribute/index.html", "Contribute with your AI — Clark Huang",
          "A plain-language way to contribute to Clark Huang's OpenBook and learning site: one copy-paste prompt, then a GitHub issue. Clark approves every change.",
          body, "contribute")

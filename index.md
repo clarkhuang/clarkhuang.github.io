@@ -24,9 +24,9 @@ How to think about building software now that AI agents do much of the building.
 
 ### [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/index.md)
 
-If 101 is the loop, 201 is the graph: how work is split, run in parallel, and improved between runs.
+From loops to building systems: 101 gets one piece of work right with an AI loop. 201 designs and runs whole systems of work, and turns the loops you repeat into skills, routines, pipelines, and agents.
 
-1 of 2 lessons available.
+1 of 8 lessons available.
 
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 

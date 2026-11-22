@@ -1,97 +1,96 @@
 # Silicon Valley C Players — preview script
 
 Performance script for the Clark voice (Expressive). Speech tags: `[pause]`, `<emphasis>`, `<slow>` only. No laugh or chuckle tags.
-The story-chapter narrator is the fictional Charlie Hack. The author is Clark Huang. This is an embellished fictional dramatization that may or may not be based on true stories.
+This preview is a mid-book excerpt from Part Three (*C Things That Looked Like A Things*) and the turn into Part Four. The story-chapter narrator is the fictional Charlie Hack. The author is Clark Huang. This is an embellished fictional dramatization that may or may not be based on true stories.
+The earlier opening teaser is archived in [archive/book-v0.1](archive/book-v0.1/) and in the `book-v0.1` GitHub Release.
 
 ## Fair warning
 
-`01_disclaimer` · 0:00 · 17.47s
+`01_disclaimer` · 0:00 · 17.78s
 
 Fair warning. [pause] This is an embellished fictional dramatization that <emphasis>may or may not</emphasis> be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
 ## Silicon Valley C Players
 
-`02_title` · 0:17 · 1.92s
+`02_title` · 0:17 · 2.23s
 
 Silicon Valley C Players.
 
-## CS150
+## The middle of the book
 
-`03_cs150` · 0:19 · 8.33s
+`03_middle` · 0:20 · 7.10s
 
-CS150. One of the hardest classes on campus. Three of us were building a MIDI music machine, taking turns in the lab, all night.
+This preview jumps into the <emphasis>middle</emphasis> of the book. Part Three. C Things That Looked Like A Things.
 
-## Dreaming in green
+## The A-player myth
 
-`04_dream` · 0:27 · 11.06s
+`04_myth` · 0:27 · 8.93s
 
-And at night, I dreamed in green. [pause] Black screens, glowing green lines, like <emphasis>Tron</emphasis>. AND gates, XOR gates, NAND gates, waiting to be burned into a chip.
+Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work.
 
-## The same dream
+## The straight-line myth
 
-`05_same_dream` · 0:38 · 4.68s
+`05_straight` · 0:36 · 10.15s
 
-<emphasis>All three of us</emphasis> had the same dream. Real life bled into our dreams.
+The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-## Math 1A
+## What people saw
 
-`06_math1a` · 0:43 · 12.60s
+`05_outside` · 0:46 · 10.46s
 
-College was not all dreams. Math 1A. The professor said we were all <emphasis>stupid American kids</emphasis>. First midterm: Cs and Ds. For everybody. <slow>No curve.</slow> It hit hard.
+From the outside, a C thing can look like an A thing. [pause] Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.
 
-## The grades
+## A C player
 
-`07_grades` · 0:56 · 8.64s
+`06_c_player` · 0:56 · 11.98s
 
-A music elective, where everyone got an A+. CS61B: an A+, top of the class. Algorithms: a B-minus.
+A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. [pause] There's always someone smarter, richer, wiser. Stay humble. Stay curious.
 
-## The A-minus
+## Platforms, not products
 
-`08_lab_partner` · 1:04 · 15.02s
+`07_platforms` · 1:08 · 11.06s
 
-The MIDI machine mostly worked. I got an A. My lab partner, a brilliant, straight-A electrical engineering student, got an A-minus. I think it was probably the first A-minus anyone had ever given him. He was <emphasis>livid</emphasis>. I'm not saying I was smarter than he was. He was brilliant.
+The Valley falls in love with products. Specific wins. Specific years. I got more out of building a <emphasis>platform</emphasis>: a foundation you can stand on, and build the next thing on, and the thing after that.
+
+## Building blocks
+
+`08_blocks` · 1:19 · 11.06s
+
+You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
 ## I just kept going
 
-`09_kept_going` · 1:19 · 6.79s
+`09_kept_going` · 1:30 · 8.93s
 
-<slow>It's all relative, how smart you are.</slow> [pause] <emphasis>I just kept going.</emphasis> And I kept doing my best.
+<slow>It's all relative, how good you look from the outside.</slow> [pause] <emphasis>I just kept going.</emphasis> And I kept doing my best.
 
-## First job
+## The turn
 
-`10_first_job` · 1:26 · 12.89s
+`10_turn` · 1:39 · 7.73s
 
-I interned at a startup while still in school, then took my first full-time job there. Seventy thousand dollars, right out of college. Ninety thousand after the first year. Later, the company was acquired by a firm from Berlin.
+Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>.
 
-## Ground level
+## The thesis
 
-`11_ground_level` · 1:39 · 8.02s
+`11_thesis` · 1:47 · 5.88s
 
-This was the dot-com boom. Money was flowing in San Francisco. I was there at ground level. Another luck and experience I got to see.
-
-## Also in the book
-
-`12_teasers` · 1:47 · 10.78s
-
-Also in the book: East Berlin. Beer in canoes. A famous founder's apartment. Drunk nights in San Francisco. All-nighters. A three-million-dollar exit at twenty-five.
-
-## AI came for the code writers first
-
-`13_thesis` · 1:58 · 12.60s
-
-I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>. A.I. came after the code writers first. [pause] In my view, A.I. now writes essentially all of the code.
+A.I. came after the code writers first. [pause] In my view, A.I. now writes essentially all of the code.
 
 ## How to work now
 
-`14_how_to_work` · 2:10 · 12.29s
+`12_how_to` · 1:53 · 11.38s
 
 So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use A.I.
 
-## A free OpenBook
+## The story is still being written
 
-`15_bookend` · 2:23 · 16.25s
+`13_bookend` · 2:04 · 16.25s
 
-The book begins with that green-screen dream. It ends by dreaming about A.I. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written.
+The book begins with a green-screen dream. It ends by dreaming about A.I. This part, in the middle, is the turn. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written.
+
+## Coming in 2027
+
+`14_close` · 2:20 · 3.74s
 
 Silicon Valley C Players. Coming in 2027.
 
