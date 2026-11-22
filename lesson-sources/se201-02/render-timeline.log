@@ -1,0 +1,17 @@
+14 scenes, 244.53s, 7335 frames
+  01_title                 0.50s  + 6.57s
+  02_quiz                  7.07s  +19.36s
+  03_test                 26.44s  +23.04s
+  04_loop_graph           49.47s  +18.76s
+  05a_parts               68.24s  +18.16s
+  05b_shared              86.40s  +20.59s
+  06a_chain              106.99s  +21.21s
+  06b_fork               128.20s  +22.41s
+  07_bars                150.61s  +13.58s
+  08_scale               164.19s  +23.95s
+  09_recap               188.14s  +18.16s
+  10_rule                206.30s  +21.81s
+  11_ask                 228.12s  + 9.62s
+  12_close               237.74s  + 6.79s
+
+-> /workspace/legacy/build/se101/02-decompose-the-system-into-a-graph/SE201_02_Decompose-The-System-Into-A-Graph_public.mp4

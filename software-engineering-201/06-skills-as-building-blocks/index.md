@@ -22,8 +22,8 @@ At enterprise scale, the same jobs come up again and again. The third time you e
 ## Related lessons
 
 - Lesson 1: [Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/01-build-the-whole-system-ai-native/index.md) (available)
-- Lesson 2: [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline)
-- Lesson 3: [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (outline)
+- Lesson 2: [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (available)
+- Lesson 3: [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (available)
 - Lesson 4: [Governance: Where People Decide](https://clarkhuang.github.io/software-engineering-201/04-governance-where-people-decide/index.md) (outline)
 - Lesson 5: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/05-quality-feedback-and-observability/index.md) (outline)
 - Lesson 7: [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/07-routines-pipelines-and-integration/index.md) (outline)

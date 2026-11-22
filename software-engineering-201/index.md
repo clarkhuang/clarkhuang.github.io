@@ -8,7 +8,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 101 was about one piece of work: one fix or one feature, done right with an AI loop of plan, build, and verify. 201 goes from that loop to enterprise systems: whole apps and systems, built AI-native, so agents and people can both read them, change them, and rebuild them. It starts with what AI-native building means for anything bigger than one fix. Then it climbs: decompose the system into a graph, run agents in parallel and bring the work back together, put people where the decisions matter, measure quality and watch the system run, turn repeated work into skills, and wire those skills into routines and pipelines. It ends with agents that operate enterprise systems, with real permissions, security, and an audit trail. That is the move from one loop to enterprise systems.
 
-1 of 8 lessons available.
+3 of 8 lessons available.
 
 ## Lessons
 
@@ -18,13 +18,17 @@ The first step from one loop to enterprise systems: what changes when you build 
 
 **Rule:** Before you build anything bigger than one fix, make it readable to agents and people: a Markdown twin for every page, an index of the whole system, and an AGENTS.md that says how to work there. Treat specs and briefs as the source and tests and checks as the contract, and send every change through staging for a person to approve before it reaches production.
 
-### 02. [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline only)
+### 02. [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (available)
 
-An enterprise system is too big for one loop. Draw it as a graph: split the system into parts with clear boundaries and owners, then find the real dependencies. “And then” is not a dependency; if nothing crosses between two parts, they don't need to wait for each other. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.
+An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two steps is what crosses between them, and “and then” is not a dependency. The worked example is this site: four parts that share one generator, and one lesson's build, a strict chain that forks after the render. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.
 
-### 03. [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (outline only)
+**Rule:** Before any job with more than one part, draw the graph. Name the parts, and give each one a boundary and an owner. Draw an arrow only where something crosses from one part to another; “and then” is not a dependency. Anything two parts share becomes its own node, with one owner. Run the parts with no arrow between them at the same time, and give every part its own plan, build, and verify loop, with its own finish line and its own check.
 
-Once the parts are independent, run agents on them at the same time, each with its own brief, its own finish line, and its own check. Parallel work is only fast if it comes back together cleanly, so plan the integration first: shared contracts and interfaces, one place where the pieces merge, and tests that run on the whole system, not just on each part.
+### 03. [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (available)
+
+Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it comes back together cleanly, so plan the integration first: a shared contract written before the work starts, one merge point used early, and tests on the whole system. The worked example is Software Engineering 101, lessons 3 to 5: built at the same time, then brought together through one shared script format, one content file, and one generator, and shipped in one change. Today the same path adds a whole-site check and a pull request to staging that a person approves.
+
+**Rule:** Before you run agents in parallel, plan how the work comes back together. Write the shared contract first: the interfaces, the formats, the names, and who owns which files; when it has to change, change it in one place. Give each agent its own brief, its own finish line, and its own check, and make matching the contract part of that check. Merge early, in one place, and test the whole system, not just each part. If two parts keep needing each other's answers, they are not parallel work: go back to the graph.
 
 ### 04. [Governance: Where People Decide](https://clarkhuang.github.io/software-engineering-201/04-governance-where-people-decide/index.md) (outline only)
 
