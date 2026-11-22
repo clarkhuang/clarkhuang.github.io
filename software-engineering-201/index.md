@@ -14,11 +14,11 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 ### 01. [Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/01-build-the-whole-system-ai-native/index.md) (available)
 
-What changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a Markdown twin, an index, and an AGENTS.md for every part; specs and briefs as the source; tests and checks as the contract; and staging plus a person's approval before anything reaches production. The worked example is this site, and the same four things matter even more at enterprise scale.
+The first step from one loop to enterprise systems: what changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a Markdown twin, an index, and an AGENTS.md for every part; specs and briefs as the source; tests and checks as the contract; and staging plus a person's approval before anything reaches production. The worked example is this site, and the same four things matter even more at enterprise scale.
 
 **Rule:** Before you build anything bigger than one fix, make it readable to agents and people: a Markdown twin for every page, an index of the whole system, and an AGENTS.md that says how to work there. Treat specs and briefs as the source and tests and checks as the contract, and send every change through staging for a person to approve before it reaches production.
 
-### 02. [From Loop to Graph: Decompose the System](https://clarkhuang.github.io/software-engineering-201/02-from-loop-to-graph/index.md) (outline only)
+### 02. [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline only)
 
 An enterprise system is too big for one loop. Draw it as a graph: split the system into parts with clear boundaries and owners, then find the real dependencies. “And then” is not a dependency; if nothing crosses between two parts, they don't need to wait for each other. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.
 
@@ -36,11 +36,11 @@ A system you can't see is a system you can't trust. Define quality up front with
 
 ### 06. [Skills as Building Blocks](https://clarkhuang.github.io/software-engineering-201/06-skills-as-building-blocks/index.md) (outline only)
 
-The third time you explain the same job, write it down once: the steps, the checks, the inputs and outputs, and the traps. Skills are the reusable building blocks of an AI-native system. Version them, test them, and share them, so any person or agent across the organization can run the job the same way.
+At enterprise scale, the same jobs come up again and again. The third time you explain one, write it down once: the steps, the checks, the inputs and outputs, and the traps. Skills are the reusable building blocks of an AI-native system. Version them, test them, and share them, so any person or agent across the organization can run the job the same way.
 
 ### 07. [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/07-routines-pipelines-and-integration/index.md) (outline only)
 
-Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them to the systems the business already runs on through clear interfaces, and make every step leave a record you can check and replay.
+A skill still waits for someone to start it. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them to the systems the business already runs on through clear interfaces, and make every step leave a record you can check and replay.
 
 ### 08. [Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/08-agents-that-operate-enterprise-systems/index.md) (outline only)
 

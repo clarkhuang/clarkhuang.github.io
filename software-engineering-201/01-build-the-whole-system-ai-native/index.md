@@ -31,7 +31,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 ## The lesson
 
-What changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a Markdown twin, an index, and an AGENTS.md for every part; specs and briefs as the source; tests and checks as the contract; and staging plus a person's approval before anything reaches production. The worked example is this site, and the same four things matter even more at enterprise scale.
+The first step from one loop to enterprise systems: what changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a Markdown twin, an index, and an AGENTS.md for every part; specs and briefs as the source; tests and checks as the contract; and staging plus a person's approval before anything reaches production. The worked example is this site, and the same four things matter even more at enterprise scale.
 
 ## The rule
 
@@ -89,7 +89,7 @@ See you in lesson two.
 
 ## Related lessons
 
-- Lesson 2: [From Loop to Graph: Decompose the System](https://clarkhuang.github.io/software-engineering-201/02-from-loop-to-graph/index.md) (outline)
+- Lesson 2: [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline)
 - Lesson 3: [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (outline)
 - Lesson 4: [Governance: Where People Decide](https://clarkhuang.github.io/software-engineering-201/04-governance-where-people-decide/index.md) (outline)
 - Lesson 5: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/05-quality-feedback-and-observability/index.md) (outline)

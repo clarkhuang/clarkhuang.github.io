@@ -17,12 +17,12 @@ This lesson is in planning. The video is not available yet.
 
 ## The lesson
 
-The third time you explain the same job, write it down once: the steps, the checks, the inputs and outputs, and the traps. Skills are the reusable building blocks of an AI-native system. Version them, test them, and share them, so any person or agent across the organization can run the job the same way.
+At enterprise scale, the same jobs come up again and again. The third time you explain one, write it down once: the steps, the checks, the inputs and outputs, and the traps. Skills are the reusable building blocks of an AI-native system. Version them, test them, and share them, so any person or agent across the organization can run the job the same way.
 
 ## Related lessons
 
 - Lesson 1: [Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/01-build-the-whole-system-ai-native/index.md) (available)
-- Lesson 2: [From Loop to Graph: Decompose the System](https://clarkhuang.github.io/software-engineering-201/02-from-loop-to-graph/index.md) (outline)
+- Lesson 2: [Decompose the System into a Graph](https://clarkhuang.github.io/software-engineering-201/02-decompose-the-system-into-a-graph/index.md) (outline)
 - Lesson 3: [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md) (outline)
 - Lesson 4: [Governance: Where People Decide](https://clarkhuang.github.io/software-engineering-201/04-governance-where-people-decide/index.md) (outline)
 - Lesson 5: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/05-quality-feedback-and-observability/index.md) (outline)
