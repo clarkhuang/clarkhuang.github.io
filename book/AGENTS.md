@@ -42,7 +42,3 @@ The cover and the audiobook/videobook preview are reproducible from files in thi
 - Preview narration, captions, chapters, and videobook: https://clarkhuang.github.io/book-source/preview/REBUILD.md
 
 Do not invent new story details when regenerating. Keep the fiction framing and the Charlie Hack narrator. The xAI API key, if needed for narration, stays in the environment and is never written to a file.
-
-Ask the Book (search and a cited prompt for your own AI): https://clarkhuang.github.io/ask/
-GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io
-Credits: https://clarkhuang.github.io/credits/index.md

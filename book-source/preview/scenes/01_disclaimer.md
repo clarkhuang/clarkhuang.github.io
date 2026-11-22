@@ -2,7 +2,7 @@
 
 - id: `01_disclaimer`
 - start: 0.00s (0:00)
-- duration: 17.47s
+- duration: 17.78s
 
 ## Performance text
 

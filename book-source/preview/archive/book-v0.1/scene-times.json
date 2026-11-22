@@ -1,0 +1,83 @@
+{
+  "total": 159.36,
+  "scenes": [
+    {
+      "id": "01_disclaimer",
+      "start": 0.0,
+      "duration": 17.472
+    },
+    {
+      "id": "02_title",
+      "start": 17.472,
+      "duration": 1.92
+    },
+    {
+      "id": "03_cs150",
+      "start": 19.392,
+      "duration": 8.328
+    },
+    {
+      "id": "04_dream",
+      "start": 27.72,
+      "duration": 11.064
+    },
+    {
+      "id": "05_same_dream",
+      "start": 38.784,
+      "duration": 4.68
+    },
+    {
+      "id": "06_math1a",
+      "start": 43.464,
+      "duration": 12.6
+    },
+    {
+      "id": "07_grades",
+      "start": 56.064,
+      "duration": 8.64
+    },
+    {
+      "id": "08_lab_partner",
+      "start": 64.704,
+      "duration": 15.024
+    },
+    {
+      "id": "09_kept_going",
+      "start": 79.728,
+      "duration": 6.792
+    },
+    {
+      "id": "10_first_job",
+      "start": 86.52,
+      "duration": 12.888
+    },
+    {
+      "id": "11_ground_level",
+      "start": 99.408,
+      "duration": 8.016
+    },
+    {
+      "id": "12_teasers",
+      "start": 107.424,
+      "duration": 10.776
+    },
+    {
+      "id": "13_thesis",
+      "start": 118.2,
+      "duration": 12.6
+    },
+    {
+      "id": "14_how_to_work",
+      "start": 130.8,
+      "duration": 12.288
+    },
+    {
+      "id": "15_bookend",
+      "start": 143.088,
+      "duration": 16.248
+    }
+  ],
+  "source_total": 159.336,
+  "loudness_i": -17.3,
+  "loudness_tp": -1.34
+}

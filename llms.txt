@@ -75,14 +75,9 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Also on this site
 
-- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): A copy-paste prompt and GitHub issue forms for a correction, a new story, or a refactor.
+- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): A copy-paste prompt, GitHub issue forms, and a Connect your AI (MCP) section.
 - [Copy this for yourself](https://clarkhuang.github.io/copy-this/index.md): How to fork or use this site as a template for your own OpenBook or learning series.
+- [Ask the Book](https://clarkhuang.github.io/ask/index.md): In-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI.
+- [Contributor credits](https://clarkhuang.github.io/credits/index.md): People who have contributed, listed by GitHub handle.
+- [search-index.json](https://clarkhuang.github.io/search-index.json): Local search index used by Ask the Book.
 
-## Ask, connect, and credits
-
-- [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md): a copy-paste prompt, GitHub issue forms, and a Connect your AI (MCP) section.
-- [Ask the Book](https://clarkhuang.github.io/ask/index.md): in-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI. Widget also on the book page and lesson pages.
-- [search-index.json](https://clarkhuang.github.io/search-index.json): the local search index used by Ask the Book
-- [llms-full.txt](https://clarkhuang.github.io/llms-full.txt): full public Markdown (transcripts included), for tools that want more than this catalog
-- [Contributor credits](https://clarkhuang.github.io/credits/index.md): people who have contributed, by GitHub handle. JSON: [credits.json](https://clarkhuang.github.io/credits.json)
-- GitMCP (read-only, third-party): `https://gitmcp.io/clarkhuang/clarkhuang.github.io` — connect your AI; see [Connect your AI (MCP)](https://clarkhuang.github.io/ask/index.md) and [the MCP section](https://clarkhuang.github.io/contribute/mcp-section.md)

@@ -1,8 +1,8 @@
 # Silicon Valley C Players
 
 - id: `02_title`
-- start: 17.47s (0:17)
-- duration: 1.92s
+- start: 17.78s (0:17)
+- duration: 2.23s
 
 ## Performance text
 
