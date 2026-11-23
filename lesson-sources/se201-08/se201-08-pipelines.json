@@ -719,7 +719,7 @@
   },
   {
    "id": "10_close",
-   "text": "A pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? [pause] That's the last lesson: agents that operate enterprise systems. See you in lesson nine.",
+   "text": "A pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? [pause] That's next: agents that operate enterprise systems. See you in lesson nine.",
    "visual": "outro",
    "chapter": "",
    "data": {

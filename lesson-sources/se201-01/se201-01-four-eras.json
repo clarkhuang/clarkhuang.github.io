@@ -764,7 +764,7 @@
   },
   {
    "id": "12_path",
-   "text": "Here's the path. Today, the four eras. Then, build a whole system A.I. native, decompose it, and run agents in parallel. Then governance, quality, skills, and pipelines. [pause] And finally, agents that operate enterprise systems.",
+   "text": "Here's the path. Today, the four eras. Then, build a whole system A.I. native, decompose it, and run agents in parallel. Then governance, quality, skills, and pipelines. [pause] Then, agents that operate enterprise systems. And last, a capstone: one feature, built end to end.",
    "visual": "recap",
    "chapter": "THE PATH",
    "data": {
@@ -778,9 +778,10 @@
      "Quality, feedback, observability",
      "Skills as building blocks",
      "Routines, pipelines, integration",
-     "Agents that operate\nenterprise systems"
+     "Agents that operate\nenterprise systems",
+     "Capstone: one feature,\nend to end"
     ],
-    "upto": 9,
+    "upto": 10,
     "new_from": 0
    }
   },

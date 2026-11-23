@@ -1,0 +1,84 @@
+18 scenes, 309.19s, 9275 frames
+  01_title                 0.50s  + 7.80s
+  02_quiz                  8.30s  +20.90s
+  03_feature              29.20s  +11.44s
+  04_right                40.64s  +21.21s
+  05_readable             61.85s  +13.27s
+  06_graph                75.12s  +20.59s
+  07_parallel             95.71s  +15.40s
+  08_decide              111.11s  +16.03s
+  09_checks              127.14s  +17.85s
+  10_skill               144.99s  +10.53s
+  11_go                  155.52s  +18.76s
+  12_run                 174.29s  +25.17s
+  13_operate             199.46s  +27.91s
+  14_constants           227.37s  +20.28s
+  15_recap               247.64s  +14.49s
+  16_rule                262.14s  +19.68s
+  17_ask                 281.81s  +10.84s
+  18_close               292.66s  +16.54s
+    frame 0/9275
+    frame 150/9275
+    frame 300/9275
+    frame 450/9275
+    frame 600/9275
+    frame 750/9275
+    frame 900/9275
+    frame 1050/9275
+    frame 1200/9275
+    frame 1350/9275
+    frame 1500/9275
+    frame 1650/9275
+    frame 1800/9275
+    frame 1950/9275
+    frame 2100/9275
+    frame 2250/9275
+    frame 2400/9275
+    frame 2550/9275
+    frame 2700/9275
+    frame 2850/9275
+    frame 3000/9275
+    frame 3150/9275
+    frame 3300/9275
+    frame 3450/9275
+    frame 3600/9275
+    frame 3750/9275
+    frame 3900/9275
+    frame 4050/9275
+    frame 4200/9275
+    frame 4350/9275
+    frame 4500/9275
+    frame 4650/9275
+    frame 4800/9275
+    frame 4950/9275
+    frame 5100/9275
+    frame 5250/9275
+    frame 5400/9275
+    frame 5550/9275
+    frame 5700/9275
+    frame 5850/9275
+    frame 6000/9275
+    frame 6150/9275
+    frame 6300/9275
+    frame 6450/9275
+    frame 6600/9275
+    frame 6750/9275
+    frame 6900/9275
+    frame 7050/9275
+    frame 7200/9275
+    frame 7350/9275
+    frame 7500/9275
+    frame 7650/9275
+    frame 7800/9275
+    frame 7950/9275
+    frame 8100/9275
+    frame 8250/9275
+    frame 8400/9275
+    frame 8550/9275
+    frame 8700/9275
+    frame 8850/9275
+    frame 9000/9275
+    frame 9150/9275
+
+-> /workspace/legacy/build/se101/10-capstone-one-feature-end-to-end/SE201_10_Capstone-One-Feature-End-To-End_public.mp4
+EXIT 0

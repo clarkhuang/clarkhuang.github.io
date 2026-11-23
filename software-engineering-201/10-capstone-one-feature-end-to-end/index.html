@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capstone: One Feature, End to End — Software Engineering 201 — Clark Huang</title>
+  <meta name="description" content="The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 m">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="Capstone: One Feature, End to End — Software Engineering 201 — Clark Huang">
+  <meta property="og:description" content="The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 m">
+  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Capstone: One Feature, End to End — Software Engineering 201 — Clark Huang">
+  <meta name="twitter:description" content="The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 m">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Capstone: One Feature, End to End — Software Engineering 201 — Clark Huang", "description": "The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 m", "url": "https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main" class="lesson">
+    <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md (plus https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+        </div>
+      </details>
+      <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 10</p>
+      <h1>Capstone: One Feature, End to End</h1>
+      <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="/videos/posters/se201-10-capstone-one-feature-end-to-end.jpg" data-lesson-id="se201/10" data-video-version="b9b2237e" aria-label="Lesson video: Capstone: One Feature, End to End">
+        <source src="/videos/se201-10-capstone-one-feature-end-to-end.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" label="English" src="/videos/se201-10-capstone-one-feature-end-to-end.vtt" default>
+        Your browser can't play this video. <a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4">Download the MP4</a>.
+      </video></div>
+      <div class="lesson-meta" data-watch-id="se201/10" data-video-version="b9b2237e" data-status-scope><span><time datetime="PT5M9S">5:09</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4" download>Download MP4</a><span aria-hidden="true">·</span><a href="/videos/se201-10-capstone-one-feature-end-to-end.vtt">Captions (VTT)</a><span aria-hidden="true">·</span><a href="https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-10">How it was built</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se201/10" data-video-version="b9b2237e" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
+      <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+      <p class="upnext-after">That is the last lesson so far. <a href="/software-engineering-201/">Back to Software Engineering 201</a></p>
+      <div class="grid2">
+        <section>
+          <h2 class="label">The lesson</h2>
+          <p>The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the month. What to charge depends on a rule nobody has written down, so the plan comes first: say what right means and let a person set the rule; put it in a spec in the repository; draw the graph and find the one new thing that crosses, the quote; make the quote&#x27;s format the shared contract for three agents and one merge point; name who decides; turn &quot;right&quot; into three checks that run before the change ships and every night after; and notice that adding a plan is already a skill. Then the plan is carried out: the parts are built at the same time, the finance owner says yes, the feature runs as a pipeline with an idempotency key on the charge, and an agent with its own identity and read-only access works the nightly reconcile, flags a double charge for a person to refund, and the miss becomes a fourth check. Under all of it, the four constants from lesson 1 still hold.</p>
+          <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-10">Before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-10" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>
+          <h2 class="label notes-label">What the video simplifies</h2>
+          <ul class="notes"><li>The numbers are made up and leave tax out. In the spec on screen the quote is &quot;new price - credit, plus tax&quot;, and check 2 compares each quote with the rule and each charge with its quote, so the checks still hold once tax is added.</li><li>The rule shown (credit the days paid for and not used) is one policy among several. Others charge the full price, or switch at the next renewal. The lesson&#x27;s point is that a person has to pick one and write it down.</li><li>A declined charge leaves the subscription on the monthly plan; the plan switches only after the charge succeeds.</li><li>An idempotency key only helps if the payment processor supports one; many do, and they keep keys for a limited time. Lesson 8 covers this.</li><li>The double charge in the lesson gets past the key because two browser tabs produced two quotes, and so two keys. The fix is the fourth check, one open quote per subscription. A key built as in lesson 8 (this subscription, this billing period) would also have stopped it.</li><li>Most pipeline steps are plain code, as lesson 8 says. The agent earns its place at the nightly reconcile, where working out why something doesn&#x27;t match takes judgment.</li><li>Lesson 9 is an outline, not a video. The capstone uses its ideas: an agent&#x27;s own identity, the least access the job needs, a log of every action, and a person at any decision that moves money.</li></ul>
+        </section>
+        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The question</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=29.2" data-seek="29.2" data-target="lesson-video"><span class="ts">0:29</span><span>One small feature</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=40.6" data-seek="40.6" data-target="lesson-video"><span class="ts">0:40</span><span>Plan it</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=155.5" data-seek="155.5" data-target="lesson-video"><span class="ts">2:35</span><span>Build it</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=174.3" data-seek="174.3" data-target="lesson-video"><span class="ts">2:54</span><span>Run it</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=199.5" data-seek="199.5" data-target="lesson-video"><span class="ts">3:19</span><span>Operate it</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=227.4" data-seek="227.4" data-target="lesson-video"><span class="ts">3:47</span><span>What still holds</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=247.6" data-seek="247.6" data-target="lesson-video"><span class="ts">4:07</span><span>Recap</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=262.1" data-seek="262.1" data-target="lesson-video"><span class="ts">4:22</span><span>The rule</span></a></li><li><a href="/videos/se201-10-capstone-one-feature-end-to-end.mp4#t=281.8" data-seek="281.8" data-target="lesson-video"><span class="ts">4:41</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
+      </div>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/09-agents-that-operate-enterprise-systems/"><small>Previous</small>Lesson 9: Agents That Operate Enterprise Systems</a><a class="next" href="/software-engineering-201/"><small>Series</small>Back to Software Engineering 201</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
+        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

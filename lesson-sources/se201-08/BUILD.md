@@ -26,6 +26,10 @@ This folder is the source for the lesson video, so a person or an agent can read
 
 The quiz answer in scene `02_quiz` first said “Charged twice.” Round 2 noted that some payment processors catch an immediate duplicate by default, so the line was softened to “Quite possibly, charged twice. Some processors catch a quick duplicate, but don't count on it.” Only that scene was re-narrated; the lesson was then re-rendered and finished again. The generator, the scene script, the render timeline, the captions and the video in this repository all carry the softened line. `review-round1.md` and `review-round2.md` are kept as written, so they quote the earlier wording.
 
+## Re-narrated on Nov 23, 2026
+
+Scene `10_close` was re-narrated and the lesson re-rendered on Nov 23, 2026, because the series grew from nine lessons to ten. The close now says “That's next: agents that operate enterprise systems. See you in lesson nine.” instead of “That's the last lesson: agents that operate enterprise systems.”: lesson 9 is no longer the last lesson, since lesson 10, the capstone, follows it. No other scene changed. The generator, the scene script, the render timeline, the captions and the video in this repository all carry the new line; the review files are kept as written. In the captions, “E.D.I.” was made readable as EDI, with the timing unchanged.
+
 ## Rebuild
 
 The renderer is the same one used for every Software Engineering 101 and 201 video (`render_se101.py` on top of the AI Tips `render.py`). It lives on the build machine, not in this repository. `se201_layouts_58b.py` must sit beside `render_se101.py`, which needs one import line to register the new layouts:
@@ -51,7 +55,7 @@ SITE="$PWD" python3 sitegen/gen.py                           # pages, twins, llm
 
 - Voice: xAI custom voice `4lbl0krw73vf`, speed 1.05. Speech tags used: `[pause]`, `<emphasis>`. No laugh or chuckle tags.
 - The xAI API key is read from the `XAI_API_KEY` environment variable at call time. It is never written to a file, a log, or a command line.
-- Audio: loudness-normalized to about -16 LUFS integrated, AAC 160 kbps. Video: H.264, `+faststart`. Length 4:15 (255.5 s).
+- Audio: loudness-normalized to about -16 LUFS integrated, AAC 160 kbps. Video: H.264, `+faststart`. Length 4:14 (254.0 s).
 - Captions: `videos/se201-08-routines-pipelines-and-integration.vtt`. The transcript is in the lesson's `index.md`, with the text-to-speech spellings made readable (for example “A.I.” as AI and “two oh one” as 201).
 - The example: The billing system, the nightly run, the counts on screen (called made up aloud) and the partner's file are made up for the illustration. They describe no real company and no real incident.
 - Authorship: the script was drafted and critiqued in two independent rounds by Claude Code (model `claude-fable-5-2`; `review-round1.md`, `review-round2.md`, `claims-removed.md`), checked against `facts.md`, and reviewed by LegacyBot. “A skill plus a trigger is a routine; routines chained make a pipeline” is this series' own vocabulary, introduced with “call” in the narration. The four things to write down are a teaching idea written by the scriptwriter. They are not quotes from Clark.

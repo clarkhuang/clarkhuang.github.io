@@ -29,6 +29,8 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Software Engineering 101 lesson 10 re-rendered with a new “What's next” ending that hands off to 201, and now has captions
 - Watched ticks and saved positions are now keyed per video version (`se201/01@<first 8 hex of the file's SHA-256>`), so a re-rendered video or audio shows as unwatched again; older unversioned entries are dropped. After re-rendering media, run `python3 sitegen/stamp_versions.py` (`check_site.py` now fails if a version is stale)
 - Software Engineering 201 lessons 5 to 8 recorded: “Governance: Where People Decide”, “Quality, Feedback, and Observability”, “Skills as Building Blocks” and “Routines, Pipelines, and Integration” (video, captions, chapters, rule, transcript, and build source in `lesson-sources/se201-05/` to `lesson-sources/se201-08/`). The series now has 8 of 9 lessons available; lesson 9 is still an outline
+- Software Engineering 201 lesson 10 recorded: “Capstone: One Feature, End to End” (video, captions, chapters, rule, transcript, notes on what the video simplifies, and build source in `lesson-sources/se201-10/`). The series is now ten lessons with 9 of 10 available; lesson 9 is still an outline, and its text now leads into the capstone
+- Software Engineering 201 lessons 1 and 8 re-rendered with one scene re-narrated each for the ten-lesson series (lesson 1's path now lists the capstone; lesson 8's close says “That's next” instead of “That's the last lesson”); captions for lessons 1, 8 and 10 spell EDI, CTO and ID without dots
 
 ## [v0.1-wip] — 2026-11-22
 

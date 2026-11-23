@@ -13,7 +13,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-01-four-eras-of-building-systems.mp4
-- Duration: 4:20 (260.8 seconds)
+- Duration: 4:22 (262.6 seconds)
 - Poster: https://clarkhuang.github.io/videos/posters/se201-01-four-eras-of-building-systems.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-01-four-eras-of-building-systems.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-01
@@ -26,9 +26,9 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - [2:26] Building now
 - [3:03] What never changes
 - [3:18] The path
-- [3:34] Recap
-- [3:44] The rule
-- [4:01] Your turn
+- [3:35] Recap
+- [3:46] The rule
+- [4:03] Your turn
 
 ## The lesson
 
@@ -50,23 +50,23 @@ Quick question. An agent can now write a working piece of a billing system in an
 
 ### A lens
 
-I've been building systems for about thirty years. Systems built around money: electronic rent payments, a card-issuing platform, an investment adviser for nonprofits. And systems that sell: retail e-commerce and E.D.I., subscription billing, and today, e-commerce again. And the way you build a big system keeps changing.
+I've been building systems for about thirty years. Systems built around money: electronic rent payments, a card-issuing platform, an investment adviser for nonprofits. And systems that sell: retail e-commerce and EDI, subscription billing, and today, e-commerce again. And the way you build a big system keeps changing.
 
 Here's a useful way to see why. Architecture bends around whatever is scarcest. Whatever is expensive, or slow, the design works around it. So for each of four eras, ask: what was scarce?
 
 ### Four eras
 
-Thirty years ago, the commercial web was brand new. You bought servers and racked them yourself, and more capacity was weeks away. So, typically, you built one big program, on one big database, and shipped a few times a year. Companies traded orders as overnight batch files, through E.D.I., and much of that still runs. What was scarce? The machines.
+Thirty years ago, the commercial web was brand new. You bought servers and racked them yourself, and more capacity was weeks away. So, typically, you built one big program, on one big database, and shipped a few times a year. Companies traded orders as overnight batch files, through EDI, and much of that still runs. What was scarce? The machines.
 
 Twenty years ago. The web was the front door. Browser, application, database: three tiers, on rented racks. And the first big public cloud services had just launched. Agile teams shipped every few weeks. What was scarce? Coordination. Getting a growing team to change one codebase without colliding.
 
-Ten years ago. The cloud, by default, for new systems. Many small services, in containers, owned by small teams. The best teams deployed many times a day. And parts they once built themselves became a service, behind an API What was scarce? Seeing the whole. No one person could hold it all in their head, so we built dashboards and tracing to see it.
+Ten years ago. The cloud, by default, for new systems. Many small services, in containers, owned by small teams. The best teams deployed many times a day. And parts they once built themselves became a service, behind an API. What was scarce? Seeing the whole. No one person could hold it all in their head, so we built dashboards and tracing to see it.
 
 And now. Agents can write much of the code. Building a piece is fast, and cheap. So what's scarce? Knowing that it's right. That, and context: how much of the system an agent can see, and understand, at once.
 
 ### Building now
 
-Now a made-up example: a subscription-billing system, built today, the kind of platform I ran as C.T.O. at sticky dot I O. Clear modules, with boundaries an agent can work inside. One repository, where it can find anything. Tests and specs it can check itself against. And decisions written down, because the agent wasn't in the meeting. My own team keeps its code that way: one repository, with instruction files for the agents.
+Now a made-up example: a subscription-billing system, built today, the kind of platform I ran as CTO at sticky dot I O. Clear modules, with boundaries an agent can work inside. One repository, where it can find anything. Tests and specs it can check itself against. And decisions written down, because the agent wasn't in the meeting. My own team keeps its code that way: one repository, with instruction files for the agents.
 
 I'll be straight about that list. It's where the thinking is heading, not a settled answer. The evidence for it is still thin, and indirect. Every era had a confident answer, then found its costs.
 
@@ -76,7 +76,7 @@ And here's what never changed, in any era. The data model outlives the code. Mon
 
 ### The path
 
-Here's the path. Today, the four eras. Then, build a whole system AI native, decompose it, and run agents in parallel. Then governance, quality, skills, and pipelines. And finally, agents that operate enterprise systems.
+Here's the path. Today, the four eras. Then, build a whole system AI native, decompose it, and run agents in parallel. Then governance, quality, skills, and pipelines. Then, agents that operate enterprise systems. And last, a capstone: one feature, built end to end.
 
 ### Recap
 
@@ -102,6 +102,7 @@ Next: build a whole system, AI native, so agents and people can both read it, an
 - Lesson 7: [Skills as Building Blocks](https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md) (available)
 - Lesson 8: [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md) (available)
 - Lesson 9: [Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (outline)
+- Lesson 10: [Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (available)
 
 ## For agents
 

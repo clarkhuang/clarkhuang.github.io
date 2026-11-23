@@ -1,4 +1,4 @@
-16 scenes, 260.74s, 7822 frames
+16 scenes, 262.57s, 7877 frames
   01_title                 0.50s  + 8.71s
   02_quiz                  9.21s  +19.68s
   03_career               28.88s  +19.99s
@@ -10,64 +10,64 @@
   09_design              146.05s  +26.08s
   10_caveat              172.14s  +11.16s
   11_constants           183.29s  +14.80s
-  12_path                198.10s  +16.03s
-  13_recap               214.12s  +10.84s
-  14_rule                224.97s  +16.94s
-  15_ask                 241.91s  +10.22s
-  16_close               252.13s  + 8.62s
-    frame 0/7822
-    frame 150/7822
-    frame 300/7822
-    frame 450/7822
-    frame 600/7822
-    frame 750/7822
-    frame 900/7822
-    frame 1050/7822
-    frame 1200/7822
-    frame 1350/7822
-    frame 1500/7822
-    frame 1650/7822
-    frame 1800/7822
-    frame 1950/7822
-    frame 2100/7822
-    frame 2250/7822
-    frame 2400/7822
-    frame 2550/7822
-    frame 2700/7822
-    frame 2850/7822
-    frame 3000/7822
-    frame 3150/7822
-    frame 3300/7822
-    frame 3450/7822
-    frame 3600/7822
-    frame 3750/7822
-    frame 3900/7822
-    frame 4050/7822
-    frame 4200/7822
-    frame 4350/7822
-    frame 4500/7822
-    frame 4650/7822
-    frame 4800/7822
-    frame 4950/7822
-    frame 5100/7822
-    frame 5250/7822
-    frame 5400/7822
-    frame 5550/7822
-    frame 5700/7822
-    frame 5850/7822
-    frame 6000/7822
-    frame 6150/7822
-    frame 6300/7822
-    frame 6450/7822
-    frame 6600/7822
-    frame 6750/7822
-    frame 6900/7822
-    frame 7050/7822
-    frame 7200/7822
-    frame 7350/7822
-    frame 7500/7822
-    frame 7650/7822
-    frame 7800/7822
+  12_path                198.10s  +17.85s
+  13_recap               215.95s  +10.84s
+  14_rule                226.79s  +16.94s
+  15_ask                 243.73s  +10.22s
+  16_close               253.95s  + 8.62s
+    frame 0/7877
+    frame 150/7877
+    frame 300/7877
+    frame 450/7877
+    frame 600/7877
+    frame 750/7877
+    frame 900/7877
+    frame 1050/7877
+    frame 1200/7877
+    frame 1350/7877
+    frame 1500/7877
+    frame 1650/7877
+    frame 1800/7877
+    frame 1950/7877
+    frame 2100/7877
+    frame 2250/7877
+    frame 2400/7877
+    frame 2550/7877
+    frame 2700/7877
+    frame 2850/7877
+    frame 3000/7877
+    frame 3150/7877
+    frame 3300/7877
+    frame 3450/7877
+    frame 3600/7877
+    frame 3750/7877
+    frame 3900/7877
+    frame 4050/7877
+    frame 4200/7877
+    frame 4350/7877
+    frame 4500/7877
+    frame 4650/7877
+    frame 4800/7877
+    frame 4950/7877
+    frame 5100/7877
+    frame 5250/7877
+    frame 5400/7877
+    frame 5550/7877
+    frame 5700/7877
+    frame 5850/7877
+    frame 6000/7877
+    frame 6150/7877
+    frame 6300/7877
+    frame 6450/7877
+    frame 6600/7877
+    frame 6750/7877
+    frame 6900/7877
+    frame 7050/7877
+    frame 7200/7877
+    frame 7350/7877
+    frame 7500/7877
+    frame 7650/7877
+    frame 7800/7877
 
 -> /workspace/legacy/build/se101/01-four-eras-of-building-systems/SE201_01_Four-Eras-Of-Building-Systems_public.mp4
 EXIT 0

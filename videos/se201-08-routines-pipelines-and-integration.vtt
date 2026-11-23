@@ -56,7 +56,7 @@ Connecting systems is the oldest problem in this series.
 
 14
 00:00:36.176 --> 00:00:39.497
-Thirty years ago: overnight batch files, and EDI
+Thirty years ago: overnight batch files, and EDI.
 
 15
 00:00:39.497 --> 00:00:42.492
@@ -283,25 +283,25 @@ And what record would prove it ran?
 The steps with no good answer are where to start.
 
 71
-00:03:58.310 --> 00:04:02.825
+00:03:58.310 --> 00:04:02.615
 A pipeline that runs on its own is already operating the system.
 
 72
-00:04:02.825 --> 00:04:05.082
+00:04:02.615 --> 00:04:04.768
 So whose name does it run under?
 
 73
-00:04:05.082 --> 00:04:07.058
+00:04:04.768 --> 00:04:06.651
 What is it allowed to touch?
 
 74
-00:04:07.058 --> 00:04:09.033
+00:04:06.651 --> 00:04:08.535
 And who can see what it did?
 
 75
-00:04:09.033 --> 00:04:13.477
-That's the last lesson: agents that operate enterprise systems.
+00:04:08.535 --> 00:04:12.033
+That's next: agents that operate enterprise systems.
 
 76
-00:04:13.477 --> 00:04:15.100
+00:04:12.033 --> 00:04:13.580
 See you in lesson nine.

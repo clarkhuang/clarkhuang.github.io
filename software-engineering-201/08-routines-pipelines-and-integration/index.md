@@ -13,7 +13,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-08-routines-pipelines-and-integration.mp4
-- Duration: 4:15 (255.5 seconds)
+- Duration: 4:14 (254.0 seconds)
 - Poster: https://clarkhuang.github.io/videos/posters/se201-08-routines-pipelines-and-integration.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-08-routines-pipelines-and-integration.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-08
@@ -83,7 +83,7 @@ Which gives us rule eight, for your agents. Before any work runs on its own, wri
 
 Now, your turn. Pick one job that already runs on its own: a nightly report, or a sync. Describe its steps to your AI, and ask, for each step: what happens if it runs twice? And what record would prove it ran? The steps with no good answer are where to start.
 
-A pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? That's the last lesson: agents that operate enterprise systems. See you in lesson nine.
+A pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? That's next: agents that operate enterprise systems. See you in lesson nine.
 
 ## Related lessons
 
@@ -95,6 +95,7 @@ A pipeline that runs on its own is already operating the system. So whose name d
 - Lesson 6: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md) (available)
 - Lesson 7: [Skills as Building Blocks](https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md) (available)
 - Lesson 9: [Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (outline)
+- Lesson 10: [Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (available)
 
 ## For agents
 

@@ -17,7 +17,7 @@ This lesson is in planning. The video is not available yet.
 
 ## The lesson
 
-Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system.
+Agents that run the system, not just build it, with identity, least access, and an audit trail. The last step on the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome. Lesson 10, the capstone, puts all nine lessons to work on one small feature.
 
 ## Related lessons
 
@@ -29,6 +29,7 @@ Agents that run the system, not just build it, with identity, least access, and 
 - Lesson 6: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md) (available)
 - Lesson 7: [Skills as Building Blocks](https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md) (available)
 - Lesson 8: [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md) (available)
+- Lesson 10: [Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (available)
 
 ## For agents
 
