@@ -14,6 +14,7 @@ summary, rule, log + script (render log and scene script, used for chapters), an
 """
 import json, os, re, html, subprocess, shutil, sys
 import ai_friendly as AF
+import stamp_versions
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 _PARENT = os.path.abspath(os.path.join(HERE, ".."))
@@ -559,8 +560,8 @@ def build():
                                    "agents_md": f"{BASE}/AGENTS.md", "home_md": f"{BASE}/index.md",
                                    "rebuild_md": f"{BASE}/REBUILD.md",
                                    "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder. Staging lives at /staging/ and is not listed here."}
-    lessons_json["cookies"] = {"watched": "watched=<lesson id>,<lesson id>...",
-                               "video_position": "vpos=<lesson id>:<seconds>[,...] (resume offer, cleared when the video ends)"}
+    lessons_json["cookies"] = {"watched": "watched=<lesson id>@<version>,... (version = first 8 hex chars of the SHA-256 of the video file; a re-rendered video counts as unwatched)",
+                               "video_position": "vpos=<lesson id>@<version>:<seconds>[,...] (resume offer, cleared when the video ends)"}
     json.dump(lessons_json, open(f"{SITE}/lessons.json", "w"), indent=2, ensure_ascii=False)
     build_book()
     AF.write_llms_full(SITE, SERIES, INTRO, BACK)
@@ -573,6 +574,9 @@ def build():
     write_404()
     write_robots_and_sitemap(SERIES)
     remove_private_pages()
+    # Same function as `python3 sitegen/stamp_versions.py`: stamp data-video-version(s) from the media files.
+    _, verrs = stamp_versions.stamp_site(SITE)
+    for e in verrs: warn(e)
     idx = os.path.join(HERE, "..", "scripts", "build_ai_index.py")
     if os.path.isfile(idx):
         subprocess.check_call([sys.executable, idx, "--search-only"], cwd=SITE)

@@ -1,18 +1,68 @@
-15 scenes, 222.76s, 6682 frames
+14 scenes, 246.06s, 7381 frames
   01_title                 0.50s  + 6.88s
-  02_quiz                  7.38s  +18.76s
-  03_broken               26.15s  +23.64s
-  04_first                49.78s  + 8.11s
-  05a_contract            57.89s  +21.21s
-  05b_agents              79.10s  + 8.71s
-  05c_merge               87.81s  +14.49s
-  05d_test               102.30s  + 8.71s
-  06_example             111.01s  +13.89s
-  07_together            124.90s  +31.87s
-  08_cost                156.77s  +17.54s
-  09_recap               174.31s  +10.84s
-  10_rule                185.16s  +18.76s
-  11_ask                 203.92s  + 9.62s
-  12_close               213.54s  + 9.22s
+  02_quiz                  7.38s  +19.36s
+  03_test                 26.75s  +23.04s
+  04_loop_graph           49.78s  +18.76s
+  05a_parts               68.55s  +18.16s
+  05b_shared              86.71s  +20.59s
+  06a_chain              107.30s  +21.21s
+  06b_fork               128.51s  +22.41s
+  07_bars                150.92s  +13.58s
+  08_scale               164.50s  +23.95s
+  09_recap               188.45s  +18.16s
+  10_rule                206.62s  +22.12s
+  11_ask                 228.74s  + 9.62s
+  12_close               238.36s  + 7.70s
+    frame 0/7381
+    frame 150/7381
+    frame 300/7381
+    frame 450/7381
+    frame 600/7381
+    frame 750/7381
+    frame 900/7381
+    frame 1050/7381
+    frame 1200/7381
+    frame 1350/7381
+    frame 1500/7381
+    frame 1650/7381
+    frame 1800/7381
+    frame 1950/7381
+    frame 2100/7381
+    frame 2250/7381
+    frame 2400/7381
+    frame 2550/7381
+    frame 2700/7381
+    frame 2850/7381
+    frame 3000/7381
+    frame 3150/7381
+    frame 3300/7381
+    frame 3450/7381
+    frame 3600/7381
+    frame 3750/7381
+    frame 3900/7381
+    frame 4050/7381
+    frame 4200/7381
+    frame 4350/7381
+    frame 4500/7381
+    frame 4650/7381
+    frame 4800/7381
+    frame 4950/7381
+    frame 5100/7381
+    frame 5250/7381
+    frame 5400/7381
+    frame 5550/7381
+    frame 5700/7381
+    frame 5850/7381
+    frame 6000/7381
+    frame 6150/7381
+    frame 6300/7381
+    frame 6450/7381
+    frame 6600/7381
+    frame 6750/7381
+    frame 6900/7381
+    frame 7050/7381
+    frame 7200/7381
+    frame 7350/7381
 
--> /workspace/legacy/build/se101/03-parallel-agents-one-integration/SE201_03_Parallel-Agents-One-Integration_public.mp4
+-> /workspace/legacy/build/se101/03-decompose-the-system-into-a-graph/SE201_03_Decompose-The-System-Into-A-Graph_public.mp4
+EXIT 0

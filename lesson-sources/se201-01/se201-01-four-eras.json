@@ -1,0 +1,858 @@
+{
+ "id": "se201-01-four-eras",
+ "title": "SE201 Lesson 1: Four eras of building systems",
+ "output": "01-four-eras-of-building-systems/SE201_01_Four-Eras-Of-Building-Systems_public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_title",
+   "text": "Software engineering two oh one. From loop, to enterprise systems. Lesson one. [pause] Four eras of building systems.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "SOFTWARE ENGINEERING 201  ·  LESSON 1",
+    "headline": "Four eras of\nbuilding systems.",
+    "sub": "From loop to enterprise systems  •  clarkhuang.github.io"
+   }
+  },
+  {
+   "id": "02_quiz",
+   "text": "Quick question. An agent can now write a working piece of a billing system in an afternoon. So in a big system today, what's scarce? [pause] Code? Servers? Or knowing that what got built is right? [pause] <emphasis>Knowing it's right.</emphasis> Code got cheap. Checking it didn't. [pause] Thirty years ago, the answer was very different.",
+   "visual": "quiz",
+   "chapter": "THE QUESTION",
+   "data": {
+    "question": "Agents write code fast now.\nBuilding a big system, what’s scarce?",
+    "options": [
+     "Code",
+     "Servers",
+     "Knowing it’s right"
+    ],
+    "answer": 2,
+    "why": "Code got\ncheap.\nChecking it\ndidn’t.",
+    "options_at": 0.3,
+    "reveal_at": 0.52
+   }
+  },
+  {
+   "id": "03_career",
+   "text": "I've been building systems for about thirty years. Systems built around money: electronic rent payments, a card-issuing platform, an investment adviser for nonprofits. And systems that sell: retail e-commerce and E.D.I., subscription billing, and today, e-commerce again. [pause] And the way you build a big system keeps changing.",
+   "visual": "graph",
+   "chapter": "A LENS",
+   "data": {
+    "label": "ABOUT THIRTY YEARS OF BUILDING SYSTEMS",
+    "bands": [
+     {
+      "x": 110,
+      "y": 316,
+      "w": 1750,
+      "h": 230,
+      "label": "MONEY",
+      "at": 0.04
+     },
+     {
+      "x": 110,
+      "y": 586,
+      "w": 1750,
+      "h": 230,
+      "label": "COMMERCE",
+      "at": 0.3
+     }
+    ],
+    "nodes": [
+     {
+      "id": "pb",
+      "text": "PropertyBridge",
+      "sub": "Electronic rent payments",
+      "tag": "CO-FOUNDER",
+      "x": 560,
+      "y": 470,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": null,
+      "at": 0.06
+     },
+     {
+      "id": "mq",
+      "text": "Marqeta",
+      "sub": "Card issuing",
+      "tag": "CO-FOUNDER",
+      "x": 1080,
+      "y": 470,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": null,
+      "at": 0.16
+     },
+     {
+      "id": "ec",
+      "text": "eCIO",
+      "sub": "Investment adviser, nonprofits",
+      "tag": "CO-FOUNDER · CTO",
+      "x": 1600,
+      "y": 470,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": null,
+      "at": 0.26
+     },
+     {
+      "id": "qrs",
+      "text": "QRS",
+      "sub": "Retail e-commerce, EDI",
+      "tag": "EARLY ROLE",
+      "x": 560,
+      "y": 740,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": null,
+      "at": 0.36000000000000004
+     },
+     {
+      "id": "st",
+      "text": "sticky.io",
+      "sub": "Subscription billing",
+      "tag": "CTO",
+      "x": 1080,
+      "y": 740,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": null,
+      "at": 0.46
+     },
+     {
+      "id": "now",
+      "text": "Today",
+      "sub": "An e-commerce company",
+      "tag": "CTO",
+      "x": 1600,
+      "y": 740,
+      "w": 440,
+      "h": 120,
+      "size": 36,
+      "sub_size": 25,
+      "tone": "hi",
+      "at": 0.56
+     }
+    ],
+    "edges": [],
+    "caption": "Payments, cards, billing, investing, commerce.",
+    "caption_x": 160,
+    "caption_y": 880,
+    "caption_at": 0.74,
+    "caption_size": 44
+   }
+  },
+  {
+   "id": "04_lens",
+   "text": "Here's a useful way to see why. <slow>Architecture bends around whatever is scarcest.</slow> Whatever is expensive, or slow, the design works around it. So for each of four eras, ask: what was scarce?",
+   "visual": "statement",
+   "chapter": "A LENS",
+   "data": {
+    "headline": "A useful lens: architecture\nbends around whatever\nis scarcest.",
+    "size": 96
+   }
+  },
+  {
+   "id": "05_1996",
+   "text": "Thirty years ago, the commercial web was brand new. You bought servers and racked them yourself, and more capacity was weeks away. So, typically, you built one big program, on one big database, and shipped a few times a year. Companies traded orders as overnight batch files, through E.D.I., and much of that still runs. [pause] What was scarce? <emphasis>The machines.</emphasis>",
+   "visual": "eras",
+   "chapter": "FOUR ERAS",
+   "data": {
+    "label": "FOUR ERAS OF BUILDING A SYSTEM  ·  WHAT WAS SCARCE?",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce": "Machines",
+      "rows": [
+       [
+        "RUNS ON",
+        "Servers you bought\nand racked yourself"
+       ],
+       [
+        "SHAPE",
+        "One big program,\none big database"
+       ],
+       [
+        "SHIPS",
+        "A few times a year"
+       ],
+       [
+        "CONNECTS BY",
+        "Overnight batch\nfiles, EDI"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce": "Coordination",
+      "rows": [
+       [
+        "RUNS ON",
+        "Rented racks; the first\npublic cloud services"
+       ],
+       [
+        "SHAPE",
+        "Browser, application,\ndatabase"
+       ],
+       [
+        "SHIPS",
+        "Every few weeks"
+       ],
+       [
+        "CONNECTS BY",
+        "Web services,\nXML over HTTP"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce": "Seeing the whole",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, by default\nfor new systems"
+       ],
+       [
+        "SHAPE",
+        "Many small services,\nowned by small teams"
+       ],
+       [
+        "SHIPS",
+        "Many times a day,\nat the best teams"
+       ],
+       [
+        "CONNECTS BY",
+        "An API for everything"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce": "Knowing it’s right",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, still"
+       ],
+       [
+        "SHAPE",
+        "Clear modules an\nagent can work inside"
+       ],
+       [
+        "SHIPS",
+        "As fast as you\ncan verify"
+       ],
+       [
+        "CONNECTS BY",
+        "APIs, and agents\ncalling tools"
+       ]
+      ]
+     }
+    ],
+    "upto": 1
+   },
+   "group": "eras"
+  },
+  {
+   "id": "06_2006",
+   "text": "Twenty years ago. The web was the front door. Browser, application, database: three tiers, on rented racks. And the first big public cloud services had just launched. Agile teams shipped every few weeks. [pause] What was scarce? <emphasis>Coordination.</emphasis> Getting a growing team to change one codebase without colliding.",
+   "visual": "eras",
+   "chapter": "FOUR ERAS",
+   "data": {
+    "label": "FOUR ERAS OF BUILDING A SYSTEM  ·  WHAT WAS SCARCE?",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce": "Machines",
+      "rows": [
+       [
+        "RUNS ON",
+        "Servers you bought\nand racked yourself"
+       ],
+       [
+        "SHAPE",
+        "One big program,\none big database"
+       ],
+       [
+        "SHIPS",
+        "A few times a year"
+       ],
+       [
+        "CONNECTS BY",
+        "Overnight batch\nfiles, EDI"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce": "Coordination",
+      "rows": [
+       [
+        "RUNS ON",
+        "Rented racks; the first\npublic cloud services"
+       ],
+       [
+        "SHAPE",
+        "Browser, application,\ndatabase"
+       ],
+       [
+        "SHIPS",
+        "Every few weeks"
+       ],
+       [
+        "CONNECTS BY",
+        "Web services,\nXML over HTTP"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce": "Seeing the whole",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, by default\nfor new systems"
+       ],
+       [
+        "SHAPE",
+        "Many small services,\nowned by small teams"
+       ],
+       [
+        "SHIPS",
+        "Many times a day,\nat the best teams"
+       ],
+       [
+        "CONNECTS BY",
+        "An API for everything"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce": "Knowing it’s right",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, still"
+       ],
+       [
+        "SHAPE",
+        "Clear modules an\nagent can work inside"
+       ],
+       [
+        "SHIPS",
+        "As fast as you\ncan verify"
+       ],
+       [
+        "CONNECTS BY",
+        "APIs, and agents\ncalling tools"
+       ]
+      ]
+     }
+    ],
+    "upto": 2
+   },
+   "group": "eras"
+  },
+  {
+   "id": "07_2016",
+   "text": "Ten years ago. The cloud, by default, for new systems. Many small services, in containers, owned by small teams. The best teams deployed many times a day. And parts they once built themselves became a service, behind an A.P.I. [pause] What was scarce? <emphasis>Seeing the whole.</emphasis> No one person could hold it all in their head, so we built dashboards and tracing to see it.",
+   "visual": "eras",
+   "chapter": "FOUR ERAS",
+   "data": {
+    "label": "FOUR ERAS OF BUILDING A SYSTEM  ·  WHAT WAS SCARCE?",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce": "Machines",
+      "rows": [
+       [
+        "RUNS ON",
+        "Servers you bought\nand racked yourself"
+       ],
+       [
+        "SHAPE",
+        "One big program,\none big database"
+       ],
+       [
+        "SHIPS",
+        "A few times a year"
+       ],
+       [
+        "CONNECTS BY",
+        "Overnight batch\nfiles, EDI"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce": "Coordination",
+      "rows": [
+       [
+        "RUNS ON",
+        "Rented racks; the first\npublic cloud services"
+       ],
+       [
+        "SHAPE",
+        "Browser, application,\ndatabase"
+       ],
+       [
+        "SHIPS",
+        "Every few weeks"
+       ],
+       [
+        "CONNECTS BY",
+        "Web services,\nXML over HTTP"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce": "Seeing the whole",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, by default\nfor new systems"
+       ],
+       [
+        "SHAPE",
+        "Many small services,\nowned by small teams"
+       ],
+       [
+        "SHIPS",
+        "Many times a day,\nat the best teams"
+       ],
+       [
+        "CONNECTS BY",
+        "An API for everything"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce": "Knowing it’s right",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, still"
+       ],
+       [
+        "SHAPE",
+        "Clear modules an\nagent can work inside"
+       ],
+       [
+        "SHIPS",
+        "As fast as you\ncan verify"
+       ],
+       [
+        "CONNECTS BY",
+        "APIs, and agents\ncalling tools"
+       ]
+      ]
+     }
+    ],
+    "upto": 3
+   },
+   "group": "eras"
+  },
+  {
+   "id": "08_now",
+   "text": "And now. Agents can write much of the code. Building a piece is fast, and cheap. [pause] So what's scarce? <slow>Knowing that it's right.</slow> That, and context: how much of the system an agent can see, and understand, at once.",
+   "visual": "eras",
+   "chapter": "FOUR ERAS",
+   "data": {
+    "label": "FOUR ERAS OF BUILDING A SYSTEM  ·  WHAT WAS SCARCE?",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce": "Machines",
+      "rows": [
+       [
+        "RUNS ON",
+        "Servers you bought\nand racked yourself"
+       ],
+       [
+        "SHAPE",
+        "One big program,\none big database"
+       ],
+       [
+        "SHIPS",
+        "A few times a year"
+       ],
+       [
+        "CONNECTS BY",
+        "Overnight batch\nfiles, EDI"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce": "Coordination",
+      "rows": [
+       [
+        "RUNS ON",
+        "Rented racks; the first\npublic cloud services"
+       ],
+       [
+        "SHAPE",
+        "Browser, application,\ndatabase"
+       ],
+       [
+        "SHIPS",
+        "Every few weeks"
+       ],
+       [
+        "CONNECTS BY",
+        "Web services,\nXML over HTTP"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce": "Seeing the whole",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, by default\nfor new systems"
+       ],
+       [
+        "SHAPE",
+        "Many small services,\nowned by small teams"
+       ],
+       [
+        "SHIPS",
+        "Many times a day,\nat the best teams"
+       ],
+       [
+        "CONNECTS BY",
+        "An API for everything"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce": "Knowing it’s right",
+      "rows": [
+       [
+        "RUNS ON",
+        "The cloud, still"
+       ],
+       [
+        "SHAPE",
+        "Clear modules an\nagent can work inside"
+       ],
+       [
+        "SHIPS",
+        "As fast as you\ncan verify"
+       ],
+       [
+        "CONNECTS BY",
+        "APIs, and agents\ncalling tools"
+       ]
+      ]
+     }
+    ],
+    "upto": 4,
+    "caption": "Also scarce: context. How much of the system an agent can see at once.",
+    "caption_at": 0.72
+   },
+   "group": "eras"
+  },
+  {
+   "id": "09_design",
+   "text": "Now a made-up example: a subscription-billing system, built today, the kind of platform I ran as C.T.O. at sticky dot I O. Clear modules, with boundaries an agent can work inside. One repository, where it can find anything. Tests and specs it can check itself against. And decisions written down, because the agent wasn't in the meeting. [pause] My own team keeps its code that way: one repository, with instruction files for the agents.",
+   "visual": "graph",
+   "chapter": "BUILDING NOW",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  A SUBSCRIPTION-BILLING SYSTEM, BUILT NOW",
+    "bands": [
+     {
+      "x": 150,
+      "y": 300,
+      "w": 1620,
+      "h": 540,
+      "label": "ONE REPOSITORY  ·  EVERYTHING FINDABLE",
+      "tone": "accent",
+      "at": 0.1
+     }
+    ],
+    "nodes": [
+     {
+      "id": "plans",
+      "text": "Plans and\nprices",
+      "x": 420,
+      "y": 440,
+      "w": 300,
+      "h": 110,
+      "at": 0.16
+     },
+     {
+      "id": "cust",
+      "text": "Customer\naccounts",
+      "x": 420,
+      "y": 610,
+      "w": 300,
+      "h": 110,
+      "at": 0.2
+     },
+     {
+      "id": "renew",
+      "text": "Renewals",
+      "x": 880,
+      "y": 525,
+      "w": 270,
+      "h": 110,
+      "at": 0.24
+     },
+     {
+      "id": "pay",
+      "text": "Payments",
+      "x": 1270,
+      "y": 525,
+      "w": 270,
+      "h": 110,
+      "at": 0.28
+     },
+     {
+      "id": "ledger",
+      "text": "Ledger",
+      "x": 1610,
+      "y": 525,
+      "w": 230,
+      "h": 110,
+      "tone": "amber",
+      "tag": "MUST ADD UP",
+      "at": 0.32
+     },
+     {
+      "id": "tests",
+      "text": "Tests and specs\nper module",
+      "x": 640,
+      "y": 760,
+      "w": 380,
+      "h": 96,
+      "size": 26,
+      "tone": "accent",
+      "at": 0.5
+     },
+     {
+      "id": "dec",
+      "text": "Decisions,\nwritten down",
+      "x": 1100,
+      "y": 760,
+      "w": 380,
+      "h": 96,
+      "size": 26,
+      "tone": "accent",
+      "at": 0.62
+     },
+     {
+      "id": "agents",
+      "text": "Instructions\nfor agents",
+      "x": 1520,
+      "y": 760,
+      "w": 340,
+      "h": 96,
+      "size": 26,
+      "tone": "accent",
+      "at": 0.86
+     }
+    ],
+    "edges": [
+     {
+      "from": "plans",
+      "to": "renew",
+      "label": "price",
+      "dx": 30
+     },
+     {
+      "from": "cust",
+      "to": "renew",
+      "label": "who",
+      "dx": 30,
+      "dy": 8
+     },
+     {
+      "from": "renew",
+      "to": "pay",
+      "label": "charge"
+     },
+     {
+      "from": "pay",
+      "to": "ledger",
+      "label": "entry",
+      "size": 18
+     }
+    ],
+    "caption": "Boundaries an agent can work inside. Checks it can run.",
+    "caption_x": 160,
+    "caption_y": 890,
+    "caption_at": 0.4,
+    "caption_size": 40
+   }
+  },
+  {
+   "id": "10_caveat",
+   "text": "I'll be straight about that list. It's where the thinking is heading, not a settled answer. The evidence for it is still thin, and indirect. Every era had a confident answer, then found its costs.",
+   "visual": "statement",
+   "chapter": "BUILDING NOW",
+   "data": {
+    "headline": "Where the thinking is heading.\nNot settled.",
+    "size": 96
+   }
+  },
+  {
+   "id": "11_constants",
+   "text": "And here's what never changed, in any era. The data model outlives the code. Money has to add up. Every system depends on things you don't control: a bank, a card network, a partner's system. And somebody has to understand the layer below.",
+   "visual": "constants",
+   "chapter": "WHAT NEVER CHANGES",
+   "data": {
+    "label": "WHAT NEVER CHANGED  ·  TRUE IN ALL FOUR ERAS",
+    "cols": [
+     "1996",
+     "2006",
+     "2016",
+     "Now"
+    ],
+    "items": [
+     {
+      "text": "The data model outlives the code",
+      "sub": "Programs get rewritten. The data stays."
+     },
+     {
+      "text": "Money has to add up",
+      "sub": "Every rent payment, card transaction, renewal"
+     },
+     {
+      "text": "You depend on what you don’t control",
+      "sub": "A bank, a card network, a partner’s system"
+     },
+     {
+      "text": "Someone understands the layer below",
+      "sub": "When it breaks, someone has to look underneath"
+     }
+    ]
+   }
+  },
+  {
+   "id": "12_path",
+   "text": "Here's the path. Today, the four eras. Then, build a whole system A.I. native, decompose it, and run agents in parallel. Then governance, quality, skills, and pipelines. [pause] And finally, agents that operate enterprise systems.",
+   "visual": "recap",
+   "chapter": "THE PATH",
+   "data": {
+    "label": "SOFTWARE ENGINEERING 201  ·  FROM LOOP TO ENTERPRISE SYSTEMS",
+    "rows": [
+     "Four eras of building systems",
+     "Build the whole system, AI-native",
+     "Decompose the system into a graph",
+     "Parallel agents, one integration",
+     "Governance: where people decide",
+     "Quality, feedback, observability",
+     "Skills as building blocks",
+     "Routines, pipelines, integration",
+     "Agents that operate\nenterprise systems"
+    ],
+    "upto": 9,
+    "new_from": 0
+   }
+  },
+  {
+   "id": "13_recap",
+   "text": "So, to recap. Architecture bends around what's scarce. Today, that's knowing the work is right, and context. So design for checking. And the four constants still hold.",
+   "visual": "rule",
+   "chapter": "RECAP",
+   "data": {
+    "headline": "Four eras, one lens",
+    "items": [
+     "Architecture bends around what’s scarce",
+     "Now: knowing it’s right, and context",
+     "So design for checking: boundaries, tests",
+     "Four constants still hold"
+    ]
+   }
+  },
+  {
+   "id": "14_rule",
+   "text": "Which gives us rule one, for your agents. Before you design a system, write down four things. Where the boundaries are. What the data model is. What you depend on, and don't control. And how you'll know it's right. Then put it in the repository, where every agent can read it.",
+   "visual": "rule_card",
+   "chapter": "THE RULE",
+   "data": {
+    "kicker": "RULE 1  ·  FOR YOUR AGENTS",
+    "size": 56,
+    "lines": [
+     {
+      "text": "Before you design a system, write down:"
+     },
+     {
+      "text": "where the boundaries are,",
+      "tone": "accent"
+     },
+     {
+      "text": "what the data model is,",
+      "tone": "accent"
+     },
+     {
+      "text": "what you depend on and don’t control,",
+      "tone": "accent"
+     },
+     {
+      "text": "and how you’ll know it’s right.",
+      "tone": "accent"
+     },
+     {
+      "text": "Put it in the repo, where every agent can read it."
+     }
+    ],
+    "foot": "THE FULL RULE IS ON THE LESSON PAGE"
+   }
+  },
+  {
+   "id": "15_ask",
+   "text": "Now, your turn. Pick the oldest system you still depend on. When was it built, and what was scarce back then? [pause] Then ask your A.I. which era's thinking is hiding inside it.",
+   "visual": "statement",
+   "chapter": "YOUR TURN",
+   "data": {
+    "headline": "Your turn. Your oldest system:\nwhen was it built? What was scarce?\nAsk your AI which era’s thinking\nis hiding inside it.",
+    "size": 74
+   }
+  },
+  {
+   "id": "16_close",
+   "text": "Next: build a whole system, A.I. native, so agents and people can both read it, and rebuild it. See you in lesson two.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "See you in\nlesson two.",
+    "sub": "Software Engineering 201"
+   }
+  }
+ ]
+}

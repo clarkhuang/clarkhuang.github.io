@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decompose the System into a Graph — Software Engineering 201 — Clark Huang</title>
+  <meta name="description" content="An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two ">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="Decompose the System into a Graph — Software Engineering 201 — Clark Huang">
+  <meta property="og:description" content="An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two ">
+  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Decompose the System into a Graph — Software Engineering 201 — Clark Huang">
+  <meta name="twitter:description" content="An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two ">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Decompose the System into a Graph — Software Engineering 201 — Clark Huang", "description": "An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two ", "url": "https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/index.md"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main" class="lesson">
+    <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/index.md (plus https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+        </div>
+      </details>
+      <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 3</p>
+      <h1>Decompose the System into a Graph</h1>
+      <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="/videos/posters/se201-03-decompose-the-system-into-a-graph.jpg" data-lesson-id="se201/03" data-video-version="9d91fe56" aria-label="Lesson video: Decompose the System into a Graph">
+        <source src="/videos/se201-03-decompose-the-system-into-a-graph.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" label="English" src="/videos/se201-03-decompose-the-system-into-a-graph.vtt" default>
+        Your browser can't play this video. <a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4">Download the MP4</a>.
+      </video></div>
+      <div class="lesson-meta" data-watch-id="se201/03" data-video-version="9d91fe56" data-status-scope><span><time datetime="PT4M6S">4:06</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4" download>Download MP4</a><span aria-hidden="true">·</span><a href="/videos/se201-03-decompose-the-system-into-a-graph.vtt">Captions (VTT)</a><span aria-hidden="true">·</span><a href="https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-03">How it was built</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se201/03" data-video-version="9d91fe56" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
+      <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+      <p class="upnext-after">Up next: <a href="/software-engineering-201/04-parallel-agents-one-integration/">Lesson 4: Parallel Agents, One Integration</a></p>
+      <div class="grid2">
+        <section>
+          <h2 class="label">The lesson</h2>
+          <p>An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two steps is what crosses between them, and “and then” is not a dependency. The worked example is this site: four parts that share one generator, and one lesson&#x27;s build, a strict chain that forks after the render. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.</p>
+          <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-03">Before any job with more than one part, draw the graph. Name the parts, and give each one a boundary and an owner. Draw an arrow only where something crosses from one part to another; “and then” is not a dependency. Anything two parts share becomes its own node, with one owner. Run the parts with no arrow between them at the same time, and give every part its own plan, build, and verify loop, with its own finish line and its own check.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-03" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div><p class="muted credit">Related reading: the loop-and-graph framing for agent work also appears in “Loops and Graphs” by Hanako (@hanakoxbt, August 2026).</p>
+        </section>
+        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The question</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=26.8" data-seek="26.8" data-target="lesson-video"><span class="ts">0:26</span><span>What crosses?</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=49.8" data-seek="49.8" data-target="lesson-video"><span class="ts">0:49</span><span>Loop and graph</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=68.5" data-seek="68.5" data-target="lesson-video"><span class="ts">1:08</span><span>This site, as a graph</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=107.3" data-seek="107.3" data-target="lesson-video"><span class="ts">1:47</span><span>One lesson, as a graph</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=150.9" data-seek="150.9" data-target="lesson-video"><span class="ts">2:30</span><span>Why it matters</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=164.5" data-seek="164.5" data-target="lesson-video"><span class="ts">2:44</span><span>At enterprise scale</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=188.4" data-seek="188.4" data-target="lesson-video"><span class="ts">3:08</span><span>Recap</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=206.6" data-seek="206.6" data-target="lesson-video"><span class="ts">3:26</span><span>The rule</span></a></li><li><a href="/videos/se201-03-decompose-the-system-into-a-graph.mp4#t=228.7" data-seek="228.7" data-target="lesson-video"><span class="ts">3:48</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
+      </div>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/02-build-the-whole-system-ai-native/"><small>Previous</small>Lesson 2: Build the Whole System, AI-Native</a><a class="next" href="/software-engineering-201/04-parallel-agents-one-integration/"><small>Next</small>Lesson 4: Parallel Agents, One Integration</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
+        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

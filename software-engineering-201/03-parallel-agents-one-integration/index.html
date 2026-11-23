@@ -3,88 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parallel Agents, One Integration — Software Engineering 201 — Clark Huang</title>
-  <meta name="description" content="Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it">
-  <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
-  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Clark Huang">
-  <meta property="og:title" content="Parallel Agents, One Integration — Software Engineering 201 — Clark Huang">
-  <meta property="og:description" content="Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it">
-  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/">
-  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
-  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Parallel Agents, One Integration — Software Engineering 201 — Clark Huang">
-  <meta name="twitter:description" content="Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it">
-  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/assets/ask-book.css">
-  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
-  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Parallel Agents, One Integration — Software Engineering 201 — Clark Huang", "description": "Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it", "url": "https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md"}}</script>
+  <title>Moved: Parallel Agents, One Integration — Software Engineering 201 — Clark Huang</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/04-parallel-agents-one-integration/">
+  <meta http-equiv="refresh" content="0; url=../04-parallel-agents-one-integration/">
+  <link rel="alternate" type="text/markdown" href="/software-engineering-201/04-parallel-agents-one-integration/index.md">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
-      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
-    </div>
-  </header>
-  <main id="main" class="lesson">
-    <div class="wrap">
-      <details class="ai-use">
-        <summary>Use this page with your AI</summary>
-        <div class="ai-use-body">
-          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
-          <div class="ai-prompt" data-status-scope>
-            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/index.md (plus https://clarkhuang.github.io/software-engineering-201/03-parallel-agents-one-integration/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
-            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
-          </div>
-          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
-        </div>
-      </details>
-      <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 3</p>
-      <h1>Parallel Agents, One Integration</h1>
-      <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="/videos/posters/se201-03-parallel-agents-one-integration.jpg" data-lesson-id="se201/03" aria-label="Lesson video: Parallel Agents, One Integration">
-        <source src="/videos/se201-03-parallel-agents-one-integration.mp4" type="video/mp4">
-        <track kind="captions" srclang="en" label="English" src="/videos/se201-03-parallel-agents-one-integration.vtt" default>
-        Your browser can't play this video. <a href="/videos/se201-03-parallel-agents-one-integration.mp4">Download the MP4</a>.
-      </video></div>
-      <div class="lesson-meta" data-watch-id="se201/03" data-status-scope><span><time datetime="PT3M43S">3:42</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se201-03-parallel-agents-one-integration.mp4" download>Download MP4</a><span aria-hidden="true">·</span><a href="/videos/se201-03-parallel-agents-one-integration.vtt">Captions (VTT)</a><span aria-hidden="true">·</span><a href="https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-03">How it was built</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se201/03" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
-      <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
-      <p class="upnext-after">Up next: <a href="/software-engineering-201/04-governance-where-people-decide/">Lesson 4: Governance: Where People Decide</a> (outline)</p>
-      <div class="grid2">
-        <section>
-          <h2 class="label">The lesson</h2>
-          <p>Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it comes back together cleanly, so plan the integration first: a shared contract written before the work starts, one merge point used early, and tests on the whole system. The worked example is Software Engineering 101, lessons 3 to 5: built at the same time, then brought together through one shared script format, one content file, and one generator, and shipped in one change. Today the same path adds a whole-site check and a pull request to staging that a person approves.</p>
-          <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-03">Before you run agents in parallel, plan how the work comes back together. Write the shared contract first: the interfaces, the formats, the names, and who owns which files; when it has to change, change it in one place. Give each agent its own brief, its own finish line, and its own check, and make matching the contract part of that check. Merge early, in one place, and test the whole system, not just each part. If two parts keep needing each other&#x27;s answers, they are not parallel work: go back to the graph.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-03" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>
-        </section>
-        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The question</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=26.1" data-seek="26.1" data-target="lesson-video"><span class="ts">0:26</span><span>What goes wrong</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=49.8" data-seek="49.8" data-target="lesson-video"><span class="ts">0:49</span><span>Plan the integration first</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=111.0" data-seek="111.0" data-target="lesson-video"><span class="ts">1:51</span><span>A worked example</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=156.8" data-seek="156.8" data-target="lesson-video"><span class="ts">2:36</span><span>The honest math</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=174.3" data-seek="174.3" data-target="lesson-video"><span class="ts">2:54</span><span>Recap</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=185.2" data-seek="185.2" data-target="lesson-video"><span class="ts">3:05</span><span>The rule</span></a></li><li><a href="/videos/se201-03-parallel-agents-one-integration.mp4#t=203.9" data-seek="203.9" data-target="lesson-video"><span class="ts">3:23</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
-      </div>
-      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/02-decompose-the-system-into-a-graph/"><small>Previous</small>Lesson 2: Decompose the System into a Graph</a><a class="next" href="/software-engineering-201/04-governance-where-people-decide/"><small>Next</small>Lesson 4: Governance: Where People Decide</a></nav>
-    </div>
+  <main>
+    <h1>This lesson moved</h1>
+    <p>Software Engineering 201 was renumbered when <strong>Four Eras of Building Systems</strong> became lesson 1. This lesson is now <a href="../04-parallel-agents-one-integration/">Lesson 4: Parallel Agents, One Integration</a>.</p>
+    <p><a href="/software-engineering-201/">All Software Engineering 201 lessons</a></p>
   </main>
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-cols">
-        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
-        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
-        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
-      </div>
-      <div class="footer-fine">
-        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
-        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
-      </div>
-    </div>
-  </footer>
-  <script src="/assets/site.js" defer></script>
+  <script>location.replace("../04-parallel-agents-one-integration/" + location.hash);</script>
 </body>
 </html>
