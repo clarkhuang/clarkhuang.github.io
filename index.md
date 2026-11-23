@@ -24,13 +24,23 @@ How to think about building software now that AI agents do much of the building.
 
 ### [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/index.md)
 
-From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 builds whole apps and systems AI-native, and climbs to agents that operate enterprise systems with governance, permissions, and an audit trail.
+From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail.
 
-3 of 8 lessons available.
+8 of 9 lessons available.
 
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
+
+## Ask, connect, contribute
+
+Search the lessons and the book preview, or hook your own AI to this site.
+
+- [Ask the Book](https://clarkhuang.github.io/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.
+- [Connect your AI](https://clarkhuang.github.io/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.
+- [Contributor credits](https://clarkhuang.github.io/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.
+
+This site is also an open project. [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md), or [copy this for yourself](https://clarkhuang.github.io/copy-this/index.md).
 
 ## For agents
 

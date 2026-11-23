@@ -1,0 +1,259 @@
+WEBVTT
+
+NOTE SE201 Lesson 2: Build the whole system, AI-native — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:05.372
+Software engineering 201. From loop, to enterprise systems.
+
+2
+00:00:05.372 --> 00:00:09.170
+Lesson two. Build the whole system, AI native.
+
+3
+00:00:09.520 --> 00:00:14.441
+Quick question to start. You're asking agents to build a whole app, not just one fix.
+
+4
+00:00:14.441 --> 00:00:16.641
+What matters most? The smartest model?
+
+5
+00:00:16.641 --> 00:00:21.562
+The longest prompt? Or a system the agents can read, check, and rebuild on their own?
+
+6
+00:00:21.562 --> 00:00:27.178
+The system they can read. A smarter model still guesses when the project lives in someone's head.
+
+7
+00:00:27.178 --> 00:00:29.320
+A long prompt is gone after one chat.
+
+8
+00:00:29.320 --> 00:00:33.430
+What's written into the system is there for every run, and every agent.
+
+9
+00:00:33.780 --> 00:00:36.830
+In 101, the unit of work was one loop.
+
+10
+00:00:36.830 --> 00:00:39.158
+Plan, build, verify. One fix.
+
+11
+00:00:39.158 --> 00:00:43.333
+One feature. In 201, the unit of work is the system.
+
+12
+00:00:43.333 --> 00:00:46.704
+Many parts. Many people. Years of history.
+
+13
+00:00:46.704 --> 00:00:51.280
+And now, agents working in it right alongside the people.
+
+14
+00:00:51.630 --> 00:00:54.107
+So what does AI native actually mean?
+
+15
+00:00:54.107 --> 00:00:56.719
+Here's the definition this series uses.
+
+16
+00:00:56.719 --> 00:01:04.887
+A system is AI native when agents and people can both read it, find their way around it, contribute to it, and rebuild it.
+
+17
+00:01:04.887 --> 00:01:07.097
+Not only the person who wrote it.
+
+18
+00:01:07.097 --> 00:01:09.440
+Not only whoever knows the history.
+
+19
+00:01:09.800 --> 00:01:11.541
+That takes four things. One.
+
+20
+00:01:11.541 --> 00:01:20.616
+Every page people read has a twin an agent can read: plain Markdown, an index of the whole system, and an agents file that says how to work there.
+
+21
+00:01:20.616 --> 00:01:22.916
+Two. Specs and briefs are the source.
+
+22
+00:01:22.916 --> 00:01:25.403
+Change the brief, and the build follows.
+
+23
+00:01:25.403 --> 00:01:27.951
+Three. Tests and checks are the contract.
+
+24
+00:01:27.951 --> 00:01:32.054
+An agent is done when the checks pass, not when it says it's done.
+
+25
+00:01:32.054 --> 00:01:38.270
+And four. Every change goes to staging first, and a person approves it before it reaches production.
+
+26
+00:01:38.620 --> 00:01:40.104
+And this isn't hypothetical.
+
+27
+00:01:40.104 --> 00:01:43.020
+The site you're on right now is built exactly this way.
+
+28
+00:01:43.360 --> 00:01:48.509
+Every page has an index.md twin, and every folder has an AGENTS.md file.
+
+29
+00:01:48.509 --> 00:01:58.021
+There's an llms.txt that indexes the whole site, a machine-readable lesson catalog, and a read-only connector AI tools can plug into.
+
+30
+00:01:58.021 --> 00:02:06.960
+The pages are generated from one content file, and the rebuild steps are written down, so an agent can regenerate every page.
+
+31
+00:02:07.310 --> 00:02:09.631
+And here's the part that matters most.
+
+32
+00:02:09.631 --> 00:02:12.562
+Agents open pull requests into a staging branch.
+
+33
+00:02:12.562 --> 00:02:16.105
+Staging is a full preview of the site, hidden from search.
+
+34
+00:02:16.105 --> 00:02:18.120
+And only I merge into production.
+
+35
+00:02:18.470 --> 00:02:20.813
+Think of a kitchen with one great cook.
+
+36
+00:02:20.813 --> 00:02:22.615
+The recipes are in their head.
+
+37
+00:02:22.615 --> 00:02:24.718
+Only they know where everything is.
+
+38
+00:02:24.718 --> 00:02:26.520
+And every plate waits on them.
+
+39
+00:02:26.860 --> 00:02:28.948
+Now picture a big restaurant kitchen.
+
+40
+00:02:28.948 --> 00:02:30.585
+The recipes are written down.
+
+41
+00:02:30.585 --> 00:02:34.988
+Every station is labeled. A cook on a brand new shift can work from the cards.
+
+42
+00:02:34.988 --> 00:02:38.375
+And nothing leaves the pass until the head chef looks at it.
+
+43
+00:02:38.375 --> 00:02:41.310
+That's what lets a kitchen grow past one great cook.
+
+44
+00:02:41.670 --> 00:02:44.945
+Now scale that up. An enterprise system isn't one repo.
+
+45
+00:02:44.945 --> 00:02:51.494
+It's dozens of services, data that has to stay private, and people who need to know who changed what, and why.
+
+46
+00:02:51.494 --> 00:02:53.399
+The same four things still hold.
+
+47
+00:02:53.399 --> 00:02:59.770
+They just matter more. Without them, every agent starts from zero, and every person becomes the bottleneck.
+
+48
+00:03:00.120 --> 00:03:02.129
+That's the path for this series.
+
+49
+00:03:02.129 --> 00:03:04.703
+Today: build the whole system, AI native.
+
+50
+00:03:04.703 --> 00:03:06.711
+Then, decompose it into a graph.
+
+51
+00:03:06.711 --> 00:03:10.290
+Run agents in parallel, and bring the work back together.
+
+52
+00:03:10.290 --> 00:03:12.675
+Put people where the decisions matter.
+
+53
+00:03:12.675 --> 00:03:14.809
+Measure quality, and watch it run.
+
+54
+00:03:14.809 --> 00:03:16.755
+Turn repeated work into skills.
+
+55
+00:03:16.755 --> 00:03:19.015
+Wire it into routines and pipelines.
+
+56
+00:03:19.015 --> 00:03:25.230
+And finally, agents that operate enterprise systems, with real permissions, and a full audit trail.
+
+57
+00:03:25.580 --> 00:03:28.020
+Which gives us rule two, for your agents.
+
+58
+00:03:28.020 --> 00:03:34.628
+Before you build anything bigger than one fix, make it readable: a Markdown twin, an index, and an agents file.
+
+59
+00:03:34.628 --> 00:03:38.259
+Keep the specs as the source, and the checks as the contract.
+
+60
+00:03:38.259 --> 00:03:43.080
+And send every change through staging, for a person to approve before production.
+
+61
+00:03:43.430 --> 00:03:45.953
+Now, your turn. Pick a system you work on.
+
+62
+00:03:45.953 --> 00:03:49.558
+If a brand new agent showed up tomorrow, what could it read?
+
+63
+00:03:49.558 --> 00:03:51.480
+And what would it have to guess?
+
+64
+00:03:51.830 --> 00:03:54.000
+See you in lesson three.

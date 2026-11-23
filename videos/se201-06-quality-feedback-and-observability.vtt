@@ -1,0 +1,303 @@
+WEBVTT
+
+NOTE SE201 Lesson 6: Quality, feedback, and observability — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:03.610
+Software engineering 201. Lesson six.
+
+2
+00:00:03.610 --> 00:00:06.720
+Quality, feedback, and observability.
+
+3
+00:00:07.070 --> 00:00:09.125
+Picture a made-up billing system.
+
+4
+00:00:09.125 --> 00:00:11.678
+Last night, it renewed its subscriptions.
+
+5
+00:00:11.678 --> 00:00:15.102
+This morning the build is green, and every test passed.
+
+6
+00:00:15.102 --> 00:00:18.714
+Was every customer charged the right amount, exactly once?
+
+7
+00:00:18.714 --> 00:00:21.827
+Yes, the tests passed? Probably, coverage is high?
+
+8
+00:00:21.827 --> 00:00:23.633
+Or: you can't tell from that?
+
+9
+00:00:23.633 --> 00:00:28.054
+You can't tell from that. Green says the code did what its tests asked.
+
+10
+00:00:28.054 --> 00:00:30.980
+It says nothing about what happened last night.
+
+11
+00:00:31.330 --> 00:00:36.034
+Back to the lens from lesson one: architecture bends around what's scarce.
+
+12
+00:00:36.034 --> 00:00:39.848
+Ten years ago, the scarce thing was seeing the whole system.
+
+13
+00:00:39.848 --> 00:00:43.154
+The answer was observability: logs, metrics, traces.
+
+14
+00:00:43.154 --> 00:00:44.870
+They answer: what happened?
+
+15
+00:00:45.220 --> 00:00:47.922
+Now the scarce thing is knowing it's right.
+
+16
+00:00:47.922 --> 00:00:49.682
+That's a different question.
+
+17
+00:00:49.682 --> 00:00:54.772
+And no dashboard can answer it, until somebody has written down what right means.
+
+18
+00:00:54.772 --> 00:00:57.538
+So: define right, up front. Watch every run.
+
+19
+00:00:57.538 --> 00:00:59.360
+And feed back what you learn.
+
+20
+00:00:59.720 --> 00:01:04.338
+Take our made-up example: the subscription-billing system from lesson one.
+
+21
+00:01:04.338 --> 00:01:06.273
+Here are last night's renewals.
+
+22
+00:01:06.273 --> 00:01:10.142
+And the build is green. But no test ever looked at this table.
+
+23
+00:01:10.142 --> 00:01:12.950
+So was last night right? The green can't say.
+
+24
+00:01:13.300 --> 00:01:18.455
+So before the work starts, write down what right means, in the business's words.
+
+25
+00:01:18.455 --> 00:01:21.871
+Every renewal charged the right amount, exactly once.
+
+26
+00:01:21.871 --> 00:01:24.770
+Then split that into checks an agent can run.
+
+27
+00:01:24.770 --> 00:01:26.575
+One: none was charged twice.
+
+28
+00:01:26.575 --> 00:01:29.217
+Two: each charge equals the plan's price.
+
+29
+00:01:29.217 --> 00:01:32.310
+Three: every renewal that was due was attempted.
+
+30
+00:01:32.660 --> 00:01:35.493
+Now run them, on last night's real renewals.
+
+31
+00:01:35.493 --> 00:01:38.391
+One was charged twice. One, the wrong amount.
+
+32
+00:01:38.391 --> 00:01:42.255
+One was never attempted. And look at the totals: they match.
+
+33
+00:01:42.255 --> 00:01:45.861
+Three wrong renewals, inside a sum that's exactly right.
+
+34
+00:01:45.861 --> 00:01:48.630
+So check every renewal, not just the total.
+
+35
+00:01:48.980 --> 00:01:51.209
+That one sentence does double duty.
+
+36
+00:01:51.209 --> 00:01:53.948
+You write the check once, and run it twice.
+
+37
+00:01:53.948 --> 00:01:57.705
+Before a change ships, on sample renewals, in the pipeline.
+
+38
+00:01:57.705 --> 00:02:00.635
+And after every nightly run, on the real ones.
+
+39
+00:02:00.635 --> 00:02:09.933
+Add a target for time, too. A service level objective, an SLO: say, ninety-nine point nine percent of renewals due today, attempted by six A.M.
+
+40
+00:02:09.933 --> 00:02:14.710
+Now an agent can run all of it, without asking anyone what good looks like.
+
+41
+00:02:15.060 --> 00:02:17.553
+The checks say that something is wrong.
+
+42
+00:02:17.553 --> 00:02:24.647
+The record says why. So every step of every run leaves a line, in a shape that people and agents can both read.
+
+43
+00:02:24.647 --> 00:02:27.779
+Here's the double charge. Attempt one: a timeout.
+
+44
+00:02:27.779 --> 00:02:30.144
+Attempt two, with a new key: charged.
+
+45
+00:02:30.144 --> 00:02:34.235
+Then reconcile, against the processor's own report: two charges.
+
+46
+00:02:34.235 --> 00:02:36.472
+The first attempt had gone through.
+
+47
+00:02:36.472 --> 00:02:37.750
+Nobody has to guess.
+
+48
+00:02:38.100 --> 00:02:42.715
+First, put last night right, with a person approving, as in lesson five.
+
+49
+00:02:42.715 --> 00:02:47.394
+Then close the loop. Every miss goes back into the brief, and the checks.
+
+50
+00:02:47.394 --> 00:02:52.714
+The double charge becomes a new line in the brief: a retry must reuse the same key.
+
+51
+00:02:52.714 --> 00:02:55.791
+That's an idempotency key; more in lesson eight.
+
+52
+00:02:55.791 --> 00:02:58.354
+And a new test: the processor times out.
+
+53
+00:02:58.354 --> 00:03:00.790
+So each run makes the next one better.
+
+54
+00:03:01.130 --> 00:03:02.865
+And be honest about the limit.
+
+55
+00:03:02.865 --> 00:03:05.757
+A check only catches what somebody thought to ask.
+
+56
+00:03:05.757 --> 00:03:08.649
+So a person still reads a sample of real invoices.
+
+57
+00:03:08.649 --> 00:03:11.310
+And whatever they find becomes the next check.
+
+58
+00:03:11.660 --> 00:03:14.384
+So, to recap. Green doesn't mean right.
+
+59
+00:03:14.384 --> 00:03:17.457
+Define right first, in the business's words.
+
+60
+00:03:17.457 --> 00:03:20.460
+Check before you ship, and after every run.
+
+61
+00:03:20.460 --> 00:03:22.625
+Make every step leave a record.
+
+62
+00:03:22.625 --> 00:03:24.580
+And feed every miss back in.
+
+63
+00:03:24.930 --> 00:03:27.376
+Which gives us rule six, for your agents.
+
+64
+00:03:27.376 --> 00:03:32.983
+Before you build, write down what right means, as checks you can run, in the business's words.
+
+65
+00:03:32.983 --> 00:03:36.084
+Run them before a change ships, and after every run.
+
+66
+00:03:36.084 --> 00:03:37.814
+Leave a record at every step.
+
+67
+00:03:37.814 --> 00:03:40.379
+When a check fails, stop and tell a person.
+
+68
+00:03:40.379 --> 00:03:43.660
+And feed every miss back into the brief and the checks.
+
+69
+00:03:44.010 --> 00:03:47.642
+Now, your turn. Pick one job your system runs every day.
+
+70
+00:03:47.642 --> 00:03:52.376
+Ask your AI: what would have to be true for last night's run to be right?
+
+71
+00:03:52.376 --> 00:03:56.397
+Write it as three read-only checks I can run on the real data.
+
+72
+00:03:56.397 --> 00:03:57.240
+Then run one.
+
+73
+00:03:57.590 --> 00:04:03.790
+Once a job has a brief, its checks, and a record of every run, it's ready to be reused.
+
+74
+00:04:03.790 --> 00:04:06.570
+That's next: skills as building blocks.
+
+75
+00:04:06.570 --> 00:04:08.280
+See you in lesson seven.

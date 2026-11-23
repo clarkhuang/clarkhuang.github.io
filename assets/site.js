@@ -1,9 +1,15 @@
 /* Clark Huang — learning site. Progressive enhancement only: every video and audio works without it.
    State lives in first-party cookies only (no localStorage, no analytics, no third parties):
-     watched  = "ai-tips/01,se101/02"        lessons played to ~90% or to the end, or marked by hand
-     vpos     = "ai-tips/02:73.4,se101/01:12.0"  video resume positions in seconds (newest last, max 20)
-     book_pos = "preview:31.2"               audiobook/videobook bookmarks in seconds (older intro,math1a keys may still be in a cookie)
-   Cookie names "watched" and "book_pos" are unchanged from earlier versions of the site. */
+     watched  = "ai-tips/01@1a2b3c4d,se101/02@9f8e7d6c"         lessons played to ~90% or to the end, or marked by hand
+     vpos     = "ai-tips/02@1a2b3c4d:73.4,se101/01@0a1b2c3d:12.0" video resume positions in seconds (newest last, max 20)
+     book_pos = "preview@4226615c:31.2"                           audiobook/videobook bookmarks in seconds
+   Every key is "<id>@<version>". The version is the first 8 hex chars of the SHA-256 of the media file, stamped
+   into the HTML as data-video-version (data-video-versions on a data-progress meter, same order as its ids) by
+   sitegen/stamp_versions.py. A re-rendered video gets a new version, so it shows as unwatched and does not offer
+   a stale resume position. Keys with no "@version" (older cookies) are always stale; keys whose version differs
+   from one this page knows for that id are stale too. Stale keys are pruned on page load and on every write.
+   Keys for ids this page does not show are kept until a page that knows them loads.
+   Cookie names "watched", "vpos" and "book_pos" are unchanged from earlier versions of the site. */
 (function () {
   "use strict";
   var doc = document;
@@ -27,12 +33,37 @@
       (maxAge == null ? YEAR : maxAge) + "; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
   }
   function clearCookie(name) { setCookie(name, "", 0); }
-  // "key:seconds" pairs; keys keep their order so the oldest can be dropped first.
+  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || doc).querySelectorAll(sel)); }
+
+  /* ---------- media versions: every cookie key is "<id>@<version>" */
+  var KNOWN = {};                            // id -> { version: 1 } for media this page shows
+  function ver(el) { return el.getAttribute("data-video-version") || ""; }
+  function vkey(id, v) { return id && v ? id + "@" + v : ""; }
+  function known(id, v) { if (id && v) (KNOWN[id] = KNOWN[id] || {})[v] = 1; }
+  $$("[data-video-version]").forEach(function (el) {
+    ["data-lesson-id", "data-chapter", "data-watch-id", "data-toggle-watched", "data-lesson-link"].forEach(function (a) {
+      if (el.hasAttribute(a)) known(el.getAttribute(a), ver(el));
+    });
+  });
+  $$("[data-progress][data-video-versions]").forEach(function (el) {
+    var vs = el.getAttribute("data-video-versions").split(",");
+    el.getAttribute("data-progress").split(",").forEach(function (id, i) { known(id, vs[i]); });
+  });
+  // Unversioned keys are stale; so is a version that differs from every version this page knows for that id.
+  function fresh(key) {
+    var at = key.lastIndexOf("@");
+    if (at < 1 || at === key.length - 1) return false;
+    var k = KNOWN[key.slice(0, at)];
+    return !k || !!k[key.slice(at + 1)];
+  }
+  function idOf(key) { return key.slice(0, key.lastIndexOf("@")); }
+
+  // "key:seconds" pairs; keys keep their order so the oldest can be dropped first. Stale keys are skipped.
   function readMap(name) {
     var map = {}, raw = getCookie(name);
     if (raw) raw.split(",").forEach(function (part) {
-      var i = part.lastIndexOf(":"), v = parseFloat(part.slice(i + 1));
-      if (i > 0 && isFinite(v)) map[part.slice(0, i)] = v;
+      var i = part.lastIndexOf(":"), v = parseFloat(part.slice(i + 1)), k = part.slice(0, i);
+      if (i > 0 && isFinite(v) && fresh(k)) map[k] = v;
     });
     return map;
   }
@@ -43,7 +74,6 @@
     else clearCookie(name);
   }
 
-  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || doc).querySelectorAll(sel)); }
   function fmt(s) { s = Math.max(0, Math.floor(s)); return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2); }
   function play(m) { var p = m.play(); if (p && p.catch) p.catch(function () {}); }
   function say(near, msg) {
@@ -51,29 +81,40 @@
     if (s) { s.textContent = ""; setTimeout(function () { s.textContent = msg; }, 30); }
   }
 
-  /* ---------- watched lessons */
-  function watched() { return getCookie(C_WATCHED).split(",").filter(Boolean); }
-  function isWatched(id) { return watched().indexOf(id) !== -1; }
-  function setWatched(id, on) {
-    var w = watched(), i = w.indexOf(id);
-    if (on && i === -1) w.push(id);
-    if (!on && i !== -1) w.splice(i, 1);
-    if (w.length) setCookie(C_WATCHED, w.join(",")); else clearCookie(C_WATCHED);
+  /* ---------- watched lessons (keys are "<id>@<version>") */
+  function watched() { return getCookie(C_WATCHED).split(",").filter(Boolean).filter(fresh); }
+  function writeWatched(w) { if (w.length) setCookie(C_WATCHED, w.join(",")); else clearCookie(C_WATCHED); }
+  function isWatched(key) { return !!key && watched().indexOf(key) !== -1; }
+  function setWatched(key, on) {
+    if (!key) return;
+    var id = idOf(key), w = watched().filter(function (k) { return idOf(k) !== id; });   // one version per id
+    if (on) w.push(key);
+    writeWatched(w);
     paint();
   }
+  // Prune stale keys (unversioned, or an old version of media this page shows) as soon as the page loads.
+  (function prune() {
+    var raw = getCookie(C_WATCHED).split(",").filter(Boolean), w = watched();
+    if (w.length !== raw.length) writeWatched(w);
+    [[C_VPOS, VPOS_MAX], [C_BOOK, 0]].forEach(function (c) {
+      var map = readMap(c[0]), rawMap = getCookie(c[0]).split(",").filter(Boolean);
+      if (Object.keys(map).length !== rawMap.length) writeMap(c[0], map, c[1]);
+    });
+  })();
   function paint() {
     var w = watched();
-    function has(id) { return w.indexOf(id) !== -1; }
-    $$("[data-watch-id]").forEach(function (el) { el.classList.toggle("is-watched", has(el.getAttribute("data-watch-id"))); });
+    function has(id, v) { var k = vkey(id, v); return !!k && w.indexOf(k) !== -1; }
+    $$("[data-watch-id]").forEach(function (el) { el.classList.toggle("is-watched", has(el.getAttribute("data-watch-id"), ver(el))); });
     $$("[data-toggle-watched]").forEach(function (b) {
-      var on = has(b.getAttribute("data-toggle-watched"));
+      var on = has(b.getAttribute("data-toggle-watched"), ver(b));
       b.textContent = on ? "Mark as not watched" : "Mark as watched";
       b.setAttribute("aria-pressed", on ? "true" : "false");
       b.hidden = false;
     });
     $$("[data-progress]").forEach(function (el) {
       var ids = el.getAttribute("data-progress").split(",").filter(Boolean);
-      var n = ids.filter(has).length, bar = el.querySelector("progress"), count = el.querySelector(".count");
+      var vs = (el.getAttribute("data-video-versions") || "").split(",");
+      var n = ids.filter(function (id, i) { return has(id, vs[i]); }).length, bar = el.querySelector("progress"), count = el.querySelector(".count");
       if (bar) { bar.max = ids.length || 1; bar.value = n; bar.textContent = n + " of " + ids.length; }
       if (count) count.textContent = (n && n === ids.length) ? "All " + n + " watched ✓" : n + " of " + ids.length + " watched";
       el.classList.toggle("done", n > 0 && n === ids.length);
@@ -83,7 +124,7 @@
     $$("[data-next]").forEach(function (el) {
       var shown = false;
       $$("a[data-lesson-link]", el).forEach(function (a) {
-        var show = !shown && !has(a.getAttribute("data-lesson-link"));
+        var show = !shown && !has(a.getAttribute("data-lesson-link"), ver(a));
         a.hidden = !show;
         if (show) shown = true;
       });
@@ -94,8 +135,9 @@
     var b = e.target.closest ? e.target.closest("[data-toggle-watched]") : null;
     if (!b) return;
     e.preventDefault();
-    var id = b.getAttribute("data-toggle-watched"), on = !isWatched(id);
-    setWatched(id, on);
+    var key = vkey(b.getAttribute("data-toggle-watched"), ver(b)), on = !isWatched(key);
+    if (!key) return;
+    setWatched(key, on);
     say(b, on ? "Marked as watched." : "Marked as not watched.");
   });
   $$("[data-reset-progress]").forEach(function (btn) {
@@ -155,20 +197,22 @@
 
   /* ---------- lesson videos */
   $$("video[data-lesson-id]").forEach(function (v) {
-    var id = v.getAttribute("data-lesson-id"), done = isWatched(id);
+    var id = vkey(v.getAttribute("data-lesson-id"), ver(v)), done = isWatched(id);
+    if (!id) return;                         // unstamped page: nothing to key watched state or position on
     function mark() { if (!done) { done = true; setWatched(id, true); } }
     v.addEventListener("timeupdate", function () { if (v.duration && v.currentTime / v.duration >= 0.9) mark(); });
     v.addEventListener("ended", mark);
     offerResume(v, remember(v, C_VPOS, id, VPOS_MAX));
   });
 
-  /* ---------- audiobook tracks (cookie format unchanged: book_pos) */
+  /* ---------- audiobook / videobook tracks (book_pos, keyed "<chapter>@<version>" per media file) */
   $$("audio[data-chapter], video[data-chapter]").forEach(function (a) {
-    var ch = a.getAttribute("data-chapter");
+    var ch = a.getAttribute("data-chapter"), key = vkey(ch, ver(a));
+    if (!key) return;
     var msg = doc.getElementById("book-resume-" + ch)
       || (a.id === "book-video" ? doc.getElementById("book-resume-preview-video") : null)
       || (ch === "intro" ? doc.getElementById("book-resume") : null);
-    var saved = remember(a, C_BOOK, ch, 0, function () {
+    var saved = remember(a, C_BOOK, key, 0, function () {
       if (msg) msg.textContent = "Finished. The full book is coming in 2027.";
     });
     if (saved > 5 && msg) msg.textContent = "Bookmark saved at " + fmt(saved) + ".";

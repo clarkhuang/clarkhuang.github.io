@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Static self-check for a generated site: HTML structure, duplicate ids, internal links, media and fragments.
+"""Static self-check for a generated site: HTML structure, duplicate ids, internal links, media and fragments,
+and video versions (every data-video-version / data-video-versions must match the media file's hash; see stamp_versions.py).
 Usage: python3 check_site.py SITE_DIR   (exit 1 on any error)"""
 import os, sys, re
 from html.parser import HTMLParser
@@ -60,6 +61,10 @@ def main(site):
             if frag and not frag.startswith("t=") and target.endswith(".html"):
                 tp = pages.get(os.path.relpath(target, site))
                 if tp and frag not in tp.ids: print(f"ERROR {rel}: {url} -> no id #{frag}"); errors += 1
+    # Watched / resume cookies are keyed "<id>@<version>": a re-rendered video without re-stamping must fail here.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import stamp_versions
+    for e in stamp_versions.verify(site): print(f"ERROR {e}"); errors += 1
     print(f"checked {len(pages)} HTML files, {sum(len(p.refs) for p in pages.values())} references: {errors} error(s)")
     return errors
 

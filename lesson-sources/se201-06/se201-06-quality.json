@@ -1,0 +1,905 @@
+{
+ "id": "se201-06-quality",
+ "title": "SE201 Lesson 6: Quality, feedback, and observability",
+ "output": "06-quality-feedback-and-observability/SE201_06_Quality-Feedback-And-Observability_public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_title",
+   "text": "Software engineering two oh one. Lesson six. [pause] Quality, feedback, and observability.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "SOFTWARE ENGINEERING 201  ·  LESSON 6",
+    "headline": "Quality, feedback,\nand observability.",
+    "sub": "From loop to enterprise systems  •  clarkhuang.github.io"
+   }
+  },
+  {
+   "id": "02_quiz",
+   "text": "Picture a made-up billing system. Last night, it renewed its subscriptions. This morning the build is green, and every test passed. Was every customer charged the right amount, exactly once? [pause] Yes, the tests passed? Probably, coverage is high? Or: you can't tell from that? [pause] <emphasis>You can't tell from that.</emphasis> Green says the code did what its tests asked. It says nothing about what happened last night.",
+   "visual": "quiz",
+   "chapter": "THE QUESTION",
+   "data": {
+    "question": "The build is green. Every test passed. Was every\ncustomer charged the right amount, exactly once?",
+    "options": [
+     "Yes: the tests passed",
+     "Probably: coverage is high",
+     "You can’t tell from that"
+    ],
+    "answer": 2,
+    "why": "Green is about\nthe code. Not\nabout last night.",
+    "options_at": 0.5,
+    "reveal_at": 0.7
+   }
+  },
+  {
+   "id": "03a_then",
+   "text": "Back to the lens from lesson one: architecture bends around what's scarce. Ten years ago, the scarce thing was seeing the whole system. The answer was observability: logs, metrics, traces. They answer: what happened?",
+   "visual": "two_kinds",
+   "chapter": "A LENS",
+   "data": {
+    "label": "THE LENS FROM LESSON ONE  ·  ARCHITECTURE BENDS AROUND WHAT’S SCARCE",
+    "cards": [
+     {
+      "tag": "TEN YEARS AGO",
+      "tone": "amber",
+      "title": "What happened?",
+      "items": [
+       "Scarce: seeing the whole",
+       "Logs, metrics, traces"
+      ],
+      "foot": "Observability"
+     },
+     {
+      "tag": "NOW",
+      "tone": "accent",
+      "title": "Was it right?",
+      "items": [
+       "Scarce: knowing it’s right",
+       "Define right, up front",
+       "Watch every run",
+       "Feed back what you learn"
+      ],
+      "foot": "Quality, designed in"
+     }
+    ],
+    "active": 1
+   },
+   "group": "kinds"
+  },
+  {
+   "id": "03b_now",
+   "text": "Now the scarce thing is knowing it's right. That's a different question. And no dashboard can answer it, until somebody has written down what right means. [pause] So: define right, up front. Watch every run. And feed back what you learn.",
+   "visual": "two_kinds",
+   "chapter": "A LENS",
+   "data": {
+    "label": "THE LENS FROM LESSON ONE  ·  ARCHITECTURE BENDS AROUND WHAT’S SCARCE",
+    "cards": [
+     {
+      "tag": "TEN YEARS AGO",
+      "tone": "amber",
+      "title": "What happened?",
+      "items": [
+       "Scarce: seeing the whole",
+       "Logs, metrics, traces"
+      ],
+      "foot": "Observability"
+     },
+     {
+      "tag": "NOW",
+      "tone": "accent",
+      "title": "Was it right?",
+      "items": [
+       "Scarce: knowing it’s right",
+       "Define right, up front",
+       "Watch every run",
+       "Feed back what you learn"
+      ],
+      "foot": "Quality, designed in"
+     }
+    ],
+    "active": 2
+   },
+   "group": "kinds"
+  },
+  {
+   "id": "04a_green",
+   "text": "Take our made-up example: the subscription-billing system from lesson one. Here are last night's renewals. And the build is green. [pause] But no test ever looked at this table. So was last night right? The green can't say.",
+   "visual": "renewals",
+   "chapter": "THE REAL CHECK",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  THE BILLING SYSTEM, THE MORNING AFTER",
+    "phase": "green",
+    "table_tag": "LAST NIGHT’S RENEWALS",
+    "cols": [
+     "RENEWAL",
+     "PLAN",
+     "PRICE",
+     "CHARGED",
+     "TIMES"
+    ],
+    "rows": [
+     {
+      "id": "R-1041",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1042",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$99.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1043",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "2",
+      "flag": "Charged twice",
+      "bad": "times"
+     },
+     {
+      "id": "R-1044",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "$49.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1045",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$119.00",
+      "times": "1",
+      "flag": "Wrong amount",
+      "bad": "charged"
+     },
+     {
+      "id": "R-1046",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "—",
+      "times": "0",
+      "flag": "Never attempted",
+      "bad": "times"
+     }
+    ],
+    "totals": [
+     [
+      "DUE",
+      "$354.00"
+     ],
+     [
+      "CHARGED",
+      "$354.00"
+     ]
+    ],
+    "banner": {
+     "title": "Build passed",
+     "sub": "all tests green"
+    },
+    "checks_tag": "RIGHT, WRITTEN AS CHECKS",
+    "checks": [
+     {
+      "text": "None was\ncharged twice",
+      "failed": 1
+     },
+     {
+      "text": "Each charge equals\nthe plan’s price",
+      "failed": 1
+     },
+     {
+      "text": "Every renewal due\nwas attempted",
+      "failed": 1
+     }
+    ],
+    "ask": "So was last\nnight right?",
+    "answer": "The green\ncan’t say.",
+    "ask_at": 0.7,
+    "answer_at": 0.84
+   },
+   "group": "renewals"
+  },
+  {
+   "id": "04b_define",
+   "text": "So before the work starts, write down what right means, in the business's words. Every renewal charged the right amount, exactly once. Then split that into checks an agent can run. One: none was charged twice. Two: each charge equals the plan's price. Three: every renewal that was due was attempted.",
+   "visual": "renewals",
+   "chapter": "THE REAL CHECK",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  THE BILLING SYSTEM, THE MORNING AFTER",
+    "phase": "define",
+    "table_tag": "LAST NIGHT’S RENEWALS",
+    "cols": [
+     "RENEWAL",
+     "PLAN",
+     "PRICE",
+     "CHARGED",
+     "TIMES"
+    ],
+    "rows": [
+     {
+      "id": "R-1041",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1042",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$99.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1043",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "2",
+      "flag": "Charged twice",
+      "bad": "times"
+     },
+     {
+      "id": "R-1044",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "$49.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1045",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$119.00",
+      "times": "1",
+      "flag": "Wrong amount",
+      "bad": "charged"
+     },
+     {
+      "id": "R-1046",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "—",
+      "times": "0",
+      "flag": "Never attempted",
+      "bad": "times"
+     }
+    ],
+    "totals": [
+     [
+      "DUE",
+      "$354.00"
+     ],
+     [
+      "CHARGED",
+      "$354.00"
+     ]
+    ],
+    "banner": {
+     "title": "Build passed",
+     "sub": "all tests green"
+    },
+    "checks_tag": "RIGHT, WRITTEN AS CHECKS",
+    "checks": [
+     {
+      "text": "None was\ncharged twice",
+      "failed": 1
+     },
+     {
+      "text": "Each charge equals\nthe plan’s price",
+      "failed": 1
+     },
+     {
+      "text": "Every renewal due\nwas attempted",
+      "failed": 1
+     }
+    ],
+    "checks_at": [
+     0.58,
+     0.7,
+     0.82
+    ],
+    "caption": "Right: every renewal charged the right amount, exactly once.",
+    "caption_at": 0.2
+   },
+   "group": "renewals"
+  },
+  {
+   "id": "04c_run",
+   "text": "Now run them, on last night's real renewals. [pause] One was charged twice. One, the wrong amount. One was never attempted. [pause] And look at the totals: they match. Three wrong renewals, inside a sum that's exactly right. So check every renewal, not just the total.",
+   "visual": "renewals",
+   "chapter": "THE REAL CHECK",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  THE BILLING SYSTEM, THE MORNING AFTER",
+    "phase": "run",
+    "table_tag": "LAST NIGHT’S RENEWALS",
+    "cols": [
+     "RENEWAL",
+     "PLAN",
+     "PRICE",
+     "CHARGED",
+     "TIMES"
+    ],
+    "rows": [
+     {
+      "id": "R-1041",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1042",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$99.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1043",
+      "plan": "Basic",
+      "price": "$29.00",
+      "charged": "$29.00",
+      "times": "2",
+      "flag": "Charged twice",
+      "bad": "times"
+     },
+     {
+      "id": "R-1044",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "$49.00",
+      "times": "1"
+     },
+     {
+      "id": "R-1045",
+      "plan": "Team",
+      "price": "$99.00",
+      "charged": "$119.00",
+      "times": "1",
+      "flag": "Wrong amount",
+      "bad": "charged"
+     },
+     {
+      "id": "R-1046",
+      "plan": "Pro",
+      "price": "$49.00",
+      "charged": "—",
+      "times": "0",
+      "flag": "Never attempted",
+      "bad": "times"
+     }
+    ],
+    "totals": [
+     [
+      "DUE",
+      "$354.00"
+     ],
+     [
+      "CHARGED",
+      "$354.00"
+     ]
+    ],
+    "banner": {
+     "title": "Build passed",
+     "sub": "all tests green"
+    },
+    "checks_tag": "RIGHT, WRITTEN AS CHECKS",
+    "checks": [
+     {
+      "text": "None was\ncharged twice",
+      "failed": 1
+     },
+     {
+      "text": "Each charge equals\nthe plan’s price",
+      "failed": 1
+     },
+     {
+      "text": "Every renewal due\nwas attempted",
+      "failed": 1
+     }
+    ],
+    "sweep": [
+     0.12,
+     0.46
+    ],
+    "totals_note": "the totals match",
+    "totals_at": 0.56,
+    "caption": "Check every renewal, not just the total.",
+    "caption_tone": "amber",
+    "caption_at": 0.84
+   },
+   "group": "renewals"
+  },
+  {
+   "id": "05_twice",
+   "text": "That one sentence does double duty. You write the check once, and run it twice. Before a change ships, on sample renewals, in the pipeline. And after every nightly run, on the real ones. [pause] Add a target for time, too. A service level objective, an S.L.O.: say, ninety-nine point nine percent of renewals due today, attempted by six A.M. Now an agent can run all of it, without asking anyone what good looks like.",
+   "visual": "graph",
+   "chapter": "RUN IT TWICE",
+   "data": {
+    "label": "WRITE THE CHECK ONCE  ·  RUN IT TWICE",
+    "nodes": [
+     {
+      "id": "check",
+      "text": "Every renewal:\nthe right amount,\nexactly once",
+      "x": 470,
+      "y": 500,
+      "w": 520,
+      "h": 230,
+      "size": 38,
+      "tone": "accent",
+      "tag": "THE CHECK, WRITTEN ONCE",
+      "at": 0.04
+     },
+     {
+      "id": "pre",
+      "text": "Before a change ships",
+      "sub": "on sample renewals, in the pipeline",
+      "x": 1330,
+      "y": 380,
+      "w": 760,
+      "h": 130,
+      "size": 34,
+      "sub_size": 25,
+      "tag": "RUN IT",
+      "at": 0.22
+     },
+     {
+      "id": "post",
+      "text": "After every nightly run",
+      "sub": "on the real renewals",
+      "x": 1330,
+      "y": 590,
+      "w": 760,
+      "h": 130,
+      "size": 34,
+      "sub_size": 25,
+      "tag": "RUN IT AGAIN",
+      "at": 0.34
+     },
+     {
+      "id": "slo",
+      "text": "99.9% of renewals due today, attempted by 6 a.m.",
+      "sub": "a service level objective (SLO), for example",
+      "x": 1330,
+      "y": 800,
+      "w": 760,
+      "h": 130,
+      "size": 29,
+      "sub_size": 25,
+      "tone": "amber",
+      "tag": "AND A TARGET FOR TIME",
+      "at": 0.56
+     }
+    ],
+    "edges": [
+     {
+      "from": "check",
+      "to": "pre",
+      "tone": "accent"
+     },
+     {
+      "from": "check",
+      "to": "post",
+      "tone": "accent"
+     }
+    ],
+    "caption": "An agent can run all of it,\nwithout asking what\ngood looks like.",
+    "caption_x": 210,
+    "caption_y": 720,
+    "caption_size": 38,
+    "caption_at": 0.84
+   }
+  },
+  {
+   "id": "06_record",
+   "text": "The checks say that something is wrong. The record says why. So every step of every run leaves a line, in a shape that people and agents can both read. Here's the double charge. Attempt one: a timeout. Attempt two, with a new key: charged. Then reconcile, against the processor's own report: two charges. The first attempt had gone through. [pause] Nobody has to guess.",
+   "visual": "graph",
+   "chapter": "WATCH EVERY RUN",
+   "data": {
+    "label": "WATCH EVERY RUN  ·  EVERY STEP LEAVES A RECORD  ·  A MADE-UP EXAMPLE",
+    "bands": [
+     {
+      "x": 130,
+      "y": 300,
+      "w": 1660,
+      "h": 250,
+      "label": "THE RECORD FOR RENEWAL R-1043, STEP BY STEP",
+      "at": 0.12
+     }
+    ],
+    "nodes": [
+     {
+      "id": "sched",
+      "tag": "02:00:03",
+      "text": "Schedule",
+      "sub": "due $29.00",
+      "tone": null,
+      "x": 310,
+      "y": 450,
+      "w": 296,
+      "h": 120,
+      "size": 27,
+      "sub_size": 23,
+      "at": 0.2
+     },
+     {
+      "id": "c1",
+      "tag": "02:00:04",
+      "text": "Charge, attempt 1",
+      "sub": "key A  ·  timeout",
+      "tone": "amber",
+      "x": 635,
+      "y": 450,
+      "w": 296,
+      "h": 120,
+      "size": 27,
+      "sub_size": 23,
+      "at": 0.42
+     },
+     {
+      "id": "c2",
+      "tag": "02:00:36",
+      "text": "Charge, attempt 2",
+      "sub": "key B  ·  charged",
+      "tone": null,
+      "x": 960,
+      "y": 450,
+      "w": 296,
+      "h": 120,
+      "size": 27,
+      "sub_size": 23,
+      "at": 0.5
+     },
+     {
+      "id": "inv",
+      "tag": "02:00:37",
+      "text": "Invoice",
+      "sub": "sent, $29.00",
+      "tone": null,
+      "x": 1285,
+      "y": 450,
+      "w": 296,
+      "h": 120,
+      "size": 27,
+      "sub_size": 23,
+      "at": 0.56
+     },
+     {
+      "id": "rec",
+      "tag": "06:10:00",
+      "text": "Reconcile",
+      "sub": "processor: 2 charges",
+      "tone": "amber",
+      "x": 1610,
+      "y": 450,
+      "w": 296,
+      "h": 120,
+      "size": 27,
+      "sub_size": 23,
+      "at": 0.62
+     },
+     {
+      "id": "line",
+      "tag": "ONE LINE PER STEP  ·  PEOPLE AND AGENTS CAN BOTH READ IT",
+      "text": "The record, as written",
+      "sub": "step=charge  renewal=R-1043  attempt=2  key=B  result=charged",
+      "sub_mono": true,
+      "sub_size": 30,
+      "size": 26,
+      "x": 960,
+      "y": 690,
+      "w": 1660,
+      "h": 130,
+      "at": 0.3
+     }
+    ],
+    "edges": [
+     [
+      "sched",
+      "c1"
+     ],
+     [
+      "c1",
+      "c2"
+     ],
+     [
+      "c2",
+      "inv"
+     ],
+     [
+      "inv",
+      "rec"
+     ]
+    ],
+    "caption": "A timeout, then a retry with a new key. The first attempt had gone through.",
+    "caption_tone": "amber",
+    "caption_x": 130,
+    "caption_y": 810,
+    "caption_size": 42,
+    "caption_at": 0.68,
+    "foot": "THE CHECKS SAY SOMETHING IS WRONG  ·  THE RECORD SAYS WHY",
+    "foot_y": 900
+   }
+  },
+  {
+   "id": "07a_loop",
+   "text": "First, put last night right, with a person approving, as in lesson five. Then close the loop. Every miss goes back into the brief, and the checks. The double charge becomes a new line in the brief: a retry must reuse the same key. That's an idempotency key; more in lesson eight. And a new test: the processor times out. [pause] So each run makes the next one better.",
+   "visual": "graph",
+   "chapter": "FEED IT BACK",
+   "data": {
+    "label": "FEED IT BACK  ·  EACH RUN IMPROVES THE NEXT",
+    "static": false,
+    "nodes": [
+     {
+      "id": "brief",
+      "text": "The brief\nand the checks",
+      "x": 400,
+      "y": 390,
+      "w": 420,
+      "h": 130,
+      "size": 32,
+      "at": 0.03
+     },
+     {
+      "id": "run",
+      "text": "The run",
+      "x": 1520,
+      "y": 390,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "at": 0.08
+     },
+     {
+      "id": "record",
+      "text": "The record",
+      "sub": "what happened, step by step",
+      "x": 1520,
+      "y": 690,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "sub_size": 23,
+      "at": 0.13
+     },
+     {
+      "id": "review",
+      "text": "The review",
+      "sub": "what went wrong, what was fixed",
+      "x": 400,
+      "y": 690,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "sub_size": 23,
+      "at": 0.18
+     },
+     {
+      "text": "New in the brief: a retry reuses the same key.   New test: the processor times out.",
+      "tone": "accent",
+      "at": 0.42,
+      "id": "note",
+      "x": 960,
+      "y": 890,
+      "w": 1540,
+      "h": 92,
+      "size": 31
+     }
+    ],
+    "edges": [
+     [
+      "brief",
+      "run"
+     ],
+     [
+      "run",
+      "record"
+     ],
+     [
+      "record",
+      "review"
+     ],
+     [
+      "review",
+      "brief"
+     ]
+    ],
+    "path": [
+     "brief",
+     "run",
+     "record",
+     "review",
+     "brief"
+    ],
+    "path_at": 0.26,
+    "runner_speed": 0.16,
+    "caption": "Every miss goes back\ninto the brief\nand the checks.",
+    "caption_x": 660,
+    "caption_y": 470,
+    "caption_size": 40,
+    "caption_at": 0.24
+   },
+   "group": "loop"
+  },
+  {
+   "id": "07b_limit",
+   "text": "And be honest about the limit. A check only catches what somebody thought to ask. So a person still reads a sample of real invoices. And whatever they find becomes the next check.",
+   "visual": "graph",
+   "chapter": "FEED IT BACK",
+   "data": {
+    "label": "FEED IT BACK  ·  EACH RUN IMPROVES THE NEXT",
+    "static": true,
+    "nodes": [
+     {
+      "id": "brief",
+      "text": "The brief\nand the checks",
+      "x": 400,
+      "y": 390,
+      "w": 420,
+      "h": 130,
+      "size": 32,
+      "at": 0.03
+     },
+     {
+      "id": "run",
+      "text": "The run",
+      "x": 1520,
+      "y": 390,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "at": 0.08
+     },
+     {
+      "id": "record",
+      "text": "The record",
+      "sub": "what happened, step by step",
+      "x": 1520,
+      "y": 690,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "sub_size": 23,
+      "at": 0.13
+     },
+     {
+      "id": "review",
+      "text": "The review",
+      "sub": "what went wrong, what was fixed",
+      "x": 400,
+      "y": 690,
+      "w": 420,
+      "h": 130,
+      "size": 34,
+      "sub_size": 23,
+      "at": 0.18
+     },
+     {
+      "text": "A person still reads a sample of real invoices",
+      "tone": "amber",
+      "held": true,
+      "id": "note",
+      "x": 960,
+      "y": 890,
+      "w": 1540,
+      "h": 92,
+      "size": 31
+     }
+    ],
+    "edges": [
+     [
+      "brief",
+      "run"
+     ],
+     [
+      "run",
+      "record"
+     ],
+     [
+      "record",
+      "review"
+     ],
+     [
+      "review",
+      "brief"
+     ]
+    ],
+    "path": [
+     "brief",
+     "run",
+     "record",
+     "review",
+     "brief"
+    ],
+    "path_at": 0.26,
+    "runner_speed": 0.16,
+    "caption": "A check only catches\nwhat somebody thought\nto ask.",
+    "caption_x": 660,
+    "caption_y": 470,
+    "caption_size": 40,
+    "path_static": true,
+    "caption_tone": "amber",
+    "caption_at": 0.04
+   },
+   "group": "loop"
+  },
+  {
+   "id": "08_recap",
+   "text": "So, to recap. Green doesn't mean right. Define right first, in the business's words. Check before you ship, and after every run. Make every step leave a record. And feed every miss back in.",
+   "visual": "rule",
+   "chapter": "RECAP",
+   "data": {
+    "headline": "Green doesn’t mean right",
+    "items": [
+     "Define right first, in the business’s words",
+     "Check before you ship, and after every run",
+     "Every step leaves a record",
+     "Feed every miss back in"
+    ]
+   }
+  },
+  {
+   "id": "09_rule",
+   "text": "Which gives us rule six, for your agents. Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. And feed every miss back into the brief and the checks.",
+   "visual": "rule_card",
+   "chapter": "THE RULE",
+   "data": {
+    "kicker": "RULE 6  ·  FOR YOUR AGENTS",
+    "size": 54,
+    "lines": [
+     {
+      "text": "Before you build, write down what right means,"
+     },
+     {
+      "text": "as checks you can run, in the business’s words.",
+      "tone": "accent"
+     },
+     {
+      "text": "Run them before a change ships, and after every run.",
+      "tone": "accent"
+     },
+     {
+      "text": "Leave a record at every step."
+     },
+     {
+      "text": "When a check fails, stop and tell a person.",
+      "tone": "accent"
+     },
+     {
+      "text": "Feed every miss back into the brief and the checks."
+     }
+    ],
+    "foot": "THE FULL RULE IS ON THE LESSON PAGE"
+   }
+  },
+  {
+   "id": "10_ask",
+   "text": "Now, your turn. Pick one job your system runs every day. Ask your A.I.: what would have to be true for last night's run to be right? Write it as three read-only checks I can run on the real data. [pause] Then run one.",
+   "visual": "statement",
+   "chapter": "YOUR TURN",
+   "data": {
+    "headline": "Your turn. Pick one job your system\nruns every day. Ask your AI:\n“What would have to be true for last\nnight’s run to be right? Write it as three\nread-only checks on the real data.”\nThen run one.",
+    "size": 68
+   }
+  },
+  {
+   "id": "11_close",
+   "text": "Once a job has a brief, its checks, and a record of every run, it's ready to be reused. That's next: skills as building blocks. See you in lesson seven.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "See you in\nlesson seven.",
+    "sub": "Software Engineering 201"
+   }
+  }
+ ]
+}

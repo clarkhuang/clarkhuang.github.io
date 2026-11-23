@@ -252,10 +252,9 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 
 /* footer */
 .site-footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--dimmer);font-size:14px}
-.site-footer .wrap{display:flex;flex-direction:column;gap:10px}
+.site-footer p{margin:0}
 .ai-line{color:var(--dim)}
 .ai-line::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle}
-.footer-links{display:flex;gap:16px;flex-wrap:wrap}
 .footer-links a{color:var(--dim)}
 .footer-links a:hover{color:var(--text)}
 
@@ -333,8 +332,6 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 .chapters-wrap .chapters,.transcript-wrap .transcript-body{padding:8px 14px 14px}
 
 /* footer project links + legal line */
-.site-footer .legal-line{font-size:13px;color:var(--dimmer);max-width:52rem;margin:10px 0 0}
-.site-footer .project-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0 8px}
 .site-footer .project-links a{font-weight:600}
 
 /* involve pages */
@@ -358,3 +355,41 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 
 .ai-media-links{margin:10px 0 0;font-size:13px;line-height:1.5}
 .ai-media-links a{text-decoration:underline}
+
+/* --- UX review: card padding, section rhythm, grouped footer, reading width, tap targets --- */
+/* Text-only link cards have no .card-body child, so they carry their own padding. */
+a.card{padding:22px 22px 20px}
+.card p{overflow-wrap:anywhere}
+.card p .url{overflow-wrap:normal}.nobr{white-space:nowrap}
+a.card:focus-visible{border-color:var(--accent);border-radius:var(--radius)}
+main section + section{margin-top:56px}
+.section-head{margin:0 0 24px}
+.cards + .section-note{margin-top:20px}
+main :is(.wrap,section) > :is(p,ul,ol):not(.lede,.section-note,.lessons,.chapters){max-width:72ch}
+main code{overflow-wrap:anywhere}
+main pre{max-width:100%;overflow-x:auto}
+main pre code{overflow-wrap:normal}
+.reset,.linkish{min-height:24px;padding:2px 0}
+.lesson-meta a{display:inline-block;padding:2px 0}
+
+/* footer: link columns on top, fine print below */
+.footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:26px 32px;padding-bottom:24px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:0;font-size:14px}
+.footer-col a{padding:3px 0}
+.footer-h{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dimmer);margin:0 0 6px}
+.footer-fine{display:flex;flex-direction:column;gap:8px;max-width:52rem}
+.footer-fine .legal-line{font-size:13px}
+.footer-fine a{text-decoration:underline}
+@media (max-width:640px){
+  main section + section{margin-top:40px}
+  a.card{padding:20px 18px 18px}
+  .site-header .wrap{gap:4px 20px;padding-top:10px;padding-bottom:6px}
+  .site-header nav{flex-wrap:nowrap;justify-content:space-between;margin:0 -8px;width:calc(100% + 16px)}
+  .site-header nav a{padding:10px 8px;justify-content:center;white-space:nowrap}
+  .footer-cols{grid-template-columns:1fr 1fr;gap:24px 20px}
+  .footer-col a{padding:6px 0}
+  .footer-links{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:0 20px}
+  .footer-links .footer-h{width:100%}
+}
+@media (max-width:359px){.site-header nav{flex-wrap:wrap;justify-content:flex-start}}
+

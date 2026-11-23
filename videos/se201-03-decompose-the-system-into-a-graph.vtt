@@ -1,0 +1,303 @@
+WEBVTT
+
+NOTE SE201 Lesson 3: Decompose the system into a graph — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:03.989
+Software engineering 201. Lesson three.
+
+2
+00:00:03.989 --> 00:00:07.030
+Decompose the system into a graph.
+
+3
+00:00:07.380 --> 00:00:09.989
+Quick question. An agent hands you a plan.
+
+4
+00:00:09.989 --> 00:00:11.915
+Ten steps, numbered one to ten.
+
+5
+00:00:11.915 --> 00:00:15.829
+How many of those steps truly have to wait for the step before?
+
+6
+00:00:15.829 --> 00:00:19.743
+All ten? About half? Or is it impossible to tell from the list?
+
+7
+00:00:19.743 --> 00:00:24.464
+You can't tell. A numbered list records the order someone wrote things down.
+
+8
+00:00:24.464 --> 00:00:26.390
+It doesn't say what needs what.
+
+9
+00:00:26.750 --> 00:00:31.907
+So here's the test. Take any two steps, and ask: what crosses between them?
+
+10
+00:00:31.907 --> 00:00:36.514
+Think about cooking dinner. The sauce waits for the chopped onions.
+
+11
+00:00:36.514 --> 00:00:39.745
+Something crosses, so that's a real dependency.
+
+12
+00:00:39.745 --> 00:00:42.427
+Draw the arrow. The rice and the salad?
+
+13
+00:00:42.427 --> 00:00:47.377
+Nothing crosses. So nobody waits for the rice before starting the salad.
+
+14
+00:00:47.377 --> 00:00:49.440
+And then, is not a dependency.
+
+15
+00:00:49.780 --> 00:00:51.760
+In 101, the unit was the loop.
+
+16
+00:00:51.760 --> 00:00:55.323
+Plan, build, verify, until one piece of work is right.
+
+17
+00:00:55.323 --> 00:00:57.170
+The graph sits one level up.
+
+18
+00:00:57.170 --> 00:01:02.713
+It says which pieces exist, what each one needs, and which can run at the same time.
+
+19
+00:01:02.713 --> 00:01:04.825
+And it doesn't replace the loop.
+
+20
+00:01:04.825 --> 00:01:08.190
+Every node in the graph is still a loop of its own.
+
+21
+00:01:08.550 --> 00:01:11.975
+Let's decompose a real system: the site you're on.
+
+22
+00:01:11.975 --> 00:01:14.030
+Start with the parts. AI tips.
+
+23
+00:01:14.030 --> 00:01:16.085
+Software engineering 101. 201.
+
+24
+00:01:16.085 --> 00:01:20.332
+And the book. Each part has its own folder, and its own pages.
+
+25
+00:01:20.332 --> 00:01:23.757
+A new lesson in one needs nothing from the others.
+
+26
+00:01:23.757 --> 00:01:26.360
+So work on one never waits on another.
+
+27
+00:01:26.710 --> 00:01:28.596
+But they aren't floating free.
+
+28
+00:01:28.596 --> 00:01:32.179
+All four are built by one generator, with one stylesheet.
+
+29
+00:01:32.179 --> 00:01:36.076
+That shared piece is a node too, and every part depends on it.
+
+30
+00:01:36.076 --> 00:01:38.779
+So the graph shows you where to be careful.
+
+31
+00:01:38.779 --> 00:01:41.041
+Change one part, and one part moves.
+
+32
+00:01:41.041 --> 00:01:43.870
+Change the shared node, and everything moves.
+
+33
+00:01:43.870 --> 00:01:46.950
+Which is why a shared node needs one clear owner.
+
+34
+00:01:47.300 --> 00:01:49.943
+Now zoom into one node: a single video lesson.
+
+35
+00:01:49.943 --> 00:01:53.564
+Here, the arrows are real. The narration clips need the script.
+
+36
+00:01:53.564 --> 00:01:58.046
+The render needs those clips, because the length of the audio sets the timing.
+
+37
+00:01:58.046 --> 00:02:00.862
+Captions need the timeline the render writes out.
+
+38
+00:02:00.862 --> 00:02:06.436
+And the page needs all of it, before a pull request to staging, where only I merge to production.
+
+39
+00:02:06.436 --> 00:02:08.160
+Every arrow carries something.
+
+40
+00:02:08.510 --> 00:02:11.028
+Script, narration, render. A strict chain.
+
+41
+00:02:11.028 --> 00:02:15.224
+More agents won't make it shorter: the longest chain sets the minimum.
+
+42
+00:02:15.224 --> 00:02:17.082
+But after the render, it forks.
+
+43
+00:02:17.082 --> 00:02:19.000
+Captions need only the timeline.
+
+44
+00:02:19.000 --> 00:02:22.058
+The sound level and the poster need only the video.
+
+45
+00:02:22.058 --> 00:02:24.096
+Nothing crosses between those two.
+
+46
+00:02:24.096 --> 00:02:27.513
+The build script happens to run them one after the other.
+
+47
+00:02:27.513 --> 00:02:30.570
+The graph shows that's a choice, not a requirement.
+
+48
+00:02:30.920 --> 00:02:32.875
+Why does this matter? Waiting.
+
+49
+00:02:32.875 --> 00:02:36.525
+Picture three parts, with nothing crossing between them.
+
+50
+00:02:36.525 --> 00:02:39.914
+Run as a numbered list, each one waits for the last.
+
+51
+00:02:39.914 --> 00:02:42.325
+Run as a graph, they go side by side.
+
+52
+00:02:42.325 --> 00:02:44.150
+Same work. Far less waiting.
+
+53
+00:02:44.500 --> 00:02:47.442
+Now scale that up. Picture an enterprise system.
+
+54
+00:02:47.442 --> 00:02:49.588
+Orders, billing, shipping, support.
+
+55
+00:02:49.588 --> 00:02:52.530
+Far too big for one loop. It's the same picture.
+
+56
+00:02:52.530 --> 00:02:56.882
+A few real arrows: billing needs the order, shipping needs the payment.
+
+57
+00:02:56.882 --> 00:03:00.192
+A shared node everything leans on, like customer data.
+
+58
+00:03:00.192 --> 00:03:04.606
+And parts that never touch, where teams and agents move without waiting.
+
+59
+00:03:04.606 --> 00:03:08.100
+Miss the shared node, and two of them collide at the end.
+
+60
+00:03:08.450 --> 00:03:11.663
+So, to recap. Drawing the graph is four moves.
+
+61
+00:03:11.663 --> 00:03:15.504
+One. Name the parts, each with a boundary and an owner.
+
+62
+00:03:15.504 --> 00:03:19.625
+Two. For every pair, ask what crosses, and what they share.
+
+63
+00:03:19.625 --> 00:03:21.720
+Three. Draw only those arrows.
+
+64
+00:03:21.720 --> 00:03:26.260
+And four. Give every part its own finish line, and its own check.
+
+65
+00:03:26.620 --> 00:03:29.279
+Which gives us rule three, for your agents.
+
+66
+00:03:29.279 --> 00:03:32.681
+Before any job with more than one part, draw the graph.
+
+67
+00:03:32.681 --> 00:03:37.876
+Name the parts. Draw an arrow only where something crosses from one part to another.
+
+68
+00:03:37.876 --> 00:03:41.711
+Anything two parts share becomes its own node, with one owner.
+
+69
+00:03:41.711 --> 00:03:45.050
+Parts with no arrow between them run at the same time.
+
+70
+00:03:45.050 --> 00:03:48.390
+And every part gets its own loop: plan, build, verify.
+
+71
+00:03:48.740 --> 00:03:53.486
+Now, your turn. Take the last multi-step plan an agent gave you.
+
+72
+00:03:53.486 --> 00:03:56.230
+At every, and then, ask what crosses.
+
+73
+00:03:56.230 --> 00:03:58.010
+How many arrows survive?
+
+74
+00:03:58.360 --> 00:04:04.100
+Next time, those parts really do run at once, and we bring the work back together.
+
+75
+00:04:04.100 --> 00:04:05.710
+See you in lesson four.

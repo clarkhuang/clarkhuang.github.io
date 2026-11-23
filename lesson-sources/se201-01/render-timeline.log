@@ -1,18 +1,73 @@
-15 scenes, 233.72s, 7011 frames
-  01_title                 0.50s  + 8.40s
-  02_quiz                  8.90s  +24.26s
-  03_shift                33.16s  +17.85s
-  04_define               51.01s  +18.16s
-  05_four                 69.17s  +28.82s
-  06_example              97.99s  + 4.75s
-  07_files               102.74s  +23.95s
-  08_flow                126.69s  +11.16s
-  09a_cook               137.84s  + 8.40s
-  09b_kitchen            146.24s  +14.80s
-  10_enterprise          161.04s  +18.45s
-  11_path                179.50s  +25.46s
-  12_rule                204.96s  +17.85s
-  13_ask                 222.81s  + 8.40s
-  14_close               231.20s  + 2.52s
+16 scenes, 260.74s, 7822 frames
+  01_title                 0.50s  + 8.71s
+  02_quiz                  9.21s  +19.68s
+  03_career               28.88s  +19.99s
+  04_lens                 48.87s  +13.89s
+  05_1996                 62.76s  +22.72s
+  06_2006                 85.49s  +21.21s
+  07_2016                106.70s  +23.64s
+  08_now                 130.34s  +15.72s
+  09_design              146.05s  +26.08s
+  10_caveat              172.14s  +11.16s
+  11_constants           183.29s  +14.80s
+  12_path                198.10s  +16.03s
+  13_recap               214.12s  +10.84s
+  14_rule                224.97s  +16.94s
+  15_ask                 241.91s  +10.22s
+  16_close               252.13s  + 8.62s
+    frame 0/7822
+    frame 150/7822
+    frame 300/7822
+    frame 450/7822
+    frame 600/7822
+    frame 750/7822
+    frame 900/7822
+    frame 1050/7822
+    frame 1200/7822
+    frame 1350/7822
+    frame 1500/7822
+    frame 1650/7822
+    frame 1800/7822
+    frame 1950/7822
+    frame 2100/7822
+    frame 2250/7822
+    frame 2400/7822
+    frame 2550/7822
+    frame 2700/7822
+    frame 2850/7822
+    frame 3000/7822
+    frame 3150/7822
+    frame 3300/7822
+    frame 3450/7822
+    frame 3600/7822
+    frame 3750/7822
+    frame 3900/7822
+    frame 4050/7822
+    frame 4200/7822
+    frame 4350/7822
+    frame 4500/7822
+    frame 4650/7822
+    frame 4800/7822
+    frame 4950/7822
+    frame 5100/7822
+    frame 5250/7822
+    frame 5400/7822
+    frame 5550/7822
+    frame 5700/7822
+    frame 5850/7822
+    frame 6000/7822
+    frame 6150/7822
+    frame 6300/7822
+    frame 6450/7822
+    frame 6600/7822
+    frame 6750/7822
+    frame 6900/7822
+    frame 7050/7822
+    frame 7200/7822
+    frame 7350/7822
+    frame 7500/7822
+    frame 7650/7822
+    frame 7800/7822
 
--> /workspace/legacy/build/se101/01-build-the-whole-system-ai-native/SE201_01_Build-The-Whole-System-AI-Native_public.mp4
+-> /workspace/legacy/build/se101/01-four-eras-of-building-systems/SE201_01_Four-Eras-Of-Building-Systems_public.mp4
+EXIT 0

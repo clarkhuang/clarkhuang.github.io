@@ -1,0 +1,64 @@
+15 scenes, 222.47s, 6674 frames
+  01_title                 0.50s  + 6.88s
+  02_quiz                  7.38s  +18.76s
+  03_broken               26.15s  +23.64s
+  04_first                49.78s  + 8.11s
+  05a_contract            57.89s  +21.21s
+  05b_agents              79.10s  + 8.71s
+  05c_merge               87.81s  +14.49s
+  05d_test               102.30s  + 8.71s
+  06_example             111.01s  +13.89s
+  07_together            124.90s  +31.87s
+  08_cost                156.77s  +17.54s
+  09_recap               174.31s  +10.84s
+  10_rule                185.16s  +18.76s
+  11_ask                 203.92s  + 9.62s
+  12_close               213.54s  + 8.93s
+    frame 0/6674
+    frame 150/6674
+    frame 300/6674
+    frame 450/6674
+    frame 600/6674
+    frame 750/6674
+    frame 900/6674
+    frame 1050/6674
+    frame 1200/6674
+    frame 1350/6674
+    frame 1500/6674
+    frame 1650/6674
+    frame 1800/6674
+    frame 1950/6674
+    frame 2100/6674
+    frame 2250/6674
+    frame 2400/6674
+    frame 2550/6674
+    frame 2700/6674
+    frame 2850/6674
+    frame 3000/6674
+    frame 3150/6674
+    frame 3300/6674
+    frame 3450/6674
+    frame 3600/6674
+    frame 3750/6674
+    frame 3900/6674
+    frame 4050/6674
+    frame 4200/6674
+    frame 4350/6674
+    frame 4500/6674
+    frame 4650/6674
+    frame 4800/6674
+    frame 4950/6674
+    frame 5100/6674
+    frame 5250/6674
+    frame 5400/6674
+    frame 5550/6674
+    frame 5700/6674
+    frame 5850/6674
+    frame 6000/6674
+    frame 6150/6674
+    frame 6300/6674
+    frame 6450/6674
+    frame 6600/6674
+
+-> /workspace/legacy/build/se101/04-parallel-agents-one-integration/SE201_04_Parallel-Agents-One-Integration_public.mp4
+EXIT 0

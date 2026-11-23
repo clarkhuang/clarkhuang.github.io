@@ -87,9 +87,9 @@ def head_links():
             '  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">\n')
 
 def footer_twins():
-    return ('      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · '
-            '<a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · '
-            '<a href="/llms-full.txt">llms-full.txt</a></p>\n')
+    return ('        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p>'
+            '<a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a>'
+            '<a href="/llms-full.txt">llms-full.txt</a></nav>\n')
 
 def write(site, rel, text):
     full = os.path.join(site, rel)
@@ -332,6 +332,18 @@ def write_home_twin(site, series, bio_html, extra_md=""):
     if extra_md:
         bits += [extra_md.rstrip(), ""]
     bits += [
+        '## Ask, connect, contribute',
+        '',
+        'Search the lessons and the book preview, or hook your own AI to this site.',
+        '',
+        f'- [Ask the Book]({BASE}/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.',
+        f'- [Connect your AI]({BASE}/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.',
+        f'- [Contributor credits]({BASE}/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.',
+        '',
+        f'This site is also an open project. [Contribute with your AI]({BASE}/contribute/index.md), or [copy this for yourself]({BASE}/copy-this/index.md).',
+        "",
+    ]
+    bits += [
         "## For agents",
         "",
         f"- Site index: {u['llms']}",
@@ -498,6 +510,10 @@ If someone pastes a page URL or the copy-paste prompt from the “Use this page 
 5. Quiz them if they ask.
 
 Work through the site by following links in `llms.txt` and in each `index.md`. You do not need to render HTML, play video, or run JavaScript.
+
+## Watched state and saved positions
+
+The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do.
 
 ## How to contribute
 

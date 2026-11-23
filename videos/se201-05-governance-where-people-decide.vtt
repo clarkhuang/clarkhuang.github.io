@@ -1,0 +1,283 @@
+WEBVTT
+
+NOTE SE201 Lesson 5: Governance: where people decide — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:04.045
+Software engineering 201. Lesson five.
+
+2
+00:00:04.045 --> 00:00:07.030
+Governance: where people decide.
+
+3
+00:00:07.380 --> 00:00:12.543
+Picture this. Overnight, your agents wrote forty changes to a billing system.
+
+4
+00:00:12.543 --> 00:00:16.633
+All pass their tests. One changes what customers are charged.
+
+5
+00:00:16.633 --> 00:00:20.321
+Who catches it? The tests? A person, reading all forty?
+
+6
+00:00:20.321 --> 00:00:22.735
+Or a person, at a stop built for it?
+
+7
+00:00:22.735 --> 00:00:27.227
+A stop built for it. Tests can't say whether you wanted the change.
+
+8
+00:00:27.227 --> 00:00:29.440
+And nobody reads forty carefully.
+
+9
+00:00:29.800 --> 00:00:32.567
+Every era had a place where a person said yes.
+
+10
+00:00:32.567 --> 00:00:38.160
+Thirty years ago, typically, a change board, signing off a whole release, a few times a year.
+
+11
+00:00:38.500 --> 00:00:43.210
+Twenty years ago, more and more, a teammate, reviewing the code before it went in.
+
+12
+00:00:43.560 --> 00:00:50.380
+Ten years ago, an approval step in an automated pipeline: a pull request a reviewer approves, before it merges.
+
+13
+00:00:50.740 --> 00:00:53.474
+Each was sized for people writing the code.
+
+14
+00:00:53.474 --> 00:00:57.415
+Now agents write changes faster than anyone can read them all.
+
+15
+00:00:57.415 --> 00:00:59.831
+So that place can't just be inherited.
+
+16
+00:00:59.831 --> 00:01:01.230
+It has to be designed.
+
+17
+00:01:01.580 --> 00:01:03.524
+So where does a person decide?
+
+18
+00:01:03.524 --> 00:01:06.052
+A good rule of thumb is four questions.
+
+19
+00:01:06.052 --> 00:01:09.163
+Does it move money? Does it touch customer data?
+
+20
+00:01:09.163 --> 00:01:13.376
+Is it hard to undo? Is it a judgment call that no check can make?
+
+21
+00:01:13.376 --> 00:01:15.321
+One yes, and a person decides.
+
+22
+00:01:15.321 --> 00:01:19.080
+Four no's, and that kind of change can ship on its checks.
+
+23
+00:01:19.430 --> 00:01:24.071
+Take our made-up example: the subscription-billing system from lesson one.
+
+24
+00:01:24.071 --> 00:01:26.455
+Overnight, an agent drafts six things.
+
+25
+00:01:26.455 --> 00:01:28.901
+Fix a typo on an internal admin screen.
+
+26
+00:01:28.901 --> 00:01:30.908
+Add a missing test for renewals.
+
+27
+00:01:30.908 --> 00:01:35.110
+Four no's, both times. They ship on their checks, and nobody waits.
+
+28
+00:01:35.460 --> 00:01:37.917
+Change how a late fee is calculated.
+
+29
+00:01:37.917 --> 00:01:40.920
+That moves money: the finance owner decides.
+
+30
+00:01:40.920 --> 00:01:46.243
+Migrate the ledger. Money again, and hard to undo: the ledger's owner decides.
+
+31
+00:01:46.243 --> 00:01:48.837
+Send customer emails to a new partner.
+
+32
+00:01:48.837 --> 00:01:51.430
+Customer data: the data owner decides.
+
+33
+00:01:51.780 --> 00:01:58.256
+And it isn't only code. A refund over the limit: the agent prepares it, a support lead approves it.
+
+34
+00:01:58.256 --> 00:02:02.180
+Under the limit, a person already decided, when they set it.
+
+35
+00:02:02.180 --> 00:02:04.208
+Six pieces of work. Four stops.
+
+36
+00:02:04.208 --> 00:02:05.320
+Two never waited.
+
+37
+00:02:05.670 --> 00:02:08.779
+A stop only works if a person can clear it quickly.
+
+38
+00:02:08.779 --> 00:02:12.436
+So the agent doesn't hand over a wall of diff and ask, okay?
+
+39
+00:02:12.436 --> 00:02:14.813
+It prepares the decision. What changes.
+
+40
+00:02:14.813 --> 00:02:20.238
+Why. The evidence, from the pipeline: last month's invoices, recomputed, old against new.
+
+41
+00:02:20.238 --> 00:02:24.627
+The risk. And the way back. Now the finance owner decides about the fee.
+
+42
+00:02:24.627 --> 00:02:28.040
+And an engineer still reviews the code that moves money.
+
+43
+00:02:28.390 --> 00:02:32.302
+Then write it down: who approves what, in a file in the repository.
+
+44
+00:02:32.302 --> 00:02:34.346
+Fees and prices: the finance owner.
+
+45
+00:02:34.346 --> 00:02:39.427
+The ledger: its owner. The checks, the pipeline, and this file itself: always a person.
+
+46
+00:02:39.427 --> 00:02:42.113
+Anything the list doesn't cover: stop and ask.
+
+47
+00:02:42.113 --> 00:02:45.325
+And the pipeline enforces it, by what a change touches.
+
+48
+00:02:45.325 --> 00:02:49.120
+The agent that wrote a change doesn't classify it, or approve it.
+
+49
+00:02:49.120 --> 00:02:53.500
+An old idea from accounting: whoever prepares a payment doesn't approve it.
+
+50
+00:02:53.850 --> 00:03:00.070
+Stops cost something. A person on everything: people become the bottleneck, and yes turns into a rubber stamp.
+
+51
+00:03:00.420 --> 00:03:04.190
+A person on nothing: fast, until money moves unapproved.
+
+52
+00:03:04.550 --> 00:03:08.441
+So start strict, like lesson two: a person on every change.
+
+53
+00:03:08.441 --> 00:03:12.267
+Then release one kind at a time, as its checks earn trust.
+
+54
+00:03:12.267 --> 00:03:15.960
+And where an audit requires a review, that review stays.
+
+55
+00:03:16.300 --> 00:03:19.074
+So, to recap. Design where people decide.
+
+56
+00:03:19.074 --> 00:03:21.172
+Make every stop quick to clear.
+
+57
+00:03:21.172 --> 00:03:25.570
+And let the rest ship on its checks, one released kind at a time.
+
+58
+00:03:25.920 --> 00:03:28.753
+Which gives us rule five, for your agents.
+
+59
+00:03:28.753 --> 00:03:31.722
+Before a change ships, find out who decides.
+
+60
+00:03:31.722 --> 00:03:42.381
+Money, customer data, hard to undo, or a judgment call: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back.
+
+61
+00:03:42.381 --> 00:03:44.405
+Not on the list: stop and ask.
+
+62
+00:03:44.405 --> 00:03:47.980
+Ship on checks alone only what a person has released.
+
+63
+00:03:48.340 --> 00:03:54.352
+Now, your turn. Give your AI the last ten changes to a system you run, and the four questions.
+
+64
+00:03:54.352 --> 00:03:56.847
+Ask it: which of these needed a person?
+
+65
+00:03:56.847 --> 00:03:59.469
+Which could have shipped on checks alone?
+
+66
+00:03:59.469 --> 00:04:01.260
+Then see where you disagree.
+
+67
+00:04:01.600 --> 00:04:05.128
+Ships on its checks. That phrase is carrying a lot.
+
+68
+00:04:05.128 --> 00:04:07.619
+So how good are your checks, really?
+
+69
+00:04:07.619 --> 00:04:11.078
+That's next: quality, feedback, and observability.
+
+70
+00:04:11.078 --> 00:04:12.600
+See you in lesson six.

@@ -38,6 +38,10 @@ If someone pastes a page URL or the copy-paste prompt from the “Use this page 
 
 Work through the site by following links in `llms.txt` and in each `index.md`. You do not need to render HTML, play video, or run JavaScript.
 
+## Watched state and saved positions
+
+The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do.
+
 ## How to contribute
 
 Anyone can take part from day one: file an issue or open a pull request. You do not have to wait for v1. Only Clark Huang approves work, starts the build agents, merges pull requests, and cuts a new edition of the book.

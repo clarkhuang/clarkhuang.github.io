@@ -1,0 +1,74 @@
+19 scenes, 252.96s, 7588 frames
+  01_title                 0.50s  + 6.88s
+  02_quiz                  7.38s  +22.41s
+  03a_board               29.80s  + 8.71s
+  03b_review              38.50s  + 5.06s
+  03c_pipeline            43.56s  + 7.17s
+  03d_now                 50.74s  +10.84s
+  04_tests                61.58s  +17.85s
+  05a_free                79.43s  +16.03s
+  05b_stops               95.46s  +16.32s
+  05c_refund             111.78s  +13.89s
+  06_packet              125.67s  +22.72s
+  07_written             148.39s  +25.46s
+  08a_all                173.85s  + 6.57s
+  08b_none               180.42s  + 4.12s
+  08c_few                184.55s  +11.76s
+  09_recap               196.30s  + 9.62s
+  10_rule                205.92s  +22.41s
+  11_ask                 228.34s  +13.27s
+  12_close               241.60s  +11.35s
+    frame 0/7588
+    frame 150/7588
+    frame 300/7588
+    frame 450/7588
+    frame 600/7588
+    frame 750/7588
+    frame 900/7588
+    frame 1050/7588
+    frame 1200/7588
+    frame 1350/7588
+    frame 1500/7588
+    frame 1650/7588
+    frame 1800/7588
+    frame 1950/7588
+    frame 2100/7588
+    frame 2250/7588
+    frame 2400/7588
+    frame 2550/7588
+    frame 2700/7588
+    frame 2850/7588
+    frame 3000/7588
+    frame 3150/7588
+    frame 3300/7588
+    frame 3450/7588
+    frame 3600/7588
+    frame 3750/7588
+    frame 3900/7588
+    frame 4050/7588
+    frame 4200/7588
+    frame 4350/7588
+    frame 4500/7588
+    frame 4650/7588
+    frame 4800/7588
+    frame 4950/7588
+    frame 5100/7588
+    frame 5250/7588
+    frame 5400/7588
+    frame 5550/7588
+    frame 5700/7588
+    frame 5850/7588
+    frame 6000/7588
+    frame 6150/7588
+    frame 6300/7588
+    frame 6450/7588
+    frame 6600/7588
+    frame 6750/7588
+    frame 6900/7588
+    frame 7050/7588
+    frame 7200/7588
+    frame 7350/7588
+    frame 7500/7588
+
+-> /workspace/legacy/build/se101/05-governance-where-people-decide/SE201_05_Governance-Where-People-Decide_public.mp4
+EXIT 0

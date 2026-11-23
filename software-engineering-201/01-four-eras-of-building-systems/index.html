@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Four Eras of Building Systems — Software Engineering 201 — Clark Huang</title>
+  <meta name="description" content="How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architec">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="Four Eras of Building Systems — Software Engineering 201 — Clark Huang">
+  <meta property="og:description" content="How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architec">
+  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Four Eras of Building Systems — Software Engineering 201 — Clark Huang">
+  <meta name="twitter:description" content="How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architec">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/ask-book.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Four Eras of Building Systems — Software Engineering 201 — Clark Huang", "description": "How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architec", "url": "https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/index.md"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/" aria-current="page">SE 201</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main" class="lesson">
+    <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/index.md (plus https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+        </div>
+      </details>
+      <p class="crumbs"><a href="/">Home</a> / <a href="/software-engineering-201/">Software Engineering 201</a> / Lesson 1</p>
+      <h1>Four Eras of Building Systems</h1>
+      <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="/videos/posters/se201-01-four-eras-of-building-systems.jpg" data-lesson-id="se201/01" data-video-version="31528bab" aria-label="Lesson video: Four Eras of Building Systems">
+        <source src="/videos/se201-01-four-eras-of-building-systems.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" label="English" src="/videos/se201-01-four-eras-of-building-systems.vtt" default>
+        Your browser can't play this video. <a href="/videos/se201-01-four-eras-of-building-systems.mp4">Download the MP4</a>.
+      </video></div>
+      <div class="lesson-meta" data-watch-id="se201/01" data-video-version="31528bab" data-status-scope><span><time datetime="PT4M21S">4:20</time></span><span aria-hidden="true">·</span><span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="/videos/se201-01-four-eras-of-building-systems.mp4" download>Download MP4</a><span aria-hidden="true">·</span><a href="/videos/se201-01-four-eras-of-building-systems.vtt">Captions (VTT)</a><span aria-hidden="true">·</span><a href="https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-01">How it was built</a><span class="watch-state"><span class="badge dim unwatched-badge">Not watched</span><span class="badge watched-badge"><span class="check" aria-hidden="true">✓</span>Watched</span><button type="button" class="linkish" data-toggle-watched="se201/01" data-video-version="31528bab" aria-pressed="false" hidden>Mark as watched</button></span><span class="status" role="status" data-status></span></div>
+      <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
+      <p class="upnext-after">Up next: <a href="/software-engineering-201/02-build-the-whole-system-ai-native/">Lesson 2: Build the Whole System, AI-Native</a></p>
+      <div class="grid2">
+        <section>
+          <h2 class="label">The lesson</h2>
+          <p>How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architecture bends around whatever is scarcest. Machines were scarce in the mid-1990s, coordination in the 2000s, and seeing the whole system in the 2010s. Now the scarce things are knowing the work is right and how much of the system an agent can see at once. So design for checking: clear module boundaries, one repository an agent can read, tests and specs it can run, and decisions written down. This is where the thinking is heading, not a settled answer. Four things never changed: the data model outlives the code, money has to add up, you depend on things you don&#x27;t control, and someone has to understand the layer below.</p>
+          <div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="rule-se201-01">Before you design a system, write down four things: where the boundaries are, what the data model is, what you depend on but don&#x27;t control, and how you&#x27;ll know it&#x27;s right. Put that note in the repository, where every agent and person working on the system can read it, and keep it current as the design changes.</p><p class="tools"><button type="button" class="btn ghost" data-copy="rule-se201-01" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>
+        </section>
+        <aside><h2 class="label">Chapters</h2><ol class="chapters"><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=0.0" data-seek="0.0" data-target="lesson-video"><span class="ts">0:00</span><span>The question</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=28.9" data-seek="28.9" data-target="lesson-video"><span class="ts">0:28</span><span>A lens</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=62.8" data-seek="62.8" data-target="lesson-video"><span class="ts">1:02</span><span>Four eras</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=146.1" data-seek="146.1" data-target="lesson-video"><span class="ts">2:26</span><span>Building now</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=183.3" data-seek="183.3" data-target="lesson-video"><span class="ts">3:03</span><span>What never changes</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=198.1" data-seek="198.1" data-target="lesson-video"><span class="ts">3:18</span><span>The path</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=214.1" data-seek="214.1" data-target="lesson-video"><span class="ts">3:34</span><span>Recap</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=225.0" data-seek="225.0" data-target="lesson-video"><span class="ts">3:44</span><span>The rule</span></a></li><li><a href="/videos/se201-01-four-eras-of-building-systems.mp4#t=241.9" data-seek="241.9" data-target="lesson-video"><span class="ts">4:01</span><span>Your turn</span></a></li></ol><p class="chapter-hint">Select a chapter to jump there in the video.</p></aside>
+      </div>
+      <nav class="pager" aria-label="Lesson navigation"><a class="prev" href="/software-engineering-201/"><small>Back</small>All Software Engineering 201 lessons</a><a class="next" href="/software-engineering-201/02-build-the-whole-system-ai-native/"><small>Next</small>Lesson 2: Build the Whole System, AI-Native</a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
+        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

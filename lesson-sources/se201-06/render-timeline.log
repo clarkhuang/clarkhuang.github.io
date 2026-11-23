@@ -1,0 +1,69 @@
+15 scenes, 248.63s, 7458 frames
+  01_title                 0.50s  + 6.57s
+  02_quiz                  7.07s  +24.26s
+  03a_then                31.33s  +13.89s
+  03b_now                 45.22s  +14.49s
+  04a_green               59.72s  +13.58s
+  04b_define              73.30s  +19.36s
+  04c_run                 92.66s  +16.32s
+  05_twice               108.98s  +26.08s
+  06_record              135.06s  +23.04s
+  07a_loop               158.10s  +23.04s
+  07b_limit              181.13s  +10.53s
+  08_recap               191.66s  +13.27s
+  09_rule                204.93s  +19.08s
+  10_ask                 224.01s  +13.58s
+  11_close               237.59s  +11.04s
+    frame 0/7458
+    frame 150/7458
+    frame 300/7458
+    frame 450/7458
+    frame 600/7458
+    frame 750/7458
+    frame 900/7458
+    frame 1050/7458
+    frame 1200/7458
+    frame 1350/7458
+    frame 1500/7458
+    frame 1650/7458
+    frame 1800/7458
+    frame 1950/7458
+    frame 2100/7458
+    frame 2250/7458
+    frame 2400/7458
+    frame 2550/7458
+    frame 2700/7458
+    frame 2850/7458
+    frame 3000/7458
+    frame 3150/7458
+    frame 3300/7458
+    frame 3450/7458
+    frame 3600/7458
+    frame 3750/7458
+    frame 3900/7458
+    frame 4050/7458
+    frame 4200/7458
+    frame 4350/7458
+    frame 4500/7458
+    frame 4650/7458
+    frame 4800/7458
+    frame 4950/7458
+    frame 5100/7458
+    frame 5250/7458
+    frame 5400/7458
+    frame 5550/7458
+    frame 5700/7458
+    frame 5850/7458
+    frame 6000/7458
+    frame 6150/7458
+    frame 6300/7458
+    frame 6450/7458
+    frame 6600/7458
+    frame 6750/7458
+    frame 6900/7458
+    frame 7050/7458
+    frame 7200/7458
+    frame 7350/7458
+
+-> /workspace/legacy/build/se101/06-quality-feedback-and-observability/SE201_06_Quality-Feedback-And-Observability_public.mp4
+EXIT 0
