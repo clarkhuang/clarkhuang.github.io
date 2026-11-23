@@ -21,7 +21,7 @@ import stamp_versions  # noqa: E402
 from playwright.sync_api import sync_playwright  # noqa: E402
 
 MEDIA_EXT = (".mp4", ".mp3", ".jpg", ".png", ".webp", ".woff2", ".m4a")
-SE201_01 = "/software-engineering-201/01-build-the-whole-system-ai-native/"
+SE201_01 = "/software-engineering-201/01-four-eras-of-building-systems/"
 SE101_02 = "/software-engineering-101/02-rigor-follows-risk/"
 SE201_IDX = "/software-engineering-201/"
 results = []
@@ -65,7 +65,7 @@ def main():
     srv = subprocess.Popen([sys.executable, "-m", "http.server", str(port), "--bind", "127.0.0.1"], cwd=site,
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(0.8)
-    v01 = stamp_versions.media_version(os.path.join(site, "videos/se201-01-build-the-whole-system-ai-native.mp4"))
+    v01 = stamp_versions.media_version(os.path.join(site, "videos/se201-01-four-eras-of-building-systems.mp4"))
     v0102 = stamp_versions.media_version(os.path.join(site, "videos/se101-02-rigor-follows-risk.mp4"))
     vbook = stamp_versions.media_version(os.path.join(site, "videos/book-preview.mp4"))
     vaudio = stamp_versions.media_version(os.path.join(site, "audio/book-preview.mp3"))
@@ -170,7 +170,7 @@ def main():
             ctx.close()
 
             # 8. Re-render SE201 lesson 1: new bytes. check_site must fail until re-stamped.
-            mp4 = os.path.join(site, "videos/se201-01-build-the-whole-system-ai-native.mp4")
+            mp4 = os.path.join(site, "videos/se201-01-four-eras-of-building-systems.mp4")
             data = open(mp4, "rb").read(); os.unlink(mp4)          # break the hard link before writing
             with open(mp4, "wb") as f: f.write(data + b"\0re-render\0")
             stale = stamp_versions.verify(site)

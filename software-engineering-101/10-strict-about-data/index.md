@@ -13,8 +13,9 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/AGENTS.md](https://clarkhuang.github.io/software-engineering-101/10-strict-about-data/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se101-10-strict-about-data.mp4
-- Duration: 3:12 (192.5 seconds)
+- Duration: 3:15 (195.6 seconds)
 - Poster: https://clarkhuang.github.io/videos/posters/se101-10-strict-about-data.jpg
+- Captions (WebVTT): https://clarkhuang.github.io/videos/se101-10-strict-about-data.vtt
 
 ## Chapters
 
@@ -23,7 +24,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - [1:24] The rule
 - [1:44] The whole series
 - [2:44] What’s next
-- [3:01] Your turn
+- [3:04] Your turn
 
 ## The lesson
 
@@ -37,7 +38,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering one oh one. Lesson ten, the last one. Strict about data. Relaxed about the perimeter.
+Software engineering 101. Lesson ten, the last one. Strict about data. Relaxed about the perimeter.
 
 ### Two lines
 
@@ -67,17 +68,17 @@ So here's the whole series, on one screen. One. Plan, build, verify, with an ind
 
 Six. Say what, not how. Seven. The old practices still work, with agents in the seats. Eight. Same ceremonies, faster clock. Nine. Know what it costs. And ten. Strict about data, relaxed about the perimeter.
 
-And there's one idea underneath all ten. Every practice is a trade, and A.I. changed the prices. So some of my answers changed. More tests. Root cause, for anything that touches money or data. The whole sprint cycle, in a day. And some didn't. I still have to understand the problem myself. And the customer's data is still not negotiable.
+And there's one idea underneath all ten. Every practice is a trade, and AI changed the prices. So some of my answers changed. More tests. Root cause, for anything that touches money or data. The whole sprint cycle, in a day. And some didn't. I still have to understand the problem myself. And the customer's data is still not negotiable.
 
 ### What’s next
 
-Most of this series was about one piece of work. One fix. One feature. Getting one thing right. That's a loop. Software Engineering two oh one is the layer above. How you split the work. What runs side by side. And how each run's lessons make the next run better.
+Most of this series was about one piece of work. One fix. One feature. Getting one thing right. Software Engineering 201 is about whole systems. How you design one. How the parts fit together. And how that has changed, from thirty years ago, to now, with agents doing the building. I'll use real systems I've worked on.
 
 ### Your turn
 
 So, one last question for you. Which of the ten rules changed how you work? And which one do you think I got wrong?
 
-See you in two oh one.
+See you in 201.
 
 ## Related lessons
 

@@ -1,17 +1,66 @@
-14 scenes, 244.53s, 7335 frames
-  01_title                 0.50s  + 6.57s
-  02_quiz                  7.07s  +19.36s
-  03_test                 26.44s  +23.04s
-  04_loop_graph           49.47s  +18.76s
-  05a_parts               68.24s  +18.16s
-  05b_shared              86.40s  +20.59s
-  06a_chain              106.99s  +21.21s
-  06b_fork               128.20s  +22.41s
-  07_bars                150.61s  +13.58s
-  08_scale               164.19s  +23.95s
-  09_recap               188.14s  +18.16s
-  10_rule                206.30s  +21.81s
-  11_ask                 228.12s  + 9.62s
-  12_close               237.74s  + 6.79s
+15 scenes, 234.35s, 7030 frames
+  01_title                 0.50s  + 9.02s
+  02_quiz                  9.52s  +24.26s
+  03_shift                33.78s  +17.85s
+  04_define               51.63s  +18.16s
+  05_four                 69.80s  +28.82s
+  06_example              98.62s  + 4.75s
+  07_files               103.36s  +23.95s
+  08_flow                127.31s  +11.16s
+  09a_cook               138.47s  + 8.40s
+  09b_kitchen            146.86s  +14.80s
+  10_enterprise          161.67s  +18.45s
+  11_path                180.12s  +25.46s
+  12_rule                205.58s  +17.85s
+  13_ask                 223.43s  + 8.40s
+  14_close               231.83s  + 2.52s
+    frame 0/7030
+    frame 150/7030
+    frame 300/7030
+    frame 450/7030
+    frame 600/7030
+    frame 750/7030
+    frame 900/7030
+    frame 1050/7030
+    frame 1200/7030
+    frame 1350/7030
+    frame 1500/7030
+    frame 1650/7030
+    frame 1800/7030
+    frame 1950/7030
+    frame 2100/7030
+    frame 2250/7030
+    frame 2400/7030
+    frame 2550/7030
+    frame 2700/7030
+    frame 2850/7030
+    frame 3000/7030
+    frame 3150/7030
+    frame 3300/7030
+    frame 3450/7030
+    frame 3600/7030
+    frame 3750/7030
+    frame 3900/7030
+    frame 4050/7030
+    frame 4200/7030
+    frame 4350/7030
+    frame 4500/7030
+    frame 4650/7030
+    frame 4800/7030
+    frame 4950/7030
+    frame 5100/7030
+    frame 5250/7030
+    frame 5400/7030
+    frame 5550/7030
+    frame 5700/7030
+    frame 5850/7030
+    frame 6000/7030
+    frame 6150/7030
+    frame 6300/7030
+    frame 6450/7030
+    frame 6600/7030
+    frame 6750/7030
+    frame 6900/7030
 
--> /workspace/legacy/build/se101/02-decompose-the-system-into-a-graph/SE201_02_Decompose-The-System-Into-A-Graph_public.mp4
+-> /workspace/legacy/build/se101/02-build-the-whole-system-ai-native/SE201_02_Build-The-Whole-System-AI-Native_public.mp4
+EXIT 0
