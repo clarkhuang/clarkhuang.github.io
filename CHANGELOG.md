@@ -24,6 +24,7 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Software Engineering 201 path tightened: lesson 2 is now “Decompose the System into a Graph” (old address redirects), lesson 1, 6, and 7 summaries tie each step to the path from one loop to enterprise systems, and lesson 1's chapter sources in `sitegen/content.json` point at `lesson-sources/se201-01/`
 - Software Engineering 201 lessons 2 and 3 recorded: “Decompose the System into a Graph” and “Parallel Agents, One Integration” (video, captions, chapters, rule, transcript, and build source in `lesson-sources/se201-02/` and `lesson-sources/se201-03/`). The series now has 3 of 8 lessons available; lesson 2 keeps its related-reading credit and the link to the earlier recording
 - Workflow fixes: `cut-edition.yml` parse error; contributor-credits PRs now target `next-revision`
+- Watched ticks and saved positions are now keyed per video version (`se201/01@<first 8 hex of the file's SHA-256>`), so a re-rendered video or audio shows as unwatched again; older unversioned entries are dropped. After re-rendering media, run `python3 sitegen/stamp_versions.py` (`check_site.py` now fails if a version is stale)
 
 ## [v0.1-wip] — 2026-11-22
 

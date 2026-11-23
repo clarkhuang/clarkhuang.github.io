@@ -1225,7 +1225,7 @@
     "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder. Staging lives at /staging/ and is not listed here."
   },
   "cookies": {
-    "watched": "watched=<lesson id>,<lesson id>...",
-    "video_position": "vpos=<lesson id>:<seconds>[,...] (resume offer, cleared when the video ends)"
+    "watched": "watched=<lesson id>@<version>,... (version = first 8 hex chars of the SHA-256 of the video file; a re-rendered video counts as unwatched)",
+    "video_position": "vpos=<lesson id>@<version>:<seconds>[,...] (resume offer, cleared when the video ends)"
   }
 }

@@ -34,6 +34,19 @@ Do not run `gen_extra.py` for a public build. It would add private pages that mu
 
 Lessons that ship with their build source keep it in `lesson-sources/<lesson>/` (for example `lesson-sources/se201-01/`): the script generator, the scene script, the brief, a facts file listing every claim and where to check it, the caption builder, and the render timeline. Each folder has `BUILD.md`, `index.md`, and `AGENTS.md`. Lesson captions (`.vtt`) sit next to the MP4 in `videos/` and are set with the lesson's `captions` field in `sitegen/content.json`.
 
+### Media versions (watched state)
+
+`assets/site.js` keys the `watched`, `vpos`, and `book_pos` cookies on `<id>@<version>` (for example `watched=se201/01@1a2b3c4d`, `vpos=se201/01@1a2b3c4d:73.4`, `book_pos=preview@4226615c:31.2`). The version is the first 8 hex characters of the SHA-256 of the media file. It is stamped into the HTML as `data-video-version` on each `<video>`/`<audio>` and on every `data-watch-id`, `data-toggle-watched`, and `data-lesson-link` element, and as `data-video-versions` (same order as the ids) on each `data-progress` meter, so series and home pages can judge versions too. A re-rendered file gets a new version: readers see it as unwatched, with no stale resume offer. Keys without a version, and keys for an old version of media the page shows, are pruned when a page loads. The videobook and audiobook are separate files, so each keeps its own bookmark.
+
+**After re-rendering any video or audio, run:**
+
+```bash
+python3 sitegen/stamp_versions.py          # rewrites only the version attributes, idempotent
+python3 sitegen/check_site.py .            # fails if any page's version does not match its media file
+```
+
+`gen.py` calls the same `stamp_site()` at the end of a build, so both paths agree. `python3 sitegen/test_watched_versions.py` runs a headless-browser test of the whole flow against a temporary copy of the site.
+
 When a lesson slug changes, leave a small redirect page (`index.html` with `noindex`, a canonical link, and a refresh to the new page, plus `index.md` and `AGENTS.md` pointing at the new address) in the old folder so live links keep working.
 
 ### Cover and book preview
@@ -80,6 +93,7 @@ Run this against production, and against staging after rewriting, before calling
 - [ ] **Desktop and mobile screenshots.** Light and dark, a home page, a lesson, and the book page. Staging shows the banner.
 - [ ] **Accessibility basics.** Images have descriptive alt text (especially the cover). The staging banner is visible and marked as a status. Captions are attached to the videobook. Keyboard can reach the prompt box and players.
 - [ ] **AI twins / llms / AGENTS.** Every HTML page has `index.md` and `AGENTS.md`. `llms.txt` and `llms-full.txt` match the production tree and do not list `/staging/`. The “Use this page with your AI” box is on each page.
+- [ ] **Media versions.** After any re-render, `python3 sitegen/stamp_versions.py` was run and `python3 sitegen/check_site.py .` passes (a re-rendered video must show as unwatched).
 - [ ] **Media transcripts and captions.** `book-source/preview/transcript.md`, per-scene scripts, `videos/book-preview.vtt`, and chapter JSON are present and in sync with the audio/video.
 - [ ] **Privacy grep.** Search the public tree (not `.git`) against the private name map. No real private-person names, no real company names in book/story context, no “memoir” framing on the book, no private paths (`legal/`, `*.private.md`, `interviews/`). The homepage bio and lesson transcripts may still use factual public details (for example Berkeley in a Software Engineering 101 lesson).
 - [ ] **Noindex on staging.** Every staging HTML page has `noindex`. Root `robots.txt` has `Disallow: /staging/`. Staging is absent from the production sitemap and `llms.txt`.
