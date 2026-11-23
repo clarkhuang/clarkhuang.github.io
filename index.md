@@ -32,6 +32,16 @@ From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loo
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
 
+## Ask, connect, contribute
+
+Search the lessons and the book preview, or hook your own AI to this site.
+
+- [Ask the Book](https://clarkhuang.github.io/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.
+- [Connect your AI](https://clarkhuang.github.io/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.
+- [Contributor credits](https://clarkhuang.github.io/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.
+
+This site is also an open project. [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md), or [copy this for yourself](https://clarkhuang.github.io/copy-this/index.md).
+
 ## For agents
 
 - Site index: https://clarkhuang.github.io/llms.txt

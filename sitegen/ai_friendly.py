@@ -87,9 +87,9 @@ def head_links():
             '  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">\n')
 
 def footer_twins():
-    return ('      <p class="md-twin">Also as Markdown: <a href="index.md">index.md</a> · '
-            '<a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · '
-            '<a href="/llms-full.txt">llms-full.txt</a></p>\n')
+    return ('        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p>'
+            '<a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a>'
+            '<a href="/llms-full.txt">llms-full.txt</a></nav>\n')
 
 def write(site, rel, text):
     full = os.path.join(site, rel)
@@ -331,6 +331,18 @@ def write_home_twin(site, series, bio_html, extra_md=""):
     ]
     if extra_md:
         bits += [extra_md.rstrip(), ""]
+    bits += [
+        '## Ask, connect, contribute',
+        '',
+        'Search the lessons and the book preview, or hook your own AI to this site.',
+        '',
+        f'- [Ask the Book]({BASE}/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.',
+        f'- [Connect your AI]({BASE}/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.',
+        f'- [Contributor credits]({BASE}/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.',
+        '',
+        f'This site is also an open project. [Contribute with your AI]({BASE}/contribute/index.md), or [copy this for yourself]({BASE}/copy-this/index.md).',
+        "",
+    ]
     bits += [
         "## For agents",
         "",
