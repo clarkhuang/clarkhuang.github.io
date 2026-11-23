@@ -1,9 +1,9 @@
 {
   "site": "https://clarkhuang.github.io",
-  "generated": "2026-11-23 12:36 PM ET (America/Detroit)",
+  "generated": "2026-11-23 4:31 PM ET (America/Detroit)",
   "generated_by": "scripts/build_ai_index.py",
   "note": "Client-side search index for /ask/ and the Ask the Book widget. Each hit should be cited by its url or markdown_url. Story chapters of Silicon Valley C Players are an embellished fictional dramatization narrated by Charlie Hack; do not treat them as facts about real people.",
-  "count": 292,
+  "count": 333,
   "entries": [
     {
       "id": "ai-tips/01",
@@ -2382,10 +2382,120 @@
       "series": "Software Engineering 201",
       "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/",
       "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
-      "summary": "Design where people decide, so agents run fast everywhere else. Every era had a place where a person said yes: a release board a few times a year, then code review, then an approval step in an automated pipeline. When agents produce changes faster than anyone can read them all, that place has to be designed, not inherited. Put a person where judgment, risk, money, customer data or production are on the line, make those stops quick to review, and let everything else run without waiting. Picture a payments system: an agent can draft a change to how a fee is calculated, but a person approves anything that changes how money moves. Write down who can approve what, so agents know when to stop and ask.",
-      "rule": "",
-      "status": "coming soon",
-      "text": "Governance: Where People Decide Design where people decide, so agents run fast everywhere else. Every era had a place where a person said yes: a release board a few times a year, then code review, then an approval step in an automated pipeline. When agents produce changes faster than anyone can read them all, that place has to be designed, not inherited. Put a person where judgment, risk, money, customer data or production are on the line, make those stops quick to review, and let everything else run without waiting. Picture a payments system: an agent can draft a change to how a fee is calculated, but a person approves anything that changes how money moves. Write down who can approve what, so agents know when to stop and ask. Governance: Where People Decide Software Engineering 201 · Lesson 5 HTML page: https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md (plus https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/AGENTS.md This lesson is in planning. The video is not available yet. The lesson Design where people decide, so agents run fast everywhere else. Every era had a place where a person said yes: a release board a few times a year, then code review, then an approval step in an automated pipeline. When agents produce changes faster than anyone can read them all, that place has to be designed, not inherited. Put a person where judgment, risk, money, customer data or production are on the line, make those stops quick to review, and let everything else run without waiting. Picture a payments system: an agent can draft a change to how a fee is calculated, but a person approves anything that changes how money moves. Write down who can approve what, so agents know when to stop and ask. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 6: Quality, Feedback, and Observability (outline) - Lesson 7: Skills as Building Blocks (outline) - Lesson 8: Routines, Pipelines, and Integration (outline) - Lesson 9: Agents That Operate Enterprise Systems (outline) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
+      "summary": "Every era had a place where a person said yes: a change board signing off a whole release, then a teammate reviewing the code, then an approval on a pull request. Each was sized for people writing the code, so when agents write changes faster than anyone can read them all, that place has to be designed, not inherited. A good rule of thumb is four questions: does it move money, touch customer data, is it hard to undo, or is it a judgment call no check can make? One yes and a named person decides; four no's and that kind of change can ship on its checks. The worked example is a made-up subscription-billing system, where six pieces of an agent's work lead to four stops and two changes that never wait, and where the agent prepares each decision: what changes, why, the evidence, the risk, and the way back. Write down who approves what in the repository, let the pipeline enforce it, and start strict, releasing one kind of change at a time as its checks earn trust.",
+      "rule": "Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call that no check can make: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list? Stop and ask. Ship on checks alone only what a person has released. In full: bring the decision ready to make (what changes, why, the evidence, the risk, and the way back), and don't classify or approve your own change.",
+      "status": "available",
+      "text": "Governance: Where People Decide Every era had a place where a person said yes: a change board signing off a whole release, then a teammate reviewing the code, then an approval on a pull request. Each was sized for people writing the code, so when agents write changes faster than anyone can read them all, that place has to be designed, not inherited. A good rule of thumb is four questions: does it move money, touch customer data, is it hard to undo, or is it a judgment call no check can make? One yes and a named person decides; four no's and that kind of change can ship on its checks. The worked example is a made-up subscription-billing system, where six pieces of an agent's work lead to four stops and two changes that never wait, and where the agent prepares each decision: what changes, why, the evidence, the risk, and the way back. Write down who approves what in the repository, let the pipeline enforce it, and start strict, releasing one kind of change at a time as its checks earn trust. Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call that no check can make: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list? Stop and ask. Ship on checks alone only what a person has released. In full: bring the decision ready to make (what changes, why, the evidence, the risk, and the way back), and don't classify or approve your own change. Software engineering 201. Lesson five. Governance: where people decide.\n\n### The question\n\nPicture this. Overnight, your agents wrote forty changes to a billing system. All pass their tests. One changes what customers are charged. Who catches it? The tests? A person, reading all forty? Or a person, at a stop built for it? A stop built for it. Tests can't say whether you wanted the change. And nobody reads forty carefully.\n\n### Every era had a yes\n\nEvery era had a place where a person said yes. Thirty years ago, typically, a change board, signing off a whole release, a few times a year.\n\nTwenty years ago, more and more, a teammate, reviewing the code before it went in.\n\nTen years ago, an approval step in an automated pipeline: a pull request a reviewer approves, before it merges.\n\nEach was sized for people writing the code. Now agents write changes faster than anyone can read them all. So that place can't just be inherited. It has to be designed.\n\n### Four questions\n\nSo where does a person decide? A good rule of thumb is four questions. Does it move money? Does it touch customer data? Is it hard to undo? Is it a judgment call that no check can make? One yes, and a person decides. Four no's, and that kind of change can ship on its checks.\n\n### A worked example\n\nTake our made-up example: the subscription-billing system from lesson one. Overnight, an agent drafts six things. Fix a typo on an internal admin screen. Add a missing test for renewals. Four no's, both times. They ship on their checks, and nobody waits.\n\nChange how a late fee is calculated. That moves money: the finance owner decides. Migrate the ledger. Money again, and hard to undo: the ledger's owner decides. Send customer emails to a new partner. Customer data: the data owner decides.\n\nAnd it isn't only code. A refund over the limit: the agent prepares it, a support lead approves it. Under the limit, a person already decided, when they set it. Six pieces of work. Four stops. Two never waited.\n\n### Make the stop quick\n\nA stop only works if a person can clear it quickly. So the agent doesn't hand over a wall of diff and ask, okay? It prepares the decision. What changes. Why. The evidence, from the pipeline: last month's invoices, recomputed, old against new. The risk. And the way back. Now the finance owner decides about the fee. And an engineer still reviews the code that moves money.\n\n### Write it down\n\nThen write it down: who approves what, in a file in the repository. Fees and prices: the finance owner. The ledger: its owner. The checks, the pipeline, and this file itself: always a person. Anything the list doesn't cover: stop and ask. And the pipeline enforces it, by what a change touches. The agent that wrote a change doesn't classify it, or approve it. An old idea from accounting: whoever prepares a payment doesn't approve it.\n\n### What it costs\n\nStops cost something. A person on everything: people become the bottleneck, and yes turns into a rubber stamp.\n\nA person on nothing: fast, until money moves unapproved.\n\nSo start strict, like lesson two: a person on every change. Then release one kind at a time, as its checks earn trust. And where an audit requires a review, that review stays.\n\n### Recap\n\nSo, to recap. Design where people decide. Make every stop quick to clear. And let the rest ship on its checks, one released kind at a time.\n\n### The rule\n\nWhich gives us rule five, for your agents. Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list: stop and ask. Ship on checks alone only what a person has released.\n\n### Your turn\n\nNow, your turn. Give your AI the last ten changes to a system you run, and the four questions. Ask it: which of these needed a person? Which could have shipped on checks alone? Then see where you disagree.\n\nShips on its checks. That phrase is carrying a lot. So how good are your checks, really? That's next: quality, feedback, and observability. See you in lesson six."
+    },
+    {
+      "id": "se201/05/transcript",
+      "type": "transcript",
+      "title": "Governance: Where People Decide (transcript)",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Full lesson transcript.",
+      "text": "Software engineering 201. Lesson five. Governance: where people decide.\n\n### The question\n\nPicture this. Overnight, your agents wrote forty changes to a billing system. All pass their tests. One changes what customers are charged. Who catches it? The tests? A person, reading all forty? Or a person, at a stop built for it? A stop built for it. Tests can't say whether you wanted the change. And nobody reads forty carefully.\n\n### Every era had a yes\n\nEvery era had a place where a person said yes. Thirty years ago, typically, a change board, signing off a whole release, a few times a year.\n\nTwenty years ago, more and more, a teammate, reviewing the code before it went in.\n\nTen years ago, an approval step in an automated pipeline: a pull request a reviewer approves, before it merges.\n\nEach was sized for people writing the code. Now agents write changes faster than anyone can read them all. So that place can't just be inherited. It has to be designed.\n\n### Four questions\n\nSo where does a person decide? A good rule of thumb is four questions. Does it move money? Does it touch customer data? Is it hard to undo? Is it a judgment call that no check can make? One yes, and a person decides. Four no's, and that kind of change can ship on its checks.\n\n### A worked example\n\nTake our made-up example: the subscription-billing system from lesson one. Overnight, an agent drafts six things. Fix a typo on an internal admin screen. Add a missing test for renewals. Four no's, both times. They ship on their checks, and nobody waits.\n\nChange how a late fee is calculated. That moves money: the finance owner decides. Migrate the ledger. Money again, and hard to undo: the ledger's owner decides. Send customer emails to a new partner. Customer data: the data owner decides.\n\nAnd it isn't only code. A refund over the limit: the agent prepares it, a support lead approves it. Under the limit, a person already decided, when they set it. Six pieces of work. Four stops. Two never waited.\n\n### Make the stop quick\n\nA stop only works if a person can clear it quickly. So the agent doesn't hand over a wall of diff and ask, okay? It prepares the decision. What changes. Why. The evidence, from the pipeline: last month's invoices, recomputed, old against new. The risk. And the way back. Now the finance owner decides about the fee. And an engineer still reviews the code that moves money.\n\n### Write it down\n\nThen write it down: who approves what, in a file in the repository. Fees and prices: the finance owner. The ledger: its owner. The checks, the pipeline, and this file itself: always a person. Anything the list doesn't cover: stop and ask. And the pipeline enforces it, by what a change touches. The agent that wrote a change doesn't classify it, or approve it. An old idea from accounting: whoever prepares a payment doesn't approve it.\n\n### What it costs\n\nStops cost something. A person on everything: people become the bottleneck, and yes turns into a rubber stamp.\n\nA person on nothing: fast, until money moves unapproved.\n\nSo start strict, like lesson two: a person on every change. Then release one kind at a time, as its checks earn trust. And where an audit requires a review, that review stays.\n\n### Recap\n\nSo, to recap. Design where people decide. Make every stop quick to clear. And let the rest ship on its checks, one released kind at a time.\n\n### The rule\n\nWhich gives us rule five, for your agents. Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list: stop and ask. Ship on checks alone only what a person has released.\n\n### Your turn\n\nNow, your turn. Give your AI the last ten changes to a system you run, and the four questions. Ask it: which of these needed a person? Which could have shipped on checks alone? Then see where you disagree.\n\nShips on its checks. That phrase is carrying a lot. So how good are your checks, really? That's next: quality, feedback, and observability. See you in lesson six."
+    },
+    {
+      "id": "se201/05/scene-1",
+      "type": "scene",
+      "title": "Governance: Where People Decide: The question",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=0",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "The question",
+      "text": "The question"
+    },
+    {
+      "id": "se201/05/scene-2",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Every era had a yes",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=29",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Every era had a yes",
+      "text": "Every era had a yes"
+    },
+    {
+      "id": "se201/05/scene-3",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Four questions",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=61",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Four questions",
+      "text": "Four questions"
+    },
+    {
+      "id": "se201/05/scene-4",
+      "type": "scene",
+      "title": "Governance: Where People Decide: A worked example",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=79",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "A worked example",
+      "text": "A worked example"
+    },
+    {
+      "id": "se201/05/scene-5",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Make the stop quick",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=125",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Make the stop quick",
+      "text": "Make the stop quick"
+    },
+    {
+      "id": "se201/05/scene-6",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Write it down",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=148",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Write it down",
+      "text": "Write it down"
+    },
+    {
+      "id": "se201/05/scene-7",
+      "type": "scene",
+      "title": "Governance: Where People Decide: What it costs",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=173",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "What it costs",
+      "text": "What it costs"
+    },
+    {
+      "id": "se201/05/scene-8",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Recap",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=196",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Recap",
+      "text": "Recap"
+    },
+    {
+      "id": "se201/05/scene-9",
+      "type": "scene",
+      "title": "Governance: Where People Decide: The rule",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=205",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "The rule",
+      "text": "The rule"
+    },
+    {
+      "id": "se201/05/scene-10",
+      "type": "scene",
+      "title": "Governance: Where People Decide: Your turn",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/#t=228",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/index.md",
+      "summary": "Your turn",
+      "text": "Your turn"
     },
     {
       "id": "se201/06",
@@ -2394,10 +2504,110 @@
       "series": "Software Engineering 201",
       "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/",
       "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
-      "summary": "When knowing it's right is the scarce thing, design quality in and watch every run. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and tracing were the answer. Now that knowing the work is right is scarce, quality has to be defined before the work starts: tests, checks, and service levels that agents can run themselves. Picture a subscription-billing system: the real check is not “the build passed” but “every renewal charged the right amount, exactly once”. Watch every run with signals that agents and people can both read, and feed what went wrong, what a reviewer fixed, and what it cost back into the briefs and checks, so each run improves the next.",
-      "rule": "",
-      "status": "coming soon",
-      "text": "Quality, Feedback, and Observability When knowing it's right is the scarce thing, design quality in and watch every run. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and tracing were the answer. Now that knowing the work is right is scarce, quality has to be defined before the work starts: tests, checks, and service levels that agents can run themselves. Picture a subscription-billing system: the real check is not “the build passed” but “every renewal charged the right amount, exactly once”. Watch every run with signals that agents and people can both read, and feed what went wrong, what a reviewer fixed, and what it cost back into the briefs and checks, so each run improves the next. Quality, Feedback, and Observability Software Engineering 201 · Lesson 6 HTML page: https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md (plus https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/AGENTS.md This lesson is in planning. The video is not available yet. The lesson When knowing it's right is the scarce thing, design quality in and watch every run. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and tracing were the answer. Now that knowing the work is right is scarce, quality has to be defined before the work starts: tests, checks, and service levels that agents can run themselves. Picture a subscription-billing system: the real check is not “the build passed” but “every renewal charged the right amount, exactly once”. Watch every run with signals that agents and people can both read, and feed what went wrong, what a reviewer fixed, and what it cost back into the briefs and checks, so each run improves the next. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 5: Governance: Where People Decide (outline) - Lesson 7: Skills as Building Blocks (outline) - Lesson 8: Routines, Pipelines, and Integration (outline) - Lesson 9: Agents That Operate Enterprise Systems (outline) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
+      "summary": "A green build says the code did what its tests asked; it says nothing about what happened last night. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and traces answered \"what happened?\". Now the scarce thing is knowing it's right, and no dashboard can answer that until someone has written down what right means. The worked example is a made-up subscription-billing system: \"every renewal charged the right amount, exactly once\" becomes three checks, and running them on last night's renewals finds three wrong ones inside totals that match exactly. Write the check once and run it twice, before a change ships and after every run; make every step leave a record that people and agents can both read; and feed every miss back into the brief and the checks, while a person still reads a sample, because a check only catches what somebody thought to ask.",
+      "rule": "Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. Feed every miss back into the brief and the checks. In full: run the checks on samples before a change ships and on the real data after every run, leave each record in a shape people and agents can both read, and let every miss make the next run better.",
+      "status": "available",
+      "text": "Quality, Feedback, and Observability A green build says the code did what its tests asked; it says nothing about what happened last night. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and traces answered \"what happened?\". Now the scarce thing is knowing it's right, and no dashboard can answer that until someone has written down what right means. The worked example is a made-up subscription-billing system: \"every renewal charged the right amount, exactly once\" becomes three checks, and running them on last night's renewals finds three wrong ones inside totals that match exactly. Write the check once and run it twice, before a change ships and after every run; make every step leave a record that people and agents can both read; and feed every miss back into the brief and the checks, while a person still reads a sample, because a check only catches what somebody thought to ask. Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. Feed every miss back into the brief and the checks. In full: run the checks on samples before a change ships and on the real data after every run, leave each record in a shape people and agents can both read, and let every miss make the next run better. Software engineering 201. Lesson six. Quality, feedback, and observability.\n\n### The question\n\nPicture a made-up billing system. Last night, it renewed its subscriptions. This morning the build is green, and every test passed. Was every customer charged the right amount, exactly once? Yes, the tests passed? Probably, coverage is high? Or: you can't tell from that? You can't tell from that. Green says the code did what its tests asked. It says nothing about what happened last night.\n\n### A lens\n\nBack to the lens from lesson one: architecture bends around what's scarce. Ten years ago, the scarce thing was seeing the whole system. The answer was observability: logs, metrics, traces. They answer: what happened?\n\nNow the scarce thing is knowing it's right. That's a different question. And no dashboard can answer it, until somebody has written down what right means. So: define right, up front. Watch every run. And feed back what you learn.\n\n### The real check\n\nTake our made-up example: the subscription-billing system from lesson one. Here are last night's renewals. And the build is green. But no test ever looked at this table. So was last night right? The green can't say.\n\nSo before the work starts, write down what right means, in the business's words. Every renewal charged the right amount, exactly once. Then split that into checks an agent can run. One: none was charged twice. Two: each charge equals the plan's price. Three: every renewal that was due was attempted.\n\nNow run them, on last night's real renewals. One was charged twice. One, the wrong amount. One was never attempted. And look at the totals: they match. Three wrong renewals, inside a sum that's exactly right. So check every renewal, not just the total.\n\n### Run it twice\n\nThat one sentence does double duty. You write the check once, and run it twice. Before a change ships, on sample renewals, in the pipeline. And after every nightly run, on the real ones. Add a target for time, too. A service level objective, an SLO: say, ninety-nine point nine percent of renewals due today, attempted by six A.M. Now an agent can run all of it, without asking anyone what good looks like.\n\n### Watch every run\n\nThe checks say that something is wrong. The record says why. So every step of every run leaves a line, in a shape that people and agents can both read. Here's the double charge. Attempt one: a timeout. Attempt two, with a new key: charged. Then reconcile, against the processor's own report: two charges. The first attempt had gone through. Nobody has to guess.\n\n### Feed it back\n\nFirst, put last night right, with a person approving, as in lesson five. Then close the loop. Every miss goes back into the brief, and the checks. The double charge becomes a new line in the brief: a retry must reuse the same key. That's an idempotency key; more in lesson eight. And a new test: the processor times out. So each run makes the next one better.\n\nAnd be honest about the limit. A check only catches what somebody thought to ask. So a person still reads a sample of real invoices. And whatever they find becomes the next check.\n\n### Recap\n\nSo, to recap. Green doesn't mean right. Define right first, in the business's words. Check before you ship, and after every run. Make every step leave a record. And feed every miss back in.\n\n### The rule\n\nWhich gives us rule six, for your agents. Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. And feed every miss back into the brief and the checks.\n\n### Your turn\n\nNow, your turn. Pick one job your system runs every day. Ask your AI: what would have to be true for last night's run to be right? Write it as three read-only checks I can run on the real data. Then run one.\n\nOnce a job has a brief, its checks, and a record of every run, it's ready to be reused. That's next: skills as building blocks. See you in lesson seven."
+    },
+    {
+      "id": "se201/06/transcript",
+      "type": "transcript",
+      "title": "Quality, Feedback, and Observability (transcript)",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Full lesson transcript.",
+      "text": "Software engineering 201. Lesson six. Quality, feedback, and observability.\n\n### The question\n\nPicture a made-up billing system. Last night, it renewed its subscriptions. This morning the build is green, and every test passed. Was every customer charged the right amount, exactly once? Yes, the tests passed? Probably, coverage is high? Or: you can't tell from that? You can't tell from that. Green says the code did what its tests asked. It says nothing about what happened last night.\n\n### A lens\n\nBack to the lens from lesson one: architecture bends around what's scarce. Ten years ago, the scarce thing was seeing the whole system. The answer was observability: logs, metrics, traces. They answer: what happened?\n\nNow the scarce thing is knowing it's right. That's a different question. And no dashboard can answer it, until somebody has written down what right means. So: define right, up front. Watch every run. And feed back what you learn.\n\n### The real check\n\nTake our made-up example: the subscription-billing system from lesson one. Here are last night's renewals. And the build is green. But no test ever looked at this table. So was last night right? The green can't say.\n\nSo before the work starts, write down what right means, in the business's words. Every renewal charged the right amount, exactly once. Then split that into checks an agent can run. One: none was charged twice. Two: each charge equals the plan's price. Three: every renewal that was due was attempted.\n\nNow run them, on last night's real renewals. One was charged twice. One, the wrong amount. One was never attempted. And look at the totals: they match. Three wrong renewals, inside a sum that's exactly right. So check every renewal, not just the total.\n\n### Run it twice\n\nThat one sentence does double duty. You write the check once, and run it twice. Before a change ships, on sample renewals, in the pipeline. And after every nightly run, on the real ones. Add a target for time, too. A service level objective, an SLO: say, ninety-nine point nine percent of renewals due today, attempted by six A.M. Now an agent can run all of it, without asking anyone what good looks like.\n\n### Watch every run\n\nThe checks say that something is wrong. The record says why. So every step of every run leaves a line, in a shape that people and agents can both read. Here's the double charge. Attempt one: a timeout. Attempt two, with a new key: charged. Then reconcile, against the processor's own report: two charges. The first attempt had gone through. Nobody has to guess.\n\n### Feed it back\n\nFirst, put last night right, with a person approving, as in lesson five. Then close the loop. Every miss goes back into the brief, and the checks. The double charge becomes a new line in the brief: a retry must reuse the same key. That's an idempotency key; more in lesson eight. And a new test: the processor times out. So each run makes the next one better.\n\nAnd be honest about the limit. A check only catches what somebody thought to ask. So a person still reads a sample of real invoices. And whatever they find becomes the next check.\n\n### Recap\n\nSo, to recap. Green doesn't mean right. Define right first, in the business's words. Check before you ship, and after every run. Make every step leave a record. And feed every miss back in.\n\n### The rule\n\nWhich gives us rule six, for your agents. Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. And feed every miss back into the brief and the checks.\n\n### Your turn\n\nNow, your turn. Pick one job your system runs every day. Ask your AI: what would have to be true for last night's run to be right? Write it as three read-only checks I can run on the real data. Then run one.\n\nOnce a job has a brief, its checks, and a record of every run, it's ready to be reused. That's next: skills as building blocks. See you in lesson seven."
+    },
+    {
+      "id": "se201/06/scene-1",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: The question",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=0",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "The question",
+      "text": "The question"
+    },
+    {
+      "id": "se201/06/scene-2",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: A lens",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=31",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "A lens",
+      "text": "A lens"
+    },
+    {
+      "id": "se201/06/scene-3",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: The real check",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=59",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "The real check",
+      "text": "The real check"
+    },
+    {
+      "id": "se201/06/scene-4",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: Run it twice",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=109",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Run it twice",
+      "text": "Run it twice"
+    },
+    {
+      "id": "se201/06/scene-5",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: Watch every run",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=135",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Watch every run",
+      "text": "Watch every run"
+    },
+    {
+      "id": "se201/06/scene-6",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: Feed it back",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=158",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Feed it back",
+      "text": "Feed it back"
+    },
+    {
+      "id": "se201/06/scene-7",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: Recap",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=191",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Recap",
+      "text": "Recap"
+    },
+    {
+      "id": "se201/06/scene-8",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: The rule",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=204",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "The rule",
+      "text": "The rule"
+    },
+    {
+      "id": "se201/06/scene-9",
+      "type": "scene",
+      "title": "Quality, Feedback, and Observability: Your turn",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/#t=224",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md",
+      "summary": "Your turn",
+      "text": "Your turn"
     },
     {
       "id": "se201/07",
@@ -2406,10 +2616,120 @@
       "series": "Software Engineering 201",
       "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/",
       "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
-      "summary": "Turn the jobs that keep coming back into written, tested, shared skills. Every era found its unit of reuse: shared libraries, then frameworks, then services behind an API. In a system agents help build and run, the reusable unit is also a written skill: the steps, the checks, the inputs and outputs, and the traps of a job that keeps coming up. Picture retail e-commerce: bringing on a new supplier's product data is nearly the same job every time, so write it down once, test it, and version it. Then any person or agent can run that job the same way, and improve it in one place.",
-      "rule": "",
-      "status": "coming soon",
-      "text": "Skills as Building Blocks Turn the jobs that keep coming back into written, tested, shared skills. Every era found its unit of reuse: shared libraries, then frameworks, then services behind an API. In a system agents help build and run, the reusable unit is also a written skill: the steps, the checks, the inputs and outputs, and the traps of a job that keeps coming up. Picture retail e-commerce: bringing on a new supplier's product data is nearly the same job every time, so write it down once, test it, and version it. Then any person or agent can run that job the same way, and improve it in one place. Skills as Building Blocks Software Engineering 201 · Lesson 7 HTML page: https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md (plus https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/AGENTS.md This lesson is in planning. The video is not available yet. The lesson Turn the jobs that keep coming back into written, tested, shared skills. Every era found its unit of reuse: shared libraries, then frameworks, then services behind an API. In a system agents help build and run, the reusable unit is also a written skill: the steps, the checks, the inputs and outputs, and the traps of a job that keeps coming up. Picture retail e-commerce: bringing on a new supplier's product data is nearly the same job every time, so write it down once, test it, and version it. Then any person or agent can run that job the same way, and improve it in one place. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 5: Governance: Where People Decide (outline) - Lesson 6: Quality, Feedback, and Observability (outline) - Lesson 8: Routines, Pipelines, and Integration (outline) - Lesson 9: Agents That Operate Enterprise Systems (outline) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
+      "summary": "Three capable agents can do the same job three different ways when nobody wrote down how. Software has had several units of reuse: libraries, frameworks, then services behind an API. A skill reuses something different: how a job gets done. The worked example is a made-up subscription-billing system and the job of adding a plan or a price: the skill is one page saying when to use it, the inputs, the steps, the checks, and the traps. It is a runbook; what has changed is the reader, an agent that reads it on every run and guesses wherever the page is silent. So keep it in the repository, test it with a fresh agent, and when a run goes wrong, fix the skill so every later run gets the fix.",
+      "rule": "When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. When a run goes wrong, fix the skill, not just the run. In full: write it sooner if a mistake costs money. If an input is missing, ask instead of guessing, and if a check fails, stop and say so. Make any step that needs no judgment a script the skill calls. Keep the skill versioned and reviewed like code, and test it by handing it to a fresh agent that has never seen the job.",
+      "status": "available",
+      "text": "Skills as Building Blocks Three capable agents can do the same job three different ways when nobody wrote down how. Software has had several units of reuse: libraries, frameworks, then services behind an API. A skill reuses something different: how a job gets done. The worked example is a made-up subscription-billing system and the job of adding a plan or a price: the skill is one page saying when to use it, the inputs, the steps, the checks, and the traps. It is a runbook; what has changed is the reader, an agent that reads it on every run and guesses wherever the page is silent. So keep it in the repository, test it with a fresh agent, and when a run goes wrong, fix the skill so every later run gets the fix. When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. When a run goes wrong, fix the skill, not just the run. In full: write it sooner if a mistake costs money. If an input is missing, ask instead of guessing, and if a check fails, stop and say so. Make any step that needs no judgment a script the skill calls. Keep the skill versioned and reviewed like code, and test it by handing it to a fresh agent that has never seen the job. Software engineering 201. Lesson seven. Skills as building blocks.\n\n### One job, three results\n\nWhy would three capable agents do the same job three different ways? Take our made-up subscription-billing system. Now and then, someone asks for a new plan, or a new price. The first time, an agent works out the four steps, and gets it right. The second time, a different agent starts from zero, and skips the tax setup. The third time, another one edits the old price in place, and every existing subscriber is on the new price. Same job. Three results. Nobody wrote down how.\n\n### A new unit of reuse\n\nSoftware keeps finding new units of reuse. Libraries: shared code. Frameworks: an application's structure. Services: something running, behind an API. All three reuse software. A skill reuses something different: how a job gets done. One recurring job, written down, tested, and shared.\n\n### Anatomy of a skill\n\nSeveral agent tools now share a format for this: a folder, with an instruction file. It starts with when to use it: someone asks for a new plan, or a new price. That line is how an agent finds the skill. Then the inputs: name, price, billing period, start date. If one is missing, the agent asks. It doesn't guess.\n\nThen the steps, in order. Add the plan, with its price as a new version. Set its tax category. Map it in the accounting export. Then open a pull request, because a price is money, and a person approves it.\n\nThen the checks: how the agent knows the job worked. A test renewal on staging charges the right amount, tax included, exactly once. The ledger still adds up. And existing subscribers still renew at their old price. If one fails, the agent stops, and says so.\n\nAnd the traps: what went wrong before. Never edit a price in place. Add a new version. That's the mistake from the third run, written down, so nobody repeats it.\n\n### Is this just a runbook?\n\nIf that sounds like a runbook, it is. Engineers have written those for decades. What's changed is the reader. A person reads a runbook now and then, and fills the gaps from memory. An agent reads the skill on every run, with no memory of the last. Where the page is silent, it guesses. And when a step needs no judgment, make it a script the skill calls.\n\n### Treat it like code\n\nSo treat a skill like code. Keep it in the repository, versioned, and reviewed when it changes. And test it. Hand it to a fresh agent that has never seen the job, and let it run on staging. If it can't finish from the page alone, the skill isn't done.\n\n### Fix it in one place\n\nNow run those three jobs again, from the skill. Same steps. Same checks. No guarantee: agents still vary. That's what the checks are for. And when a run goes wrong, don't just fix the run. Fix the skill. One change, in one place, and every later run gets it. That's a building block: reliable enough to build on.\n\n### When to write one\n\nSo when is a job worth a skill? The first time? The third? Or never, because agents can work it out? A good rule of thumb: the third time. Once, you're learning. Twice, you see the pattern. The third time, write it down. Sooner, if a mistake costs money.\n\n### Recap\n\nSo, to recap. One recurring job, written down, with its checks and its traps. In the repo, tested by a fresh agent. And when a run goes wrong, fix the skill.\n\n### The rule\n\nWhich gives us rule seven, for your agents. When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. And when a run goes wrong, fix the skill, not just the run.\n\n### Your turn\n\nNow, your turn. Pick a job you've explained to your AI more than twice. Ask it to draft the skill. Then open a fresh chat, give it only that page, and see if the job gets done.\n\nOne skill does one job. But real work is a chain of jobs, and some of it should start on its own. That's next: routines, pipelines, and integration. See you in lesson eight."
+    },
+    {
+      "id": "se201/07/transcript",
+      "type": "transcript",
+      "title": "Skills as Building Blocks (transcript)",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Full lesson transcript.",
+      "text": "Software engineering 201. Lesson seven. Skills as building blocks.\n\n### One job, three results\n\nWhy would three capable agents do the same job three different ways? Take our made-up subscription-billing system. Now and then, someone asks for a new plan, or a new price. The first time, an agent works out the four steps, and gets it right. The second time, a different agent starts from zero, and skips the tax setup. The third time, another one edits the old price in place, and every existing subscriber is on the new price. Same job. Three results. Nobody wrote down how.\n\n### A new unit of reuse\n\nSoftware keeps finding new units of reuse. Libraries: shared code. Frameworks: an application's structure. Services: something running, behind an API. All three reuse software. A skill reuses something different: how a job gets done. One recurring job, written down, tested, and shared.\n\n### Anatomy of a skill\n\nSeveral agent tools now share a format for this: a folder, with an instruction file. It starts with when to use it: someone asks for a new plan, or a new price. That line is how an agent finds the skill. Then the inputs: name, price, billing period, start date. If one is missing, the agent asks. It doesn't guess.\n\nThen the steps, in order. Add the plan, with its price as a new version. Set its tax category. Map it in the accounting export. Then open a pull request, because a price is money, and a person approves it.\n\nThen the checks: how the agent knows the job worked. A test renewal on staging charges the right amount, tax included, exactly once. The ledger still adds up. And existing subscribers still renew at their old price. If one fails, the agent stops, and says so.\n\nAnd the traps: what went wrong before. Never edit a price in place. Add a new version. That's the mistake from the third run, written down, so nobody repeats it.\n\n### Is this just a runbook?\n\nIf that sounds like a runbook, it is. Engineers have written those for decades. What's changed is the reader. A person reads a runbook now and then, and fills the gaps from memory. An agent reads the skill on every run, with no memory of the last. Where the page is silent, it guesses. And when a step needs no judgment, make it a script the skill calls.\n\n### Treat it like code\n\nSo treat a skill like code. Keep it in the repository, versioned, and reviewed when it changes. And test it. Hand it to a fresh agent that has never seen the job, and let it run on staging. If it can't finish from the page alone, the skill isn't done.\n\n### Fix it in one place\n\nNow run those three jobs again, from the skill. Same steps. Same checks. No guarantee: agents still vary. That's what the checks are for. And when a run goes wrong, don't just fix the run. Fix the skill. One change, in one place, and every later run gets it. That's a building block: reliable enough to build on.\n\n### When to write one\n\nSo when is a job worth a skill? The first time? The third? Or never, because agents can work it out? A good rule of thumb: the third time. Once, you're learning. Twice, you see the pattern. The third time, write it down. Sooner, if a mistake costs money.\n\n### Recap\n\nSo, to recap. One recurring job, written down, with its checks and its traps. In the repo, tested by a fresh agent. And when a run goes wrong, fix the skill.\n\n### The rule\n\nWhich gives us rule seven, for your agents. When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. And when a run goes wrong, fix the skill, not just the run.\n\n### Your turn\n\nNow, your turn. Pick a job you've explained to your AI more than twice. Ask it to draft the skill. Then open a fresh chat, give it only that page, and see if the job gets done.\n\nOne skill does one job. But real work is a chain of jobs, and some of it should start on its own. That's next: routines, pipelines, and integration. See you in lesson eight."
+    },
+    {
+      "id": "se201/07/scene-1",
+      "type": "scene",
+      "title": "Skills as Building Blocks: One job, three results",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=0",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "One job, three results",
+      "text": "One job, three results"
+    },
+    {
+      "id": "se201/07/scene-2",
+      "type": "scene",
+      "title": "Skills as Building Blocks: A new unit of reuse",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=34",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "A new unit of reuse",
+      "text": "A new unit of reuse"
+    },
+    {
+      "id": "se201/07/scene-3",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Anatomy of a skill",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=54",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Anatomy of a skill",
+      "text": "Anatomy of a skill"
+    },
+    {
+      "id": "se201/07/scene-4",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Is this just a runbook?",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=116",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Is this just a runbook?",
+      "text": "Is this just a runbook?"
+    },
+    {
+      "id": "se201/07/scene-5",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Treat it like code",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=138",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Treat it like code",
+      "text": "Treat it like code"
+    },
+    {
+      "id": "se201/07/scene-6",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Fix it in one place",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=153",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Fix it in one place",
+      "text": "Fix it in one place"
+    },
+    {
+      "id": "se201/07/scene-7",
+      "type": "scene",
+      "title": "Skills as Building Blocks: When to write one",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=174",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "When to write one",
+      "text": "When to write one"
+    },
+    {
+      "id": "se201/07/scene-8",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Recap",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=189",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Recap",
+      "text": "Recap"
+    },
+    {
+      "id": "se201/07/scene-9",
+      "type": "scene",
+      "title": "Skills as Building Blocks: The rule",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=201",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "The rule",
+      "text": "The rule"
+    },
+    {
+      "id": "se201/07/scene-10",
+      "type": "scene",
+      "title": "Skills as Building Blocks: Your turn",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/#t=217",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md",
+      "summary": "Your turn",
+      "text": "Your turn"
     },
     {
       "id": "se201/08",
@@ -2418,10 +2738,100 @@
       "series": "Software Engineering 201",
       "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/",
       "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
-      "summary": "Chain skills into work that starts on its own, connected to the systems the business already runs. Integration is the oldest problem in this series: thirty years ago it was overnight batch files and EDI between retailers and suppliers, then web services, then an API for everything, and all three are still running somewhere today. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them through clear interfaces, and make every step leave a record you can check and replay. And remember the constant: you depend on systems you don't control, so design every hand-off to fail safely and be retried.",
-      "rule": "",
-      "status": "coming soon",
-      "text": "Routines, Pipelines, and Integration Chain skills into work that starts on its own, connected to the systems the business already runs. Integration is the oldest problem in this series: thirty years ago it was overnight batch files and EDI between retailers and suppliers, then web services, then an API for everything, and all three are still running somewhere today. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them through clear interfaces, and make every step leave a record you can check and replay. And remember the constant: you depend on systems you don't control, so design every hand-off to fail safely and be retried. Routines, Pipelines, and Integration Software Engineering 201 · Lesson 8 HTML page: https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md (plus https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/AGENTS.md This lesson is in planning. The video is not available yet. The lesson Chain skills into work that starts on its own, connected to the systems the business already runs. Integration is the oldest problem in this series: thirty years ago it was overnight batch files and EDI between retailers and suppliers, then web services, then an API for everything, and all three are still running somewhere today. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them through clear interfaces, and make every step leave a record you can check and replay. And remember the constant: you depend on systems you don't control, so design every hand-off to fail safely and be retried. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 5: Governance: Where People Decide (outline) - Lesson 6: Quality, Feedback, and Observability (outline) - Lesson 7: Skills as Building Blocks (outline) - Lesson 9: Agents That Operate Enterprise Systems (outline) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
+      "summary": "A job charges a card, the answer is lost, and the job tries again: unless someone designed that retry to be safe, the customer can be charged twice. Connecting systems is the oldest problem in this series, from overnight batch files and EDI, to web services, to an API for everything, to agents calling tools, and all of them are still running somewhere. Some work should start on its own: call a skill plus a trigger a routine, and routines chained together a pipeline. The worked example is the nightly billing run of a made-up subscription-billing system: a clear format at every hand-off, a record from every step whose counts add up, a retry made safe with an idempotency key, and a reconcile step that tells a person when the numbers don't match. The same thinking covers a partner's file that arrives late, twice, or broken: design for at least once, and make twice harmless.",
+      "rule": "Before any work runs on its own, write down four things: what starts it, what crosses at each hand-off, what record each step leaves, and what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended. In full: give every hand-off a clear, written format. Make every step leave a record that adds up, and make every step safe to run twice. When the numbers don't match, don't guess and don't fix them quietly: keep every record and tell a person. Keep that note where the agents and people who run the work can read it.",
+      "status": "available",
+      "text": "Routines, Pipelines, and Integration A job charges a card, the answer is lost, and the job tries again: unless someone designed that retry to be safe, the customer can be charged twice. Connecting systems is the oldest problem in this series, from overnight batch files and EDI, to web services, to an API for everything, to agents calling tools, and all of them are still running somewhere. Some work should start on its own: call a skill plus a trigger a routine, and routines chained together a pipeline. The worked example is the nightly billing run of a made-up subscription-billing system: a clear format at every hand-off, a record from every step whose counts add up, a retry made safe with an idempotency key, and a reconcile step that tells a person when the numbers don't match. The same thinking covers a partner's file that arrives late, twice, or broken: design for at least once, and make twice harmless. Before any work runs on its own, write down four things: what starts it, what crosses at each hand-off, what record each step leaves, and what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended. In full: give every hand-off a clear, written format. Make every step leave a record that adds up, and make every step safe to run twice. When the numbers don't match, don't guess and don't fix them quietly: keep every record and tell a person. Keep that note where the agents and people who run the work can read it. Software engineering 201. Lesson eight. Routines, pipelines, and integration.\n\n### The question\n\nQuick question. It's two in the morning. A job charges a customer's card. The payment goes through, but the connection drops before the answer comes back. So the job tries again. What happens? Nothing? The customer is charged twice? Or the processor catches it on its own? Quite possibly, charged twice. Some processors catch a quick duplicate, but don't count on it. Design the retry to be safe. That design is this lesson.\n\n### The oldest problem\n\nConnecting systems is the oldest problem in this series. Thirty years ago: overnight batch files, and EDI. Then web services. Then an API for everything. Now, agents calling tools. And every one of those is still running somewhere, often inside the same enterprise.\n\n### Work that starts itself\n\nA skill is one job, written down and tested, that runs when someone asks. But some work should start on its own. On a schedule: every night at two. On an event: a payment fails, or a file arrives. Or when the step before it finishes. Call a skill plus a trigger a routine. And routines, chained, make a pipeline.\n\n### A worked example\n\nHere's one, in our made-up subscription-billing system: the nightly billing run. On a schedule, find the renewals due. Charge each one, through the payment processor. Write the invoices. Send the export to the accounting system. And last, reconcile: does our ledger match what the processor says it charged?\n\nBetween every two steps, something crosses: the renewals due, the charge results, the invoices, the export file. Give each a clear, written format. Then any step can be rebuilt, or rerun, without touching the others.\n\nAnd every step leaves a record: what came in, what went out, what failed. A thousand renewals due. Nine hundred eighty-eight charged, twelve declined. Nine hundred eighty-eight invoices, and as many rows sent. The numbers are made up, but they have to add up. When they don't, the run stops there, and you know which step to open.\n\nBack to two A.M. Partway through the charge step, the connection drops. One charge went out, and no answer came back. Did it go through? We don't know. So the retry has to be safe to run twice. Renewals already recorded as charged, it skips. Every other one, it sends with a key that never changes: this subscription, this billing period. If the processor has already seen that key, it returns the first result, instead of charging again. That's an idempotency key, and many payment processors support one.\n\nLast, reconcile compares our ledger with the processor's record. If they don't match, the pipeline doesn't guess, and doesn't fix the numbers itself. It keeps every record, and tells a person. Most of these steps are plain code. An agent earns its place where a step needs judgment, like working out why they don't match.\n\n### What you don’t control\n\nThe same thinking covers everything you don't control. Take a partner's nightly file. Check it first. Late: wait, then alert. Twice: recognize it, and skip it. Broken: set it aside, and tell a person. You can't count on anything arriving exactly once. So design for at least once, and make twice harmless.\n\n### Recap\n\nSo, to recap. Give every hand-off a clear format. Make every step leave a record that adds up. Make every step safe to run twice. And when the numbers don't match, stop, and tell a person.\n\n### The rule\n\nWhich gives us rule eight, for your agents. Before any work runs on its own, write down four things. What starts it. What crosses at each hand-off. What record each step leaves. And what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended.\n\n### Your turn\n\nNow, your turn. Pick one job that already runs on its own: a nightly report, or a sync. Describe its steps to your AI, and ask, for each step: what happens if it runs twice? And what record would prove it ran? The steps with no good answer are where to start.\n\nA pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? That's the last lesson: agents that operate enterprise systems. See you in lesson nine."
+    },
+    {
+      "id": "se201/08/transcript",
+      "type": "transcript",
+      "title": "Routines, Pipelines, and Integration (transcript)",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "Full lesson transcript.",
+      "text": "Software engineering 201. Lesson eight. Routines, pipelines, and integration.\n\n### The question\n\nQuick question. It's two in the morning. A job charges a customer's card. The payment goes through, but the connection drops before the answer comes back. So the job tries again. What happens? Nothing? The customer is charged twice? Or the processor catches it on its own? Quite possibly, charged twice. Some processors catch a quick duplicate, but don't count on it. Design the retry to be safe. That design is this lesson.\n\n### The oldest problem\n\nConnecting systems is the oldest problem in this series. Thirty years ago: overnight batch files, and EDI. Then web services. Then an API for everything. Now, agents calling tools. And every one of those is still running somewhere, often inside the same enterprise.\n\n### Work that starts itself\n\nA skill is one job, written down and tested, that runs when someone asks. But some work should start on its own. On a schedule: every night at two. On an event: a payment fails, or a file arrives. Or when the step before it finishes. Call a skill plus a trigger a routine. And routines, chained, make a pipeline.\n\n### A worked example\n\nHere's one, in our made-up subscription-billing system: the nightly billing run. On a schedule, find the renewals due. Charge each one, through the payment processor. Write the invoices. Send the export to the accounting system. And last, reconcile: does our ledger match what the processor says it charged?\n\nBetween every two steps, something crosses: the renewals due, the charge results, the invoices, the export file. Give each a clear, written format. Then any step can be rebuilt, or rerun, without touching the others.\n\nAnd every step leaves a record: what came in, what went out, what failed. A thousand renewals due. Nine hundred eighty-eight charged, twelve declined. Nine hundred eighty-eight invoices, and as many rows sent. The numbers are made up, but they have to add up. When they don't, the run stops there, and you know which step to open.\n\nBack to two A.M. Partway through the charge step, the connection drops. One charge went out, and no answer came back. Did it go through? We don't know. So the retry has to be safe to run twice. Renewals already recorded as charged, it skips. Every other one, it sends with a key that never changes: this subscription, this billing period. If the processor has already seen that key, it returns the first result, instead of charging again. That's an idempotency key, and many payment processors support one.\n\nLast, reconcile compares our ledger with the processor's record. If they don't match, the pipeline doesn't guess, and doesn't fix the numbers itself. It keeps every record, and tells a person. Most of these steps are plain code. An agent earns its place where a step needs judgment, like working out why they don't match.\n\n### What you don’t control\n\nThe same thinking covers everything you don't control. Take a partner's nightly file. Check it first. Late: wait, then alert. Twice: recognize it, and skip it. Broken: set it aside, and tell a person. You can't count on anything arriving exactly once. So design for at least once, and make twice harmless.\n\n### Recap\n\nSo, to recap. Give every hand-off a clear format. Make every step leave a record that adds up. Make every step safe to run twice. And when the numbers don't match, stop, and tell a person.\n\n### The rule\n\nWhich gives us rule eight, for your agents. Before any work runs on its own, write down four things. What starts it. What crosses at each hand-off. What record each step leaves. And what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended.\n\n### Your turn\n\nNow, your turn. Pick one job that already runs on its own: a nightly report, or a sync. Describe its steps to your AI, and ask, for each step: what happens if it runs twice? And what record would prove it ran? The steps with no good answer are where to start.\n\nA pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? And who can see what it did? That's the last lesson: agents that operate enterprise systems. See you in lesson nine."
+    },
+    {
+      "id": "se201/08/scene-1",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: The question",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=0",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "The question",
+      "text": "The question"
+    },
+    {
+      "id": "se201/08/scene-2",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: The oldest problem",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=32",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "The oldest problem",
+      "text": "The oldest problem"
+    },
+    {
+      "id": "se201/08/scene-3",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: Work that starts itself",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=50",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "Work that starts itself",
+      "text": "Work that starts itself"
+    },
+    {
+      "id": "se201/08/scene-4",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: A worked example",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=70",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "A worked example",
+      "text": "A worked example"
+    },
+    {
+      "id": "se201/08/scene-5",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: What you don’t control",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=171",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "What you don’t control",
+      "text": "What you don’t control"
+    },
+    {
+      "id": "se201/08/scene-6",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: Recap",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=191",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "Recap",
+      "text": "Recap"
+    },
+    {
+      "id": "se201/08/scene-7",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: The rule",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=204",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "The rule",
+      "text": "The rule"
+    },
+    {
+      "id": "se201/08/scene-8",
+      "type": "scene",
+      "title": "Routines, Pipelines, and Integration: Your turn",
+      "series": "Software Engineering 201",
+      "url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/#t=221",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md",
+      "summary": "Your turn",
+      "text": "Your turn"
     },
     {
       "id": "se201/09",
@@ -2433,7 +2843,7 @@
       "summary": "Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system.",
       "rule": "",
       "status": "coming soon",
-      "text": "Agents That Operate Enterprise Systems Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system. Agents That Operate Enterprise Systems Software Engineering 201 · Lesson 9 HTML page: https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md (plus https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md This lesson is in planning. The video is not available yet. The lesson Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 5: Governance: Where People Decide (outline) - Lesson 6: Quality, Feedback, and Observability (outline) - Lesson 7: Skills as Building Blocks (outline) - Lesson 8: Routines, Pipelines, and Integration (outline) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
+      "text": "Agents That Operate Enterprise Systems Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system. Agents That Operate Enterprise Systems Software Engineering 201 · Lesson 9 HTML page: https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md (plus https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. - Series: Software Engineering 201 - Series agents file: https://clarkhuang.github.io/software-engineering-201/AGENTS.md - Site index: https://clarkhuang.github.io/llms.txt - This folder’s agents file: https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md This lesson is in planning. The video is not available yet. The lesson Agents that run the system, not just build it, with identity, least access, and an audit trail. The end of the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome, from one loop to the whole enterprise system. Related lessons - Lesson 1: Four Eras of Building Systems (available) - Lesson 2: Build the Whole System, AI-Native (available) - Lesson 3: Decompose the System into a Graph (available) - Lesson 4: Parallel Agents, One Integration (available) - Lesson 5: Governance: Where People Decide (available) - Lesson 6: Quality, Feedback, and Observability (available) - Lesson 7: Skills as Building Blocks (available) - Lesson 8: Routines, Pipelines, and Integration (available) For agents Read AGENTS.md in this folder, https://clarkhuang.github.io/software-engineering-201/AGENTS.md for the series, and https://clarkhuang.github.io/llms.txt for the whole site."
     },
     {
       "id": "book/preview",
@@ -2943,7 +3353,7 @@
       "url": "https://clarkhuang.github.io/index.md",
       "markdown_url": "https://clarkhuang.github.io/index.md",
       "summary": "Clark Huang — AI-native software learning HTML page: https://clarkhuang.github.io/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Re",
-      "text": "Clark Huang — AI-native software learning HTML page: https://clarkhuang.github.io/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/index.md (plus https://clarkhuang.github.io/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Clark Huang is a software engineer and technology executive with more than 30 years in the field. He studied computer science, with a minor in music, at the University of California, Berkeley from 1993 to 1997. He is Chief Technology Officer at Truly Free and Truly Free Home, a role he has held since 2025, and Co-Founder and CTO of eCIO, a nonprofit investment advisor, and its sister company eVestech, where he oversees technology strategy and operational efficiency. A seasoned technologist and serial founder, he champions AI-native engineering, building teams and workflows where people and AI agents plan, build, and verify software together. He is also an active investor in private equity and special purpose vehicles focused on AI and technology. Series AI Tips Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results. 16 of 16 lessons available. Software Engineering 101 How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct. 10 of 10 lessons available. Software Engineering 201 From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail. 4 of 9 lessons available. Silicon Valley C Players A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027. Ask, connect, contribute Search the lessons and the book preview, or hook your own AI to this site. - Ask the Book: Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity. - Connect your AI: A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues. - Contributor credits: People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited. This site is also an open project. Contribute with your AI, or copy this for yourself. For agents - Site index: https://clarkhuang.github.io/llms.txt - Site agents: https://clarkhuang.github.io/AGENTS.md - Lesson catalog (JSON): https://clarkhuang.github.io/lessons.json - Book catalog (JSON): https://clarkhuang.github.io/book.json Start with llms.txt, then open the index.md for the page or series the reader cares about."
+      "text": "Clark Huang — AI-native software learning HTML page: https://clarkhuang.github.io/ The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool: Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/index.md (plus https://clarkhuang.github.io/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Clark Huang is a software engineer and technology executive with more than 30 years in the field. He studied computer science, with a minor in music, at the University of California, Berkeley from 1993 to 1997. He is Chief Technology Officer at Truly Free and Truly Free Home, a role he has held since 2025, and Co-Founder and CTO of eCIO, a nonprofit investment advisor, and its sister company eVestech, where he oversees technology strategy and operational efficiency. A seasoned technologist and serial founder, he champions AI-native engineering, building teams and workflows where people and AI agents plan, build, and verify software together. He is also an active investor in private equity and special purpose vehicles focused on AI and technology. Series AI Tips Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results. 16 of 16 lessons available. Software Engineering 101 How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct. 10 of 10 lessons available. Software Engineering 201 From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail. 8 of 9 lessons available. Silicon Valley C Players A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027. Ask, connect, contribute Search the lessons and the book preview, or hook your own AI to this site. - Ask the Book: Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity. - Connect your AI: A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues. - Contributor credits: People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited. This site is also an open project. Contribute with your AI, or copy this for yourself. For agents - Site index: https://clarkhuang.github.io/llms.txt - Site agents: https://clarkhuang.github.io/AGENTS.md - Lesson catalog (JSON): https://clarkhuang.github.io/lessons.json - Book catalog (JSON): https://clarkhuang.github.io/book.json Start with llms.txt, then open the index.md for the page or series the reader cares about."
     },
     {
       "id": "ask/index.md",

@@ -1,0 +1,69 @@
+14 scenes, 255.45s, 7663 frames
+  01_title                 0.50s  + 7.17s
+  02_quiz                  7.67s  +24.86s
+  03_oldest               32.53s  +17.54s
+  04_triggers             50.07s  +20.28s
+  05a_run                 70.35s  +18.45s
+  05b_handoffs            88.80s  +14.20s
+  05c_records            103.00s  +19.68s
+  05d_retry              122.68s  +30.36s
+  05e_stop               153.04s  +18.76s
+  06_partner             171.80s  +19.68s
+  07_recap               191.48s  +13.27s
+  08_rule                204.74s  +16.63s
+  09_ask                 221.37s  +16.94s
+  10_close               238.31s  +17.14s
+    frame 0/7663
+    frame 150/7663
+    frame 300/7663
+    frame 450/7663
+    frame 600/7663
+    frame 750/7663
+    frame 900/7663
+    frame 1050/7663
+    frame 1200/7663
+    frame 1350/7663
+    frame 1500/7663
+    frame 1650/7663
+    frame 1800/7663
+    frame 1950/7663
+    frame 2100/7663
+    frame 2250/7663
+    frame 2400/7663
+    frame 2550/7663
+    frame 2700/7663
+    frame 2850/7663
+    frame 3000/7663
+    frame 3150/7663
+    frame 3300/7663
+    frame 3450/7663
+    frame 3600/7663
+    frame 3750/7663
+    frame 3900/7663
+    frame 4050/7663
+    frame 4200/7663
+    frame 4350/7663
+    frame 4500/7663
+    frame 4650/7663
+    frame 4800/7663
+    frame 4950/7663
+    frame 5100/7663
+    frame 5250/7663
+    frame 5400/7663
+    frame 5550/7663
+    frame 5700/7663
+    frame 5850/7663
+    frame 6000/7663
+    frame 6150/7663
+    frame 6300/7663
+    frame 6450/7663
+    frame 6600/7663
+    frame 6750/7663
+    frame 6900/7663
+    frame 7050/7663
+    frame 7200/7663
+    frame 7350/7663
+    frame 7500/7663
+    frame 7650/7663
+
+-> /workspace/legacy/build/se101/08-routines-pipelines-and-integration/SE201_08_Routines-Pipelines-And-Integration_public.mp4

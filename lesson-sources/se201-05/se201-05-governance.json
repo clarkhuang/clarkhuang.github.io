@@ -1,0 +1,1011 @@
+{
+ "id": "se201-05-governance",
+ "title": "SE201 Lesson 5: Governance: where people decide",
+ "output": "05-governance-where-people-decide/SE201_05_Governance-Where-People-Decide_public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_title",
+   "text": "Software engineering two oh one. Lesson five. [pause] Governance: where people decide.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "SOFTWARE ENGINEERING 201  ·  LESSON 5",
+    "headline": "Governance:\nwhere people decide.",
+    "sub": "From loop to enterprise systems  •  clarkhuang.github.io"
+   }
+  },
+  {
+   "id": "02_quiz",
+   "text": "Picture this. Overnight, your agents wrote forty changes to a billing system. All pass their tests. One changes what customers are charged. Who catches it? [pause] The tests? A person, reading all forty? Or a person, at a stop built for it? [pause] <emphasis>A stop built for it.</emphasis> Tests can't say whether you wanted the change. And nobody reads forty carefully.",
+   "visual": "quiz",
+   "chapter": "THE QUESTION",
+   "data": {
+    "question": "Forty changes overnight, all green. One changes\nwhat customers are charged. Who catches it?",
+    "options": [
+     "The tests: they all passed",
+     "A person, reading all forty",
+     "A person, at a stop built for it"
+    ],
+    "answer": 2,
+    "why": "Tests can’t say\nwhether you\nwanted the\nchange.",
+    "options_at": 0.42,
+    "reveal_at": 0.66
+   }
+  },
+  {
+   "id": "03a_board",
+   "text": "Every era had a place where a person said yes. Thirty years ago, typically, a change board, signing off a whole release, a few times a year.",
+   "visual": "eras",
+   "chapter": "EVERY ERA HAD A YES",
+   "data": {
+    "label": "EVERY ERA HAD A PLACE WHERE A PERSON SAID YES",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A change board",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A change board"
+       ],
+       [
+        "TO WHAT",
+        "A whole release"
+       ],
+       [
+        "HOW OFTEN",
+        "A few times a year"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "Code review",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A teammate"
+       ],
+       [
+        "TO WHAT",
+        "The code, before\nit went in"
+       ],
+       [
+        "HOW OFTEN",
+        "More and more\nchanges"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A pipeline approval",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A reviewer"
+       ],
+       [
+        "TO WHAT",
+        "A pull request,\nbefore it merges"
+       ],
+       [
+        "HOW OFTEN",
+        "Most changes"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce_head": "THE YES",
+      "scarce": "Has to be designed",
+      "rows": [
+       [
+        "WHO WRITES IT",
+        "Agents, more and more"
+       ],
+       [
+        "HOW FAST",
+        "Faster than anyone\ncan read it all"
+       ],
+       [
+        "SO THE YES",
+        "Can’t just be\ninherited"
+       ]
+      ]
+     }
+    ],
+    "upto": 1
+   },
+   "group": "eras"
+  },
+  {
+   "id": "03b_review",
+   "text": "Twenty years ago, more and more, a teammate, reviewing the code before it went in.",
+   "visual": "eras",
+   "chapter": "EVERY ERA HAD A YES",
+   "data": {
+    "label": "EVERY ERA HAD A PLACE WHERE A PERSON SAID YES",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A change board",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A change board"
+       ],
+       [
+        "TO WHAT",
+        "A whole release"
+       ],
+       [
+        "HOW OFTEN",
+        "A few times a year"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "Code review",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A teammate"
+       ],
+       [
+        "TO WHAT",
+        "The code, before\nit went in"
+       ],
+       [
+        "HOW OFTEN",
+        "More and more\nchanges"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A pipeline approval",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A reviewer"
+       ],
+       [
+        "TO WHAT",
+        "A pull request,\nbefore it merges"
+       ],
+       [
+        "HOW OFTEN",
+        "Most changes"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce_head": "THE YES",
+      "scarce": "Has to be designed",
+      "rows": [
+       [
+        "WHO WRITES IT",
+        "Agents, more and more"
+       ],
+       [
+        "HOW FAST",
+        "Faster than anyone\ncan read it all"
+       ],
+       [
+        "SO THE YES",
+        "Can’t just be\ninherited"
+       ]
+      ]
+     }
+    ],
+    "upto": 2
+   },
+   "group": "eras"
+  },
+  {
+   "id": "03c_pipeline",
+   "text": "Ten years ago, an approval step in an automated pipeline: a pull request a reviewer approves, before it merges.",
+   "visual": "eras",
+   "chapter": "EVERY ERA HAD A YES",
+   "data": {
+    "label": "EVERY ERA HAD A PLACE WHERE A PERSON SAID YES",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A change board",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A change board"
+       ],
+       [
+        "TO WHAT",
+        "A whole release"
+       ],
+       [
+        "HOW OFTEN",
+        "A few times a year"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "Code review",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A teammate"
+       ],
+       [
+        "TO WHAT",
+        "The code, before\nit went in"
+       ],
+       [
+        "HOW OFTEN",
+        "More and more\nchanges"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A pipeline approval",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A reviewer"
+       ],
+       [
+        "TO WHAT",
+        "A pull request,\nbefore it merges"
+       ],
+       [
+        "HOW OFTEN",
+        "Most changes"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce_head": "THE YES",
+      "scarce": "Has to be designed",
+      "rows": [
+       [
+        "WHO WRITES IT",
+        "Agents, more and more"
+       ],
+       [
+        "HOW FAST",
+        "Faster than anyone\ncan read it all"
+       ],
+       [
+        "SO THE YES",
+        "Can’t just be\ninherited"
+       ]
+      ]
+     }
+    ],
+    "upto": 3
+   },
+   "group": "eras"
+  },
+  {
+   "id": "03d_now",
+   "text": "Each was sized for people writing the code. [pause] Now agents write changes faster than anyone can read them all. So that place can't just be inherited. It has to be <emphasis>designed</emphasis>.",
+   "visual": "eras",
+   "chapter": "EVERY ERA HAD A YES",
+   "data": {
+    "label": "EVERY ERA HAD A PLACE WHERE A PERSON SAID YES",
+    "eras": [
+     {
+      "year": "1996",
+      "ago": "30 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A change board",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A change board"
+       ],
+       [
+        "TO WHAT",
+        "A whole release"
+       ],
+       [
+        "HOW OFTEN",
+        "A few times a year"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2006",
+      "ago": "20 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "Code review",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A teammate"
+       ],
+       [
+        "TO WHAT",
+        "The code, before\nit went in"
+       ],
+       [
+        "HOW OFTEN",
+        "More and more\nchanges"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "2016",
+      "ago": "10 YEARS AGO",
+      "scarce_head": "THE YES",
+      "scarce": "A pipeline approval",
+      "rows": [
+       [
+        "WHO SAID YES",
+        "A reviewer"
+       ],
+       [
+        "TO WHAT",
+        "A pull request,\nbefore it merges"
+       ],
+       [
+        "HOW OFTEN",
+        "Most changes"
+       ],
+       [
+        "WHO WROTE IT",
+        "People"
+       ]
+      ]
+     },
+     {
+      "year": "Now",
+      "ago": "AGENTS DO THE BUILDING",
+      "scarce_head": "THE YES",
+      "scarce": "Has to be designed",
+      "rows": [
+       [
+        "WHO WRITES IT",
+        "Agents, more and more"
+       ],
+       [
+        "HOW FAST",
+        "Faster than anyone\ncan read it all"
+       ],
+       [
+        "SO THE YES",
+        "Can’t just be\ninherited"
+       ]
+      ]
+     }
+    ],
+    "upto": 4
+   },
+   "group": "eras"
+  },
+  {
+   "id": "04_tests",
+   "text": "So where does a person decide? A good rule of thumb is four questions. Does it move money? Does it touch customer data? Is it hard to undo? Is it a judgment call that no check can make? [pause] One yes, and a person decides. Four no's, and that kind of change can ship on its checks.",
+   "visual": "gates",
+   "chapter": "FOUR QUESTIONS",
+   "data": {
+    "label": "WHERE DOES A PERSON DECIDE?  ·  A RULE OF THUMB: FOUR QUESTIONS",
+    "intro": true,
+    "tests": [
+     {
+      "q": "Does it\nmove money?"
+     },
+     {
+      "q": "Does it touch\ncustomer data?"
+     },
+     {
+      "q": "Is it hard\nto undo?"
+     },
+     {
+      "q": "Is it a\njudgment call?"
+     }
+    ],
+    "card_h": 300,
+    "tests_at": [
+     0.25,
+     0.34,
+     0.44,
+     0.53
+    ],
+    "verdicts": [
+     {
+      "text": "One yes: a person decides.",
+      "tone": "amber",
+      "at": 0.74
+     },
+     {
+      "text": "Four no’s: that kind of change can ship on its checks.",
+      "tone": "accent",
+      "at": 0.86
+     }
+    ]
+   }
+  },
+  {
+   "id": "05a_free",
+   "text": "Take our made-up example: the subscription-billing system from lesson one. Overnight, an agent drafts six things. Fix a typo on an internal admin screen. Add a missing test for renewals. Four no's, both times. They ship on their checks, and nobody waits.",
+   "visual": "gates",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  SIX THINGS AN AGENT DRAFTS FOR THE BILLING SYSTEM",
+    "tests": [
+     "moves money",
+     "touches customer data",
+     "is hard to undo",
+     "needs a judgment call"
+    ],
+    "rows": [
+     {
+      "change": "Fix a typo on an internal admin screen",
+      "note": "four no’s",
+      "at": 0.42
+     },
+     {
+      "change": "Add a missing test for renewals",
+      "note": "four no’s",
+      "at": 0.57
+     },
+     {
+      "change": "Change how a late fee is calculated",
+      "gate": {
+       "why": "MOVES MONEY",
+       "who": "Finance owner"
+      },
+      "hits": [
+       0
+      ]
+     },
+     {
+      "change": "Migrate the ledger to a new schema",
+      "gate": {
+       "why": "MONEY  ·  HARD TO UNDO",
+       "who": "Ledger owner"
+      },
+      "hits": [
+       0,
+       2
+      ]
+     },
+     {
+      "change": "Send customer emails to a new partner",
+      "gate": {
+       "why": "CUSTOMER DATA",
+       "who": "Data owner"
+      },
+      "hits": [
+       1
+      ],
+      "result": "Sent after a yes"
+     },
+     {
+      "change": "Refund a customer, over the limit",
+      "gate": {
+       "why": "MONEY  ·  JUDGMENT",
+       "who": "Support lead"
+      },
+      "hits": [
+       0,
+       3
+      ],
+      "result": "Paid after a yes"
+     }
+    ],
+    "new_from": 0,
+    "upto": 2,
+    "row_h": 90,
+    "caption": "Four no’s: nobody waits.",
+    "caption_tone": "accent",
+    "caption_at": 0.8
+   },
+   "group": "gates"
+  },
+  {
+   "id": "05b_stops",
+   "text": "Change how a late fee is calculated. That moves money: the finance owner decides. [pause] Migrate the ledger. Money again, and hard to undo: the ledger's owner decides. [pause] Send customer emails to a new partner. Customer data: the data owner decides.",
+   "visual": "gates",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  SIX THINGS AN AGENT DRAFTS FOR THE BILLING SYSTEM",
+    "tests": [
+     "moves money",
+     "touches customer data",
+     "is hard to undo",
+     "needs a judgment call"
+    ],
+    "rows": [
+     {
+      "change": "Fix a typo on an internal admin screen",
+      "note": "four no’s"
+     },
+     {
+      "change": "Add a missing test for renewals",
+      "note": "four no’s"
+     },
+     {
+      "change": "Change how a late fee is calculated",
+      "gate": {
+       "why": "MOVES MONEY",
+       "who": "Finance owner"
+      },
+      "hits": [
+       0
+      ],
+      "at": 0.02
+     },
+     {
+      "change": "Migrate the ledger to a new schema",
+      "gate": {
+       "why": "MONEY  ·  HARD TO UNDO",
+       "who": "Ledger owner"
+      },
+      "hits": [
+       0,
+       2
+      ],
+      "at": 0.34
+     },
+     {
+      "change": "Send customer emails to a new partner",
+      "gate": {
+       "why": "CUSTOMER DATA",
+       "who": "Data owner"
+      },
+      "hits": [
+       1
+      ],
+      "result": "Sent after a yes",
+      "at": 0.66
+     },
+     {
+      "change": "Refund a customer, over the limit",
+      "gate": {
+       "why": "MONEY  ·  JUDGMENT",
+       "who": "Support lead"
+      },
+      "hits": [
+       0,
+       3
+      ],
+      "result": "Paid after a yes"
+     }
+    ],
+    "new_from": 2,
+    "upto": 5,
+    "row_h": 90,
+    "caption": "One yes: it stops for a named person.",
+    "caption_tone": "amber",
+    "caption_at": 0.2
+   },
+   "group": "gates"
+  },
+  {
+   "id": "05c_refund",
+   "text": "And it isn't only code. A refund over the limit: the agent prepares it, a support lead approves it. Under the limit, a person already decided, when they set it. [pause] Six pieces of work. Four stops. Two never waited.",
+   "visual": "gates",
+   "chapter": "A WORKED EXAMPLE",
+   "data": {
+    "label": "A MADE-UP EXAMPLE  ·  SIX THINGS AN AGENT DRAFTS FOR THE BILLING SYSTEM",
+    "tests": [
+     "moves money",
+     "touches customer data",
+     "is hard to undo",
+     "needs a judgment call"
+    ],
+    "rows": [
+     {
+      "change": "Fix a typo on an internal admin screen",
+      "note": "four no’s"
+     },
+     {
+      "change": "Add a missing test for renewals",
+      "note": "four no’s"
+     },
+     {
+      "change": "Change how a late fee is calculated",
+      "gate": {
+       "why": "MOVES MONEY",
+       "who": "Finance owner"
+      },
+      "hits": [
+       0
+      ]
+     },
+     {
+      "change": "Migrate the ledger to a new schema",
+      "gate": {
+       "why": "MONEY  ·  HARD TO UNDO",
+       "who": "Ledger owner"
+      },
+      "hits": [
+       0,
+       2
+      ]
+     },
+     {
+      "change": "Send customer emails to a new partner",
+      "gate": {
+       "why": "CUSTOMER DATA",
+       "who": "Data owner"
+      },
+      "hits": [
+       1
+      ],
+      "result": "Sent after a yes"
+     },
+     {
+      "change": "Refund a customer, over the limit",
+      "gate": {
+       "why": "MONEY  ·  JUDGMENT",
+       "who": "Support lead"
+      },
+      "hits": [
+       0,
+       3
+      ],
+      "result": "Paid after a yes",
+      "at": 0.04
+     }
+    ],
+    "new_from": 5,
+    "upto": 6,
+    "row_h": 90,
+    "caption": "Six pieces of work. Four stops. Two never waited.",
+    "caption_at": 0.72
+   },
+   "group": "gates"
+  },
+  {
+   "id": "06_packet",
+   "text": "A stop only works if a person can clear it quickly. So the agent doesn't hand over a wall of diff and ask, okay? It prepares the decision. What changes. Why. The evidence, from the pipeline: last month's invoices, recomputed, old against new. The risk. And the way back. [pause] Now the finance owner decides about the fee. And an engineer still reviews the code that moves money.",
+   "visual": "decision_card",
+   "chapter": "MAKE THE STOP QUICK",
+   "data": {
+    "label": "MAKE THE STOP QUICK  ·  THE AGENT PREPARES THE DECISION",
+    "left": {
+     "tag": "THE WHOLE DIFF",
+     "foot": "A wall of diff.\n“Okay?”"
+    },
+    "card": {
+     "tag": "DECISION REQUEST  ·  A MADE-UP EXAMPLE",
+     "title": "Change how the late fee is calculated",
+     "fields": [
+      [
+       "WHAT CHANGES",
+       "A flat late fee becomes a percent of the invoice"
+      ],
+      [
+       "WHY",
+       "Finance asked for it; the spec is linked"
+      ],
+      [
+       "THE EVIDENCE",
+       "From the pipeline: last month’s invoices,\nrecomputed, old against new"
+      ],
+      [
+       "THE RISK",
+       "Some customers pay more; they must be told first"
+      ],
+      [
+       "THE WAY BACK",
+       "Restore the flat fee; credit anyone already charged"
+      ]
+     ],
+     "who": "The finance owner decides",
+     "buttons": [
+      "Approve",
+      "Send back"
+     ]
+    },
+    "card_at": 0.32,
+    "fields_at": [
+     0.4,
+     0.44,
+     0.48,
+     0.68,
+     0.72
+    ],
+    "approve_at": 0.84,
+    "caption": "A person decides the fee. An engineer still reviews the code.",
+    "caption_at": 0.86
+   }
+  },
+  {
+   "id": "07_written",
+   "text": "Then write it down: who approves what, in a file in the repository. Fees and prices: the finance owner. The ledger: its owner. The checks, the pipeline, and this file itself: always a person. Anything the list doesn't cover: stop and ask. [pause] And the pipeline enforces it, by what a change touches. The agent that wrote a change doesn't classify it, or approve it. An old idea from accounting: whoever prepares a payment doesn't approve it.",
+   "visual": "perm_table",
+   "chapter": "WRITE IT DOWN",
+   "data": {
+    "label": "WHO APPROVES WHAT  ·  A FILE IN THE REPOSITORY  ·  A MADE-UP EXAMPLE",
+    "cols": [
+     "ON ITS CHECKS",
+     "A PERSON SAYS YES"
+    ],
+    "rows": [
+     {
+      "label": "Internal screens, docs, added tests",
+      "marks": [
+       true,
+       false
+      ]
+     },
+     {
+      "label": "Fees and prices  ·  finance owner",
+      "marks": [
+       false,
+       true
+      ]
+     },
+     {
+      "label": "The ledger, data migrations  ·  ledger owner",
+      "marks": [
+       false,
+       true
+      ]
+     },
+     {
+      "label": "The checks, the pipeline, this file  ·  always a person",
+      "marks": [
+       false,
+       true
+      ]
+     },
+     {
+      "label": "Anything this list doesn’t cover  ·  stop and ask",
+      "marks": [
+       false,
+       true
+      ]
+     }
+    ],
+    "punch": "Enforced by the pipeline: the author never classifies or approves."
+   }
+  },
+  {
+   "id": "08a_all",
+   "text": "Stops cost something. A person on everything: people become the bottleneck, and yes turns into a rubber stamp.",
+   "visual": "dial",
+   "chapter": "WHAT IT COSTS",
+   "data": {
+    "label": "HOW MANY STOPS?  ·  WHAT IT COSTS",
+    "left_end": "STOP EVERYTHING",
+    "right_end": "STOP NOTHING",
+    "stops": [
+     {
+      "pos": 0.12,
+      "tag": "A PERSON ON EVERYTHING",
+      "title": "People become\nthe bottleneck",
+      "sub": "And yes turns into\na rubber stamp."
+     },
+     {
+      "pos": 0.88,
+      "tag": "A PERSON ON NOTHING",
+      "title": "Fast, until money\nmoves unapproved",
+      "sub": "Nobody decided.\nIt just shipped."
+     },
+     {
+      "pos": 0.5,
+      "tone": "accent",
+      "tag": "START STRICT, THEN RELEASE",
+      "title": "One kind of change\nat a time",
+      "sub": "As its checks earn trust.\nRequired reviews stay."
+     }
+    ],
+    "upto": 1
+   },
+   "group": "dial"
+  },
+  {
+   "id": "08b_none",
+   "text": "A person on nothing: fast, until money moves unapproved.",
+   "visual": "dial",
+   "chapter": "WHAT IT COSTS",
+   "data": {
+    "label": "HOW MANY STOPS?  ·  WHAT IT COSTS",
+    "left_end": "STOP EVERYTHING",
+    "right_end": "STOP NOTHING",
+    "stops": [
+     {
+      "pos": 0.12,
+      "tag": "A PERSON ON EVERYTHING",
+      "title": "People become\nthe bottleneck",
+      "sub": "And yes turns into\na rubber stamp."
+     },
+     {
+      "pos": 0.88,
+      "tag": "A PERSON ON NOTHING",
+      "title": "Fast, until money\nmoves unapproved",
+      "sub": "Nobody decided.\nIt just shipped."
+     },
+     {
+      "pos": 0.5,
+      "tone": "accent",
+      "tag": "START STRICT, THEN RELEASE",
+      "title": "One kind of change\nat a time",
+      "sub": "As its checks earn trust.\nRequired reviews stay."
+     }
+    ],
+    "upto": 2
+   },
+   "group": "dial"
+  },
+  {
+   "id": "08c_few",
+   "text": "So start strict, like lesson two: a person on every change. Then release one kind at a time, as its checks earn trust. And where an audit requires a review, that review stays.",
+   "visual": "dial",
+   "chapter": "WHAT IT COSTS",
+   "data": {
+    "label": "HOW MANY STOPS?  ·  WHAT IT COSTS",
+    "left_end": "STOP EVERYTHING",
+    "right_end": "STOP NOTHING",
+    "stops": [
+     {
+      "pos": 0.12,
+      "tag": "A PERSON ON EVERYTHING",
+      "title": "People become\nthe bottleneck",
+      "sub": "And yes turns into\na rubber stamp."
+     },
+     {
+      "pos": 0.88,
+      "tag": "A PERSON ON NOTHING",
+      "title": "Fast, until money\nmoves unapproved",
+      "sub": "Nobody decided.\nIt just shipped."
+     },
+     {
+      "pos": 0.5,
+      "tone": "accent",
+      "tag": "START STRICT, THEN RELEASE",
+      "title": "One kind of change\nat a time",
+      "sub": "As its checks earn trust.\nRequired reviews stay."
+     }
+    ],
+    "upto": 3
+   },
+   "group": "dial"
+  },
+  {
+   "id": "09_recap",
+   "text": "So, to recap. Design where people decide. Make every stop quick to clear. And let the rest ship on its checks, one released kind at a time.",
+   "visual": "rule",
+   "chapter": "RECAP",
+   "data": {
+    "headline": "Design where people decide",
+    "items": [
+     "Money, customer data, hard to undo, judgment: a person",
+     "Make every stop quick to clear",
+     "The rest ships on its checks, one released kind at a time"
+    ]
+   }
+  },
+  {
+   "id": "10_rule",
+   "text": "Which gives us rule five, for your agents. Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list: stop and ask. Ship on checks alone only what a person has released.",
+   "visual": "rule_card",
+   "chapter": "THE RULE",
+   "data": {
+    "kicker": "RULE 5  ·  FOR YOUR AGENTS",
+    "size": 54,
+    "lines": [
+     {
+      "text": "Before a change ships, find out who decides."
+     },
+     {
+      "text": "Money, customer data, hard to undo, judgment:",
+      "tone": "accent"
+     },
+     {
+      "text": "stop for the person named in the repo."
+     },
+     {
+      "text": "Bring the change, the evidence, the risk, the way back."
+     },
+     {
+      "text": "Not on the list? Stop and ask.",
+      "tone": "accent"
+     },
+     {
+      "text": "Ship on checks alone only what a person released.",
+      "tone": "accent"
+     }
+    ],
+    "foot": "THE FULL RULE IS ON THE LESSON PAGE"
+   }
+  },
+  {
+   "id": "11_ask",
+   "text": "Now, your turn. Give your A.I. the last ten changes to a system you run, and the four questions. Ask it: which of these needed a person? Which could have shipped on checks alone? [pause] Then see where you disagree.",
+   "visual": "statement",
+   "chapter": "YOUR TURN",
+   "data": {
+    "headline": "Your turn. Give your AI the last ten\nchanges to a system you run, and\nthe four questions. Ask it:\n“Which needed a person? Which could\nship on checks alone?”\nThen see where you disagree.",
+    "size": 70
+   }
+  },
+  {
+   "id": "12_close",
+   "text": "Ships on its checks. That phrase is carrying a lot. So how good are your checks, really? That's next: quality, feedback, and observability. See you in lesson six.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "See you in\nlesson six.",
+    "sub": "Software Engineering 201"
+   }
+  }
+ ]
+}

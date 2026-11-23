@@ -28,6 +28,7 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Software Engineering 201 lessons renumbered: the recorded lessons are now 2 (“Build the Whole System, AI-Native”), 3 (“Decompose the System into a Graph”) and 4 (“Parallel Agents, One Integration”), re-rendered with only the title, rule and closing clips re-narrated; their build sources moved to `lesson-sources/se201-02/` to `se201-04/`. Outlines 5–9 rewritten. Every old lesson address redirects straight to its new page. The series now has 4 of 9 lessons available
 - Software Engineering 101 lesson 10 re-rendered with a new “What's next” ending that hands off to 201, and now has captions
 - Watched ticks and saved positions are now keyed per video version (`se201/01@<first 8 hex of the file's SHA-256>`), so a re-rendered video or audio shows as unwatched again; older unversioned entries are dropped. After re-rendering media, run `python3 sitegen/stamp_versions.py` (`check_site.py` now fails if a version is stale)
+- Software Engineering 201 lessons 5 to 8 recorded: “Governance: Where People Decide”, “Quality, Feedback, and Observability”, “Skills as Building Blocks” and “Routines, Pipelines, and Integration” (video, captions, chapters, rule, transcript, and build source in `lesson-sources/se201-05/` to `lesson-sources/se201-08/`). The series now has 8 of 9 lessons available; lesson 9 is still an outline
 
 ## [v0.1-wip] — 2026-11-22
 

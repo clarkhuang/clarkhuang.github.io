@@ -1,0 +1,307 @@
+WEBVTT
+
+NOTE SE201 Lesson 8: Routines, pipelines, and integration — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:04.000
+Software engineering 201. Lesson eight.
+
+2
+00:00:04.000 --> 00:00:07.320
+Routines, pipelines, and integration.
+
+3
+00:00:07.670 --> 00:00:10.032
+Quick question. It's two in the morning.
+
+4
+00:00:10.032 --> 00:00:11.922
+A job charges a customer's card.
+
+5
+00:00:11.922 --> 00:00:16.647
+The payment goes through, but the connection drops before the answer comes back.
+
+6
+00:00:16.647 --> 00:00:18.832
+So the job tries again. What happens?
+
+7
+00:00:18.832 --> 00:00:21.136
+Nothing? The customer is charged twice?
+
+8
+00:00:21.136 --> 00:00:23.439
+Or the processor catches it on its own?
+
+9
+00:00:23.439 --> 00:00:25.211
+Quite possibly, charged twice.
+
+10
+00:00:25.211 --> 00:00:28.932
+Some processors catch a quick duplicate, but don't count on it.
+
+11
+00:00:28.932 --> 00:00:30.585
+Design the retry to be safe.
+
+12
+00:00:30.585 --> 00:00:32.180
+That design is this lesson.
+
+13
+00:00:32.530 --> 00:00:36.176
+Connecting systems is the oldest problem in this series.
+
+14
+00:00:36.176 --> 00:00:39.497
+Thirty years ago: overnight batch files, and EDI
+
+15
+00:00:39.497 --> 00:00:42.492
+Then web services. Then an API for everything.
+
+16
+00:00:42.492 --> 00:00:49.720
+Now, agents calling tools. And every one of those is still running somewhere, often inside the same enterprise.
+
+17
+00:00:50.070 --> 00:00:54.825
+A skill is one job, written down and tested, that runs when someone asks.
+
+18
+00:00:54.825 --> 00:00:57.300
+But some work should start on its own.
+
+19
+00:00:57.300 --> 00:00:59.514
+On a schedule: every night at two.
+
+20
+00:00:59.514 --> 00:01:02.640
+On an event: a payment fails, or a file arrives.
+
+21
+00:01:02.640 --> 00:01:04.985
+Or when the step before it finishes.
+
+22
+00:01:04.985 --> 00:01:07.460
+Call a skill plus a trigger a routine.
+
+23
+00:01:07.460 --> 00:01:10.000
+And routines, chained, make a pipeline.
+
+24
+00:01:10.350 --> 00:01:15.129
+Here's one, in our made-up subscription-billing system: the nightly billing run.
+
+25
+00:01:15.129 --> 00:01:17.339
+On a schedule, find the renewals due.
+
+26
+00:01:17.339 --> 00:01:20.147
+Charge each one, through the payment processor.
+
+27
+00:01:20.147 --> 00:01:23.791
+Write the invoices. Send the export to the accounting system.
+
+28
+00:01:23.791 --> 00:01:28.450
+And last, reconcile: does our ledger match what the processor says it charged?
+
+29
+00:01:28.800 --> 00:01:36.049
+Between every two steps, something crosses: the renewals due, the charge results, the invoices, the export file.
+
+30
+00:01:36.049 --> 00:01:38.249
+Give each a clear, written format.
+
+31
+00:01:38.249 --> 00:01:42.650
+Then any step can be rebuilt, or rerun, without touching the others.
+
+32
+00:01:43.000 --> 00:01:47.328
+And every step leaves a record: what came in, what went out, what failed.
+
+33
+00:01:47.328 --> 00:01:51.835
+A thousand renewals due. Nine hundred eighty-eight charged, twelve declined.
+
+34
+00:01:51.835 --> 00:01:55.274
+Nine hundred eighty-eight invoices, and as many rows sent.
+
+35
+00:01:55.274 --> 00:01:58.179
+The numbers are made up, but they have to add up.
+
+36
+00:01:58.179 --> 00:02:02.330
+When they don't, the run stops there, and you know which step to open.
+
+37
+00:02:02.680 --> 00:02:06.950
+Back to two A.M. Partway through the charge step, the connection drops.
+
+38
+00:02:06.950 --> 00:02:09.656
+One charge went out, and no answer came back.
+
+39
+00:02:09.656 --> 00:02:11.641
+Did it go through? We don't know.
+
+40
+00:02:11.641 --> 00:02:14.107
+So the retry has to be safe to run twice.
+
+41
+00:02:14.107 --> 00:02:16.933
+Renewals already recorded as charged, it skips.
+
+42
+00:02:16.933 --> 00:02:22.707
+Every other one, it sends with a key that never changes: this subscription, this billing period.
+
+43
+00:02:22.707 --> 00:02:28.661
+If the processor has already seen that key, it returns the first result, instead of charging again.
+
+44
+00:02:28.661 --> 00:02:32.690
+That's an idempotency key, and many payment processors support one.
+
+45
+00:02:33.040 --> 00:02:36.757
+Last, reconcile compares our ledger with the processor's record.
+
+46
+00:02:36.757 --> 00:02:41.635
+If they don't match, the pipeline doesn't guess, and doesn't fix the numbers itself.
+
+47
+00:02:41.635 --> 00:02:44.074
+It keeps every record, and tells a person.
+
+48
+00:02:44.074 --> 00:02:46.107
+Most of these steps are plain code.
+
+49
+00:02:46.107 --> 00:02:51.450
+An agent earns its place where a step needs judgment, like working out why they don't match.
+
+50
+00:02:51.800 --> 00:02:55.291
+The same thinking covers everything you don't control.
+
+51
+00:02:55.291 --> 00:02:57.231
+Take a partner's nightly file.
+
+52
+00:02:57.231 --> 00:02:59.752
+Check it first. Late: wait, then alert.
+
+53
+00:02:59.752 --> 00:03:01.885
+Twice: recognize it, and skip it.
+
+54
+00:03:01.885 --> 00:03:04.471
+Broken: set it aside, and tell a person.
+
+55
+00:03:04.471 --> 00:03:07.704
+You can't count on anything arriving exactly once.
+
+56
+00:03:07.704 --> 00:03:11.130
+So design for at least once, and make twice harmless.
+
+57
+00:03:11.480 --> 00:03:14.902
+So, to recap. Give every hand-off a clear format.
+
+58
+00:03:14.902 --> 00:03:17.975
+Make every step leave a record that adds up.
+
+59
+00:03:17.975 --> 00:03:20.349
+Make every step safe to run twice.
+
+60
+00:03:20.349 --> 00:03:24.400
+And when the numbers don't match, stop, and tell a person.
+
+61
+00:03:24.740 --> 00:03:27.352
+Which gives us rule eight, for your agents.
+
+62
+00:03:27.352 --> 00:03:30.754
+Before any work runs on its own, write down four things.
+
+63
+00:03:30.754 --> 00:03:33.548
+What starts it. What crosses at each hand-off.
+
+64
+00:03:33.548 --> 00:03:35.310
+What record each step leaves.
+
+65
+00:03:35.310 --> 00:03:38.347
+And what happens when a step fails, or runs twice.
+
+66
+00:03:38.347 --> 00:03:41.020
+No answer? It isn't ready to run unattended.
+
+67
+00:03:41.370 --> 00:03:47.008
+Now, your turn. Pick one job that already runs on its own: a nightly report, or a sync.
+
+68
+00:03:47.008 --> 00:03:52.516
+Describe its steps to your AI, and ask, for each step: what happens if it runs twice?
+
+69
+00:03:52.516 --> 00:03:54.785
+And what record would prove it ran?
+
+70
+00:03:54.785 --> 00:03:57.960
+The steps with no good answer are where to start.
+
+71
+00:03:58.310 --> 00:04:02.825
+A pipeline that runs on its own is already operating the system.
+
+72
+00:04:02.825 --> 00:04:05.082
+So whose name does it run under?
+
+73
+00:04:05.082 --> 00:04:07.058
+What is it allowed to touch?
+
+74
+00:04:07.058 --> 00:04:09.033
+And who can see what it did?
+
+75
+00:04:09.033 --> 00:04:13.477
+That's the last lesson: agents that operate enterprise systems.
+
+76
+00:04:13.477 --> 00:04:15.100
+See you in lesson nine.

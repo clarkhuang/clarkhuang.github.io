@@ -10,7 +10,7 @@ This repository is a [template](https://docs.github.com/en/repositories/creating
 
 - [AI Tips](https://clarkhuang.github.io/ai-tips/) — short video lessons on working with AI tools.
 - [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/) — fundamentals for AI-native software work.
-- [Software Engineering 201: From Loop to Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress: from one AI loop to whole apps and systems built AI-native, ending with agents that operate enterprise systems (lessons 1–4 are out, starting with “Four Eras of Building Systems”; lessons 5–9 are outlines).
+- [Software Engineering 201: From Loop to Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/) — the next series, in progress: from one AI loop to whole apps and systems built AI-native, ending with agents that operate enterprise systems (lessons 1–8 are out, starting with “Four Eras of Building Systems”; lesson 9 is an outline).
 - [Silicon Valley C Players](https://clarkhuang.github.io/book/) — a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization that may or may not be based on true stories.
 
 ## For people and for AI

@@ -1,0 +1,68 @@
+15 scenes, 240.73s, 7221 frames
+  01_title                 0.50s  + 5.97s
+  02_hook                  6.47s  +27.60s
+  03_reuse                34.07s  +20.59s
+  04a_when                54.66s  +20.59s
+  04b_steps               75.24s  +13.89s
+  04c_checks              89.14s  +16.63s
+  04d_traps              105.76s  +10.84s
+  05_runbook             116.61s  +21.50s
+  06_test                138.11s  +15.40s
+  07_improve             153.51s  +20.59s
+  08_when                174.10s  +15.72s
+  09_recap               189.82s  +11.16s
+  10_rule                200.97s  +16.94s
+  11_ask                 217.91s  +11.16s
+  12_close               229.07s  +11.66s
+    frame 0/7221
+    frame 150/7221
+    frame 300/7221
+    frame 450/7221
+    frame 600/7221
+    frame 750/7221
+    frame 900/7221
+    frame 1050/7221
+    frame 1200/7221
+    frame 1350/7221
+    frame 1500/7221
+    frame 1650/7221
+    frame 1800/7221
+    frame 1950/7221
+    frame 2100/7221
+    frame 2250/7221
+    frame 2400/7221
+    frame 2550/7221
+    frame 2700/7221
+    frame 2850/7221
+    frame 3000/7221
+    frame 3150/7221
+    frame 3300/7221
+    frame 3450/7221
+    frame 3600/7221
+    frame 3750/7221
+    frame 3900/7221
+    frame 4050/7221
+    frame 4200/7221
+    frame 4350/7221
+    frame 4500/7221
+    frame 4650/7221
+    frame 4800/7221
+    frame 4950/7221
+    frame 5100/7221
+    frame 5250/7221
+    frame 5400/7221
+    frame 5550/7221
+    frame 5700/7221
+    frame 5850/7221
+    frame 6000/7221
+    frame 6150/7221
+    frame 6300/7221
+    frame 6450/7221
+    frame 6600/7221
+    frame 6750/7221
+    frame 6900/7221
+    frame 7050/7221
+    frame 7200/7221
+
+-> /workspace/legacy/build/se101/07-skills-as-building-blocks/SE201_07_Skills-As-Building-Blocks_public.mp4
+EXIT 0
