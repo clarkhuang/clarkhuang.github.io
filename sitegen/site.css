@@ -360,6 +360,7 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 /* Text-only link cards have no .card-body child, so they carry their own padding. */
 a.card{padding:22px 22px 20px}
 .card p{overflow-wrap:anywhere}
+.card p .url{overflow-wrap:normal}.nobr{white-space:nowrap}
 a.card:focus-visible{border-color:var(--accent);border-radius:var(--radius)}
 main section + section{margin-top:56px}
 .section-head{margin:0 0 24px}

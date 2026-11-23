@@ -537,7 +537,7 @@ def build():
         <div class="section-head"><h2 id="ask-connect-heading">Ask, connect, contribute</h2><p class="section-note">Search the lessons and the book preview, or hook your own AI to this site.</p></div>
         <div class="cards">
           <a class="card" href="/ask/"><div class="card-meta"><span class="card-num">Ask</span></div><h3>Ask the Book</h3><p>Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.</p><span class="card-cta">Ask a question</span></a>
-          <a class="card" href="/contribute/#mcp"><div class="card-meta"><span class="card-num">MCP</span></div><h3>Connect your AI</h3><p>A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.</p><span class="card-cta">Get the config</span></a>
+          <a class="card" href="/contribute/#mcp"><div class="card-meta"><span class="card-num">MCP</span></div><h3>Connect your AI</h3><p>A public, read-only GitMCP endpoint at <span class="url">gitmcp.io/<wbr>clarkhuang/<wbr><span class="nobr">clarkhuang.github.io.</span></span> Contributions still go through GitHub issues.</p><span class="card-cta">Get the config</span></a>
           <a class="card" href="/credits/"><div class="card-meta"><span class="card-num">OpenBook</span></div><h3>Contributor credits</h3><p>People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.</p><span class="card-cta">See the list</span></a>
         </div>
       </section>"""
