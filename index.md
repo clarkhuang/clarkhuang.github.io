@@ -26,7 +26,7 @@ How to think about building software now that AI agents do much of the building.
 
 From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail.
 
-4 of 9 lessons available.
+8 of 9 lessons available.
 
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 

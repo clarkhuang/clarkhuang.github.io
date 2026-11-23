@@ -372,36 +372,52 @@
     "slug": "05-governance-where-people-decide",
     "id": "se201/05",
     "title": "Governance: Where People Decide",
-    "video": null,
-    "summary": "Design where people decide, so agents run fast everywhere else. Every era had a place where a person said yes: a release board a few times a year, then code review, then an approval step in an automated pipeline. When agents produce changes faster than anyone can read them all, that place has to be designed, not inherited. Put a person where judgment, risk, money, customer data or production are on the line, make those stops quick to review, and let everything else run without waiting. Picture a payments system: an agent can draft a change to how a fee is calculated, but a person approves anything that changes how money moves. Write down who can approve what, so agents know when to stop and ask.",
-    "rule": null
+    "video": "se201-05-governance-where-people-decide.mp4",
+    "captions": "se201-05-governance-where-people-decide.vtt",
+    "summary": "Every era had a place where a person said yes: a change board signing off a whole release, then a teammate reviewing the code, then an approval on a pull request. Each was sized for people writing the code, so when agents write changes faster than anyone can read them all, that place has to be designed, not inherited. A good rule of thumb is four questions: does it move money, touch customer data, is it hard to undo, or is it a judgment call no check can make? One yes and a named person decides; four no's and that kind of change can ship on its checks. The worked example is a made-up subscription-billing system, where six pieces of an agent's work lead to four stops and two changes that never wait, and where the agent prepares each decision: what changes, why, the evidence, the risk, and the way back. Write down who approves what in the repository, let the pipeline enforce it, and start strict, releasing one kind of change at a time as its checks earn trust.",
+    "rule": "Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call that no check can make: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list? Stop and ask. Ship on checks alone only what a person has released. In full: bring the decision ready to make (what changes, why, the evidence, the risk, and the way back), and don't classify or approve your own change.",
+    "log": "lesson-sources/se201-05/render-timeline.log",
+    "script": "lesson-sources/se201-05/se201-05-governance.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-05"
    },
    {
     "n": 6,
     "slug": "06-quality-feedback-and-observability",
     "id": "se201/06",
     "title": "Quality, Feedback, and Observability",
-    "video": null,
-    "summary": "When knowing it's right is the scarce thing, design quality in and watch every run. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and tracing were the answer. Now that knowing the work is right is scarce, quality has to be defined before the work starts: tests, checks, and service levels that agents can run themselves. Picture a subscription-billing system: the real check is not “the build passed” but “every renewal charged the right amount, exactly once”. Watch every run with signals that agents and people can both read, and feed what went wrong, what a reviewer fixed, and what it cost back into the briefs and checks, so each run improves the next.",
-    "rule": null
+    "video": "se201-06-quality-feedback-and-observability.mp4",
+    "captions": "se201-06-quality-feedback-and-observability.vtt",
+    "summary": "A green build says the code did what its tests asked; it says nothing about what happened last night. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and traces answered \"what happened?\". Now the scarce thing is knowing it's right, and no dashboard can answer that until someone has written down what right means. The worked example is a made-up subscription-billing system: \"every renewal charged the right amount, exactly once\" becomes three checks, and running them on last night's renewals finds three wrong ones inside totals that match exactly. Write the check once and run it twice, before a change ships and after every run; make every step leave a record that people and agents can both read; and feed every miss back into the brief and the checks, while a person still reads a sample, because a check only catches what somebody thought to ask.",
+    "rule": "Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. Feed every miss back into the brief and the checks. In full: run the checks on samples before a change ships and on the real data after every run, leave each record in a shape people and agents can both read, and let every miss make the next run better.",
+    "log": "lesson-sources/se201-06/render-timeline.log",
+    "script": "lesson-sources/se201-06/se201-06-quality.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-06"
    },
    {
     "n": 7,
     "slug": "07-skills-as-building-blocks",
     "id": "se201/07",
     "title": "Skills as Building Blocks",
-    "video": null,
-    "summary": "Turn the jobs that keep coming back into written, tested, shared skills. Every era found its unit of reuse: shared libraries, then frameworks, then services behind an API. In a system agents help build and run, the reusable unit is also a written skill: the steps, the checks, the inputs and outputs, and the traps of a job that keeps coming up. Picture retail e-commerce: bringing on a new supplier's product data is nearly the same job every time, so write it down once, test it, and version it. Then any person or agent can run that job the same way, and improve it in one place.",
-    "rule": null
+    "video": "se201-07-skills-as-building-blocks.mp4",
+    "captions": "se201-07-skills-as-building-blocks.vtt",
+    "summary": "Three capable agents can do the same job three different ways when nobody wrote down how. Software has had several units of reuse: libraries, frameworks, then services behind an API. A skill reuses something different: how a job gets done. The worked example is a made-up subscription-billing system and the job of adding a plan or a price: the skill is one page saying when to use it, the inputs, the steps, the checks, and the traps. It is a runbook; what has changed is the reader, an agent that reads it on every run and guesses wherever the page is silent. So keep it in the repository, test it with a fresh agent, and when a run goes wrong, fix the skill so every later run gets the fix.",
+    "rule": "When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. When a run goes wrong, fix the skill, not just the run. In full: write it sooner if a mistake costs money. If an input is missing, ask instead of guessing, and if a check fails, stop and say so. Make any step that needs no judgment a script the skill calls. Keep the skill versioned and reviewed like code, and test it by handing it to a fresh agent that has never seen the job.",
+    "log": "lesson-sources/se201-07/render-timeline.log",
+    "script": "lesson-sources/se201-07/se201-07-skills.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-07"
    },
    {
     "n": 8,
     "slug": "08-routines-pipelines-and-integration",
     "id": "se201/08",
     "title": "Routines, Pipelines, and Integration",
-    "video": null,
-    "summary": "Chain skills into work that starts on its own, connected to the systems the business already runs. Integration is the oldest problem in this series: thirty years ago it was overnight batch files and EDI between retailers and suppliers, then web services, then an API for everything, and all three are still running somewhere today. Some work should start on its own: on a schedule, when something changes, or when the last step finishes. Chain skills into routines and pipelines, connect them through clear interfaces, and make every step leave a record you can check and replay. And remember the constant: you depend on systems you don't control, so design every hand-off to fail safely and be retried.",
-    "rule": null
+    "video": "se201-08-routines-pipelines-and-integration.mp4",
+    "captions": "se201-08-routines-pipelines-and-integration.vtt",
+    "summary": "A job charges a card, the answer is lost, and the job tries again: unless someone designed that retry to be safe, the customer can be charged twice. Connecting systems is the oldest problem in this series, from overnight batch files and EDI, to web services, to an API for everything, to agents calling tools, and all of them are still running somewhere. Some work should start on its own: call a skill plus a trigger a routine, and routines chained together a pipeline. The worked example is the nightly billing run of a made-up subscription-billing system: a clear format at every hand-off, a record from every step whose counts add up, a retry made safe with an idempotency key, and a reconcile step that tells a person when the numbers don't match. The same thinking covers a partner's file that arrives late, twice, or broken: design for at least once, and make twice harmless.",
+    "rule": "Before any work runs on its own, write down four things: what starts it, what crosses at each hand-off, what record each step leaves, and what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended. In full: give every hand-off a clear, written format. Make every step leave a record that adds up, and make every step safe to run twice. When the numbers don't match, don't guess and don't fix them quietly: keep every record and tell a person. Keep that note where the agents and people who run the work can read it.",
+    "log": "lesson-sources/se201-08/render-timeline.log",
+    "script": "lesson-sources/se201-08/se201-08-pipelines.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-08"
    },
    {
     "n": 9,

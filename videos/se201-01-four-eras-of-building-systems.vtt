@@ -40,7 +40,7 @@ Systems built around money: electronic rent payments, a card-issuing platform, a
 
 10
 00:00:39.100 --> 00:00:45.442
-And systems that sell: retail e-commerce and E.D.I., subscription billing, and today, e-commerce again.
+And systems that sell: retail e-commerce and EDI, subscription billing, and today, e-commerce again.
 
 11
 00:00:45.442 --> 00:00:48.520
@@ -76,7 +76,7 @@ So, typically, you built one big program, on one big database, and shipped a few
 
 19
 00:01:17.136 --> 00:01:23.196
-Companies traded orders as overnight batch files, through E.D.I., and much of that still runs.
+Companies traded orders as overnight batch files, through EDI, and much of that still runs.
 
 20
 00:01:23.196 --> 00:01:25.130
@@ -144,7 +144,7 @@ That, and context: how much of the system an agent can see, and understand, at o
 
 36
 00:02:26.050 --> 00:02:32.300
-Now a made-up example: a subscription-billing system, built today, the kind of platform I ran as C.T.O.
+Now a made-up example: a subscription-billing system, built today, the kind of platform I ran as CTO
 
 37
 00:02:32.300 --> 00:02:36.852
