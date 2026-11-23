@@ -159,7 +159,7 @@ sc("09_ask", "Now, your turn. Pick one job that already runs on its own: a night
    "YOUR TURN")
 
 sc("10_close", "A pipeline that runs on its own is already operating the system. So whose name does it run under? What is it allowed to touch? "
-   "And who can see what it did? [pause] That's the last lesson: agents that operate enterprise systems. See you in lesson nine.",
+   "And who can see what it did? [pause] That's next: agents that operate enterprise systems. See you in lesson nine.",
    "outro", {"headline": "See you in\nlesson nine.", "sub": "Software Engineering 201"})
 
 spec = {"id": "se201-08-pipelines", "title": "SE201 Lesson 8: Routines, pipelines, and integration",

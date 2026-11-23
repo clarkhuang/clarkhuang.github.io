@@ -1,0 +1,355 @@
+WEBVTT
+
+NOTE SE201 Lesson 10: Capstone: One Feature, End to End — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:04.382
+Software engineering 201. Lesson ten.
+
+2
+00:00:04.382 --> 00:00:07.950
+Capstone: one feature, end to end.
+
+3
+00:00:08.300 --> 00:00:10.495
+Picture a made-up billing system.
+
+4
+00:00:10.495 --> 00:00:13.088
+A customer pays thirty dollars a month.
+
+5
+00:00:13.088 --> 00:00:15.882
+Ten days in, they click: switch to annual.
+
+6
+00:00:15.882 --> 00:00:19.406
+Three hundred a year. What do you charge them, today?
+
+7
+00:00:19.406 --> 00:00:22.200
+Three hundred? Two eighty? Or: it depends?
+
+8
+00:00:22.200 --> 00:00:25.259
+It depends. On a rule nobody has written down.
+
+9
+00:00:25.259 --> 00:00:28.850
+And an agent will build either answer, without asking.
+
+10
+00:00:29.200 --> 00:00:36.154
+So this last lesson builds that one feature, end to end, in our made-up subscription-billing system from lesson one.
+
+11
+00:00:36.154 --> 00:00:37.892
+Here's the map we'll fill in.
+
+12
+00:00:37.892 --> 00:00:40.290
+Each number is the lesson it comes from.
+
+13
+00:00:40.640 --> 00:00:44.250
+What's scarce, lesson one said, is knowing it's right.
+
+14
+00:00:44.250 --> 00:00:49.733
+So, say what right means: every upgrade is charged the right amount, exactly once.
+
+15
+00:00:49.733 --> 00:00:53.009
+The amount is a person's call, so the agent asks.
+
+16
+00:00:53.009 --> 00:00:57.355
+The finance owner's rule: credit the days paid for, and not used.
+
+17
+00:00:57.355 --> 00:00:59.227
+Twenty days, twenty dollars.
+
+18
+00:00:59.227 --> 00:01:01.500
+So, before tax, charge two eighty.
+
+19
+00:01:01.850 --> 00:01:11.212
+Now make it readable. The rule goes into a spec, in the repository, with an agents file, for how to work there, and an index, so an agent can find it.
+
+20
+00:01:11.212 --> 00:01:14.770
+The spec is the source. Change it, and the build follows.
+
+21
+00:01:15.120 --> 00:01:17.151
+Next, the graph. Four parts.
+
+22
+00:01:17.151 --> 00:01:20.198
+Add the annual plan. Calculate the credit.
+
+23
+00:01:20.198 --> 00:01:22.447
+Show the amount, and get a yes.
+
+24
+00:01:22.447 --> 00:01:24.696
+Charge it, and switch the plan.
+
+25
+00:01:24.696 --> 00:01:27.525
+What crosses? One new thing: the quote.
+
+26
+00:01:27.525 --> 00:01:31.080
+Its ID, old plan, new plan, credit, amount due.
+
+27
+00:01:31.080 --> 00:01:35.360
+Three parts share it, so it's its own node, with one owner.
+
+28
+00:01:35.710 --> 00:01:38.659
+Then plan the integration, before anyone starts.
+
+29
+00:01:38.659 --> 00:01:41.239
+The quote's format is the shared contract.
+
+30
+00:01:41.239 --> 00:01:46.644
+Three parts are new work: three agents, each with its own brief, finish line, and check.
+
+31
+00:01:46.644 --> 00:01:50.760
+And one merge point, on staging, where the whole feature is tested.
+
+32
+00:01:51.110 --> 00:01:54.054
+Who decides? It moves money, so a person does.
+
+33
+00:01:54.054 --> 00:01:58.406
+The repository already says who: fees and prices, the finance owner.
+
+34
+00:01:58.406 --> 00:02:02.758
+The agent that writes the change doesn't classify it, or approve it.
+
+35
+00:02:02.758 --> 00:02:06.790
+It brings the change, the evidence, the risk, and the way back.
+
+36
+00:02:07.140 --> 00:02:09.814
+Now turn right into checks an agent can run.
+
+37
+00:02:09.814 --> 00:02:11.515
+No upgrade is charged twice.
+
+38
+00:02:11.515 --> 00:02:15.282
+Each quote follows the rule, and each charge equals its quote.
+
+39
+00:02:15.282 --> 00:02:18.017
+And the old monthly plan doesn't renew again.
+
+40
+00:02:18.017 --> 00:02:22.209
+Write them once, run them twice: before it ships, on sample upgrades.
+
+41
+00:02:22.209 --> 00:02:24.640
+And every night after, on the real ones.
+
+42
+00:02:24.990 --> 00:02:31.539
+One part isn't new. Adding a plan has come back often enough to be a skill: written down, and tested.
+
+43
+00:02:31.539 --> 00:02:33.614
+So that part needs no new brief.
+
+44
+00:02:33.614 --> 00:02:35.170
+An agent runs the skill.
+
+45
+00:02:35.520 --> 00:02:38.611
+The plan is written, and a person has read it.
+
+46
+00:02:38.611 --> 00:02:41.366
+Now, build. Four parts, at the same time.
+
+47
+00:02:41.366 --> 00:02:46.405
+They meet early, at the merge point, and the whole feature runs on staging.
+
+48
+00:02:46.405 --> 00:02:49.227
+The three checks pass, on sample upgrades.
+
+49
+00:02:49.227 --> 00:02:51.175
+An engineer reviews the code.
+
+50
+00:02:51.175 --> 00:02:53.930
+The finance owner says yes. And it ships.
+
+51
+00:02:54.290 --> 00:02:56.404
+Now it runs on its own: a pipeline.
+
+52
+00:02:56.404 --> 00:02:59.846
+The trigger is an event: the customer confirms the quote.
+
+53
+00:02:59.846 --> 00:03:02.926
+Charge, switch the plan, invoice and ledger, email.
+
+54
+00:03:02.926 --> 00:03:09.387
+Every step leaves a record. And the charge carries an idempotency key that never changes: this quote's ID.
+
+55
+00:03:09.387 --> 00:03:12.528
+So a double-click, or a retry, doesn't charge twice.
+
+56
+00:03:12.528 --> 00:03:19.110
+A second trigger, every night: reconcile our ledger against the processor's record, and run the three checks.
+
+57
+00:03:19.460 --> 00:03:21.948
+Lesson nine's question: who operates it?
+
+58
+00:03:21.948 --> 00:03:24.313
+An agent works that nightly reconcile.
+
+59
+00:03:24.313 --> 00:03:31.156
+It gets its own identity, and the least access the job needs: it reads the ledger, and the processor's report.
+
+60
+00:03:31.156 --> 00:03:33.769
+It can't move money, or change the ledger.
+
+61
+00:03:33.769 --> 00:03:40.239
+Every action is logged. One night, an upgrade shows two charges: two browser tabs, two quotes, two keys.
+
+62
+00:03:40.239 --> 00:03:42.727
+The agent flags it. A person refunds it.
+
+63
+00:03:42.727 --> 00:03:47.020
+And the miss becomes a fourth check: one open quote per subscription.
+
+64
+00:03:47.370 --> 00:03:50.473
+Under all of it, the four constants from lesson one.
+
+65
+00:03:50.473 --> 00:03:53.934
+The data model outlives the code: the plan, and the quote.
+
+66
+00:03:53.934 --> 00:03:58.886
+Money has to add up: the invoice, the ledger, and the processor all say two eighty.
+
+67
+00:03:58.886 --> 00:04:02.109
+You depend on things you don't control: the processor.
+
+68
+00:04:02.109 --> 00:04:07.300
+And somebody understands the layer below: someone who can work that credit out by hand.
+
+69
+00:04:07.640 --> 00:04:10.205
+So that's the series, in one feature.
+
+70
+00:04:10.205 --> 00:04:12.700
+Say what right means. Write it down.
+
+71
+00:04:12.700 --> 00:04:15.126
+Draw the graph. Merge in one place.
+
+72
+00:04:15.126 --> 00:04:17.205
+Put a person where it matters.
+
+73
+00:04:17.205 --> 00:04:19.146
+Check it. Reuse what recurs.
+
+74
+00:04:19.146 --> 00:04:21.780
+Let it run. And know who's running it.
+
+75
+00:04:22.140 --> 00:04:24.827
+Which gives us rule ten, for your agents.
+
+76
+00:04:24.827 --> 00:04:30.069
+Before you build a whole feature, write the plan in the repo, and show a person.
+
+77
+00:04:30.069 --> 00:04:31.903
+What right means, as checks.
+
+78
+00:04:31.903 --> 00:04:34.197
+The graph, and the shared contract.
+
+79
+00:04:34.197 --> 00:04:36.556
+Who decides. What's already a skill.
+
+80
+00:04:36.556 --> 00:04:39.635
+What runs on its own, and under whose identity.
+
+81
+00:04:39.635 --> 00:04:41.470
+A blank line? Stop, and ask.
+
+82
+00:04:41.810 --> 00:04:45.744
+Now, your turn. Pick one small feature in a system you work on.
+
+83
+00:04:45.744 --> 00:04:48.741
+Before any code, ask your AI to write that plan.
+
+84
+00:04:48.741 --> 00:04:52.300
+Then find the line it guessed, when it should have asked.
+
+85
+00:04:52.660 --> 00:04:57.297
+Every box on that map is still one loop: plan, build, verify.
+
+86
+00:04:57.297 --> 00:04:59.957
+Agents do more of the building now.
+
+87
+00:04:59.957 --> 00:05:07.330
+You still own the outcome. That's software engineering 201: from one loop, to enterprise systems.
+
+88
+00:05:07.330 --> 00:05:08.850
+Thanks for watching.

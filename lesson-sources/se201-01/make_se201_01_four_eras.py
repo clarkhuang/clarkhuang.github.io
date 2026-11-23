@@ -136,11 +136,12 @@ sc("11_constants", "And here's what never changed, in any era. The data model ou
 
 PATH = ["Four eras of building systems", "Build the whole system, AI-native", "Decompose the system into a graph",
         "Parallel agents, one integration", "Governance: where people decide", "Quality, feedback, observability",
-        "Skills as building blocks", "Routines, pipelines, integration", "Agents that operate\nenterprise systems"]
+        "Skills as building blocks", "Routines, pipelines, integration", "Agents that operate\nenterprise systems",
+        "Capstone: one feature,\nend to end"]
 sc("12_path", "Here's the path. Today, the four eras. Then, build a whole system A.I. native, decompose it, "
    "and run agents in parallel. Then governance, quality, skills, and pipelines. [pause] "
-   "And finally, agents that operate enterprise systems.",
-   "recap", {"label": "SOFTWARE ENGINEERING 201  ·  FROM LOOP TO ENTERPRISE SYSTEMS", "rows": PATH, "upto": 9, "new_from": 0},
+   "Then, agents that operate enterprise systems. And last, a capstone: one feature, built end to end.",
+   "recap", {"label": "SOFTWARE ENGINEERING 201  ·  FROM LOOP TO ENTERPRISE SYSTEMS", "rows": PATH, "upto": 10, "new_from": 0},
    "THE PATH")
 
 sc("13_recap", "So, to recap. Architecture bends around what's scarce. Today, that's knowing the work is right, and context. "
