@@ -1,0 +1,1668 @@
+{
+ "id": "se201-10-capstone",
+ "title": "SE201 Lesson 10: Capstone: One Feature, End to End",
+ "output": "10-capstone-one-feature-end-to-end/SE201_10_Capstone-One-Feature-End-To-End_public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_title",
+   "text": "Software engineering two oh one. Lesson ten. [pause] Capstone: one feature, end to end.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "SOFTWARE ENGINEERING 201  ·  LESSON 10",
+    "headline": "Capstone: one feature,\nend to end.",
+    "sub": "From loop to enterprise systems  •  clarkhuang.github.io"
+   }
+  },
+  {
+   "id": "02_quiz",
+   "text": "Picture a made-up billing system. A customer pays thirty dollars a month. Ten days in, they click: switch to annual. Three hundred a year. What do you charge them, today? [pause] Three hundred? Two eighty? Or: it depends? [pause] <emphasis>It depends.</emphasis> On a rule nobody has written down. And an agent will build either answer, without asking.",
+   "visual": "quiz",
+   "chapter": "THE QUESTION",
+   "data": {
+    "question": "$30 a month. Ten days in, the customer clicks\n“Switch to annual”: $300 a year. Charge today?",
+    "options": [
+     "$300: the full annual price",
+     "$280: credit the unused days",
+     "It depends"
+    ],
+    "answer": 2,
+    "why": "On a rule\nnobody has\nwritten down.",
+    "options_at": 0.5,
+    "reveal_at": 0.7
+   }
+  },
+  {
+   "id": "03_feature",
+   "text": "So this last lesson builds that one feature, end to end, in our made-up subscription-billing system from lesson one. [pause] Here's the map we'll fill in. Each number is the lesson it comes from.",
+   "visual": "buildmap",
+   "chapter": "ONE SMALL FEATURE",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": false,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [],
+    "lower": {
+     "kind": "panel",
+     "at": 0.1,
+     "cols": [
+      {
+       "head": "A MADE-UP EXAMPLE  ·  OUR SUBSCRIPTION-BILLING SYSTEM",
+       "lines": [
+        "One feature, end to end:",
+        "switch to annual, mid-month"
+       ],
+       "size": 38,
+       "w": 1.5,
+       "at": 0.121
+      },
+      {
+       "head": "THE MAP WE’LL FILL IN",
+       "lines": [
+        "Each number is the",
+        "lesson it comes from"
+       ],
+       "size": 34,
+       "at": 0.758
+      }
+     ]
+    }
+   },
+   "group": "map"
+  },
+  {
+   "id": "04_right",
+   "text": "What's scarce, lesson one said, is knowing it's right. So, say what right means: every upgrade is charged the right amount, exactly once. [pause] The amount is a person's call, so the agent asks. The finance owner's rule: credit the days paid for, and not used. Twenty days, twenty dollars. So, before tax, charge two eighty.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right"
+    ],
+    "lit": [
+     "right"
+    ],
+    "ats": {
+     "right": 0.142
+    },
+    "lower": {
+     "kind": "days",
+     "frame_held": true,
+     "at": 0.02,
+     "head": "A PERSON’S CALL, SO THE AGENT ASKS  ·  $30 A MONTH, DAY 10 OF 30",
+     "days": 30,
+     "used": 10,
+     "used_label": "10 DAYS USED",
+     "free_label": "20 DAYS PAID FOR, NOT USED  =  $20 CREDIT",
+     "rule": "The finance owner’s rule: credit the days paid for, and not used.",
+     "used_at": 0.418,
+     "rule_at": 0.6,
+     "free_at": 0.818,
+     "sum": [
+      {
+       "label": "Annual plan",
+       "amount": "$300",
+       "at": 0.861
+      },
+      {
+       "label": "Credit, unused days",
+       "amount": "− $20",
+       "at": 0.891
+      },
+      {
+       "label": "Charge today, before tax",
+       "amount": "$280",
+       "at": 0.934
+      }
+     ]
+    },
+    "caption": "Until a person decides the rule, there is no right answer to build.",
+    "caption_at": 0.891,
+    "caption_size": 40
+   },
+   "group": "map"
+  },
+  {
+   "id": "05_readable",
+   "text": "Now make it readable. The rule goes into a spec, in the repository, with an agents file, for how to work there, and an index, so an agent can find it. [pause] The spec is the source. Change it, and the build follows.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files"
+    ],
+    "lit": [
+     "files"
+    ],
+    "ats": {
+     "files": 0.065
+    },
+    "file_step": 0.11,
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "SPEC.md  ·  THE SOURCE",
+       "mono": true,
+       "size": 29,
+       "w": 2.1,
+       "at": 0.095,
+       "lines": [
+        "Credit the days paid for and not used.",
+        "Quote = new price - credit, plus tax.",
+        "Charge the quote, exactly once."
+       ]
+      },
+      {
+       "head": "AGENTS.md",
+       "lines": [
+        "How to",
+        "work there"
+       ],
+       "size": 34,
+       "at": 0.31
+      },
+      {
+       "head": "index.md",
+       "lines": [
+        "So an agent",
+        "can find it"
+       ],
+       "size": 34,
+       "at": 0.524
+      }
+     ]
+    },
+    "caption": "The spec is the source. Change it, and the build follows.",
+    "caption_at": 0.738
+   },
+   "group": "map"
+  },
+  {
+   "id": "06_graph",
+   "text": "Next, the graph. Four parts. Add the annual plan. Calculate the credit. Show the amount, and get a yes. Charge it, and switch the plan. [pause] What crosses? One new thing: the quote. Its I.D., old plan, new plan, credit, amount due. Three parts share it, so it's its own node, with one owner.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote"
+    ],
+    "lit": [
+     "parts",
+     "quote"
+    ],
+    "ats": {
+     "parts": 0.074,
+     "quote": 0.509
+    },
+    "part_step": 0.105,
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "WHAT CROSSES?  ONE NEW THING: THE QUOTE",
+       "w": 1.9,
+       "size": 34,
+       "at": 0.472,
+       "ats": [
+        0.604,
+        0.704
+       ],
+       "lines": [
+        "ID  ·  Old plan  ·  New plan  ·  Credit  ·  Amount due",
+        "~Q-1  ·  Monthly  ·  Annual  ·  $20  ·  $280"
+       ]
+      },
+      {
+       "head": "THREE PARTS SHARE IT",
+       "lines": [
+        "Its own node,",
+        "with one owner"
+       ],
+       "size": 34,
+       "at": 0.774
+      }
+     ]
+    },
+    "caption": "An arrow only where something crosses.",
+    "caption_at": 0.472
+   },
+   "group": "map"
+  },
+  {
+   "id": "07_parallel",
+   "text": "Then plan the integration, before anyone starts. The quote's format is the shared contract. Three parts are new work: three agents, each with its own brief, finish line, and check. And one merge point, on staging, where the whole feature is tested.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge"
+    ],
+    "lit": [
+     "quote",
+     "agents",
+     "merge"
+    ],
+    "quote_sub": "its format: the shared contract",
+    "ats": {
+     "agents": 0.452,
+     "merge": 0.714
+    },
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "FIRST: THE SHARED CONTRACT",
+       "lines": [
+        "The quote’s format, written",
+        "before anyone starts"
+       ],
+       "size": 34,
+       "tone": "accent",
+       "at": 0.167
+      },
+      {
+       "head": "THREE PARTS ARE NEW WORK: THREE AGENTS",
+       "lines": [
+        "Each with its own brief,",
+        "finish line, and check"
+       ],
+       "size": 34,
+       "at": 0.452
+      },
+      {
+       "head": "ONE MERGE POINT",
+       "lines": [
+        "On staging: the whole",
+        "feature, tested"
+       ],
+       "size": 34,
+       "at": 0.714
+      }
+     ]
+    },
+    "caption": "Plan how the work comes back together, before it splits.",
+    "caption_at": 0.88
+   },
+   "group": "map"
+  },
+  {
+   "id": "08_decide",
+   "text": "Who decides? It moves money, so a person does. The repository already says who: fees and prices, the finance owner. The agent that writes the change doesn't classify it, or approve it. It brings the change, the evidence, the risk, and the way back.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate"
+    ],
+    "lit": [
+     "gate"
+    ],
+    "ats": {
+     "gate": 0.336
+    },
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "DOES IT MOVE MONEY?",
+       "lines": [
+        "!Yes.",
+        "So a person decides"
+       ],
+       "size": 34,
+       "at": 0.045,
+       "ats": [
+        0.045,
+        0.114
+       ]
+      },
+      {
+       "head": "THE REPOSITORY ALREADY SAYS WHO",
+       "mono": true,
+       "lines": [
+        "fees and prices:",
+        "  the finance owner"
+       ],
+       "size": 29,
+       "at": 0.205
+      },
+      {
+       "head": "THE AGENT BRINGS",
+       "lines": [
+        "The change, the evidence,",
+        "the risk, the way back",
+        "~It doesn’t classify, or approve"
+       ],
+       "size": 34,
+       "at": 0.455,
+       "ats": [
+        0.727,
+        0.864,
+        0.591
+       ]
+      }
+     ]
+    },
+    "caption": "Money moves, so a named person decides.",
+    "caption_at": 0.88
+   },
+   "group": "map"
+  },
+  {
+   "id": "09_checks",
+   "text": "Now turn right into checks an agent can run. No upgrade is charged twice. Each quote follows the rule, and each charge equals its quote. And the old monthly plan doesn't renew again. [pause] Write them once, run them twice: before it ships, on sample upgrades. And every night after, on the real ones.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks"
+    ],
+    "lit": [
+     "right",
+     "checks"
+    ],
+    "ats": {
+     "checks": 0.019
+    },
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "RIGHT, AS THREE CHECKS AN AGENT CAN RUN",
+       "w": 1.3,
+       "size": 33,
+       "at": 0.019,
+       "ats": [
+        0.17,
+        0.264,
+        0.472
+       ],
+       "lines": [
+        "1   No upgrade is charged twice",
+        "2   Each quote = the rule; each charge = its quote",
+        "3   The old monthly plan doesn’t renew again"
+       ]
+      },
+      {
+       "head": "RUN THEM TWICE",
+       "size": 33,
+       "at": 0.623,
+       "tone": "accent",
+       "ats": [
+        0.736,
+        0.849
+       ],
+       "lines": [
+        "Before it ships: on sample upgrades",
+        "Every night after: on the real ones"
+       ]
+      }
+     ]
+    },
+    "caption": "Write them once, run them twice.",
+    "caption_at": 0.623
+   },
+   "group": "map"
+  },
+  {
+   "id": "10_skill",
+   "text": "One part isn't new. Adding a plan has come back often enough to be a skill: written down, and tested. So that part needs no new brief. An agent runs the skill.",
+   "visual": "buildmap",
+   "chapter": "PLAN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill"
+    ],
+    "lit": [
+     "skill"
+    ],
+    "ats": {
+     "skill": 0.375
+    },
+    "lower": {
+     "kind": "panel",
+     "frame_held": true,
+     "at": 0.03,
+     "cols": [
+      {
+       "head": "ONE PART ISN’T NEW: ADDING A PLAN",
+       "w": 1.2,
+       "size": 34,
+       "at": 0.04,
+       "tone": "accent",
+       "ats": [
+        0.125,
+        0.5
+       ],
+       "lines": [
+        "It has come back often enough to be a skill:",
+        "written down, and tested"
+       ]
+      },
+      {
+       "head": "THAT PART",
+       "lines": [
+        "Needs no new brief:",
+        "an agent runs the skill"
+       ],
+       "size": 34,
+       "at": 0.625
+      }
+     ]
+    },
+    "caption": "Reuse what recurs.",
+    "caption_at": 0.85
+   },
+   "group": "map"
+  },
+  {
+   "id": "11_go",
+   "text": "The plan is written, and a person has read it. Now, build. Four parts, at the same time. They meet early, at the merge point, and the whole feature runs on staging. The three checks pass, on sample upgrades. An engineer reviews the code. The finance owner says yes. [pause] And it ships.",
+   "visual": "buildmap",
+   "chapter": "BUILD IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill"
+    ],
+    "lit": [],
+    "built": "go",
+    "go": {
+     "parts": 0.231,
+     "parts_end": 0.346,
+     "merge": 0.404,
+     "checks": 0.665,
+     "gate": 0.904,
+     "ship": 0.942
+    },
+    "lower": {
+     "kind": "log",
+     "frame_held": true,
+     "at": 0.02,
+     "head": "THE BUILD, AS IT RUNS",
+     "per_col": 4,
+     "rows": [
+      {
+       "text": "The plan is written, and a person has read it",
+       "at": 0.077
+      },
+      {
+       "text": "Four parts, at the same time",
+       "at": 0.316
+      },
+      {
+       "text": "They meet early, at the merge point",
+       "at": 0.444
+      },
+      {
+       "text": "The whole feature runs on staging",
+       "at": 0.558
+      },
+      {
+       "text": "The three checks pass, on sample upgrades",
+       "at": 0.692
+      },
+      {
+       "text": "An engineer reviews the code",
+       "at": 0.788
+      },
+      {
+       "text": "The finance owner says yes",
+       "at": 0.904,
+       "tone": "accent"
+      },
+      {
+       "text": "It ships",
+       "at": 0.942,
+       "tone": "accent"
+      }
+     ]
+    }
+   },
+   "group": "map"
+  },
+  {
+   "id": "12_run",
+   "text": "Now it runs on its own: a pipeline. The trigger is an event: the customer confirms the quote. Charge, switch the plan, invoice and ledger, email. Every step leaves a record. And the charge carries an idempotency key that never changes: this quote's I.D. So a double-click, or a retry, doesn't charge twice. [pause] A second trigger, every night: reconcile our ledger against the processor's record, and run the three checks.",
+   "visual": "buildmap",
+   "chapter": "RUN IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill",
+     "prod"
+    ],
+    "lit": [
+     "prod"
+    ],
+    "built": true,
+    "build_dim": 0.55,
+    "build_dim_from": 1.0,
+    "lower": {
+     "kind": "prod",
+     "frame_held": true,
+     "held": false,
+     "tag": "A PIPELINE  ·  RUNS ON ITS OWN",
+     "trigger": "WHEN THE CUSTOMER CONFIRMS",
+     "stages": [
+      {
+       "name": "Charge",
+       "tone": "amber",
+       "notes": [
+        "!idempotency key = quote ID",
+        "charged $280"
+       ],
+       "at": 0.257,
+       "notes_at": 0.5
+      },
+      {
+       "name": "Switch\nthe plan",
+       "notes": [
+        "now annual",
+        "monthly renewal off"
+       ],
+       "at": 0.271
+      },
+      {
+       "name": "Invoice,\nledger",
+       "notes": [
+        "invoice written",
+        "$280 in the ledger"
+       ],
+       "at": 0.314
+      },
+      {
+       "name": "Email",
+       "notes": [
+        "receipt sent"
+       ],
+       "at": 0.357
+      },
+      {
+       "name": "Reconcile",
+       "apart": true,
+       "trigger": "EVERY NIGHT",
+       "notes": [
+        "ledger = processor",
+        "+the checks"
+       ],
+       "at": 0.757,
+       "notes_at": 0.829
+      }
+     ],
+     "op": {
+      "tag": "THE OPERATOR",
+      "id": "id: billing-ops-agent",
+      "lines": [
+       "Its own identity",
+       "Reads: the ledger, the processor’s report",
+       "!Can’t move money, or change the ledger",
+       "Every action is logged",
+       "+Two charges? Flags it. A person refunds it."
+      ]
+     },
+     "at": 0.02,
+     "trigger_at": 0.114
+    },
+    "caption": "Safe to run twice: same key, no second charge.",
+    "caption_at": 0.629,
+    "caption_size": 40
+   },
+   "group": "map"
+  },
+  {
+   "id": "13_operate",
+   "text": "Lesson nine's question: who operates it? An agent works that nightly reconcile. It gets its own identity, and the least access the job needs: it reads the ledger, and the processor's report. It can't move money, or change the ledger. Every action is logged. [pause] One night, an upgrade shows two charges: two browser tabs, two quotes, two keys. The agent flags it. A person refunds it. And the miss becomes a fourth check: one open quote per subscription.",
+   "visual": "buildmap",
+   "chapter": "OPERATE IT",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill",
+     "prod",
+     "op"
+    ],
+    "lit": [
+     "op"
+    ],
+    "built": true,
+    "build_dim": 0.55,
+    "ats": {
+     "op": 0.077
+    },
+    "lower": {
+     "kind": "prod",
+     "frame_held": true,
+     "held": true,
+     "tag": "A PIPELINE  ·  RUNS ON ITS OWN",
+     "trigger": "WHEN THE CUSTOMER CONFIRMS",
+     "stages": [
+      {
+       "name": "Charge",
+       "tone": "amber",
+       "notes": [
+        "!idempotency key = quote ID",
+        "charged $280"
+       ]
+      },
+      {
+       "name": "Switch\nthe plan",
+       "notes": [
+        "now annual",
+        "monthly renewal off"
+       ]
+      },
+      {
+       "name": "Invoice,\nledger",
+       "notes": [
+        "invoice written",
+        "$280 in the ledger"
+       ]
+      },
+      {
+       "name": "Email",
+       "notes": [
+        "receipt sent"
+       ]
+      },
+      {
+       "name": "Reconcile",
+       "apart": true,
+       "trigger": "EVERY NIGHT",
+       "notes": [
+        "ledger = processor",
+        "+the checks"
+       ]
+      }
+     ],
+     "op": {
+      "tag": "THE OPERATOR",
+      "id": "id: billing-ops-agent",
+      "lines": [
+       "Its own identity",
+       "Reads: the ledger, the processor’s report",
+       "!Can’t move money, or change the ledger",
+       "Every action is logged",
+       "+Two charges? Flags it. A person refunds it."
+      ],
+      "id_at": 0.179,
+      "ats": [
+       0.179,
+       0.308,
+       0.41,
+       0.513,
+       0.744
+      ]
+     }
+    },
+    "caption": "The miss becomes a fourth check: one open quote per subscription.",
+    "caption_at": 0.846,
+    "caption_size": 40
+   },
+   "group": "map"
+  },
+  {
+   "id": "14_constants",
+   "text": "Under all of it, the four constants from lesson one. The data model outlives the code: the plan, and the quote. Money has to add up: the invoice, the ledger, and the processor all say two eighty. You depend on things you don't control: the processor. And somebody understands the layer below: someone who can work that credit out by hand.",
+   "visual": "buildmap",
+   "chapter": "WHAT STILL HOLDS",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill",
+     "prod",
+     "op"
+    ],
+    "lit": [],
+    "built": true,
+    "build_dim": 1.0,
+    "build_dim_from": 0.55,
+    "lower": {
+     "kind": "prod",
+     "frame_held": true,
+     "held": true,
+     "tag": "A PIPELINE  ·  RUNS ON ITS OWN",
+     "trigger": "WHEN THE CUSTOMER CONFIRMS",
+     "stages": [
+      {
+       "name": "Charge",
+       "tone": "amber",
+       "notes": [
+        "!idempotency key = quote ID",
+        "charged $280"
+       ]
+      },
+      {
+       "name": "Switch\nthe plan",
+       "notes": [
+        "now annual",
+        "monthly renewal off"
+       ]
+      },
+      {
+       "name": "Invoice,\nledger",
+       "notes": [
+        "invoice written",
+        "$280 in the ledger"
+       ]
+      },
+      {
+       "name": "Email",
+       "notes": [
+        "receipt sent"
+       ]
+      },
+      {
+       "name": "Reconcile",
+       "apart": true,
+       "trigger": "EVERY NIGHT",
+       "notes": [
+        "ledger = processor",
+        "+the checks"
+       ]
+      }
+     ],
+     "op": {
+      "tag": "THE OPERATOR",
+      "id": "id: billing-ops-agent",
+      "lines": [
+       "Its own identity",
+       "Reads: the ledger, the processor’s report",
+       "!Can’t move money, or change the ledger",
+       "Every action is logged",
+       "+Two charges? Flags it. A person refunds it."
+      ]
+     }
+    },
+    "consts": {
+     "items": [
+      {
+       "head": "The data model outlives the code",
+       "text": "The plan, and the quote",
+       "at": 0.164
+      },
+      {
+       "head": "Money has to add up",
+       "text": "Invoice = ledger = processor: $280",
+       "at": 0.344
+      },
+      {
+       "head": "Things you don’t control",
+       "text": "The processor",
+       "at": 0.607
+      },
+      {
+       "head": "Somebody understands the layer below",
+       "text": "Can work that credit out by hand",
+       "at": 0.754
+      }
+     ]
+    }
+   },
+   "group": "map"
+  },
+  {
+   "id": "15_recap",
+   "text": "So that's the series, in one feature. Say what right means. Write it down. Draw the graph. Merge in one place. Put a person where it matters. Check it. Reuse what recurs. Let it run. And know who's running it.",
+   "visual": "buildmap",
+   "chapter": "RECAP",
+   "data": {
+    "label": "A MADE-UP EXAMPLE, MADE-UP NUMBERS  ·  ONE FEATURE: SWITCH TO ANNUAL, MID-MONTH",
+    "label_held": true,
+    "map": {
+     "right": "Every upgrade is charged the right amount, exactly once.",
+     "files": [
+      "billing/upgrade/",
+      " SPEC.md",
+      " AGENTS.md",
+      " index.md"
+     ],
+     "parts": [
+      {
+       "name": "Add the\nannual plan"
+      },
+      {
+       "name": "Calculate\nthe credit"
+      },
+      {
+       "name": "Show it,\nget a yes"
+      },
+      {
+       "name": "Charge it,\nswitch the plan"
+      }
+     ],
+     "quote": "The quote",
+     "quote_sub": "its own node, one owner",
+     "agents": [
+      "AGENT A",
+      "AGENT B",
+      "AGENT C"
+     ],
+     "plan_note": "NOT NEW",
+     "merge": [
+      "One merge point",
+      "On staging:",
+      "test the whole feature"
+     ],
+     "gate": "Finance\nowner",
+     "gate_sub": "Named in the repo",
+     "gate_yes": "Says yes",
+     "checks_tag": "CHECKS, BEFORE",
+     "skill_tag": "A SKILL",
+     "right_checks": "AS CHECKS"
+    },
+    "show": [
+     "right",
+     "files",
+     "parts",
+     "quote",
+     "agents",
+     "merge",
+     "gate",
+     "checks",
+     "skill",
+     "prod",
+     "op"
+    ],
+    "lit": [],
+    "built": true,
+    "pulse": [
+     [
+      [
+       "right"
+      ],
+      0.175
+     ],
+     [
+      [
+       "files"
+      ],
+      0.275
+     ],
+     [
+      [
+       "parts",
+       "quote"
+      ],
+      0.35
+     ],
+     [
+      [
+       "agents",
+       "merge"
+      ],
+      0.425
+     ],
+     [
+      [
+       "gate"
+      ],
+      0.525
+     ],
+     [
+      [
+       "checks"
+      ],
+      0.675
+     ],
+     [
+      [
+       "skill"
+      ],
+      0.725
+     ],
+     [
+      [
+       "prod"
+      ],
+      0.8
+     ],
+     [
+      [
+       "op"
+      ],
+      0.875
+     ]
+    ],
+    "lower": {
+     "kind": "prod",
+     "frame_held": true,
+     "held": true,
+     "tag": "A PIPELINE  ·  RUNS ON ITS OWN",
+     "trigger": "WHEN THE CUSTOMER CONFIRMS",
+     "stages": [
+      {
+       "name": "Charge",
+       "tone": "amber",
+       "notes": [
+        "!idempotency key = quote ID",
+        "charged $280"
+       ]
+      },
+      {
+       "name": "Switch\nthe plan",
+       "notes": [
+        "now annual",
+        "monthly renewal off"
+       ]
+      },
+      {
+       "name": "Invoice,\nledger",
+       "notes": [
+        "invoice written",
+        "$280 in the ledger"
+       ]
+      },
+      {
+       "name": "Email",
+       "notes": [
+        "receipt sent"
+       ]
+      },
+      {
+       "name": "Reconcile",
+       "apart": true,
+       "trigger": "EVERY NIGHT",
+       "notes": [
+        "ledger = processor",
+        "+the checks"
+       ]
+      }
+     ],
+     "op": {
+      "tag": "THE OPERATOR",
+      "id": "id: billing-ops-agent",
+      "lines": [
+       "Its own identity",
+       "Reads: the ledger, the processor’s report",
+       "!Can’t move money, or change the ledger",
+       "Every action is logged",
+       "+Two charges? Flags it. A person refunds it."
+      ]
+     }
+    },
+    "consts": {
+     "items": [
+      {
+       "head": "The data model outlives the code",
+       "text": "The plan, and the quote",
+       "at": 0.164
+      },
+      {
+       "head": "Money has to add up",
+       "text": "Invoice = ledger = processor: $280",
+       "at": 0.344
+      },
+      {
+       "head": "Things you don’t control",
+       "text": "The processor",
+       "at": 0.607
+      },
+      {
+       "head": "Somebody understands the layer below",
+       "text": "Can work that credit out by hand",
+       "at": 0.754
+      }
+     ],
+     "held": true
+    }
+   },
+   "group": "map"
+  },
+  {
+   "id": "16_rule",
+   "text": "Which gives us rule ten, for your agents. Before you build a whole feature, write the plan in the repo, and show a person. What right means, as checks. The graph, and the shared contract. Who decides. What's already a skill. What runs on its own, and under whose identity. A blank line? Stop, and ask.",
+   "visual": "rule_card",
+   "chapter": "THE RULE",
+   "data": {
+    "kicker": "RULE 10  ·  FOR YOUR AGENTS",
+    "size": 54,
+    "lines": [
+     {
+      "text": "Before you build a whole feature, write the plan"
+     },
+     {
+      "text": "in the repo, and show a person:"
+     },
+     {
+      "text": "what right means, as checks,",
+      "tone": "accent"
+     },
+     {
+      "text": "the graph, and the shared contract,",
+      "tone": "accent"
+     },
+     {
+      "text": "who decides, and what’s already a skill,",
+      "tone": "accent"
+     },
+     {
+      "text": "what runs on its own, and under whose identity.",
+      "tone": "accent"
+     },
+     {
+      "text": "A blank line? Stop, and ask."
+     }
+    ],
+    "foot": "THE FULL RULE IS ON THE LESSON PAGE"
+   }
+  },
+  {
+   "id": "17_ask",
+   "text": "Now, your turn. Pick one small feature in a system you work on. Before any code, ask your A.I. to write that plan. [pause] Then find the line it guessed, when it should have asked.",
+   "visual": "statement",
+   "chapter": "YOUR TURN",
+   "data": {
+    "headline": "Your turn. One small feature\nin a system you work on.\nBefore any code, ask your AI\nto write that plan.\nThen find the line it guessed,\nwhen it should have asked.",
+    "size": 74
+   }
+  },
+  {
+   "id": "18_close",
+   "text": "Every box on that map is still one loop: plan, build, verify. Agents do more of the building now. You still own the outcome. [pause] That's software engineering two oh one: from one loop, to enterprise systems. Thanks for watching.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "From one loop\nto enterprise systems.",
+    "sub": "Software Engineering 201"
+   }
+  }
+ ]
+}
