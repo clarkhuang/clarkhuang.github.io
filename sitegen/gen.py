@@ -232,6 +232,15 @@ def write_404():
       <p class="lede">That address is not on this site. Start from the <a href="/">home page</a>, or browse <a href="/ai-tips/">AI Tips</a>, <a href="/software-engineering-101/">Software Engineering 101</a>, <a href="/software-engineering-201/">Software Engineering 201</a>, or the <a href="/book/">book preview</a>. You can also <a href="/contribute/">contribute with your AI</a> or <a href="/copy-this/">copy this site for yourself</a>.</p>"""
     page("404.html", "Page not found — Clark Huang", "Page not found.", body, "404")
 
+def page_jsonld(title, desc, canon):
+    """Schema.org WebPage metadata for the page head; points at the Markdown twin."""
+    d = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": canon, "inLanguage": "en",
+         "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": BASE + "/"},
+         "author": {"@type": "Person", "name": "Clark Huang", "url": BASE + "/"},
+         "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+         "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": canon.rsplit("/", 1)[0] + "/index.md"}}
+    return '  <script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace("</", "<\\/") + '</script>\n'
+
 def page(path, title, desc, body, current="", main_class=""):
     navh = "".join(f'<a href="{h}"{" aria-current=\"page\"" if k==current else ""}>{n}</a>' for n,h,k in nav_items())
     links = "".join(f'<a href="{h}">{n}</a>' for n,h in FOOT_LINKS)
@@ -268,7 +277,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <meta name="twitter:image" content="{share}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 {font_links()}  <link rel="stylesheet" href="/styles.css">
-{extra_head}{AF.head_links()}</head>
+{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -284,11 +293,15 @@ def page(path, title, desc, body, current="", main_class=""):
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-      <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
-      <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
-      <nav class="project-links" aria-label="This project"><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
-{AF.footer_twins()}      <nav class="footer-links" aria-label="Elsewhere">{links}</nav>
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+{AF.footer_twins()}        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p>{links}</nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
     </div>
   </footer>
   <script src="/assets/site.js" defer></script>
