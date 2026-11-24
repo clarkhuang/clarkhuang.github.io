@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Clarified the book preview claim: “AI writes essentially all of the code” is Clark's own workflow (the code he ships), not a measured team result or a prediction. Chapter 20 of the outline no longer says “100% of the code.” The preview narration and captions are unchanged and still use the earlier line; re-recording is a follow-up ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80)). Fixed a staging rewrite bug that left some `AGENTS.md` Markdown URLs pointing at production.
+
 - Public story arc and chapter list for Silicon Valley C Players (`/book/story-arc/`), with a machine-readable outline at `book-source/outline.json`. The book is framed as two halves: the career arc, then the site and future directions. Chapter 32 now describes Software Engineering 201 as ten lessons, with lesson 10 a capstone and lesson 9 still an outline.
 - Public editorial policy for the book (`/book/editorial-policy/`): how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources. Book backlog started in `book-source/BACKLOG.md`. Guest-story path added in `book-source/guest/` and CONTRIBUTING.md ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80))
 

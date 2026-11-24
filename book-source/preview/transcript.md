@@ -3,6 +3,8 @@
 Full spoken text of the mid-book audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
 This excerpt is from Part Three and the turn into Part Four: C players, the gap between applause and the work, platforms over products, and the claim that AI came for the code writers first.
 
+**Wording note.** The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.
+
 ## Fair warning (0:00)
 
 Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
@@ -49,7 +51,7 @@ Then the work itself changed. I'm usually the most excited person in the room ab
 
 ## The thesis (1:47)
 
-A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
+A.I. came after the code writers first. In my own work, A.I. now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.
 
 ## How to work now (1:53)
 

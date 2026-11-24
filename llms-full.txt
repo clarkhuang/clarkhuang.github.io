@@ -31,7 +31,7 @@ The Valley falls in love with products. Specific wins. Specific years. I got mor
 
 It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
 
-Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
+Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
 
 The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
@@ -41,7 +41,7 @@ An embellished fictional dramatization about C players, the gap between applause
 
 This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.
 
-The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.
+The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.
 
 Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.
 
@@ -118,7 +118,7 @@ Then the work itself changed. I'm usually the most excited person in the room ab
 
 ## The thesis (1:47)
 
-A.I. came after the code writers first. In my view, A.I. now writes essentially all of the code.
+A.I. came after the code writers first. In my own work, A.I. now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.
 
 ## How to work now (1:53)
 

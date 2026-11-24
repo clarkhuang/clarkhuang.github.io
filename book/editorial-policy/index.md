@@ -32,7 +32,10 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ### Current public preview
 
-No claim or source changes have been logged yet. The log begins here.
+- **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
+- **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
+- **Narration:** The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 

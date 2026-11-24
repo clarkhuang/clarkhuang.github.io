@@ -37,8 +37,9 @@ ATTR_RE = re.compile(
 # url(/foo) in CSS — skip protocol-relative and already-prefixed paths
 CSS_URL_RE = re.compile(r"url\(\s*(['\"]?)(/[^)\"]+?)\1\s*\)")
 
-ABS_RE = re.compile(r"""https://clarkhuang\.github\.io(?!/staging)(/[^"'\\s<>]*)?""")
-
+# Path characters: not whitespace, quotes, or angle brackets.
+# A raw-string \\s here would exclude the letter s and let matches run across lines.
+ABS_RE = re.compile("https://clarkhuang\\.github\\.io(?!/staging)(/[^\\s\"'<>]*)?")
 
 def rewrite_text(text: str, is_css: bool = False) -> str:
     def attr(m):

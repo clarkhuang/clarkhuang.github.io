@@ -66,7 +66,7 @@ School days, then the jobs in career order, then the turn when AI came for the c
 | Ch | Title | Hook | Status |
 |---|---|---|---|
 | 19 | The Saddest Man in the Room | The most AI-excited person in the room should be the saddest: AI came for the code writers first. The specific day still needs a story. | outlined · needs a story |
-| 20 | Seventy, Eighty, Ninety, One Hundred | A year ago people said 70, 80, 90 percent. Clark's view is that AI now writes 100% of the code. Public surveys still range widely; the book will present his view alongside those numbers. | outlined |
+| 20 | Seventy, Eighty, Ninety, One Hundred | A year ago people said 70, 80, 90 percent. In Clark's own work, AI now writes essentially all of the code he ships. That is his workflow, not a measured team result or a general industry figure. Public surveys still range widely; the book will present that workflow alongside those numbers. | outlined |
 | 21 | I'd Never Built a Mobile App | One shot to fix an app, and he had never built a mobile app — shipped with agents. | drafted |
 | 22 | Changing My Tune | He used to be a pragmatist on unit tests; once tests got cheap, he changed his mind and wanted more of them. | outlined |
 
