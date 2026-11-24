@@ -56,55 +56,61 @@ And from the outside, a C thing can look like an A. thing. [pause] The applause 
 
 ## A C player
 
-`06_c_player` · 0:59 · 14.42s
+`06_c_player` · 0:59 · 16.56s
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious.
+A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.
 
 ## Platforms, not products
 
-`07_platforms` · 1:14 · 11.69s
+`07_platforms` · 1:16 · 11.69s
 
 The Valley falls in love with products. Specific wins, in specific years. I got more out of building a <emphasis>platform</emphasis>: a foundation you can stand on, then build the next thing on, and the thing after that.
 
 ## Building blocks
 
-`08_blocks` · 1:25 · 11.06s
+`08_blocks` · 1:27 · 11.06s
 
 You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. [pause] That layer is what you actually stand on later.
 
 ## I just kept going
 
-`09_kept_going` · 1:36 · 11.38s
+`09_kept_going` · 1:38 · 11.38s
 
 <slow>It's all relative, how good you look from the outside.</slow> [pause] But one thing stayed for certain. <emphasis>I just kept going.</emphasis> And I kept doing my best.
 
 ## The turn
 
-`10_turn` · 1:48 · 8.02s
+`10_turn` · 1:50 · 8.02s
 
 Then the work itself changed. [pause] I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>.
 
 ## The thesis
 
-`11_thesis` · 1:56 · 12.29s
+`11_thesis` · 1:58 · 12.29s
 
 Because A.I. came after the code writers first. [pause] In my own work, A.I. now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.
 
+## The abstraction ladder
+
+`11_ladder` · 2:10 · 18.07s
+
+Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. [pause] It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up.
+
 ## How to work now
 
-`12_how_to` · 2:08 · 11.69s
+`12_how_to` · 2:28 · 11.69s
 
 So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use A.I.
 
 ## The story is still being written
 
-`13_bookend` · 2:20 · 15.94s
+`13_bookend` · 2:40 · 15.94s
 
 The book begins with a green-screen dream, and it ends by dreaming about A.I. This part, in the middle, is the turn. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written.
 
 ## Coming in 2027
 
-`14_close` · 2:36 · 4.08s
+`14_close` · 2:56 · 4.08s
 
 Silicon Valley C Players. Coming in 2027.
 
