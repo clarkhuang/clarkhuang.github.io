@@ -59,7 +59,7 @@ def mmss(t):
     t = int(t); return f"{t//60}:{t%60:02d}"
 
 def iso_dur(t):
-    t = int(round(t)); return f"PT{t//60}M{t%60}S"
+    t = int(t); return f"PT{t//60}M{t%60}S"  # truncate, same as mmss(), so datetime matches the visible text
 
 def chapters_from_log(log, script):
     starts = {m.group(1): float(m.group(2)) for m in re.finditer(r"^\s+(\d\d\w*?_\w+)\s+([\d.]+)s", open(log).read(), re.M)}
