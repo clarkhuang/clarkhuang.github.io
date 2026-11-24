@@ -342,6 +342,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         '',
         f'- [Ask the Book]({BASE}/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.',
         f'- [Connect your AI]({BASE}/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.',
+        f'- [Site MCP server]({BASE}/mcp/index.md): A first-party, read-only MCP server (stdio) for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts.',
         f'- [Contributor credits]({BASE}/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.',
         '',
         f'This site is also an open project. [Contribute with your AI]({BASE}/contribute/index.md), or [copy this for yourself]({BASE}/copy-this/index.md).',
@@ -576,6 +577,7 @@ More: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/CONTRIBUTING.
 - **Ask the Book:** https://clarkhuang.github.io/ask/ — instant in-browser search over https://clarkhuang.github.io/search-index.json, plus “Ask your AI” buttons that open ChatGPT, Claude, Grok, or Perplexity with a prefilled prompt. The prompt points at https://clarkhuang.github.io/llms-full.txt and the GitMCP URL, and asks the tool to answer only from this site with citations. For book questions, it may use the tone of Charlie Hack, the OpenBook's fictional narrator. There is a copy-prompt fallback. A compact version of this widget also appears on the book page and on lesson pages.
 - **Full site text:** https://clarkhuang.github.io/llms-full.txt
 - **Contributor credits:** https://clarkhuang.github.io/credits/ (JSON: https://clarkhuang.github.io/credits.json). People are listed by GitHub handle only.
+- **Site MCP server (first-party, read-only):** one Python file, no dependencies, stdio. Tools: `site_info`, `list_lessons`, `get_lesson` (transcript, chapters, captions, watched key), `check_lesson_media`, `get_page`, `search`, `how_to_contribute`, `draft_issue` (drafts only; never files). Claude Code: `claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. Other clients: command `uv`, args `["run", "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"]`, or download the file and run it with `python3`. Set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging` to read staging. Docs: https://clarkhuang.github.io/mcp/index.md · manifest: https://clarkhuang.github.io/.well-known/mcp.json
 - **Connect your AI (MCP):** public, read-only GitMCP endpoint at `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. GitMCP is a free third-party service. It prefers `llms.txt`. It cannot open issues or merge pull requests; contributions still go through GitHub issues, and only Clark Huang approves and merges.
 
 Claude Code: `claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io`
@@ -618,6 +620,7 @@ def write_llms_txt(site, series, extras=None):
         f"- [llms-full.txt]({BASE}/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog",
         f"- [lessons.json]({BASE}/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations",
         f"- [redirects.json]({BASE}/redirects.json): old lesson page and media addresses and where they moved",
+        f"- [Site MCP server]({BASE}/mcp/index.md): first-party, read-only MCP server (stdio) for agents: lessons, transcripts, captions, media checks, search, issue drafts. Manifest: {BASE}/.well-known/mcp.json",
         f"- [book.json]({BASE}/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters",
         f"- [REBUILD.md]({BASE}/REBUILD.md): how to rebuild production and staging",
         "",
@@ -731,6 +734,7 @@ def write_llms_full(site, series, intro, back):
         f"- [Ask the Book]({BASE}/ask/index.md)",
         f"- [Contributor credits]({BASE}/credits/index.md)",
         f"- GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io",
+        f"- Site MCP server (first-party, read-only): {BASE}/mcp/index.md",
         f"- Search index: {BASE}/search-index.json",
         "",
         "Do not invent stories or biography beyond this file. Do not identify real people or companies behind the fictional names. Staging (https://clarkhuang.github.io/staging/) is a preview of the next-revision branch and is not the live site.",
