@@ -1,0 +1,70 @@
+15 scenes, 259.67s, 7790 frames
+  01_title                 0.50s  + 6.57s
+  02_quiz                  7.07s  +17.85s
+  03_questions            24.92s  +15.12s
+  04_identity             40.04s  +23.04s
+  05_access               63.08s  +19.99s
+  06_reach                83.06s  +16.94s
+  07a_night              100.00s  +19.08s
+  07b_next               119.08s  +15.72s
+  07c_log                134.80s  +22.12s
+  08_nearmiss            156.92s  +28.82s
+  09_limits              185.74s  +12.07s
+  10_recap               197.81s  +13.89s
+  11_rule                211.70s  +20.59s
+  12_ask                 232.29s  +15.12s
+  13_close               247.40s  +12.26s
+    frame 0/7790
+    frame 150/7790
+    frame 300/7790
+    frame 450/7790
+    frame 600/7790
+    frame 750/7790
+    frame 900/7790
+    frame 1050/7790
+    frame 1200/7790
+    frame 1350/7790
+    frame 1500/7790
+    frame 1650/7790
+    frame 1800/7790
+    frame 1950/7790
+    frame 2100/7790
+    frame 2250/7790
+    frame 2400/7790
+    frame 2550/7790
+    frame 2700/7790
+    frame 2850/7790
+    frame 3000/7790
+    frame 3150/7790
+    frame 3300/7790
+    frame 3450/7790
+    frame 3600/7790
+    frame 3750/7790
+    frame 3900/7790
+    frame 4050/7790
+    frame 4200/7790
+    frame 4350/7790
+    frame 4500/7790
+    frame 4650/7790
+    frame 4800/7790
+    frame 4950/7790
+    frame 5100/7790
+    frame 5250/7790
+    frame 5400/7790
+    frame 5550/7790
+    frame 5700/7790
+    frame 5850/7790
+    frame 6000/7790
+    frame 6150/7790
+    frame 6300/7790
+    frame 6450/7790
+    frame 6600/7790
+    frame 6750/7790
+    frame 6900/7790
+    frame 7050/7790
+    frame 7200/7790
+    frame 7350/7790
+    frame 7500/7790
+    frame 7650/7790
+
+-> /workspace/legacy/build/se101/09-agents-that-operate-enterprise-systems/SE201_09_Agents-That-Operate-Enterprise-Systems_public.mp4

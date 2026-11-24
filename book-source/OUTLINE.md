@@ -89,7 +89,7 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 | 29 | The Ladder | AI coding is one more rung, from first principles up. Callback to the fundamentals chapter and the green-screen prologue. | SE 101 Lessons 3, 4, 6 | outlined |
 | 30 | Old Patterns at Agent Speed | Pairing, TDD, and small ships still work; they just run faster. Needs a story. | SE 101 Lessons 7, 8 | outlined · needs a story |
 | 31 | Money and Data | Treat AI usage carefully; never risk customer data. Needs a story. | SE 101 Lessons 9, 10 | outlined · needs a story |
-| 32 | From Loop to Enterprise Systems | 101 is the loop; 201 builds whole systems AI-native: decompose them into a graph, run agents in parallel and integrate, govern where people decide, measure quality and observe, turn repeated work into skills, wire routines and pipelines, and let agents operate enterprise systems with permissions and audit, ending with a capstone that builds one feature end to end. Lesson 9 is still an outline; lesson 10 is the capstone. | SE 201 Lessons 1–10 | outlined |
+| 32 | From Loop to Enterprise Systems | 101 is the loop; 201 builds whole systems AI-native: decompose them into a graph, run agents in parallel and integrate, govern where people decide, measure quality and observe, turn repeated work into skills, wire routines and pipelines, and let agents operate enterprise systems with permissions and audit, ending with a capstone that builds one feature end to end. Lesson 10 is the capstone. | SE 201 Lessons 1–10 | outlined |
 
 ### The site itself
 
@@ -110,6 +110,5 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 
 ## Also planned
 
-- Software Engineering 201 lesson 9 is still an outline.
 - A hosted “talk to Charlie Hack” box is a later option and is not built.
 
