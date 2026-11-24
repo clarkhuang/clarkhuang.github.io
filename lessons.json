@@ -1060,7 +1060,7 @@
           "poster_url": "https://clarkhuang.github.io/videos/posters/se201-02-build-the-whole-system-ai-native.jpg",
           "markdown_url": "https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/index.md",
           "agents_url": "https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/AGENTS.md",
-          "duration_seconds": 234.4,
+          "duration_seconds": 238.9,
           "chapters": [
             {
               "start_seconds": 0.0,
@@ -1087,11 +1087,11 @@
               "title": "The path"
             },
             {
-              "start_seconds": 205.6,
+              "start_seconds": 210.2,
               "title": "The rule"
             },
             {
-              "start_seconds": 223.4,
+              "start_seconds": 228.0,
               "title": "Your turn"
             }
           ],
@@ -1444,7 +1444,7 @@
           "title": "Capstone: One Feature, End to End",
           "status": "available",
           "summary": "The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the month. What to charge depends on a rule nobody has written down, so the plan comes first: say what right means and let a person set the rule; put it in a spec in the repository; draw the graph and find the one new thing that crosses, the quote; make the quote's format the shared contract for three agents and one merge point; name who decides; turn \"right\" into three checks that run before the change ships and every night after; and notice that adding a plan is already a skill. Then the plan is carried out: the parts are built at the same time, the finance owner says yes, the feature runs as a pipeline with an idempotency key on the charge, and an agent with its own identity and read-only access works the nightly reconcile, flags a double charge for a person to refund, and the miss becomes a fourth check. Under all of it, the four constants from lesson 1 still hold.",
-          "rule": "Before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.",
+          "rule": "Before you build a whole feature, write the plan in the repo, and show a person. What right means, as checks. The graph, and the shared contract. Who decides. What's already a skill. What runs on its own, and under whose identity. A blank line? Stop, and ask. In full: before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.",
           "page_url": "https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/",
           "video_url": "https://clarkhuang.github.io/videos/se201-10-capstone-one-feature-end-to-end.mp4",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se201-10-capstone-one-feature-end-to-end.jpg",

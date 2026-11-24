@@ -191,69 +191,73 @@ The same four things still hold.
 They just matter more. Without them, every agent starts from zero, and every person becomes the bottleneck.
 
 48
-00:03:00.120 --> 00:03:02.129
+00:03:00.120 --> 00:03:02.255
 That's the path for this series.
 
 49
-00:03:02.129 --> 00:03:04.703
+00:03:02.255 --> 00:03:04.990
 Today: build the whole system, AI native.
 
 50
-00:03:04.703 --> 00:03:06.711
+00:03:04.990 --> 00:03:07.126
 Then, decompose it into a graph.
 
 51
-00:03:06.711 --> 00:03:10.290
+00:03:07.126 --> 00:03:10.928
 Run agents in parallel, and bring the work back together.
 
 52
-00:03:10.290 --> 00:03:12.675
+00:03:10.928 --> 00:03:13.464
 Put people where the decisions matter.
 
 53
-00:03:12.675 --> 00:03:14.809
+00:03:13.464 --> 00:03:15.732
 Measure quality, and watch it run.
 
 54
-00:03:14.809 --> 00:03:16.755
+00:03:15.732 --> 00:03:17.801
 Turn repeated work into skills.
 
 55
-00:03:16.755 --> 00:03:19.015
+00:03:17.801 --> 00:03:20.202
 Wire it into routines and pipelines.
 
 56
-00:03:19.015 --> 00:03:25.230
-And finally, agents that operate enterprise systems, with real permissions, and a full audit trail.
+00:03:20.202 --> 00:03:26.341
+Then, agents that operate enterprise systems, with real permissions, and a full audit trail.
 
 57
-00:03:25.580 --> 00:03:28.020
-Which gives us rule two, for your agents.
+00:03:26.341 --> 00:03:29.810
+And last, a capstone: one feature, built end to end.
 
 58
-00:03:28.020 --> 00:03:34.628
-Before you build anything bigger than one fix, make it readable: a Markdown twin, an index, and an agents file.
+00:03:30.160 --> 00:03:32.600
+Which gives us rule two, for your agents.
 
 59
-00:03:34.628 --> 00:03:38.259
-Keep the specs as the source, and the checks as the contract.
+00:03:32.600 --> 00:03:39.208
+Before you build anything bigger than one fix, make it readable: a Markdown twin, an index, and an agents file.
 
 60
-00:03:38.259 --> 00:03:43.080
-And send every change through staging, for a person to approve before production.
+00:03:39.208 --> 00:03:42.839
+Keep the specs as the source, and the checks as the contract.
 
 61
-00:03:43.430 --> 00:03:45.953
-Now, your turn. Pick a system you work on.
+00:03:42.839 --> 00:03:47.660
+And send every change through staging, for a person to approve before production.
 
 62
-00:03:45.953 --> 00:03:49.558
-If a brand new agent showed up tomorrow, what could it read?
+00:03:48.020 --> 00:03:50.543
+Now, your turn. Pick a system you work on.
 
 63
-00:03:49.558 --> 00:03:51.480
-And what would it have to guess?
+00:03:50.543 --> 00:03:54.148
+If a brand new agent showed up tomorrow, what could it read?
 
 64
-00:03:51.830 --> 00:03:54.000
+00:03:54.148 --> 00:03:56.070
+And what would it have to guess?
+
+65
+00:03:56.410 --> 00:03:58.580
 See you in lesson three.
