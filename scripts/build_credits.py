@@ -21,6 +21,26 @@ import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+GA_MEASUREMENT_ID = "G-F50XBTM25X"
+ANALYTICS_HEAD = """  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    if (location.pathname.indexOf("/staging/") === 0) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=%s";
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", "%s", {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  })();
+  </script>""" % (GA_MEASUREMENT_ID, GA_MEASUREMENT_ID)
+
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://clarkhuang.github.io"
 REPO = os.environ.get("REPO") or os.environ.get("GITHUB_REPOSITORY") or "clarkhuang/clarkhuang.github.io"
@@ -481,6 +501,7 @@ def render_html(data: dict) -> str:
   <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
   <link rel="alternate" type="application/json" href="/credits.json" title="credits.json">
   <script type="application/ld+json">{{"@context": "https://schema.org", "@type": "WebPage", "name": "Contributor credits — Clark Huang", "description": "People who have contributed to Clark Huang's learning site and the OpenBook Silicon Valley C Players, listed by GitHub handle.", "url": "https://clarkhuang.github.io/credits/", "inLanguage": "en", "isPartOf": {{"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}}, "author": {{"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {{"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/credits/index.md"}}}}</script>
+{ANALYTICS_HEAD}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -532,7 +553,7 @@ def render_html(data: dict) -> str:
       </div>
       <div class="footer-fine">
         <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
         <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
       </div>
     </div>

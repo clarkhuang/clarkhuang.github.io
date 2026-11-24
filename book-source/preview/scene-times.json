@@ -3,78 +3,78 @@
     {
       "id": "01_disclaimer",
       "start": 0.0,
-      "duration": 17.784
+      "duration": 16.848
     },
     {
       "id": "02_title",
-      "start": 17.784,
+      "start": 16.848,
       "duration": 2.232
     },
     {
       "id": "03_middle",
-      "start": 20.016,
-      "duration": 7.104
+      "start": 19.08,
+      "duration": 8.016
     },
     {
       "id": "04_myth",
-      "start": 27.12,
+      "start": 27.096,
       "duration": 8.928
     },
     {
       "id": "05_straight",
-      "start": 36.048,
-      "duration": 10.152
+      "start": 36.024,
+      "duration": 10.776
     },
     {
       "id": "05_outside",
-      "start": 46.2,
-      "duration": 10.464
+      "start": 46.8,
+      "duration": 12.288
     },
     {
       "id": "06_c_player",
-      "start": 56.664,
-      "duration": 11.976
+      "start": 59.088,
+      "duration": 14.424
     },
     {
       "id": "07_platforms",
-      "start": 68.64,
-      "duration": 11.064
+      "start": 73.512,
+      "duration": 11.688
     },
     {
       "id": "08_blocks",
-      "start": 79.704,
+      "start": 85.2,
       "duration": 11.064
     },
     {
       "id": "09_kept_going",
-      "start": 90.768,
-      "duration": 8.928
-    },
-    {
-      "id": "10_turn",
-      "start": 99.696,
-      "duration": 7.728
-    },
-    {
-      "id": "11_thesis",
-      "start": 107.424,
-      "duration": 5.88
-    },
-    {
-      "id": "12_how_to",
-      "start": 113.304,
+      "start": 96.264,
       "duration": 11.376
     },
     {
+      "id": "10_turn",
+      "start": 107.64,
+      "duration": 8.016
+    },
+    {
+      "id": "11_thesis",
+      "start": 115.656,
+      "duration": 12.288
+    },
+    {
+      "id": "12_how_to",
+      "start": 127.944,
+      "duration": 11.688
+    },
+    {
       "id": "13_bookend",
-      "start": 124.68,
-      "duration": 16.248
+      "start": 139.632,
+      "duration": 15.936
     },
     {
       "id": "14_close",
-      "start": 140.928,
-      "duration": 3.744
+      "start": 155.568,
+      "duration": 4.08
     }
   ],
-  "total": 144.672
+  "total": 159.648
 }

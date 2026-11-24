@@ -1,0 +1,92 @@
+[
+  {
+    "id": "01_disclaimer",
+    "title": "Fair warning",
+    "start_seconds": 0.0,
+    "duration_seconds": 17.78
+  },
+  {
+    "id": "02_title",
+    "title": "Silicon Valley C Players",
+    "start_seconds": 17.78,
+    "duration_seconds": 2.23
+  },
+  {
+    "id": "03_middle",
+    "title": "The middle of the book",
+    "start_seconds": 20.02,
+    "duration_seconds": 7.1
+  },
+  {
+    "id": "04_myth",
+    "title": "The A-player myth",
+    "start_seconds": 27.12,
+    "duration_seconds": 8.93
+  },
+  {
+    "id": "05_straight",
+    "title": "The straight-line myth",
+    "start_seconds": 36.05,
+    "duration_seconds": 10.15
+  },
+  {
+    "id": "05_outside",
+    "title": "What people saw",
+    "start_seconds": 46.2,
+    "duration_seconds": 10.46
+  },
+  {
+    "id": "06_c_player",
+    "title": "A C player",
+    "start_seconds": 56.66,
+    "duration_seconds": 11.98
+  },
+  {
+    "id": "07_platforms",
+    "title": "Platforms, not products",
+    "start_seconds": 68.64,
+    "duration_seconds": 11.06
+  },
+  {
+    "id": "08_blocks",
+    "title": "Building blocks",
+    "start_seconds": 79.7,
+    "duration_seconds": 11.06
+  },
+  {
+    "id": "09_kept_going",
+    "title": "I just kept going",
+    "start_seconds": 90.77,
+    "duration_seconds": 8.93
+  },
+  {
+    "id": "10_turn",
+    "title": "The turn",
+    "start_seconds": 99.7,
+    "duration_seconds": 7.73
+  },
+  {
+    "id": "11_thesis",
+    "title": "The thesis",
+    "start_seconds": 107.42,
+    "duration_seconds": 5.88
+  },
+  {
+    "id": "12_how_to",
+    "title": "How to work now",
+    "start_seconds": 113.3,
+    "duration_seconds": 11.38
+  },
+  {
+    "id": "13_bookend",
+    "title": "The story is still being written",
+    "start_seconds": 124.68,
+    "duration_seconds": 16.25
+  },
+  {
+    "id": "14_close",
+    "title": "Coming in 2027",
+    "start_seconds": 140.93,
+    "duration_seconds": 3.74
+  }
+]

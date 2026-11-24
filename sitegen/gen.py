@@ -247,6 +247,32 @@ def page_jsonld(title, desc, canon):
          "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": canon.rsplit("/", 1)[0] + "/index.md"}}
     return '  <script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace("</", "<\\/") + '</script>\n'
 
+
+GA_MEASUREMENT_ID = "G-F50XBTM25X"
+
+def analytics_head():
+    """Production-only GA4 tag. Staging pages live under /staging/ and must not send hits."""
+    mid = GA_MEASUREMENT_ID
+    return (
+        '  <script>\n'
+        '  window.dataLayer = window.dataLayer || [];\n'
+        '  function gtag(){dataLayer.push(arguments);}\n'
+        '  (function(){\n'
+        '    if (location.pathname.indexOf("/staging/") === 0) return;\n'
+        f'    var s = document.createElement("script");\n'
+        '    s.async = true;\n'
+        f'    s.src = "https://www.googletagmanager.com/gtag/js?id={mid}";\n'
+        '    document.head.appendChild(s);\n'
+        '    gtag("js", new Date());\n'
+        f'    gtag("config", "{mid}", {{\n'
+        '      anonymize_ip: true,\n'
+        '      allow_google_signals: false,\n'
+        '      allow_ad_personalization_signals: false\n'
+        '    });\n'
+        '  })();\n'
+        '  </script>\n'
+    )
+
 def page(path, title, desc, body, current="", main_class=""):
     navh = "".join(f'<a href="{h}"{" aria-current=\"page\"" if k==current else ""}>{n}</a>' for n,h,k in nav_items())
     links = "".join(f'<a href="{h}">{n}</a>' for n,h in FOOT_LINKS)
@@ -283,7 +309,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <meta name="twitter:image" content="{share}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 {font_links()}  <link rel="stylesheet" href="/styles.css">
-{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}</head>
+{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}{analytics_head()}</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -305,7 +331,7 @@ def page(path, title, desc, body, current="", main_class=""):
       </div>
       <div class="footer-fine">
         <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
         <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
       </div>
     </div>
@@ -593,15 +619,15 @@ def build():
     print(f"ok: {sum(len(s['lessons']) for s in SERIES.values())} lesson pages in {SITE}" + (f", {len(WARN)} warning(s)" if WARN else ""))
 
 INTRO = [
- "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
- "This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.",
- "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
- "From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.",
- "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
- "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
- "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
- "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
- "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
+ "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
+ "This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.",
+ "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
+ "And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.",
+ "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious.",
+ "The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
+ "It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.",
+ "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure. So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.",
+ "The book begins with a green-screen dream, and it ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
 ]
 BACK = [
  "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
@@ -661,7 +687,16 @@ This log starts with the current public preview on the site. Earlier preview fil
 - **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
 - **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
 - **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
-- **Narration:** The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.
+
+### Mid-book preview re-record (24 November 2026)
+
+- **Edition:** The previous mid-book recording is archived in `book-source/preview/archive/book-v0.2/` (2:24). That recording still said the earlier line, “In my view, AI now writes essentially all of the code.”
+- **Now:** The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”
+- **Also:** The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in `book-source/preview/REVISION-2026-11-24.md`.
+
+## Privacy and analytics
+
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 """.strip()
@@ -687,17 +722,24 @@ def build_editorial_policy():
         <li><strong>Was:</strong> “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”</li>
         <li><strong>Now:</strong> “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”</li>
         <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 4. Clark clarified this is his own workflow, not a measured result or a prediction.</li>
-        <li><strong>Narration:</strong> The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.</li>
       </ul>
+      <h3>Mid-book preview re-record (24 November 2026)</h3>
+      <ul>
+        <li><strong>Edition:</strong> The previous mid-book recording is archived in <code>book-source/preview/archive/book-v0.2/</code> (2:24). That recording still said the earlier line, “In my view, AI now writes essentially all of the code.”</li>
+        <li><strong>Now:</strong> The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”</li>
+        <li><strong>Also:</strong> The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in <code>book-source/preview/REVISION-2026-11-24.md</code>.</li>
+      </ul>
+      <h2 id="analytics">Privacy and analytics</h2>
+      <p>This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under <code>/staging/</code> do not send analytics hits.</p>
       <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
 """
     page("book/editorial-policy/index.html",
          "How this book is edited — Silicon Valley C Players",
-         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources.",
+         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, a per-edition changelog, and a privacy note for Google Analytics 4 on the site.",
          body, "book")
     AF.write_prose_twins(SITE, "book/editorial-policy/index.html", "How this book is edited",
         EDITORIAL_POLICY_MD,
-        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.")
+        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, a per-edition changelog, and a privacy note for Google Analytics 4 on the site.")
 
 
 def build_book():
@@ -774,7 +816,6 @@ def build_book():
             <h2 id="preview-h">Preview</h2>
             <p class="muted" style="font-size:14px;margin:0 0 12px">A mid-book preview, in Clark's voice, about {mmss(dur)}. From Part Three and the turn that follows.</p>
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
-            <p class="muted" id="wording-note">The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.</p>
           </section>
 
           <section class="openbook" aria-labelledby="openbook-h">
@@ -792,7 +833,6 @@ def build_book():
 
           <section class="audiobox" aria-labelledby="listen-h">
             <h2 class="label" id="listen-h">Listen without the pictures</h2>
-            <p class="muted">The wording note on the videobook preview also applies here: the recording has not been re-recorded yet.</p>
             <p class="muted" style="font-size:14px;margin:0">The same narration as an audio track · {mmss(dur)} · your place is bookmarked automatically on this device</p>
             <audio id="book-audio" controls preload="metadata" data-chapter="preview">
               <source src="/audio/book-preview.mp3" type="audio/mpeg">
