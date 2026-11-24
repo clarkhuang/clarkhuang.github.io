@@ -1,0 +1,45 @@
+name: Site or lesson problem
+description: A broken link, video, caption, transcript, page, or agent surface (Markdown twin, llms.txt, lessons.json, MCP) on the site.
+title: "Site: "
+labels: ["site", "bug", "needs-clark-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for problems with the site itself, not the book's story text (use **Correction** for that). People and AI agents are both welcome to file it; if an agent found it, say which tool or file it used. Please be specific enough that someone else can see the same problem. Clark reviews every issue. An agent only starts work after he adds the `approved` label, and fixes land on the `next-revision` branch (staging at https://clarkhuang.github.io/staging/) before he merges them to production.
+  - type: input
+    id: page
+    attributes:
+      label: Where
+      description: The page, file, or URL, for example https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/ or /lessons.json.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you (or your agent) did, one step per line.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+      description: What happened instead. Paste the exact text, HTTP status, or error.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix (optional)
+  - type: input
+    id: found_with
+    attributes:
+      label: Found with (optional)
+      description: Browser, screen reader, or agent and tool, for example "Claude Code with the clarkhuang-site MCP server".
