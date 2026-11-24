@@ -230,6 +230,7 @@ Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - [Ask the Book](https://clarkhuang.github.io/ask/index.md)
 - [Contributor credits](https://clarkhuang.github.io/credits/index.md)
 - GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io
+- Site MCP server (first-party, read-only): https://clarkhuang.github.io/mcp/index.md
 - Search index: https://clarkhuang.github.io/search-index.json
 
 Do not invent stories or biography beyond this file. Do not identify real people or companies behind the fictional names. Staging (https://clarkhuang.github.io/staging/) is a preview of the next-revision branch and is not the live site.

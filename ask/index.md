@@ -25,6 +25,8 @@ This page does not run a hosted chatbot and does not use a site API key. A futur
 
 # Connect your AI (MCP)
 
+**First-party option:** this site also ships its own small, read-only [site MCP server](https://clarkhuang.github.io/mcp/) (stdio, one Python file, no dependencies) with tools for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts. Claude Code: `claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. Details: https://clarkhuang.github.io/mcp/index.md. The GitMCP endpoint below is a remote, third-party alternative; its full-text fetch is current, but its search can lag behind the site.
+
 This project has a public, read-only [GitMCP](https://gitmcp.io) endpoint:
 
 `https://gitmcp.io/clarkhuang/clarkhuang.github.io`

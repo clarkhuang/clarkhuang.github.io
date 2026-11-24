@@ -218,7 +218,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -575,6 +575,7 @@ def build():
     build_book()
     AF.write_llms_full(SITE, SERIES, INTRO, BACK)
     build_involve_pages()
+    build_mcp_page()
     shutil.copy(os.path.join(HERE, "site.css"), f"{SITE}/styles.css")
     os.makedirs(f"{SITE}/assets", exist_ok=True)
     shutil.copy(os.path.join(HERE, "site.js"), f"{SITE}/assets/site.js")
@@ -917,7 +918,7 @@ CONTRIBUTE_PROMPT = """Please help me contribute to Clark Huang's free OpenBook 
 5. Do not invent stories or details. Do not use real names of private people, or real company names, in story submissions. Describe people by role and companies in general terms. Stick to what I actually tell you.
 """
 
-MCP_HTML = '\n      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">\n        <h2 id="mcp-h">Connect your AI (MCP)</h2>\n        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>\n        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>\n        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>\n        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>\n        <h3>Claude Code</h3>\n        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>\n        <h3>Claude Desktop</h3>\n        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>\n        <pre class="config" id="mcp-claude-desktop" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "command": "npx",\n      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>Cursor</h3>\n        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>\n        <pre class="config" id="mcp-cursor" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>ChatGPT and other connectors</h3>\n        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>\n        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>\n        <h3>Example prompts</h3>\n        <ul>\n          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>\n          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>\n          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>\n        </ul>\n        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>\n      </section>\n'
+MCP_HTML = '\n      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">\n        <h2 id="mcp-h">Connect your AI (MCP)</h2>\n        <p><strong>First-party option:</strong> this site also ships its own small, read-only <a href="/mcp/">site MCP server</a> (stdio, one Python file, no dependencies) with tools for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts. Claude Code: <code>claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py</code>. The GitMCP endpoint below is a remote, third-party alternative; its full-text fetch is current, but its search can lag behind the site.</p>\n        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>\n        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>\n        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>\n        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>\n        <h3>Claude Code</h3>\n        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>\n        <h3>Claude Desktop</h3>\n        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>\n        <pre class="config" id="mcp-claude-desktop" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "command": "npx",\n      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>Cursor</h3>\n        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>\n        <pre class="config" id="mcp-cursor" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>ChatGPT and other connectors</h3>\n        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>\n        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>\n        <h3>Example prompts</h3>\n        <ul>\n          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>\n          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>\n          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>\n        </ul>\n        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>\n      </section>\n'
 
 def build_involve_pages():
     prompt = E(CONTRIBUTE_PROMPT.strip())
@@ -972,6 +973,70 @@ def build_involve_pages():
     AF.write_prose_twins(SITE, "copy-this/index.html", "Copy this for yourself",
         "This repository is a GitHub template. Use it to create your own OpenBook or short video learning series: enable GitHub Pages from the main branch, replace the bio, lessons and book preview, and keep the AI-friendly files (llms.txt, AGENTS.md, and the copy-paste prompt). Book text is licensed CC BY-NC-SA 4.0. Do not present Clark's stories as your own.",
         "A plain-language page explaining how to copy this site idea with GitHub's template or fork flow.")
+
+
+MCP_SERVER_URL = BASE + "/mcp/clarkhuang_site_mcp.py"
+MCP_TOOLS = [
+    ("site_info", "What the site is, lesson counts, discovery files, how watched progress is keyed, staging vs production. Call it first."),
+    ("list_lessons", "Every lesson in AI Tips, Software Engineering 101 and 201: id, status, duration, page and Markdown URLs."),
+    ("get_lesson", "One lesson: summary, rule, video, captions and poster URLs, chapters, video version and watched key, and the Markdown twin with the full transcript (captions and AGENTS.md on request)."),
+    ("check_lesson_media", "HTTP status of a lesson's page, twin, AGENTS.md, video, captions and poster; with no id, every lesson's problems."),
+    ("get_page", "Any page as Markdown, for example /, /book/ or /contribute/."),
+    ("search", "Keyword search over the site's own search-index.json, with URLs to cite."),
+    ("how_to_contribute", "Issue templates, labels, branches, checks, and who merges."),
+    ("draft_issue", "A contributor-style issue (steps, expected, actual) with a prefilled GitHub URL and a gh command. It never files anything."),
+]
+
+
+def build_mcp_page():
+    cursor_cfg = '{\n  "mcpServers": {\n    "clarkhuang-site": {\n      "command": "uv",\n      "args": ["run", "' + MCP_SERVER_URL + '"]\n    }\n  }\n}'
+    tools_html = "".join(f"\n        <li><code>{n}</code>: {E(d)}</li>" for n, d in MCP_TOOLS)
+    body = f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/contribute/">Contribute</a> / Site MCP server</p>
+      <h1>Site MCP server</h1>
+      <p class="lede">A small, read-only MCP server for this site, so an AI agent can see what a reader sees (lessons, transcripts, chapters, captions, video status, watched-progress keys) and report problems the way an outside contributor would.</p>
+      <p>It is one Python file with no dependencies. It runs on your computer over stdio and reads only this site's public files: <a href="/lessons.json">lessons.json</a>, <a href="/search-index.json">search-index.json</a>, the Markdown twins, and the WebVTT captions. It cannot change the site, file issues, or merge anything. <code>draft_issue</code> returns text and a prefilled GitHub link for you, or your own GitHub tools, to file. Machine-readable details are in <a href="/.well-known/mcp.json">/.well-known/mcp.json</a>.</p>
+      <h2>Connect it</h2>
+      <h3>Claude Code</h3>
+      <pre class="config" id="site-mcp-claude-code" tabindex="0">claude mcp add clarkhuang-site -- uv run {MCP_SERVER_URL}</pre>
+      <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="site-mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>
+      <h3>Cursor, Claude Desktop, and other MCP clients</h3>
+      <p>Add this to <code>~/.cursor/mcp.json</code>, <code>claude_desktop_config.json</code>, or your client's MCP settings:</p>
+      <pre class="config" id="site-mcp-config" tabindex="0">{E(cursor_cfg)}</pre>
+      <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="site-mcp-config" hidden>Copy config</button><span class="status" role="status" data-status></span></p>
+      <p>No <a href="https://docs.astral.sh/uv/">uv</a>? Download <a href="/mcp/clarkhuang_site_mcp.py">clarkhuang_site_mcp.py</a> and use <code>"command": "python3"</code> with <code>"args": ["/path/to/clarkhuang_site_mcp.py"]</code> (Python 3.9 or later).</p>
+      <p>To look at staging (the <code>next-revision</code> branch) instead of production, set the environment variable <code>CLARKHUANG_SITE=https://clarkhuang.github.io/staging</code>. To test your own change before you open a pull request, set it to the path of your local clone.</p>
+      <h2>Tools</h2>
+      <ul>{tools_html}
+      </ul>
+      <h2>Contribute like an outside contributor</h2>
+      <ol class="steps-plain">
+        <li>Call <code>site_info</code>, then <code>list_lessons</code> and <code>get_lesson</code> to read what you need.</li>
+        <li>Call <code>check_lesson_media</code> and read pages with <code>get_page</code>. Compare what you find with what the docs promise.</li>
+        <li>Found a real problem? Call <code>draft_issue</code>, check the draft for anything private, then file it with the <em>Site or lesson problem</em> form.</li>
+        <li>To fix it, branch from <code>next-revision</code>, keep each page's <code>index.md</code>, <code>AGENTS.md</code> and <code>llms.txt</code> in sync, run <code>python3 sitegen/check_site.py .</code>, and open a pull request into <code>next-revision</code> with <code>Fixes #N</code>. Only Clark merges to production.</li>
+      </ol>
+      <p class="muted">There is also a third-party, remote option: <a href="/contribute/#mcp">GitMCP</a>. Its full-text fetch is current, but its search can lag behind the site, and it has no lesson or issue tools.</p>
+"""
+    page("mcp/index.html", "Site MCP server — Clark Huang",
+         "A small read-only MCP server for clarkhuang.github.io: lessons, transcripts, captions, media checks, search, and contributor-style issue drafts.",
+         body, "contribute")
+    tools_md = "\n".join(f"- `{n}`: {d}" for n, d in MCP_TOOLS)
+    AF.write_prose_twins(SITE, "mcp/index.html", "Site MCP server",
+        "A small, read-only MCP server for this site. It is one Python file with no dependencies (Python 3.9+). It runs locally over stdio and reads only the site's public files: lessons.json, search-index.json, the Markdown twins and the WebVTT captions. It cannot change the site, file issues or merge anything.\n\n"
+        "## Connect it\n\n"
+        f"- Claude Code: `claude mcp add clarkhuang-site -- uv run {MCP_SERVER_URL}`\n"
+        f"- Cursor, Claude Desktop and other MCP clients:\n\n```json\n{cursor_cfg}\n```\n\n"
+        f"- Without uv: download {MCP_SERVER_URL} and run it with `python3`.\n"
+        "- Staging instead of production: set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging`. A local clone: set it to the folder path.\n"
+        f"- Machine-readable: {BASE}/.well-known/mcp.json\n\n"
+        "## Tools\n\n" + tools_md + "\n\n"
+        "## Contribute like an outside contributor\n\n"
+        "1. Call `site_info`, then `list_lessons` and `get_lesson`.\n"
+        "2. Call `check_lesson_media` and read pages with `get_page`; compare what you find with what the docs promise.\n"
+        "3. Found a real problem? Call `draft_issue`, check the draft for anything private, then file it with the Site or lesson problem form: https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml\n"
+        "4. To fix it, branch from `next-revision`, keep `index.md`, `AGENTS.md` and `llms.txt` in sync, run `python3 sitegen/check_site.py .`, and open a pull request into `next-revision` with `Fixes #N`. Only Clark merges to production.\n\n"
+        f"A third-party remote option is GitMCP ({BASE}/contribute/#mcp). Its fetch is current, but its search can lag behind the site, and it has no lesson or issue tools.",
+        "How to connect an AI agent to this site's read-only MCP server, and what its tools do.")
 
 
 if __name__ == "__main__":

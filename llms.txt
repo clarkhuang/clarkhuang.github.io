@@ -13,6 +13,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [llms-full.txt](https://clarkhuang.github.io/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog
 - [lessons.json](https://clarkhuang.github.io/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations
 - [redirects.json](https://clarkhuang.github.io/redirects.json): old lesson page and media addresses and where they moved
+- [Site MCP server](https://clarkhuang.github.io/mcp/index.md): first-party, read-only MCP server (stdio) for agents: lessons, transcripts, captions, media checks, search, issue drafts. Manifest: https://clarkhuang.github.io/.well-known/mcp.json
 - [book.json](https://clarkhuang.github.io/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters
 - [REBUILD.md](https://clarkhuang.github.io/REBUILD.md): how to rebuild production and staging
 

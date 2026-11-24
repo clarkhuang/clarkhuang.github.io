@@ -6,6 +6,7 @@ This folder is the public “Ask the Book” page for Clark Huang's learning sit
 - Markdown: https://clarkhuang.github.io/ask/index.md
 - Search index: https://clarkhuang.github.io/search-index.json
 - Full site text: https://clarkhuang.github.io/llms-full.txt
+- Site MCP server (first-party, read-only): https://clarkhuang.github.io/mcp/index.md
 - GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io
 - Site index: https://clarkhuang.github.io/llms.txt
 - Site agents: https://clarkhuang.github.io/AGENTS.md
