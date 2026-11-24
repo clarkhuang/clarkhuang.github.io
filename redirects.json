@@ -1,0 +1,130 @@
+{
+ "site": "https://clarkhuang.github.io",
+ "note": "Addresses that moved. GitHub Pages cannot send HTTP redirects, so old page addresses are small redirect pages (meta refresh plus a Markdown twin), and old media addresses are redirected by /404.html in a browser. Agents: if a /videos/ or /software-engineering-201/ URL returns 404 or a 'moved' page, look it up here. The media files were re-rendered when the lessons were renumbered, so the new file is the current version of that lesson, not a byte-for-byte copy.",
+ "media": [
+  {
+   "from": "/videos/se201-01-build-the-whole-system-ai-native.mp4",
+   "to": "/videos/se201-02-build-the-whole-system-ai-native.mp4",
+   "kind": "video",
+   "lesson": "se201/02"
+  },
+  {
+   "from": "/videos/se201-01-build-the-whole-system-ai-native.vtt",
+   "to": "/videos/se201-02-build-the-whole-system-ai-native.vtt",
+   "kind": "captions",
+   "lesson": "se201/02"
+  },
+  {
+   "from": "/videos/posters/se201-01-build-the-whole-system-ai-native.jpg",
+   "to": "/videos/posters/se201-02-build-the-whole-system-ai-native.jpg",
+   "kind": "poster",
+   "lesson": "se201/02"
+  },
+  {
+   "from": "/videos/se201-02-decompose-the-system-into-a-graph.mp4",
+   "to": "/videos/se201-03-decompose-the-system-into-a-graph.mp4",
+   "kind": "video",
+   "lesson": "se201/03"
+  },
+  {
+   "from": "/videos/se201-02-decompose-the-system-into-a-graph.vtt",
+   "to": "/videos/se201-03-decompose-the-system-into-a-graph.vtt",
+   "kind": "captions",
+   "lesson": "se201/03"
+  },
+  {
+   "from": "/videos/posters/se201-02-decompose-the-system-into-a-graph.jpg",
+   "to": "/videos/posters/se201-03-decompose-the-system-into-a-graph.jpg",
+   "kind": "poster",
+   "lesson": "se201/03"
+  },
+  {
+   "from": "/videos/se201-03-parallel-agents-one-integration.mp4",
+   "to": "/videos/se201-04-parallel-agents-one-integration.mp4",
+   "kind": "video",
+   "lesson": "se201/04"
+  },
+  {
+   "from": "/videos/se201-03-parallel-agents-one-integration.vtt",
+   "to": "/videos/se201-04-parallel-agents-one-integration.vtt",
+   "kind": "captions",
+   "lesson": "se201/04"
+  },
+  {
+   "from": "/videos/posters/se201-03-parallel-agents-one-integration.jpg",
+   "to": "/videos/posters/se201-04-parallel-agents-one-integration.jpg",
+   "kind": "poster",
+   "lesson": "se201/04"
+  }
+ ],
+ "pages": [
+  {
+   "from": "/software-engineering-201/01-build-the-whole-system-ai-native/",
+   "to": "/software-engineering-201/02-build-the-whole-system-ai-native/"
+  },
+  {
+   "from": "/software-engineering-201/01-from-loop-to-graph/",
+   "to": "/software-engineering-201/03-decompose-the-system-into-a-graph/"
+  },
+  {
+   "from": "/software-engineering-201/02-decompose-the-system-into-a-graph/",
+   "to": "/software-engineering-201/03-decompose-the-system-into-a-graph/"
+  },
+  {
+   "from": "/software-engineering-201/02-find-the-real-dependencies/",
+   "to": "/software-engineering-201/03-decompose-the-system-into-a-graph/"
+  },
+  {
+   "from": "/software-engineering-201/02-from-loop-to-graph/",
+   "to": "/software-engineering-201/03-decompose-the-system-into-a-graph/"
+  },
+  {
+   "from": "/software-engineering-201/03-parallel-agents-one-integration/",
+   "to": "/software-engineering-201/04-parallel-agents-one-integration/"
+  },
+  {
+   "from": "/software-engineering-201/03-run-loops-in-parallel/",
+   "to": "/software-engineering-201/04-parallel-agents-one-integration/"
+  },
+  {
+   "from": "/software-engineering-201/04-governance-where-people-decide/",
+   "to": "/software-engineering-201/05-governance-where-people-decide/"
+  },
+  {
+   "from": "/software-engineering-201/04-where-a-person-decides/",
+   "to": "/software-engineering-201/05-governance-where-people-decide/"
+  },
+  {
+   "from": "/software-engineering-201/05-feedback-that-improves-every-run/",
+   "to": "/software-engineering-201/06-quality-feedback-and-observability/"
+  },
+  {
+   "from": "/software-engineering-201/05-quality-feedback-and-observability/",
+   "to": "/software-engineering-201/06-quality-feedback-and-observability/"
+  },
+  {
+   "from": "/software-engineering-201/06-skills-as-building-blocks/",
+   "to": "/software-engineering-201/07-skills-as-building-blocks/"
+  },
+  {
+   "from": "/software-engineering-201/06-turn-a-loop-into-a-skill/",
+   "to": "/software-engineering-201/07-skills-as-building-blocks/"
+  },
+  {
+   "from": "/software-engineering-201/07-routines-and-pipelines/",
+   "to": "/software-engineering-201/08-routines-pipelines-and-integration/"
+  },
+  {
+   "from": "/software-engineering-201/07-routines-pipelines-and-integration/",
+   "to": "/software-engineering-201/08-routines-pipelines-and-integration/"
+  },
+  {
+   "from": "/software-engineering-201/08-agents-that-operate-enterprise-systems/",
+   "to": "/software-engineering-201/09-agents-that-operate-enterprise-systems/"
+  },
+  {
+   "from": "/software-engineering-201/08-agents-that-run-the-system/",
+   "to": "/software-engineering-201/09-agents-that-operate-enterprise-systems/"
+  }
+ ]
+}

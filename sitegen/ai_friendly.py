@@ -503,6 +503,7 @@ Start here:
 
 - Site index for language models: https://clarkhuang.github.io/llms.txt
 - Machine-readable lesson catalog: https://clarkhuang.github.io/lessons.json
+- Moved addresses (old lesson pages and old video, caption and poster files): https://clarkhuang.github.io/redirects.json
 - OpenBook preview catalog: https://clarkhuang.github.io/book.json
 - Fuller site text: https://clarkhuang.github.io/llms-full.txt
 - How to rebuild production and staging: https://clarkhuang.github.io/REBUILD.md
@@ -615,6 +616,7 @@ def write_llms_txt(site, series, extras=None):
         f"- [AGENTS.md]({BASE}/AGENTS.md): how to navigate and what not to invent",
         f"- [llms-full.txt]({BASE}/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog",
         f"- [lessons.json]({BASE}/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations",
+        f"- [redirects.json]({BASE}/redirects.json): old lesson page and media addresses and where they moved",
         f"- [book.json]({BASE}/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters",
         f"- [REBUILD.md]({BASE}/REBUILD.md): how to rebuild production and staging",
         "",

@@ -12,6 +12,7 @@ Start here:
 
 - Site index for language models: https://clarkhuang.github.io/llms.txt
 - Machine-readable lesson catalog: https://clarkhuang.github.io/lessons.json
+- Moved addresses (old lesson pages and old video, caption and poster files): https://clarkhuang.github.io/redirects.json
 - OpenBook preview catalog: https://clarkhuang.github.io/book.json
 - Fuller site text: https://clarkhuang.github.io/llms-full.txt
 - How to rebuild production and staging: https://clarkhuang.github.io/REBUILD.md
