@@ -4,7 +4,7 @@ Ideas and chapter work that are not in a current draft yet. Items stay here unti
 
 ## From [issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80)
 
-Points 4 and 7 from that issue are handled separately: defining the scope of “AI writes essentially all the code,” and a public editorial policy for claims, sources, and conflicting recollections.
+Point 7 added the public editorial policy. Point 4 is now worded as Clark's own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. The preview narration and captions still use the earlier line; re-recording is a follow-up.
 
 The items below are from the same issue and are not in a chapter yet.
 

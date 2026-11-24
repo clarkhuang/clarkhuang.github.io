@@ -393,6 +393,8 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         bits += [
             "## Videobook preview",
             "",
+            "The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.",
+            "",
             f"- {video_meta.get('title') or 'Preview'}: {video_meta['url']}"
             + (f" ({video_meta['duration_seconds']}s)" if video_meta.get("duration_seconds") else ""),
             f"- Captions (VTT): {video_meta.get('captions_url') or (BASE + '/videos/book-preview.vtt')}",
@@ -422,7 +424,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         "",
         "## How to cite this preview",
         "",
-        "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is Clark’s view, as written. Do not identify real people or companies behind the fictional names.",
+        "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.",
         "",
         "## For agents",
         "",
@@ -461,7 +463,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
-        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The 100%-of-code claim is Clark’s view, as written. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
+        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
         "",
         md_prompt_blurb(path),
         "",

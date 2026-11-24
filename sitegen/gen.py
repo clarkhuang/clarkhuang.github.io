@@ -599,13 +599,13 @@ INTRO = [
  "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
  "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
  "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
- "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
+ "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
  "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
 ]
 BACK = [
  "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
  "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
- "The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.",
+ "The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.",
  "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.",
 ]
 
@@ -657,7 +657,10 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ### Current public preview
 
-No claim or source changes have been logged yet. The log begins here.
+- **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
+- **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
+- **Narration:** The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 """.strip()
@@ -679,7 +682,12 @@ def build_editorial_policy():
       <h2 id="changelog">Claims and sources changelog</h2>
       <p>This log starts with the current public preview on the site. Earlier preview files are kept in the repository under <code>book-source/preview/archive/</code>. When a later edition changes a published claim or source, it will be listed here.</p>
       <h3>Current public preview</h3>
-      <p>No claim or source changes have been logged yet. The log begins here.</p>
+            <ul>
+        <li><strong>Was:</strong> “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”</li>
+        <li><strong>Now:</strong> “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”</li>
+        <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 4. Clark clarified this is his own workflow, not a measured result or a prediction.</li>
+        <li><strong>Narration:</strong> The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.</li>
+      </ul>
       <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
 """
     page("book/editorial-policy/index.html",
@@ -765,6 +773,7 @@ def build_book():
             <h2 id="preview-h">Preview</h2>
             <p class="muted" style="font-size:14px;margin:0 0 12px">A mid-book preview, in Clark's voice, about {mmss(dur)}. From Part Three and the turn that follows.</p>
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
+            <p class="muted" id="wording-note">The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.</p>
           </section>
 
           <section class="openbook" aria-labelledby="openbook-h">
@@ -782,6 +791,7 @@ def build_book():
 
           <section class="audiobox" aria-labelledby="listen-h">
             <h2 class="label" id="listen-h">Listen without the pictures</h2>
+            <p class="muted">The wording note on the videobook preview also applies here: the recording has not been re-recorded yet.</p>
             <p class="muted" style="font-size:14px;margin:0">The same narration as an audio track · {mmss(dur)} · your place is bookmarked automatically on this device</p>
             <audio id="book-audio" controls preload="metadata" data-chapter="preview">
               <source src="/audio/book-preview.mp3" type="audio/mpeg">
