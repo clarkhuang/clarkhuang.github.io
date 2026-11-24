@@ -17,6 +17,7 @@ Use one of these templates (also described in [AGENTS.md](https://clarkhuang.git
 | **Correction** | An edit to existing book text, or your side of a story already in the book | [Correction](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml) |
 | **Feature / new story** | A new story, a story Clark may have forgotten, or a new chapter idea | [Share a story](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml) |
 | **Refactor** | Cleanup or an improvement that does not change the facts of a story | [Refactor](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=refactor.yml) |
+| **Site or lesson problem** | A broken link, video, caption, transcript, page, or agent surface (Markdown twin, `llms.txt`, `lessons.json`, MCP) | [Site or lesson problem](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml) |
 | **Chapter task** | Tracking work on a chapter (mostly for maintainers) | [Chapter task](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=chapter.yml) |
 | **Takedown / privacy** | Something identifies you, or private/confidential info is here | [Takedown request](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=takedown-request.yml) — see [TAKEDOWN.md](TAKEDOWN.md) |
 

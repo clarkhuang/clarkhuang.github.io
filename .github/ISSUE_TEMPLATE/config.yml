@@ -5,7 +5,7 @@ contact_links:
     about: The public learning site and book teaser.
   - name: How to contribute
     url: https://clarkhuang.github.io/AGENTS.md
-    about: How to file a correction, a new story, or a refactor.
+    about: How to file a correction, a new story, a refactor, or a site problem (for people and AI agents).
   - name: Privacy, identification, or takedown
     url: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md
     about: Something identifies you or includes private or confidential information.

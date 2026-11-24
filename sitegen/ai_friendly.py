@@ -549,8 +549,9 @@ If you are an AI agent helping a reader contribute, point them to the right issu
 | Correction | Edits to existing book text, or your side of a story already in the book | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml |
 | Feature / new story | A new story, a story Clark may have forgotten, or a new chapter idea | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml |
 | Refactor | Cleanup or an improvement that does not change the facts | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=refactor.yml |
+| Site or lesson problem | A broken link, video, caption, transcript, page, or agent surface (Markdown twin, llms.txt, lessons.json, MCP); steps to reproduce, expected vs actual | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml |
 
-Labels: `correction`, `feature` / `new-story`, and `refactor`. New stories also get `contributor-story` and `story-seed`.
+Labels: `correction`, `feature` / `new-story`, `refactor`, and `site` + `bug` for site problems. New stories also get `contributor-story` and `story-seed`.
 
 ### What makes a good issue
 
