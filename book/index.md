@@ -74,6 +74,8 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 How conflicting recollections are handled, and how claims and sources are tracked across editions: [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/index.md).
 
+People whose contributions have landed, including the feedback that led to this editorial policy, are listed on [Contributors](https://clarkhuang.github.io/contributors/index.md).
+
 ## Story arc and chapters
 
 The working story arc and chapter list: [https://clarkhuang.github.io/book/story-arc/](https://clarkhuang.github.io/book/story-arc/index.md). Machine-readable: [https://clarkhuang.github.io/book-source/outline.json](https://clarkhuang.github.io/book-source/outline.json). The outline will change.

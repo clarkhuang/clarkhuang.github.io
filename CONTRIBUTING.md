@@ -37,7 +37,7 @@ Most book contributions are fictionalized, and you are not named as a character.
 
 1. You file an issue (or open a pull request). It is labeled `needs-clark-review`.
 2. Clark reviews it. If he wants it built, he adds the `approved` label.
-3. An agent (Claude via GitHub Actions, or Grok for narration and video) fictionalizes and implements the change on a branch and opens a pull request against the `next-revision` branch — never against `main`, and never a direct push to `main`.
+3. An agent (Claude via GitHub Actions, or Grok for narration and video) fictionalizes and implements the change on a branch and opens a pull request against the `next-revision` branch — never against `main`, and never a direct push to `main`. If the work is an outside contribution that is landing on the site, that same pull request must add the credit on the [Contributors](https://clarkhuang.github.io/contributors/) page (see [Credit](#5-credit) below).
 4. Clark reviews the pull request (including the pre-publication checklist) and merges it into `next-revision`. Staging at https://clarkhuang.github.io/staging/ updates automatically.
 5. Only Clark merges `next-revision` into `main`. The live site then rebuilds from `main` via GitHub Pages, after the QA in [REBUILD.md](REBUILD.md). Previous editions stay available as tagged GitHub Releases. See [book-source/VERSIONING.md](book-source/VERSIONING.md).
 
@@ -77,7 +77,9 @@ You license your contribution under the project's licenses — book text under [
 
 ### 5. Credit
 
-If you'd like credit, tell us the name or handle to use in the **Contributors** list. Credit there is separate from the story: you won't be named *as a character*.
+If you'd like credit, tell us the GitHub handle to use on the [Contributors](https://clarkhuang.github.io/contributors/) page (or say you prefer not to be credited). Credit there is separate from the story: you won't be named *as a character*. The public list uses your GitHub display name when your profile has one, otherwise your handle. A name is never invented.
+
+**Any outside contribution that lands on the site must be credited on the Contributors page in the same pull request.** Add an entry to [`sitegen/landed-contributions.json`](sitegen/landed-contributions.json) describing what landed, with links to the issue and/or pull request, and run `python3 scripts/build_credits.py`. Do not credit input that did not land. Use only the public GitHub display name and handle; do not add other personal details. Honor a “don't credit me” request.
 
 ### 6. Clark's editorial discretion
 

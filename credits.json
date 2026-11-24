@@ -1,9 +1,15 @@
 {
   "site": "https://clarkhuang.github.io",
   "repository": "https://github.com/clarkhuang/clarkhuang.github.io",
-  "generated": "2026-11-22 9:42 AM ET (America/Detroit)",
+  "canonical_page": "https://clarkhuang.github.io/contributors/",
+  "canonical_json": "https://clarkhuang.github.io/contributors.json",
+  "aliases": [
+    "https://clarkhuang.github.io/credits/",
+    "https://clarkhuang.github.io/credits.json"
+  ],
+  "generated": "2026-11-24 4:59 PM ET (America/New_York)",
   "generated_by": "scripts/build_credits.py",
-  "note": "Credits are generated from GitHub issues and pull requests. People are listed by GitHub handle only. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges.",
+  "note": "Credits list outside contributions that actually landed on the site. People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle. A name is never invented. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges. Filing an issue does not, by itself, add a credit.",
   "author": {
     "login": "clarkhuang",
     "url": "https://github.com/clarkhuang"
@@ -16,6 +22,45 @@
         "author"
       ],
       "contributions": {}
+    },
+    {
+      "login": "himanshu112-wq",
+      "url": "https://github.com/himanshu112-wq",
+      "roles": [
+        "feedback"
+      ],
+      "contributions": {
+        "feedback": [
+          {
+            "number": 80,
+            "title": "OpenBook preview feedback and a proposed Home Staff Ledger story",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/issues/80",
+            "role": "author",
+            "summary": "Feedback in issue #80 that led to the reworded “AI writes essentially all the code” claim (point 4) and the book's public editorial policy (point 7)."
+          },
+          {
+            "number": 96,
+            "title": "Pull request #96",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/96",
+            "role": "landed-in"
+          },
+          {
+            "number": 104,
+            "title": "Pull request #104",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/104",
+            "role": "landed-in"
+          },
+          {
+            "number": 106,
+            "title": "Release: editorial policy, story arc, AI-claim wording, and agent dogfooding fixes",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/106",
+            "role": "landed-in"
+          }
+        ]
+      },
+      "summaries": [
+        "Feedback in issue #80 that led to the reworded “AI writes essentially all the code” claim (point 4) and the book's public editorial policy (point 7)."
+      ]
     }
   ]
 }
