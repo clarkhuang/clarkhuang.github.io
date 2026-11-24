@@ -8,6 +8,8 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 You can contribute to this OpenBook and the learning series by pointing any AI chat tool at the site. Copy the prompt on this page, add what you know, and have the tool draft a GitHub issue for a correction, a new story, or a refactor. If you would rather skip around GitHub, open the share-a-story form and ask your AI to help you fill it in. Do not invent details or use real names of private people or real company names in story submissions. Only Clark Huang approves work and publishes it.
 
+If your contribution lands on the site, you will be credited on the [Contributors](https://clarkhuang.github.io/contributors/index.md) page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle.
+
 ## For agents
 
 - This page: https://clarkhuang.github.io/contribute/index.md
