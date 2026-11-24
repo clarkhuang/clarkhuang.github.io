@@ -89,14 +89,15 @@ sc("10_enterprise", "Now scale that up. An enterprise system isn't one repo. It'
              "right_header": "KNOWLEDGE IN THE SYSTEM", "actually": "Agents read and check.\nPeople decide.", "right_tone": "accent"},
    "AT ENTERPRISE SCALE")
 
-PATH = ["Build the whole system AI-native", "Decompose it into a graph", "Parallel agents, one integration",
+PATH = ["Build the whole system, AI-native", "Decompose the system into a graph", "Parallel agents, one integration",
         "Governance: where people decide", "Quality, feedback, observability", "Skills as building blocks",
-        "Routines, pipelines, integration", "Agents that operate\nenterprise systems"]
+        "Routines, pipelines, integration", "Agents that operate\nenterprise systems", "Capstone: one feature,\nend to end"]
 sc("11_path", "That's the path for this series. Today: build the whole system, A.I. native. Then, decompose it into a graph. "
    "Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. "
-   "Turn repeated work into skills. Wire it into routines and pipelines. [pause] "
-   "And finally, agents that operate enterprise systems, with real permissions, and a full audit trail.",
-   "recap", {"label": "SOFTWARE ENGINEERING 201  \u00b7  FROM LOOP TO ENTERPRISE SYSTEMS", "rows": ["Four eras of building systems"] + PATH, "upto": 9, "new_from": 1},
+   "Turn repeated work into skills. Wire it into routines and pipelines. "
+   "Then, agents that operate enterprise systems, with real permissions, and a full audit trail. [pause] "
+   "And last, a capstone: one feature, built end to end.",
+   "recap", {"label": "SOFTWARE ENGINEERING 201  \u00b7  FROM LOOP TO ENTERPRISE SYSTEMS", "rows": ["Four eras of building systems"] + PATH, "upto": 10, "new_from": 1},
    "THE PATH")
 
 sc("12_rule", "Which gives us rule two, for your agents. Before you build anything bigger than one fix, make it readable: a Markdown twin, an index, and an agents file. "

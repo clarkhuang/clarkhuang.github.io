@@ -37,7 +37,7 @@ The capstone builds one small feature of a made-up subscription-billing system e
 
 ## The rule
 
-Before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.
+Before you build a whole feature, write the plan in the repo, and show a person. What right means, as checks. The graph, and the shared contract. Who decides. What's already a skill. What runs on its own, and under whose identity. A blank line? Stop, and ask. In full: before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.
 
 This rule is written so an AI agent can follow it as a standing instruction.
 

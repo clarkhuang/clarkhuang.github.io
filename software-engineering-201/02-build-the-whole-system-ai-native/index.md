@@ -13,7 +13,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-02-build-the-whole-system-ai-native.mp4
-- Duration: 3:54 (234.4 seconds)
+- Duration: 3:58 (238.9 seconds)
 - Poster: https://clarkhuang.github.io/videos/posters/se201-02-build-the-whole-system-ai-native.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-02-build-the-whole-system-ai-native.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-02
@@ -26,8 +26,8 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - [1:38] A worked example
 - [2:18] At enterprise scale
 - [3:00] The path
-- [3:25] The rule
-- [3:43] Your turn
+- [3:30] The rule
+- [3:48] Your turn
 
 ## The lesson
 
@@ -75,7 +75,7 @@ Now scale that up. An enterprise system isn't one repo. It's dozens of services,
 
 ### The path
 
-That's the path for this series. Today: build the whole system, AI native. Then, decompose it into a graph. Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. Turn repeated work into skills. Wire it into routines and pipelines. And finally, agents that operate enterprise systems, with real permissions, and a full audit trail.
+That's the path for this series. Today: build the whole system, AI native. Then, decompose it into a graph. Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. Turn repeated work into skills. Wire it into routines and pipelines. Then, agents that operate enterprise systems, with real permissions, and a full audit trail. And last, a capstone: one feature, built end to end.
 
 ### The rule
 

@@ -10,7 +10,9 @@ Environment:
 Lesson fields in content.json: n, slug, id, title, video (file name in videos/ or null for an outline page),
 summary, rule, log + script (render log and scene script, used for chapters), and optionally
 "chapters": [[seconds, "Title"], ...] (used when log/script are missing or unreadable),
-"duration": seconds (used when ffprobe cannot read the video) and "poster" (file name in videos/posters/).
+"duration": seconds (used when ffprobe cannot read the video), "poster" (file name in videos/posters/) and
+"notes": ["...", ...] (plain-text notes shown under the rule as "What the video simplifies", on the page and in its
+Markdown twin).
 """
 import json, os, re, html, subprocess, shutil, sys
 import ai_friendly as AF
@@ -397,6 +399,10 @@ def build():
                     rid = "rule-" + re.sub(r"[^a-z0-9]+", "-", l["id"].lower())
                     rule = (f'<div class="rulecard" data-status-scope><p class="label">The rule · for your agents</p><p id="{rid}">{E(l["rule"])}</p>'
                             f'<p class="tools"><button type="button" class="btn ghost" data-copy="{rid}" hidden>Copy rule</button><span class="status" role="status" data-status></span></p></div>')
+                notes = ""
+                if l.get("notes"):
+                    notes = (f'\n          <h2 class="label notes-label">{E(AF.NOTES_TITLE)}</h2>\n          <ul class="notes">'
+                             + "".join(f"<li>{E(n)}</li>" for n in l["notes"]) + "</ul>")
                 cap_track = (f'\n        <track kind="captions" srclang="en" label="English" src="/videos/{l["captions"]}" default>' if l.get("captions") else "")
                 cap_meta = (f'<span aria-hidden="true">·</span><a href="/videos/{l["captions"]}">Captions (VTT)</a>' if l.get("captions") else "")
                 cap_meta += (f'<span aria-hidden="true">·</span><a href="{E(l["source_url"])}">How it was built</a>' if l.get("source_url") else "")
@@ -414,7 +420,7 @@ def build():
         <section>
           <h2 class="label">The lesson</h2>
           <p>{E(l['summary'])}</p>
-          {rule}{('<p class="muted credit">' + l['credit_html'] + '</p>') if l.get('credit_html') else ''}
+          {rule}{('<p class="muted credit">' + l['credit_html'] + '</p>') if l.get('credit_html') else ''}{notes}
         </section>
         <aside>{chh}</aside>
       </div>

@@ -1,4 +1,4 @@
-15 scenes, 234.35s, 7030 frames
+15 scenes, 238.93s, 7167 frames
   01_title                 0.50s  + 9.02s
   02_quiz                  9.52s  +24.26s
   03_shift                33.78s  +17.85s
@@ -10,57 +10,57 @@
   09a_cook               138.47s  + 8.40s
   09b_kitchen            146.86s  +14.80s
   10_enterprise          161.67s  +18.45s
-  11_path                180.12s  +25.46s
-  12_rule                205.58s  +17.85s
-  13_ask                 223.43s  + 8.40s
-  14_close               231.83s  + 2.52s
-    frame 0/7030
-    frame 150/7030
-    frame 300/7030
-    frame 450/7030
-    frame 600/7030
-    frame 750/7030
-    frame 900/7030
-    frame 1050/7030
-    frame 1200/7030
-    frame 1350/7030
-    frame 1500/7030
-    frame 1650/7030
-    frame 1800/7030
-    frame 1950/7030
-    frame 2100/7030
-    frame 2250/7030
-    frame 2400/7030
-    frame 2550/7030
-    frame 2700/7030
-    frame 2850/7030
-    frame 3000/7030
-    frame 3150/7030
-    frame 3300/7030
-    frame 3450/7030
-    frame 3600/7030
-    frame 3750/7030
-    frame 3900/7030
-    frame 4050/7030
-    frame 4200/7030
-    frame 4350/7030
-    frame 4500/7030
-    frame 4650/7030
-    frame 4800/7030
-    frame 4950/7030
-    frame 5100/7030
-    frame 5250/7030
-    frame 5400/7030
-    frame 5550/7030
-    frame 5700/7030
-    frame 5850/7030
-    frame 6000/7030
-    frame 6150/7030
-    frame 6300/7030
-    frame 6450/7030
-    frame 6600/7030
-    frame 6750/7030
-    frame 6900/7030
+  11_path                180.12s  +30.04s
+  12_rule                210.16s  +17.85s
+  13_ask                 228.02s  + 8.40s
+  14_close               236.41s  + 2.52s
+    frame 0/7167
+    frame 150/7167
+    frame 300/7167
+    frame 450/7167
+    frame 600/7167
+    frame 750/7167
+    frame 900/7167
+    frame 1050/7167
+    frame 1200/7167
+    frame 1350/7167
+    frame 1500/7167
+    frame 1650/7167
+    frame 1800/7167
+    frame 1950/7167
+    frame 2100/7167
+    frame 2250/7167
+    frame 2400/7167
+    frame 2550/7167
+    frame 2700/7167
+    frame 2850/7167
+    frame 3000/7167
+    frame 3150/7167
+    frame 3300/7167
+    frame 3450/7167
+    frame 3600/7167
+    frame 3750/7167
+    frame 3900/7167
+    frame 4050/7167
+    frame 4200/7167
+    frame 4350/7167
+    frame 4500/7167
+    frame 4650/7167
+    frame 4800/7167
+    frame 4950/7167
+    frame 5100/7167
+    frame 5250/7167
+    frame 5400/7167
+    frame 5550/7167
+    frame 5700/7167
+    frame 5850/7167
+    frame 6000/7167
+    frame 6150/7167
+    frame 6300/7167
+    frame 6450/7167
+    frame 6600/7167
+    frame 6750/7167
+    frame 6900/7167
+    frame 7050/7167
 
 -> /workspace/legacy/build/se101/02-build-the-whole-system-ai-native/SE201_02_Build-The-Whole-System-AI-Native_public.mp4
-EXIT 0
