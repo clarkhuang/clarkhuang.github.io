@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/AGENTS.md](https://clarkhuang.github.io/ai-tips/04-know-what-the-bot-can-actually-reach/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/ai-tips-04-know-what-the-bot-can-actually-reach.mp4
 - Duration: 2:05 (125.3 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/ai-tips-04-know-what-the-bot-can-actually-reach.jpg
 
 ## Chapters

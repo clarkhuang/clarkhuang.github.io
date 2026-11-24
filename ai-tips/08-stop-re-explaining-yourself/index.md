@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/AGENTS.md](https://clarkhuang.github.io/ai-tips/08-stop-re-explaining-yourself/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/ai-tips-08-stop-re-explaining-yourself.mp4
 - Duration: 2:18 (138.1 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/ai-tips-08-stop-re-explaining-yourself.jpg
 
 ## Chapters

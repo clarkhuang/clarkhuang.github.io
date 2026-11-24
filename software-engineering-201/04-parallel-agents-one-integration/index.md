@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/04-parallel-agents-one-integration/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/04-parallel-agents-one-integration/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-04-parallel-agents-one-integration.mp4
 - Duration: 3:42 (222.5 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-04-parallel-agents-one-integration.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-04-parallel-agents-one-integration.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-04
@@ -41,7 +42,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. Lesson four. Parallel agents, one integration.
+Software engineering two oh one. Lesson four. Parallel agents, one integration.
 
 ### The question
 
@@ -55,7 +56,7 @@ Picture a team that splits one feature across three agents. One builds the scree
 
 Parallel work is only fast if it comes back together cleanly. So plan the integration first. Before any agent starts.
 
-Three things. First, a shared contract. Write down what crosses between the parts: the interfaces, the formats, the names, and who owns which files. At enterprise scale, that's an API, or a schema. It can be one page. But it has to exist before the work starts. And when it has to change, change it in one place, where every agent sees it.
+Three things. First, a shared contract. Write down what crosses between the parts: the interfaces, the formats, the names, and who owns which files. At enterprise scale, that's an A.P.I., or a schema. It can be one page. But it has to exist before the work starts. And when it has to change, change it in one place, where every agent sees it.
 
 Then every agent gets its own brief, its own finish line, and its own check. And part of that check is: does it match the contract?
 
@@ -65,7 +66,7 @@ Third, test the whole system. Not just each part. The assembled thing, running a
 
 ### A worked example
 
-Here's a real one. Lessons three, four and five of software engineering 101 were built at the same time. Three scripts, three renders, running side by side. The three finished videos landed within forty seconds of each other.
+Here's a real one. Lessons three, four and five of software engineering one oh one were built at the same time. Three scripts, three renders, running side by side. The three finished videos landed within forty seconds of each other.
 
 And they came back together in one place. The contract already existed: the same script format the first two lessons used, and the same page fields. One merge point: one content file, read by one generator that builds every page. And they shipped together, in one change. Today that path has two more gates. One check that walks the whole site: every link, and every file a page points to. And a pull request to staging, for me to approve. This lesson and the one before it were drafted in parallel, too.
 

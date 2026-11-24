@@ -47,6 +47,12 @@ python3 sitegen/check_site.py .            # fails if any page's version does no
 
 `gen.py` calls the same `stamp_site()` at the end of a build, so both paths agree. `python3 sitegen/test_watched_versions.py` runs a headless-browser test of the whole flow against a temporary copy of the site.
 
+### Publish dates and New tags
+
+Every lesson video and the book videobook shows a publish date taken from git history: the first time that file landed on `main` (or on the current branch, for a staging-only video). If the current file bytes landed on a later calendar day (America/New_York), the page also shows “Updated <date>”. The same dates are written into VideoObject `uploadDate` / `dateModified` in the page JSON-LD, into `lessons.json` / `book.json`, and into the Markdown twins and `llms.txt`. `sitegen/media_dates.py` computes them at generate time, so a new video (for example the next AI Tips lesson) picks them up automatically.
+
+A “New” tag is shown, in the browser only, on any video published or updated since the visitor's previous visit. A first-party `last_visit` cookie stores the start of the most recent visit; a session cookie `visit_ref` freezes the previous visit's timestamp for the whole browsing session so the tags do not vanish on the next page click. A first visit shows no New tags. Nothing is sent to a server. `python3 sitegen/test_new_tags.py` covers this flow. After a rebuild, `python3 sitegen/check_site.py .` also checks that dates and VideoObject `uploadDate` are present and match git when history is available.
+
 When a lesson slug changes, leave a small redirect page (`index.html` with `noindex`, a canonical link, and a refresh to the new page, plus `index.md` and `AGENTS.md` pointing at the new address) in the old folder so live links keep working.
 
 ### Cover and book preview

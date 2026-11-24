@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Static self-check for a generated site: HTML structure, duplicate ids, internal links, media and fragments,
-and video versions (every data-video-version / data-video-versions must match the media file's hash; see stamp_versions.py).
+video versions (every data-video-version / data-video-versions must match the media file's hash; see stamp_versions.py), and publish dates / VideoObject uploadDate (see media_dates.py).
 Usage: python3 check_site.py SITE_DIR   (exit 1 on any error)"""
 import os, sys, re
 from html.parser import HTMLParser
@@ -75,7 +75,9 @@ def main(site):
     # Watched / resume cookies are keyed "<id>@<version>": a re-rendered video without re-stamping must fail here.
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import stamp_versions
+    import media_dates
     for e in stamp_versions.verify(site): print(f"ERROR {e}"); errors += 1
+    for e in media_dates.verify(site): print(f"ERROR {e}"); errors += 1
     print(f"checked {len(pages)} HTML files, {sum(len(p.refs) for p in pages.values())} references: {errors} error(s)")
     return errors
 

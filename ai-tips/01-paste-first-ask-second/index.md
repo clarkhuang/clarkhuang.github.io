@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/AGENTS.md](https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/ai-tips-01-paste-first-ask-second.mp4
 - Duration: 1:10 (70.5 seconds)
+- Published: Nov 21, 2026. Updated: Nov 22, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/ai-tips-01-paste-first-ask-second.jpg
 
 ## The lesson

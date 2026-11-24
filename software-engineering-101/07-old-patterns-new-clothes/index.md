@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/AGENTS.md](https://clarkhuang.github.io/software-engineering-101/07-old-patterns-new-clothes/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se101-07-old-patterns-new-clothes.mp4
 - Duration: 2:19 (139.3 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se101-07-old-patterns-new-clothes.jpg
 
 ## Chapters

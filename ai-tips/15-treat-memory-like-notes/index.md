@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/AGENTS.md](https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/ai-tips-15-treat-memory-like-notes.mp4
 - Duration: 1:38 (98.1 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/ai-tips-15-treat-memory-like-notes.jpg
 
 ## Chapters
