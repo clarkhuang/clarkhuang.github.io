@@ -1,21 +1,23 @@
 /* Clark Huang — learning site. Progressive enhancement only: every video and audio works without it.
-   State lives in first-party cookies only (no localStorage, no analytics, no third parties):
+   State lives in first-party cookies only (no localStorage, no third-party storage):
      watched  = "ai-tips/01@1a2b3c4d,se101/02@9f8e7d6c"         lessons played to ~90% or to the end, or marked by hand
      vpos     = "ai-tips/02@1a2b3c4d:73.4,se101/01@0a1b2c3d:12.0" video resume positions in seconds (newest last, max 20)
      book_pos = "preview@4226615c:31.2"                           audiobook/videobook bookmarks in seconds
+     last_visit = "<unix seconds>"                               start of the most recent visit (persistent)
+     visit_ref  = "<unix seconds>|first"                         session cookie: frozen cutoff for New tags
    Every key is "<id>@<version>". The version is the first 8 hex chars of the SHA-256 of the media file, stamped
    into the HTML as data-video-version (data-video-versions on a data-progress meter, same order as its ids) by
    sitegen/stamp_versions.py. A re-rendered video gets a new version, so it shows as unwatched and does not offer
    a stale resume position. Keys with no "@version" (older cookies) are always stale; keys whose version differs
    from one this page knows for that id are stale too. Stale keys are pruned on page load and on every write.
    Keys for ids this page does not show are kept until a page that knows them loads.
-   Cookie names "watched", "vpos" and "book_pos" are unchanged from earlier versions of the site. */
+   A first visit (no last_visit) shows no New tags. visit_ref keeps the previous visit's cutoff for the whole browsing session so tags do not vanish on the next page. Cookie names "watched", "vpos" and "book_pos" are unchanged from earlier versions of the site. */
 (function () {
   "use strict";
   var doc = document;
   doc.documentElement.classList.add("js");
 
-  var YEAR = 31536000, C_WATCHED = "watched", C_VPOS = "vpos", C_BOOK = "book_pos", VPOS_MAX = 20;
+  var YEAR = 31536000, C_WATCHED = "watched", C_VPOS = "vpos", C_BOOK = "book_pos", C_LAST = "last_visit", C_REF = "visit_ref", VPOS_MAX = 20;
 
   /* ---------- cookies */
   function getCookie(name) {
@@ -29,8 +31,10 @@
     return "";
   }
   function setCookie(name, value, maxAge) {
-    doc.cookie = name + "=" + encodeURIComponent(value) + "; path=/; max-age=" +
-      (maxAge == null ? YEAR : maxAge) + "; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
+    var parts = name + "=" + encodeURIComponent(value) + "; path=/; SameSite=Lax";
+    if (maxAge !== false) parts += "; max-age=" + (maxAge == null ? YEAR : maxAge);
+    if (location.protocol === "https:") parts += "; Secure";
+    doc.cookie = parts;
   }
   function clearCookie(name) { setCookie(name, "", 0); }
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || doc).querySelectorAll(sel)); }
@@ -101,8 +105,29 @@
       if (Object.keys(map).length !== rawMap.length) writeMap(c[0], map, c[1]);
     });
   })();
+  function visitCutoff() {
+    var ref = getCookie(C_REF);
+    if (!ref) {
+      var prev = getCookie(C_LAST);
+      ref = prev || "first";
+      setCookie(C_REF, ref, false);          // session cookie: stays for this browsing session only
+      setCookie(C_LAST, String(Math.floor(Date.now() / 1000)));
+    }
+    if (ref === "first") return null;
+    var n = parseInt(ref, 10);
+    return isFinite(n) ? n * 1000 : null;
+  }
+  function paintNew() {
+    var cut = visitCutoff();
+    $$("[data-new]").forEach(function (el) {
+      var host = el.closest("[data-new-at]") || el;
+      var at = Date.parse(host.getAttribute("data-new-at") || "");
+      el.hidden = !(cut != null && isFinite(at) && at > cut);
+    });
+  }
   function paint() {
     var w = watched();
+
     function has(id, v) { var k = vkey(id, v); return !!k && w.indexOf(k) !== -1; }
     $$("[data-watch-id]").forEach(function (el) { el.classList.toggle("is-watched", has(el.getAttribute("data-watch-id"), ver(el))); });
     $$("[data-toggle-watched]").forEach(function (b) {
@@ -130,6 +155,7 @@
       });
       el.hidden = !shown;
     });
+    paintNew();
   }
   doc.addEventListener("click", function (e) {
     var b = e.target.closest ? e.target.closest("[data-toggle-watched]") : null;

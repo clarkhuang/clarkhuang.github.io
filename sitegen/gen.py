@@ -17,6 +17,7 @@ Markdown twin).
 import json, os, re, html, subprocess, shutil, sys
 import ai_friendly as AF
 import stamp_versions
+import media_dates
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 _PARENT = os.path.abspath(os.path.join(HERE, ".."))
@@ -238,14 +239,47 @@ def write_404():
       <p class="lede">That address is not on this site. Start from the <a href="/">home page</a>, or browse <a href="/ai-tips/">AI Tips</a>, <a href="/software-engineering-101/">Software Engineering 101</a>, <a href="/software-engineering-201/">Software Engineering 201</a>, or the <a href="/book/">book preview</a>. You can also <a href="/contribute/">contribute with your AI</a> or <a href="/copy-this/">copy this site for yourself</a>.</p>""" + MOVED_MEDIA_HTML
     page("404.html", "Page not found — Clark Huang", "Page not found.", body, "404")
 
-def page_jsonld(title, desc, canon):
-    """Schema.org WebPage metadata for the page head; points at the Markdown twin."""
-    d = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": canon, "inLanguage": "en",
-         "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": BASE + "/"},
-         "author": {"@type": "Person", "name": "Clark Huang", "url": BASE + "/"},
-         "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-         "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": canon.rsplit("/", 1)[0] + "/index.md"}}
+def page_jsonld(title, desc, canon, video=None):
+    """Schema.org metadata for the page head; a lesson or book page may also include a VideoObject with uploadDate."""
+    page = {"@type": "WebPage", "name": title, "description": desc, "url": canon, "inLanguage": "en",
+            "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": BASE + "/"},
+            "author": {"@type": "Person", "name": "Clark Huang", "url": BASE + "/"},
+            "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+            "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": canon.rsplit("/", 1)[0] + "/index.md"}}
+    if video:
+        vo = {"@type": "VideoObject", "name": video["name"], "description": video.get("description") or desc,
+              "url": canon, "inLanguage": "en",
+              "author": {"@type": "Person", "name": "Clark Huang", "url": BASE + "/"}}
+        for k in ("contentUrl", "thumbnailUrl", "duration", "uploadDate", "dateModified", "caption"):
+            if video.get(k):
+                vo[k] = video[k]
+        d = {"@context": "https://schema.org", "@graph": [page, vo]}
+    else:
+        d = {"@context": "https://schema.org", **page}
     return '  <script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace("</", "<\\/") + '</script>\n'
+
+
+def video_ld(name, desc, content_url, poster, dur, info, captions=None):
+    """Fields for page_jsonld(..., video=...). Dates come from media_dates (git history)."""
+    d = {"name": name, "description": desc, "contentUrl": content_url if content_url.startswith("http") else BASE + content_url}
+    if poster:
+        d["thumbnailUrl"] = poster if poster.startswith("http") else BASE + poster
+    if dur:
+        d["duration"] = iso_dur(dur)
+    if captions:
+        d["caption"] = captions if captions.startswith("http") else BASE + captions
+    d.update(media_dates.schema_dates(info))
+    return d
+
+
+def catalog_dates(info):
+    if not info:
+        return {}
+    out = {"published": info["published"], "published_at": info["published_at"]}
+    if info.get("updated"):
+        out["updated"] = info["updated"]
+        out["updated_at"] = info["updated_at"]
+    return out
 
 
 GA_MEASUREMENT_ID = "G-F50XBTM25X"
@@ -273,7 +307,7 @@ def analytics_head():
         '  </script>\n'
     )
 
-def page(path, title, desc, body, current="", main_class=""):
+def page(path, title, desc, body, current="", main_class="", video=None):
     navh = "".join(f'<a href="{h}"{" aria-current=\"page\"" if k==current else ""}>{n}</a>' for n,h,k in nav_items())
     links = "".join(f'<a href="{h}">{n}</a>' for n,h in FOOT_LINKS)
     panel = AF.panel_html(path)
@@ -309,7 +343,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <meta name="twitter:image" content="{share}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 {font_links()}  <link rel="stylesheet" href="/styles.css">
-{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}{analytics_head()}</head>
+{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon, video=video) if current != "404" else ""}{analytics_head()}</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -331,7 +365,7 @@ def page(path, title, desc, body, current="", main_class=""):
       </div>
       <div class="footer-fine">
         <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
+        <p>© 2026 Clark Huang. Watched progress and a last-visit time are saved only in first-party cookies in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
         <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
       </div>
     </div>
@@ -391,6 +425,7 @@ def build():
         for l in s["lessons"]:
             if l["video"]:
                 l["_vpath"], l["_poster"], l["_dur"], l["_ch"] = media_info(l, old)
+                l["_dates"] = media_dates.dates_for(f"videos/{l['video']}", site=SITE)
         avail = [l for l in s["lessons"] if l["video"]]
         sj = {"id": s["key"], "title": s["title"], **({"subtitle": s["subtitle"]} if s.get("subtitle") else {}), "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
               "agents_url": f"{BASE}/{skey}/AGENTS.md",
@@ -436,13 +471,16 @@ def build():
                 cap_meta = (f'<span aria-hidden="true">·</span><a href="/videos/{l["captions"]}">Captions (VTT)</a>' if l.get("captions") else "")
                 cap_meta += (f'<span aria-hidden="true">·</span><a href="{E(l["source_url"])}">How it was built</a>' if l.get("source_url") else "")
                 dur_meta = f'<span><time datetime="{iso_dur(dur)}">{dur_txt}</time></span><span aria-hidden="true">·</span>' if dur else ""
+                dates = l.get("_dates")
+                date_meta = (f'<span class="dates" {media_dates.attrs(dates)}>{media_dates.label_html(dates)}</span><span aria-hidden="true">·</span>'
+                             if dates else media_dates.NEW_BADGE)
                 body = f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/{skey}/">{E(s['title'])}</a> / Lesson {l['n']}</p>
       <h1>{E(l['title'])}</h1>
       <div class="player"><video id="lesson-video" controls preload="metadata" playsinline width="1280" height="720" poster="{poster}" data-lesson-id="{l['id']}" aria-label="Lesson video: {E(l['title'])}">
         <source src="{vpath}" type="video/mp4">{cap_track}
         Your browser can't play this video. <a href="{vpath}">Download the MP4</a>.
       </video></div>
-      <div class="lesson-meta" data-watch-id="{l['id']}" data-status-scope>{dur_meta}<span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="{vpath}" download>Download MP4</a>{cap_meta}{watch_state(l['id'])}<span class="status" role="status" data-status></span></div>
+      <div class="lesson-meta" data-watch-id="{l['id']}" data-status-scope>{dur_meta}{date_meta}<span>Narrated in Clark's AI voice</span><span aria-hidden="true">·</span><a href="{vpath}" download>Download MP4</a>{cap_meta}{watch_state(l['id'])}<span class="status" role="status" data-status></span></div>
       <p class="resume" data-resume="lesson-video" hidden><button type="button" class="btn" data-go>Resume</button><button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>
       {after}
       <div class="grid2">
@@ -458,6 +496,7 @@ def build():
                     "summary": l["summary"], "rule": l["rule"], "page_url": BASE + url, "video_url": BASE + vpath,
                     "poster_url": BASE + poster, "markdown_url": BASE + url + "index.md", "agents_url": BASE + url + "AGENTS.md",
                     "duration_seconds": round(dur, 1) if dur else None,
+                    **catalog_dates(dates),
                     "chapters": [{"start_seconds": round(t, 1), "title": c} for t, c in ch],
                     **({"captions_url": f"{BASE}/videos/{l['captions']}"} if l.get("captions") else {}),
                     **({"source_url": l["source_url"]} if l.get("source_url") else {})})
@@ -480,7 +519,11 @@ def build():
                 sj["lessons"].append({"id": l["id"], "number": l["n"], "title": l["title"], "status": "coming soon",
                     "summary": l["summary"], "rule": None, "page_url": BASE + url, "video_url": None,
                     "markdown_url": BASE + url + "index.md", "agents_url": BASE + url + "AGENTS.md"})
-            page(f"{skey}/{l['slug']}/index.html", f"{l['title']} — {s['title']} — Clark Huang", l["summary"][:155], body, skey, main_class="lesson")
+            vld = None
+            if l.get("video"):
+                vld = video_ld(l["title"], l["summary"][:155], l["_vpath"], l.get("_poster"), l.get("_dur"),
+                               l.get("_dates"), captions=(f"/videos/{l['captions']}" if l.get("captions") else None))
+            page(f"{skey}/{l['slug']}/index.html", f"{l['title']} — {s['title']} — Clark Huang", l["summary"][:155], body, skey, main_class="lesson", video=vld)
             AF.write_lesson_twins(SITE, skey, s, l)
 
         for k, t in enumerate(s["soon"], start=len(s["lessons"]) + 1):
@@ -492,12 +535,14 @@ def build():
         for l in s["lessons"]:
             if l["video"]:
                 bits = ([mmss(l["_dur"])] if l["_dur"] else []) + ["video"] + ([plural(len(l["_ch"]), "chapter")] if l["_ch"] else [])
+                date_bit = (f'<span class="dates" {media_dates.attrs(l.get("_dates"))}>{media_dates.label_html(l.get("_dates"))}</span>'
+                            if l.get("_dates") else media_dates.NEW_BADGE)
                 rows += (f'<li class="vid" data-watch-id="{l["id"]}" data-status-scope>'
                          f'<div class="thumb"><img src="{l["_poster"]}" alt="" width="1280" height="720" loading="lazy" decoding="async">'
                          f'<span class="check tick" aria-hidden="true">✓</span></div>'
                          f'<div><h3><a href="/{skey}/{l["slug"]}/"><span class="n">{l["n"]:02d}</span>{E(l["title"])}</a></h3>'
                          f'<p class="sum">{E(first_sentence(l["summary"]))}</p>'
-                         f'<p class="meta"><span>{" · ".join(bits)}</span>{watch_state(l["id"])}<span class="status" role="status" data-status></span></p></div></li>')
+                         f'<p class="meta"><span>{" · ".join(bits)}</span>{date_bit}{watch_state(l["id"])}<span class="status" role="status" data-status></span></p></div></li>')
             else:
                 rows += (f'<li><a href="/{skey}/{l["slug"]}/"><span class="n">{l["n"]:02d}</span>'
                          f'<span class="t">{E(l["title"])}<span class="s">Coming soon</span></span><span class="badge soon">Coming soon</span></a></li>')
@@ -540,9 +585,12 @@ def build():
         thumb = ""
         if avail and avail[0].get("_poster"):
             thumb = (f'<div class="card-thumb"><img src="{avail[0]["_poster"]}" alt="" width="1280" height="720" loading="lazy" decoding="async"></div>')
+        latest = media_dates.latest(l.get("_dates") for l in avail) if avail else None
+        date_bit = (f'<span class="dates" {media_dates.attrs(latest)}>{media_dates.label_html(latest, kind="latest")}</span>'
+                    if latest else "")
         if avail:
             badge = '<span class="badge">Available</span>' if complete else '<span class="badge">In progress</span>'
-            meta = f'<span class="card-num">{len(avail)} of {total} lessons</span>{badge}'
+            meta = f'<span class="card-num">{len(avail)} of {total} lessons</span>{badge}{date_bit}'
             prog = f'<p class="progress">{plural(len(avail), "video lesson")}' + (f', {f"{len(outlines)} coming soon"}' if outlines else "") + '</p>'
             prog += meter([l["id"] for l in avail], s["title"] + " lessons watched")
             links = upnext(avail, lambda l, skey=skey: f"/{skey}/{l['slug']}/", "upnext card-upnext")
@@ -552,8 +600,12 @@ def build():
             links = ""
         cards += (f'<div class="card">{thumb}<a class="card-body-link" href="/{skey}/"><div class="card-meta">{meta}</div><h3>{E(s["title"])}</h3>'
                   f'<p>{E(s["blurb"])}</p>{prog}<span class="card-cta">{"Start watching" if avail else "See the plan"}</span></a>{links}</div>')
+    book_dates = media_dates.dates_for("videos/book-preview.mp4", site=SITE)
+    book_date_bit = (f'<span class="dates" {media_dates.attrs(book_dates)}>{media_dates.label_html(book_dates)}</span>'
+                     if book_dates else "")
     cards += ('<div class="card"><div class="card-thumb cover-thumb"><img src="/book/cover.jpg" alt="' + E(COVER_ALT) + '" width="864" height="1152" loading="lazy" decoding="async"></div>'
-              + '<a class="card-body-link" href="/book/"><div class="card-meta"><span class="card-num">OpenBook · Preview</span><span class="badge soon">Coming 2027</span></div>'
+              + '<a class="card-body-link" href="/book/"><div class="card-meta"><span class="card-num">OpenBook · Preview</span><span class="badge soon">Coming 2027</span>'
+              + book_date_bit + '</div>'
               + '<h3>Silicon Valley C Players</h3><p>A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI.</p>'
               + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a></div>')
     body = f"""      <section class="hero" aria-labelledby="about-heading">
@@ -596,7 +648,9 @@ def build():
                                    "rebuild_md": f"{BASE}/REBUILD.md",
                                    "note": "Every HTML page has a Markdown twin at the same path with index.md, plus AGENTS.md in the same folder. Staging lives at /staging/ and is not listed here."}
     lessons_json["cookies"] = {"watched": "watched=<lesson id>@<version>,... (version = first 8 hex chars of the SHA-256 of the video file; a re-rendered video counts as unwatched)",
-                               "video_position": "vpos=<lesson id>@<version>:<seconds>[,...] (resume offer, cleared when the video ends)"}
+                               "video_position": "vpos=<lesson id>@<version>:<seconds>[,...] (resume offer, cleared when the video ends)",
+                               "last_visit": "last_visit=<unix seconds> (start of the most recent visit; first-party only)",
+                               "visit_ref": "visit_ref=<unix seconds|first> (session cookie: frozen cutoff so New tags do not vanish mid-visit; a first visit shows no New tags)"}
     json.dump(lessons_json, open(f"{SITE}/lessons.json", "w"), indent=2, ensure_ascii=False)
     build_book()
     AF.write_llms_full(SITE, SERIES, INTRO, BACK)
@@ -662,6 +716,8 @@ def book_preview_chapters():
 EDITORIAL_POLICY_MD = """
 This is the editorial policy for *Silicon Valley C Players*. I'll keep it short, and I'll change this page when the process changes.
 
+This page, and the clarified “AI writes essentially all the code” wording in the changelog, were added after feedback from [@himanshu112-wq](https://github.com/himanshu112-wq) in [issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80). See [Contributors](/contributors/).
+
 ## Story chapters and the how-to half
 
 The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the [disclaimer](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md).
@@ -688,7 +744,12 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 - **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
 - **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
-- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4, raised by [@himanshu112-wq](https://github.com/himanshu112-wq). Clark clarified this is his own workflow, not a measured result or a prediction.
+
+### Editorial policy (24 November 2026)
+
+- **Added:** This public editorial policy, including how conflicting recollections are handled and this changelog of claims and sources.
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 7, raised by [@himanshu112-wq](https://github.com/himanshu112-wq).
 
 ### Mid-book preview re-record (24 November 2026)
 
@@ -698,7 +759,7 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ## Privacy and analytics
 
-This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under `/staging/` do not send analytics hits.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 """.strip()
@@ -708,6 +769,7 @@ def build_editorial_policy():
     body = """      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / How this book is edited</p>
       <h1>How this book is edited</h1>
       <p class="lede">This is the editorial policy for <em>Silicon Valley C Players</em>. I'll keep it short, and I'll change this page when the process changes.</p>
+      <p>This page, and the clarified “AI writes essentially all the code” wording in the changelog, were added after feedback from <a href="https://github.com/himanshu112-wq">@himanshu112-wq</a> in <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">issue #80</a>. See <a href="/contributors/">Contributors</a>.</p>
       <h2 id="two-halves">Story chapters and the how-to half</h2>
       <p>The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md">disclaimer</a>.</p>
       <h2 id="recollections">Conflicting recollections</h2>
@@ -723,7 +785,12 @@ def build_editorial_policy():
             <ul>
         <li><strong>Was:</strong> “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”</li>
         <li><strong>Now:</strong> “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”</li>
-        <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 4. Clark clarified this is his own workflow, not a measured result or a prediction.</li>
+        <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 4, raised by <a href="https://github.com/himanshu112-wq">@himanshu112-wq</a>. Clark clarified this is his own workflow, not a measured result or a prediction.</li>
+      </ul>
+      <h3>Editorial policy (24 November 2026)</h3>
+      <ul>
+        <li><strong>Added:</strong> This public editorial policy, including how conflicting recollections are handled and this changelog of claims and sources.</li>
+        <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 7, raised by <a href="https://github.com/himanshu112-wq">@himanshu112-wq</a>.</li>
       </ul>
       <h3>Mid-book preview re-record (24 November 2026)</h3>
       <ul>
@@ -732,7 +799,7 @@ def build_editorial_policy():
         <li><strong>Also:</strong> The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in <code>book-source/preview/REVISION-2026-11-24.md</code>.</li>
       </ul>
       <h2 id="analytics">Privacy and analytics</h2>
-      <p>This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under <code>/staging/</code> do not send analytics hits.</p>
+      <p>This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under <code>/staging/</code> do not send analytics hits.</p>
       <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
 """
     page("book/editorial-policy/index.html",
@@ -758,6 +825,14 @@ def build_book():
     vdur = probe(video_path) if os.path.exists(video_path) else (prev_vid or 0)
     has_video = os.path.exists(video_path)
     has_poster = os.path.exists(poster_path)
+    book_dates = media_dates.dates_for("videos/book-preview.mp4", site=SITE) if has_video else None
+    book_vld = (video_ld("Videobook preview: Silicon Valley C Players",
+                         "A mid-book videobook preview of Silicon Valley C Players, narrated in Clark's AI voice.",
+                         "/videos/book-preview.mp4",
+                         "/videos/posters/book-preview.jpg" if has_poster else None,
+                         vdur, book_dates,
+                         captions="/videos/book-preview.vtt" if os.path.exists(f"{SITE}/videos/book-preview.vtt") else None)
+                if has_video else None)
     intro_h = "".join(f"<p>{E(p)}</p>" for p in INTRO)
     back_h = f"<blockquote>{E(BACK[0])}</blockquote>" + "".join(f"<p>{E(p)}</p>" for p in BACK[1:])
     poster_attr = ' poster="/videos/posters/book-preview.jpg"' if has_poster else ""
@@ -772,8 +847,11 @@ def build_book():
             + '            Your browser cannot play this video. <a href="/videos/book-preview.mp4">Download the MP4</a>.\n'
             '          </video></div>\n'
             f'          <div class="lesson-meta"><span><time datetime="{iso_dur(vdur)}">{mmss(vdur)}</time></span>'
-            '<span aria-hidden="true">·</span><span>Narrated in Clark\'s AI voice</span>'
-            '<span aria-hidden="true">·</span><a href="/videos/book-preview.mp4" download>Download MP4</a></div>\n'
+            '<span aria-hidden="true">·</span>'
+            + (f'<span class="dates" {media_dates.attrs(book_dates)}>{media_dates.label_html(book_dates)}</span><span aria-hidden="true">·</span>'
+               if book_dates else '')
+            + '<span>Narrated in Clark\'s AI voice</span>'
+            + '<span aria-hidden="true">·</span><a href="/videos/book-preview.mp4" download>Download MP4</a></div>\n'
             '          <p class="resume" data-resume="book-video" hidden><button type="button" class="btn" data-go>Resume</button>'
             '<button type="button" class="linkish" data-dismiss>Start from the beginning</button></p>\n'
             '          <p class="resume-msg" id="book-resume-preview-video" aria-live="polite"></p>\n'
@@ -871,12 +949,13 @@ def build_book():
         <div data-ask-book-mount></div>
       </section>"""
     page("book/index.html", "Silicon Valley C Players — a free OpenBook by Clark Huang (preview)",
-         "Silicon Valley C Players, a free OpenBook by Clark Huang: an embellished fictional dramatization, with an audiobook and videobook preview. Written and interviewed by AI. Coming in 2027.", body, "book")
+         "Silicon Valley C Players, a free OpenBook by Clark Huang: an embellished fictional dramatization, with an audiobook and videobook preview. Written and interviewed by AI. Coming in 2027.", body, "book", video=book_vld)
     video_meta = None
     formats = [{"format": "audiobook", "status": "preview available"}]
     if has_video:
         video_meta = {"title": "Videobook preview", "url": f"{BASE}/videos/book-preview.mp4",
                       "duration_seconds": round(vdur, 1) if vdur else None,
+                      **catalog_dates(book_dates),
                       "poster_url": f"{BASE}/videos/posters/book-preview.jpg" if has_poster else None,
                       "captions_url": f"{BASE}/videos/book-preview.vtt",
                       "chapters_url": f"{BASE}/videos/book-preview-chapters.json",
@@ -976,6 +1055,7 @@ def build_involve_pages():
       <h2>If you would rather skip GitHub</h2>
       <p>You still use a short GitHub form — that is how proposals are tracked, like in an open-source project. You do not need to write code. Open the <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml">share-a-story form</a> (or the <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">correction</a> or <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=refactor.yml">refactor</a> form), and ask your AI to help you fill it in. You can paste the prompt above first, then the form fields.</p>
       <p>Please do not include real names of private people, or real company names, in a story. Describe people by role (“my lab partner,” “a team lead”) and companies in general terms (“a startup in San Francisco,” “a firm from Berlin”).</p>
+      <p>If your contribution lands on the site, you will be credited on the <a href="/contributors/">Contributors</a> page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle.</p>
       <h2>What happens next</h2>
       <ol class="steps-plain">
         <li>Your issue is labeled for Clark to review.</li>
@@ -990,7 +1070,7 @@ def build_involve_pages():
          "A plain-language way to contribute to Clark Huang's OpenBook and learning site: one copy-paste prompt, then a GitHub issue. Clark approves every change.",
          body, "contribute")
     AF.write_prose_twins(SITE, "contribute/index.html", "Contribute with your AI",
-        "You can contribute to this OpenBook and the learning series by pointing any AI chat tool at the site. Copy the prompt on this page, add what you know, and have the tool draft a GitHub issue for a correction, a new story, or a refactor. If you would rather skip around GitHub, open the share-a-story form and ask your AI to help you fill it in. Do not invent details or use real names of private people or real company names in story submissions. Only Clark Huang approves work and publishes it.",
+        "You can contribute to this OpenBook and the learning series by pointing any AI chat tool at the site. Copy the prompt on this page, add what you know, and have the tool draft a GitHub issue for a correction, a new story, or a refactor. If you would rather skip around GitHub, open the share-a-story form and ask your AI to help you fill it in. Do not invent details or use real names of private people or real company names in story submissions. Only Clark Huang approves work and publishes it.\n\nIf your contribution lands on the site, you will be credited on the [Contributors](https://clarkhuang.github.io/contributors/index.md) page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle.",
         "A plain-language contribution page with one copy-paste prompt and links to GitHub issue forms. No email address is published.")
 
     body = """      <p class="crumbs"><a href="/">Home</a> / Copy this</p>

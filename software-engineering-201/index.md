@@ -16,11 +16,15 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architecture bends around whatever is scarcest. Machines were scarce in the mid-1990s, coordination in the 2000s, and seeing the whole system in the 2010s. Now the scarce things are knowing the work is right and how much of the system an agent can see at once. So design for checking: clear module boundaries, one repository an agent can read, tests and specs it can run, and decisions written down. This is where the thinking is heading, not a settled answer. Four things never changed: the data model outlives the code, money has to add up, you depend on things you don't control, and someone has to understand the layer below.
 
+Published: Nov 23, 2026
+
 **Rule:** Before you design a system, write down four things: where the boundaries are, what the data model is, what you depend on but don't control, and how you'll know it's right. Put that note in the repository, where every agent and person working on the system can read it, and keep it current as the design changes.
 
 ### 02. [Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/index.md) (available)
 
 After the four eras, the first step from one loop to enterprise systems: what changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it, navigate it, contribute to it, and rebuild it. That takes four things: a Markdown twin, an index, and an AGENTS.md for every part; specs and briefs as the source; tests and checks as the contract; and staging plus a person's approval before anything reaches production. The worked example is this site, and the same four things matter even more at enterprise scale.
+
+Published: Nov 23, 2026
 
 **Rule:** Before you build anything bigger than one fix, make it readable to agents and people: a Markdown twin for every page, an index of the whole system, and an AGENTS.md that says how to work there. Treat specs and briefs as the source and tests and checks as the contract, and send every change through staging for a person to approve before it reaches production.
 
@@ -28,11 +32,15 @@ After the four eras, the first step from one loop to enterprise systems: what ch
 
 An enterprise system is too big for one loop, so draw it as a graph. A numbered plan only shows the order someone wrote the steps in; the test for any two steps is what crosses between them, and “and then” is not a dependency. The worked example is this site: four parts that share one generator, and one lesson's build, a strict chain that forks after the render. The graph decides which loops exist and which can run at the same time, and every part still gets its own plan, build, and verify loop. An earlier recording of this material, made when it was lesson 1, is at https://clarkhuang.github.io/videos/se201-01-from-loop-to-graph.mp4.
 
+Published: Nov 23, 2026
+
 **Rule:** Before any job with more than one part, draw the graph. Name the parts, and give each one a boundary and an owner. Draw an arrow only where something crosses from one part to another; “and then” is not a dependency. Anything two parts share becomes its own node, with one owner. Run the parts with no arrow between them at the same time, and give every part its own plan, build, and verify loop, with its own finish line and its own check.
 
 ### 04. [Parallel Agents, One Integration](https://clarkhuang.github.io/software-engineering-201/04-parallel-agents-one-integration/index.md) (available)
 
 Three agents can each pass their own check while the system is still broken, because no check has seen the parts together. Parallel work is only fast if it comes back together cleanly, so plan the integration first: a shared contract written before the work starts, one merge point used early, and tests on the whole system. The worked example is Software Engineering 101, lessons 3 to 5: built at the same time, then brought together through one shared script format, one content file, and one generator, and shipped in one change. Today the same path adds a whole-site check and a pull request to staging that a person approves.
+
+Published: Nov 23, 2026
 
 **Rule:** Before you run agents in parallel, plan how the work comes back together. Write the shared contract first: the interfaces, the formats, the names, and who owns which files; when it has to change, change it in one place. Give each agent its own brief, its own finish line, and its own check, and make matching the contract part of that check. Merge early, in one place, and test the whole system, not just each part. If two parts keep needing each other's answers, they are not parallel work: go back to the graph.
 
@@ -40,11 +48,15 @@ Three agents can each pass their own check while the system is still broken, bec
 
 Every era had a place where a person said yes: a change board signing off a whole release, then a teammate reviewing the code, then an approval on a pull request. Each was sized for people writing the code, so when agents write changes faster than anyone can read them all, that place has to be designed, not inherited. A good rule of thumb is four questions: does it move money, touch customer data, is it hard to undo, or is it a judgment call no check can make? One yes and a named person decides; four no's and that kind of change can ship on its checks. The worked example is a made-up subscription-billing system, where six pieces of an agent's work lead to four stops and two changes that never wait, and where the agent prepares each decision: what changes, why, the evidence, the risk, and the way back. Write down who approves what in the repository, let the pipeline enforce it, and start strict, releasing one kind of change at a time as its checks earn trust.
 
+Published: Nov 23, 2026
+
 **Rule:** Before a change ships, find out who decides. Money, customer data, hard to undo, or a judgment call that no check can make: stop for the person named in the repo, and bring the change, the evidence, the risk, and the way back. Not on the list? Stop and ask. Ship on checks alone only what a person has released. In full: bring the decision ready to make (what changes, why, the evidence, the risk, and the way back), and don't classify or approve your own change.
 
 ### 06. [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md) (available)
 
 A green build says the code did what its tests asked; it says nothing about what happened last night. Ten years ago the scarce thing was seeing the whole system, and logs, metrics and traces answered "what happened?". Now the scarce thing is knowing it's right, and no dashboard can answer that until someone has written down what right means. The worked example is a made-up subscription-billing system: "every renewal charged the right amount, exactly once" becomes three checks, and running them on last night's renewals finds three wrong ones inside totals that match exactly. Write the check once and run it twice, before a change ships and after every run; make every step leave a record that people and agents can both read; and feed every miss back into the brief and the checks, while a person still reads a sample, because a check only catches what somebody thought to ask.
+
+Published: Nov 23, 2026
 
 **Rule:** Before you build, write down what right means, as checks you can run, in the business's words. Run them before a change ships, and after every run. Leave a record at every step. When a check fails, stop and tell a person. Feed every miss back into the brief and the checks. In full: run the checks on samples before a change ships and on the real data after every run, leave each record in a shape people and agents can both read, and let every miss make the next run better.
 
@@ -52,11 +64,15 @@ A green build says the code did what its tests asked; it says nothing about what
 
 Three capable agents can do the same job three different ways when nobody wrote down how. Software has had several units of reuse: libraries, frameworks, then services behind an API. A skill reuses something different: how a job gets done. The worked example is a made-up subscription-billing system and the job of adding a plan or a price: the skill is one page saying when to use it, the inputs, the steps, the checks, and the traps. It is a runbook; what has changed is the reader, an agent that reads it on every run and guesses wherever the page is silent. So keep it in the repository, test it with a fresh agent, and when a run goes wrong, fix the skill so every later run gets the fix.
 
+Published: Nov 23, 2026
+
 **Rule:** When a job comes back a third time, write it as a skill: when to use it, inputs, steps, checks, and traps. Keep it in the repo, and test it with a fresh agent. When a run goes wrong, fix the skill, not just the run. In full: write it sooner if a mistake costs money. If an input is missing, ask instead of guessing, and if a check fails, stop and say so. Make any step that needs no judgment a script the skill calls. Keep the skill versioned and reviewed like code, and test it by handing it to a fresh agent that has never seen the job.
 
 ### 08. [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md) (available)
 
 A job charges a card, the answer is lost, and the job tries again: unless someone designed that retry to be safe, the customer can be charged twice. Connecting systems is the oldest problem in this series, from overnight batch files and EDI, to web services, to an API for everything, to agents calling tools, and all of them are still running somewhere. Some work should start on its own: call a skill plus a trigger a routine, and routines chained together a pipeline. The worked example is the nightly billing run of a made-up subscription-billing system: a clear format at every hand-off, a record from every step whose counts add up, a retry made safe with an idempotency key, and a reconcile step that tells a person when the numbers don't match. The same thinking covers a partner's file that arrives late, twice, or broken: design for at least once, and make twice harmless.
+
+Published: Nov 23, 2026
 
 **Rule:** Before any work runs on its own, write down four things: what starts it, what crosses at each hand-off, what record each step leaves, and what happens when a step fails, or runs twice. No answer? It isn't ready to run unattended. In full: give every hand-off a clear, written format. Make every step leave a record that adds up, and make every step safe to run twice. When the numbers don't match, don't guess and don't fix them quietly: keep every record and tell a person. Keep that note where the agents and people who run the work can read it.
 
@@ -67,6 +83,8 @@ Agents that run the system, not just build it, with identity, least access, and 
 ### 10. [Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (available)
 
 The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the month. What to charge depends on a rule nobody has written down, so the plan comes first: say what right means and let a person set the rule; put it in a spec in the repository; draw the graph and find the one new thing that crosses, the quote; make the quote's format the shared contract for three agents and one merge point; name who decides; turn "right" into three checks that run before the change ships and every night after; and notice that adding a plan is already a skill. Then the plan is carried out: the parts are built at the same time, the finance owner says yes, the feature runs as a pipeline with an idempotency key on the charge, and an agent with its own identity and read-only access works the nightly reconcile, flags a double charge for a person to refund, and the miss becomes a fourth check. Under all of it, the four constants from lesson 1 still hold.
+
+Published: Nov 23, 2026
 
 **Rule:** Before you build a whole feature, write the plan in the repo, and show a person. What right means, as checks. The graph, and the shared contract. Who decides. What's already a skill. What runs on its own, and under whose identity. A blank line? Stop, and ask. In full: before you build a feature with more than one part, write the plan in the repository, show it to a person, and wait for a yes. The plan says: what right means, as checks you can run before the change ships and after every run; the graph of the parts, the contract they share, and the one place they merge; who decides, by name or role, and what you will bring them; which parts are already a skill; and what will run on its own, what starts it, what happens when a step fails or runs twice, and under whose identity and access it runs. If you cannot fill in a line, do not guess: stop, and ask.
 

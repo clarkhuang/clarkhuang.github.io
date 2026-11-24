@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/03-decompose-the-system-into-a-graph/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-03-decompose-the-system-into-a-graph.mp4
 - Duration: 4:06 (246.1 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-03-decompose-the-system-into-a-graph.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-03-decompose-the-system-into-a-graph.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-03
@@ -47,7 +48,7 @@ Related reading: the loop-and-graph framing for agent work also appears in “Lo
 
 ## Transcript
 
-Software engineering 201. Lesson three. Decompose the system into a graph.
+Software engineering two oh one. Lesson three. Decompose the system into a graph.
 
 ### The question
 
@@ -59,11 +60,11 @@ So here's the test. Take any two steps, and ask: what crosses between them? Thin
 
 ### Loop and graph
 
-In 101, the unit was the loop. Plan, build, verify, until one piece of work is right. The graph sits one level up. It says which pieces exist, what each one needs, and which can run at the same time. And it doesn't replace the loop. Every node in the graph is still a loop of its own.
+In one oh one, the unit was the loop. Plan, build, verify, until one piece of work is right. The graph sits one level up. It says which pieces exist, what each one needs, and which can run at the same time. And it doesn't replace the loop. Every node in the graph is still a loop of its own.
 
 ### This site, as a graph
 
-Let's decompose a real system: the site you're on. Start with the parts. AI tips. Software engineering 101. 201. And the book. Each part has its own folder, and its own pages. A new lesson in one needs nothing from the others. So work on one never waits on another.
+Let's decompose a real system: the site you're on. Start with the parts. A.I. tips. Software engineering one oh one. Two oh one. And the book. Each part has its own folder, and its own pages. A new lesson in one needs nothing from the others. So work on one never waits on another.
 
 But they aren't floating free. All four are built by one generator, with one stylesheet. That shared piece is a node too, and every part depends on it. So the graph shows you where to be careful. Change one part, and one part moves. Change the shared node, and everything moves. Which is why a shared node needs one clear owner.
 

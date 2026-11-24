@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-02-build-the-whole-system-ai-native.mp4
 - Duration: 3:58 (238.9 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-02-build-the-whole-system-ai-native.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-02-build-the-whole-system-ai-native.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-02
@@ -41,7 +42,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. From loop, to enterprise systems. Lesson two. Build the whole system, AI native.
+Software engineering two oh one. From loop, to enterprise systems. Lesson two. Build the whole system, A.I. native.
 
 ### The question
 
@@ -49,11 +50,11 @@ Quick question to start. You're asking agents to build a whole app, not just one
 
 ### One loop to a system
 
-In 101, the unit of work was one loop. Plan, build, verify. One fix. One feature. In 201, the unit of work is the system. Many parts. Many people. Years of history. And now, agents working in it right alongside the people.
+In one oh one, the unit of work was one loop. Plan, build, verify. One fix. One feature. In two oh one, the unit of work is the system. Many parts. Many people. Years of history. And now, agents working in it right alongside the people.
 
 ### What AI-native means
 
-So what does AI native actually mean? Here's the definition this series uses. A system is AI native when agents and people can both read it, find their way around it, contribute to it, and rebuild it. Not only the person who wrote it. Not only whoever knows the history.
+So what does A.I. native actually mean? Here's the definition this series uses. A system is A.I. native when agents and people can both read it, find their way around it, contribute to it, and rebuild it. Not only the person who wrote it. Not only whoever knows the history.
 
 That takes four things. One. Every page people read has a twin an agent can read: plain Markdown, an index of the whole system, and an agents file that says how to work there. Two. Specs and briefs are the source. Change the brief, and the build follows. Three. Tests and checks are the contract. An agent is done when the checks pass, not when it says it's done. And four. Every change goes to staging first, and a person approves it before it reaches production.
 
@@ -61,7 +62,7 @@ That takes four things. One. Every page people read has a twin an agent can read
 
 And this isn't hypothetical. The site you're on right now is built exactly this way.
 
-Every page has an index.md twin, and every folder has an AGENTS.md file. There's an llms.txt that indexes the whole site, a machine-readable lesson catalog, and a read-only connector AI tools can plug into. The pages are generated from one content file, and the rebuild steps are written down, so an agent can regenerate every page.
+Every page has an index dot M D twin, and every folder has an agents dot M D file. There's an L L M S dot T X T that indexes the whole site, a machine-readable lesson catalog, and a read-only connector A.I. tools can plug into. The pages are generated from one content file, and the rebuild steps are written down, so an agent can regenerate every page.
 
 And here's the part that matters most. Agents open pull requests into a staging branch. Staging is a full preview of the site, hidden from search. And only I merge into production.
 
@@ -75,7 +76,7 @@ Now scale that up. An enterprise system isn't one repo. It's dozens of services,
 
 ### The path
 
-That's the path for this series. Today: build the whole system, AI native. Then, decompose it into a graph. Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. Turn repeated work into skills. Wire it into routines and pipelines. Then, agents that operate enterprise systems, with real permissions, and a full audit trail. And last, a capstone: one feature, built end to end.
+That's the path for this series. Today: build the whole system, A.I. native. Then, decompose it into a graph. Run agents in parallel, and bring the work back together. Put people where the decisions matter. Measure quality, and watch it run. Turn repeated work into skills. Wire it into routines and pipelines. Then, agents that operate enterprise systems, with real permissions, and a full audit trail. And last, a capstone: one feature, built end to end.
 
 ### The rule
 
