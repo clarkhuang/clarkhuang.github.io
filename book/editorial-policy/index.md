@@ -42,6 +42,10 @@ This log starts with the current public preview on the site. Earlier preview fil
 - **Now:** The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”
 - **Also:** The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in `book-source/preview/REVISION-2026-11-24.md`.
 
+## Privacy and analytics
+
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
+
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 
 ## For agents
