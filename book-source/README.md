@@ -6,7 +6,7 @@ This folder is the book's working source. The published preview lives at [https:
 
 The book is versioned like software. **v0** is in progress (a public teaser). **v1** is the first full draft, planned for 2027. Later editions are tagged the same way (`book-v1.1`, `book-v2.0`, …). See [VERSIONING.md](VERSIONING.md).
 
-The editorial policy — how conflicting recollections are handled, and how claims and sources are tracked across editions — is at [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/). Chapter ideas not yet in a draft are listed in [BACKLOG.md](BACKLOG.md). First-person guest stories, published under the contributor's own name, go in [guest/](guest/README.md).
+The working story arc and chapter list is at [https://clarkhuang.github.io/book/story-arc/](https://clarkhuang.github.io/book/story-arc/) (source: [OUTLINE.md](OUTLINE.md), [outline.json](outline.json)). It will change. The editorial policy — how conflicting recollections are handled, and how claims and sources are tracked across editions — is at [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/). Chapter ideas not yet in a draft are listed in [BACKLOG.md](BACKLOG.md). First-person guest stories, published under the contributor's own name, go in [guest/](guest/README.md).
 
 ## Fair warning
 
