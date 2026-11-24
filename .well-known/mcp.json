@@ -7,7 +7,7 @@
       "title": "clarkhuang.github.io site MCP server",
       "firstParty": true,
       "readOnly": true,
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Read-only tools over the site's public files: lessons, transcripts, chapters, captions, media checks, watched-progress keys, search, and contributor-style issue drafts (never files anything).",
       "transport": "stdio",
       "command": "uv",
