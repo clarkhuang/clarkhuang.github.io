@@ -247,6 +247,32 @@ def page_jsonld(title, desc, canon):
          "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": canon.rsplit("/", 1)[0] + "/index.md"}}
     return '  <script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace("</", "<\\/") + '</script>\n'
 
+
+GA_MEASUREMENT_ID = "G-F50XBTM25X"
+
+def analytics_head():
+    """Production-only GA4 tag. Staging pages live under /staging/ and must not send hits."""
+    mid = GA_MEASUREMENT_ID
+    return (
+        '  <script>\n'
+        '  window.dataLayer = window.dataLayer || [];\n'
+        '  function gtag(){dataLayer.push(arguments);}\n'
+        '  (function(){\n'
+        '    if (location.pathname.indexOf("/staging/") === 0) return;\n'
+        f'    var s = document.createElement("script");\n'
+        '    s.async = true;\n'
+        f'    s.src = "https://www.googletagmanager.com/gtag/js?id={mid}";\n'
+        '    document.head.appendChild(s);\n'
+        '    gtag("js", new Date());\n'
+        f'    gtag("config", "{mid}", {{\n'
+        '      anonymize_ip: true,\n'
+        '      allow_google_signals: false,\n'
+        '      allow_ad_personalization_signals: false\n'
+        '    });\n'
+        '  })();\n'
+        '  </script>\n'
+    )
+
 def page(path, title, desc, body, current="", main_class=""):
     navh = "".join(f'<a href="{h}"{" aria-current=\"page\"" if k==current else ""}>{n}</a>' for n,h,k in nav_items())
     links = "".join(f'<a href="{h}">{n}</a>' for n,h in FOOT_LINKS)
@@ -283,7 +309,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <meta name="twitter:image" content="{share}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 {font_links()}  <link rel="stylesheet" href="/styles.css">
-{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}</head>
+{extra_head}{AF.head_links()}{page_jsonld(title, desc, canon) if current != "404" else ""}{analytics_head()}</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -305,7 +331,7 @@ def page(path, title, desc, body, current="", main_class=""):
       </div>
       <div class="footer-fine">
         <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
-        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. No analytics, no third-party scripts.</p>
+        <p>© 2026 Clark Huang. Progress on this site is saved only in a first-party cookie in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
         <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
       </div>
     </div>
@@ -668,6 +694,10 @@ This log starts with the current public preview on the site. Earlier preview fil
 - **Now:** The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”
 - **Also:** The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in `book-source/preview/REVISION-2026-11-24.md`.
 
+## Privacy and analytics
+
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
+
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 """.strip()
 
@@ -699,15 +729,17 @@ def build_editorial_policy():
         <li><strong>Now:</strong> The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”</li>
         <li><strong>Also:</strong> The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in <code>book-source/preview/REVISION-2026-11-24.md</code>.</li>
       </ul>
+      <h2 id="analytics">Privacy and analytics</h2>
+      <p>This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under <code>/staging/</code> do not send analytics hits.</p>
       <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
 """
     page("book/editorial-policy/index.html",
          "How this book is edited — Silicon Valley C Players",
-         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources.",
+         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, a per-edition changelog, and a privacy note for Google Analytics 4 on the site.",
          body, "book")
     AF.write_prose_twins(SITE, "book/editorial-policy/index.html", "How this book is edited",
         EDITORIAL_POLICY_MD,
-        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.")
+        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, a per-edition changelog, and a privacy note for Google Analytics 4 on the site.")
 
 
 def build_book():

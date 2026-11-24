@@ -61,6 +61,17 @@ def main(site):
             if frag and not frag.startswith("t=") and target.endswith(".html"):
                 tp = pages.get(os.path.relpath(target, site))
                 if tp and frag not in tp.ids: print(f"ERROR {rel}: {url} -> no id #{frag}"); errors += 1
+    # Production pages must carry the GA4 tag (skipped at runtime on /staging/) and must not still claim there is no analytics.
+    ga_id = "G-F50XBTM25X"
+    old_privacy = "No analytics, no third-party scripts"
+    for rel in sorted(pages):
+        html = open(os.path.join(site, rel), encoding="utf-8").read()
+        if old_privacy in html:
+            print(f"ERROR {rel}: footer still says there is no analytics"); errors += 1
+        if ga_id not in html or 'pathname.indexOf("/staging/")' not in html:
+            print(f"ERROR {rel}: missing production GA4 tag or /staging/ skip"); errors += 1
+        if "allow_ad_personalization_signals: false" not in html or "allow_google_signals: false" not in html:
+            print(f"ERROR {rel}: GA4 tag is missing no-ads / no-signals settings"); errors += 1
     # Watched / resume cookies are keyed "<id>@<version>": a re-rendered video without re-stamping must fail here.
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import stamp_versions

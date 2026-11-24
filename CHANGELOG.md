@@ -16,8 +16,9 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
-- Mid-book preview re-recorded (about 2:39) so the narration matches the own-workflow wording and flows more like Clark talking. A follow-up re-record makes the letter A in “A Things,” “A players,” and “an A thing” sound like the letter (/eɪ/), not “eye,” and fully re-renders the videobook so the pictures, captions, and timing match. Staging only until Clark approves production.
+- Added Google Analytics 4 on the production site (property `clarkhuang.github.io`, measurement ID `G-F50XBTM25X`), with IP anonymization and no ads signals. Staging pages under `/staging/` do not send hits. The footer no longer says “No analytics, no third-party scripts”; it links to a privacy note on the [editorial policy](https://clarkhuang.github.io/book/editorial-policy/#analytics) page.
 
+- Mid-book preview re-recorded (about 2:39) so the narration matches the own-workflow wording and flows more like Clark talking. A follow-up re-record makes the letter A in “A Things,” “A players,” and “an A thing” sound like the letter (/eɪ/), not “eye,” and fully re-renders the videobook so the pictures, captions, and timing match. Staging only until Clark approves production.
 
 - Clarified the book preview claim: “AI writes essentially all of the code” is Clark's own workflow (the code he ships), not a measured team result or a prediction. Chapter 20 of the outline no longer says “100% of the code.” That claim is now also in the mid-book preview narration and captions ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80)). Fixed a staging rewrite bug that left some `AGENTS.md` Markdown URLs pointing at production.
 

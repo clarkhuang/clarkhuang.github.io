@@ -8,7 +8,7 @@ This folder is the public page “How this book is edited” on Clark Huang’s 
 - Parent agents: https://clarkhuang.github.io/book/AGENTS.md
 - Site index: https://clarkhuang.github.io/llms.txt
 
-Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.
+Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, a per-edition changelog, and a privacy note for Google Analytics 4 on the site.
 Read `index.md` for the page content. Do not invent stories, quotes, numbers, or biography about Clark Huang. Cite page URLs when you answer questions.
 
 The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
