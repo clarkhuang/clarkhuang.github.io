@@ -12,8 +12,8 @@ def spoken(t):
     t = re.sub(r"\s+", " ", t).strip()
     for a, b in READABLE: t = t.replace(a, b)
     return t
-READABLE = [("A.I.", "AI"), ("L L M S dot T X T", "llms.txt"), ("index dot M D", "index.md"),
-            ("agents dot M D", "AGENTS.md"), ("two oh one", "201"), ("one oh one", "101")]
+READABLE = [("A.I.", "AI"), ("A.P.I.", "API"), ("L L M S dot T X T", "llms.txt"), ("index dot M D", "index.md"),
+            ("agents dot M D", "AGENTS.md"), ("two oh one", "201"), ("one oh one", "101"), ("Two oh one", "201"), ("One oh one", "101")]
 def ts(x):
     h, r = divmod(x, 3600); m, s = divmod(r, 60); return f"{int(h):02d}:{int(m):02d}:{s:06.3f}"
 out = ["WEBVTT", "", f"NOTE {spec['title']} — captions generated from the narration script", ""]

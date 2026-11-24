@@ -153,6 +153,8 @@ def _related_lessons(series, lesson):
         out.append(f"- Lesson {l['n']}: [{l['title']}]({BASE}/{skey}/{l['slug']}/index.md) ({status})")
     return out
 
+NOTES_TITLE = "What the video simplifies"
+
 def write_lesson_twins(site, skey, series, lesson):
     path = f"{skey}/{lesson['slug']}/index.html"
     u = urls(path)
@@ -196,6 +198,8 @@ def write_lesson_twins(site, skey, series, lesson):
     if lesson.get("credit_html"):
         credit = re.sub(r"<[^>]+>", "", lesson["credit_html"])
         bits += ["", "## Credit", "", credit]
+    if lesson.get("notes"):
+        bits += ["", f"## {NOTES_TITLE}", ""] + [f"- {n}" for n in lesson["notes"]]
     tr = transcript_md(lesson.get("script"))
     if tr:
         bits += ["", tr.rstrip()]
@@ -494,7 +498,7 @@ Start here:
 
 - **AI Tips** — short lessons on working with AI tools. Index: https://clarkhuang.github.io/ai-tips/index.md
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
-- **Software Engineering 201: From Loop to Enterprise Systems** — the next series, in progress: from one AI loop to whole apps and systems built AI-native, ending with agents that operate enterprise systems. Index: https://clarkhuang.github.io/software-engineering-201/index.md
+- **Software Engineering 201: From Loop to Enterprise Systems** — the next series, in progress: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
