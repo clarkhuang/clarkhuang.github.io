@@ -511,7 +511,7 @@
                 "id": "ch32-from-loop-to-enterprise-systems",
                 "n": "32",
                 "title": "From Loop to Enterprise Systems",
-                "hook": "101 is the loop; 201 builds whole systems AI-native: decompose them into a graph, run agents in parallel and integrate, govern where people decide, measure quality and observe, turn repeated work into skills, wire routines and pipelines, and let agents operate enterprise systems with permissions and audit, ending with a capstone that builds one feature end to end. Lesson 9 is still an outline; lesson 10 is the capstone.",
+                "hook": "101 is the loop; 201 builds whole systems AI-native: decompose them into a graph, run agents in parallel and integrate, govern where people decide, measure quality and observe, turn repeated work into skills, wire routines and pipelines, and let agents operate enterprise systems with permissions and audit, ending with a capstone that builds one feature end to end. Lesson 10 is the capstone.",
                 "status": "outlined",
                 "needs_story": false,
                 "lessons": "SE 201 Lessons 1–10"
@@ -591,7 +591,6 @@
       }
     ],
     "future_notes": [
-      "Software Engineering 201 lesson 9 is still an outline.",
       "A hosted “talk to Charlie Hack” box is a later option and is not built."
     ],
     "status_key": {

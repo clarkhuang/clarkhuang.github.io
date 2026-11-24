@@ -82,7 +82,7 @@ def chapters(l):
     return [[float(t), str(c)] for t, c in (l.get("chapters") or [])]
 
 def first_sentence(s):
-    m = re.match(r"(.+?[.?!])(\s|$)", s)
+    m = re.match(r"(.+?(?<!a\.m)(?<!p\.m)[.?!])(\s|$)", s)  # "3 a.m. and ..." is not a sentence end
     return m.group(1) if m else s
 
 NUM = "zero one two three four five six seven eight nine ten eleven twelve".split()
