@@ -222,6 +222,7 @@ Index: https://clarkhuang.github.io/software-engineering-201/index.md
 
 ## Also on this site
 
+- [How this book is edited](https://clarkhuang.github.io/book/editorial-policy/index.md)
 - [Contribute with your AI](https://clarkhuang.github.io/contribute/index.md)
 - [Copy this for yourself](https://clarkhuang.github.io/copy-this/index.md)
 - [Ask the Book](https://clarkhuang.github.io/ask/index.md)

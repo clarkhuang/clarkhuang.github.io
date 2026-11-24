@@ -218,7 +218,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -626,6 +626,68 @@ def book_preview_chapters():
             f'<ol class="chapters">{items}</ol></details>\n')
 
 
+
+EDITORIAL_POLICY_MD = """
+This is the editorial policy for *Silicon Valley C Players*. I'll keep it short, and I'll change this page when the process changes.
+
+## Story chapters and the how-to half
+
+The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the [disclaimer](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md).
+
+## Conflicting recollections
+
+People remember the same days differently. If you were there and your memory does not match what's on the page, [file a correction](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml) or [share your side](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml). I will read it. I may keep more than one account in view rather than quietly picking a winner. I will not invent a resolution I do not have.
+
+Story chapters may still be fictionalized. Sending a recollection is not a promise that the published scene will match anyone's memory word for word.
+
+## How claims and sources are tracked
+
+In the nonfiction half, a claim should have a source, or be clearly marked as my view. I will not treat "in my view" as the same thing as a measured result.
+
+When a claim or a source in a published edition changes, it is recorded in the changelog below: what it used to say, what it says now, and which edition made the change.
+
+The current public preview is the starting point for this log. This page is the policy going forward. I am not describing a formal process from earlier drafts.
+
+## Claims and sources changelog
+
+This log starts with the current public preview on the site. Earlier preview files are kept in the repository under `book-source/preview/archive/`. When a later edition changes a published claim or source, it will be listed here.
+
+### Current public preview
+
+No claim or source changes have been logged yet. The log begins here.
+
+Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
+""".strip()
+
+
+def build_editorial_policy():
+    body = """      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / How this book is edited</p>
+      <h1>How this book is edited</h1>
+      <p class="lede">This is the editorial policy for <em>Silicon Valley C Players</em>. I'll keep it short, and I'll change this page when the process changes.</p>
+      <h2 id="two-halves">Story chapters and the how-to half</h2>
+      <p>The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md">disclaimer</a>.</p>
+      <h2 id="recollections">Conflicting recollections</h2>
+      <p>People remember the same days differently. If you were there and your memory does not match what's on the page, <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">file a correction</a> or <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml">share your side</a>. I will read it. I may keep more than one account in view rather than quietly picking a winner. I will not invent a resolution I do not have.</p>
+      <p>Story chapters may still be fictionalized. Sending a recollection is not a promise that the published scene will match anyone's memory word for word.</p>
+      <h2 id="claims">How claims and sources are tracked</h2>
+      <p>In the nonfiction half, a claim should have a source, or be clearly marked as my view. I will not treat "in my view" as the same thing as a measured result.</p>
+      <p>When a claim or a source in a published edition changes, it is recorded in the changelog below: what it used to say, what it says now, and which edition made the change.</p>
+      <p>The current public preview is the starting point for this log. This page is the policy going forward. I am not describing a formal process from earlier drafts.</p>
+      <h2 id="changelog">Claims and sources changelog</h2>
+      <p>This log starts with the current public preview on the site. Earlier preview files are kept in the repository under <code>book-source/preview/archive/</code>. When a later edition changes a published claim or source, it will be listed here.</p>
+      <h3>Current public preview</h3>
+      <p>No claim or source changes have been logged yet. The log begins here.</p>
+      <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
+"""
+    page("book/editorial-policy/index.html",
+         "How this book is edited — Silicon Valley C Players",
+         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources.",
+         body, "book")
+    AF.write_prose_twins(SITE, "book/editorial-policy/index.html", "How this book is edited",
+        EDITORIAL_POLICY_MD,
+        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.")
+
+
 def build_book():
     try:
         prev = json.load(open(f"{SITE}/book.json"))
@@ -710,6 +772,7 @@ def build_book():
               <li><strong>Version one still comes first,</strong> in 2027: Clark's account, then a wider invitation to anyone who recognizes a story, or is related to him, to add their side, and stories he may have forgotten.</li>
               <li><strong>Versions work like software.</strong> Later editions are numbered. Previous audiobook and videobook editions stay up as tagged releases, and the next edition is only rebuilt when Clark approves it.</li>
             </ol>
+            <p>How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next.</p>
             <p class="muted">Want the same idea for your own learning site or OpenBook? <a href="/copy-this/">Copy this for yourself</a>.</p>
           </section>
 
@@ -796,6 +859,8 @@ def build_book():
                            "how_to_cite": "Quote the transcript or a scene file and give a chapter title or timestamp. For the web, use https://clarkhuang.github.io/book/ plus a media timestamp (#t=58.9). Charlie Hack is the fictional narrator; Clark Huang is the author. Do not identify real people or companies behind the fictional names."},
                "ai_readable": {"llms_txt": f"{BASE}/llms.txt", "llms_full_txt": f"{BASE}/llms-full.txt",
                                "book_md": f"{BASE}/book/index.md", "agents_md": f"{BASE}/book/AGENTS.md",
+                               "editorial_policy": f"{BASE}/book/editorial-policy/",
+                               "editorial_policy_md": f"{BASE}/book/editorial-policy/index.md",
                                "rebuild_md": f"{BASE}/REBUILD.md"},
                "audio": {"bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]", "resume": "offered as a 'Resume from m:ss' button; cleared when the track ends",
                          "captions_url": f"{BASE}/audio/book-preview.vtt",
@@ -810,6 +875,7 @@ def build_book():
                              {"format": "M4B", "status": "available in 2027", "url": None},
                              {"format": "EPUB", "status": "available in 2027", "url": None}]},
               open(f"{SITE}/book.json", "w"), indent=2, ensure_ascii=False)
+    build_editorial_policy()
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},
         {"title": "Full audiobook", "url": None},

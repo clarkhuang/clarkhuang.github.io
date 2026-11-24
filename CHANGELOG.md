@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Public editorial policy for the book (`/book/editorial-policy/`): how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources. Book backlog started in `book-source/BACKLOG.md`. Guest-story path added in `book-source/guest/` and CONTRIBUTING.md ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80))
+
 - Book teaser rewrite and matching videobook preview
 - OpenBook working source, issue templates, and self-updating agent workflow
 - Site design upgrade

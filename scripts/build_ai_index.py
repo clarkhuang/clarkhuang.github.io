@@ -234,6 +234,22 @@ def book_entries() -> list[dict]:
             }
         )
 
+    policy = ROOT / "book" / "editorial-policy" / "index.md"
+    if policy.is_file():
+        raw = load(policy)
+        out.append(
+            {
+                "id": "book/editorial-policy",
+                "type": "page",
+                "title": "How this book is edited",
+                "series": "OpenBook",
+                "url": f"{SITE}/book/editorial-policy/",
+                "markdown_url": f"{SITE}/book/editorial-policy/index.md",
+                "summary": "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.",
+                "text": strip_md(raw),
+            }
+        )
+
     # Public outline, if present (never *.private.md).
     for candidate in (
         ROOT / "book-source" / "OUTLINE.md",
