@@ -1,0 +1,69 @@
+{
+  "id": "book-preview-arc",
+  "title": "Silicon Valley C Players \u2014 preview",
+  "voice": "4lbl0krw73vf",
+  "language": "en",
+  "speed": 1.05,
+  "scenes": [
+    {
+      "id": "01_disclaimer",
+      "text": "Fair warning. [pause] This is an embellished fictional dramatization that <emphasis>may or may not</emphasis> be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously."
+    },
+    {
+      "id": "02_title",
+      "text": "Silicon Valley C Players."
+    },
+    {
+      "id": "03_middle",
+      "text": "This preview jumps into the <emphasis>middle</emphasis> of the book. Part Three. C Things That Looked Like A Things."
+    },
+    {
+      "id": "04_myth",
+      "text": "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work."
+    },
+    {
+      "id": "05_straight",
+      "text": "The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing."
+    },
+    {
+      "id": "05_outside",
+      "text": "From the outside, a C thing can look like an A thing. [pause] Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on."
+    },
+    {
+      "id": "06_c_player",
+      "text": "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. [pause] There's always someone smarter, richer, wiser. Stay humble. Stay curious."
+    },
+    {
+      "id": "07_platforms",
+      "text": "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a <emphasis>platform</emphasis>: a foundation you can stand on, and build the next thing on, and the thing after that."
+    },
+    {
+      "id": "08_blocks",
+      "text": "You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later."
+    },
+    {
+      "id": "09_kept_going",
+      "text": "<slow>It's all relative, how good you look from the outside.</slow> [pause] <emphasis>I just kept going.</emphasis> And I kept doing my best."
+    },
+    {
+      "id": "10_turn",
+      "text": "Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>."
+    },
+    {
+      "id": "11_thesis",
+      "text": "A.I. came after the code writers first. [pause] In my own work, A.I. now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure."
+    },
+    {
+      "id": "12_how_to",
+      "text": "So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use A.I."
+    },
+    {
+      "id": "13_bookend",
+      "text": "The book begins with a green-screen dream. It ends by dreaming about A.I. This part, in the middle, is the turn. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written."
+    },
+    {
+      "id": "14_close",
+      "text": "Silicon Valley C Players. Coming in 2027."
+    }
+  ]
+}

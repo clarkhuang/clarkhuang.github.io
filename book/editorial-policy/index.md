@@ -35,7 +35,12 @@ This log starts with the current public preview on the site. Earlier preview fil
 - **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
 - **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
 - **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
-- **Narration:** The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.
+
+### Mid-book preview re-record (24 November 2026)
+
+- **Edition:** The previous mid-book recording is archived in `book-source/preview/archive/book-v0.2/` (2:24). That recording still said the earlier line, “In my view, AI now writes essentially all of the code.”
+- **Now:** The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”
+- **Also:** The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in `book-source/preview/REVISION-2026-11-24.md`.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 
