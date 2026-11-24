@@ -4,7 +4,7 @@ Performance script for the Clark voice (Expressive). Speech tags: `[pause]`, `<e
 This preview is a mid-book excerpt from Part Three (*C Things That Looked Like A Things*) and the turn into Part Four. The story-chapter narrator is the fictional Charlie Hack. The author is Clark Huang. This is an embellished fictional dramatization that may or may not be based on true stories.
 The earlier opening teaser is archived in [archive/book-v0.1](archive/book-v0.1/) and in the `book-v0.1` GitHub Release. The mid-book preview as it stood before the 24 November 2026 re-record is in [archive/book-v0.2](archive/book-v0.2/). The line-by-line revision is in [REVISION-2026-11-24.md](REVISION-2026-11-24.md).
 
-Where the letter A must be spoken as the letter (A players, A Things, an A thing), the `tts` field in `script.json` uses a phonetic spelling such as “Ay players.” Captions and transcripts keep “A players.”
+Where the letter A must be spoken as the letter (A players, A Things, an A thing), the `tts` field in `script.json` uses a spelling that makes the letter come through as /eɪ/ (like “day”). “Ay” is read as “aye” or “eye” (/aɪ/), so do not use it. This recording uses “A. Things,” “A-players,” and “an A. thing.” Captions and transcripts keep “A players,” “A Things,” and “an A thing.”
 
 ## Fair warning
 
@@ -20,39 +20,39 @@ Silicon Valley C Players.
 
 ## The middle of the book
 
-`03_middle` · 0:19 · 7.10s
+`03_middle` · 0:19 · 8.02s
 
 This preview drops you into the <emphasis>middle</emphasis> of the book. Part Three. [pause] It's called C Things That Looked Like A Things.
 
 TTS / performance only:
 
-This preview drops you into the <emphasis>middle</emphasis> of the book. Part Three. [pause] It's called C Things That Looked Like Ay Things.
+This preview drops you into the <emphasis>middle</emphasis> of the book. Part Three. [pause] It's called C Things That Looked Like A. Things.
 
 ## The A-player myth
 
-`04_myth` · 0:26 · 9.24s
+`04_myth` · 0:27 · 8.93s
 
 Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work.
 
 TTS / performance only:
 
-Silicon Valley is very good at telling a story about Ay players. The people who look like they were always going to win, and the companies that look like they were always going to work.
+Silicon Valley is very good at telling a story about A-players. The people who look like they were always going to win, and the companies that look like they were always going to work.
 
 ## The straight-line myth
 
-`05_straight` · 0:35 · 10.78s
+`05_straight` · 0:36 · 10.78s
 
 The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
 ## What people saw
 
-`05_outside` · 0:46 · 12.89s
+`05_outside` · 0:47 · 12.29s
 
 And from the outside, a C thing can look like an A thing. [pause] The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
 
 TTS / performance only:
 
-And from the outside, a C thing can look like an Ay thing. [pause] The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
+And from the outside, a C thing can look like an A. thing. [pause] The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
 
 ## A C player
 

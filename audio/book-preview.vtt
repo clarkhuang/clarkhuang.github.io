@@ -34,61 +34,61 @@ are fictitious, or used fictitiously.
 Silicon Valley C Players.
 
 8
-00:00:19.080 --> 00:00:22.063
+00:00:19.080 --> 00:00:22.449
 This preview drops you into
 the middle of the book.
 
 9
-00:00:22.083 --> 00:00:23.449
+00:00:22.469 --> 00:00:24.013
 Part Three.
 
 10
-00:00:23.469 --> 00:00:26.164
+00:00:24.033 --> 00:00:27.076
 It's called C Things That
 Looked Like A Things.
 
 11
-00:00:26.184 --> 00:00:29.378
+00:00:27.096 --> 00:00:30.181
 Silicon Valley is very good at
 telling a story about A players.
 
 12
-00:00:29.398 --> 00:00:32.592
+00:00:30.201 --> 00:00:33.287
 The people who look like they
 were always going to win, and the
 
 13
-00:00:32.612 --> 00:00:35.404
+00:00:33.307 --> 00:00:36.004
 companies that look like they
 were always going to work.
 
 14
-00:00:35.424 --> 00:00:39.269
+00:00:36.024 --> 00:00:39.869
 The myth is a straight line: a
 garage, a genius, a ticker symbol.
 
 15
-00:00:39.289 --> 00:00:42.256
+00:00:39.889 --> 00:00:42.856
 But most of the real work
 looks nothing like that.
 
 16
-00:00:42.276 --> 00:00:46.180
+00:00:42.876 --> 00:00:46.780
 It looks like another ordinary
 Tuesday, doing the next right thing.
 
 17
-00:00:46.200 --> 00:00:50.602
+00:00:46.800 --> 00:00:50.996
 And from the outside, a C
 thing can look like an A thing.
 
 18
-00:00:50.622 --> 00:00:53.888
+00:00:51.016 --> 00:00:54.129
 The applause is loud, and
 the real work is quieter.
 
 19
-00:00:53.908 --> 00:00:59.068
+00:00:54.149 --> 00:00:59.068
 This book is about that gap, between what
 people saw and what was really going on.
 
@@ -167,62 +167,79 @@ I just kept going. And
 I kept doing my best.
 
 36
-00:01:47.640 --> 00:01:53.054
-Then the work itself changed. I.
+00:01:47.640 --> 00:01:49.880
+Then the work itself changed.
 
 37
+00:01:49.900 --> 00:01:53.054
+I'm usually the most excited
+person in the room about A.I.
+
+38
 00:01:53.074 --> 00:01:55.636
 Which is funny, because
 I should be the saddest.
 
-38
-00:01:55.656 --> 00:02:00.491
-I. came after the code writers first. I.
-
 39
-00:02:00.511 --> 00:02:03.309
-now writes essentially
-all of the code I ship.
+00:01:55.656 --> 00:01:59.232
+Because A.I. came after
+the code writers first.
 
 40
+00:01:59.252 --> 00:02:03.309
+In my own work, A.I. now writes
+essentially all of the code I ship.
+
+41
 00:02:03.329 --> 00:02:06.126
 That's how I work. Not
 a measured team result.
 
-41
+42
 00:02:04.467 --> 00:02:07.924
 Not a general industry figure.
 
-42
-00:02:07.944 --> 00:02:19.501
+43
+00:02:07.944 --> 00:02:11.542
 So software engineering practices
 have to be geared around that.
 
-43
-00:02:19.521 --> 00:02:19.612
-I.
-
 44
-00:02:19.632 --> 00:02:26.750
-I. This part, in the middle, is the turn.
+00:02:11.562 --> 00:02:15.772
+That's what Software Engineering 101
+and 201 are about, and it's the second
 
 45
+00:02:15.792 --> 00:02:19.612
+half of this book: how to work now,
+and how companies should use A.I.
+
+46
+00:02:19.632 --> 00:02:23.928
+The book begins with a green-screen
+dream, and it ends by dreaming about A.I.
+
+47
+00:02:23.948 --> 00:02:26.750
+This part, in the middle, is the turn.
+
+48
 00:02:26.770 --> 00:02:27.967
 It's free. It's open.
 
-46
+49
 00:02:27.987 --> 00:02:30.734
 And when version one is
 ready, if you were around
 
-47
+50
 00:02:30.754 --> 00:02:33.722
 for any of it, you get to tell your side.
 
-48
+51
 00:02:33.742 --> 00:02:35.548
 The story is still being written.
 
-49
+52
 00:02:35.568 --> 00:02:39.628
 Silicon Valley C Players. Coming in 2027.

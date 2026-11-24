@@ -16,7 +16,10 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
-- Clarified the book preview claim: “AI writes essentially all of the code” is Clark's own workflow (the code he ships), not a measured team result or a prediction. Chapter 20 of the outline no longer says “100% of the code.” The preview narration and captions are unchanged and still use the earlier line; re-recording is a follow-up ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80)). Fixed a staging rewrite bug that left some `AGENTS.md` Markdown URLs pointing at production.
+- Mid-book preview re-recorded (about 2:39) so the narration matches the own-workflow wording and flows more like Clark talking. A follow-up re-record makes the letter A in “A Things,” “A players,” and “an A thing” sound like the letter (/eɪ/), not “eye,” and fully re-renders the videobook so the pictures, captions, and timing match. Staging only until Clark approves production.
+
+
+- Clarified the book preview claim: “AI writes essentially all of the code” is Clark's own workflow (the code he ships), not a measured team result or a prediction. Chapter 20 of the outline no longer says “100% of the code.” That claim is now also in the mid-book preview narration and captions ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80)). Fixed a staging rewrite bug that left some `AGENTS.md` Markdown URLs pointing at production.
 
 - Public story arc and chapter list for Silicon Valley C Players (`/book/story-arc/`), with a machine-readable outline at `book-source/outline.json`. The book is framed as two halves: the career arc, then the site and future directions. Chapter 32 now describes Software Engineering 201 as ten lessons, with lesson 10 a capstone and lesson 9 still an outline.
 - Public editorial policy for the book (`/book/editorial-policy/`): how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources. Book backlog started in `book-source/BACKLOG.md`. Guest-story path added in `book-source/guest/` and CONTRIBUTING.md ([issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80))

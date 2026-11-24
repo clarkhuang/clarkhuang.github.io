@@ -15,25 +15,25 @@
     "id": "03_middle",
     "title": "The middle of the book",
     "start_seconds": 19.08,
-    "duration_seconds": 7.1
+    "duration_seconds": 8.02
   },
   {
     "id": "04_myth",
     "title": "The A-player myth",
-    "start_seconds": 26.18,
-    "duration_seconds": 9.24
+    "start_seconds": 27.1,
+    "duration_seconds": 8.93
   },
   {
     "id": "05_straight",
     "title": "The straight-line myth",
-    "start_seconds": 35.42,
+    "start_seconds": 36.02,
     "duration_seconds": 10.78
   },
   {
     "id": "05_outside",
     "title": "What people saw",
-    "start_seconds": 46.2,
-    "duration_seconds": 12.89
+    "start_seconds": 46.8,
+    "duration_seconds": 12.29
   },
   {
     "id": "06_c_player",

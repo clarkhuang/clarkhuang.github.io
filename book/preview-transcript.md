@@ -17,15 +17,15 @@ Silicon Valley C Players.
 
 This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.
 
-## The A-player myth (0:26)
+## The A-player myth (0:27)
 
 Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work.
 
-## The straight-line myth (0:35)
+## The straight-line myth (0:36)
 
 The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-## What people saw (0:46)
+## What people saw (0:47)
 
 And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
 
