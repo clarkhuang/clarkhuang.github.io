@@ -3,7 +3,7 @@
 Full spoken text of the mid-book audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
 This excerpt is from Part Three and the turn into Part Four: C players, the gap between applause and the work, platforms over products, and the claim that AI came for the code writers first.
 
-Duration: 2:40 (159.648 seconds).
+Duration: 2:59 (179.856 seconds).
 
 ## Fair warning (0:00)
 
@@ -31,37 +31,41 @@ And from the outside, a C thing can look like an A thing. The applause is loud, 
 
 ## A C player (0:59)
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious.
+A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.
 
-## Platforms, not products (1:14)
+## Platforms, not products (1:16)
 
 The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that.
 
-## Building blocks (1:25)
+## Building blocks (1:27)
 
 You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-## I just kept going (1:36)
+## I just kept going (1:38)
 
 It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.
 
-## The turn (1:48)
+## The turn (1:50)
 
 Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest.
 
-## The thesis (1:56)
+## The thesis (1:58)
 
 Because A.I. came after the code writers first. In my own work, A.I. now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.
 
-## How to work now (2:08)
+## The abstraction ladder (2:10)
+
+Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up.
+
+## How to work now (2:28)
 
 So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use A.I.
 
-## The story is still being written (2:20)
+## The story is still being written (2:40)
 
 The book begins with a green-screen dream, and it ends by dreaming about A.I. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
-## Coming in 2027 (2:36)
+## Coming in 2027 (2:56)
 
 Silicon Valley C Players. Coming in 2027.
 

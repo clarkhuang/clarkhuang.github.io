@@ -1,7 +1,7 @@
 # I just kept going
 
 - id: `09_kept_going`
-- start: 96.26s (1:36)
+- start: 98.40s (1:38)
 - duration: 11.38s
 
 ## Performance text

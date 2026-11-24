@@ -33,48 +33,53 @@
     {
       "id": "06_c_player",
       "start": 59.088,
-      "duration": 14.424
+      "duration": 16.56
     },
     {
       "id": "07_platforms",
-      "start": 73.512,
+      "start": 75.648,
       "duration": 11.688
     },
     {
       "id": "08_blocks",
-      "start": 85.2,
+      "start": 87.336,
       "duration": 11.064
     },
     {
       "id": "09_kept_going",
-      "start": 96.264,
+      "start": 98.4,
       "duration": 11.376
     },
     {
       "id": "10_turn",
-      "start": 107.64,
+      "start": 109.776,
       "duration": 8.016
     },
     {
       "id": "11_thesis",
-      "start": 115.656,
+      "start": 117.792,
       "duration": 12.288
     },
     {
+      "id": "11_ladder",
+      "start": 130.08,
+      "duration": 18.072
+    },
+    {
       "id": "12_how_to",
-      "start": 127.944,
+      "start": 148.152,
       "duration": 11.688
     },
     {
       "id": "13_bookend",
-      "start": 139.632,
+      "start": 159.84,
       "duration": 15.936
     },
     {
       "id": "14_close",
-      "start": 155.568,
+      "start": 175.776,
       "duration": 4.08
     }
   ],
-  "total": 159.648
+  "total": 179.856
 }

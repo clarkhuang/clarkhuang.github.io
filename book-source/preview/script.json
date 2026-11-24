@@ -1,6 +1,6 @@
 {
   "id": "book-preview-arc",
-  "title": "Silicon Valley C Players \u2014 preview",
+  "title": "Silicon Valley C Players — preview",
   "voice": "4lbl0krw73vf",
   "language": "en",
   "speed": 1.05,
@@ -34,7 +34,7 @@
     },
     {
       "id": "06_c_player",
-      "text": "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious."
+      "text": "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter."
     },
     {
       "id": "07_platforms",
@@ -55,6 +55,10 @@
     {
       "id": "11_thesis",
       "text": "Because A.I. came after the code writers first. [pause] In my own work, A.I. now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure."
+    },
+    {
+      "id": "11_ladder",
+      "text": "Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. [pause] It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up."
     },
     {
       "id": "12_how_to",
