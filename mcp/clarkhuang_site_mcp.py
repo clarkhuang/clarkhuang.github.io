@@ -30,7 +30,7 @@ import json, os, re, sys, urllib.request, urllib.parse, urllib.error
 PROD = "https://clarkhuang.github.io"
 REPO = "clarkhuang/clarkhuang.github.io"
 BASE = os.environ.get("CLARKHUANG_SITE", PROD).rstrip("/")
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"]
 UA = "clarkhuang-site-mcp/" + VERSION
 _cache = {}
@@ -41,7 +41,10 @@ def _local(base):
 
 
 def to_source(url):
-    """Map a production URL (as written in lessons.json) onto BASE."""
+    """Map a production URL (as written in lessons.json) onto BASE. Staging's own files already carry
+    /staging/ URLs, so anything already under BASE is left alone."""
+    if url.startswith(BASE + "/") or url == BASE:
+        return url
     if url.startswith(PROD):
         url = BASE + url[len(PROD):]
     elif url.startswith("/"):
