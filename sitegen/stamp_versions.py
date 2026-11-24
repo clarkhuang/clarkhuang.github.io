@@ -9,6 +9,7 @@ What gets stamped (attribute-only edits to committed HTML, idempotent):
   <video data-lesson-id="ID">, <video|audio data-chapter="ID">   data-video-version = hash of its first <source src>
   data-watch-id / data-toggle-watched / data-lesson-link="ID"    data-video-version = hash of lesson ID's video
   data-progress="ID1,ID2,..."                                    data-video-versions = "V1,V2,..." (same order)
+  lessons.json, each lesson with a video                         "video_version" and "watched_key" ("<id>@<version>")
 Lesson ID -> file comes from the lesson pages' own <video data-lesson-id> + <source>.
 
 Usage (from the repo root):
@@ -17,7 +18,7 @@ Usage (from the repo root):
 Run it after re-rendering ANY video or audio file. sitegen/gen.py calls stamp_site() at the end of a build,
 and sitegen/check_site.py calls verify() so a re-render without re-stamping fails the check.
 """
-import hashlib, os, re, sys
+import hashlib, json, os, re, sys
 
 VERSION_LEN = 8
 ID_ATTRS = ("data-lesson-id", "data-chapter", "data-watch-id", "data-toggle-watched", "data-lesson-link")
@@ -135,11 +136,39 @@ def stamp_text(site, text, rel, lessons, errors):
     return TAG_RE.sub(fix, text)
 
 
+def stamp_catalog(text, lessons):
+    """lessons.json with "video_version" and "watched_key" set right after "video_url" for every lesson that has a
+    video, so agents can match a reader's watched cookie without scraping HTML or hashing the MP4."""
+    data = json.loads(text)
+    for series in data.get("series", []):
+        for i, l in enumerate(series.get("lessons", [])):
+            ver = lessons.get(l.get("id"))
+            want = {"video_version": ver, "watched_key": f"{l['id']}@{ver}"} if ver and l.get("video_url") else {}
+            rebuilt = {}
+            for k, v in l.items():
+                if k in ("video_version", "watched_key"):
+                    continue
+                rebuilt[k] = v
+                if k == "video_url":
+                    rebuilt.update(want)
+            series["lessons"][i] = rebuilt
+    return json.dumps(data, indent=2, ensure_ascii=False)
+
+
 def _run(site, write):
     site = os.path.abspath(site)
     errors = []
     lessons = lesson_versions(site, errors)
     changed = []
+    catalog = os.path.join(site, "lessons.json")
+    if os.path.isfile(catalog):
+        text = open(catalog, encoding="utf-8").read()
+        new = stamp_catalog(text, lessons)
+        if new != text:
+            changed.append("lessons.json")
+            if write:
+                with open(catalog, "w", encoding="utf-8") as f:
+                    f.write(new)
     for path in _html_files(site):
         text = open(path, encoding="utf-8").read()
         rel = os.path.relpath(path, site)
