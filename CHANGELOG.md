@@ -34,6 +34,7 @@ Work in progress on the `next-revision` branch, until Clark approves cutting the
 - Software Engineering 201 lessons 5 to 8 recorded: “Governance: Where People Decide”, “Quality, Feedback, and Observability”, “Skills as Building Blocks” and “Routines, Pipelines, and Integration” (video, captions, chapters, rule, transcript, and build source in `lesson-sources/se201-05/` to `lesson-sources/se201-08/`). The series now has 8 of 9 lessons available; lesson 9 is still an outline
 - Software Engineering 201 lesson 10 recorded: “Capstone: One Feature, End to End” (video, captions, chapters, rule, transcript, notes on what the video simplifies, and build source in `lesson-sources/se201-10/`). The series is now ten lessons with 9 of 10 available; lesson 9 is still an outline, and its text now leads into the capstone
 - Software Engineering 201 lessons 1 and 8 re-rendered with one scene re-narrated each for the ten-lesson series (lesson 1's path now lists the capstone; lesson 8's close says “That's next” instead of “That's the last lesson”); captions for lessons 1, 8 and 10 spell EDI, CTO and ID without dots
+- Software Engineering 201 lesson 2 re-rendered with its path scene re-narrated so it ends on the lesson 10 capstone (video now 3:58); the series wording in `AGENTS.md`, the home page and the AI-readable files now ends “with a capstone that builds one feature end to end”; lesson 10's rule card uses the “In full:” format; a missing period restored in lesson 7's captions (PR #86)
 
 ## [v0.1-wip] — 2026-11-22
 
