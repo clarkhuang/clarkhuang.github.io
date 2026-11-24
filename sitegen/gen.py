@@ -429,7 +429,7 @@ def build():
         avail = [l for l in s["lessons"] if l["video"]]
         sj = {"id": s["key"], "title": s["title"], **({"subtitle": s["subtitle"]} if s.get("subtitle") else {}), "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
               "agents_url": f"{BASE}/{skey}/AGENTS.md",
-              "status": "in progress" if avail else "coming soon",
+              "status": ("complete" if s.get("complete") and not [l for l in s["lessons"] if not l["video"]] and not s["soon"] else "in progress") if avail else "coming soon",
               "summary": s["intro"], "lessons": []}
         # lesson pages
         for i, l in enumerate(s["lessons"]):
