@@ -6,7 +6,7 @@ This folder holds the source used to make the lesson video “Capstone: One Feat
 - `se201_layouts_10.py` must sit beside `render_se101.py` on the build machine, with one import line in `render_se101.py`. It imports helpers from `se201_layouts_58b.py` (in `lesson-sources/se201-08/`).
 - Every factual claim must stay true; check `facts.md` and update it with any new claim.
 - The billing system, the plans and prices, the quote, the file names, the agent's name and the double charge are made up for the illustration. They describe no real company and no real incident. Keep it labelled as made up, aloud and on screen.
-- Lesson 9 is an outline, not a video. Refer to its ideas (“lesson nine's question”), never to something the viewer has watched.
+- Lesson 9 was recorded after this lesson (source in `lesson-sources/se201-09/`). The capstone's narration refers to its ideas as “lesson nine's question”; keep the two lessons consistent (same agent id, same access) if either changes.
 - The feature, the build map and the plan-first rule are teaching ideas written by the scriptwriter. They are not quotes from Clark.
 - The script was drafted and critiqued in two independent rounds by Claude Code (model `claude-fable-5-2`) and reviewed by LegacyBot; the narration was checked by speech-to-text. Nobody has listened to the final audio yet before staging; do not describe it as listened to or approved.
 - Never write the xAI API key to a file, log, or command line. No laugh or chuckle tags. No invented stories or quotes in Clark's voice, no company-internal details, no other people's names.

@@ -134,22 +134,23 @@ def main():
                   any(t.strip().lower() == "new" for t in tags), f"visible={tags}")
             check("New tag text is the word New (accessible, not icon-only)",
                   any(t.strip() in ("New", "NEW") or "new" in t.strip().lower() for t in tags), f"visible={tags}")
-            # home: book card New, AI Tips (latest Nov 22) not New, SE201 (latest Nov 23) not New
+            # home: book card New, AI Tips (latest Nov 22) not New, SE201 (lesson 9, Nov 24 evening) New
             pg.goto(base + HOME, wait_until="domcontentloaded")
             book_card = pg.locator(".card", has=pg.locator("h3", has_text="Silicon Valley C Players"))
             tips_card = pg.locator(".card", has=pg.locator("h3", has_text="AI Tips"))
             se201_card = pg.locator(".card", has=pg.locator("h3", has_text="Software Engineering 201"))
             check("home book card shows New", book_card.locator("[data-new]:visible").count() == 1)
             check("home AI Tips card has no New (latest is Nov 22)", tips_card.locator("[data-new]:visible").count() == 0)
-            check("home SE201 card has no New (latest is Nov 23)", se201_card.locator("[data-new]:visible").count() == 0)
+            check("home SE201 card shows New (lesson 9 landed after the cutoff)", se201_card.locator("[data-new]:visible").count() == 1)
             check("session cookies stay at the seeded cutoff after a second page",
                   cookie(ctx, "visit_ref") == str(CUTOFF) and cookie(ctx, "last_visit") == str(CUTOFF),
                   f"visit_ref={cookie(ctx, 'visit_ref')} last_visit={cookie(ctx, 'last_visit')}")
 
-            # series index: se201-10 (Nov 23) not New; if we had a later one it would be
+            # series index: se201-10 (Nov 23) not New; se201-09 (Nov 24, after the cutoff) is the only New
             pg.goto(base + SE201_IDX, wait_until="domcontentloaded")
-            check("SE201 series index shows no New tags for this cutoff",
-                  pg.locator("[data-new]:visible").count() == 0,
+            check("SE201 series index shows New only on lesson 9 for this cutoff",
+                  pg.locator("[data-new]:visible").count() == 1
+                  and pg.locator('[data-watch-id="se201/09"] [data-new]:visible').count() == 1,
                   f"count={pg.locator('[data-new]:visible').count()}")
             pg.goto(base + AI_TIPS_03, wait_until="domcontentloaded")
             check("Nov 21 lesson is not tagged New",

@@ -83,7 +83,7 @@ def chapters(l):
     return [[float(t), str(c)] for t, c in (l.get("chapters") or [])]
 
 def first_sentence(s):
-    m = re.match(r"(.+?[.?!])(\s|$)", s)
+    m = re.match(r"(.+?(?<!a\.m)(?<!p\.m)[.?!])(\s|$)", s)  # "3 a.m. and ..." is not a sentence end
     return m.group(1) if m else s
 
 NUM = "zero one two three four five six seven eight nine ten eleven twelve".split()
@@ -429,7 +429,7 @@ def build():
         avail = [l for l in s["lessons"] if l["video"]]
         sj = {"id": s["key"], "title": s["title"], **({"subtitle": s["subtitle"]} if s.get("subtitle") else {}), "page": f"{BASE}/{skey}/", "markdown_url": f"{BASE}/{skey}/index.md",
               "agents_url": f"{BASE}/{skey}/AGENTS.md",
-              "status": "in progress" if avail else "coming soon",
+              "status": ("complete" if s.get("complete") and not [l for l in s["lessons"] if not l["video"]] and not s["soon"] else "in progress") if avail else "coming soon",
               "summary": s["intro"], "lessons": []}
         # lesson pages
         for i, l in enumerate(s["lessons"]):

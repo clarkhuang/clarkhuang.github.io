@@ -50,7 +50,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 - An idempotency key only helps if the payment processor supports one; many do, and they keep keys for a limited time. Lesson 8 covers this.
 - The double charge in the lesson gets past the key because two browser tabs produced two quotes, and so two keys. The fix is the fourth check, one open quote per subscription. A key built as in lesson 8 (this subscription, this billing period) would also have stopped it.
 - Most pipeline steps are plain code, as lesson 8 says. The agent earns its place at the nightly reconcile, where working out why something doesn't match takes judgment.
-- Lesson 9 is an outline, not a video. The capstone uses its ideas: an agent's own identity, the least access the job needs, a log of every action, and a person at any decision that moves money.
+- Lesson 9 covers the operator in full: an agent's own identity, the least access the job needs, a log of every action, and a person at any decision that moves money.
 
 ## Transcript
 
@@ -120,7 +120,7 @@ Every box on that map is still one loop: plan, build, verify. Agents do more of 
 - Lesson 6: [Quality, Feedback, and Observability](https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/index.md) (available)
 - Lesson 7: [Skills as Building Blocks](https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/index.md) (available)
 - Lesson 8: [Routines, Pipelines, and Integration](https://clarkhuang.github.io/software-engineering-201/08-routines-pipelines-and-integration/index.md) (available)
-- Lesson 9: [Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (outline)
+- Lesson 9: [Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (available)
 
 ## For agents
 

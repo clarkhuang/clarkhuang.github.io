@@ -1,0 +1,291 @@
+WEBVTT
+
+NOTE SE201 Lesson 9: Agents That Operate Enterprise Systems — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:03.570
+Software engineering 201. Lesson nine.
+
+2
+00:00:03.570 --> 00:00:06.720
+Agents that operate enterprise systems.
+
+3
+00:00:07.070 --> 00:00:09.683
+Picture a made-up billing system.
+
+4
+00:00:09.683 --> 00:00:12.851
+Three in the morning, a refund goes out.
+
+5
+00:00:12.851 --> 00:00:15.384
+The log says: admin. Who did it?
+
+6
+00:00:15.384 --> 00:00:18.552
+The engineer on call? One of the agents?
+
+7
+00:00:18.552 --> 00:00:21.799
+Or: the log can't say? The log can't say.
+
+8
+00:00:21.799 --> 00:00:24.570
+People and agents share that login.
+
+9
+00:00:24.920 --> 00:00:28.328
+Lesson eight left three questions about a pipeline.
+
+10
+00:00:28.328 --> 00:00:30.267
+Whose name does it run under?
+
+11
+00:00:30.267 --> 00:00:32.138
+What is it allowed to touch?
+
+12
+00:00:32.138 --> 00:00:37.351
+Who can see what it did? Add one from lesson five: where does a person decide?
+
+13
+00:00:37.351 --> 00:00:39.690
+Together: who operates this system?
+
+14
+00:00:40.040 --> 00:00:45.383
+In our made-up subscription-billing system, an agent works the nightly reconcile.
+
+15
+00:00:45.383 --> 00:00:48.549
+Whose name? Its own identity: billing ops agent.
+
+16
+00:00:48.549 --> 00:00:50.857
+Not a shared login, not a person's.
+
+17
+00:00:50.857 --> 00:01:00.092
+So the log says who. Its job, written down: compare our ledger with the payment processor's report, work out why they differ, tell a person.
+
+18
+00:01:00.092 --> 00:01:02.730
+And one named owner, who answers for it.
+
+19
+00:01:03.080 --> 00:01:05.679
+What may it touch? The least the job needs.
+
+20
+00:01:05.679 --> 00:01:08.579
+It reads the ledger, and the processor's report.
+
+21
+00:01:08.579 --> 00:01:11.299
+It writes in one place: a case, for a person.
+
+22
+00:01:11.299 --> 00:01:15.227
+It can't change the ledger, move money, or change its own access.
+
+23
+00:01:15.227 --> 00:01:18.188
+That's enforced by the system, not by the prompt.
+
+24
+00:01:18.188 --> 00:01:20.363
+An instruction can be talked around.
+
+25
+00:01:20.363 --> 00:01:22.720
+A permission that isn't there can't be.
+
+26
+00:01:23.060 --> 00:01:24.984
+Some things are out of reach.
+
+27
+00:01:24.984 --> 00:01:29.032
+The card number: the processor holds it, and we hold a token.
+
+28
+00:01:29.032 --> 00:01:35.270
+The processor's key: a tool fetches the report, with a read-only key the agent is never shown.
+
+29
+00:01:35.270 --> 00:01:38.456
+Customer details: only the fields the job needs.
+
+30
+00:01:38.456 --> 00:01:39.650
+No name, no email.
+
+31
+00:01:40.000 --> 00:01:42.117
+One made-up night. Two forty A.M.
+
+32
+00:01:42.117 --> 00:01:45.773
+The processor's report: nine hundred eighty-nine charges.
+
+33
+00:01:45.773 --> 00:01:48.210
+Our ledger: nine hundred eighty-eight.
+
+34
+00:01:48.210 --> 00:01:54.047
+The agent reads both, and finds the one: a thirty-dollar renewal, charged by the processor.
+
+35
+00:01:54.047 --> 00:01:58.730
+Our side timed out, the retries ran out, and it never reached the ledger.
+
+36
+00:01:59.080 --> 00:02:04.739
+Add the missing entry? It can't change the ledger, and it doesn't look for a way around.
+
+37
+00:02:04.739 --> 00:02:06.733
+Refund it, so the counts match?
+
+38
+00:02:06.733 --> 00:02:13.550
+It can't move money. It opens a case, for the ledger's owner: what it found, the evidence, a proposed fix.
+
+39
+00:02:13.550 --> 00:02:14.450
+Then it stops.
+
+40
+00:02:14.800 --> 00:02:20.414
+Who can see what it did? Every action left one line: when, who, what, why, result.
+
+41
+00:02:20.414 --> 00:02:26.096
+The agent gives the why. The system writes the line, and the agent can't change it.
+
+42
+00:02:26.096 --> 00:02:31.162
+Where does a person decide? At eight fifteen: the ledger's owner approves.
+
+43
+00:02:31.162 --> 00:02:34.379
+The fix is a new entry, under the owner's name.
+
+44
+00:02:34.379 --> 00:02:36.570
+Who did it? Now the log can say.
+
+45
+00:02:36.920 --> 00:02:42.871
+A near miss, also made up. At setup, this agent's access was copied from a support role.
+
+46
+00:02:42.871 --> 00:02:45.914
+So it could issue refunds, and never said so.
+
+47
+00:02:45.914 --> 00:02:49.228
+Then its owner reviewed every permission: needed?
+
+48
+00:02:49.228 --> 00:02:52.609
+Used? Three stay. Refunds: not needed, never used.
+
+49
+00:02:52.609 --> 00:02:59.980
+Removed. Agents read text they didn't write, like a note on a payment, and text can be written to steer them.
+
+50
+00:02:59.980 --> 00:03:03.294
+With the spare permission, a refund could go out.
+
+51
+00:03:03.294 --> 00:03:05.390
+Without it, the system says no.
+
+52
+00:03:05.740 --> 00:03:09.647
+Two more, for a bad day. A limit: say, twenty cases a night.
+
+53
+00:03:09.647 --> 00:03:12.251
+Past that, it stops, and tells a person.
+
+54
+00:03:12.251 --> 00:03:17.460
+A stop switch: its owner turns off this one identity, and only this agent stops.
+
+55
+00:03:17.810 --> 00:03:21.231
+So, to recap. One agent, one job, one identity.
+
+56
+00:03:21.231 --> 00:03:24.216
+The least access, enforced by the system.
+
+57
+00:03:24.216 --> 00:03:28.074
+Every action logged, where the agent can't change it.
+
+58
+00:03:28.074 --> 00:03:31.350
+A person decides on money, and on the ledger.
+
+59
+00:03:31.700 --> 00:03:34.208
+Which gives us rule nine, for your agents.
+
+60
+00:03:34.208 --> 00:03:37.909
+Use only your own identity, and only the access the job needs.
+
+61
+00:03:37.909 --> 00:03:40.417
+Never borrow a login, or work around a no.
+
+62
+00:03:40.417 --> 00:03:42.507
+Give your reason with every action.
+
+63
+00:03:42.507 --> 00:03:46.805
+Don't move money, or change the ledger, unless a person has released it.
+
+64
+00:03:46.805 --> 00:03:49.194
+Otherwise: prepare it, and hand it over.
+
+65
+00:03:49.194 --> 00:03:51.940
+If you can do more than the job needs, say so.
+
+66
+00:03:52.290 --> 00:03:56.198
+Now, your turn. Pick one recurring job in a system you run.
+
+67
+00:03:56.198 --> 00:04:04.742
+Ask your AI to draft its agent's job card: its identity, what it may do, what it can't, what it logs, and where a person decides.
+
+68
+00:04:04.742 --> 00:04:07.060
+Then: what's the worst it could do?
+
+69
+00:04:07.400 --> 00:04:09.975
+An agent can operate the system.
+
+70
+00:04:09.975 --> 00:04:13.999
+It can't answer for it. You still own the outcome.
+
+71
+00:04:13.999 --> 00:04:17.540
+Next, the capstone: one feature, end to end.
+
+72
+00:04:17.540 --> 00:04:19.310
+See you in lesson ten.
