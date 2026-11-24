@@ -22,6 +22,16 @@ Use one of these templates (also described in [AGENTS.md](https://clarkhuang.git
 
 A good story issue is specific about *what happened* and *why it's funny or useful* — when (roughly), what you saw, which chapter if you know it. **Don't use real names of private people, companies, or venues.** Describe them by role ("my team lead," "a payments startup," "a bar in SoMa"). If you were there, say so.
 
+## Guest stories (first-person, under your own name)
+
+Most book contributions are fictionalized, and you are not named as a character. If you want to contribute a short first-person story published under your own name, that is a guest story.
+
+- Put the file in [`book-source/guest/`](book-source/guest/README.md), following the format in that README.
+- Open a pull request against `next-revision`.
+- The file must include your own written consent to publish your name.
+- Do not name other private people, and do not include confidential material.
+- Clark still reviews and merges. A guest story is not published until he does.
+
 ## How a change lands
 
 1. You file an issue (or open a pull request). It is labeled `needs-clark-review`.

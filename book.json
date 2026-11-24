@@ -78,7 +78,9 @@
     "llms_full_txt": "https://clarkhuang.github.io/llms-full.txt",
     "book_md": "https://clarkhuang.github.io/book/index.md",
     "agents_md": "https://clarkhuang.github.io/book/AGENTS.md",
-    "rebuild_md": "https://clarkhuang.github.io/REBUILD.md"
+    "rebuild_md": "https://clarkhuang.github.io/REBUILD.md",
+    "editorial_policy": "https://clarkhuang.github.io/book/editorial-policy/",
+    "editorial_policy_md": "https://clarkhuang.github.io/book/editorial-policy/index.md"
   },
   "audio": {
     "bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]",

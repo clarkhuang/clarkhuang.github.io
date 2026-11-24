@@ -6,6 +6,8 @@ This folder is the book's working source. The published preview lives at [https:
 
 The book is versioned like software. **v0** is in progress (a public teaser). **v1** is the first full draft, planned for 2027. Later editions are tagged the same way (`book-v1.1`, `book-v2.0`, …). See [VERSIONING.md](VERSIONING.md).
 
+The editorial policy — how conflicting recollections are handled, and how claims and sources are tracked across editions — is at [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/). Chapter ideas not yet in a draft are listed in [BACKLOG.md](BACKLOG.md). First-person guest stories, published under the contributor's own name, go in [guest/](guest/README.md).
+
 ## Fair warning
 
 This is an **embellished fictional dramatization** that may or may not be based on true stories. The narrator, Charlie Hack, is a fictional character loosely inspired by the author. Every other name, character, company, school, and venue in the story chapters is fictional or used fictitiously; many characters are composites, and any resemblance is coincidental. Could that really have happened? That's the game.
