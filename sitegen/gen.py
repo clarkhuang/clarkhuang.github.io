@@ -218,7 +218,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/contributors/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/contributors.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -326,7 +326,7 @@ def page(path, title, desc, body, current="", main_class=""):
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-cols">
-        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/credits/">Credits</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/contributors/">Contributors</a><a href="/book/">Book preview</a></nav>
 {AF.footer_twins()}        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p>{links}</nav>
       </div>
       <div class="footer-fine">
@@ -574,7 +574,7 @@ def build():
         <div class="cards">
           <a class="card" href="/ask/"><div class="card-meta"><span class="card-num">Ask</span></div><h3>Ask the Book</h3><p>Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.</p><span class="card-cta">Ask a question</span></a>
           <a class="card" href="/contribute/#mcp"><div class="card-meta"><span class="card-num">MCP</span></div><h3>Connect your AI</h3><p>A public, read-only GitMCP endpoint at <span class="url">gitmcp.io/<wbr>clarkhuang/<wbr><span class="nobr">clarkhuang.github.io.</span></span> Contributions still go through GitHub issues.</p><span class="card-cta">Get the config</span></a>
-          <a class="card" href="/credits/"><div class="card-meta"><span class="card-num">OpenBook</span></div><h3>Contributor credits</h3><p>People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.</p><span class="card-cta">See the list</span></a>
+          <a class="card" href="/contributors/"><div class="card-meta"><span class="card-num">OpenBook</span></div><h3>Contributors</h3><p>People whose contributions have landed on the site, listed by public GitHub display name or handle. You can choose how, or whether, you are credited.</p><span class="card-cta">See the list</span></a>
         </div>
       </section>"""
     page("index.html", "Clark Huang — AI-native software learning",
@@ -585,7 +585,7 @@ def build():
         ("contribute/index.md", "Contribute with your AI", "A copy-paste prompt, GitHub issue forms, and a Connect your AI (MCP) section."),
         ("copy-this/index.md", "Copy this for yourself", "How to fork or use this site as a template for your own OpenBook or learning series."),
         ("ask/index.md", "Ask the Book", "In-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI."),
-        ("credits/index.md", "Contributor credits", "People who have contributed, listed by GitHub handle."),
+        ("contributors/index.md", "Contributors", "People whose contributions have landed on the site, listed by public GitHub display name or handle."),
         ("search-index.json", "search-index.json", "Local search index used by Ask the Book."),
     ])
 
@@ -867,7 +867,7 @@ def build_book():
       <section aria-labelledby="ask-connect-book-h" style="margin-top:36px">
         <h2 id="ask-connect-book-h">Ask, connect, contribute</h2>
         <p>Search this preview, or send a question to your own AI, from <a href="/ask/">Ask the Book</a>. For book questions, you can ask the tool to answer in the tone of Charlie Hack, the book's fictional narrator. Story chapters are an embellished fictional dramatization; they are not facts about real people.</p>
-        <p>Connect an AI assistant with the public, read-only GitMCP endpoint <code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code>. Config snippets for Claude Code, Claude Desktop, Cursor, and ChatGPT are on the <a href="/contribute/#mcp">Contribute</a> and <a href="/ask/#mcp">Ask the Book</a> pages. GitMCP is a free third-party service and cannot change the book; contributions go through GitHub issues. <a href="/credits/">Contributor credits</a> are listed by GitHub handle.</p>
+        <p>Connect an AI assistant with the public, read-only GitMCP endpoint <code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code>. Config snippets for Claude Code, Claude Desktop, Cursor, and ChatGPT are on the <a href="/contribute/#mcp">Contribute</a> and <a href="/ask/#mcp">Ask the Book</a> pages. GitMCP is a free third-party service and cannot change the book; contributions go through GitHub issues. <a href="/contributors/">Contributors</a> are listed by public GitHub display name when the profile has one, otherwise by GitHub handle.</p>
         <div data-ask-book-mount></div>
       </section>"""
     page("book/index.html", "Silicon Valley C Players — a free OpenBook by Clark Huang (preview)",

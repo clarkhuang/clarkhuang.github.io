@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Contributors page at `/contributors/` (machine-readable `contributors.json`, `CONTRIBUTORS.md`, and `index.md` / `AGENTS.md` twins). `/credits/` now redirects there. [@himanshu112-wq](https://github.com/himanshu112-wq) is credited for the [issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80) feedback that led to the reworded “AI writes essentially all the code” claim and the book's editorial policy. Any outside contribution that lands is credited on this page in the same pull request.
+
 - Book preview follow-up: struck “Stay humble. Stay curious,” and in that passage added the better father, brother, sister, and daughter. A new scene, with a new videobook ladder graphic, adds that software engineering was never about writing code: writing code was the tedious part of building your ideas, abstraction is key, and each part is data in, some logic, and data out. About 2:59. Staging only until Clark approves production.
 
 - Added Google Analytics 4 on the production site (property `clarkhuang.github.io`, measurement ID `G-F50XBTM25X`), with IP anonymization and no ads signals. Staging pages under `/staging/` do not send hits. The footer no longer says “No analytics, no third-party scripts”; it links to a privacy note on the [editorial policy](https://clarkhuang.github.io/book/editorial-policy/#analytics) page.

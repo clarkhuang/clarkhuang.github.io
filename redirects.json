@@ -125,6 +125,10 @@
   {
    "from": "/software-engineering-201/08-agents-that-run-the-system/",
    "to": "/software-engineering-201/09-agents-that-operate-enterprise-systems/"
+  },
+  {
+   "from": "/credits/",
+   "to": "/contributors/"
   }
  ]
 }
