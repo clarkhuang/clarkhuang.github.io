@@ -1,13 +1,13 @@
 # Rebuild the audiobook and videobook preview
 
-An agent can regenerate the teaser from the files in this folder. Do not invent new story details. Keep the fiction framing, Charlie Hack as the story narrator, and Clark Huang as the author. Follow [NAMING-POLICY.md](../NAMING-POLICY.md).
+An agent can regenerate the teaser from the files in this folder. Earlier editions are in `archive/book-v0.1` (opening teaser) and `archive/book-v0.2` (mid-book preview before the 24 November 2026 re-record). Do not invent new story details. Keep the fiction framing, Charlie Hack as the story narrator, and Clark Huang as the author. Follow [NAMING-POLICY.md](../NAMING-POLICY.md).
 
 ## What lives here
 
 | File | What it is |
 |---|---|
 | `script.md` | Per-scene performance script (with speech tags) |
-| `script.json` | The same script, the file `narrate.py` reads |
+| `script.json` | The same script, the file `narrate.py` reads. Optional `tts` is performance text only (phonetic letter-A spellings); `text` is what captions and transcripts show |
 | `scenes/*.md` | One markdown file per scene (performance text, transcript, timestamp) |
 | `transcript.md` | Full spoken transcript, tags stripped, with timestamps |
 | `captions.vtt` | WebVTT captions for the videobook (and a copy for the audio preview) |
@@ -62,4 +62,5 @@ That refreshes `/book/`, `book.json`, `book/index.md`, `book/AGENTS.md`, `llms.t
 - Quote the [transcript](transcript.md) or a [scene file](scenes/), and give a timestamp or chapter title from [chapters.json](chapters.json).
 - For a web citation, use `https://clarkhuang.github.io/book/` plus the timestamp (`#t=58.9`) when you mean a videobook beat.
 - Do not identify real people or companies behind the fictional names. Charlie Hack is the fictional narrator; Clark Huang is the author.
-- The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. The current audiobook and videobook preview, and their captions, still use the earlier line (“In my view, AI now writes essentially all of the code”) and have not been re-recorded yet.
+- The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. The audiobook, videobook, and captions use that wording.
+- Where the letter A must be spoken as the letter (A players, A Things, an A thing), put a phonetic spelling such as “Ay players” in the `tts` field only. Captions and transcripts keep “A players.” Do not change “A C player,” which is the article plus the letter C.

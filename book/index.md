@@ -22,23 +22,23 @@ A portrait book cover on a deep navy background. Across the top, small copper-or
 
 ## Introduction (preview)
 
-Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack. Any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
+Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
-This preview jumps into the middle of the book. Part Three. C Things That Looked Like A Things.
+This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.
 
-Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win. The companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. Most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
+Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
-From the outside, a C thing can look like an A thing. Applause is loud. The real work is quieter. The book is about that gap: what people saw, and what was really going on.
+And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
 
-A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.
+A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious.
 
-The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
+The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
+It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.
 
-Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
+Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure. So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.
 
-The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+The book begins with a green-screen dream, and it ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
 ## From the back cover
 
@@ -52,9 +52,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Videobook preview
 
-The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.
-
-- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (144.7s)
+- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (159.7s)
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/videos/book-preview-chapters.json
 - Transcript: https://clarkhuang.github.io/book-source/preview/transcript.md
@@ -63,9 +61,7 @@ The written preview text uses a later, clearer wording of the AI-and-code claim:
 
 ## Audio
 
-The wording note above also applies to the audiobook preview: the recording has not been re-recorded yet.
-
-- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (144.7s)
+- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (159.6s)
 - Full audiobook: coming later
 - Captions (VTT): https://clarkhuang.github.io/audio/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/audio/book-preview-chapters.json

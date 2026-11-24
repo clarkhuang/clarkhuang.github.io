@@ -394,8 +394,6 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         bits += [
             "## Videobook preview",
             "",
-            "The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.",
-            "",
             f"- {video_meta.get('title') or 'Preview'}: {video_meta['url']}"
             + (f" ({video_meta['duration_seconds']}s)" if video_meta.get("duration_seconds") else ""),
             f"- Captions (VTT): {video_meta.get('captions_url') or (BASE + '/videos/book-preview.vtt')}",
