@@ -39,54 +39,60 @@
     "id": "06_c_player",
     "title": "A C player",
     "start_seconds": 59.09,
-    "duration_seconds": 14.42
+    "duration_seconds": 16.56
   },
   {
     "id": "07_platforms",
     "title": "Platforms, not products",
-    "start_seconds": 73.51,
+    "start_seconds": 75.65,
     "duration_seconds": 11.69
   },
   {
     "id": "08_blocks",
     "title": "Building blocks",
-    "start_seconds": 85.2,
+    "start_seconds": 87.34,
     "duration_seconds": 11.06
   },
   {
     "id": "09_kept_going",
     "title": "I just kept going",
-    "start_seconds": 96.26,
+    "start_seconds": 98.4,
     "duration_seconds": 11.38
   },
   {
     "id": "10_turn",
     "title": "The turn",
-    "start_seconds": 107.64,
+    "start_seconds": 109.78,
     "duration_seconds": 8.02
   },
   {
     "id": "11_thesis",
     "title": "The thesis",
-    "start_seconds": 115.66,
+    "start_seconds": 117.79,
     "duration_seconds": 12.29
+  },
+  {
+    "id": "11_ladder",
+    "title": "The abstraction ladder",
+    "start_seconds": 130.08,
+    "duration_seconds": 18.07
   },
   {
     "id": "12_how_to",
     "title": "How to work now",
-    "start_seconds": 127.94,
+    "start_seconds": 148.15,
     "duration_seconds": 11.69
   },
   {
     "id": "13_bookend",
     "title": "The story is still being written",
-    "start_seconds": 139.63,
+    "start_seconds": 159.84,
     "duration_seconds": 15.94
   },
   {
     "id": "14_close",
     "title": "Coming in 2027",
-    "start_seconds": 155.57,
+    "start_seconds": 175.78,
     "duration_seconds": 4.08
   }
 ]

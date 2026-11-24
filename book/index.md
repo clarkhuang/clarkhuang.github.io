@@ -30,13 +30,17 @@ Silicon Valley is very good at telling a story about A players. The people who l
 
 And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. Stay humble. Stay curious.
+A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.
 
 The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
 It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.
 
-Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure. So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.
+Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.
+
+Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up.
+
+So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.
 
 The book begins with a green-screen dream, and it ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
@@ -52,7 +56,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Videobook preview
 
-- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (159.7s)
+- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (179.9s)
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/videos/book-preview-chapters.json
 - Transcript: https://clarkhuang.github.io/book-source/preview/transcript.md
@@ -61,7 +65,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Audio
 
-- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (159.6s)
+- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (179.9s)
 - Full audiobook: coming later
 - Captions (VTT): https://clarkhuang.github.io/audio/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/audio/book-preview-chapters.json
