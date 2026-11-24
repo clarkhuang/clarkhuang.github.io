@@ -1,0 +1,78 @@
+{
+  "$comment": "MCP servers for https://clarkhuang.github.io. Human docs: https://clarkhuang.github.io/mcp/ (Markdown: /mcp/index.md).",
+  "site": "https://clarkhuang.github.io",
+  "servers": [
+    {
+      "name": "clarkhuang-site",
+      "title": "clarkhuang.github.io site MCP server",
+      "firstParty": true,
+      "readOnly": true,
+      "version": "1.0.1",
+      "description": "Read-only tools over the site's public files: lessons, transcripts, chapters, captions, media checks, watched-progress keys, search, and contributor-style issue drafts (never files anything).",
+      "transport": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"
+      ],
+      "alternatives": [
+        {
+          "command": "python3",
+          "args": [
+            "/path/to/clarkhuang_site_mcp.py"
+          ],
+          "download": "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py",
+          "requires": "Python 3.9+, no dependencies"
+        }
+      ],
+      "env": {
+        "CLARKHUANG_SITE": {
+          "required": false,
+          "default": "https://clarkhuang.github.io",
+          "description": "Base URL or local folder to read. https://clarkhuang.github.io/staging reads staging (next-revision)."
+        }
+      },
+      "install": {
+        "claude_code": "claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py",
+        "mcp_json": {
+          "mcpServers": {
+            "clarkhuang-site": {
+              "command": "uv",
+              "args": [
+                "run",
+                "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"
+              ]
+            }
+          }
+        }
+      },
+      "tools": [
+        "site_info",
+        "list_lessons",
+        "get_lesson",
+        "check_lesson_media",
+        "get_page",
+        "search",
+        "how_to_contribute",
+        "draft_issue"
+      ],
+      "source": "https://github.com/clarkhuang/clarkhuang.github.io/blob/main/mcp/clarkhuang_site_mcp.py",
+      "docs": "https://clarkhuang.github.io/mcp/index.md"
+    },
+    {
+      "name": "gitmcp",
+      "title": "GitMCP for clarkhuang/clarkhuang.github.io",
+      "firstParty": false,
+      "readOnly": true,
+      "description": "Third-party remote server (GitMCP). fetch_clarkhuang_docs returns the current llms.txt; its search index can lag behind the site, and it has no lesson or issue tools.",
+      "transport": "streamable-http",
+      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io",
+      "docs": "https://clarkhuang.github.io/contribute/#mcp"
+    }
+  ],
+  "contribute": {
+    "issues": "https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml",
+    "pull_requests_into": "next-revision",
+    "production_merges": "Clark Huang only"
+  }
+}

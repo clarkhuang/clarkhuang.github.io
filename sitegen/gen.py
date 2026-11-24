@@ -59,7 +59,7 @@ def mmss(t):
     t = int(t); return f"{t//60}:{t%60:02d}"
 
 def iso_dur(t):
-    t = int(round(t)); return f"PT{t//60}M{t%60}S"
+    t = int(t); return f"PT{t//60}M{t%60}S"  # truncate, same as mmss(), so datetime matches the visible text
 
 def chapters_from_log(log, script):
     starts = {m.group(1): float(m.group(2)) for m in re.finditer(r"^\s+(\d\d\w*?_\w+)\s+([\d.]+)s", open(log).read(), re.M)}
@@ -218,7 +218,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -230,9 +230,12 @@ def write_robots_and_sitemap(series):
     parts.append("</urlset>\n")
     open(os.path.join(SITE, "sitemap.xml"), "w").write("\n".join(parts))
 
+# Old media addresses (see /redirects.json): GitHub Pages cannot redirect files, so the 404 page does it in the browser.
+MOVED_MEDIA_HTML = '\n      <p class="lede" id="moved-media" hidden>This file moved. Opening <a id="moved-media-link" href="/redirects.json">its new address</a>…</p>\n      <script>(function(){var M={"/videos/se201-01-build-the-whole-system-ai-native.mp4":"/videos/se201-02-build-the-whole-system-ai-native.mp4","/videos/se201-01-build-the-whole-system-ai-native.vtt":"/videos/se201-02-build-the-whole-system-ai-native.vtt","/videos/posters/se201-01-build-the-whole-system-ai-native.jpg":"/videos/posters/se201-02-build-the-whole-system-ai-native.jpg","/videos/se201-02-decompose-the-system-into-a-graph.mp4":"/videos/se201-03-decompose-the-system-into-a-graph.mp4","/videos/se201-02-decompose-the-system-into-a-graph.vtt":"/videos/se201-03-decompose-the-system-into-a-graph.vtt","/videos/posters/se201-02-decompose-the-system-into-a-graph.jpg":"/videos/posters/se201-03-decompose-the-system-into-a-graph.jpg","/videos/se201-03-parallel-agents-one-integration.mp4":"/videos/se201-04-parallel-agents-one-integration.mp4","/videos/se201-03-parallel-agents-one-integration.vtt":"/videos/se201-04-parallel-agents-one-integration.vtt","/videos/posters/se201-03-parallel-agents-one-integration.jpg":"/videos/posters/se201-04-parallel-agents-one-integration.jpg"};var p=location.pathname,pre="";if(p.indexOf("/staging/")===0){pre="/staging";p=p.slice(8);}var to=M[p];if(!to)return;to=pre+to;var n=document.getElementById("moved-media"),a=document.getElementById("moved-media-link");a.href=to;a.textContent=to;n.hidden=false;location.replace(to);})();</script>'
+
 def write_404():
     body = """      <h1>Page not found</h1>
-      <p class="lede">That address is not on this site. Start from the <a href="/">home page</a>, or browse <a href="/ai-tips/">AI Tips</a>, <a href="/software-engineering-101/">Software Engineering 101</a>, <a href="/software-engineering-201/">Software Engineering 201</a>, or the <a href="/book/">book preview</a>. You can also <a href="/contribute/">contribute with your AI</a> or <a href="/copy-this/">copy this site for yourself</a>.</p>"""
+      <p class="lede">That address is not on this site. Start from the <a href="/">home page</a>, or browse <a href="/ai-tips/">AI Tips</a>, <a href="/software-engineering-101/">Software Engineering 101</a>, <a href="/software-engineering-201/">Software Engineering 201</a>, or the <a href="/book/">book preview</a>. You can also <a href="/contribute/">contribute with your AI</a> or <a href="/copy-this/">copy this site for yourself</a>.</p>""" + MOVED_MEDIA_HTML
     page("404.html", "Page not found — Clark Huang", "Page not found.", body, "404")
 
 def page_jsonld(title, desc, canon):
@@ -572,6 +575,7 @@ def build():
     build_book()
     AF.write_llms_full(SITE, SERIES, INTRO, BACK)
     build_involve_pages()
+    build_mcp_page()
     shutil.copy(os.path.join(HERE, "site.css"), f"{SITE}/styles.css")
     os.makedirs(f"{SITE}/assets", exist_ok=True)
     shutil.copy(os.path.join(HERE, "site.js"), f"{SITE}/assets/site.js")
@@ -596,13 +600,13 @@ INTRO = [
  "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
  "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
  "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
- "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
+ "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
  "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
 ]
 BACK = [
  "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
  "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
- "The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.",
+ "The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.",
  "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.",
 ]
 
@@ -624,6 +628,76 @@ def book_preview_chapters():
     )
     return (f'          <details class="chapters-wrap"><summary>Chapters ({len(chs)})</summary>'
             f'<ol class="chapters">{items}</ol></details>\n')
+
+
+
+EDITORIAL_POLICY_MD = """
+This is the editorial policy for *Silicon Valley C Players*. I'll keep it short, and I'll change this page when the process changes.
+
+## Story chapters and the how-to half
+
+The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the [disclaimer](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md).
+
+## Conflicting recollections
+
+People remember the same days differently. If you were there and your memory does not match what's on the page, [file a correction](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml) or [share your side](https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml). I will read it. I may keep more than one account in view rather than quietly picking a winner. I will not invent a resolution I do not have.
+
+Story chapters may still be fictionalized. Sending a recollection is not a promise that the published scene will match anyone's memory word for word.
+
+## How claims and sources are tracked
+
+In the nonfiction half, a claim should have a source, or be clearly marked as my view. I will not treat "in my view" as the same thing as a measured result.
+
+When a claim or a source in a published edition changes, it is recorded in the changelog below: what it used to say, what it says now, and which edition made the change.
+
+The current public preview is the starting point for this log. This page is the policy going forward. I am not describing a formal process from earlier drafts.
+
+## Claims and sources changelog
+
+This log starts with the current public preview on the site. Earlier preview files are kept in the repository under `book-source/preview/archive/`. When a later edition changes a published claim or source, it will be listed here.
+
+### Current public preview
+
+- **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
+- **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
+- **Narration:** The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.
+
+Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
+""".strip()
+
+
+def build_editorial_policy():
+    body = """      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / How this book is edited</p>
+      <h1>How this book is edited</h1>
+      <p class="lede">This is the editorial policy for <em>Silicon Valley C Players</em>. I'll keep it short, and I'll change this page when the process changes.</p>
+      <h2 id="two-halves">Story chapters and the how-to half</h2>
+      <p>The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md">disclaimer</a>.</p>
+      <h2 id="recollections">Conflicting recollections</h2>
+      <p>People remember the same days differently. If you were there and your memory does not match what's on the page, <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">file a correction</a> or <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml">share your side</a>. I will read it. I may keep more than one account in view rather than quietly picking a winner. I will not invent a resolution I do not have.</p>
+      <p>Story chapters may still be fictionalized. Sending a recollection is not a promise that the published scene will match anyone's memory word for word.</p>
+      <h2 id="claims">How claims and sources are tracked</h2>
+      <p>In the nonfiction half, a claim should have a source, or be clearly marked as my view. I will not treat "in my view" as the same thing as a measured result.</p>
+      <p>When a claim or a source in a published edition changes, it is recorded in the changelog below: what it used to say, what it says now, and which edition made the change.</p>
+      <p>The current public preview is the starting point for this log. This page is the policy going forward. I am not describing a formal process from earlier drafts.</p>
+      <h2 id="changelog">Claims and sources changelog</h2>
+      <p>This log starts with the current public preview on the site. Earlier preview files are kept in the repository under <code>book-source/preview/archive/</code>. When a later edition changes a published claim or source, it will be listed here.</p>
+      <h3>Current public preview</h3>
+            <ul>
+        <li><strong>Was:</strong> “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”</li>
+        <li><strong>Now:</strong> “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”</li>
+        <li><strong>Why:</strong> <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/80">Issue #80</a>, point 4. Clark clarified this is his own workflow, not a measured result or a prediction.</li>
+        <li><strong>Narration:</strong> The preview audiobook, videobook, and captions still use the earlier wording. Re-recording is a follow-up.</li>
+      </ul>
+      <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
+"""
+    page("book/editorial-policy/index.html",
+         "How this book is edited — Silicon Valley C Players",
+         "Editorial policy for Silicon Valley C Players: how conflicting recollections are handled, how claims and sources are tracked, and a per-edition changelog of changed claims and sources.",
+         body, "book")
+    AF.write_prose_twins(SITE, "book/editorial-policy/index.html", "How this book is edited",
+        EDITORIAL_POLICY_MD,
+        "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.")
 
 
 def build_book():
@@ -700,6 +774,7 @@ def build_book():
             <h2 id="preview-h">Preview</h2>
             <p class="muted" style="font-size:14px;margin:0 0 12px">A mid-book preview, in Clark's voice, about {mmss(dur)}. From Part Three and the turn that follows.</p>
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
+            <p class="muted" id="wording-note">The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.</p>
           </section>
 
           <section class="openbook" aria-labelledby="openbook-h">
@@ -710,12 +785,14 @@ def build_book():
               <li><strong>Version one still comes first,</strong> in 2027: Clark's account, then a wider invitation to anyone who recognizes a story, or is related to him, to add their side, and stories he may have forgotten.</li>
               <li><strong>Versions work like software.</strong> Later editions are numbered. Previous audiobook and videobook editions stay up as tagged releases, and the next edition is only rebuilt when Clark approves it.</li>
             </ol>
+            <p>The working <a href="/book/story-arc/">story arc and chapter list</a> is public. It will change. How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next.</p>
             <p class="muted">Want the same idea for your own learning site or OpenBook? <a href="/copy-this/">Copy this for yourself</a>.</p>
           </section>
 
 
           <section class="audiobox" aria-labelledby="listen-h">
             <h2 class="label" id="listen-h">Listen without the pictures</h2>
+            <p class="muted">The wording note on the videobook preview also applies here: the recording has not been re-recorded yet.</p>
             <p class="muted" style="font-size:14px;margin:0">The same narration as an audio track · {mmss(dur)} · your place is bookmarked automatically on this device</p>
             <audio id="book-audio" controls preload="metadata" data-chapter="preview">
               <source src="/audio/book-preview.mp3" type="audio/mpeg">
@@ -796,6 +873,12 @@ def build_book():
                            "how_to_cite": "Quote the transcript or a scene file and give a chapter title or timestamp. For the web, use https://clarkhuang.github.io/book/ plus a media timestamp (#t=58.9). Charlie Hack is the fictional narrator; Clark Huang is the author. Do not identify real people or companies behind the fictional names."},
                "ai_readable": {"llms_txt": f"{BASE}/llms.txt", "llms_full_txt": f"{BASE}/llms-full.txt",
                                "book_md": f"{BASE}/book/index.md", "agents_md": f"{BASE}/book/AGENTS.md",
+                               "editorial_policy": f"{BASE}/book/editorial-policy/",
+                               "editorial_policy_md": f"{BASE}/book/editorial-policy/index.md",
+                               "story_arc": f"{BASE}/book/story-arc/",
+                               "story_arc_md": f"{BASE}/book/story-arc/index.md",
+                               "outline_json": f"{BASE}/book-source/outline.json",
+                               "outline_md": f"{BASE}/book-source/OUTLINE.md",
                                "rebuild_md": f"{BASE}/REBUILD.md"},
                "audio": {"bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]", "resume": "offered as a 'Resume from m:ss' button; cleared when the track ends",
                          "captions_url": f"{BASE}/audio/book-preview.vtt",
@@ -810,6 +893,9 @@ def build_book():
                              {"format": "M4B", "status": "available in 2027", "url": None},
                              {"format": "EPUB", "status": "available in 2027", "url": None}]},
               open(f"{SITE}/book.json", "w"), indent=2, ensure_ascii=False)
+    build_editorial_policy()
+    import story_arc as STORY_ARC
+    STORY_ARC.build_story_arc(SITE, page, AF.write_prose_twins)
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},
         {"title": "Full audiobook", "url": None},
@@ -832,7 +918,7 @@ CONTRIBUTE_PROMPT = """Please help me contribute to Clark Huang's free OpenBook 
 5. Do not invent stories or details. Do not use real names of private people, or real company names, in story submissions. Describe people by role and companies in general terms. Stick to what I actually tell you.
 """
 
-MCP_HTML = '\n      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">\n        <h2 id="mcp-h">Connect your AI (MCP)</h2>\n        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>\n        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>\n        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>\n        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>\n        <h3>Claude Code</h3>\n        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>\n        <h3>Claude Desktop</h3>\n        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>\n        <pre class="config" id="mcp-claude-desktop" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "command": "npx",\n      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>Cursor</h3>\n        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>\n        <pre class="config" id="mcp-cursor" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>ChatGPT and other connectors</h3>\n        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>\n        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>\n        <h3>Example prompts</h3>\n        <ul>\n          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>\n          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>\n          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>\n        </ul>\n        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>\n      </section>\n'
+MCP_HTML = '\n      <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">\n        <h2 id="mcp-h">Connect your AI (MCP)</h2>\n        <p><strong>First-party option:</strong> this site also ships its own small, read-only <a href="/mcp/">site MCP server</a> (stdio, one Python file, no dependencies) with tools for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts. Claude Code: <code>claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py</code>. The GitMCP endpoint below is a remote, third-party alternative; its full-text fetch is current, but its search can lag behind the site.</p>\n        <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>\n        <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>\n        <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. Contributions still go through GitHub issues, as described above.</p>\n        <p>The tools it exposes for this repository are <code>fetch_clarkhuang_docs</code>, <code>search_clarkhuang_docs</code>, <code>search_clarkhuang_code</code>, and <code>fetch_generic_url_content</code>.</p>\n        <h3>Claude Code</h3>\n        <pre class="config" id="mcp-claude-code" tabindex="0">claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>\n        <h3>Claude Desktop</h3>\n        <p>If your Claude Desktop build supports a remote HTTP MCP server, add the URL above. Otherwise use the <code>mcp-remote</code> bridge in <code>claude_desktop_config.json</code>:</p>\n        <pre class="config" id="mcp-claude-desktop" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "command": "npx",\n      "args": ["mcp-remote", "https://gitmcp.io/clarkhuang/clarkhuang.github.io"]\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-claude-desktop" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>Cursor</h3>\n        <p>Add this to <code>~/.cursor/mcp.json</code> (or the project <code>.cursor/mcp.json</code>):</p>\n        <pre class="config" id="mcp-cursor" tabindex="0">{\n  "mcpServers": {\n    "clarkhuang": {\n      "url": "https://gitmcp.io/clarkhuang/clarkhuang.github.io"\n    }\n  }\n}</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-cursor" hidden>Copy config</button><span class="status" role="status" data-status></span></p>\n        <h3>ChatGPT and other connectors</h3>\n        <p>Paste this as the connector / MCP server URL (Streamable HTTP):</p>\n        <pre class="config" id="mcp-url" tabindex="0">https://gitmcp.io/clarkhuang/clarkhuang.github.io</pre>\n        <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="mcp-url" hidden>Copy URL</button><span class="status" role="status" data-status></span></p>\n        <h3>Example prompts</h3>\n        <ul>\n          <li>“Using the clarkhuang GitMCP tools, what is <em>Silicon Valley C Players</em>, and how can I contribute a story without using real names?”</li>\n          <li>“Search the docs for the standing rule in AI Tips lesson 1 and quote it, with a link to the Markdown twin.”</li>\n          <li>“Fetch the documentation, then list the Software Engineering 101 lessons and their rules.”</li>\n        </ul>\n        <p class="muted">The same section lives at <a href="mcp-section.md">mcp-section.md</a> and on <a href="/ask/#mcp">Ask the Book</a>.</p>\n      </section>\n'
 
 def build_involve_pages():
     prompt = E(CONTRIBUTE_PROMPT.strip())
@@ -887,6 +973,70 @@ def build_involve_pages():
     AF.write_prose_twins(SITE, "copy-this/index.html", "Copy this for yourself",
         "This repository is a GitHub template. Use it to create your own OpenBook or short video learning series: enable GitHub Pages from the main branch, replace the bio, lessons and book preview, and keep the AI-friendly files (llms.txt, AGENTS.md, and the copy-paste prompt). Book text is licensed CC BY-NC-SA 4.0. Do not present Clark's stories as your own.",
         "A plain-language page explaining how to copy this site idea with GitHub's template or fork flow.")
+
+
+MCP_SERVER_URL = BASE + "/mcp/clarkhuang_site_mcp.py"
+MCP_TOOLS = [
+    ("site_info", "What the site is, lesson counts, discovery files, how watched progress is keyed, staging vs production. Call it first."),
+    ("list_lessons", "Every lesson in AI Tips, Software Engineering 101 and 201: id, status, duration, page and Markdown URLs."),
+    ("get_lesson", "One lesson: summary, rule, video, captions and poster URLs, chapters, video version and watched key, and the Markdown twin with the full transcript (captions and AGENTS.md on request)."),
+    ("check_lesson_media", "HTTP status of a lesson's page, twin, AGENTS.md, video, captions and poster; with no id, every lesson's problems."),
+    ("get_page", "Any page as Markdown, for example /, /book/ or /contribute/."),
+    ("search", "Keyword search over the site's own search-index.json, with URLs to cite."),
+    ("how_to_contribute", "Issue templates, labels, branches, checks, and who merges."),
+    ("draft_issue", "A contributor-style issue (steps, expected, actual) with a prefilled GitHub URL and a gh command. It never files anything."),
+]
+
+
+def build_mcp_page():
+    cursor_cfg = '{\n  "mcpServers": {\n    "clarkhuang-site": {\n      "command": "uv",\n      "args": ["run", "' + MCP_SERVER_URL + '"]\n    }\n  }\n}'
+    tools_html = "".join(f"\n        <li><code>{n}</code>: {E(d)}</li>" for n, d in MCP_TOOLS)
+    body = f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/contribute/">Contribute</a> / Site MCP server</p>
+      <h1>Site MCP server</h1>
+      <p class="lede">A small, read-only MCP server for this site, so an AI agent can see what a reader sees (lessons, transcripts, chapters, captions, video status, watched-progress keys) and report problems the way an outside contributor would.</p>
+      <p>It is one Python file with no dependencies. It runs on your computer over stdio and reads only this site's public files: <a href="/lessons.json">lessons.json</a>, <a href="/search-index.json">search-index.json</a>, the Markdown twins, and the WebVTT captions. It cannot change the site, file issues, or merge anything. <code>draft_issue</code> returns text and a prefilled GitHub link for you, or your own GitHub tools, to file. Machine-readable details are in <a href="/.well-known/mcp.json">/.well-known/mcp.json</a>.</p>
+      <h2>Connect it</h2>
+      <h3>Claude Code</h3>
+      <pre class="config" id="site-mcp-claude-code" tabindex="0">claude mcp add clarkhuang-site -- uv run {MCP_SERVER_URL}</pre>
+      <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="site-mcp-claude-code" hidden>Copy command</button><span class="status" role="status" data-status></span></p>
+      <h3>Cursor, Claude Desktop, and other MCP clients</h3>
+      <p>Add this to <code>~/.cursor/mcp.json</code>, <code>claude_desktop_config.json</code>, or your client's MCP settings:</p>
+      <pre class="config" id="site-mcp-config" tabindex="0">{E(cursor_cfg)}</pre>
+      <p class="tools" data-status-scope><button type="button" class="btn ghost" data-copy="site-mcp-config" hidden>Copy config</button><span class="status" role="status" data-status></span></p>
+      <p>No <a href="https://docs.astral.sh/uv/">uv</a>? Download <a href="/mcp/clarkhuang_site_mcp.py">clarkhuang_site_mcp.py</a> and use <code>"command": "python3"</code> with <code>"args": ["/path/to/clarkhuang_site_mcp.py"]</code> (Python 3.9 or later).</p>
+      <p>To look at staging (the <code>next-revision</code> branch) instead of production, set the environment variable <code>CLARKHUANG_SITE=https://clarkhuang.github.io/staging</code>. To test your own change before you open a pull request, set it to the path of your local clone.</p>
+      <h2>Tools</h2>
+      <ul>{tools_html}
+      </ul>
+      <h2>Contribute like an outside contributor</h2>
+      <ol class="steps-plain">
+        <li>Call <code>site_info</code>, then <code>list_lessons</code> and <code>get_lesson</code> to read what you need.</li>
+        <li>Call <code>check_lesson_media</code> and read pages with <code>get_page</code>. Compare what you find with what the docs promise.</li>
+        <li>Found a real problem? Call <code>draft_issue</code>, check the draft for anything private, then file it with the <em>Site or lesson problem</em> form.</li>
+        <li>To fix it, branch from <code>next-revision</code>, keep each page's <code>index.md</code>, <code>AGENTS.md</code> and <code>llms.txt</code> in sync, run <code>python3 sitegen/check_site.py .</code>, and open a pull request into <code>next-revision</code> with <code>Fixes #N</code>. Only Clark merges to production.</li>
+      </ol>
+      <p class="muted">There is also a third-party, remote option: <a href="/contribute/#mcp">GitMCP</a>. Its full-text fetch is current, but its search can lag behind the site, and it has no lesson or issue tools.</p>
+"""
+    page("mcp/index.html", "Site MCP server — Clark Huang",
+         "A small read-only MCP server for clarkhuang.github.io: lessons, transcripts, captions, media checks, search, and contributor-style issue drafts.",
+         body, "contribute")
+    tools_md = "\n".join(f"- `{n}`: {d}" for n, d in MCP_TOOLS)
+    AF.write_prose_twins(SITE, "mcp/index.html", "Site MCP server",
+        "A small, read-only MCP server for this site. It is one Python file with no dependencies (Python 3.9+). It runs locally over stdio and reads only the site's public files: lessons.json, search-index.json, the Markdown twins and the WebVTT captions. It cannot change the site, file issues or merge anything.\n\n"
+        "## Connect it\n\n"
+        f"- Claude Code: `claude mcp add clarkhuang-site -- uv run {MCP_SERVER_URL}`\n"
+        f"- Cursor, Claude Desktop and other MCP clients:\n\n```json\n{cursor_cfg}\n```\n\n"
+        f"- Without uv: download {MCP_SERVER_URL} and run it with `python3`.\n"
+        "- Staging instead of production: set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging`. A local clone: set it to the folder path.\n"
+        f"- Machine-readable: {BASE}/.well-known/mcp.json\n\n"
+        "## Tools\n\n" + tools_md + "\n\n"
+        "## Contribute like an outside contributor\n\n"
+        "1. Call `site_info`, then `list_lessons` and `get_lesson`.\n"
+        "2. Call `check_lesson_media` and read pages with `get_page`; compare what you find with what the docs promise.\n"
+        "3. Found a real problem? Call `draft_issue`, check the draft for anything private, then file it with the Site or lesson problem form: https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml\n"
+        "4. To fix it, branch from `next-revision`, keep `index.md`, `AGENTS.md` and `llms.txt` in sync, run `python3 sitegen/check_site.py .`, and open a pull request into `next-revision` with `Fixes #N`. Only Clark merges to production.\n\n"
+        f"A third-party remote option is GitMCP ({BASE}/contribute/#mcp). Its fetch is current, but its search can lag behind the site, and it has no lesson or issue tools.",
+        "How to connect an AI agent to this site's read-only MCP server, and what its tools do.")
 
 
 if __name__ == "__main__":

@@ -234,6 +234,38 @@ def book_entries() -> list[dict]:
             }
         )
 
+    policy = ROOT / "book" / "editorial-policy" / "index.md"
+    if policy.is_file():
+        raw = load(policy)
+        out.append(
+            {
+                "id": "book/editorial-policy",
+                "type": "page",
+                "title": "How this book is edited",
+                "series": "OpenBook",
+                "url": f"{SITE}/book/editorial-policy/",
+                "markdown_url": f"{SITE}/book/editorial-policy/index.md",
+                "summary": "Editorial policy for Silicon Valley C Players: conflicting recollections, how claims and sources are tracked, and a per-edition changelog.",
+                "text": strip_md(raw),
+            }
+        )
+
+    arc = ROOT / "book" / "story-arc" / "index.md"
+    if arc.is_file():
+        raw = load(arc)
+        out.append(
+            {
+                "id": "book/story-arc",
+                "type": "page",
+                "title": "Story arc and chapters",
+                "series": "OpenBook",
+                "url": f"{SITE}/book/story-arc/",
+                "markdown_url": f"{SITE}/book/story-arc/index.md",
+                "summary": "Working story arc and chapter list for Silicon Valley C Players. The outline will change.",
+                "text": strip_md(raw),
+            }
+        )
+
     # Public outline, if present (never *.private.md).
     for candidate in (
         ROOT / "book-source" / "OUTLINE.md",
@@ -257,26 +289,57 @@ def book_entries() -> list[dict]:
             }
         )
         if candidate.name == "OUTLINE.md":
-            # One entry per table row that looks like a chapter slot.
-            for line in raw.splitlines():
-                m = re.match(r"^\|\s*(\d+\w*)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|", line)
-                if not m:
-                    continue
-                num, ch_title, hook = (x.strip() for x in m.groups())
-                if ch_title.lower() in {"title", "hook"} or ch_title.startswith("-"):
-                    continue
-                out.append(
-                    {
-                        "id": f"book/ch-{num}",
-                        "type": "chapter",
-                        "title": f"Chapter {num}: {ch_title}",
-                        "series": "OpenBook",
-                        "url": f"{SITE}/book-source/OUTLINE.md",
-                        "markdown_url": f"{SITE}/book-source/OUTLINE.md",
-                        "summary": hook,
-                        "text": f"{ch_title}. {hook}",
-                    }
-                )
+            outline_json = ROOT / "book-source" / "outline.json"
+            chapters = []
+            if outline_json.is_file():
+                try:
+                    data = json.loads(load(outline_json))
+                    for half in data.get("halves") or []:
+                        for sec in half.get("sections") or []:
+                            chapters.extend(sec.get("chapters") or [])
+                except Exception:
+                    chapters = []
+            if chapters:
+                for ch in chapters:
+                    num = ch.get("n") or ""
+                    ch_title = ch.get("title") or ""
+                    hook = ch.get("hook") or ""
+                    cid = ch.get("id") or num or ch_title
+                    label = f"Chapter {num}: {ch_title}" if num and str(num)[0].isdigit() else ch_title
+                    frag = f"#{cid}" if cid else ""
+                    out.append(
+                        {
+                            "id": f"book/ch-{cid}",
+                            "type": "chapter",
+                            "title": label,
+                            "series": "OpenBook",
+                            "url": f"{SITE}/book/story-arc/{frag}",
+                            "markdown_url": f"{SITE}/book/story-arc/index.md",
+                            "summary": hook,
+                            "text": f"{ch_title}. {hook}",
+                        }
+                    )
+            else:
+                # One entry per table row that looks like a chapter slot.
+                for line in raw.splitlines():
+                    m = re.match(r"^\|\s*(\d+\w*)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|", line)
+                    if not m:
+                        continue
+                    num, ch_title, hook = (x.strip() for x in m.groups())
+                    if ch_title.lower() in {"title", "hook"} or ch_title.startswith("-"):
+                        continue
+                    out.append(
+                        {
+                            "id": f"book/ch-{num}",
+                            "type": "chapter",
+                            "title": f"Chapter {num}: {ch_title}",
+                            "series": "OpenBook",
+                            "url": f"{SITE}/book/story-arc/",
+                            "markdown_url": f"{SITE}/book-source/OUTLINE.md",
+                            "summary": hook,
+                            "text": f"{ch_title}. {hook}",
+                        }
+                    )
     return out
 
 
@@ -288,6 +351,7 @@ def extra_pages() -> list[dict]:
         Path("credits/index.md"),
         Path("contribute/index.md"),
         Path("copy-this/index.md"),
+        Path("mcp/index.md"),
         Path("AGENTS.md"),
     ):
         path = ROOT / rel
@@ -327,8 +391,11 @@ def collect_markdown_for_llms() -> list[tuple[str, str, str]]:
         Path("copy-this/index.md"),
         Path("book/index.md"),
         Path("book/AGENTS.md"),
+        Path("book/story-arc/index.md"),
+        Path("book/editorial-policy/index.md"),
         Path("book/preview-transcript.md"),
         Path("book-source/OUTLINE.md"),
+        Path("book-source/outline.json"),
         Path("book-source/NAMING-POLICY.md"),
         Path("DISCLAIMER.md"),
         Path("CONTRIBUTING.md"),

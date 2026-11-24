@@ -62,4 +62,4 @@ That refreshes `/book/`, `book.json`, `book/index.md`, `book/AGENTS.md`, `llms.t
 - Quote the [transcript](transcript.md) or a [scene file](scenes/), and give a timestamp or chapter title from [chapters.json](chapters.json).
 - For a web citation, use `https://clarkhuang.github.io/book/` plus the timestamp (`#t=58.9`) when you mean a videobook beat.
 - Do not identify real people or companies behind the fictional names. Charlie Hack is the fictional narrator; Clark Huang is the author.
-- The claim that AI writes essentially all of the code is Clark’s view, as written.
+- The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. The current audiobook and videobook preview, and their captions, still use the earlier line (“In my view, AI now writes essentially all of the code”) and have not been re-recorded yet.

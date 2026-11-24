@@ -39,13 +39,13 @@
     "A C player is not a failure. A C player is the person who was never the smartest in the room, and kept going anyway. There's always someone smarter, richer, wiser. Stay humble. Stay curious.",
     "The Valley falls in love with products. Specific wins. Specific years. I got more out of building a platform: a foundation you can stand on, and build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks. Habits. Fundamentals. The unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
     "It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.",
-    "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
+    "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.",
     "The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written."
   ],
   "back_cover": [
     "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
     "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
-    "The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.",
+    "The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.",
     "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027."
   ],
   "video": {
@@ -78,7 +78,13 @@
     "llms_full_txt": "https://clarkhuang.github.io/llms-full.txt",
     "book_md": "https://clarkhuang.github.io/book/index.md",
     "agents_md": "https://clarkhuang.github.io/book/AGENTS.md",
-    "rebuild_md": "https://clarkhuang.github.io/REBUILD.md"
+    "rebuild_md": "https://clarkhuang.github.io/REBUILD.md",
+    "editorial_policy": "https://clarkhuang.github.io/book/editorial-policy/",
+    "editorial_policy_md": "https://clarkhuang.github.io/book/editorial-policy/index.md",
+    "story_arc": "https://clarkhuang.github.io/book/story-arc/",
+    "story_arc_md": "https://clarkhuang.github.io/book/story-arc/index.md",
+    "outline_json": "https://clarkhuang.github.io/book-source/outline.json",
+    "outline_md": "https://clarkhuang.github.io/book-source/OUTLINE.md"
   },
   "audio": {
     "bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]",
@@ -129,5 +135,467 @@
       "status": "available in 2027",
       "url": null
     }
-  ]
+  ],
+  "outline": {
+    "title": "Story arc and chapters",
+    "url": "https://clarkhuang.github.io/book/story-arc/",
+    "markdown_url": "https://clarkhuang.github.io/book/story-arc/index.md",
+    "source_json": "https://clarkhuang.github.io/book-source/outline.json",
+    "source_md": "https://clarkhuang.github.io/book-source/OUTLINE.md",
+    "note": "This is a working outline. It will change as chapters are written, as interviews fill gaps, and as people contribute.",
+    "throughline": "A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work.",
+    "halves": [
+      {
+        "id": "first",
+        "title": "First half: The career arc",
+        "summary": "School days, then the jobs in career order, then the turn when AI came for the code writers.",
+        "sections": [
+          {
+            "id": "front-matter",
+            "title": "Front matter",
+            "chapters": [
+              {
+                "id": "disclaimer",
+                "n": "Disclaimer",
+                "title": "Disclaimer",
+                "hook": "An embellished fictional dramatization that may or may not be based on true stories. Names, characters, companies and events are fictitious or used fictitiously.",
+                "status": "drafted",
+                "needs_story": false
+              },
+              {
+                "id": "introduction",
+                "n": "Introduction",
+                "title": "Introduction",
+                "hook": "Top of the class, middle of the pack, a career of C companies. A C player is the person who was never the smartest in the room, and kept going anyway.",
+                "status": "drafted",
+                "needs_story": false
+              },
+              {
+                "id": "prologue",
+                "n": "Prologue",
+                "title": "Prologue: Dreaming in Green",
+                "hook": "Three students, one MIDI machine, the same Tron-like dream of logic gates during CS150 all-nighters. Real life bled into their dreams.",
+                "status": "drafted",
+                "needs_story": false
+              }
+            ]
+          },
+          {
+            "id": "school",
+            "title": "School days at Bayview",
+            "chapters": [
+              {
+                "id": "ch1-top-of-the-class",
+                "n": "1",
+                "title": "Top of the Class",
+                "hook": "The kid who was used to being first.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch2-no-curve",
+                "n": "2",
+                "title": "No Curve",
+                "hook": "\"We were all stupid American kids.\" Cs and Ds on the first Math 1A midterm. No curve. It hit hard.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch3-the-a+-i-didnt-earn",
+                "n": "3",
+                "title": "The A+ I Didn't Earn",
+                "hook": "A music elective where he barely did anything, wrote a baroque music composer, and almost everyone got an A+.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch4-the-weeder-and-the-b-minus",
+                "n": "4",
+                "title": "The Weeder and the B-Minus",
+                "hook": "Top of CS61B with an A+, then a B-minus in Algorithms. It's all relative, how smart you are.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch5-the-lab-partners-grade",
+                "n": "5",
+                "title": "The Lab Partner's Grade",
+                "hook": "Shared project: the narrator got an A; his lab partner, who was brilliant, got an A-minus and was livid. He's not saying he was smarter. He just kept going.",
+                "status": "drafted",
+                "needs_story": false
+              },
+              {
+                "id": "ch6-fundamentals-nobody-uses",
+                "n": "6",
+                "title": "Fundamentals Nobody Uses",
+                "hook": "Bayview taught ideas, not languages: COOL, Lambda, B-trees, a compiler, digital circuits — principles that outlive tools.",
+                "status": "outlined",
+                "needs_story": false
+              }
+            ]
+          },
+          {
+            "id": "jobs",
+            "title": "The jobs, in career order",
+            "chapters": [
+              {
+                "id": "ch7-seventy-thousand-at-ground-level",
+                "n": "7",
+                "title": "Seventy Thousand at Ground Level",
+                "hook": "Interned at Pixel Drift while still at Bayview, then took his first full-time job there at $70K out of college, $90K after year one. Pixel Drift was acquired by Spreewald Digital, a Berlin company.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch7a-money-was-flowing",
+                "n": "7a",
+                "title": "Money Was Flowing",
+                "hook": "The dot-com boom in San Francisco, \"there at ground level.\"",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch7b-beer-in-canoes",
+                "n": "7b",
+                "title": "Beer in Canoes",
+                "hook": "Spreewald Digital trips: visiting East Berlin, and a company retreat drinking beer on canoes.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch8-three-million-at-twenty-five",
+                "n": "8",
+                "title": "Three Million at Twenty-Five",
+                "hook": "A $3M exit at 25. Which company that exit came from is still an open question.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch9-gulf-coast",
+                "n": "9",
+                "title": "Gulf Coast",
+                "hook": "Years on the Gulf Coast at Bayou Ledger.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch10-prism-after-dark",
+                "n": "10",
+                "title": "PRISM After Dark",
+                "hook": "A night story from RentRiver.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch11-sold-to-wirehorse",
+                "n": "11",
+                "title": "Sold to WireHorse",
+                "hook": "Co-founded RentRiver; acquired by WireHorse Global. The deal itself needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              },
+              {
+                "id": "bayou-later",
+                "n": "",
+                "title": "Untitled",
+                "hook": "A later chapter back at Bayou Ledger, in a bigger role.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "interlude",
+                "n": "Interlude",
+                "title": "San Francisco After Dark",
+                "hook": "A founder's apartment, nights out in the city, all-night coding sessions.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch12-before-the-ipo",
+                "n": "12",
+                "title": "Before the IPO",
+                "hook": "Co-founder and CTO of Swipewell, a card startup that went public after he left. What happened to the equity needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              },
+              {
+                "id": "ch13-options-not-salary",
+                "n": "13",
+                "title": "Options, Not Salary",
+                "hook": "The money-years rule: stock options, not salary, are how people build real wealth. Which deal taught it needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              }
+            ]
+          },
+          {
+            "id": "themes",
+            "title": "Themes along the way",
+            "chapters": [
+              {
+                "id": "ch14-the-c-thing",
+                "n": "14",
+                "title": "The C Thing",
+                "hook": "The one that looked like an A to everyone. What people saw, and what was really going on.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch15-cto-again-and-again",
+                "n": "15",
+                "title": "CTO, Again and Again",
+                "hook": "LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              },
+              {
+                "id": "ch16-the-smarter-guy-in-the-room",
+                "n": "16",
+                "title": "The Smarter Guy in the Room",
+                "hook": "There's always someone smarter, richer, wiser. Stay humble, stay curious. A specific moment needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              },
+              {
+                "id": "ch17-falling-and-getting-up",
+                "n": "17",
+                "title": "Falling and Getting Up",
+                "hook": "A failure, and getting back up. \"I just kept going.\"",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "ch18",
+                "n": "18",
+                "title": "Untitled",
+                "hook": "A reserved chapter, included only if Clark chooses to put it in the book.",
+                "status": "planned",
+                "needs_story": true
+              }
+            ]
+          },
+          {
+            "id": "turn",
+            "title": "The turn: AI came for the coders first",
+            "chapters": [
+              {
+                "id": "ch19-the-saddest-man-in-the-room",
+                "n": "19",
+                "title": "The Saddest Man in the Room",
+                "hook": "The most AI-excited person in the room should be the saddest: AI came for the code writers first. The specific day still needs a story.",
+                "status": "outlined",
+                "needs_story": true
+              },
+              {
+                "id": "ch20-seventy-eighty-ninety-one-hundred",
+                "n": "20",
+                "title": "Seventy, Eighty, Ninety, One Hundred",
+                "hook": "A year ago people said 70, 80, 90 percent. In Clark's own work, AI now writes essentially all of the code he ships. That is his workflow, not a measured team result or a general industry figure. Public surveys still range widely; the book will present that workflow alongside those numbers.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch21-id-never-built-a-mobile-app",
+                "n": "21",
+                "title": "I'd Never Built a Mobile App",
+                "hook": "One shot to fix an app, and he had never built a mobile app — shipped with agents.",
+                "status": "drafted",
+                "needs_story": false
+              },
+              {
+                "id": "ch22-changing-my-tune",
+                "n": "22",
+                "title": "Changing My Tune",
+                "hook": "He used to be a pragmatist on unit tests; once tests got cheap, he changed his mind and wanted more of them.",
+                "status": "outlined",
+                "needs_story": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "second",
+        "title": "Second half: This site, and where it goes",
+        "summary": "How to work now, drawn from the lessons on this site; then the OpenBook itself, how agents can use the site, the weekly improvement loop, and how companies should use AI.",
+        "note": "Each how-to chapter opens with a short story, then the rules. The site lessons are the primary text; the book version is rewritten for reading.",
+        "sections": [
+          {
+            "id": "how-to",
+            "title": "How to work now",
+            "chapters": [
+              {
+                "id": "ch23-show-it-dont-describe-it",
+                "n": "23",
+                "title": "Show It, Don't Describe It",
+                "hook": "Paste first; don't just describe the problem.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "AI Tips 1, 3, 10"
+              },
+              {
+                "id": "ch24-done-is-not-proof",
+                "n": "24",
+                "title": "\"Done\" Is Not Proof",
+                "hook": "A bot that says \"done\" is reporting a step, not your outcome.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "AI Tips 2, 13, 14"
+              },
+              {
+                "id": "ch25-what-it-can-reach",
+                "n": "25",
+                "title": "What It Can Reach",
+                "hook": "Know what an agent can actually reach, and put real locks in settings.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "AI Tips 4, 5, 16"
+              },
+              {
+                "id": "ch26-teach-it-once",
+                "n": "26",
+                "title": "Teach It Once",
+                "hook": "Memory is notes, not a mind. Skills, projects, handoffs.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "AI Tips 6, 8, 12, 15"
+              },
+              {
+                "id": "ch27-the-second-message-and-other-everyday-moves",
+                "n": "27",
+                "title": "The Second Message, and Other Everyday Moves",
+                "hook": "Most people read the first answer and stop.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "AI Tips 7, 9, 11"
+              },
+              {
+                "id": "ch28-the-loop",
+                "n": "28",
+                "title": "The Loop",
+                "hook": "Plan, build, verify, and when to skip it. Rigor follows risk. Can open with the mobile-app story from chapter 21.",
+                "status": "outlined",
+                "needs_story": false,
+                "lessons": "SE 101 Lessons 1, 2, 5"
+              },
+              {
+                "id": "ch29-the-ladder",
+                "n": "29",
+                "title": "The Ladder",
+                "hook": "AI coding is one more rung, from first principles up. Callback to the fundamentals chapter and the green-screen prologue.",
+                "status": "outlined",
+                "needs_story": false,
+                "lessons": "SE 101 Lessons 3, 4, 6"
+              },
+              {
+                "id": "ch30-old-patterns-at-agent-speed",
+                "n": "30",
+                "title": "Old Patterns at Agent Speed",
+                "hook": "Pairing, TDD, and small ships still work; they just run faster.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "SE 101 Lessons 7, 8"
+              },
+              {
+                "id": "ch31-money-and-data",
+                "n": "31",
+                "title": "Money and Data",
+                "hook": "Treat AI usage carefully; never risk customer data.",
+                "status": "outlined",
+                "needs_story": true,
+                "lessons": "SE 101 Lessons 9, 10"
+              },
+              {
+                "id": "ch32-from-loop-to-enterprise-systems",
+                "n": "32",
+                "title": "From Loop to Enterprise Systems",
+                "hook": "101 is the loop; 201 builds whole systems AI-native: decompose them into a graph, run agents in parallel and integrate, govern where people decide, measure quality and observe, turn repeated work into skills, wire routines and pipelines, and let agents operate enterprise systems with permissions and audit, ending with a capstone that builds one feature end to end. Lesson 9 is still an outline; lesson 10 is the capstone.",
+                "status": "outlined",
+                "needs_story": false,
+                "lessons": "SE 201 Lessons 1–10"
+              }
+            ]
+          },
+          {
+            "id": "the-site",
+            "title": "The site itself",
+            "chapters": [
+              {
+                "id": "ch33-the-openbook",
+                "n": "33",
+                "title": "The OpenBook",
+                "hook": "A free book that works like open-source software: anyone can contribute a story or a correction from day one; credits are by GitHub handle; only Clark publishes. When version one is ready, a wider invitation goes out to people who recognize a story.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch34-built-for-agents",
+                "n": "34",
+                "title": "Built for Agents",
+                "hook": "Every page has a Markdown twin and an AGENTS.md. The site index is llms.txt. Readers can search in the browser, send a cited prompt to their own AI, or connect through a public, read-only MCP endpoint, so an agent can use the site the way a person can.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "ch35-a-site-that-improves-itself",
+                "n": "35",
+                "title": "A Site That Improves Itself",
+                "hook": "A weekly routine looks at the site as a person, as an agent, and as the content owner, then files issues and opens staging pull requests. The first run has not happened yet.",
+                "status": "planned",
+                "needs_story": true
+              }
+            ]
+          },
+          {
+            "id": "future",
+            "title": "Future directions",
+            "chapters": [
+              {
+                "id": "ch36-how-companies-should-use-ai",
+                "n": "36",
+                "title": "How Companies Should Use AI",
+                "hook": "From one engineer and an agent to a company running a fleet.",
+                "status": "planned",
+                "needs_story": true,
+                "lessons": "New material"
+              },
+              {
+                "id": "epilogue",
+                "n": "Epilogue",
+                "title": "Epilogue: Dreaming in AI",
+                "hook": "Years after the green screen, dreaming again, this time about AI.",
+                "status": "planned",
+                "needs_story": true
+              },
+              {
+                "id": "still-written",
+                "n": "",
+                "title": "The story is still being written",
+                "hook": "The book stays open, like a living repo.",
+                "status": "outlined",
+                "needs_story": false
+              },
+              {
+                "id": "appendix",
+                "n": "Appendix",
+                "title": "Appendix: The Rules",
+                "hook": "Every rule from the how-to half, plus links to the site and llms.txt.",
+                "status": "drafted",
+                "needs_story": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "future_notes": [
+      "Software Engineering 201 lesson 9 is still an outline.",
+      "A hosted “talk to Charlie Hack” box is a later option and is not built."
+    ],
+    "status_key": {
+      "drafted": "Drafted: a story or section already on the record.",
+      "outlined": "Outlined: we know what belongs here, from a story already given or from published site lessons, but the chapter is not written yet.",
+      "planned": "Planned: a slot or a seed. If the line says needs a story, no source story has been given yet."
+    }
+  }
 }

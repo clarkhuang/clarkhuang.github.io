@@ -36,7 +36,7 @@ The Valley falls in love with products. Specific wins. Specific years. I got mor
 
 It's all relative, how good you look from the outside. I just kept going. And I kept doing my best.
 
-Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my view, AI now writes essentially all of the code. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
+Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure. So gear your software engineering practices around that. That's what Software Engineering 101 and 201 are about, and the second half of this book: how to work now, and how companies should use AI.
 
 The book begins with a green-screen dream. It ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
@@ -46,11 +46,13 @@ An embellished fictional dramatization about C players, the gap between applause
 
 This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.
 
-The second half is about how to work now that AI, in Clark's view, writes essentially all of the code, and how companies should use it.
+The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.
 
 Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.
 
 ## Videobook preview
+
+The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.
 
 - Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (144.7s)
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
@@ -61,14 +63,24 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Audio
 
+The wording note above also applies to the audiobook preview: the recording has not been re-recorded yet.
+
 - Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (144.7s)
 - Full audiobook: coming later
 - Captions (VTT): https://clarkhuang.github.io/audio/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/audio/book-preview-chapters.json
 
+## Editorial policy
+
+How conflicting recollections are handled, and how claims and sources are tracked across editions: [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/index.md).
+
+## Story arc and chapters
+
+The working story arc and chapter list: [https://clarkhuang.github.io/book/story-arc/](https://clarkhuang.github.io/book/story-arc/index.md). Machine-readable: [https://clarkhuang.github.io/book-source/outline.json](https://clarkhuang.github.io/book-source/outline.json). The outline will change.
+
 ## How to cite this preview
 
-Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is Clark’s view, as written. Do not identify real people or companies behind the fictional names.
+Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.
 
 ## For agents
 
@@ -79,5 +91,8 @@ Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcri
 - How to rebuild the site: https://clarkhuang.github.io/REBUILD.md
 - How to rebuild the cover: https://clarkhuang.github.io/book-source/cover/PROMPT.md
 - How to rebuild the preview: https://clarkhuang.github.io/book-source/preview/REBUILD.md
+- Editorial policy: https://clarkhuang.github.io/book/editorial-policy/index.md
+- Story arc and chapters: https://clarkhuang.github.io/book/story-arc/index.md
+- Outline (JSON): https://clarkhuang.github.io/book-source/outline.json
 
 Do not invent stories or claims about Clark Huang beyond what this preview states. Contributions go through GitHub issues; only Clark merges to `main`. Agent pull requests target `next-revision`.

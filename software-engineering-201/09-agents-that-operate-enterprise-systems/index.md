@@ -17,7 +17,7 @@ This lesson is in planning. The video is not available yet.
 
 ## The lesson
 
-Agents that run the system, not just build it, with identity, least access, and an audit trail. The last step on the path: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome. Lesson 10, the capstone, puts all nine lessons to work on one small feature.
+Agents that run the system, not just build it, with identity, least access, and an audit trail. The last step before the capstone: agents that operate enterprise systems day to day. Give each agent a clear job, its own identity, and the least access it needs, so every action is permitted, logged, and auditable. Picture a payments or investment system where an agent reconciles accounts overnight and flags anything that doesn't add up, while a person approves anything that moves money. Keep secrets and customer data out of reach, keep people at the decision points, and remember that you still own the outcome. Lesson 10, the capstone, puts all nine lessons to work on one small feature.
 
 ## Related lessons
 

@@ -23,6 +23,7 @@ Every page has a Markdown twin (`index.md`) and an `AGENTS.md`. Start at [`llms.
 - [Ask the Book](https://clarkhuang.github.io/ask/): in-browser search and “Ask your AI” prompts.
 - [Credits](https://clarkhuang.github.io/credits/): contributors, by GitHub handle ([`credits.json`](https://clarkhuang.github.io/credits.json)).
 - GitMCP (read-only, third-party): `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. See [the MCP section](https://clarkhuang.github.io/contribute/#mcp).
+- Site MCP server (first-party, read-only, stdio): `uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. See [the MCP page](https://clarkhuang.github.io/mcp/).
 
 ## How this project runs
 

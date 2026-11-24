@@ -73,6 +73,7 @@
 
       <section class="mcp-block" id="mcp" aria-labelledby="mcp-h">
         <h2 id="mcp-h">Connect your AI (MCP)</h2>
+        <p><strong>First-party option:</strong> this site also ships its own small, read-only <a href="/mcp/">site MCP server</a> (stdio, one Python file, no dependencies) with tools for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts. Claude Code: <code>claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py</code>. The GitMCP endpoint below is a remote, third-party alternative; its full-text fetch is current, but its search can lag behind the site.</p>
         <p>This project has a public, read-only <a href="https://gitmcp.io">GitMCP</a> endpoint:</p>
         <p><code>https://gitmcp.io/clarkhuang/clarkhuang.github.io</code></p>
         <p>GitMCP is a free third-party service. It is not affiliated with this site. It only reads public documentation (it prefers <a href="/llms.txt">llms.txt</a>) and public code. It cannot open issues, merge pull requests, or change the book. To contribute, file a GitHub issue — see <a href="/contribute/">Contribute with your AI</a>.</p>

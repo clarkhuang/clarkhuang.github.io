@@ -342,6 +342,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         '',
         f'- [Ask the Book]({BASE}/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.',
         f'- [Connect your AI]({BASE}/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.',
+        f'- [Site MCP server]({BASE}/mcp/index.md): A first-party, read-only MCP server (stdio) for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts.',
         f'- [Contributor credits]({BASE}/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.',
         '',
         f'This site is also an open project. [Contribute with your AI]({BASE}/contribute/index.md), or [copy this for yourself]({BASE}/copy-this/index.md).',
@@ -393,6 +394,8 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         bits += [
             "## Videobook preview",
             "",
+            "The written preview text uses a later, clearer wording of the AI-and-code claim: in Clark's own work, AI writes essentially all of the code he ships. The narration and captions still say the earlier line, “In my view, AI now writes essentially all of the code.” Re-recording the preview is a follow-up.",
+            "",
             f"- {video_meta.get('title') or 'Preview'}: {video_meta['url']}"
             + (f" ({video_meta['duration_seconds']}s)" if video_meta.get("duration_seconds") else ""),
             f"- Captions (VTT): {video_meta.get('captions_url') or (BASE + '/videos/book-preview.vtt')}",
@@ -412,9 +415,17 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Captions (VTT): {BASE}/audio/book-preview.vtt",
         f"- Chapters (JSON): {BASE}/audio/book-preview-chapters.json",
         "",
+        "## Editorial policy",
+        "",
+        f"How conflicting recollections are handled, and how claims and sources are tracked across editions: [{BASE}/book/editorial-policy/]({BASE}/book/editorial-policy/index.md).",
+        "",
+        "## Story arc and chapters",
+        "",
+        f"The working story arc and chapter list: [{BASE}/book/story-arc/]({BASE}/book/story-arc/index.md). Machine-readable: [{BASE}/book-source/outline.json]({BASE}/book-source/outline.json). The outline will change.",
+        "",
         "## How to cite this preview",
         "",
-        "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is Clark’s view, as written. Do not identify real people or companies behind the fictional names.",
+        "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.",
         "",
         "## For agents",
         "",
@@ -425,6 +436,9 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- How to rebuild the site: {BASE}/REBUILD.md",
         f"- How to rebuild the cover: {BASE}/book-source/cover/PROMPT.md",
         f"- How to rebuild the preview: {BASE}/book-source/preview/REBUILD.md",
+        f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
+        f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
         "Do not invent stories or claims about Clark Huang beyond what this preview states. Contributions go through GitHub issues; only Clark merges to `main`. Agent pull requests target `next-revision`.",
     ]
@@ -446,14 +460,17 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Site index: {u['llms']}",
         f"- Full site text: {BASE}/llms-full.txt",
         f"- Rebuild the site: {BASE}/REBUILD.md",
+        f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
+        f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
-        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The 100%-of-code claim is Clark’s view, as written.",
+        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
         "",
         md_prompt_blurb(path),
         "",
         "## How to contribute",
         "",
-        "Anyone can file a correction (an edit to the book, or your side of a story), a new story, or a refactor (cleanup that does not change the facts). Use the issue templates from the repository:",
+        "Anyone can file a correction (an edit to the book, or your side of a story), a new story, or a refactor (cleanup that does not change the facts). Use the issue templates from the repository. First-person guest stories published under the contributor's own name go in book-source/guest/ (see book-source/guest/README.md) and must include consent to publish that name:",
         "",
         "- Correction: https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml",
         "- New story: https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml",
@@ -489,6 +506,7 @@ Start here:
 
 - Site index for language models: https://clarkhuang.github.io/llms.txt
 - Machine-readable lesson catalog: https://clarkhuang.github.io/lessons.json
+- Moved addresses (old lesson pages and old video, caption and poster files): https://clarkhuang.github.io/redirects.json
 - OpenBook preview catalog: https://clarkhuang.github.io/book.json
 - Fuller site text: https://clarkhuang.github.io/llms-full.txt
 - How to rebuild production and staging: https://clarkhuang.github.io/REBUILD.md
@@ -517,7 +535,7 @@ Work through the site by following links in `llms.txt` and in each `index.md`. Y
 
 ## Watched state and saved positions
 
-The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do.
+The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do. `stamp_versions.py` also writes each lesson video's current version into https://clarkhuang.github.io/lessons.json as `video_version`, with the matching cookie key as `watched_key` (for example `se201/01@1a2b3c4d`), so an agent can tell which lessons a reader's `watched` cookie still covers without scraping HTML or downloading the video.
 
 ## How to contribute
 
@@ -534,8 +552,9 @@ If you are an AI agent helping a reader contribute, point them to the right issu
 | Correction | Edits to existing book text, or your side of a story already in the book | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml |
 | Feature / new story | A new story, a story Clark may have forgotten, or a new chapter idea | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml |
 | Refactor | Cleanup or an improvement that does not change the facts | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=refactor.yml |
+| Site or lesson problem | A broken link, video, caption, transcript, page, or agent surface (Markdown twin, llms.txt, lessons.json, MCP); steps to reproduce, expected vs actual | https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=site-bug.yml |
 
-Labels: `correction`, `feature` / `new-story`, and `refactor`. New stories also get `contributor-story` and `story-seed`.
+Labels: `correction`, `feature` / `new-story`, `refactor`, and `site` + `bug` for site problems. New stories also get `contributor-story` and `story-seed`.
 
 ### What makes a good issue
 
@@ -560,6 +579,7 @@ More: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/CONTRIBUTING.
 - **Ask the Book:** https://clarkhuang.github.io/ask/ — instant in-browser search over https://clarkhuang.github.io/search-index.json, plus “Ask your AI” buttons that open ChatGPT, Claude, Grok, or Perplexity with a prefilled prompt. The prompt points at https://clarkhuang.github.io/llms-full.txt and the GitMCP URL, and asks the tool to answer only from this site with citations. For book questions, it may use the tone of Charlie Hack, the OpenBook's fictional narrator. There is a copy-prompt fallback. A compact version of this widget also appears on the book page and on lesson pages.
 - **Full site text:** https://clarkhuang.github.io/llms-full.txt
 - **Contributor credits:** https://clarkhuang.github.io/credits/ (JSON: https://clarkhuang.github.io/credits.json). People are listed by GitHub handle only.
+- **Site MCP server (first-party, read-only):** one Python file, no dependencies, stdio. Tools: `site_info`, `list_lessons`, `get_lesson` (transcript, chapters, captions, watched key), `check_lesson_media`, `get_page`, `search`, `how_to_contribute`, `draft_issue` (drafts only; never files). Claude Code: `claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. Other clients: command `uv`, args `["run", "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"]`, or download the file and run it with `python3`. Set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging` to read staging. Docs: https://clarkhuang.github.io/mcp/index.md · manifest: https://clarkhuang.github.io/.well-known/mcp.json
 - **Connect your AI (MCP):** public, read-only GitMCP endpoint at `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. GitMCP is a free third-party service. It prefers `llms.txt`. It cannot open issues or merge pull requests; contributions still go through GitHub issues, and only Clark Huang approves and merges.
 
 Claude Code: `claude mcp add --transport http clarkhuang https://gitmcp.io/clarkhuang/clarkhuang.github.io`
@@ -601,6 +621,8 @@ def write_llms_txt(site, series, extras=None):
         f"- [AGENTS.md]({BASE}/AGENTS.md): how to navigate and what not to invent",
         f"- [llms-full.txt]({BASE}/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog",
         f"- [lessons.json]({BASE}/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations",
+        f"- [redirects.json]({BASE}/redirects.json): old lesson page and media addresses and where they moved",
+        f"- [Site MCP server]({BASE}/mcp/index.md): first-party, read-only MCP server (stdio) for agents: lessons, transcripts, captions, media checks, search, issue drafts. Manifest: {BASE}/.well-known/mcp.json",
         f"- [book.json]({BASE}/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters",
         f"- [REBUILD.md]({BASE}/REBUILD.md): how to rebuild production and staging",
         "",
@@ -625,6 +647,9 @@ def write_llms_txt(site, series, extras=None):
         f"- [Preview chapters]({BASE}/videos/book-preview-chapters.json): chapter titles and start times",
         f"- [Preview scene scripts]({BASE}/book-source/preview/scenes/): one markdown file per scene",
         f"- [Cover brief]({BASE}/book-source/cover/PROMPT.md): how to describe or rebuild the cover",
+        f"- [How this book is edited]({BASE}/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, and a per-edition changelog of changed claims and sources",
+        f"- [Story arc and chapters]({BASE}/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.",
+        f"- [Outline (JSON)]({BASE}/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions",
         "",
     ]
     # Behind-the-scenes pages (playbook, research, interview plan, compare) are not public.
@@ -703,11 +728,15 @@ def write_llms_full(site, series, intro, back):
     lines += [
         "## Also on this site",
         "",
+        f"- [How this book is edited]({BASE}/book/editorial-policy/index.md)",
+        f"- [Story arc and chapters]({BASE}/book/story-arc/index.md)",
+        f"- [Outline (JSON)]({BASE}/book-source/outline.json)",
         f"- [Contribute with your AI]({BASE}/contribute/index.md)",
         f"- [Copy this for yourself]({BASE}/copy-this/index.md)",
         f"- [Ask the Book]({BASE}/ask/index.md)",
         f"- [Contributor credits]({BASE}/credits/index.md)",
         f"- GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io",
+        f"- Site MCP server (first-party, read-only): {BASE}/mcp/index.md",
         f"- Search index: {BASE}/search-index.json",
         "",
         "Do not invent stories or biography beyond this file. Do not identify real people or companies behind the fictional names. Staging (https://clarkhuang.github.io/staging/) is a preview of the next-revision branch and is not the live site.",
