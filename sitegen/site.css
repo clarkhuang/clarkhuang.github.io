@@ -393,3 +393,16 @@ main pre code{overflow-wrap:normal}
 }
 @media (max-width:359px){.site-header nav{flex-wrap:wrap;justify-content:flex-start}}
 
+
+/* Story arc and chapters */
+.table-wrap{overflow-x:auto;margin:0 0 28px}
+.chapter-list{width:100%;border-collapse:collapse;font-size:15px;line-height:1.45}
+.chapter-list th,.chapter-list td{text-align:left;vertical-align:top;padding:10px 14px 10px 0;border-bottom:1px solid var(--line)}
+.chapter-list thead th{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line)}
+.chapter-list .ch{white-space:nowrap;color:var(--dim);font-variant-numeric:tabular-nums;font-weight:600}
+.chapter-list .ch-title{font-weight:600;min-width:10rem}
+.chapter-list .ch-hook{color:var(--dim)}
+.chapter-list .ch-lessons{white-space:nowrap;color:var(--dimmer);font-size:13px}
+.chapter-list .ch-status{white-space:nowrap}
+.arc-half{margin-top:36px}
+.arc-notes{margin-top:36px}

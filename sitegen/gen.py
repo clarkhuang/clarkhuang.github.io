@@ -218,7 +218,7 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/ask/", BASE + "/credits/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -772,7 +772,7 @@ def build_book():
               <li><strong>Version one still comes first,</strong> in 2027: Clark's account, then a wider invitation to anyone who recognizes a story, or is related to him, to add their side, and stories he may have forgotten.</li>
               <li><strong>Versions work like software.</strong> Later editions are numbered. Previous audiobook and videobook editions stay up as tagged releases, and the next edition is only rebuilt when Clark approves it.</li>
             </ol>
-            <p>How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next.</p>
+            <p>The working <a href="/book/story-arc/">story arc and chapter list</a> is public. It will change. How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next.</p>
             <p class="muted">Want the same idea for your own learning site or OpenBook? <a href="/copy-this/">Copy this for yourself</a>.</p>
           </section>
 
@@ -861,6 +861,10 @@ def build_book():
                                "book_md": f"{BASE}/book/index.md", "agents_md": f"{BASE}/book/AGENTS.md",
                                "editorial_policy": f"{BASE}/book/editorial-policy/",
                                "editorial_policy_md": f"{BASE}/book/editorial-policy/index.md",
+                               "story_arc": f"{BASE}/book/story-arc/",
+                               "story_arc_md": f"{BASE}/book/story-arc/index.md",
+                               "outline_json": f"{BASE}/book-source/outline.json",
+                               "outline_md": f"{BASE}/book-source/OUTLINE.md",
                                "rebuild_md": f"{BASE}/REBUILD.md"},
                "audio": {"bookmark_cookie": "book_pos=<chapter>:<seconds>[,<chapter>:<seconds>...]", "resume": "offered as a 'Resume from m:ss' button; cleared when the track ends",
                          "captions_url": f"{BASE}/audio/book-preview.vtt",
@@ -876,6 +880,8 @@ def build_book():
                              {"format": "EPUB", "status": "available in 2027", "url": None}]},
               open(f"{SITE}/book.json", "w"), indent=2, ensure_ascii=False)
     build_editorial_policy()
+    import story_arc as STORY_ARC
+    STORY_ARC.build_story_arc(SITE, page, AF.write_prose_twins)
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},
         {"title": "Full audiobook", "url": None},

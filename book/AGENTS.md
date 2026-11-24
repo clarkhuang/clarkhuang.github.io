@@ -15,8 +15,10 @@ This folder is the public preview of Clark Huang’s free OpenBook *Silicon Vall
 - Full site text: https://clarkhuang.github.io/llms-full.txt
 - Rebuild the site: https://clarkhuang.github.io/REBUILD.md
 - Editorial policy: https://clarkhuang.github.io/book/editorial-policy/index.md
+- Story arc and chapters: https://clarkhuang.github.io/book/story-arc/index.md
+- Outline (JSON): https://clarkhuang.github.io/book-source/outline.json
 
-Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The 100%-of-code claim is Clark’s view, as written. Editorial process: /book/editorial-policy/.
+Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The 100%-of-code claim is Clark’s view, as written. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.
 
 The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
 

@@ -75,6 +75,8 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Preview scene scripts](https://clarkhuang.github.io/book-source/preview/scenes/): one markdown file per scene
 - [Cover brief](https://clarkhuang.github.io/book-source/cover/PROMPT.md): how to describe or rebuild the cover
 - [How this book is edited](https://clarkhuang.github.io/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, and a per-edition changelog of changed claims and sources
+- [Story arc and chapters](https://clarkhuang.github.io/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.
+- [Outline (JSON)](https://clarkhuang.github.io/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions
 
 ## Also on this site
 
