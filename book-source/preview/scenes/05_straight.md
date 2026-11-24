@@ -1,7 +1,7 @@
 # The straight-line myth
 
 - id: `05_straight`
-- start: 35.42s (0:35)
+- start: 36.02s (0:36)
 - duration: 10.78s
 
 ## Performance text

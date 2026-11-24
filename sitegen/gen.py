@@ -801,7 +801,6 @@ def build_book():
 
           <section class="audiobox" aria-labelledby="listen-h">
             <h2 class="label" id="listen-h">Listen without the pictures</h2>
-            <p class="muted">The wording note on the videobook preview also applies here: the recording has not been re-recorded yet.</p>
             <p class="muted" style="font-size:14px;margin:0">The same narration as an audio track · {mmss(dur)} · your place is bookmarked automatically on this device</p>
             <audio id="book-audio" controls preload="metadata" data-chapter="preview">
               <source src="/audio/book-preview.mp3" type="audio/mpeg">
