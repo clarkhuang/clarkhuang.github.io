@@ -16,6 +16,7 @@
   --text:#f3f7f9; --dim:#c2ccd4; --dimmer:#8a9aa8;
   --accent:#4ade80; --accent-d:#1a6b3c; --accent-line:#3d6a50; --on-accent:#06210f; --amber:#f0b14a;
   --badge-bg:#173024; --badge-line:#2a5a3c; --soon-bg:#2a2216; --soon-line:#4a3a1c;
+  --new-bg:#142a3d; --new-line:#2a5a78; --new-text:#7dd3fc;
   --header-bg:#0c1217; --glow:#152028; --hover:rgba(77,222,128,.06); --shadow:rgba(0,0,0,.5);
   --radius:16px; --max:1120px;
   --sans:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
@@ -30,6 +31,7 @@
     --text:#161c20; --dim:#3d484f; --dimmer:#5c6972;
     --accent:#0f7a3b; --accent-d:#8ecaa4; --accent-line:#7fb893; --on-accent:#ffffff; --amber:#8a4f00;
     --badge-bg:#e3f3e9; --badge-line:#a9d4b8; --soon-bg:#f8eedc; --soon-line:#e4c792;
+    --new-bg:#e4f3fb; --new-line:#a8cce3; --new-text:#0b4f75;
     --header-bg:#f4f1ea; --glow:#fffdf8; --hover:rgba(15,122,59,.06); --shadow:rgba(22,28,32,.14);
   }
 }
@@ -145,6 +147,12 @@ a.card-body-link:hover{text-decoration:none}
 .badge{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--badge-bg);color:var(--accent);border:1px solid var(--badge-line);vertical-align:middle;white-space:nowrap}
 .badge.soon{background:var(--soon-bg);color:var(--amber);border-color:var(--soon-line)}
 .badge.dim{background:var(--panel-hi);color:var(--dim);border-color:var(--line)}
+.badge.new{background:var(--new-bg);color:var(--new-text);border-color:var(--new-line)}
+.dates{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pub-date,.upd-date{white-space:nowrap}
+.card-meta .dates{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;font-size:13px;color:var(--dimmer);letter-spacing:0;text-transform:none;font-weight:500}
+.lesson-meta .dates,.lessons li.vid .dates{color:var(--dimmer)}
+.lessons li.vid .dates{position:relative;z-index:1}
 h1 .badge{font-size:11px;margin-left:10px;position:relative;top:-.45em;letter-spacing:.08em;font-family:var(--sans)}
 
 .watch-state{display:none;align-items:center;gap:8px;flex-wrap:wrap}

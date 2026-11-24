@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/06-quality-feedback-and-observability/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-06-quality-feedback-and-observability.mp4
 - Duration: 4:08 (248.6 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-06-quality-feedback-and-observability.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-06-quality-feedback-and-observability.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-06
@@ -42,7 +43,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. Lesson six. Quality, feedback, and observability.
+Software engineering two oh one. Lesson six. Quality, feedback, and observability.
 
 ### The question
 
@@ -64,7 +65,7 @@ Now run them, on last night's real renewals. One was charged twice. One, the wro
 
 ### Run it twice
 
-That one sentence does double duty. You write the check once, and run it twice. Before a change ships, on sample renewals, in the pipeline. And after every nightly run, on the real ones. Add a target for time, too. A service level objective, an SLO: say, ninety-nine point nine percent of renewals due today, attempted by six A.M. Now an agent can run all of it, without asking anyone what good looks like.
+That one sentence does double duty. You write the check once, and run it twice. Before a change ships, on sample renewals, in the pipeline. And after every nightly run, on the real ones. Add a target for time, too. A service level objective, an S.L.O.: say, ninety-nine point nine percent of renewals due today, attempted by six A.M. Now an agent can run all of it, without asking anyone what good looks like.
 
 ### Watch every run
 
@@ -86,7 +87,7 @@ Which gives us rule six, for your agents. Before you build, write down what righ
 
 ### Your turn
 
-Now, your turn. Pick one job your system runs every day. Ask your AI: what would have to be true for last night's run to be right? Write it as three read-only checks I can run on the real data. Then run one.
+Now, your turn. Pick one job your system runs every day. Ask your A.I.: what would have to be true for last night's run to be right? Write it as three read-only checks I can run on the real data. Then run one.
 
 Once a job has a brief, its checks, and a record of every run, it's ready to be reused. That's next: skills as building blocks. See you in lesson seven.
 

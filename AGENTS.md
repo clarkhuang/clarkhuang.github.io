@@ -43,9 +43,11 @@ Work through the site by following links in `llms.txt` and in each `index.md`. Y
 
 The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do. `stamp_versions.py` also writes each lesson video's current version into https://clarkhuang.github.io/lessons.json as `video_version`, with the matching cookie key as `watched_key` (for example `se201/01@1a2b3c4d`), so an agent can tell which lessons a reader's `watched` cookie still covers without scraping HTML or downloading the video.
 
+A first-party `last_visit` cookie stores the start of the reader's most recent visit, and a session cookie `visit_ref` freezes the previous visit's timestamp for the whole browsing session. Videos published or updated since that previous visit (git dates baked in as `published` / `updated` on the page, in `lessons.json`, and as VideoObject `uploadDate` in JSON-LD) show a New tag. A first visit shows no New tags. These cookies are not sent to Google. `sitegen/media_dates.py` reads the dates from git history (first time the file landed on `main`, plus an Updated date when the current file bytes landed on a later calendar day).
+
 ## Analytics
 
-The production site uses Google Analytics 4 (measurement ID `G-F50XBTM25X`) to see which pages people read. IP addresses are anonymized, and Google Signals and ads personalization are off. Staging pages under `/staging/` do not send hits. Watched-progress cookies stay first-party and are not sent to Google. The public privacy note is at https://clarkhuang.github.io/book/editorial-policy/#analytics.
+The production site uses Google Analytics 4 (measurement ID `G-F50XBTM25X`) to see which pages people read. IP addresses are anonymized, and Google Signals and ads personalization are off. Staging pages under `/staging/` do not send hits. Watched-progress and last-visit cookies stay first-party and are not sent to Google. The public privacy note is at https://clarkhuang.github.io/book/editorial-policy/#analytics.
 
 ## How to contribute
 
@@ -84,11 +86,15 @@ Labels: `correction`, `feature` / `new-story`, `refactor`, and `site` + `bug` fo
 
 More: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/CONTRIBUTING.md
 
+### Credit landed contributions
+
+Any outside contribution that lands on the site must be credited on the [Contributors](https://clarkhuang.github.io/contributors/) page in the same pull request. Add an entry to `sitegen/landed-contributions.json` (GitHub login, a short description of what landed, and links to the issue and/or PR) and run `python3 scripts/build_credits.py`. Use only the public GitHub display name (if the profile has one) and handle. Do not invent a name, add other personal details, or credit input that did not land. Honor a “don't credit me” request.
+
 ## Ask, connect, and credits
 
 - **Ask the Book:** https://clarkhuang.github.io/ask/ — instant in-browser search over https://clarkhuang.github.io/search-index.json, plus “Ask your AI” buttons that open ChatGPT, Claude, Grok, or Perplexity with a prefilled prompt. The prompt points at https://clarkhuang.github.io/llms-full.txt and the GitMCP URL, and asks the tool to answer only from this site with citations. For book questions, it may use the tone of Charlie Hack, the OpenBook's fictional narrator. There is a copy-prompt fallback. A compact version of this widget also appears on the book page and on lesson pages.
 - **Full site text:** https://clarkhuang.github.io/llms-full.txt
-- **Contributor credits:** https://clarkhuang.github.io/credits/ (JSON: https://clarkhuang.github.io/credits.json). People are listed by GitHub handle only.
+- **Contributors:** https://clarkhuang.github.io/contributors/ (JSON: https://clarkhuang.github.io/contributors.json). People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle. The previous address, https://clarkhuang.github.io/credits/, redirects there.
 - **Site MCP server (first-party, read-only):** one Python file, no dependencies, stdio. Tools: `site_info`, `list_lessons`, `get_lesson` (transcript, chapters, captions, watched key), `check_lesson_media`, `get_page`, `search`, `how_to_contribute`, `draft_issue` (drafts only; never files). Claude Code: `claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. Other clients: command `uv`, args `["run", "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"]`, or download the file and run it with `python3`. Set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging` to read staging. Docs: https://clarkhuang.github.io/mcp/index.md · manifest: https://clarkhuang.github.io/.well-known/mcp.json
 - **Connect your AI (MCP):** public, read-only GitMCP endpoint at `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. GitMCP is a free third-party service. It prefers `llms.txt`. It cannot open issues or merge pull requests; contributions still go through GitHub issues, and only Clark Huang approves and merges.
 

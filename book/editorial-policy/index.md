@@ -8,6 +8,8 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 This is the editorial policy for *Silicon Valley C Players*. I'll keep it short, and I'll change this page when the process changes.
 
+This page, and the clarified “AI writes essentially all the code” wording in the changelog, were added after feedback from [@himanshu112-wq](https://github.com/himanshu112-wq) in [issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80). See [Contributors](/contributors/).
+
 ## Story chapters and the how-to half
 
 The story chapters are an embellished fictional dramatization. Names are changed. The Foreword and Part Five (How to Work Now) are nonfiction: my own views, with real, cited sources. That split is also in the [disclaimer](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/DISCLAIMER.md).
@@ -34,7 +36,12 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 - **Was:** “In my view, AI now writes essentially all of the code,” and in the chapter 20 outline, “Clark's view is that AI now writes 100% of the code.”
 - **Now:** “In my own work, AI now writes essentially all of the code I ship. That is my workflow, not a measured team result or a general industry figure.”
-- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4. Clark clarified this is his own workflow, not a measured result or a prediction.
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 4, raised by [@himanshu112-wq](https://github.com/himanshu112-wq). Clark clarified this is his own workflow, not a measured result or a prediction.
+
+### Editorial policy (24 November 2026)
+
+- **Added:** This public editorial policy, including how conflicting recollections are handled and this changelog of claims and sources.
+- **Why:** [Issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80), point 7, raised by [@himanshu112-wq](https://github.com/himanshu112-wq).
 
 ### Mid-book preview re-record (24 November 2026)
 
@@ -44,7 +51,7 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ## Privacy and analytics
 
-This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under `/staging/` do not send analytics hits.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 

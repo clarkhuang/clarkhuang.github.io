@@ -57,6 +57,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 ## Videobook preview
 
 - Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (179.9s)
+- Published: Nov 22, 2026. Updated: Nov 24, 2026
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/videos/book-preview-chapters.json
 - Transcript: https://clarkhuang.github.io/book-source/preview/transcript.md
@@ -73,6 +74,8 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 ## Editorial policy
 
 How conflicting recollections are handled, and how claims and sources are tracked across editions: [https://clarkhuang.github.io/book/editorial-policy/](https://clarkhuang.github.io/book/editorial-policy/index.md).
+
+People whose contributions have landed, including the feedback that led to this editorial policy, are listed on [Contributors](https://clarkhuang.github.io/contributors/index.md).
 
 ## Story arc and chapters
 

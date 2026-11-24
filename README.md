@@ -21,7 +21,7 @@ Every page has a Markdown twin (`index.md`) and an `AGENTS.md`. Start at [`llms.
 - [`book.json`](https://clarkhuang.github.io/book.json): the book preview catalog.
 - [`llms.txt`](https://clarkhuang.github.io/llms.txt) and [`llms-full.txt`](https://clarkhuang.github.io/llms-full.txt): catalogs and full text for language models.
 - [Ask the Book](https://clarkhuang.github.io/ask/): in-browser search and “Ask your AI” prompts.
-- [Credits](https://clarkhuang.github.io/credits/): contributors, by GitHub handle ([`credits.json`](https://clarkhuang.github.io/credits.json)).
+- [Contributors](https://clarkhuang.github.io/contributors/): people whose contributions have landed, by public GitHub display name or handle ([`contributors.json`](https://clarkhuang.github.io/contributors.json)).
 - GitMCP (read-only, third-party): `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. See [the MCP section](https://clarkhuang.github.io/contribute/#mcp).
 - Site MCP server (first-party, read-only, stdio): `uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. See [the MCP page](https://clarkhuang.github.io/mcp/).
 

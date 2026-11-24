@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/05-governance-where-people-decide/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-05-governance-where-people-decide.mp4
 - Duration: 4:13 (253.0 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-05-governance-where-people-decide.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-05-governance-where-people-decide.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-05
@@ -43,7 +44,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. Lesson five. Governance: where people decide.
+Software engineering two oh one. Lesson five. Governance: where people decide.
 
 ### The question
 
@@ -97,7 +98,7 @@ Which gives us rule five, for your agents. Before a change ships, find out who d
 
 ### Your turn
 
-Now, your turn. Give your AI the last ten changes to a system you run, and the four questions. Ask it: which of these needed a person? Which could have shipped on checks alone? Then see where you disagree.
+Now, your turn. Give your A.I. the last ten changes to a system you run, and the four questions. Ask it: which of these needed a person? Which could have shipped on checks alone? Then see where you disagree.
 
 Ships on its checks. That phrase is carrying a lot. So how good are your checks, really? That's next: quality, feedback, and observability. See you in lesson six.
 

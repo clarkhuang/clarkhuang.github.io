@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-10-capstone-one-feature-end-to-end.mp4
 - Duration: 5:09 (309.2 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-10-capstone-one-feature-end-to-end.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-10-capstone-one-feature-end-to-end.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-10
@@ -53,7 +54,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. Lesson ten. Capstone: one feature, end to end.
+Software engineering two oh one. Lesson ten. Capstone: one feature, end to end.
 
 ### The question
 
@@ -69,7 +70,7 @@ What's scarce, lesson one said, is knowing it's right. So, say what right means:
 
 Now make it readable. The rule goes into a spec, in the repository, with an agents file, for how to work there, and an index, so an agent can find it. The spec is the source. Change it, and the build follows.
 
-Next, the graph. Four parts. Add the annual plan. Calculate the credit. Show the amount, and get a yes. Charge it, and switch the plan. What crosses? One new thing: the quote. Its ID, old plan, new plan, credit, amount due. Three parts share it, so it's its own node, with one owner.
+Next, the graph. Four parts. Add the annual plan. Calculate the credit. Show the amount, and get a yes. Charge it, and switch the plan. What crosses? One new thing: the quote. Its I.D., old plan, new plan, credit, amount due. Three parts share it, so it's its own node, with one owner.
 
 Then plan the integration, before anyone starts. The quote's format is the shared contract. Three parts are new work: three agents, each with its own brief, finish line, and check. And one merge point, on staging, where the whole feature is tested.
 
@@ -85,7 +86,7 @@ The plan is written, and a person has read it. Now, build. Four parts, at the sa
 
 ### Run it
 
-Now it runs on its own: a pipeline. The trigger is an event: the customer confirms the quote. Charge, switch the plan, invoice and ledger, email. Every step leaves a record. And the charge carries an idempotency key that never changes: this quote's ID. So a double-click, or a retry, doesn't charge twice. A second trigger, every night: reconcile our ledger against the processor's record, and run the three checks.
+Now it runs on its own: a pipeline. The trigger is an event: the customer confirms the quote. Charge, switch the plan, invoice and ledger, email. Every step leaves a record. And the charge carries an idempotency key that never changes: this quote's I.D. So a double-click, or a retry, doesn't charge twice. A second trigger, every night: reconcile our ledger against the processor's record, and run the three checks.
 
 ### Operate it
 
@@ -105,9 +106,9 @@ Which gives us rule ten, for your agents. Before you build a whole feature, writ
 
 ### Your turn
 
-Now, your turn. Pick one small feature in a system you work on. Before any code, ask your AI to write that plan. Then find the line it guessed, when it should have asked.
+Now, your turn. Pick one small feature in a system you work on. Before any code, ask your A.I. to write that plan. Then find the line it guessed, when it should have asked.
 
-Every box on that map is still one loop: plan, build, verify. Agents do more of the building now. You still own the outcome. That's software engineering 201: from one loop, to enterprise systems. Thanks for watching.
+Every box on that map is still one loop: plan, build, verify. Agents do more of the building now. You still own the outcome. That's software engineering two oh one: from one loop, to enterprise systems. Thanks for watching.
 
 ## Related lessons
 

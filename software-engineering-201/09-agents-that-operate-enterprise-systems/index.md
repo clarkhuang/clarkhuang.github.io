@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-09-agents-that-operate-enterprise-systems.mp4
 - Duration: 4:19 (259.7 seconds)
+- Published: Nov 24, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-09-agents-that-operate-enterprise-systems.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-09-agents-that-operate-enterprise-systems.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-09

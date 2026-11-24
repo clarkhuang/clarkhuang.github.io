@@ -142,6 +142,35 @@ def mmss(t):
         return ""
     return f"{t//60}:{t%60:02d}"
 
+MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+def _display_date(date_s):
+    if not date_s:
+        return ""
+    y, m, d = (int(x) for x in date_s.split("-"))
+    return f"{MONTHS[m - 1]} {d}, {y}"
+
+def date_md(info, kind="published"):
+    """One Markdown line for a media_dates info dict (or a catalog dict with published/updated)."""
+    if not info or not info.get("published"):
+        return ""
+    if kind == "latest":
+        line = f"Latest video: {_display_date(info['published'])}"
+    else:
+        line = f"Published: {_display_date(info['published'])}"
+    if info.get("updated"):
+        line += f". Updated: {_display_date(info['updated'])}"
+    return line
+
+def date_clause(info):
+    if not info or not info.get("published"):
+        return ""
+    bits = [f"published {_display_date(info['published'])}"]
+    if info.get("updated"):
+        bits.append(f"updated {_display_date(info['updated'])}")
+    return "; ".join(bits)
+
 def _related_lessons(series, lesson):
     out = []
     lessons = series.get("lessons") or []
@@ -179,6 +208,9 @@ def write_lesson_twins(site, skey, series, lesson):
         dur = lesson.get("_dur")
         if dur:
             bits += [f"- Duration: {mmss(dur)} ({round(dur, 1)} seconds)"]
+        dline = date_md(lesson.get("_dates"))
+        if dline:
+            bits += [f"- {dline}"]
         poster = lesson.get("_poster")
         if poster:
             bits += [f"- Poster: {BASE}{poster}"]
@@ -255,6 +287,9 @@ def write_series_twins(site, skey, series):
         link = f"{BASE}/{skey}/{l['slug']}/index.md"
         flag = "available" if l.get("video") else "outline only"
         bits += [f"### {l['n']:02d}. [{l['title']}]({link}) ({flag})", "", l.get("summary") or ""]
+        dline = date_md(l.get("_dates"))
+        if dline:
+            bits += ["", dline]
         if l.get("rule"):
             bits += ["", f"**Rule:** {l['rule']}"]
         bits += [""]
@@ -343,7 +378,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         f'- [Ask the Book]({BASE}/ask/index.md): Search lessons, chapters, and transcripts in your browser, or send a cited prompt to ChatGPT, Claude, Grok, or Perplexity.',
         f'- [Connect your AI]({BASE}/contribute/index.md): A public, read-only GitMCP endpoint at gitmcp.io/clarkhuang/clarkhuang.github.io. Contributions still go through GitHub issues.',
         f'- [Site MCP server]({BASE}/mcp/index.md): A first-party, read-only MCP server (stdio) for lessons, transcripts, captions, media checks, search, and contributor-style issue drafts.',
-        f'- [Contributor credits]({BASE}/credits/index.md): People who have helped, listed by GitHub handle. You can choose how, or whether, you are credited.',
+        f'- [Contributors]({BASE}/contributors/index.md): People whose contributions have landed on the site, listed by public GitHub display name or handle. You can choose how, or whether, you are credited.',
         '',
         f'This site is also an open project. [Contribute with your AI]({BASE}/contribute/index.md), or [copy this for yourself]({BASE}/copy-this/index.md).',
         "",
@@ -396,6 +431,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
             "",
             f"- {video_meta.get('title') or 'Preview'}: {video_meta['url']}"
             + (f" ({video_meta['duration_seconds']}s)" if video_meta.get("duration_seconds") else ""),
+            *([f"- {date_md(video_meta)}"] if date_md(video_meta) else []),
             f"- Captions (VTT): {video_meta.get('captions_url') or (BASE + '/videos/book-preview.vtt')}",
             f"- Chapters (JSON): {video_meta.get('chapters_url') or (BASE + '/videos/book-preview-chapters.json')}",
             f"- Transcript: {video_meta.get('transcript_url') or (BASE + '/book-source/preview/transcript.md')}",
@@ -416,6 +452,8 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         "## Editorial policy",
         "",
         f"How conflicting recollections are handled, and how claims and sources are tracked across editions: [{BASE}/book/editorial-policy/]({BASE}/book/editorial-policy/index.md).",
+        "",
+        f"People whose contributions have landed, including the feedback that led to this editorial policy, are listed on [Contributors]({BASE}/contributors/index.md).",
         "",
         "## Story arc and chapters",
         "",
@@ -535,9 +573,11 @@ Work through the site by following links in `llms.txt` and in each `index.md`. Y
 
 The site remembers, in first-party cookies only, which videos a reader has watched (`watched`), where they stopped in a lesson video (`vpos`), and their book preview bookmark (`book_pos`). Every key is the lesson or chapter id plus a version: `se201/01@1a2b3c4d`, or `se201/01@1a2b3c4d:73.4` for a position. The version is the first 8 hex characters of the SHA-256 of the media file the page plays, stamped into the HTML as `data-video-version` by `sitegen/stamp_versions.py`. When a video or audio file is re-rendered, its version changes, so readers see it as unwatched and are not offered a stale resume position. Old keys without a version, and keys for an older version, are dropped. After re-rendering any media, run `python3 sitegen/stamp_versions.py`; `python3 sitegen/check_site.py .` fails until you do. `stamp_versions.py` also writes each lesson video's current version into https://clarkhuang.github.io/lessons.json as `video_version`, with the matching cookie key as `watched_key` (for example `se201/01@1a2b3c4d`), so an agent can tell which lessons a reader's `watched` cookie still covers without scraping HTML or downloading the video.
 
+A first-party `last_visit` cookie stores the start of the reader's most recent visit, and a session cookie `visit_ref` freezes the previous visit's timestamp for the whole browsing session. Videos published or updated since that previous visit (git dates baked in as `published` / `updated` on the page, in `lessons.json`, and as VideoObject `uploadDate` in JSON-LD) show a New tag. A first visit shows no New tags. These cookies are not sent to Google. `sitegen/media_dates.py` reads the dates from git history (first time the file landed on `main`, plus an Updated date when the current file bytes landed on a later calendar day).
+
 ## Analytics
 
-The production site uses Google Analytics 4 (measurement ID `G-F50XBTM25X`) to see which pages people read. IP addresses are anonymized, and Google Signals and ads personalization are off. Staging pages under `/staging/` do not send hits. Watched-progress cookies stay first-party and are not sent to Google. The public privacy note is at https://clarkhuang.github.io/book/editorial-policy/#analytics.
+The production site uses Google Analytics 4 (measurement ID `G-F50XBTM25X`) to see which pages people read. IP addresses are anonymized, and Google Signals and ads personalization are off. Staging pages under `/staging/` do not send hits. Watched-progress and last-visit cookies stay first-party and are not sent to Google. The public privacy note is at https://clarkhuang.github.io/book/editorial-policy/#analytics.
 
 ## How to contribute
 
@@ -576,11 +616,15 @@ Labels: `correction`, `feature` / `new-story`, `refactor`, and `site` + `bug` fo
 
 More: https://github.com/clarkhuang/clarkhuang.github.io/blob/main/CONTRIBUTING.md
 
+### Credit landed contributions
+
+Any outside contribution that lands on the site must be credited on the [Contributors](https://clarkhuang.github.io/contributors/) page in the same pull request. Add an entry to `sitegen/landed-contributions.json` (GitHub login, a short description of what landed, and links to the issue and/or PR) and run `python3 scripts/build_credits.py`. Use only the public GitHub display name (if the profile has one) and handle. Do not invent a name, add other personal details, or credit input that did not land. Honor a “don't credit me” request.
+
 ## Ask, connect, and credits
 
 - **Ask the Book:** https://clarkhuang.github.io/ask/ — instant in-browser search over https://clarkhuang.github.io/search-index.json, plus “Ask your AI” buttons that open ChatGPT, Claude, Grok, or Perplexity with a prefilled prompt. The prompt points at https://clarkhuang.github.io/llms-full.txt and the GitMCP URL, and asks the tool to answer only from this site with citations. For book questions, it may use the tone of Charlie Hack, the OpenBook's fictional narrator. There is a copy-prompt fallback. A compact version of this widget also appears on the book page and on lesson pages.
 - **Full site text:** https://clarkhuang.github.io/llms-full.txt
-- **Contributor credits:** https://clarkhuang.github.io/credits/ (JSON: https://clarkhuang.github.io/credits.json). People are listed by GitHub handle only.
+- **Contributors:** https://clarkhuang.github.io/contributors/ (JSON: https://clarkhuang.github.io/contributors.json). People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle. The previous address, https://clarkhuang.github.io/credits/, redirects there.
 - **Site MCP server (first-party, read-only):** one Python file, no dependencies, stdio. Tools: `site_info`, `list_lessons`, `get_lesson` (transcript, chapters, captions, watched key), `check_lesson_media`, `get_page`, `search`, `how_to_contribute`, `draft_issue` (drafts only; never files). Claude Code: `claude mcp add clarkhuang-site -- uv run https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py`. Other clients: command `uv`, args `["run", "https://clarkhuang.github.io/mcp/clarkhuang_site_mcp.py"]`, or download the file and run it with `python3`. Set `CLARKHUANG_SITE=https://clarkhuang.github.io/staging` to read staging. Docs: https://clarkhuang.github.io/mcp/index.md · manifest: https://clarkhuang.github.io/.well-known/mcp.json
 - **Connect your AI (MCP):** public, read-only GitMCP endpoint at `https://gitmcp.io/clarkhuang/clarkhuang.github.io`. GitMCP is a free third-party service. It prefers `llms.txt`. It cannot open issues or merge pull requests; contributions still go through GitHub issues, and only Clark Huang approves and merges.
 
@@ -622,7 +666,7 @@ def write_llms_txt(site, series, extras=None):
         f"- [Home]({BASE}/index.md): about Clark Huang and the series on this site",
         f"- [AGENTS.md]({BASE}/AGENTS.md): how to navigate and what not to invent",
         f"- [llms-full.txt]({BASE}/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog",
-        f"- [lessons.json]({BASE}/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, and durations",
+        f"- [lessons.json]({BASE}/lessons.json): machine-readable catalog of every lesson, with rules, video URLs, durations, and publish dates",
         f"- [redirects.json]({BASE}/redirects.json): old lesson page and media addresses and where they moved",
         f"- [Site MCP server]({BASE}/mcp/index.md): first-party, read-only MCP server (stdio) for agents: lessons, transcripts, captions, media checks, search, issue drafts. Manifest: {BASE}/.well-known/mcp.json",
         f"- [book.json]({BASE}/book.json): OpenBook preview catalog, including cover description, transcripts, captions and chapters",
@@ -636,7 +680,9 @@ def write_llms_txt(site, series, extras=None):
             summary = (l.get("summary") or "").replace("\n", " ")
             if len(summary) > 220:
                 summary = summary[:217].rsplit(" ", 1)[0] + "…"
-            lines.append(f"- [Lesson {l['n']}: {l['title']}]({BASE}/{skey}/{l['slug']}/index.md){flag}: {summary}")
+            clause = date_clause(l.get("_dates"))
+            extra = f" ({clause})" if clause else ""
+            lines.append(f"- [Lesson {l['n']}: {l['title']}]({BASE}/{skey}/{l['slug']}/index.md){flag}{extra}: {summary}")
         for k, t in enumerate(s.get("soon") or [], start=len(s["lessons"]) + 1):
             lines.append(f"- Lesson {k}: {t} (coming soon)")
         lines.append("")
@@ -723,7 +769,9 @@ def write_llms_full(site, series, intro, back):
         for l in s["lessons"]:
             flag = "" if l.get("video") else " (outline)"
             summary = (l.get("summary") or "").replace("\n", " ")
-            lines.append(f"- Lesson {l['n']}: [{l['title']}]({BASE}/{skey}/{l['slug']}/index.md){flag} — {summary}")
+            clause = date_clause(l.get("_dates"))
+            extra = f" ({clause})" if clause else ""
+            lines.append(f"- Lesson {l['n']}: [{l['title']}]({BASE}/{skey}/{l['slug']}/index.md){flag}{extra} — {summary}")
             if l.get("rule"):
                 lines.append(f"  - Rule: {l['rule']}")
         lines.append("")
@@ -736,7 +784,7 @@ def write_llms_full(site, series, intro, back):
         f"- [Contribute with your AI]({BASE}/contribute/index.md)",
         f"- [Copy this for yourself]({BASE}/copy-this/index.md)",
         f"- [Ask the Book]({BASE}/ask/index.md)",
-        f"- [Contributor credits]({BASE}/credits/index.md)",
+        f"- [Contributors]({BASE}/contributors/index.md)",
         f"- GitMCP (read-only, third-party): https://gitmcp.io/clarkhuang/clarkhuang.github.io",
         f"- Site MCP server (first-party, read-only): {BASE}/mcp/index.md",
         f"- Search index: {BASE}/search-index.json",
