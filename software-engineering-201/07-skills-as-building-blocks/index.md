@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/AGENTS.md](https://clarkhuang.github.io/software-engineering-201/07-skills-as-building-blocks/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se201-07-skills-as-building-blocks.mp4
 - Duration: 4:00 (240.7 seconds)
+- Published: Nov 23, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se201-07-skills-as-building-blocks.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se201-07-skills-as-building-blocks.vtt
 - How it was built (script source, facts, prompts): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-07
@@ -43,7 +44,7 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 ## Transcript
 
-Software engineering 201. Lesson seven. Skills as building blocks.
+Software engineering two oh one. Lesson seven. Skills as building blocks.
 
 ### One job, three results
 
@@ -51,7 +52,7 @@ Why would three capable agents do the same job three different ways? Take our ma
 
 ### A new unit of reuse
 
-Software keeps finding new units of reuse. Libraries: shared code. Frameworks: an application's structure. Services: something running, behind an API. All three reuse software. A skill reuses something different: how a job gets done. One recurring job, written down, tested, and shared.
+Software keeps finding new units of reuse. Libraries: shared code. Frameworks: an application's structure. Services: something running, behind an A.P.I. All three reuse software. A skill reuses something different: how a job gets done. One recurring job, written down, tested, and shared.
 
 ### Anatomy of a skill
 
@@ -89,7 +90,7 @@ Which gives us rule seven, for your agents. When a job comes back a third time, 
 
 ### Your turn
 
-Now, your turn. Pick a job you've explained to your AI more than twice. Ask it to draft the skill. Then open a fresh chat, give it only that page, and see if the job gets done.
+Now, your turn. Pick a job you've explained to your A.I. more than twice. Ask it to draft the skill. Then open a fresh chat, give it only that page, and see if the job gets done.
 
 One skill does one job. But real work is a chain of jobs, and some of it should start on its own. That's next: routines, pipelines, and integration. See you in lesson eight.
 

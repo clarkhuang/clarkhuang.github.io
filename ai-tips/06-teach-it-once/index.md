@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/ai-tips/06-teach-it-once/AGENTS.md](https://clarkhuang.github.io/ai-tips/06-teach-it-once/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/ai-tips-06-teach-it-once.mp4
 - Duration: 2:33 (153.5 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/ai-tips-06-teach-it-once.jpg
 
 ## Chapters

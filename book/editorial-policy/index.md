@@ -51,7 +51,7 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ## Privacy and analytics
 
-This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress and resume positions stay in a first-party cookie in your browser; they are not sent to Google. Pages under `/staging/` do not send analytics hits.
+This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under `/staging/` do not send analytics hits.
 
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 

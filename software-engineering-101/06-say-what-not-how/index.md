@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/AGENTS.md](https://clarkhuang.github.io/software-engineering-101/06-say-what-not-how/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se101-06-say-what-not-how.mp4
 - Duration: 2:29 (149.7 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se101-06-say-what-not-how.jpg
 
 ## Chapters

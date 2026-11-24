@@ -14,6 +14,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/AGENTS.md](https://clarkhuang.github.io/software-engineering-101/05-understand-before-you-change/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se101-05-understand-before-you-change.mp4
 - Duration: 2:14 (134.0 seconds)
+- Published: Nov 21, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se101-05-understand-before-you-change.jpg
 
 ## Chapters
