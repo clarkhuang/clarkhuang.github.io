@@ -331,11 +331,15 @@ def chapter_html(site, ch, m, prev_ch, next_ch):
     if ch.get("thesis"):
         sub += (f'      <figure class="thesis"><blockquote><p>{E(ch["thesis"])}</p></blockquote>'
                 f'<figcaption>{E(ch.get("thesis_by") or "Clark Huang")}, {E(ch.get("thesis_note") or "the belief this chapter is built on")}</figcaption></figure>\n')
+    if ch.get("preview"):
+        sub += (f'      <section class="rulecard chapter-preview" aria-labelledby="pv-{E(ch["bookmark"])}-h">\n'
+                f'        <p class="label" id="pv-{E(ch["bookmark"])}-h">The whole chapter, in short</p>\n'
+                f'        <p>{E(ch["preview"])}</p>\n      </section>\n')
     part = E(ch.get("part") or "")
     body = (
         f'      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / <a href="/book/chapters/">Chapters</a> / Chapter {E(ch["n"])}</p>\n'
         f'      <h1>{E(ch["title"])}</h1>\n'
-        f'      <p class="h1-status"><span class="badge">Chapter {E(ch["n"])}</span><span class="badge dim">{part}</span><span class="badge soon">Draft · v0</span></p>\n'
+        f'      <p class="h1-status"><span class="badge">Chapter {E(ch["n"])}</span><span class="badge dim">{part}</span><span class="badge soon">{E(ch.get("badge") or "Drafted · v0")}</span></p>\n'
         + sub +
         f'      <p class="muted">{E(ch.get("frame") or "")} <a href="/book/story-arc/#{E(ch.get("outline_id") or "")}">Where it sits in the book</a> · <a href="/book/editorial-policy/">Editorial policy</a></p>\n'
         '      <section class="audiobox preview-lead" aria-labelledby="watch-h">\n'
@@ -381,6 +385,8 @@ def chapter_md(site, ch, m):
         lines += [f"*{ch['subtitle']}*", ""]
     if ch.get("thesis"):
         lines += ["## The belief behind this chapter", "", f"> {ch['thesis']}", ">", f"> {ch.get('thesis_by') or 'Clark Huang'} ({ch.get('thesis_note') or 'the belief this chapter is built on'}). This is his view, not a measured result.", ""]
+    if ch.get("preview"):
+        lines += ["## The whole chapter, in short", "", ch["preview"], ""]
     lines += ["## Summary", "", ch["summary"], ""]
     if ch.get("rule"):
         lines += ["## The rule", "", ch["rule"], "", "This rule is written so a person or an AI agent can follow it as a standing instruction.", ""]
