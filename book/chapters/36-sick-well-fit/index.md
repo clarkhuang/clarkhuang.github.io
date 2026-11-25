@@ -18,7 +18,7 @@ Chapter 36 of *Silicon Valley C Players* (Future directions). Nonfiction, from t
 
 ## The whole chapter, in short
 
-"I strongly believe that AI is even more powerful to those that actually understand the fundamentals of the area they are applying AI to. Orders of magnitude more than the person vibing their way into a discipline AI gives them access to." That is Clark Huang's belief, not a measurement, and it is the frame for this chapter. Vibing gets a company to well. Fundamentals plus AI gets it to fit. The picture is borrowed from CrossFit: sickness, wellness and fitness are one line, wellness is the middle of it, and fitness is a margin for the day something goes wrong. AI is intensity, so the order is the gym's: mechanics first, then consistency, and only then intensity. Choose markers you can observe, practice the draw you dread, time the same work every quarter, and ask for proof instead of "done".
+Clark Huang's belief, above, is the frame for this chapter; it is his view, not a measurement. Vibing gets a company to well. Fundamentals plus AI gets it to fit. The picture is borrowed from CrossFit: sickness, wellness and fitness are one line, wellness is the middle of it, and fitness is a margin for the day something goes wrong. AI is intensity, so the order is the gym's: mechanics first, then consistency, and only then intensity. Choose markers you can observe, practice the draw you dread, time the same work every quarter, and ask for proof instead of "done".
 
 ## Summary
 
