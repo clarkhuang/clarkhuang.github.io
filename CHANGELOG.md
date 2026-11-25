@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Added a featured 75th-percentile line, in Clark's wording, to the “From the back cover” section on the book page and echoed it in the Introduction (preview). The book catalog description in `book.json`, `llms.txt`, and `llms-full.txt` carries the same line. The book preview video and audio were not re-recorded.
+
 - Book chapter 17b, **Building Blocks**, drafted as a text-only v0: a nonfiction interlude in Clark's own voice, in “Themes along the way,” after Chapter 17 and before reserved Chapter 18. Numbered 17b so existing chapter numbers and the Chapter 36 URL stay put. No videobook yet. Builds on [issue #67](https://github.com/clarkhuang/clarkhuang.github.io/issues/67) without closing it. Clark later confirmed the Age-Group Quarterfinals year as 2024 and filled in the vision board (guitar, piano, retiring by 50, and some business-specific things). The home page now also mentions the Chapter 36 pre-release and links to it.
 
 - Every video now shows a publish date (from git history: when it first landed on `main`). Re-rendered videos also show an Updated date when the current file landed on a later day. A New tag marks videos published or updated since the visitor's previous visit, using first-party `last_visit` and `visit_ref` cookies (a first visit shows no New tags; the cutoff stays for the whole browsing session). The same dates are in JSON-LD, `lessons.json`, `book.json`, and the Markdown twins. Staging only until Clark approves production.

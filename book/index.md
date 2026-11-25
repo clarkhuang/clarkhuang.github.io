@@ -50,6 +50,8 @@ And from the outside, a C thing can look like an A thing. The applause is loud, 
 
 A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.
 
+Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.
+
 The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
 It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.
@@ -65,6 +67,8 @@ The book begins with a green-screen dream, and it ends by dreaming about AI. Thi
 ## From the back cover
 
 An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.
+
+Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.
 
 This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.
 
