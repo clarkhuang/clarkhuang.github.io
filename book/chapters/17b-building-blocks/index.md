@@ -32,11 +32,11 @@ This rule is written so a person or an AI agent can follow it as a standing inst
 
 ## Videobook and audio
 
-- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (9:27)
+- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (10:24)
 - Published: Nov 25, 2026
 - Captions (VTT): https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt
 - Video chapters (JSON): https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json
-- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (9:27)
+- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (10:24)
 - Audio captions (VTT): https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt
 - Transcript (as narrated): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md
 - How the video was built: https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/BUILD.md
@@ -58,10 +58,10 @@ This rule is written so a person or an AI agent can follow it as a standing inst
 - 5:19 Water and the Bike
 - 6:15 The Marathon
 - 7:01 The Surprise
-- 7:34 The Payoff
-- 8:16 Still A C Player
-- 9:05 What This Is For
-- 9:21 Outro
+- 8:31 The Payoff
+- 9:12 Still A C Player
+- 10:01 What This Is For
+- 10:17 Outro
 
 ## The chapter
 
