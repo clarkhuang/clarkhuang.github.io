@@ -419,11 +419,12 @@
             {
               "id": "ch36-how-companies-should-use-ai",
               "n": "36",
-              "title": "How Companies Should Use AI",
-              "hook": "From one engineer and an agent to a company running a fleet.",
-              "status": "planned",
-              "needs_story": true,
-              "lessons": "New material"
+              "title": "Sick, Well, Fit: How Companies Should Use AI",
+              "hook": "Most companies strive for well; AI rewards the ones that train to be fit: fundamentals first, then consistency, and only then intensity. Finished as a v0 draft, with a full-chapter video and Business Fitness in 100 Words.",
+              "status": "drafted",
+              "needs_story": false,
+              "lessons": "New material; AI Tips \"Know What the Bot Can Actually Reach\", \"Ask for Proof, Not 'Done'\"; SE 201 Lesson 9",
+              "url": "/book/chapters/36-sick-well-fit/"
             },
             {
               "id": "epilogue",

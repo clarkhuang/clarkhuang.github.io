@@ -1,0 +1,1283 @@
+WEBVTT
+
+NOTE Silicon Valley C Players, Chapter 36: Sick, Well, Fit — captions generated from the narration script
+
+1
+00:00:00.500 --> 00:00:04.570
+Silicon Valley C Players. Chapter thirty-six.
+
+2
+00:00:04.570 --> 00:00:08.550
+Sick, well, fit. How companies should use AI
+
+3
+00:00:08.900 --> 00:00:10.987
+An illustration, not a true story.
+
+4
+00:00:10.987 --> 00:00:14.240
+Picture a made-up company that runs a billing system.
+
+5
+00:00:14.240 --> 00:00:19.580
+Every dashboard is green. The site is up, tickets close on time, last month reconciles.
+
+6
+00:00:19.580 --> 00:00:25.411
+By any reading, it is well. Then the board asks for AI in every team by the end of the quarter.
+
+7
+00:00:25.411 --> 00:00:27.252
+An agent goes live on refunds.
+
+8
+00:00:27.252 --> 00:00:36.582
+Nobody ever wrote down what a correct refund looks like, the one person who knew the edge cases is out that week, and the error counter starts to climb.
+
+9
+00:00:36.582 --> 00:00:38.669
+Nothing was broken the day before.
+
+10
+00:00:38.669 --> 00:00:44.070
+There was just no margin. That gap, between well and fit, is what this chapter is about.
+
+11
+00:00:44.410 --> 00:00:51.267
+In October two thousand two, Greg Glassman, the founder of CrossFit, published an essay called What Is Fitness?
+
+12
+00:00:51.267 --> 00:00:59.915
+Championing a fitness program without clearly defining what it is that the program delivers, he wrote, combines elements of fraud and farce.
+
+13
+00:00:59.915 --> 00:01:02.510
+So he defined it, in a way you could test.
+
+14
+00:01:02.860 --> 00:01:12.104
+One of his observations was that nearly every measurable value of health can be placed on a continuum that ranges from sickness to wellness to fitness.
+
+15
+00:01:12.104 --> 00:01:22.817
+His examples: a blood pressure of one sixty over ninety-five is pathological, one twenty over seventy is normal, and one oh five over fifty-five is consistent with an athlete.
+
+16
+00:01:22.817 --> 00:01:28.204
+Body fat of forty percent is pathological, twenty percent is normal, ten percent is fit.
+
+17
+00:01:28.204 --> 00:01:31.020
+Dozens of other measures line up the same way.
+
+18
+00:01:31.370 --> 00:01:37.795
+Done right, he wrote, fitness provides a great margin of protection against the ravages of time and disease.
+
+19
+00:01:37.795 --> 00:01:39.877
+It is and should be super-wellness.
+
+20
+00:01:39.877 --> 00:01:42.079
+Wellness is not the end of the scale.
+
+21
+00:01:42.079 --> 00:01:43.090
+It is the middle.
+
+22
+00:01:43.440 --> 00:01:46.602
+Most people aim for well: numbers in the normal range.
+
+23
+00:01:46.602 --> 00:01:53.510
+That is a reasonable goal if the alternative is being sick, and the wrong goal if you still have something hard to do.
+
+24
+00:01:53.510 --> 00:01:55.618
+I think companies do the same thing.
+
+25
+00:01:55.618 --> 00:01:57.433
+Most companies strive for well.
+
+26
+00:01:57.433 --> 00:02:03.990
+I strive for fit. And the hard thing most companies now have to do is make AI part of how they actually operate.
+
+27
+00:02:04.340 --> 00:02:08.232
+Here is what I believe about that, and it frames everything below.
+
+28
+00:02:08.232 --> 00:02:16.253
+I strongly believe that AI is even more powerful to those that actually understand the fundamentals of the area they are applying AI to.
+
+29
+00:02:16.253 --> 00:02:22.150
+Orders of magnitude more than the person vibing their way into a discipline AI gives them access to.
+
+30
+00:02:22.500 --> 00:02:24.706
+That is my view, not a measurement.
+
+31
+00:02:24.706 --> 00:02:31.134
+I am not mocking the vibing: it gets a person, or a company, into a field they could not enter before.
+
+32
+00:02:31.134 --> 00:02:35.420
+It gets them to well. Fundamentals plus AI is what gets them to fit.
+
+33
+00:02:35.770 --> 00:02:38.737
+Well is familiar. The site stays up most days.
+
+34
+00:02:38.737 --> 00:02:41.769
+Tickets get closed. You can explain last month.
+
+35
+00:02:41.769 --> 00:02:45.640
+It is better than sickness, and it is a thin place to stand.
+
+36
+00:02:45.990 --> 00:02:47.923
+Sickness you may have seen too.
+
+37
+00:02:47.923 --> 00:02:51.601
+A number nobody can defend. A cutover nobody can roll back.
+
+38
+00:02:51.601 --> 00:02:55.029
+A process that only works if one person is in the room.
+
+39
+00:02:55.029 --> 00:02:57.710
+An AI pilot that nobody can say is working.
+
+40
+00:02:58.060 --> 00:03:05.820
+Fitness is a margin. When a vendor fails, a key person is out, or demand spikes, you still have room to move before you are in trouble.
+
+41
+00:03:06.170 --> 00:03:10.507
+In a later lecture, Glassman added the observation this chapter turns on.
+
+42
+00:03:10.507 --> 00:03:19.419
+If you are fit, you first have to become well before you can become sick: fitness is a hedge against sickness, with wellness as an intermediate value.
+
+43
+00:03:19.419 --> 00:03:23.400
+A fit company is less likely to go from fine to crisis in one step.
+
+44
+00:03:23.400 --> 00:03:29.460
+It has to use up its margin first, and if it is reading its markers, it can watch that happen and act.
+
+45
+00:03:29.800 --> 00:03:35.015
+Chapter seventeen, Falling and Getting Up, is about getting back up after a failure.
+
+46
+00:03:35.015 --> 00:03:36.878
+Margin is the room to do that.
+
+47
+00:03:36.878 --> 00:03:39.920
+This is not a metaphor I am forcing onto a hobby.
+
+48
+00:03:39.920 --> 00:03:46.253
+It is the best picture I have for what a company needs when the work ahead is hard and partly unknown.
+
+49
+00:03:46.253 --> 00:03:49.109
+AI adoption is both. Well will not carry that.
+
+50
+00:03:49.109 --> 00:03:49.730
+Fit might.
+
+51
+00:03:50.080 --> 00:03:54.417
+Medicine has lab values. A company has to choose its own markers.
+
+52
+00:03:54.417 --> 00:03:57.954
+Here are five, with readings for sick, well, and fit.
+
+53
+00:03:57.954 --> 00:04:01.691
+The readings are illustrations, not industry benchmarks.
+
+54
+00:04:01.691 --> 00:04:04.227
+Choose your own, before you need them.
+
+55
+00:04:04.227 --> 00:04:06.229
+Recovering from a bad release.
+
+56
+00:04:06.229 --> 00:04:09.165
+Sick: days, and nobody is sure what changed.
+
+57
+00:04:09.165 --> 00:04:11.500
+Well: hours, with a known rollback.
+
+58
+00:04:11.500 --> 00:04:14.770
+Fit: minutes, with a rollback you have rehearsed.
+
+59
+00:04:14.770 --> 00:04:17.773
+Who can run a core process. Sick: one person.
+
+60
+00:04:17.773 --> 00:04:21.910
+Well: two people. Fit: several people, from a written runbook.
+
+61
+00:04:22.260 --> 00:04:24.267
+Where the numbers come from.
+
+62
+00:04:24.267 --> 00:04:26.489
+Sick: argued about in meetings.
+
+63
+00:04:26.489 --> 00:04:32.294
+Well: agreed this month. Fit: defined, sourced, and reproducible by someone else.
+
+64
+00:04:32.294 --> 00:04:35.089
+Cash. Sick: a surprise. Well: budgeted.
+
+65
+00:04:35.089 --> 00:04:39.031
+Fit: visible every week, with a plan for a bad quarter.
+
+66
+00:04:39.031 --> 00:04:42.758
+When an AI agent says done. Sick: you take its word.
+
+67
+00:04:42.758 --> 00:04:47.990
+Well: someone spot-checks. Fit: it shows evidence someone else can check.
+
+68
+00:04:48.340 --> 00:04:49.955
+Glassman also offered a test.
+
+69
+00:04:49.955 --> 00:04:59.369
+If anything in your life has one of these metrics moving in a wrong direction, he said, I want you to entertain the possibility you are doing something profoundly wrong.
+
+70
+00:04:59.369 --> 00:05:02.544
+Under his program, he said, the markers improve together.
+
+71
+00:05:02.544 --> 00:05:07.001
+Companies are good at averaging away the one marker that is going the wrong way.
+
+72
+00:05:07.001 --> 00:05:11.903
+The agents ship more every week, so nobody looks at how much of it a person had to redo.
+
+73
+00:05:11.903 --> 00:05:13.908
+Sometimes that is a trade you chose.
+
+74
+00:05:13.908 --> 00:05:18.030
+Often nobody chose it. Find the divergent marker and investigate it first.
+
+75
+00:05:18.390 --> 00:05:20.615
+CrossFit does not stop at the line.
+
+76
+00:05:20.615 --> 00:05:31.741
+Its Level One Training Guide uses four models at once so that fitness stays broad: ten general physical skills, the hopper, three metabolic pathways, and the continuum itself.
+
+77
+00:05:31.741 --> 00:05:36.636
+The aim is to prepare people not only for the unknown but for the unknowable.
+
+78
+00:05:36.636 --> 00:05:40.832
+The summary is five words long: our specialty is not specializing.
+
+79
+00:05:40.832 --> 00:05:44.456
+Not specializing is a claim about capacity, not strategy.
+
+80
+00:05:44.456 --> 00:05:48.080
+Specialize in what you sell, not in what you can survive.
+
+81
+00:05:48.430 --> 00:06:00.584
+The first model is a list of ten: cardiovascular and respiratory endurance, stamina, strength, flexibility, power, speed, coordination, agility, balance, and accuracy.
+
+82
+00:06:00.584 --> 00:06:06.625
+The test is blunt: You are as fit as you are competent in each of these ten skills.
+
+83
+00:06:06.625 --> 00:06:10.264
+A company does not need ten separate translations.
+
+84
+00:06:10.264 --> 00:06:11.720
+Four groups will do.
+
+85
+00:06:12.070 --> 00:06:18.643
+Endurance and stamina are sustained load: can you repeat hard efforts without the quality dropping by week nine?
+
+86
+00:06:18.643 --> 00:06:25.920
+Strength, power, and speed are force: can you move something heavy, and shorten the cycle of the work you repeat every week?
+
+87
+00:06:26.270 --> 00:06:36.633
+Flexibility, agility, and coordination are range: a quick change of pattern when the plan changes, and functions that combine into one movement instead of separate drills.
+
+88
+00:06:36.633 --> 00:06:43.542
+Balance and accuracy are control: staying over your support base, especially on cash, and landing where you aimed.
+
+89
+00:06:43.542 --> 00:06:48.330
+If a report column is named one thing and counts another, you are not accurate.
+
+90
+00:06:48.680 --> 00:06:51.398
+The guide adds a distinction worth keeping.
+
+91
+00:06:51.398 --> 00:06:55.127
+Some of the ten come from training, which changes the body.
+
+92
+00:06:55.127 --> 00:06:59.172
+Coordination, agility, balance, and accuracy come from practice.
+
+93
+00:06:59.172 --> 00:07:05.176
+A company builds some capacity the slow way, by changing its body: hiring, systems, AI tooling.
+
+94
+00:07:05.176 --> 00:07:08.147
+Coordination and accuracy do not come that way.
+
+95
+00:07:08.147 --> 00:07:11.370
+They come from doing the work together, many times.
+
+96
+00:07:11.720 --> 00:07:14.109
+The second model is a thought experiment.
+
+97
+00:07:14.109 --> 00:07:18.188
+Load a lottery hopper with as many physical tasks as you can think of.
+
+98
+00:07:18.188 --> 00:07:22.616
+Line everyone up, turn the handle, pull a task out at random, and test them.
+
+99
+00:07:22.616 --> 00:07:26.170
+Whoever performs best across the random draws is the fittest.
+
+100
+00:07:26.520 --> 00:07:34.019
+Two things follow. First, Glassman said, the fittest person on earth may be only in the seventy-fifth percentile at each event.
+
+101
+00:07:34.019 --> 00:07:37.149
+Fit means good at everything before best at anything.
+
+102
+00:07:37.149 --> 00:07:41.814
+Second, everyone knows the task they do not want to see come out of the hopper.
+
+103
+00:07:41.814 --> 00:07:49.490
+That task is a chink in your armor, and there is more to gain from going after it than from more time on what you already do well.
+
+104
+00:07:49.850 --> 00:07:54.618
+Every company has a hopper. A payment processor goes down on your busiest day.
+
+105
+00:07:54.618 --> 00:07:56.880
+Your most important engineer resigns.
+
+106
+00:07:56.880 --> 00:08:00.915
+A model or a vendor changes its behavior or its pricing overnight.
+
+107
+00:08:00.915 --> 00:08:04.950
+An agent confidently reports done on something it could not reach.
+
+108
+00:08:04.950 --> 00:08:09.840
+You will not get the list in advance, but you already know which draw you dread.
+
+109
+00:08:09.840 --> 00:08:14.670
+Practice that one: a tabletop exercise, a game day, a restore you actually run.
+
+110
+00:08:15.020 --> 00:08:18.530
+The seventy-fifth percentile matters to whoever pays the bills.
+
+111
+00:08:18.530 --> 00:08:22.542
+Margin is not free: a second person who can run payroll, cash held back.
+
+112
+00:08:22.542 --> 00:08:25.551
+The model does not ask you to be the best at anything.
+
+113
+00:08:25.551 --> 00:08:28.560
+It asks you not to have an event you cannot do at all.
+
+114
+00:08:28.910 --> 00:08:34.351
+The third model is the three metabolic pathways that supply the energy for all human action.
+
+115
+00:08:34.351 --> 00:08:39.378
+One dominates the highest-powered efforts, those lasting less than about ten seconds.
+
+116
+00:08:39.378 --> 00:08:43.458
+One dominates moderate-powered efforts lasting up to several minutes.
+
+117
+00:08:43.458 --> 00:08:46.474
+One dominates low-powered efforts that last longer.
+
+118
+00:08:46.474 --> 00:08:48.840
+The guide wants competency in all three.
+
+119
+00:08:49.190 --> 00:08:51.499
+A company runs on three engines too.
+
+120
+00:08:51.499 --> 00:08:54.833
+The hours engine handles an outage or a bad release.
+
+121
+00:08:54.833 --> 00:08:58.040
+The weeks engine is a hard push to ship by a date.
+
+122
+00:08:58.040 --> 00:09:03.619
+The years engine is a migration, or the slow work of making AI part of how you operate.
+
+123
+00:09:03.619 --> 00:09:11.764
+Many companies favor one: great in a crisis and adrift in between, or good at long programs and frozen when the pager goes off.
+
+124
+00:09:11.764 --> 00:09:12.790
+Train all three.
+
+125
+00:09:13.140 --> 00:09:19.447
+The models led to a one-line definition of fitness: work capacity across broad time and modal domains.
+
+126
+00:09:19.447 --> 00:09:21.179
+Plot power against duration.
+
+127
+00:09:21.179 --> 00:09:25.075
+Fitness is the area under that curve, not one high point on it.
+
+128
+00:09:25.075 --> 00:09:30.640
+Excellent at a planned launch and weak when something unknown shows up is narrow capacity.
+
+129
+00:09:30.990 --> 00:09:33.438
+Then Glassman added a third axis: age.
+
+130
+00:09:33.438 --> 00:09:37.691
+Extend the area under the curve across a life and you get a solid.
+
+131
+00:09:37.691 --> 00:09:44.650
+That is health. For a company, the third axis is years: through a bad market, a migration, a new technology.
+
+132
+00:09:44.650 --> 00:09:48.967
+A company that has one great year and then falls apart was not fit.
+
+133
+00:09:48.967 --> 00:09:50.320
+It had a good season.
+
+134
+00:09:50.660 --> 00:09:57.258
+The prescription that builds this capacity is short: constantly varied, high-intensity functional movement.
+
+135
+00:09:57.258 --> 00:10:01.389
+Functional movements move large loads over long distances, quickly.
+
+136
+00:10:01.389 --> 00:10:04.596
+Intensity is defined as power: work divided by time.
+
+137
+00:10:04.596 --> 00:10:11.810
+The variation is there because preparing for unknown events is at odds with fixed, predictable, and routine regimens.
+
+138
+00:10:12.160 --> 00:10:21.640
+At work, functional means the movements that actually move the business: orders flowing, customers getting what they need, decisions landing, cash used on purpose.
+
+139
+00:10:21.640 --> 00:10:26.176
+A standing meeting that never changes a decision is not a functional movement.
+
+140
+00:10:26.176 --> 00:10:29.142
+Neither is an AI demo that never touches real work.
+
+141
+00:10:29.142 --> 00:10:31.177
+High intensity does not mean panic.
+
+142
+00:10:31.177 --> 00:10:33.620
+It means more real work finished per week.
+
+143
+00:10:33.980 --> 00:10:40.547
+Every regimen, every routine, Glassman wrote, contains within its structure a blueprint for its deficiency.
+
+144
+00:10:40.547 --> 00:10:45.947
+Every operating rhythm hides a blind spot: the thing the weekly review never asks about.
+
+145
+00:10:45.947 --> 00:10:48.463
+Keep the calendar and vary the questions.
+
+146
+00:10:48.463 --> 00:10:56.687
+Rest is in the program too. The guide's general pattern is three days on and one day off, chosen for sustainability at high intensity.
+
+147
+00:10:56.687 --> 00:11:00.553
+Recovery is part of the program, not a reward for finishing it.
+
+148
+00:11:00.553 --> 00:11:03.990
+At work, that is slack you plan, not slack you hope for.
+
+149
+00:11:04.330 --> 00:11:10.872
+There is a warning attached to intensity, and it is the one I want on the table before anyone hears go faster.
+
+150
+00:11:10.872 --> 00:11:18.248
+CrossFit's charter for balancing safety, efficacy, and efficiency is mechanics, consistency, then, and only then, intensity.
+
+151
+00:11:18.248 --> 00:11:23.660
+Ignoring the order increases the risk for injury and potentially blunts long-term progress.
+
+152
+00:11:24.010 --> 00:11:27.071
+This is where my belief about fundamentals pays off.
+
+153
+00:11:27.071 --> 00:11:34.842
+AI is intensity. It amplifies whatever mechanics are already there, good or bad, and intensity on bad mechanics is how you get hurt.
+
+154
+00:11:34.842 --> 00:11:37.550
+Intensity is also where the results come from.
+
+155
+00:11:37.900 --> 00:11:45.712
+The person who knows the area can say what done means and check the work, so they can hand over more of it, with less watching.
+
+156
+00:11:45.712 --> 00:11:50.572
+The person vibing cannot check, so they stay at low intensity or go fast blind.
+
+157
+00:11:50.572 --> 00:11:55.431
+In my view that gap, not the tool, is where the difference in power comes from.
+
+158
+00:11:55.431 --> 00:12:05.150
+So this is the order for rolling AI out across a company, and it is easy to run backward: a usage target for everyone, before anyone has said what done means.
+
+159
+00:12:05.500 --> 00:12:14.703
+Mechanics first. Before an agent does a job, you can say what it can reach, what done means for this task, and which number you are actually asking for.
+
+160
+00:12:14.703 --> 00:12:22.090
+Two of the AI Tips on this site are about exactly this: Know What the Bot Can Actually Reach, and Ask for Proof, Not Done.
+
+161
+00:12:22.440 --> 00:12:30.183
+Then consistency. The same task, repeated, passing the same check each time, without a hero in the room to rescue it.
+
+162
+00:12:30.183 --> 00:12:35.146
+Only then intensity: more tasks, more teams, more volume, less supervision.
+
+163
+00:12:35.146 --> 00:12:38.720
+Skip the order and you get a good demo and a bad week.
+
+164
+00:12:39.060 --> 00:12:44.272
+The guide also draws a pyramid, a theoretical hierarchy of development for an athlete.
+
+165
+00:12:44.272 --> 00:12:51.121
+From the bottom: nutrition, metabolic conditioning, gymnastics, weightlifting and throwing, and sport at the top.
+
+166
+00:12:51.121 --> 00:12:55.242
+Then: We do not deliberately order these components but nature will.
+
+167
+00:12:55.242 --> 00:13:00.454
+If you have a deficiency at any level of the pyramid the components above will suffer.
+
+168
+00:13:00.454 --> 00:13:02.030
+Here is a company version.
+
+169
+00:13:02.390 --> 00:13:04.178
+Nutrition is what you run on.
+
+170
+00:13:04.178 --> 00:13:10.962
+Cash you can see and steer, data with definitions, and access that matches the job, for people and for agents.
+
+171
+00:13:10.962 --> 00:13:18.238
+Software Engineering 201 on this site has a lesson on agents that operate systems with the least access the job needs.
+
+172
+00:13:18.238 --> 00:13:21.137
+Metabolic conditioning is the operating rhythm.
+
+173
+00:13:21.137 --> 00:13:23.850
+The daily and weekly capacity to keep going.
+
+174
+00:13:24.200 --> 00:13:26.619
+Gymnastics is control of your own body.
+
+175
+00:13:26.619 --> 00:13:32.139
+Deploy, roll back, restore, and change your own process without waiting for outside help.
+
+176
+00:13:32.139 --> 00:13:35.053
+Weightlifting is control of an external object.
+
+177
+00:13:35.053 --> 00:13:39.023
+Vendors, partners, models, and the loads you pick up on purpose.
+
+178
+00:13:39.023 --> 00:13:42.930
+Sport is the application. Out in the market, under competition.
+
+179
+00:13:43.280 --> 00:13:47.863
+AI sits near the top of that pyramid, with the other loads you pick up on purpose.
+
+180
+00:13:47.863 --> 00:13:49.483
+It does not replace the base.
+
+181
+00:13:49.483 --> 00:13:58.649
+The guide says the model is most useful for analyzing an athlete's shortcomings, and that is how to use it here: when something at the top keeps failing, look down.
+
+182
+00:13:58.649 --> 00:14:05.970
+An AI program that keeps disappointing often has a data problem, an access problem, or nobody has defined what finished looks like.
+
+183
+00:14:06.310 --> 00:14:13.571
+CrossFit borrows one more word from gymnastics: virtuosity, defined there as performing the common uncommonly well.
+
+184
+00:14:13.571 --> 00:14:19.128
+In a two thousand five open letter to trainers, Glassman described what gets in its way.
+
+185
+00:14:19.128 --> 00:14:24.179
+Novices in any art hurry past the fundamentals toward more elaborate techniques.
+
+186
+00:14:24.179 --> 00:14:27.020
+He called that compulsion the novice's curse.
+
+187
+00:14:27.020 --> 00:14:32.640
+Rushing ahead, he wrote, increases the chance of injury, delays advancement and progress.
+
+188
+00:14:33.000 --> 00:14:41.668
+Companies have their own version: the new tool, the new framework, the fleet of agents, adopted by a team that still cannot ship a clean release.
+
+189
+00:14:41.668 --> 00:14:46.330
+Chapter six, Fundamentals Nobody Uses, is about principles that outlive tools.
+
+190
+00:14:46.330 --> 00:14:51.890
+Chapter twenty-nine, The Ladder, treats AI coding as one more rung, from first principles up.
+
+191
+00:14:51.890 --> 00:14:54.460
+A rung is no use without the ones under it.
+
+192
+00:14:54.810 --> 00:14:57.420
+Virtuosity is also what makes AI safe to use.
+
+193
+00:14:57.420 --> 00:15:02.699
+The person who knows the fundamentals can tell when the AI's output is wrong, and steer it.
+
+194
+00:15:02.699 --> 00:15:11.400
+A company that does the common things uncommonly well, a clean handoff, a number with a definition, a release it can roll back, is hard to knock over.
+
+195
+00:15:11.750 --> 00:15:14.842
+CrossFit calls its approach evidence-based fitness.
+
+196
+00:15:14.842 --> 00:15:23.511
+Meaningful statements about safety, efficacy, and efficiency, the guide says, can be supported only by measurable, observable, repeatable data.
+
+197
+00:15:23.511 --> 00:15:25.511
+A score on the whiteboard counts.
+
+198
+00:15:25.511 --> 00:15:27.754
+A feeling after the workout does not.
+
+199
+00:15:27.754 --> 00:15:32.361
+Hold your own work to that. A bot that says done has not given you a result.
+
+200
+00:15:32.361 --> 00:15:33.210
+Ask for proof.
+
+201
+00:15:33.560 --> 00:15:43.171
+In a twenty twenty-four talk, Glassman put the standard in one line: a model is a forecast of a measurement, and validation comes from predictive strength, period.
+
+202
+00:15:43.171 --> 00:15:46.001
+A strategy is a model. So is an AI rollout plan.
+
+203
+00:15:46.001 --> 00:15:51.838
+Write down the measurement you expect before you start, and grade the plan by whether it came true.
+
+204
+00:15:51.838 --> 00:15:55.080
+Over several plans, you learn whose forecasts to trust.
+
+205
+00:15:55.080 --> 00:16:00.210
+Trust works the same way: all rational trust, he said, is based on predictive strength.
+
+206
+00:16:00.560 --> 00:16:02.411
+Numbers have their own failure.
+
+207
+00:16:02.411 --> 00:16:09.158
+Goodhart's law, in Marilyn Strathern's phrasing: When a measure becomes a target, it ceases to be a good measure.
+
+208
+00:16:09.158 --> 00:16:12.383
+Train for one score and the rest of the curve suffers.
+
+209
+00:16:12.383 --> 00:16:15.010
+Several markers are harder to game than one.
+
+210
+00:16:15.360 --> 00:16:19.930
+CrossFit measures progress with benchmark workouts, which hold the work constant.
+
+211
+00:16:19.930 --> 00:16:25.515
+Fran is one: twenty-one, fifteen, and nine repetitions of ninety-five-pound thrusters and pull-ups.
+
+212
+00:16:25.515 --> 00:16:28.054
+Every time you do Fran, the work is the same.
+
+213
+00:16:28.054 --> 00:16:33.921
+So if you do it again a year later and finish faster, the difference in time is the difference in power.
+
+214
+00:16:33.921 --> 00:16:43.230
+When Glassman introduced the benchmarks in two thousand three, he had them return through repeated, irregular, appearances, and asked everyone to post their results.
+
+215
+00:16:43.580 --> 00:16:46.150
+A company can keep benchmarks the same way.
+
+216
+00:16:46.150 --> 00:16:52.009
+Here is a made-up subscription-billing company, with one made-up pair of times, to show the shape.
+
+217
+00:16:52.009 --> 00:16:55.834
+Restore yesterday's ledger from backup into a clean environment.
+
+218
+00:16:55.834 --> 00:16:57.986
+In the spring it took most of a day.
+
+219
+00:16:57.986 --> 00:17:05.040
+By fall, under an hour. Ship a one-line change from an approved ticket to production, with tests and a rollback ready.
+
+220
+00:17:05.390 --> 00:17:14.485
+Have an agent reconcile one saved day of charges against the processor's report, and check its answer against the processor's totals, not its own summary.
+
+221
+00:17:14.485 --> 00:17:17.793
+Close the month with numbers someone else can reproduce.
+
+222
+00:17:17.793 --> 00:17:22.163
+Time them every quarter, unannounced where you can, and publish the times.
+
+223
+00:17:22.163 --> 00:17:27.183
+The comparison holds only while the work really is the same, so write the drill down.
+
+224
+00:17:27.183 --> 00:17:29.900
+A benchmark nobody has run lately is a memory.
+
+225
+00:17:30.250 --> 00:17:37.031
+The guide makes a claim small teams should hear: Your needs and the Olympic athlete's differ by degree not kind.
+
+226
+00:17:37.031 --> 00:17:45.930
+The principle for scaling a workout is to preserve the stimulus: adjust load, speed, and volume so the workout has a similar effect on each person.
+
+227
+00:17:46.280 --> 00:17:50.703
+A five-person company does not need an enterprise disaster-recovery program.
+
+228
+00:17:50.703 --> 00:17:54.370
+It needs to restore its database once, on purpose, and time it.
+
+229
+00:17:54.370 --> 00:17:56.697
+It does not need an AI governance board.
+
+230
+00:17:56.697 --> 00:17:59.200
+It needs to know what each agent can reach.
+
+231
+00:17:59.550 --> 00:18:01.427
+None of this guarantees anything.
+
+232
+00:18:01.427 --> 00:18:07.341
+In lectures given in twenty sixteen, Glassman put the outcome as a sum: fitness plus luck equals health.
+
+233
+00:18:07.341 --> 00:18:10.981
+By luck he meant accidents, the things you can do nothing about.
+
+234
+00:18:10.981 --> 00:18:16.099
+The outcome is the part you can do something about plus the part you can do nothing about.
+
+235
+00:18:16.099 --> 00:18:20.193
+You cannot train luck away, and a hard enough hit can end a fit company.
+
+236
+00:18:20.193 --> 00:18:25.880
+What fitness changes is the odds: more of the bad draws cost you some margin instead of the company.
+
+237
+00:18:26.230 --> 00:18:29.898
+The last piece is how CrossFit gets people to work this hard.
+
+238
+00:18:29.898 --> 00:18:35.371
+In implementation, the guide says, CrossFit is quite simply, a sport: the Sport of Fitness.
+
+239
+00:18:35.371 --> 00:18:41.265
+The camaraderie and competition of sport yield an intensity that cannot be matched by other means.
+
+240
+00:18:41.265 --> 00:18:48.000
+So it uses whiteboards as scoreboards, keeps accurate scores, runs a clock, and defines the standards precisely.
+
+241
+00:18:48.360 --> 00:18:50.032
+It is also built in the open.
+
+242
+00:18:50.032 --> 00:18:58.851
+We are an open-source fitness program, Glassman wrote in two thousand five, in an article that lists the innovations that came directly from our clients.
+
+243
+00:18:58.851 --> 00:19:01.387
+And the gyms are affiliates, not franchises.
+
+244
+00:19:01.387 --> 00:19:09.918
+A business profile in the CrossFit Journal quoted him on why: if I try to get everyone moving in lockstep, I get everyone moving towards mediocrity.
+
+245
+00:19:09.918 --> 00:19:13.780
+Left to vary, he said, best practices arise at a breathtaking rate.
+
+246
+00:19:14.130 --> 00:19:20.932
+Half of that is a sound way to spread AI through a company: the use cases come from the teams, and from customers.
+
+247
+00:19:20.932 --> 00:19:27.256
+The other half a company has to add from the center: shared standards, open scores, and common guardrails.
+
+248
+00:19:27.256 --> 00:19:31.671
+Score the benchmarks, not the usage, or the scoreboard becomes the target.
+
+249
+00:19:31.671 --> 00:19:37.100
+And train together. Fitness in one department and sickness in another is not a fit company.
+
+250
+00:19:37.450 --> 00:19:40.273
+I am not asking anyone to join a CrossFit class.
+
+251
+00:19:40.273 --> 00:19:42.920
+I am asking you not to confuse well with fit.
+
+252
+00:19:42.920 --> 00:19:47.155
+Well is a normal reading. Fit is a margin for when something goes wrong.
+
+253
+00:19:47.155 --> 00:19:52.449
+If you train only to be well, you spend the hard days finding out how little room you had.
+
+254
+00:19:52.449 --> 00:19:55.860
+If you train to be fit, you have already built the buffer.
+
+255
+00:19:56.220 --> 00:19:59.740
+To place your team on the line, do not start with a feeling.
+
+256
+00:19:59.740 --> 00:20:02.204
+Pick two or three markers you can observe.
+
+257
+00:20:02.204 --> 00:20:05.548
+Would someone else get the same number from your sources?
+
+258
+00:20:05.548 --> 00:20:09.009
+Can the core work run for a week if its usual owner is out?
+
+259
+00:20:09.009 --> 00:20:13.644
+If an AI tool or a vendor disappeared tomorrow, how long before the work stops?
+
+260
+00:20:13.644 --> 00:20:19.393
+If the same team did twice the volume next month, with AI doing the extra, what would break first?
+
+261
+00:20:19.393 --> 00:20:23.030
+Which marker is moving the wrong way while the others improve?
+
+262
+00:20:23.030 --> 00:20:27.430
+Which draw from the hopper do you dread, and when did you last practice it?
+
+263
+00:20:27.770 --> 00:20:32.204
+Sick: you cannot answer, or the answer is: only if this one person is here.
+
+264
+00:20:32.204 --> 00:20:35.102
+Well: you can answer, and the week usually works.
+
+265
+00:20:35.102 --> 00:20:41.310
+Fit: you can lose a person, a vendor, or a week of luck and still deliver, and you can show the evidence.
+
+266
+00:20:41.660 --> 00:20:53.110
+Glassman's two thousand two essay carried a box that put his whole method into a hundred words: Eat meat and vegetables, nuts and seeds, some fruit, little starch and no sugar.
+
+267
+00:20:53.110 --> 00:20:57.403
+Keep intake to levels that will support exercise but not body fat.
+
+268
+00:20:57.403 --> 00:21:03.388
+Practice and train major lifts: Deadlift, clean, squat, presses, clean and jerk, and snatch.
+
+269
+00:21:03.388 --> 00:21:13.147
+Similarly, master the basics of gymnastics: pull-ups, dips, rope climb, push-ups, sit-ups, presses to handstand, pirouettes, flips, splits, and holds.
+
+270
+00:21:13.147 --> 00:21:16.204
+Bike, run, swim, row, et cetera, hard and fast.
+
+271
+00:21:16.204 --> 00:21:23.165
+Five or six days per week mix these elements in as many combinations and patterns as creativity will allow.
+
+272
+00:21:23.165 --> 00:21:26.678
+Routine is the enemy. Keep workouts short and intense.
+
+273
+00:21:26.678 --> 00:21:29.020
+Regularly learn and play new sports.
+
+274
+00:21:29.370 --> 00:21:32.056
+A company's method should fit on one page too.
+
+275
+00:21:32.056 --> 00:21:37.251
+Our adaptation is called Business Fitness in one hundred Words, and it closes this video.
+
+276
+00:21:37.251 --> 00:21:40.521
+Try it with your AI Two prompts are on the chapter page.
+
+277
+00:21:40.521 --> 00:21:46.651
+One places your team on the sickness, wellness, fitness line, and proposes three markers you can observe.
+
+278
+00:21:46.651 --> 00:21:52.255
+The other scores your company against Business Fitness in one hundred Words, one line at a time.
+
+279
+00:21:52.255 --> 00:21:55.700
+Both tell the AI not to invent facts about you, but to ask.
+
+280
+00:21:56.060 --> 00:22:00.296
+The rule. Well is a reading and fit is a margin, so train for fit.
+
+281
+00:22:00.296 --> 00:22:06.650
+Choose markers you can observe, time the same work every quarter, and practice the event you dread.
+
+282
+00:22:06.650 --> 00:22:12.940
+Put AI on fundamentals you understand: mechanics first, then consistency, and only then intensity.
+
+283
+00:22:13.280 --> 00:22:19.317
+In full: when you report how a team, a system, or an agent's work is doing, do not start with a feeling.
+
+284
+00:22:19.317 --> 00:22:25.238
+Name the markers, give each a reading of sick, well, or fit, and show evidence someone else can check.
+
+285
+00:22:25.238 --> 00:22:31.332
+If one marker is moving the wrong way while the others improve, say that first, and investigate it first.
+
+286
+00:22:31.332 --> 00:22:37.311
+Before you start a plan, write down the measurement you expect, and afterward say whether it came true.
+
+287
+00:22:37.311 --> 00:22:43.290
+Keep a short list of benchmark work, hold the work the same, time it every quarter, and post the times.
+
+288
+00:22:43.640 --> 00:22:46.811
+Name the event you least want to draw, and rehearse it.
+
+289
+00:22:46.811 --> 00:22:59.378
+Turn AI, scope, or speed up only where three things hold: someone understands the fundamentals well enough to tell when the output is wrong; the mechanics are right; and the result passes the same check without a hero.
+
+290
+00:22:59.378 --> 00:23:02.895
+Scale the load to the size of the team and keep the movement.
+
+291
+00:23:02.895 --> 00:23:05.316
+Plan the slack. Fitness improves the odds.
+
+292
+00:23:05.316 --> 00:23:06.930
+It does not remove bad luck.
+
+293
+00:23:07.280 --> 00:23:12.374
+A note on the borrowing. This chapter borrows CrossFit's models as a lens for companies.
+
+294
+00:23:12.374 --> 00:23:17.525
+It is not an endorsement of any training program or diet, and it makes no medical claims.
+
+295
+00:23:17.525 --> 00:23:22.156
+The health figures and the diet lines are Glassman's, quoted to show the models.
+
+296
+00:23:22.156 --> 00:23:24.645
+Some of his health arguments are contested.
+
+297
+00:23:24.645 --> 00:23:29.970
+This chapter takes no position on them, or on his wider scientific or medical controversies.
+
+298
+00:23:30.310 --> 00:23:32.805
+CrossFit is a trademark of CrossFit, L.L.C.
+
+299
+00:23:32.805 --> 00:23:36.055
+Neither this book nor Clark Huang is affiliated with it.
+
+300
+00:23:36.055 --> 00:23:41.685
+The made-up subscription-billing company and its numbers are an illustration, not a real company.
+
+301
+00:23:41.685 --> 00:23:45.979
+The belief about fundamentals and AI is my opinion, not a measured result.
+
+302
+00:23:45.979 --> 00:23:51.376
+As everywhere on this site, these are opinions, not professional, legal, or financial advice.
+
+303
+00:23:51.376 --> 00:23:54.220
+The sources, with links, are on the chapter page.
+
+304
+00:23:54.570 --> 00:23:57.403
+And ask the question this chapter started with.
+
+305
+00:23:57.403 --> 00:24:02.646
+Where are you using AI on top of fundamentals you understand, and where are you vibing?
+
+306
+00:24:02.646 --> 00:24:05.660
+My belief is that the first is where the power is.
+
+307
+00:24:06.020 --> 00:24:08.647
+Business Fitness in one hundred Words.
+
+308
+00:24:08.647 --> 00:24:14.869
+Spend on customers and product, people and tools, a little on overhead, nothing on vanity.
+
+309
+00:24:14.869 --> 00:24:18.394
+Keep cash at levels that fund growth but not waste.
+
+310
+00:24:18.394 --> 00:24:22.335
+Practice the core movements: build, sell, serve, collect.
+
+311
+00:24:22.335 --> 00:24:27.796
+Master the basics: clean data, clear owners, written decisions, honest numbers.
+
+312
+00:24:27.796 --> 00:24:30.631
+Ship, test, learn and fix, hard and fast.
+
+313
+00:24:30.631 --> 00:24:35.193
+Every week, mix these in as many combinations as the work demands.
+
+314
+00:24:35.193 --> 00:24:37.751
+Routine is the enemy; process is not.
+
+315
+00:24:37.751 --> 00:24:39.963
+Keep projects short and intense.
+
+316
+00:24:39.963 --> 00:24:42.867
+Put AI in every movement, mechanics first.
+
+317
+00:24:42.867 --> 00:24:45.978
+Regularly take on problems you've never seen.
+
+318
+00:24:45.978 --> 00:24:48.190
+Measure it, or it didn't happen.
+
+319
+00:24:48.540 --> 00:24:51.620
+Well is a reading. Fit is a margin.
+
+320
+00:24:51.620 --> 00:24:55.580
+Silicon Valley C Players, chapter thirty-six.

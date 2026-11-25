@@ -18,6 +18,7 @@ import json, os, re, html, subprocess, shutil, sys
 import ai_friendly as AF
 import stamp_versions
 import media_dates
+import book_chapters as BC
 import guest_stories as GUEST
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -226,6 +227,7 @@ def write_robots_and_sitemap(series):
     for u in guest_urls:
         if u not in urls:
             urls.append(u)
+    urls += [u for u in BC.sitemap_urls(SITE) if u not in urls]
     urls += [BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/contributors/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/contributors.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
@@ -887,6 +889,28 @@ def build_book():
         f'<a class="dl" href="/videos/book-preview.mp4" download>Preview MP4<small>Videobook · {mmss(vdur)}</small></a>'
         if has_video else ""
     )
+    chapters_now = ""
+    new_banner = ""
+    _chs = BC.load_chapters(SITE)
+    if _chs:
+        _items = []
+        for c in _chs:
+            _m = BC.media(SITE, c, sys.modules[__name__])
+            _img = (f'<a href="{c["_url"]}"><img class="chapter-poster" src="{_m["poster"]}" alt="Chapter {E(c["n"])} video: {E(c["title"])}" width="1920" height="1080" loading="lazy"></a>' if _m["poster"] else "")
+            _run = f' · videobook {mmss(_m["vdur"])}' if _m["vdur"] else ""
+            _thesis = (f'<p class="thesis-mini">“{E(c["thesis"])}” — {E(c.get("thesis_by") or "Clark Huang")}</p>' if c.get("thesis") else "")
+            _feat = (f' Includes <a href="{c["_url"]}#{BC.slugify(c["_feat_title"])}">{E(c["_feat_title"])}</a>.' if c.get("_feat_text") else '')
+            _items.append(f'            <div class="chapter-feature">{_img}<div><p class="card-num"><span class="badge">New</span> Chapter {E(c["n"])} · {E(c.get("part") or "")} · finished v0 draft{_run}</p>'
+                          f'<h3><a href="{c["_url"]}">{E(c["title"])}: {E(c.get("subtitle") or "")}</a></h3>{_thesis}<p>{E(c["summary"])}{_feat}</p>'
+                          f'<p><a class="btn" href="{c["_url"]}">Read or watch the chapter</a></p></div></div>\n')
+        _c0 = _chs[-1]
+        new_banner = (f'          <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(_c0["n"])}, <a href="{_c0["_url"]}">{E(_c0["title"])}</a>, is finished: '
+                      f'{E(_c0.get("subtitle") or "")}. <a href="#chapters-now">Read or watch it</a>.</p>\n')
+        chapters_now = ('          <section class="openbook" id="chapters-now" aria-labelledby="chapters-now-h">\n'
+                        '            <h2 id="chapters-now-h">New: a finished chapter</h2>\n'
+                        '            <p>The book is still coming in 2027, but some chapters are finished early, as v0 drafts. Each has the full text, a videobook of the whole chapter, and an audio track.</p>\n'
+                        + "".join(_items)
+                        + '            <p class="muted"><a href="/book/chapters/">All chapters you can read now</a> · <a href="/book/story-arc/">Where they sit in the story arc</a></p>\n          </section>\n\n')
     body = f"""      <p class="crumbs"><a href="/">Home</a> / Book</p>
       <div class="book">
         <div>
@@ -896,7 +920,7 @@ def build_book():
         <div>
           <h1>Silicon Valley C Players</h1>
           <p class="h1-status"><span class="badge soon">Coming 2027</span></p>
-          <p class="lede">A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI, from Clark Huang's own words.</p>
+{new_banner}          <p class="lede">A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI, from Clark Huang's own words.</p>
           <p class="disclaimer"><strong>Fair warning.</strong> This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a fictional C player named Charlie Hack; every name, company, and place in the story has been changed, mixed up, or made up, and any resemblance is coincidental. The how-to-work-with-AI half is real advice, with real sources. Think you recognize someone? You don't — but if something bothers you, <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=takedown-request.yml">tell us</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a> and we will fix it.</p>
 
           <section class="audiobox preview-lead" id="preview" aria-labelledby="preview-h">
@@ -905,7 +929,7 @@ def build_book():
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
           </section>
 
-          <section class="openbook" aria-labelledby="openbook-h">
+{chapters_now}          <section class="openbook" aria-labelledby="openbook-h">
             <h2 id="openbook-h">How the OpenBook works</h2>
             <p>The name is a metaphor: Clark wants to be an open book about this, the way open-source software is open. Silicon Valley C Players will be free.</p>
             <ol class="openbook-steps">
@@ -989,6 +1013,8 @@ def build_book():
                          "base_art_url": f"{BASE}/book-source/cover/base-art.png"},
                "introduction": INTRO, "back_cover": BACK,
                "video": video_meta,
+               "chapters_url": f"{BASE}/book/chapters/",
+               "chapters": BC.catalog(SITE, sys.modules[__name__]),
                "preview": {"transcript_url": f"{BASE}/book-source/preview/transcript.md",
                            "script_url": f"{BASE}/book-source/preview/script.md",
                            "script_json_url": f"{BASE}/book-source/preview/script.json",
@@ -1024,6 +1050,7 @@ def build_book():
     build_editorial_policy()
     import story_arc as STORY_ARC
     STORY_ARC.build_story_arc(SITE, page, AF.write_prose_twins)
+    BC.build_book_chapters(sys.modules[__name__])
     GUEST.build_guest_stories(SITE, page, AF.write_prose_twins)
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},

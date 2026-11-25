@@ -1,0 +1,3 @@
+Business Fitness in 100 Words
+
+Spend on customers and product, people and tools, a little on overhead, nothing on vanity. Keep cash at levels that fund growth but not waste. Practice the core movements: build, sell, serve, collect. Master the basics: clean data, clear owners, written decisions, honest numbers. Ship, test, learn and fix, hard and fast. Every week, mix these in as many combinations as the work demands. Routine is the enemy; process is not. Keep projects short and intense. Put AI in every movement, mechanics first. Regularly take on problems you've never seen. Measure it, or it didn't happen.
