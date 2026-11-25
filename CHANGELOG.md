@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Book chapter 17b, **Building Blocks**, now cites and links public Instagram posts and reels that support beats already in the chapter (early CrossFit 9, Open 21.3/21.4, double unders, Carlsbad and Mesa, Boston, the 2024 Quarterfinals work after Boston, strict ring muscle-ups, and the 50th-birthday chipper). Posts that name triathlon races, or that include family, a partner, or other people's names, are not linked. Staging only until Clark approves production.
+
 - Book chapter 17b, **Building Blocks**, rewritten start to finish as a v1 draft with a full-chapter videobook and audio track. The fitness arc now includes the ring muscle-up and the false grip, double unders and the six-year progression to unbroken sets under fatigue, the running ladder through the Carlsbad half, the swim and bike ladders, half triathlons and a full triathlon (2.4-mile swim, 112-mile bike, 26.2-mile run), and the official marathon results already on the record. Half and full triathlons are kept unnamed and undated. The videobook uses stick-figure animation (muscle-ups, gymnastics, jump rope, general weightlifting including the clean and jerk, swim, bike, and run). Staging only until Clark approves production.
 
 - Added a featured 75th-percentile line, in Clark's wording, to the “From the back cover” section on the book page and echoed it in the Introduction (preview). The book catalog description in `book.json`, `llms.txt`, and `llms-full.txt` carries the same line. The book preview video and audio were not re-recorded.
