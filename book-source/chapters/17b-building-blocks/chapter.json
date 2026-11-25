@@ -19,7 +19,7 @@
   "hook": "A nonfiction interlude in Clark's own voice: a fitness journey whose best result was never the original goal, and came out of stacked foundations.",
   "rule": "Build the foundation, not the number. Learn the next step when you need it. Practice the core movements until they are yours, then put them in combination. Keep going. Let the result emerge from the work you stacked, and measure the work you actually did. The same rule holds in life, in tech, in marketing, and in finance: if the foundation is weak, nothing lasting gets built. When you later apply AI to that work, put it on fundamentals you already understand.",
   "frame": "Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results for the running events named in the chapter. Half triathlons and the full triathlon are kept unnamed. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.",
-  "cite": "Quote the chapter text and give the section heading. This chapter is nonfiction, in Clark Huang's own voice, with the official results listed in the Sources section. It is not a fiction chapter, and it is not told as Charlie Hack.",
+  "cite": "Quote the chapter text and give the section heading. This chapter is nonfiction, in Clark Huang's own voice, with the official results and Instagram posts listed in the Sources section. It is not a fiction chapter, and it is not told as Charlie Hack.",
   "contribute_lead": "See a fact that needs a correction, or have something to add?",
   "video": "book-17b-building-blocks.mp4",
   "captions": "book-17b-building-blocks.vtt",
@@ -27,5 +27,55 @@
   "audio": "book-17b-building-blocks.mp3",
   "audio_captions": "book-17b-building-blocks.vtt",
   "chapters_json": "book-17b-building-blocks-chapters.json",
-  "video_blurb": "The whole chapter as a videobook, in stick-figure animation: a ring muscle-up and the false grip, gymnastics and bodyweight work, single and double unders, general weightlifting including the clean and jerk, and swim, bike, and run scenes. Half and full triathlons are kept unnamed."
+  "video_blurb": "The whole chapter as a videobook, in stick-figure animation: a ring muscle-up and the false grip, gymnastics and bodyweight work, single and double unders, general weightlifting including the clean and jerk, and swim, bike, and run scenes. Half and full triathlons are kept unnamed.",
+  "sources": [
+    {
+      "kind": "instagram",
+      "title": "CrossFit 9, early class reel",
+      "date": "2020-09-30",
+      "url": "https://www.instagram.com/reel/CFyLR4XpEYi/"
+    },
+    {
+      "kind": "instagram",
+      "title": "CrossFit Open 21.3 and 21.4",
+      "date": "2021-03-27",
+      "url": "https://www.instagram.com/p/CM7cxlfMNyC/"
+    },
+    {
+      "kind": "instagram",
+      "title": "Running-strength session with double unders",
+      "date": "2023-07-10",
+      "url": "https://www.instagram.com/reel/CuiBNlgAnEL/"
+    },
+    {
+      "kind": "instagram",
+      "title": "Carlsbad Half and Mesa taper",
+      "date": "2024-02-07",
+      "url": "https://www.instagram.com/p/C3EGdsZs6sX/"
+    },
+    {
+      "kind": "instagram",
+      "title": "Boston Marathon recap and the pause after",
+      "date": "2024-04-16",
+      "url": "https://www.instagram.com/reel/C51JmonRxZA/"
+    },
+    {
+      "kind": "instagram",
+      "title": "2024 Age-Group Quarterfinal workouts, unofficial and scaled after Boston",
+      "date": "2024-04-24",
+      "url": "https://www.instagram.com/reel/C6KZyYFM29k/"
+    },
+    {
+      "kind": "instagram",
+      "title": "Strict ring muscle-ups",
+      "date": "2025-08-10",
+      "url": "https://www.instagram.com/reel/DNLz8UmRh8L/"
+    },
+    {
+      "kind": "instagram",
+      "title": "50th-birthday 50-rep chipper",
+      "date": "2025-12-07",
+      "url": "https://www.instagram.com/reel/DR-hnyiAcpf/"
+    }
+  ]
 }
