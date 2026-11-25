@@ -18,8 +18,10 @@ Run from the repository root (needs `gh` authenticated, or GH_TOKEN):
 
     python3 scripts/build_credits.py
 
-No ANTHROPIC_API_KEY. Public credits use a GitHub display name only when
-the public profile has one; otherwise the handle. Never invent a name.
+No ANTHROPIC_API_KEY. Public credits use a GitHub display name when the
+profile has one, otherwise the handle, or the name a person consented to
+publish in writing (for example a guest-story byline in landed-contributions.json).
+Never invent a name.
 """
 from __future__ import annotations
 
@@ -277,11 +279,15 @@ def collect() -> dict:
         }
         if summary:
             rec["summary"] = summary
+        if item.get("page_url"):
+            rec["page_url"] = item["page_url"]
         existing = person["types"][typ]
         for c in existing:
             if c.get("number") == rec["number"] and c.get("role") == rec["role"]:
                 if summary and not c.get("summary"):
                     c["summary"] = summary
+                if rec.get("page_url") and not c.get("page_url"):
+                    c["page_url"] = rec["page_url"]
                 return
         existing.append(rec)
         if summary and summary not in person["summaries"]:
@@ -305,6 +311,10 @@ def collect() -> dict:
         if entry.get("declined"):
             ensure(login)["declined"] = True
             continue
+        consented = (entry.get("name") or "").strip() or None
+        if consented:
+            # Only a name the person consented to publish in writing (e.g. a guest-story byline).
+            ensure(login)["consented_name"] = consented
         for contrib in entry.get("contributions") or []:
             typ = contrib.get("type") or "feedback"
             if typ not in TYPE_ORDER:
@@ -321,8 +331,13 @@ def collect() -> dict:
                 "title": (issue or {}).get("title") or contrib.get("summary") or "",
                 "url": contrib.get("issue_url")
                 or (issue or {}).get("url")
-                or (f"https://github.com/{REPO}/issues/{issue_num}" if issue_num else None),
+                or (f"https://github.com/{REPO}/issues/{issue_num}" if issue_num else None)
+                or (f"https://github.com/{REPO}/pull/{(contrib.get('pull_requests') or [None])[0]}"
+                    if (contrib.get("pull_requests") or [None])[0] else None)
+                or contrib.get("page_url"),
             }
+            if contrib.get("page_url"):
+                item["page_url"] = contrib["page_url"]
             add(credited, typ, item, "author", contrib.get("summary"))
             for pr_num in contrib.get("pull_requests") or []:
                 add(
@@ -374,6 +389,17 @@ def collect() -> dict:
             # Unlabeled feedback that a merged PR fixed is still a landed contribution.
             if types == ["code/site"] and not (issue.get("labels") or []):
                 types = ["feedback"]
+            # A curated landed entry may already have recorded this PR under a
+            # different type (for example a guest story that only mentions an issue).
+            person = people.get(login.lower()) if login else None
+            already = False
+            if person:
+                for items in person["types"].values():
+                    if any(c.get("number") == pr.get("number") for c in items):
+                        already = True
+                        break
+            if already:
+                continue
             for typ in types:
                 add(login, typ, issue, "author")
                 add(login, typ, pr, "landed-in")
@@ -390,6 +416,17 @@ def collect() -> dict:
             types = types if pr.get("labels") else ["code/site"]
         login = credit_login(author, pr.get("body"))
         if login:
+            # A curated landed entry already recorded this PR (for example a guest story).
+            # Don't also file it under code/site just because the PR has no labels.
+            already = False
+            person = people.get(login.lower())
+            if person:
+                for items in person["types"].values():
+                    if any(c.get("number") == pr.get("number") for c in items):
+                        already = True
+                        break
+            if already and types == ["code/site"]:
+                continue
             for typ in types:
                 add(login, typ, pr, "pr-author")
 
@@ -425,8 +462,11 @@ def serialize(people: dict) -> dict:
         if person.get("summaries"):
             rec["summaries"] = person["summaries"]
         if not person.get("is_author") or types_present:
+            consented = (person.get("consented_name") or "").strip() or None
             public_name = display_name_for(person["login"], name_cache)
-            if public_name:
+            if consented:
+                rec["name"] = consented
+            elif public_name:
                 rec["name"] = public_name
         contributors.append(rec)
     return {
@@ -440,7 +480,7 @@ def serialize(people: dict) -> dict:
         "note": (
             "Credits list outside contributions that actually landed on the site. "
             "People are listed by public GitHub display name when the profile has one, "
-            "otherwise by GitHub handle. A name is never invented. "
+            "otherwise by GitHub handle, or by the name they consented to publish on a guest story. A name is never invented. "
             "A 'don't credit me' answer in the issue form removes a person. "
             "Bots are excluded. Only Clark Huang approves and merges. "
             "Filing an issue does not, by itself, add a credit."
@@ -476,10 +516,17 @@ def md_person_line(person: dict, items: list[dict]) -> str:
     # Links: prefer the source issue, then PRs.
     links = []
     seen = set()
+    seen_pages = set()
     for c in items:
+        page = c.get("page_url")
+        if page and page not in seen_pages:
+            seen_pages.add(page)
+            links.append(f"[guest story]({page})")
         n = c.get("number")
         u = c.get("url")
         if not n or not u or n in seen:
+            continue
+        if u in seen_pages:
             continue
         seen.add(n)
         if "/pull/" in (u or ""):
@@ -506,7 +553,7 @@ def render_md(data: dict) -> str:
         f"> {PAGE_PROMPT}",
         "",
         "This page lists the people whose contributions have landed on Clark Huang's learning site and the free OpenBook "
-        "*Silicon Valley C Players*. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle. "
+        "*Silicon Valley C Players*. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle, or the name the person consented to publish on a guest story. "
         "A name is never invented. You can choose how, or whether, you are listed when you file an issue.",
         "",
         f"Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json) "
@@ -551,7 +598,7 @@ def render_md(data: dict) -> str:
         "## How credits work",
         "",
         "- Only work that actually landed on the site is listed. Filing an issue or opening a pull request does not, by itself, add a credit.",
-        "- You are listed by your public GitHub display name when your profile has one, otherwise by your GitHub handle. A name is never invented, and no other personal details are added.",
+        "- You are listed by your public GitHub display name when your profile has one, otherwise by your GitHub handle, or by the name you consented to publish on a guest story. A name is never invented, and no other personal details are added.",
         "- If you fill in the issue form with “don't credit me”, you are omitted.",
         "- If you write “credit me as @handle”, that handle is used instead of the account that filed the issue, when it looks like a GitHub handle.",
         "- Bots are excluded.",
@@ -575,6 +622,17 @@ def render_md(data: dict) -> str:
     return "\n".join(lines)
 
 
+def site_href(url: str | None) -> str:
+    """Root-relative href for this-site pages so staging link rewriting works."""
+    if not url:
+        return ""
+    if url.startswith(SITE + "/"):
+        return url[len(SITE):]
+    if url.startswith(SITE):
+        return url[len(SITE):] or "/"
+    return url
+
+
 def html_person_item(person: dict, items: list[dict]) -> str:
     label = html.escape(label_for(person))
     url = html.escape(person["url"], quote=True)
@@ -584,10 +642,19 @@ def html_person_item(person: dict, items: list[dict]) -> str:
     summary = " ".join(dict.fromkeys(summaries))
     links = []
     seen = set()
+    seen_pages = set()
     for c in items:
+        page = c.get("page_url")
+        if page and page not in seen_pages:
+            seen_pages.add(page)
+            links.append(
+                f"<a href=\"{html.escape(site_href(page), quote=True)}\">guest story</a>"
+            )
         n = c.get("number")
         u = c.get("url")
         if not n or not u or n in seen:
+            continue
+        if u in seen_pages:
             continue
         seen.add(n)
         kind = "PR " if "/pull/" in (u or "") else ""
@@ -682,7 +749,7 @@ def render_html(data: dict) -> str:
       </details>
       <p class="crumbs"><a href="/">Home</a> / Contributors</p>
       <h1>Contributors</h1>
-      <p class="lede">The people whose contributions have landed on this site and the free OpenBook <em>Silicon Valley C Players</em>. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle. A name is never invented. You can choose how, or whether, you are credited when you file an issue.</p>
+      <p class="lede">The people whose contributions have landed on this site and the free OpenBook <em>Silicon Valley C Players</em>. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle, or the name the person consented to publish on a guest story. A name is never invented. You can choose how, or whether, you are credited when you file an issue.</p>
       <p class="muted small">Last updated {generated}. Raw data: <a href="/contributors.json">contributors.json</a>.</p>
       <h2>Author</h2>
       <ul class="credit-list">
@@ -692,7 +759,7 @@ def render_html(data: dict) -> str:
       <h2>How credits work</h2>
       <ul>
         <li>Only work that actually landed on the site is listed. Filing an issue or opening a pull request does not, by itself, add a credit.</li>
-        <li>You are listed by your public GitHub display name when your profile has one, otherwise by your GitHub handle. A name is never invented, and no other personal details are added.</li>
+        <li>You are listed by your public GitHub display name when your profile has one, otherwise by your GitHub handle, or by the name you consented to publish on a guest story. A name is never invented, and no other personal details are added.</li>
         <li>If you fill in the issue form with “don't credit me”, you are omitted.</li>
         <li>If you write “credit me as @handle”, that handle is used when it looks like a GitHub handle.</li>
         <li>Bots are excluded.</li>
@@ -801,7 +868,7 @@ def render_contributors_md_repo(data: dict) -> str:
         "",
         "This file is the repository twin of the public Contributors page. "
         "Only outside contributions that have landed on the site are listed. "
-        "Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle.",
+        "Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle, or the name the person consented to publish on a guest story.",
         "",
         f"Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json). Last generated {data['generated']}.",
         "",

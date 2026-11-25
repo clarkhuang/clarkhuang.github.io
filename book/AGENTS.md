@@ -16,6 +16,7 @@ This folder is the public preview of Clark Huang’s free OpenBook *Silicon Vall
 - Rebuild the site: https://clarkhuang.github.io/REBUILD.md
 - Editorial policy: https://clarkhuang.github.io/book/editorial-policy/index.md
 - Story arc and chapters: https://clarkhuang.github.io/book/story-arc/index.md
+- Guest stories: https://clarkhuang.github.io/book/guest/index.md
 - Outline (JSON): https://clarkhuang.github.io/book-source/outline.json
 
 Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.

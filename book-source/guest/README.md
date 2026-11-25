@@ -36,3 +36,5 @@ names of other private people.
 
 [Your first-person account, in your own words.]
 ```
+
+Accepted guest stories are published at [/book/guest/](https://clarkhuang.github.io/book/guest/) and credited on the [Contributors](https://clarkhuang.github.io/contributors/) page.
