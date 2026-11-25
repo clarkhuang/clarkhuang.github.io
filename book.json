@@ -94,14 +94,14 @@
       },
       "video": {
         "url": "https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4",
-        "duration_seconds": 567.8,
+        "duration_seconds": 624.1,
         "captions_url": "https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt",
         "poster_url": "https://clarkhuang.github.io/videos/posters/book-17b-building-blocks.jpg",
         "chapters_url": "https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json"
       },
       "audio": {
         "url": "https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3",
-        "duration_seconds": 567.8,
+        "duration_seconds": 624.1,
         "captions_url": "https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt"
       },
       "transcript_url": "https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md"

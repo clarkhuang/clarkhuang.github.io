@@ -81,30 +81,30 @@
     "id": "29_surprise",
     "title": "The Surprise",
     "start_seconds": 421.35,
-    "duration_seconds": 33.54
+    "duration_seconds": 89.83
   },
   {
-    "id": "31_payoff",
+    "id": "34_payoff",
     "title": "The Payoff",
-    "start_seconds": 454.89,
+    "start_seconds": 511.18,
     "duration_seconds": 41.49
   },
   {
-    "id": "33_cplayer",
+    "id": "36_cplayer",
     "title": "Still A C Player",
-    "start_seconds": 496.38,
+    "start_seconds": 552.67,
     "duration_seconds": 48.66
   },
   {
-    "id": "36_ch36",
+    "id": "39_ch36",
     "title": "What This Is For",
-    "start_seconds": 545.04,
+    "start_seconds": 601.33,
     "duration_seconds": 16.03
   },
   {
-    "id": "37_outro",
+    "id": "40_outro",
     "title": "Outro",
-    "start_seconds": 561.07,
+    "start_seconds": 617.36,
     "duration_seconds": 6.79
   }
 ]
