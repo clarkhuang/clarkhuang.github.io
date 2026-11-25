@@ -306,7 +306,14 @@
               "hook": "A bot that says \"done\" is reporting a step, not your outcome.",
               "status": "outlined",
               "needs_story": true,
-              "lessons": "AI Tips 2, 13, 14"
+              "lessons": "AI Tips 2, 13, 14",
+              "guest_refs": [
+                {
+                  "slug": "himanshu112-wq-home-staff-ledger",
+                  "role": "sidebar",
+                  "note": "Guest sidebar: Himanshu Kumar got a working app into testers' hands; his open question was whether they would come back next month, at payday. Shipped is a step; coming back is the outcome."
+                }
+              ]
             },
             {
               "id": "ch25-what-it-can-reach",
@@ -392,7 +399,14 @@
               "title": "The OpenBook",
               "hook": "A free book that works like open-source software: anyone can contribute a story or a correction from day one; credits are by GitHub handle; only Clark publishes. When version one is ready, a wider invitation goes out to people who recognize a story.",
               "status": "outlined",
-              "needs_story": false
+              "needs_story": false,
+              "guest_refs": [
+                {
+                  "slug": "himanshu112-wq-home-staff-ledger",
+                  "role": "mention",
+                  "note": "The first outside guest story to land: Himanshu Kumar's, published under his own name."
+                }
+              ]
             },
             {
               "id": "ch34-built-for-agents",
