@@ -24,7 +24,7 @@ The surprise later in this chapter is an example of that, not a contradiction of
 
 ## Skill over power
 
-A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there. Years later I was still practicing that skill. In [a later session](https://www.instagram.com/reel/DNLz8UmRh8L/) I worked strict ring muscle-ups, with the same idea: strict before kip.
+A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. The gymnastics foundation is the hollow hold, just on the ground. It seems like nothing. But virtuosity in something as simple as a hollow hold is what makes ring muscle-ups easy later, after you stack strength and technique. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there. Years later I was still practicing that skill. In [a later session](https://www.instagram.com/reel/DNLz8UmRh8L/) I worked strict ring muscle-ups, with the same idea: strict before kip.
 
 That is a building block, the same as a platform at work: you stand on it later.
 
@@ -48,7 +48,7 @@ Swimming had its own first block. I was fearful of a couple of laps in a pool. I
 
 The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
 
-I did half triathlons. Then I stacked further: a full triathlon. A 2.4-mile swim, a 112-mile bike, and then a 26.2-mile run after that. Stacking, and stacking, and stacking.
+I started with Olympic-distance triathlons. Then I built to half triathlons. A full triathlon is something I look forward to. The building blocks are there. Maybe not the will, yet.
 
 ## Then the marathon, the long way around
 
@@ -70,7 +70,7 @@ On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and f
 
 On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I [wrote after the race](https://www.instagram.com/reel/C51JmonRxZA/), I just got close to the wall and ran parallel with it for 16 miles.
 
-After Boston I paused that stretch of marathon training. I kept going in other ways. In May 2024 I ran the Dunedin Hog Hustle 5K in 20:23, 3rd male and first masters. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
+After Boston I paused that stretch of marathon training. I kept going in other ways. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
 
 ## Still a C player
 
@@ -97,7 +97,6 @@ Official results, and the Games profile, for the races and the Open years named 
 - Carlsbad Half Marathon, January 14, 2024, bib 2008, 1:29:34: https://live.chronotrack.com/event/76297/results/entry/65636373
 - Mesa Marathon, February 10, 2024, bib 4733, 3:18:43 chip / 3:18:51 gun: https://mesamarathon.com/results?pk=7701486
 - Boston Marathon, April 15, 2024, bib 8803, 3:43:27 net / 3:43:57 gun: https://results.baa.org/2024/?content=detail&fpid=list&pid=list&idp=9TGHS6FF19A6A7&lang=EN_CAP&event=R
-- Dunedin Hog Hustle 5K, May 4, 2024, bib 387, 20:23 chip: http://frrm.raceresults.space/2024/2024_DHH_5K_OA.htm
 - Carlsbad Marathon, January 19, 2025, bib 1572, 3:44:07.31: https://live.chronotrack.com/event/84013/results/entry/71622971
 - Publix Gasparilla 15K, February 23, 2025, bib 3288, 1:05:29.84: https://results2.xacte.com/#/e/2573/searchable/3288
 

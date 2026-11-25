@@ -33,72 +33,72 @@
     "id": "08_platforms",
     "title": "Platforms, Not Numbers",
     "start_seconds": 120.28,
-    "duration_seconds": 19.68
+    "duration_seconds": 29.9
   },
   {
-    "id": "09_mu",
+    "id": "10_hollow",
     "title": "Skill Over Power",
-    "start_seconds": 139.96,
-    "duration_seconds": 34.04
+    "start_seconds": 150.18,
+    "duration_seconds": 37.88
   },
   {
-    "id": "12_singles",
+    "id": "14_singles",
     "title": "Double Unders",
-    "start_seconds": 174.0,
-    "duration_seconds": 30.71
+    "start_seconds": 188.06,
+    "duration_seconds": 30.7
   },
   {
-    "id": "15_mci2",
+    "id": "17_mci2",
     "title": "The Order",
-    "start_seconds": 204.71,
-    "duration_seconds": 12.35
+    "start_seconds": 218.76,
+    "duration_seconds": 12.36
   },
   {
-    "id": "16_mile",
+    "id": "18_mile",
     "title": "A Mile, then a Half",
-    "start_seconds": 217.06,
-    "duration_seconds": 39.96
+    "start_seconds": 231.12,
+    "duration_seconds": 39.95
   },
   {
-    "id": "18_swim",
+    "id": "20_swim",
     "title": "Water and the Bike",
-    "start_seconds": 257.02,
-    "duration_seconds": 34.66
+    "start_seconds": 271.07,
+    "duration_seconds": 32.85
   },
   {
-    "id": "21_clearwater",
+    "id": "23_clearwater",
     "title": "The Marathon",
-    "start_seconds": 291.68,
-    "duration_seconds": 46.05
+    "start_seconds": 303.92,
+    "duration_seconds": 46.04
   },
   {
-    "id": "23_surprise",
+    "id": "25_surprise",
     "title": "The Surprise",
-    "start_seconds": 337.73,
+    "start_seconds": 349.96,
     "duration_seconds": 33.55
   },
   {
-    "id": "25_payoff",
+    "id": "27_payoff",
     "title": "The Payoff",
-    "start_seconds": 371.28,
-    "duration_seconds": 49.4
+    "start_seconds": 383.51,
+    "duration_seconds": 41.49
   },
   {
-    "id": "27_cplayer",
+    "id": "29_cplayer",
     "title": "Still a C Player",
-    "start_seconds": 420.68,
+    "start_seconds": 425.0,
     "duration_seconds": 48.66
   },
   {
-    "id": "30_ch36",
+    "id": "32_ch36",
     "title": "What This Is For",
-    "start_seconds": 469.34,
-    "duration_seconds": 16.03
+    "start_seconds": 473.66,
+    "duration_seconds": 16.02
   },
   {
-    "id": "31_outro",
+    "id": "33_outro",
     "title": "Outro",
-    "start_seconds": 485.37,
-    "duration_seconds": 6.76
+    "start_seconds": 489.68,
+    "duration_seconds": 6.79
   }
 ]
