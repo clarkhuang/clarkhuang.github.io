@@ -1,0 +1,188 @@
+[
+  {
+    "id": "01_title",
+    "title": "Sick, Well, Fit",
+    "start_seconds": 0.0,
+    "duration_seconds": 8.9
+  },
+  {
+    "id": "02_note",
+    "title": "An Illustration",
+    "start_seconds": 8.9,
+    "duration_seconds": 35.51
+  },
+  {
+    "id": "03_define",
+    "title": "The Line",
+    "start_seconds": 44.41,
+    "duration_seconds": 79.93
+  },
+  {
+    "id": "07_thesis",
+    "title": "The Thesis",
+    "start_seconds": 124.34,
+    "duration_seconds": 31.43
+  },
+  {
+    "id": "09_well",
+    "title": "Sick, Well, Fit At Work",
+    "start_seconds": 155.77,
+    "duration_seconds": 30.4
+  },
+  {
+    "id": "12_hedge",
+    "title": "The Hedge",
+    "start_seconds": 186.17,
+    "duration_seconds": 43.91
+  },
+  {
+    "id": "14_markers_a",
+    "title": "Markers, Not Feelings",
+    "start_seconds": 230.08,
+    "duration_seconds": 58.26
+  },
+  {
+    "id": "16_divergent",
+    "title": "The Divergent Marker",
+    "start_seconds": 288.34,
+    "duration_seconds": 30.05
+  },
+  {
+    "id": "17_four",
+    "title": "Four Models, One Aim",
+    "start_seconds": 318.39,
+    "duration_seconds": 30.04
+  },
+  {
+    "id": "18_ten",
+    "title": "The Ten Skills",
+    "start_seconds": 348.43,
+    "duration_seconds": 83.29
+  },
+  {
+    "id": "22_hopper",
+    "title": "The Hopper",
+    "start_seconds": 431.72,
+    "duration_seconds": 77.19
+  },
+  {
+    "id": "26_engines",
+    "title": "Three Engines",
+    "start_seconds": 508.91,
+    "duration_seconds": 44.23
+  },
+  {
+    "id": "28_capacity",
+    "title": "Work Capacity",
+    "start_seconds": 553.14,
+    "duration_seconds": 37.52
+  },
+  {
+    "id": "30_rx",
+    "title": "The Prescription",
+    "start_seconds": 590.66,
+    "duration_seconds": 73.67
+  },
+  {
+    "id": "33_mci",
+    "title": "Mechanics, Consistency, Intensity",
+    "start_seconds": 664.33,
+    "duration_seconds": 94.73
+  },
+  {
+    "id": "37_pyramid",
+    "title": "Foundations First",
+    "start_seconds": 759.06,
+    "duration_seconds": 87.25
+  },
+  {
+    "id": "41_virtuosity",
+    "title": "Virtuosity",
+    "start_seconds": 846.31,
+    "duration_seconds": 65.44
+  },
+  {
+    "id": "44_evidence",
+    "title": "Measurable, Observable, Repeatable",
+    "start_seconds": 911.75,
+    "duration_seconds": 63.61
+  },
+  {
+    "id": "47_benchmark",
+    "title": "Benchmarks",
+    "start_seconds": 975.36,
+    "duration_seconds": 74.89
+  },
+  {
+    "id": "50_scale",
+    "title": "Scale the Load",
+    "start_seconds": 1050.25,
+    "duration_seconds": 29.3
+  },
+  {
+    "id": "52_luck",
+    "title": "Fitness Plus Luck",
+    "start_seconds": 1079.55,
+    "duration_seconds": 26.68
+  },
+  {
+    "id": "53_sport",
+    "title": "The Sport of Fitness",
+    "start_seconds": 1106.23,
+    "duration_seconds": 71.22
+  },
+  {
+    "id": "56_close",
+    "title": "Well Is a Reading. Fit Is a Margin.",
+    "start_seconds": 1177.45,
+    "duration_seconds": 18.77
+  },
+  {
+    "id": "57_questions",
+    "title": "Place Your Team on the Line",
+    "start_seconds": 1196.22,
+    "duration_seconds": 45.44
+  },
+  {
+    "id": "59_glassman_100",
+    "title": "100 Words",
+    "start_seconds": 1241.66,
+    "duration_seconds": 47.71
+  },
+  {
+    "id": "60_try",
+    "title": "Try It With Your AI",
+    "start_seconds": 1289.37,
+    "duration_seconds": 26.69
+  },
+  {
+    "id": "61_rule",
+    "title": "The Rule",
+    "start_seconds": 1316.06,
+    "duration_seconds": 71.22
+  },
+  {
+    "id": "64_note_a",
+    "title": "A Note on the Borrowing",
+    "start_seconds": 1387.28,
+    "duration_seconds": 47.29
+  },
+  {
+    "id": "66_callback",
+    "title": "The Thesis, Again",
+    "start_seconds": 1434.57,
+    "duration_seconds": 11.45
+  },
+  {
+    "id": "67_business_100",
+    "title": "Business Fitness in 100 Words",
+    "start_seconds": 1446.02,
+    "duration_seconds": 42.52
+  },
+  {
+    "id": "68_outro",
+    "title": "Outro",
+    "start_seconds": 1488.54,
+    "duration_seconds": 7.36
+  }
+]

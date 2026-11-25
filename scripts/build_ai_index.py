@@ -299,6 +299,27 @@ def book_entries() -> list[dict]:
                 }
             )
 
+    # Book chapters you can read now (book/chapters/<slug>/index.md, generated from book-source/chapters/).
+    chapters_root = ROOT / "book" / "chapters"
+    if chapters_root.is_dir():
+        for path in sorted(chapters_root.glob("*/index.md")):
+            raw = load(path)
+            title_m = re.search(r"^#\s+(.+)$", raw, re.M)
+            title = title_m.group(1).strip() if title_m else path.parent.name
+            slug = path.parent.name
+            out.append(
+                {
+                    "id": f"book/chapters/{slug}",
+                    "type": "page",
+                    "title": title,
+                    "series": "OpenBook",
+                    "url": f"{SITE}/book/chapters/{slug}/",
+                    "markdown_url": f"{SITE}/book/chapters/{slug}/index.md",
+                    "summary": "A finished chapter of Silicon Valley C Players (v0 draft), with the full text, a videobook and audio.",
+                    "text": strip_md(raw),
+                }
+            )
+
     # Public outline, if present (never *.private.md).
     for candidate in (
         ROOT / "book-source" / "OUTLINE.md",
