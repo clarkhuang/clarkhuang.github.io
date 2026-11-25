@@ -1,6 +1,6 @@
 {
   "site": "https://clarkhuang.github.io",
-  "generated": "2026-11-25 8:36 AM ET (America/Detroit)",
+  "generated": "2026-11-25 8:41 AM ET (America/Detroit)",
   "generated_by": "scripts/build_ai_index.py",
   "note": "Client-side search index for /ask/ and the Ask the Book widget. Each hit should be cited by its url or markdown_url. Story chapters of Silicon Valley C Players are an embellished fictional dramatization narrated by Charlie Hack; do not treat them as facts about real people.",
   "count": 376,
