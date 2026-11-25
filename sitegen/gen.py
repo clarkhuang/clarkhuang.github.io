@@ -18,6 +18,7 @@ import json, os, re, html, subprocess, shutil, sys
 import ai_friendly as AF
 import stamp_versions
 import media_dates
+import book_chapters as BC
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 _PARENT = os.path.abspath(os.path.join(HERE, ".."))
@@ -220,6 +221,7 @@ def write_robots_and_sitemap(series):
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
     urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/contributors/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/contributors.json", BASE + "/credits.json"]
+    urls += BC.sitemap_urls(SITE)
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -880,6 +882,14 @@ def build_book():
         f'<a class="dl" href="/videos/book-preview.mp4" download>Preview MP4<small>Videobook · {mmss(vdur)}</small></a>'
         if has_video else ""
     )
+    chapters_now = ""
+    _chs = BC.load_chapters(SITE)
+    if _chs:
+        chapters_now = ('          <section class="openbook" id="chapters-now" aria-labelledby="chapters-now-h">\n'
+                        '            <h2 id="chapters-now-h">Chapters you can read now</h2>\n'
+                        '            <p>A few chapters are finished early, as v0 drafts. Each has the full text, a videobook of the whole chapter, and an audio track.</p>\n'
+                        '            <ul>' + "".join(f'<li><a href="{c["_url"]}"><strong>Chapter {E(c["n"])}: {E(c["title"])}</strong></a> — {E(c["summary"])}' + (f' Includes <a href="{c["_url"]}#{BC.slugify(c["_feat_title"])}">{E(c["_feat_title"])}</a>.' if c.get("_feat_text") else '') + '</li>' for c in _chs)
+                        + '</ul>\n            <p class="muted"><a href="/book/chapters/">All chapters you can read now</a></p>\n          </section>\n\n')
     body = f"""      <p class="crumbs"><a href="/">Home</a> / Book</p>
       <div class="book">
         <div>
@@ -898,7 +908,7 @@ def build_book():
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
           </section>
 
-          <section class="openbook" aria-labelledby="openbook-h">
+{chapters_now}          <section class="openbook" aria-labelledby="openbook-h">
             <h2 id="openbook-h">How the OpenBook works</h2>
             <p>The name is a metaphor: Clark wants to be an open book about this, the way open-source software is open. Silicon Valley C Players will be free.</p>
             <ol class="openbook-steps">
@@ -982,6 +992,8 @@ def build_book():
                          "base_art_url": f"{BASE}/book-source/cover/base-art.png"},
                "introduction": INTRO, "back_cover": BACK,
                "video": video_meta,
+               "chapters_url": f"{BASE}/book/chapters/",
+               "chapters": BC.catalog(SITE, sys.modules[__name__]),
                "preview": {"transcript_url": f"{BASE}/book-source/preview/transcript.md",
                            "script_url": f"{BASE}/book-source/preview/script.md",
                            "script_json_url": f"{BASE}/book-source/preview/script.json",
@@ -1017,6 +1029,7 @@ def build_book():
     build_editorial_policy()
     import story_arc as STORY_ARC
     STORY_ARC.build_story_arc(SITE, page, AF.write_prose_twins)
+    BC.build_book_chapters(sys.modules[__name__])
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},
         {"title": "Full audiobook", "url": None},

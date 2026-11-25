@@ -8,6 +8,31 @@ import html, json, os, re
 BASE = "https://clarkhuang.github.io"
 E = html.escape
 
+
+def _book_chapters():
+    import importlib
+    return importlib.import_module("book_chapters")
+
+
+def _chapters_twin_section(site):
+    chs = _book_chapters().load_chapters(site)
+    if not chs:
+        return []
+    out = ["## Chapters you can read now", "",
+           "A few chapters are finished early, as v0 drafts, each with the full text, a videobook of the whole chapter, and an audio track.", ""]
+    for ch in chs:
+        out.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md) ({ch.get('part')}): {ch['summary']}")
+    out += ["", f"All of them: {BASE}/book/chapters/index.md", ""]
+    return out
+
+
+def _chapter_llms_lines(site):
+    """llms.txt lines for book chapters that can be read now (book-source/chapters/*/chapter.json)."""
+    try:
+        return _book_chapters().llms_lines(site)
+    except Exception:
+        return []
+
 def dir_of(path):
     """Return the site-relative directory for a generated page, always ending in / except at root ('')."""
     path = path.replace("\\", "/").lstrip("/")
@@ -47,7 +72,14 @@ def urls(path):
 def prompt_for(path):
     u = urls(path)
     extra = ""
-    if path.startswith("book/"):
+    if path.startswith("book/chapters/") and path != "book/chapters/index.html":
+        src = f"{BASE}/book-source/chapters/{path.split('/')[2]}/"
+        extra = (
+            f" Also read the chapter's transcript at {src}transcript.md and {BASE}/book.json. "
+            "Cite section headings or video timestamps. This chapter is nonfiction: Clark Huang's views, with the sources it lists. "
+            "Then help me apply it to my own team, and do not invent facts about my team; ask."
+        )
+    elif path.startswith("book/"):
         extra = (
             f" Also read {BASE}/llms-full.txt, {BASE}/book.json, and the preview transcript at "
             f"{BASE}/book-source/preview/transcript.md. Cite chapter titles or timestamps. "
@@ -449,6 +481,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Captions (VTT): {BASE}/audio/book-preview.vtt",
         f"- Chapters (JSON): {BASE}/audio/book-preview-chapters.json",
         "",
+        *_chapters_twin_section(site),
         "## Editorial policy",
         "",
         f"How conflicting recollections are handled, and how claims and sources are tracked across editions: [{BASE}/book/editorial-policy/]({BASE}/book/editorial-policy/index.md).",
@@ -499,6 +532,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
+        f"- Chapters you can read now (full text, videobook, audio): {BASE}/book/chapters/index.md",
         "",
         "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
         "",
@@ -554,6 +588,7 @@ Start here:
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
 - **Software Engineering 201: From Loop to Enterprise Systems** — complete, ten lessons: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
+- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. First up, chapter 36, Sick, Well, Fit (how companies should use AI), with Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
 
@@ -694,6 +729,7 @@ def write_llms_txt(site, series, extras=None):
         f"- [Preview captions]({BASE}/videos/book-preview.vtt): WebVTT for the videobook",
         f"- [Preview chapters]({BASE}/videos/book-preview-chapters.json): chapter titles and start times",
         f"- [Preview scene scripts]({BASE}/book-source/preview/scenes/): one markdown file per scene",
+        *_chapter_llms_lines(site),
         f"- [Cover brief]({BASE}/book-source/cover/PROMPT.md): how to describe or rebuild the cover",
         f"- [How this book is edited]({BASE}/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, a per-edition changelog of changed claims and sources, and a privacy note for Google Analytics 4 on the site",
         f"- [Story arc and chapters]({BASE}/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.",
@@ -763,6 +799,9 @@ def write_llms_full(site, series, intro, back):
         ]
     if transcript:
         lines += [transcript, ""]
+    chapter_text = _book_chapters().llms_full_md(site)
+    if chapter_text:
+        lines += [chapter_text.rstrip(), ""]
     lines += ["## Lessons", ""]
     for skey, s in (series or {}).items():
         lines += [f"### {s['title']}", "", f"Index: {BASE}/{skey}/index.md", ""]

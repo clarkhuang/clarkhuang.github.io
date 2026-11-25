@@ -78,7 +78,7 @@ def table_html(section):
         cid = c.get("id") or ""
         cells = [
             f'<th scope="row" class="ch">{E(str(n))}</th>',
-            f'<td class="ch-title">{E(title)}</td>',
+            (f'<td class="ch-title"><a href="{E(c["url"])}">{E(title)}</a></td>' if c.get("url") else f'<td class="ch-title">{E(title)}</td>'),
             f'<td class="ch-hook">{E(hook)}</td>',
         ]
         if has_lessons:
@@ -160,6 +160,8 @@ def body_md(data):
             for c in sec["chapters"]:
                 n = c.get("n") or "—"
                 hook = hook_text(c)
+                if c.get("url"):
+                    hook = f"{hook} Read it: https://clarkhuang.github.io{c['url']}"
                 status = status_label(c)
                 if has_lessons:
                     lines.append(
