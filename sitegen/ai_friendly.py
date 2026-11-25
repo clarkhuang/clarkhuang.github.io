@@ -15,14 +15,32 @@ def _book_chapters():
 
 
 def _chapters_twin_section(site):
-    chs = _book_chapters().load_chapters(site)
+    bc = _book_chapters()
+    chs = bc.load_chapters(site)
     if not chs:
         return []
-    out = ["## Chapters you can read now", "",
-           "A few chapters are finished early, as v0 drafts, each with the full text, a videobook of the whole chapter, and an audio track.", ""]
-    for ch in chs:
-        out.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md) ({ch.get('part')}): {ch['summary']}")
-    out += ["", f"All of them: {BASE}/book/chapters/index.md", ""]
+    c0 = chs[-1]
+    out = ["## New: a finished chapter", "",
+           f"Chapter {c0['n']}, **{c0['title']}: {c0.get('subtitle') or ''}**, is finished as a v0 draft, with the full text, a videobook of the whole chapter, an audio track, captions and a transcript.", ""]
+    if c0.get("thesis"):
+        out += [f"> “{c0['thesis']}” — {c0.get('thesis_by') or 'Clark Huang'} (his belief, not a measured result)", ""]
+    out += [c0.get("preview") or c0["summary"], ""]
+    try:
+        m = bc.media(site, c0)
+        if m.get("vpath"):
+            out += [f"- Video: {BASE}{m['vpath']}"]
+    except Exception:
+        pass
+    out += [f"- Read it: {BASE}{c0['_url']}index.md"]
+    if c0.get("_feat_text"):
+        out += [f"- Includes “{c0['_feat_title']}”, adapted from Greg Glassman's “World-Class Fitness in 100 Words”, and a prompt to score your company against it."]
+    out += [""]
+    if len(chs) > 1:
+        out += ["Other chapters you can read now:", ""]
+        for ch in chs[:-1]:
+            out.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md) ({ch.get('part')}): {ch['summary']}")
+        out += [""]
+    out += [f"All of them: {BASE}/book/chapters/index.md", ""]
     return out
 
 
@@ -450,6 +468,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Cover brief (how to rebuild it): {BASE}/book-source/cover/PROMPT.md",
         f"- Renderer: {BASE}/book-source/cover/render_cover.py",
         "",
+        *_chapters_twin_section(site),
         "## Introduction (preview)",
         "",
         *sum(([(para or ""), ""] for para in intro), []),
@@ -481,7 +500,6 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Captions (VTT): {BASE}/audio/book-preview.vtt",
         f"- Chapters (JSON): {BASE}/audio/book-preview-chapters.json",
         "",
-        *_chapters_twin_section(site),
         "## Editorial policy",
         "",
         f"How conflicting recollections are handled, and how claims and sources are tracked across editions: [{BASE}/book/editorial-policy/]({BASE}/book/editorial-policy/index.md).",
@@ -588,7 +606,7 @@ Start here:
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
 - **Software Engineering 201: From Loop to Enterprise Systems** — complete, ten lessons: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
-- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. First up, chapter 36, Sick, Well, Fit (how companies should use AI), with Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
+- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. Newest: chapter 36, Sick, Well, Fit (how companies should use AI), finished, with a full-chapter video and Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
 
