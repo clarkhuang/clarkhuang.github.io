@@ -31,7 +31,7 @@ Most book contributions are fictionalized, and you are not named as a character.
 - Open a pull request against `next-revision`.
 - The file must include your own written consent to publish your name.
 - Do not name other private people, and do not include confidential material.
-- Clark still reviews and merges. A guest story is not published until he does.
+- Clark still reviews and merges. A guest story is not published until he does. Accepted stories appear at [/book/guest/](https://clarkhuang.github.io/book/guest/).
 
 ## How a change lands
 
@@ -77,9 +77,9 @@ You license your contribution under the project's licenses — book text under [
 
 ### 5. Credit
 
-If you'd like credit, tell us the GitHub handle to use on the [Contributors](https://clarkhuang.github.io/contributors/) page (or say you prefer not to be credited). Credit there is separate from the story: you won't be named *as a character*. The public list uses your GitHub display name when your profile has one, otherwise your handle. A name is never invented.
+If you'd like credit, tell us the GitHub handle to use on the [Contributors](https://clarkhuang.github.io/contributors/) page (or say you prefer not to be credited). Credit there is separate from the story: you won't be named *as a character*. The public list uses your GitHub display name when your profile has one, otherwise your handle, or the name you consented to publish on a guest story. A name is never invented.
 
-**Any outside contribution that lands on the site must be credited on the Contributors page in the same pull request.** Add an entry to [`sitegen/landed-contributions.json`](sitegen/landed-contributions.json) describing what landed, with links to the issue and/or pull request, and run `python3 scripts/build_credits.py`. Do not credit input that did not land. Use only the public GitHub display name and handle; do not add other personal details. Honor a “don't credit me” request.
+**Any outside contribution that lands on the site must be credited on the Contributors page in the same pull request.** Add an entry to [`sitegen/landed-contributions.json`](sitegen/landed-contributions.json) describing what landed, with links to the issue and/or pull request, and run `python3 scripts/build_credits.py`. Do not credit input that did not land. Use the public GitHub display name and handle, or the name consented to on a guest story; do not add other personal details. Honor a “don't credit me” request.
 
 ### 6. Clark's editorial discretion
 

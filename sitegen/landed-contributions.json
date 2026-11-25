@@ -1,18 +1,22 @@
 {
-  "note": "Curated list of outside contributions that actually landed on the site. Add an entry in the same pull request that lands the work. Use only the public GitHub display name (if the profile has one) and handle. Do not invent names, add other personal details, or credit input that did not land.",
+  "note": "Curated list of outside contributions that actually landed on the site. Add an entry in the same pull request that lands the work. Use the public GitHub display name (if the profile has one) and handle. For a guest story, you may also include the name the author consented to publish on that piece. Do not invent names, add other personal details, or credit input that did not land.",
   "people": [
     {
       "login": "himanshu112-wq",
+      "name": "Himanshu Kumar",
       "contributions": [
         {
           "type": "feedback",
           "summary": "Feedback in issue #80 that led to the reworded “AI writes essentially all the code” claim (point 4) and the book's public editorial policy (point 7).",
           "issue": 80,
           "issue_url": "https://github.com/clarkhuang/clarkhuang.github.io/issues/80",
-          "pull_requests": [
-            96,
-            104
-          ]
+          "pull_requests": [96, 104]
+        },
+        {
+          "type": "stories",
+          "summary": "Guest story: “I built the app. Would people use it every month?” about building Home Staff Ledger with AI.",
+          "pull_requests": [120],
+          "page_url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/"
         }
       ]
     }

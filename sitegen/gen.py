@@ -19,6 +19,7 @@ import ai_friendly as AF
 import stamp_versions
 import media_dates
 import book_chapters as BC
+import guest_stories as GUEST
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 _PARENT = os.path.abspath(os.path.join(HERE, ".."))
@@ -220,8 +221,14 @@ def write_robots_and_sitemap(series):
     open(os.path.join(SITE, "robots.txt"), "w").write(
         "User-agent: *\nAllow: /\nDisallow: /staging/\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/contributors/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/contributors.json", BASE + "/credits.json"]
-    urls += BC.sitemap_urls(SITE)
+    guest_urls = GUEST.sitemap_urls(site=SITE)
+    # Dedup while keeping a stable order; guest pages follow the book pages.
+    urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/book/guest/"]
+    for u in guest_urls:
+        if u not in urls:
+            urls.append(u)
+    urls += [u for u in BC.sitemap_urls(SITE) if u not in urls]
+    urls += [BASE + "/contribute/", BASE + "/copy-this/", BASE + "/mcp/", BASE + "/ask/", BASE + "/contributors/", BASE + "/llms.txt", BASE + "/llms-full.txt", BASE + "/search-index.json", BASE + "/contributors.json", BASE + "/credits.json"]
     for skey, s in series.items():
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
@@ -641,7 +648,7 @@ def build():
         ("ask/index.md", "Ask the Book", "In-browser search of lessons, chapters, scenes, and transcripts, plus a prompt you can send to your own AI."),
         ("contributors/index.md", "Contributors", "People whose contributions have landed on the site, listed by public GitHub display name or handle."),
         ("search-index.json", "search-index.json", "Local search index used by Ask the Book."),
-    ])
+    ], book_extra_lines=GUEST.llms_book_lines(SITE))
 
     lessons_json["book"] = f"{BASE}/book.json"
     lessons_json["agent_rules_note"] = "Each available lesson's 'rule' is written to be loaded by AI agents as a standing instruction. Markdown twins and AGENTS.md live next to every HTML page; the site index for language models is /llms.txt."
@@ -930,7 +937,7 @@ def build_book():
               <li><strong>Version one still comes first,</strong> in 2027: Clark's account, then a wider invitation to anyone who recognizes a story, or is related to him, to add their side, and stories he may have forgotten.</li>
               <li><strong>Versions work like software.</strong> Later editions are numbered. Previous audiobook and videobook editions stay up as tagged releases, and the next edition is only rebuilt when Clark approves it.</li>
             </ol>
-            <p>The working <a href="/book/story-arc/">story arc and chapter list</a> is public. It will change. How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next.</p>
+            <p>The working <a href="/book/story-arc/">story arc and chapter list</a> is public. It will change. How conflicting memories, claims, and sources are handled is on the <a href="/book/editorial-policy/">editorial policy</a> page, including a log of what changed from one edition to the next. First-person <a href="/book/guest/">guest stories</a>, published under the contributor’s own name, live alongside the book.</p>
             <p class="muted">Want the same idea for your own learning site or OpenBook? <a href="/copy-this/">Copy this for yourself</a>.</p>
           </section>
 
@@ -1044,6 +1051,7 @@ def build_book():
     import story_arc as STORY_ARC
     STORY_ARC.build_story_arc(SITE, page, AF.write_prose_twins)
     BC.build_book_chapters(sys.modules[__name__])
+    GUEST.build_guest_stories(SITE, page, AF.write_prose_twins)
     AF.write_book_twin(SITE, INTRO, BACK, [
         {"title": "Book preview (audio)", "url": f"{BASE}/audio/book-preview.mp3", "duration_seconds": round(dur, 1)},
         {"title": "Full audiobook", "url": None},
@@ -1082,7 +1090,7 @@ def build_involve_pages():
       <h2>If you would rather skip GitHub</h2>
       <p>You still use a short GitHub form — that is how proposals are tracked, like in an open-source project. You do not need to write code. Open the <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=new-story.yml">share-a-story form</a> (or the <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">correction</a> or <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=refactor.yml">refactor</a> form), and ask your AI to help you fill it in. You can paste the prompt above first, then the form fields.</p>
       <p>Please do not include real names of private people, or real company names, in a story. Describe people by role (“my lab partner,” “a team lead”) and companies in general terms (“a startup in San Francisco,” “a firm from Berlin”).</p>
-      <p>If your contribution lands on the site, you will be credited on the <a href="/contributors/">Contributors</a> page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle.</p>
+      <p>If your contribution lands on the site, you will be credited on the <a href="/contributors/">Contributors</a> page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle, or the name you consented to publish on a guest story. First-person guest stories, once accepted, appear at <a href="/book/guest/">Guest stories</a>.</p>
       <h2>What happens next</h2>
       <ol class="steps-plain">
         <li>Your issue is labeled for Clark to review.</li>
@@ -1097,7 +1105,7 @@ def build_involve_pages():
          "A plain-language way to contribute to Clark Huang's OpenBook and learning site: one copy-paste prompt, then a GitHub issue. Clark approves every change.",
          body, "contribute")
     AF.write_prose_twins(SITE, "contribute/index.html", "Contribute with your AI",
-        "You can contribute to this OpenBook and the learning series by pointing any AI chat tool at the site. Copy the prompt on this page, add what you know, and have the tool draft a GitHub issue for a correction, a new story, or a refactor. If you would rather skip around GitHub, open the share-a-story form and ask your AI to help you fill it in. Do not invent details or use real names of private people or real company names in story submissions. Only Clark Huang approves work and publishes it.\n\nIf your contribution lands on the site, you will be credited on the [Contributors](https://clarkhuang.github.io/contributors/index.md) page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle.",
+        "You can contribute to this OpenBook and the learning series by pointing any AI chat tool at the site. Copy the prompt on this page, add what you know, and have the tool draft a GitHub issue for a correction, a new story, or a refactor. If you would rather skip around GitHub, open the share-a-story form and ask your AI to help you fill it in. Do not invent details or use real names of private people or real company names in story submissions. Only Clark Huang approves work and publishes it.\n\nIf your contribution lands on the site, you will be credited on the [Contributors](https://clarkhuang.github.io/contributors/index.md) page in the same pull request, unless you ask not to be. Credits use your public GitHub display name when your profile has one, otherwise your handle, or the name you consented to publish on a guest story. First-person guest stories, once accepted, appear at [Guest stories](https://clarkhuang.github.io/book/guest/index.md).",
         "A plain-language contribution page with one copy-paste prompt and links to GitHub issue forms. No email address is published.")
 
     body = """      <p class="crumbs"><a href="/">Home</a> / Copy this</p>
