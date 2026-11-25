@@ -1,0 +1,104 @@
+[
+  {
+    "id": "01_title",
+    "title": "Title",
+    "start_seconds": 0.0,
+    "duration_seconds": 10.43
+  },
+  {
+    "id": "02_wake",
+    "title": "The Wake-up",
+    "start_seconds": 10.43,
+    "duration_seconds": 27.16
+  },
+  {
+    "id": "04_board",
+    "title": "A Goal I Did Not Plan",
+    "start_seconds": 37.59,
+    "duration_seconds": 50.35
+  },
+  {
+    "id": "06_gymn",
+    "title": "Gymnastics",
+    "start_seconds": 87.94,
+    "duration_seconds": 13.89
+  },
+  {
+    "id": "07_mci",
+    "title": "The Order",
+    "start_seconds": 101.83,
+    "duration_seconds": 18.45
+  },
+  {
+    "id": "08_platforms",
+    "title": "Platforms, Not Numbers",
+    "start_seconds": 120.28,
+    "duration_seconds": 19.68
+  },
+  {
+    "id": "09_mu",
+    "title": "Skill Over Power",
+    "start_seconds": 139.96,
+    "duration_seconds": 34.04
+  },
+  {
+    "id": "12_singles",
+    "title": "Double Unders",
+    "start_seconds": 174.0,
+    "duration_seconds": 30.71
+  },
+  {
+    "id": "15_mci2",
+    "title": "The Order",
+    "start_seconds": 204.71,
+    "duration_seconds": 12.35
+  },
+  {
+    "id": "16_mile",
+    "title": "A Mile, then a Half",
+    "start_seconds": 217.06,
+    "duration_seconds": 39.96
+  },
+  {
+    "id": "18_swim",
+    "title": "Water and the Bike",
+    "start_seconds": 257.02,
+    "duration_seconds": 34.66
+  },
+  {
+    "id": "21_clearwater",
+    "title": "The Marathon",
+    "start_seconds": 291.68,
+    "duration_seconds": 46.05
+  },
+  {
+    "id": "23_surprise",
+    "title": "The Surprise",
+    "start_seconds": 337.73,
+    "duration_seconds": 33.55
+  },
+  {
+    "id": "25_payoff",
+    "title": "The Payoff",
+    "start_seconds": 371.28,
+    "duration_seconds": 49.4
+  },
+  {
+    "id": "27_cplayer",
+    "title": "Still a C Player",
+    "start_seconds": 420.68,
+    "duration_seconds": 48.66
+  },
+  {
+    "id": "30_ch36",
+    "title": "What This Is For",
+    "start_seconds": 469.34,
+    "duration_seconds": 16.03
+  },
+  {
+    "id": "31_outro",
+    "title": "Outro",
+    "start_seconds": 485.37,
+    "duration_seconds": 6.76
+  }
+]
