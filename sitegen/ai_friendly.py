@@ -750,7 +750,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
     lines += [
         "## Book",
         "",
-        f"- [Silicon Valley C Players (preview)]({BASE}/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI.",
+        f"- [Silicon Valley C Players (preview)]({BASE}/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI. Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
         f"- [Preview transcript]({BASE}/book-source/preview/transcript.md): full spoken text, with timestamps",
         f"- [Preview captions]({BASE}/videos/book-preview.vtt): WebVTT for the videobook",
         f"- [Preview chapters]({BASE}/videos/book-preview-chapters.json): chapter titles and start times",
