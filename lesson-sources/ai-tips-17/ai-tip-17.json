@@ -1,0 +1,152 @@
+{
+ "id": "ai-tip-17",
+ "title": "Don't Paste Secrets",
+ "output": "ai-tip-17-public.mp4",
+ "voice": "4lbl0krw73vf",
+ "language": "en",
+ "speed": 1.05,
+ "scenes": [
+  {
+   "id": "01_hook",
+   "text": "The error belongs in the chat. [pause] The password sitting next to it does <emphasis>not</emphasis>.",
+   "visual": "title",
+   "chapter": "",
+   "data": {
+    "kicker": "AI TIP 17",
+    "headline": "Don't paste\nsecrets.",
+    "sub": "clarkhuang.github.io • AI Tips"
+   }
+  },
+  {
+   "id": "02_paste",
+   "text": "Say a deploy is failing. You copy the error, and the config, so the bot can see everything. Mid-paste you catch it: a production database password, sitting in the block. [pause] You stop, replace it with REDACTED, and send the rest. The bot can still help. The password never went in.",
+   "visual": "terminal_mock",
+   "chapter": "THE PROBLEM",
+   "data": {
+    "label": "BEFORE YOU HIT SEND",
+    "title": "chat draft — not sent yet",
+    "lines": [
+     {
+      "kind": "you",
+      "text": "Deploy is failing. Error and config below."
+     },
+     {
+      "kind": "claude",
+      "text": "Error: deploy failed at the database step"
+     },
+     {
+      "kind": "claude",
+      "text": "DATABASE_URL=postgres://admin:RealPassword@prod-db/app"
+     },
+     {
+      "kind": "blank",
+      "text": ""
+     },
+     {
+      "kind": "ok",
+      "text": "DATABASE_URL=postgres://admin:REDACTED@prod-db/app"
+     },
+     {
+      "kind": "ok",
+      "text": "Sent. The password stayed out."
+     }
+    ],
+    "punch": "The bot can still help. The secret never went in."
+   }
+  },
+  {
+   "id": "03_mechanism",
+   "text": "A chat is closer to emailing a contractor than to writing on a whiteboard in a locked room. Once a secret is in the thread, asking the bot to forget it [pause] does not unsay it.",
+   "visual": "statement",
+   "chapter": "WHY IT HAPPENS",
+   "data": {
+    "headline": "A chat is not\na locked room."
+   }
+  },
+  {
+   "id": "04_instances",
+   "text": "This shows up in public reports. Production database credentials pasted into a chatbot at work. An API key pasted into a chat, and noticed only afterward. And people asking whether the keys they handed over now need replacing.",
+   "visual": "timeline",
+   "chapter": "WHERE IT SHOWS UP",
+   "data": {
+    "label": "FROM PUBLIC REPORTS",
+    "beats": [
+     {
+      "t": "1",
+      "tone": "amber",
+      "text": "Production database credentials\npasted into a chatbot at work"
+     },
+     {
+      "t": "2",
+      "tone": "amber",
+      "text": "An API key pasted into a chat,\nnoticed only afterward"
+     },
+     {
+      "t": "3",
+      "tone": "amber",
+      "text": "People asking if the keys they\nhanded over now need replacing"
+     }
+    ],
+    "punch": "Each time, the question came after the paste."
+   }
+  },
+  {
+   "id": "05_tell",
+   "text": "Here's the tell. If that line would be a problem on a postcard, [pause] it doesn't go in the chat.",
+   "visual": "statement",
+   "chapter": "THE TELL",
+   "data": {
+    "headline": "If that line is a problem\non a postcard,\nit stays out of the chat.",
+    "size": 96
+   }
+  },
+  {
+   "id": "06_habit",
+   "text": "Before you paste, scan. Keys, tokens, passwords, connection strings, session cookies, customer personal data, internal URLs that aren't public. Replace them with placeholders. [pause] If a secret did go in, treat the paste as a leak, and change that credential. Asking the chat to forget it is not a fix.",
+   "visual": "split",
+   "chapter": "THE HABIT",
+   "data": {
+    "label": "BEFORE YOU PASTE",
+    "left_header": "THE USUAL PASTE",
+    "reported": "The error.\nThe config.\nEverything next to it.\nSend.",
+    "right_header": "THE BETTER PASTE",
+    "right_tone": "accent",
+    "actually": "Scan first.\nReplace secrets\nwith REDACTED.\nSend the rest."
+   }
+  },
+  {
+   "id": "07_rule",
+   "text": "Scan before you paste. Replace secrets with placeholders. If one slipped through, change that credential. [pause] The chat cannot unsay it.",
+   "visual": "rule",
+   "chapter": "THE HABIT",
+   "data": {
+    "headline": "Scan before you paste.",
+    "items": [
+     "Replace secrets with placeholders",
+     "If one slipped through, change that credential",
+     "The chat cannot unsay it"
+    ]
+   }
+  },
+  {
+   "id": "08_your_turn",
+   "text": "Your turn. Think of the last thing you pasted into a chat. Reply with the one kind of secret you'd now scan for first.",
+   "visual": "statement",
+   "chapter": "",
+   "data": {
+    "headline": "Your turn: what would\nyou scan for first?",
+    "size": 96
+   }
+  },
+  {
+   "id": "09_close",
+   "text": "Show the problem. [pause] Keep the secrets out.",
+   "visual": "outro",
+   "chapter": "",
+   "data": {
+    "headline": "Show the problem.\nKeep the secrets out.",
+    "sub": "clarkhuang.github.io • AI Tips"
+   }
+  }
+ ]
+}

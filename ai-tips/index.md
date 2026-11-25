@@ -8,7 +8,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Short, practical lessons on working with AI assistants and agents. Each one names a common failure, explains why it happens, and leaves you with one habit to fix it.
 
-16 of 16 lessons available.
+17 of 17 lessons available.
 
 ## Lessons
 
@@ -139,6 +139,14 @@ Agents act on real systems, and a rule typed into a prompt is not a lock. Put th
 Published: Nov 21, 2026
 
 **Rule:** Set the stop before you start: say what done looks like, limit what it can touch, require approval before delete, reset, push or send, and watch the first few steps.
+
+### 17. [Don't Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md) (available)
+
+A chat is not a locked room. Scan a paste for keys, tokens, passwords, and other secrets, replace them with placeholders, and if one slipped through, change that credential — asking the chat to forget it is not a fix.
+
+Published: Nov 25, 2026
+
+**Rule:** Scan before you paste. Replace secrets with placeholders. If one slipped through, change that credential. The chat cannot unsay it.
 
 ## For agents
 

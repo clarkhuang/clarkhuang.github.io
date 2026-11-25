@@ -181,6 +181,19 @@
     "rule": "Set the stop before you start: say what done looks like, limit what it can touch, require approval before delete, reset, push or send, and watch the first few steps.",
     "log": "/workspace/legacy/build/logs/a16.log",
     "script": "/workspace/legacy/build/aitips/program/scripts/ai-tip-16.json"
+   },
+   {
+    "n": 17,
+    "slug": "17-dont-paste-secrets",
+    "id": "ai-tips/17",
+    "title": "Don't Paste Secrets",
+    "video": "ai-tips-17-dont-paste-secrets.mp4",
+    "captions": "ai-tips-17-dont-paste-secrets.vtt",
+    "summary": "A chat is not a locked room. Scan a paste for keys, tokens, passwords, and other secrets, replace them with placeholders, and if one slipped through, change that credential — asking the chat to forget it is not a fix.",
+    "rule": "Scan before you paste. Replace secrets with placeholders. If one slipped through, change that credential. The chat cannot unsay it.",
+    "log": "lesson-sources/ai-tips-17/render-timeline.log",
+    "script": "lesson-sources/ai-tips-17/ai-tip-17.json",
+    "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/ai-tips-17"
    }
   ],
   "soon": []

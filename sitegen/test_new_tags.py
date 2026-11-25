@@ -134,13 +134,13 @@ def main():
                   any(t.strip().lower() == "new" for t in tags), f"visible={tags}")
             check("New tag text is the word New (accessible, not icon-only)",
                   any(t.strip() in ("New", "NEW") or "new" in t.strip().lower() for t in tags), f"visible={tags}")
-            # home: book card New, AI Tips (latest Nov 22) not New, SE201 (lesson 9, Nov 24 evening) New
+            # home: book card New, AI Tips (lesson 17, Nov 25) New, SE201 (lesson 9, Nov 24 evening) New
             pg.goto(base + HOME, wait_until="domcontentloaded")
             book_card = pg.locator(".card", has=pg.locator("h3", has_text="Silicon Valley C Players"))
             tips_card = pg.locator(".card", has=pg.locator("h3", has_text="AI Tips"))
             se201_card = pg.locator(".card", has=pg.locator("h3", has_text="Software Engineering 201"))
             check("home book card shows New", book_card.locator("[data-new]:visible").count() == 1)
-            check("home AI Tips card has no New (latest is Nov 22)", tips_card.locator("[data-new]:visible").count() == 0)
+            check("home AI Tips card shows New (lesson 17 landed after the cutoff)", tips_card.locator("[data-new]:visible").count() == 1)
             check("home SE201 card shows New (lesson 9 landed after the cutoff)", se201_card.locator("[data-new]:visible").count() == 1)
             check("session cookies stay at the seeded cutoff after a second page",
                   cookie(ctx, "visit_ref") == str(CUTOFF) and cookie(ctx, "last_visit") == str(CUTOFF),
