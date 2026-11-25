@@ -94,11 +94,11 @@ def main():
             pg.goto(base + BOOK, wait_until="domcontentloaded")
             body = pg.inner_text("body")
             check("book page shows Published Nov 22, 2026 without JS", "Published Nov 22, 2026" in body, body[body.find("Published"):body.find("Published")+80] if "Published" in body else "missing")
-            check("book page shows Updated Nov 24, 2026 without JS", "Updated Nov 24, 2026" in body)
+            check("book page shows Updated Nov 25, 2026 without JS", "Updated Nov 25, 2026" in body)
             html = pg.content()
             check("book page JSON-LD has VideoObject uploadDate 2026-11-22",
                   '"@type": "VideoObject"' in html and '"uploadDate": "2026-11-22"' in html)
-            check("book page JSON-LD has dateModified 2026-11-24", '"dateModified": "2026-11-24"' in html)
+            check("book page JSON-LD has dateModified 2026-11-25", '"dateModified": "2026-11-25"' in html)
             pg.goto(base + AI_TIPS_03, wait_until="domcontentloaded")
             body = pg.inner_text("body")
             check("unchanged lesson shows Published Nov 21, 2026 and no Updated",

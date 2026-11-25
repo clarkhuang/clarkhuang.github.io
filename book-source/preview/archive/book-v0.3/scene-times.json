@@ -1,0 +1,85 @@
+{
+  "scenes": [
+    {
+      "id": "01_disclaimer",
+      "start": 0.0,
+      "duration": 16.848
+    },
+    {
+      "id": "02_title",
+      "start": 16.848,
+      "duration": 2.232
+    },
+    {
+      "id": "03_middle",
+      "start": 19.08,
+      "duration": 8.016
+    },
+    {
+      "id": "04_myth",
+      "start": 27.096,
+      "duration": 8.928
+    },
+    {
+      "id": "05_straight",
+      "start": 36.024,
+      "duration": 10.776
+    },
+    {
+      "id": "05_outside",
+      "start": 46.8,
+      "duration": 12.288
+    },
+    {
+      "id": "06_c_player",
+      "start": 59.088,
+      "duration": 16.56
+    },
+    {
+      "id": "07_platforms",
+      "start": 75.648,
+      "duration": 11.688
+    },
+    {
+      "id": "08_blocks",
+      "start": 87.336,
+      "duration": 11.064
+    },
+    {
+      "id": "09_kept_going",
+      "start": 98.4,
+      "duration": 11.376
+    },
+    {
+      "id": "10_turn",
+      "start": 109.776,
+      "duration": 8.016
+    },
+    {
+      "id": "11_thesis",
+      "start": 117.792,
+      "duration": 12.288
+    },
+    {
+      "id": "11_ladder",
+      "start": 130.08,
+      "duration": 18.072
+    },
+    {
+      "id": "12_how_to",
+      "start": 148.152,
+      "duration": 11.688
+    },
+    {
+      "id": "13_bookend",
+      "start": 159.84,
+      "duration": 15.936
+    },
+    {
+      "id": "14_close",
+      "start": 175.776,
+      "duration": 4.08
+    }
+  ],
+  "total": 179.856
+}

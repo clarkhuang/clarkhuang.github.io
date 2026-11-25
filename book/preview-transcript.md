@@ -1,71 +1,86 @@
 # Silicon Valley C Players — preview transcript
 
-Full spoken text of the mid-book audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
-This excerpt is from Part Three and the turn into Part Four: C players, the gap between applause and the work, platforms over products, and the claim that AI came for the code writers first.
+Full spoken text of the start-to-finish audiobook and videobook preview, with scene titles and timestamps. Tags stripped. Use this to quote or cite the preview without playing the media.
+This preview tells the story from the beginning to the end, from dreaming in green to dreaming about A.I. The 75th-percentile C player who stacks fundamentals across many areas beats the A player who is best at just one thing. More chapters are coming.
 
-Duration: 2:59 (179.856 seconds).
+Duration: 3:04 (183.984 seconds).
 
-## Fair warning (0:00)
+## Dreaming in green (0:00)
 
-Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
+And at night, I dreamed in green. Black screens, glowing green lines, like Tron. AND gates, XOR gates, NAND gates, waiting to be burned into a chip.
 
-## Silicon Valley C Players (0:17)
+## Silicon Valley C Players (0:11)
 
 Silicon Valley C Players.
 
-## The middle of the book (0:19)
+## Fair warning (0:13)
 
-This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.
+Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
-## The A-player myth (0:27)
+## The same dream (0:29)
+
+All three of us had the same dream. Real life bled into our dreams.
+
+## I just kept going (0:33)
+
+It's all relative, how smart you are. I just kept going. And I kept doing my best.
+
+## The A-player myth (0:41)
 
 Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work.
 
-## The straight-line myth (0:36)
+## The straight-line myth (0:51)
 
-The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
+The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks like another ordinary Tuesday.
 
-## What people saw (0:47)
+## A C player (0:58)
 
-And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.
+A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room.
 
-## A C player (0:59)
+## The 75th percentile (1:07)
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.
+Good at everything beats best at one thing. That's a C player.
 
-## Platforms, not products (1:16)
+## Platforms, not products (1:11)
 
-The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that.
+The Valley falls in love with products. I got more out of building a platform: a foundation you can stand on, then build the next thing on.
 
-## Building blocks (1:27)
+## Building blocks (1:19)
 
-You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
+You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.
 
-## I just kept going (1:38)
+## The hollow hold (1:28)
 
-It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.
+The gymnastics foundation is the hollow hold, just on the ground. Virtuosity in something as simple as a hollow hold is what makes the next layer easy. Fundamentals, then building blocks, then intensity.
 
-## The turn (1:50)
+## Nothing new on race day (1:40)
+
+There is a golden rule: nothing new on race day. Why am I calm, cool, collected? Because it's just another Saturday. When foundations are stable, BFCM is just another Thursday.
+
+## The turn (1:51)
 
 Then the work itself changed. I'm usually the most excited person in the room about A.I. Which is funny, because I should be the saddest.
 
-## The thesis (1:58)
+## A.I. writes the code (1:59)
 
 Because A.I. came after the code writers first. In my own work, A.I. now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.
 
-## The abstraction ladder (2:10)
+## I strive for fit (2:12)
 
-Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up.
+Most companies strive for well. I strive for fit. A.I. is even more powerful to those that actually understand the fundamentals.
 
-## How to work now (2:28)
+## The whole point (2:19)
 
-So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use A.I.
+Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. C players are good and strong fundamentally in multiple areas, and ultimately that's what makes them a winner. That's the whole point of this book. The 75th-percentile C player who stacks fundamentals across many areas beats the A player who is best at just one thing.
 
-## The story is still being written (2:40)
+## The story is still being written (2:44)
 
-The book begins with a green-screen dream, and it ends by dreaming about A.I. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+The book begins with that green-screen dream. It ends by dreaming about A.I. It's free. It's open. The story is still being written.
 
-## Coming in 2027 (2:56)
+## More chapters are coming (2:53)
+
+More chapters are coming. And when version one is ready, if you were around for any of it, you get to tell your side.
+
+## Coming in 2027 (3:00)
 
 Silicon Valley C Players. Coming in 2027.
-

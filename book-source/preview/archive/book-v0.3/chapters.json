@@ -1,0 +1,98 @@
+[
+  {
+    "id": "01_disclaimer",
+    "title": "Fair warning",
+    "start_seconds": 0.0,
+    "duration_seconds": 16.85
+  },
+  {
+    "id": "02_title",
+    "title": "Silicon Valley C Players",
+    "start_seconds": 16.85,
+    "duration_seconds": 2.23
+  },
+  {
+    "id": "03_middle",
+    "title": "The middle of the book",
+    "start_seconds": 19.08,
+    "duration_seconds": 8.02
+  },
+  {
+    "id": "04_myth",
+    "title": "The A-player myth",
+    "start_seconds": 27.1,
+    "duration_seconds": 8.93
+  },
+  {
+    "id": "05_straight",
+    "title": "The straight-line myth",
+    "start_seconds": 36.02,
+    "duration_seconds": 10.78
+  },
+  {
+    "id": "05_outside",
+    "title": "What people saw",
+    "start_seconds": 46.8,
+    "duration_seconds": 12.29
+  },
+  {
+    "id": "06_c_player",
+    "title": "A C player",
+    "start_seconds": 59.09,
+    "duration_seconds": 16.56
+  },
+  {
+    "id": "07_platforms",
+    "title": "Platforms, not products",
+    "start_seconds": 75.65,
+    "duration_seconds": 11.69
+  },
+  {
+    "id": "08_blocks",
+    "title": "Building blocks",
+    "start_seconds": 87.34,
+    "duration_seconds": 11.06
+  },
+  {
+    "id": "09_kept_going",
+    "title": "I just kept going",
+    "start_seconds": 98.4,
+    "duration_seconds": 11.38
+  },
+  {
+    "id": "10_turn",
+    "title": "The turn",
+    "start_seconds": 109.78,
+    "duration_seconds": 8.02
+  },
+  {
+    "id": "11_thesis",
+    "title": "The thesis",
+    "start_seconds": 117.79,
+    "duration_seconds": 12.29
+  },
+  {
+    "id": "11_ladder",
+    "title": "The abstraction ladder",
+    "start_seconds": 130.08,
+    "duration_seconds": 18.07
+  },
+  {
+    "id": "12_how_to",
+    "title": "How to work now",
+    "start_seconds": 148.15,
+    "duration_seconds": 11.69
+  },
+  {
+    "id": "13_bookend",
+    "title": "The story is still being written",
+    "start_seconds": 159.84,
+    "duration_seconds": 15.94
+  },
+  {
+    "id": "14_close",
+    "title": "Coming in 2027",
+    "start_seconds": 175.78,
+    "duration_seconds": 4.08
+  }
+]

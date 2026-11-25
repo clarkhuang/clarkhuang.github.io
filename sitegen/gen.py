@@ -684,7 +684,7 @@ def build():
 
 INTRO = [
  "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
- "This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.",
+ "This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming.",
  "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
  "And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.",
  "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.",
@@ -694,12 +694,12 @@ INTRO = [
  "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.",
  "Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up.",
  "So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.",
- "The book begins with a green-screen dream, and it ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
+ "The book begins with a green-screen dream, and it ends by dreaming about AI. It's free. It's open. More chapters are coming. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.",
 ]
 BACK = [
  "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
  "Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
- "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
+ "This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. The Valley tells a story about A players. The 75th-percentile C player who stacks fundamentals across many areas beats the A player who is best at just one thing. More chapters are coming.",
  "The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.",
  "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.",
 ]
@@ -765,7 +765,7 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 ### Mid-book preview re-record (24 November 2026)
 
-- **Edition:** The previous mid-book recording is archived in `book-source/preview/archive/book-v0.2/` (2:24). That recording still said the earlier line, “In my view, AI now writes essentially all of the code.”
+- **Edition:** The previous mid-book preview (2:59) is archived in `book-source/preview/archive/book-v0.3/`. Earlier editions are in `archive/book-v0.1/` and `archive/book-v0.2/`.
 - **Now:** The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”
 - **Also:** The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in `book-source/preview/REVISION-2026-11-24.md`.
 
@@ -806,7 +806,7 @@ def build_editorial_policy():
       </ul>
       <h3>Mid-book preview re-record (24 November 2026)</h3>
       <ul>
-        <li><strong>Edition:</strong> The previous mid-book recording is archived in <code>book-source/preview/archive/book-v0.2/</code> (2:24). That recording still said the earlier line, “In my view, AI now writes essentially all of the code.”</li>
+        <li><strong>Edition:</strong> The previous mid-book preview (2:59) is archived in <code>book-source/preview/archive/book-v0.3/</code>. Earlier editions are in <code>archive/book-v0.1/</code> and <code>archive/book-v0.2/</code>.</li>
         <li><strong>Now:</strong> The audiobook, videobook, and captions match the own-workflow wording: “In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.”</li>
         <li><strong>Also:</strong> The letter A in “A players” and “A Things” is now spoken as the letter, not the article. Captions and transcripts still write “A players.” The line-by-line script revision is in <code>book-source/preview/REVISION-2026-11-24.md</code>.</li>
       </ul>
@@ -839,7 +839,7 @@ def build_book():
     has_poster = os.path.exists(poster_path)
     book_dates = media_dates.dates_for("videos/book-preview.mp4", site=SITE) if has_video else None
     book_vld = (video_ld("Videobook preview: Silicon Valley C Players",
-                         "A mid-book videobook preview of Silicon Valley C Players, narrated in Clark's AI voice.",
+                         "A start-to-finish videobook preview of Silicon Valley C Players, narrated in Clark's AI voice.",
                          "/videos/book-preview.mp4",
                          "/videos/posters/book-preview.jpg" if has_poster else None,
                          vdur, book_dates,
@@ -931,7 +931,7 @@ def build_book():
 
           <section class="audiobox preview-lead" id="preview" aria-labelledby="preview-h">
             <h2 id="preview-h">Preview</h2>
-            <p class="muted" style="font-size:14px;margin:0 0 12px">A mid-book preview, in Clark's voice, about {mmss(dur)}. From Part Three and the turn that follows.</p>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">A start-to-finish preview, in Clark's voice, about {mmss(dur)}. From dreaming in green to dreaming about A.I. More chapters are coming.</p>
 {video_block}            <p class="muted ai-media-links">Read along: <a href="/book-source/preview/transcript.md">full transcript</a> · <a href="/videos/book-preview.vtt">captions (VTT)</a> · <a href="/videos/book-preview-chapters.json">chapters</a> · <a href="/book-source/preview/script.md">scene script</a> · <a href="/book-source/preview/REBUILD.md">how to rebuild this preview</a> · <a href="/book-source/cover/PROMPT.md">cover brief</a></p>
           </section>
 

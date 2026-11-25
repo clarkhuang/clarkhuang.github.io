@@ -1,0 +1,76 @@
+{
+  "id": "book-preview-arc",
+  "title": "Silicon Valley C Players — preview",
+  "voice": "4lbl0krw73vf",
+  "language": "en",
+  "speed": 1.05,
+  "scenes": [
+    {
+      "id": "01_disclaimer",
+      "text": "Fair warning. [pause] This is an embellished fictional dramatization that <emphasis>may or may not</emphasis> be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously."
+    },
+    {
+      "id": "02_title",
+      "text": "Silicon Valley C Players."
+    },
+    {
+      "id": "03_middle",
+      "text": "This preview drops you into the <emphasis>middle</emphasis> of the book. Part Three. [pause] It's called C Things That Looked Like A Things.",
+      "tts": "This preview drops you into the <emphasis>middle</emphasis> of the book. Part Three. [pause] It's called C Things That Looked Like A. Things."
+    },
+    {
+      "id": "04_myth",
+      "text": "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work.",
+      "tts": "Silicon Valley is very good at telling a story about A-players. The people who look like they were always going to win, and the companies that look like they were always going to work."
+    },
+    {
+      "id": "05_straight",
+      "text": "The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing."
+    },
+    {
+      "id": "05_outside",
+      "text": "And from the outside, a C thing can look like an A thing. [pause] The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.",
+      "tts": "And from the outside, a C thing can look like an A. thing. [pause] The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on."
+    },
+    {
+      "id": "06_c_player",
+      "text": "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter."
+    },
+    {
+      "id": "07_platforms",
+      "text": "The Valley falls in love with products. Specific wins, in specific years. I got more out of building a <emphasis>platform</emphasis>: a foundation you can stand on, then build the next thing on, and the thing after that."
+    },
+    {
+      "id": "08_blocks",
+      "text": "You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. [pause] That layer is what you actually stand on later."
+    },
+    {
+      "id": "09_kept_going",
+      "text": "<slow>It's all relative, how good you look from the outside.</slow> [pause] But one thing stayed for certain. <emphasis>I just kept going.</emphasis> And I kept doing my best."
+    },
+    {
+      "id": "10_turn",
+      "text": "Then the work itself changed. [pause] I'm usually the most excited person in the room about A.I. Which is funny, because I should be the <emphasis>saddest</emphasis>."
+    },
+    {
+      "id": "11_thesis",
+      "text": "Because A.I. came after the code writers first. [pause] In my own work, A.I. now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure."
+    },
+    {
+      "id": "11_ladder",
+      "text": "Software engineering was never about writing code. Writing code was just the tedious part you had to do to build your ideas. [pause] It's about solving big problems with abstraction. Each part is just data in, some logic, and data out. Abstraction is key. You climb down the ladder, and you climb back up."
+    },
+    {
+      "id": "12_how_to",
+      "text": "So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use A.I."
+    },
+    {
+      "id": "13_bookend",
+      "text": "The book begins with a green-screen dream, and it ends by dreaming about A.I. This part, in the middle, is the turn. [pause] It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. [pause] The story is still being written."
+    },
+    {
+      "id": "14_close",
+      "text": "Silicon Valley C Players. Coming in 2027."
+    }
+  ]
+}
