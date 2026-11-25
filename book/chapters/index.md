@@ -6,7 +6,16 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/book/chapters/index.md (plus https://clarkhuang.github.io/book/chapters/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Also read https://clarkhuang.github.io/llms-full.txt, https://clarkhuang.github.io/book.json, and the preview transcript at https://clarkhuang.github.io/book-source/preview/transcript.md. Cite chapter titles or timestamps. Charlie Hack is the fictional narrator; Clark Huang is the author. Do not identify real people or companies behind the fictional names.
 
-Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text, a videobook of the whole chapter, and an audio track. Drafts can change before version one.
+Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text. Some also have a videobook of the whole chapter, and an audio track. Drafts can change before version one.
+
+## Chapter 17b: Building Blocks
+
+> “I build platforms and models, not products or specific numbers. Weak foundations in life, tech, marketing, or finance mean nothing lasting gets built.” — Clark Huang
+
+A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+
+- Page: https://clarkhuang.github.io/book/chapters/17b-building-blocks/ · Markdown: https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md
+- Video: not yet
 
 ## Chapter 36: Sick, Well, Fit
 

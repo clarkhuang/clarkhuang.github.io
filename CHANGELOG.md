@@ -16,6 +16,8 @@ All notable changes to the site and to *Silicon Valley C Players* are listed her
 
 Work in progress on the `next-revision` branch, until Clark approves cutting the next edition.
 
+- Book chapter 17b, **Building Blocks**, drafted as a text-only v0: a nonfiction interlude in Clark's own voice, in “Themes along the way,” after Chapter 17 and before reserved Chapter 18. Numbered 17b so existing chapter numbers and the Chapter 36 URL stay put. No videobook yet. A few open questions remain (what was on the vision board; a soft confirm of the Age-Group Quarterfinals year). Builds on [issue #67](https://github.com/clarkhuang/clarkhuang.github.io/issues/67) without closing it. Staging only until Clark approves production.
+
 - Every video now shows a publish date (from git history: when it first landed on `main`). Re-rendered videos also show an Updated date when the current file landed on a later day. A New tag marks videos published or updated since the visitor's previous visit, using first-party `last_visit` and `visit_ref` cookies (a first visit shows no New tags; the cutoff stays for the whole browsing session). The same dates are in JSON-LD, `lessons.json`, `book.json`, and the Markdown twins. Staging only until Clark approves production.
 
 - Contributors page at `/contributors/` (machine-readable `contributors.json`, `CONTRIBUTORS.md`, and `index.md` / `AGENTS.md` twins). `/credits/` now redirects there. [@himanshu112-wq](https://github.com/himanshu112-wq) is credited for the [issue #80](https://github.com/clarkhuang/clarkhuang.github.io/issues/80) feedback that led to the reworded “AI writes essentially all the code” claim and the book's editorial policy. Any outside contribution that lands is credited on this page in the same pull request.

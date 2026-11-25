@@ -32,6 +32,10 @@ Clark Huang's belief, above, is the frame for this chapter; it is his view, not 
 - Read it: https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md
 - Includes “Business Fitness in 100 Words”, adapted from Greg Glassman's “World-Class Fitness in 100 Words”, and a prompt to score your company against it.
 
+Other chapters you can read now:
+
+- [Chapter 17b: Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md) (Themes along the way): A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+
 All of them: https://clarkhuang.github.io/book/chapters/index.md
 
 ## Introduction (preview)

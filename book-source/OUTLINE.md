@@ -59,6 +59,7 @@ School days, then the jobs in career order, then the turn when AI came for the c
 | 15 | CTO, Again and Again | LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story. | outlined · needs a story |
 | 16 | The Smarter Guy in the Room | There's always someone smarter, richer, wiser. Stay humble, stay curious. A specific moment needs a story. | outlined · needs a story |
 | 17 | Falling and Getting Up | A failure, and getting back up. "I just kept going.". Needs a story. | planned · needs a story |
+| 17b | Building Blocks | A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, Challenge Family triathlons, and a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. A few details (what was on the vision board, and a soft confirm of the Quarterfinals year) are still open. | drafted · read now |
 | 18 | Untitled | A reserved chapter, included only if Clark chooses to put it in the book. Needs a story. | planned · needs a story |
 
 ### The turn: AI came for the coders first

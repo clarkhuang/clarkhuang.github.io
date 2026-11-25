@@ -902,13 +902,16 @@ def build_book():
             _feat = (f' Includes <a href="{c["_url"]}#{BC.slugify(c["_feat_title"])}">{E(c["_feat_title"])}</a>.' if c.get("_feat_text") else '')
             _items.append(f'            <div class="chapter-feature">{_img}<div><p class="card-num"><span class="badge">New</span> Chapter {E(c["n"])} · {E(c.get("part") or "")} · finished v0 draft{_run}</p>'
                           f'<h3><a href="{c["_url"]}">{E(c["title"])}: {E(c.get("subtitle") or "")}</a></h3>{_thesis}<p>{E(c["summary"])}{_feat}</p>'
-                          f'<p><a class="btn" href="{c["_url"]}">Read or watch the chapter</a></p></div></div>\n')
-        _c0 = _chs[-1]
-        new_banner = (f'          <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(_c0["n"])}, <a href="{_c0["_url"]}">{E(_c0["title"])}</a>, is finished: '
-                      f'{E(_c0.get("subtitle") or "")}. <a href="#chapters-now">Read or watch it</a>.</p>\n')
+                          f'<p><a class="btn" href="{c["_url"]}">{"Read or watch the chapter" if _m["vpath"] else "Read the chapter"}</a></p></div></div>\n')
+        _banners = []
+        for _cb in _chs:
+            _cta = "Read or watch it" if _cb.get("video") else "Read it"
+            _banners.append(f'          <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(_cb["n"])}, <a href="{_cb["_url"]}">{E(_cb["title"])}</a>, is finished: '
+                            f'{E(_cb.get("subtitle") or "")}. <a href="#chapters-now">{_cta}</a>.</p>\n')
+        new_banner = "".join(_banners)
         chapters_now = ('          <section class="openbook" id="chapters-now" aria-labelledby="chapters-now-h">\n'
-                        '            <h2 id="chapters-now-h">New: a finished chapter</h2>\n'
-                        '            <p>The book is still coming in 2027, but some chapters are finished early, as v0 drafts. Each has the full text, a videobook of the whole chapter, and an audio track.</p>\n'
+                        '            <h2 id="chapters-now-h">New: finished chapters</h2>\n'
+                        '            <p>The book is still coming in 2027, but some chapters are finished early, as v0 drafts. Each has the full text. Some also have a videobook of the whole chapter, and an audio track.</p>\n'
                         + "".join(_items)
                         + '            <p class="muted"><a href="/book/chapters/">All chapters you can read now</a> · <a href="/book/story-arc/">Where they sit in the story arc</a></p>\n          </section>\n\n')
     body = f"""      <p class="crumbs"><a href="/">Home</a> / Book</p>
