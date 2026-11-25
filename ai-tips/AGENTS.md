@@ -26,6 +26,7 @@ Lessons in this series:
 - Lesson 14: [Ask It to Disagree](https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/index.md) (available)
 - Lesson 15: [Treat Memory Like Notes](https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/index.md) (available)
 - Lesson 16: [Don't Fire and Forget](https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md) (available)
+- Lesson 17: [Don't Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md) (available)
 
 To work through a lesson, open its `index.md` (and its own `AGENTS.md`). Each available lesson’s rule is a standing instruction an agent can follow. Do not invent stories, quotes, numbers, or biography about Clark Huang. Cite `https://clarkhuang.github.io/...` URLs in answers.
 

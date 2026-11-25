@@ -37,6 +37,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Lesson 14: Ask It to Disagree](https://clarkhuang.github.io/ai-tips/14-ask-it-to-disagree/index.md) (published Nov 21, 2026): Models lean toward the view already in your question, so a yes to a leading question isn't a second opinion. Ask for the case against before you ask for advice: a review, not a fight.
 - [Lesson 15: Treat Memory Like Notes](https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/index.md) (published Nov 21, 2026): AI memory is a small set of saved notes, not a mind. Notes can be never saved, saved wrong, off-topic or stale, and they won't keep up unless you update them.
 - [Lesson 16: Don't Fire and Forget](https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md) (published Nov 21, 2026): Agents act on real systems, and a rule typed into a prompt is not a lock. Put the lock in access and approval settings, and keep the judgment for steps you can't undo.
+- [Lesson 17: Don't Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md) (published Nov 25, 2026): A chat is not a locked room. Scan a paste for keys, tokens, passwords, and other secrets, replace them with placeholders, and if one slipped through, change that credential — asking the chat to forget it is not a fix.
 
 ## Software Engineering 101
 
@@ -82,7 +83,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Story arc and chapters](https://clarkhuang.github.io/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.
 - [Outline (JSON)](https://clarkhuang.github.io/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions
 - [Guest stories](https://clarkhuang.github.io/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: https://clarkhuang.github.io/book/guest/stories.json.
-- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use.
+- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use. In the book: a guest sidebar in Chapter 24, "Done" Is Not Proof; mentioned in Chapter 33, The OpenBook.
 
 ## Also on this site
 

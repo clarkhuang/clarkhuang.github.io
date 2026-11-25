@@ -24,6 +24,11 @@ Then I shared the project on LinkedIn and asked for testers. I was proud that I 
 
 AI helped me get to the point where I could put a working app in someone’s hands and fix things when they gave me feedback. What I wanted to learn next was whether they’d come back the following month. For Home Staff Ledger, that would tell me more about what to build next than another evening of adding features.
 
+## In the book
+
+- Guest sidebar in [Chapter 24, "Done" Is Not Proof](https://clarkhuang.github.io/book/story-arc/#ch24-done-is-not-proof): Himanshu Kumar got a working app into testers' hands; his open question was whether they would come back next month, at payday. Shipped is a step; coming back is the outcome. Clark's own story for this chapter is still needed.
+- Mentioned in [Chapter 33, The OpenBook](https://clarkhuang.github.io/book/story-arc/#ch33-the-openbook): The first outside guest story to land: Himanshu Kumar's, published under his own name.
+
 This is a first-person guest story, published under the author’s name with written consent. Source: [book-source/guest/himanshu112-wq-home-staff-ledger.md](https://clarkhuang.github.io/book-source/guest/himanshu112-wq-home-staff-ledger.md). The author is also listed on [Contributors](https://clarkhuang.github.io/contributors/index.md).
 
 ## For agents

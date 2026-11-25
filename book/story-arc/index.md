@@ -91,7 +91,7 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 | Ch | Title | What goes in it | Site lessons | Status |
 |---|---|---|---|---|
 | 23 | Show It, Don't Describe It | Paste first; don't just describe the problem. Needs a story. | AI Tips 1, 3, 10 | outlined · needs a story |
-| 24 | "Done" Is Not Proof | A bot that says "done" is reporting a step, not your outcome. Needs a story. | AI Tips 2, 13, 14 | outlined · needs a story |
+| 24 | "Done" Is Not Proof | A bot that says "done" is reporting a step, not your outcome. Needs a story. Guest sidebar: [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md), by Himanshu Kumar (@himanshu112-wq). Himanshu Kumar got a working app into testers' hands; his open question was whether they would come back next month, at payday. Shipped is a step; coming back is the outcome. Clark's own story for this chapter is still needed. | AI Tips 2, 13, 14 | outlined · needs a story |
 | 25 | What It Can Reach | Know what an agent can actually reach, and put real locks in settings. Needs a story. | AI Tips 4, 5, 16 | outlined · needs a story |
 | 26 | Teach It Once | Memory is notes, not a mind. Skills, projects, handoffs. Needs a story. | AI Tips 6, 8, 12, 15 | outlined · needs a story |
 | 27 | The Second Message, and Other Everyday Moves | Most people read the first answer and stop. Needs a story. | AI Tips 7, 9, 11 | outlined · needs a story |
@@ -105,7 +105,7 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 
 | Ch | Title | What goes in it | Status |
 |---|---|---|---|
-| 33 | The OpenBook | A free book that works like open-source software: anyone can contribute a story or a correction from day one; credits are by GitHub handle; only Clark publishes. When version one is ready, a wider invitation goes out to people who recognize a story. | outlined |
+| 33 | The OpenBook | A free book that works like open-source software: anyone can contribute a story or a correction from day one; credits are by GitHub handle; only Clark publishes. When version one is ready, a wider invitation goes out to people who recognize a story. Guest story: [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md), by Himanshu Kumar (@himanshu112-wq). The first outside guest story to land: Himanshu Kumar's, published under his own name. | outlined |
 | 34 | Built for Agents | Every page has a Markdown twin and an AGENTS.md. The site index is llms.txt. Readers can search in the browser, send a cited prompt to their own AI, or connect through a public, read-only MCP endpoint, so an agent can use the site the way a person can. | outlined |
 | 35 | A Site That Improves Itself | A weekly routine looks at the site as a person, as an agent, and as the content owner, then files issues and opens staging pull requests. The first run has not happened yet. Needs a story. | planned · needs a story |
 

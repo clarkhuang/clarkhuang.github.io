@@ -1,0 +1,12 @@
+9 scenes, 93.06s, 2791 frames
+  01_hook                  0.50s  + 5.06s
+  02_paste                 5.56s  +16.32s
+  03_mechanism            21.88s  +10.53s
+  04_instances            32.41s  +13.27s
+  05_tell                 45.68s  + 6.26s
+  06_habit                51.94s  +20.90s
+  07_rule                 72.84s  + 9.02s
+  08_your_turn            81.86s  + 7.17s
+  09_close                89.03s  + 4.03s
+
+-> /workspace/legacy/build/aitips/ai-tip-17-public.mp4

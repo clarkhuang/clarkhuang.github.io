@@ -14,7 +14,7 @@ Clark Huang is a software engineer and technology executive with more than 30 ye
 
 Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results.
 
-16 of 16 lessons available.
+17 of 17 lessons available.
 
 ### [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/index.md)
 
