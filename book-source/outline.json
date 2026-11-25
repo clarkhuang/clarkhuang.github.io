@@ -231,6 +231,16 @@
               "needs_story": true
             },
             {
+              "id": "ch17b-building-blocks",
+              "n": "17b",
+              "title": "Building Blocks",
+              "hook": "A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, Challenge Family triathlons, and a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations.",
+              "status": "drafted",
+              "needs_story": false,
+              "url": "/book/chapters/17b-building-blocks/",
+              "finished_as": "the full text (video and audio will come later)"
+            },
+            {
               "id": "ch18",
               "n": "18",
               "title": "Untitled",

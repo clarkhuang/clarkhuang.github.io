@@ -616,12 +616,13 @@ def build():
               + '<a class="card-body-link" href="/book/"><div class="card-meta"><span class="card-num">OpenBook · Preview</span><span class="badge soon">Coming 2027</span>'
               + book_date_bit + '</div>'
               + '<h3>Silicon Valley C Players</h3><p>A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI.</p>'
-              + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a></div>')
+              + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a>'
+              + '<p class="card-extra">Chapter 36, <a href="/book/chapters/36-sick-well-fit/">Sick, Well, Fit</a>, is pre-released in full.</p></div>')
     body = f"""      <section class="hero" aria-labelledby="about-heading">
         <div class="hero-copy">
           <h1 id="about-heading">Clark Huang</h1>
           {BIO}
-          <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a></p>
+          <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a><a class="btn ghost" href="/book/chapters/36-sick-well-fit/">Chapter 36 (pre-release)</a></p>
         </div>
         {HERO_ART}
       </section>
@@ -902,13 +903,16 @@ def build_book():
             _feat = (f' Includes <a href="{c["_url"]}#{BC.slugify(c["_feat_title"])}">{E(c["_feat_title"])}</a>.' if c.get("_feat_text") else '')
             _items.append(f'            <div class="chapter-feature">{_img}<div><p class="card-num"><span class="badge">New</span> Chapter {E(c["n"])} · {E(c.get("part") or "")} · finished v0 draft{_run}</p>'
                           f'<h3><a href="{c["_url"]}">{E(c["title"])}: {E(c.get("subtitle") or "")}</a></h3>{_thesis}<p>{E(c["summary"])}{_feat}</p>'
-                          f'<p><a class="btn" href="{c["_url"]}">Read or watch the chapter</a></p></div></div>\n')
-        _c0 = _chs[-1]
-        new_banner = (f'          <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(_c0["n"])}, <a href="{_c0["_url"]}">{E(_c0["title"])}</a>, is finished: '
-                      f'{E(_c0.get("subtitle") or "")}. <a href="#chapters-now">Read or watch it</a>.</p>\n')
+                          f'<p><a class="btn" href="{c["_url"]}">{"Read or watch the chapter" if _m["vpath"] else "Read the chapter"}</a></p></div></div>\n')
+        _banners = []
+        for _cb in _chs:
+            _cta = "Read or watch it" if _cb.get("video") else "Read it"
+            _banners.append(f'          <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(_cb["n"])}, <a href="{_cb["_url"]}">{E(_cb["title"])}</a>, is finished: '
+                            f'{E(_cb.get("subtitle") or "")}. <a href="#chapters-now">{_cta}</a>.</p>\n')
+        new_banner = "".join(_banners)
         chapters_now = ('          <section class="openbook" id="chapters-now" aria-labelledby="chapters-now-h">\n'
-                        '            <h2 id="chapters-now-h">New: a finished chapter</h2>\n'
-                        '            <p>The book is still coming in 2027, but some chapters are finished early, as v0 drafts. Each has the full text, a videobook of the whole chapter, and an audio track.</p>\n'
+                        '            <h2 id="chapters-now-h">New: finished chapters</h2>\n'
+                        '            <p>The book is still coming in 2027, but some chapters are finished early, as v0 drafts. Each has the full text. Some also have a videobook of the whole chapter, and an audio track.</p>\n'
                         + "".join(_items)
                         + '            <p class="muted"><a href="/book/chapters/">All chapters you can read now</a> · <a href="/book/story-arc/">Where they sit in the story arc</a></p>\n          </section>\n\n')
     body = f"""      <p class="crumbs"><a href="/">Home</a> / Book</p>

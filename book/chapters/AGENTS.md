@@ -8,7 +8,7 @@ This folder is the public page “Chapters you can read now” on Clark Huang’
 - Parent agents: https://clarkhuang.github.io/book/AGENTS.md
 - Site index: https://clarkhuang.github.io/llms.txt
 
-Finished early chapters of Silicon Valley C Players, each with full text, a videobook and audio.
+Finished early chapters of Silicon Valley C Players, each with the full text. Some also have a videobook and audio.
 Read `index.md` for the page content. Do not invent stories, quotes, numbers, or biography about Clark Huang. Cite page URLs when you answer questions.
 
 The HTML version of this page has a “Use this page with your AI” box at the top. Copy the prompt below into ChatGPT, Claude, Grok, or any other chat tool:
