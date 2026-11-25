@@ -55,7 +55,7 @@
   "video": {
     "title": "Videobook preview",
     "url": "https://clarkhuang.github.io/videos/book-preview.mp4",
-    "duration_seconds": 184.0,
+    "duration_seconds": 182.4,
     "published": "2026-11-22",
     "published_at": "2026-11-22T09:42:33-05:00",
     "updated": "2026-11-24",
@@ -219,7 +219,7 @@
         "title": "Book preview",
         "status": "available",
         "url": "https://clarkhuang.github.io/audio/book-preview.mp3",
-        "duration_seconds": 184.0
+        "duration_seconds": 182.4
       },
       {
         "id": "full",

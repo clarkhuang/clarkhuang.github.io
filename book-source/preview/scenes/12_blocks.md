@@ -1,7 +1,7 @@
 # Building blocks
 
 - id: `12_blocks`
-- start: 79.68s (1:19)
+- start: 75.60s (1:15)
 - duration: 8.64s
 
 ## Performance text

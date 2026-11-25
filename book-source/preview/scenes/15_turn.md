@@ -1,7 +1,7 @@
 # The turn
 
 - id: `15_turn`
-- start: 111.07s (1:51)
+- start: 106.99s (1:46)
 - duration: 8.64s
 
 ## Performance text

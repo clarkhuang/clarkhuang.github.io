@@ -1,7 +1,7 @@
 # I strive for fit
 
 - id: `17_fit`
-- start: 132.31s (2:12)
+- start: 128.23s (2:08)
 - duration: 7.10s
 
 ## Performance text

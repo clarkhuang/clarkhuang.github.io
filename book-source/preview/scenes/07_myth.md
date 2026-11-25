@@ -1,7 +1,7 @@
 # The A-player myth
 
 - id: `07_myth`
-- start: 41.66s (0:41)
+- start: 33.94s (0:33)
 - duration: 9.55s
 
 ## Performance text
