@@ -81,6 +81,11 @@ People whose contributions have landed, including the feedback that led to this 
 
 The working story arc and chapter list: [https://clarkhuang.github.io/book/story-arc/](https://clarkhuang.github.io/book/story-arc/index.md). Machine-readable: [https://clarkhuang.github.io/book-source/outline.json](https://clarkhuang.github.io/book-source/outline.json). The outline will change.
 
+## Guest stories
+
+First-person guest stories, published under the contributor’s own name, not as fictional characters: [https://clarkhuang.github.io/book/guest/](https://clarkhuang.github.io/book/guest/index.md). Machine-readable: [https://clarkhuang.github.io/book/guest/stories.json](https://clarkhuang.github.io/book/guest/stories.json).
+
+
 ## How to cite this preview
 
 Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.

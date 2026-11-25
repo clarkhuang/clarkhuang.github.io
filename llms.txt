@@ -78,6 +78,8 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Cover brief](https://clarkhuang.github.io/book-source/cover/PROMPT.md): how to describe or rebuild the cover
 - [How this book is edited](https://clarkhuang.github.io/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, a per-edition changelog of changed claims and sources, and a privacy note for Google Analytics 4 on the site
 - [Story arc and chapters](https://clarkhuang.github.io/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.
+- [Guest stories](https://clarkhuang.github.io/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: https://clarkhuang.github.io/book/guest/stories.json.
+- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use.
 - [Outline (JSON)](https://clarkhuang.github.io/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions
 
 ## Also on this site

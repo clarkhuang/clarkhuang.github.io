@@ -266,6 +266,39 @@ def book_entries() -> list[dict]:
             }
         )
 
+    guest_root = ROOT / "book" / "guest"
+    if (guest_root / "index.md").is_file():
+        raw = load(guest_root / "index.md")
+        out.append(
+            {
+                "id": "book/guest",
+                "type": "page",
+                "title": "Guest stories",
+                "series": "OpenBook",
+                "url": f"{SITE}/book/guest/",
+                "markdown_url": f"{SITE}/book/guest/index.md",
+                "summary": "First-person guest stories published under the contributor's own name, not as fictional characters.",
+                "text": strip_md(raw),
+            }
+        )
+        for path in sorted(guest_root.glob("*/index.md")):
+            raw = load(path)
+            title_m = re.search(r"^#\s+(.+)$", raw, re.M)
+            title = title_m.group(1).strip() if title_m else path.parent.name
+            slug = path.parent.name
+            out.append(
+                {
+                    "id": f"book/guest/{slug}",
+                    "type": "page",
+                    "title": title,
+                    "series": "OpenBook",
+                    "url": f"{SITE}/book/guest/{slug}/",
+                    "markdown_url": f"{SITE}/book/guest/{slug}/index.md",
+                    "summary": "A first-person guest story published under the author's own name.",
+                    "text": strip_md(raw),
+                }
+            )
+
     # Public outline, if present (never *.private.md).
     for candidate in (
         ROOT / "book-source" / "OUTLINE.md",
@@ -393,6 +426,7 @@ def collect_markdown_for_llms() -> list[tuple[str, str, str]]:
         Path("book/AGENTS.md"),
         Path("book/story-arc/index.md"),
         Path("book/editorial-policy/index.md"),
+        Path("book/guest/index.md"),
         Path("book/preview-transcript.md"),
         Path("book-source/OUTLINE.md"),
         Path("book-source/outline.json"),
@@ -412,6 +446,7 @@ def collect_markdown_for_llms() -> list[tuple[str, str, str]]:
             "ai-tips/",
             "software-engineering-101/",
             "software-engineering-201/",
+            "book/guest/",
         )):
             ordered.append(rel)
 

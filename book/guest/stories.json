@@ -1,0 +1,19 @@
+{
+  "page_url": "https://clarkhuang.github.io/book/guest/",
+  "markdown_url": "https://clarkhuang.github.io/book/guest/index.md",
+  "source_dir": "https://clarkhuang.github.io/book-source/guest/",
+  "note": "First-person guest stories published under the contributor’s own name, with written consent in the source Markdown file. These are not fictionalized book chapters.",
+  "stories": [
+    {
+      "slug": "himanshu112-wq-home-staff-ledger",
+      "title": "I built the app. Would people use it every month?",
+      "by": "Himanshu Kumar",
+      "github": "himanshu112-wq",
+      "date": "2026-11-25",
+      "url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/",
+      "markdown_url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md",
+      "source_url": "https://clarkhuang.github.io/book-source/guest/himanshu112-wq-home-staff-ledger.md",
+      "lede": "AI has made it possible to take an idea and build software other people can actually use."
+    }
+  ]
+}

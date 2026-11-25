@@ -459,6 +459,10 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         "",
         f"The working story arc and chapter list: [{BASE}/book/story-arc/]({BASE}/book/story-arc/index.md). Machine-readable: [{BASE}/book-source/outline.json]({BASE}/book-source/outline.json). The outline will change.",
         "",
+        "## Guest stories",
+        "",
+        f"First-person guest stories, published under the contributor’s own name, not as fictional characters: [{BASE}/book/guest/]({BASE}/book/guest/index.md). Machine-readable: [{BASE}/book/guest/stories.json]({BASE}/book/guest/stories.json).",
+        "",
         "## How to cite this preview",
         "",
         "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.",
@@ -474,6 +478,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- How to rebuild the preview: {BASE}/book-source/preview/REBUILD.md",
         f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Guest stories: {BASE}/book/guest/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
         "Do not invent stories or claims about Clark Huang beyond what this preview states. Contributions go through GitHub issues; only Clark merges to `main`. Agent pull requests target `next-revision`.",
@@ -498,9 +503,10 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Rebuild the site: {BASE}/REBUILD.md",
         f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Guest stories: {BASE}/book/guest/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
-        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
+        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/. Guest stories: /book/guest/.",
         "",
         md_prompt_blurb(path),
         "",
@@ -651,7 +657,7 @@ Full snippets: https://clarkhuang.github.io/contribute/#mcp and https://clarkhua
 A later option is a small “talk to Charlie Hack” box that calls a serverless proxy, so the static GitHub Pages site never holds an API key. That needs Clark to choose a host and to add his own key as a secret on that host — not in this repository. Do not build or wire that proxy unless Clark approves it. Until then, use local search and the “Ask your AI” buttons.
 """)
 
-def write_llms_txt(site, series, extras=None):
+def write_llms_txt(site, series, extras=None, book_extra_lines=None):
     lines = [
         "# Clark Huang",
         "",
@@ -698,8 +704,12 @@ def write_llms_txt(site, series, extras=None):
         f"- [How this book is edited]({BASE}/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, a per-edition changelog of changed claims and sources, and a privacy note for Google Analytics 4 on the site",
         f"- [Story arc and chapters]({BASE}/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.",
         f"- [Outline (JSON)]({BASE}/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions",
-        "",
     ]
+    if book_extra_lines:
+        lines += list(book_extra_lines)
+    else:
+        lines.append(f"- [Guest stories]({BASE}/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: {BASE}/book/guest/stories.json.")
+    lines += ["",]
     # Behind-the-scenes pages (playbook, research, interview plan, compare) are not public.
     extras = list(extras or [])
     if extras:
