@@ -71,7 +71,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Book
 
-- [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI.
+- [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI. Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.
 - [Preview transcript](https://clarkhuang.github.io/book-source/preview/transcript.md): full spoken text, with timestamps
 - [Preview captions](https://clarkhuang.github.io/videos/book-preview.vtt): WebVTT for the videobook
 - [Preview chapters](https://clarkhuang.github.io/videos/book-preview-chapters.json): chapter titles and start times

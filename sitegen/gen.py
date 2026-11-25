@@ -688,6 +688,7 @@ INTRO = [
  "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
  "And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.",
  "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.",
+ "Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
  "The Valley falls in love with products. Specific wins, in specific years. I got more out of building a platform: a foundation you can stand on, then build the next thing on, and the thing after that. You don't invent a career in one move. You stack building blocks: habits, fundamentals, the unglamorous layer nobody puts on a slide. That layer is what you actually stand on later.",
  "It's all relative, how good you look from the outside. But one thing stayed for certain. I just kept going. And I kept doing my best.",
  "Then the work itself changed. I'm usually the most excited person in the room about AI. Which is funny, because I should be the saddest. Because AI came after the code writers first. In my own work, AI now writes essentially all of the code I ship. That's how I work. Not a measured team result. Not a general industry figure.",
@@ -697,6 +698,7 @@ INTRO = [
 ]
 BACK = [
  "An embellished fictional dramatization about C players, the gap between applause and the work, and platforms you can actually stand on. A free OpenBook, like open-source software.",
+ "Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
  "This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.",
  "The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.",
  "Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own words. Coming in 2027.",
