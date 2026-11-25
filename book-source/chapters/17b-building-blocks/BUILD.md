@@ -11,7 +11,7 @@ Text-only v0 draft for staging. There is no videobook or audio track yet.
 
 ## Open questions
 
-See `OPEN-QUESTIONS.md` in this folder. Two remain: what was on the vision board, and a soft confirm of the Age-Group Quarterfinals year (written as 2023, per Clark; earlier notes pointed at 2024).
+See `OPEN-QUESTIONS.md` in this folder. The Quarterfinals year (2024) and the vision-board items Clark has given are now in the chapter. The business-specific items on the board are mentioned only as such.
 
 ## How to add video later
 

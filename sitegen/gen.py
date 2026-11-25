@@ -616,12 +616,13 @@ def build():
               + '<a class="card-body-link" href="/book/"><div class="card-meta"><span class="card-num">OpenBook · Preview</span><span class="badge soon">Coming 2027</span>'
               + book_date_bit + '</div>'
               + '<h3>Silicon Valley C Players</h3><p>A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI.</p>'
-              + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a></div>')
+              + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a>'
+              + '<p class="card-extra">Chapter 36, <a href="/book/chapters/36-sick-well-fit/">Sick, Well, Fit</a>, is pre-released in full.</p></div>')
     body = f"""      <section class="hero" aria-labelledby="about-heading">
         <div class="hero-copy">
           <h1 id="about-heading">Clark Huang</h1>
           {BIO}
-          <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a></p>
+          <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a><a class="btn ghost" href="/book/chapters/36-sick-well-fit/">Chapter 36 (pre-release)</a></p>
         </div>
         {HERO_ART}
       </section>
