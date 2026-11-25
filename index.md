@@ -32,6 +32,8 @@ From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loo
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
 
+Chapter 36, [Sick, Well, Fit](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md), is pre-released in full.
+
 ## Ask, connect, contribute
 
 Search the lessons and the book preview, or hook your own AI to this site.

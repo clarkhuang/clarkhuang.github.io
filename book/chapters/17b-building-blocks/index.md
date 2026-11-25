@@ -18,7 +18,7 @@ Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in
 
 ## The whole chapter, in short
 
-In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. Official results then tell the rest: Challenge Daytona in December 2020, a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
+In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. Official results then tell the rest: Challenge Daytona in December 2020, a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
 
 ## Summary
 
@@ -38,7 +38,7 @@ This chapter is that story, in my own voice. It is not a fiction chapter, and it
 
 ### A goal I did not plan
 
-In a Dale Carnegie course, a vision-board exercise produced a goal I had not planned: a triathlon.
+In a Dale Carnegie course, a vision-board exercise produced a goal I had not planned: a triathlon. The board also included learning guitar — I bought a guitar and learned a few chords, but that has not gone anywhere yet — and starting to play piano again, which I had learned the fundamentals of when I was young. It talked about some career things, like retiring by the time I was 50, which I missed, but maybe not for long. And then some business-specific things.
 
 I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
 
@@ -78,7 +78,7 @@ After Boston I paused that stretch of marathon training. I kept going in other w
 
 ### Still a C player
 
-I competed in the CrossFit Open from 2021 through 2024, in men 45–49, at CrossFit 9. I started where a C player starts. In the 2021 Open I reached wall walks at the cap in 21.1, and in 21.3 and 21.4 I got to the bar muscle-ups and could not do any. I qualified for the Age-Group Quarterfinals in 2023, I think, but I did not compete officially. I did the workouts unofficially, and I scaled them. I still call myself a C player in CrossFit.
+I competed in the CrossFit Open from 2021 through 2024, in men 45–49, at CrossFit 9. I started where a C player starts. In the 2021 Open I reached wall walks at the cap in 21.1, and in 21.3 and 21.4 I got to the bar muscle-ups and could not do any. I qualified for the Age-Group Quarterfinals in 2024, but I did not compete officially. I did the workouts unofficially, and I scaled them, after Boston. I still call myself a C player in CrossFit.
 
 The point is the same one as the rest of this book: I was not the best in the room. I kept stacking foundations, and I kept going.
 

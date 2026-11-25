@@ -308,6 +308,7 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 .lesson .player{max-width:min(100%, calc((100svh - 260px) * 16 / 9));margin-inline:auto}
 .h1-status{margin:-8px 0 18px}
 .card-upnext{margin:8px 18px 0}
+.card-extra{margin:8px 18px 14px;font-size:.95rem;color:var(--dim)}
 .dl.is-later{opacity:1;border-style:dashed;color:var(--dimmer);pointer-events:none;cursor:default}
 .bio a{text-decoration-color:var(--accent)}
 @media (prefers-color-scheme:light){

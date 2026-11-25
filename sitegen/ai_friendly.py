@@ -417,6 +417,8 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         "",
         "A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.",
         "",
+        f"Chapter 36, [Sick, Well, Fit]({BASE}/book/chapters/36-sick-well-fit/index.md), is pre-released in full.",
+        "",
     ]
     if extra_md:
         bits += [extra_md.rstrip(), ""]
