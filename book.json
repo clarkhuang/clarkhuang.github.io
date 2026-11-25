@@ -79,7 +79,7 @@
       "part": "Themes along the way",
       "status": "drafted",
       "nonfiction": true,
-      "summary": "A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.",
+      "summary": "A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the hollow hold, the ring muscle-up, and double unders, a triathlon ladder from sprint to Olympic to half, and six official marathons, including a 3:03:55 Boston qualifier at 47, prepared with twenty weeks of training and nothing new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. Progressive overload, told through the legend of Milo of Croton, sits with the weightlifting. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.",
       "rule": "Build the foundation, not the number. Learn the next step when you need it. Practice the core movements until they are yours, then put them in combination. Keep going. Let the result emerge from the work you stacked, and measure the work you actually did. The same rule holds in life, in tech, in marketing, and in finance: if the foundation is weak, nothing lasting gets built. When you later apply AI to that work, put it on fundamentals you already understand.",
       "page_url": "https://clarkhuang.github.io/book/chapters/17b-building-blocks/",
       "markdown_url": "https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md",
@@ -91,7 +91,20 @@
         "text": "I build platforms and models, not products or specific numbers. Weak foundations in life, tech, marketing, or finance mean nothing lasting gets built.",
         "by": "Clark Huang",
         "kind": "opinion"
-      }
+      },
+      "video": {
+        "url": "https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4",
+        "duration_seconds": 624.1,
+        "captions_url": "https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt",
+        "poster_url": "https://clarkhuang.github.io/videos/posters/book-17b-building-blocks.jpg",
+        "chapters_url": "https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json"
+      },
+      "audio": {
+        "url": "https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3",
+        "duration_seconds": 624.1,
+        "captions_url": "https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt"
+      },
+      "transcript_url": "https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md"
     },
     {
       "id": "ch36-sick-well-fit",

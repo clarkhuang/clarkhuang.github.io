@@ -1,0 +1,110 @@
+[
+  {
+    "id": "01_title",
+    "title": "Title",
+    "start_seconds": 0.0,
+    "duration_seconds": 9.93
+  },
+  {
+    "id": "02_wake",
+    "title": "The Wake-up",
+    "start_seconds": 10.43,
+    "duration_seconds": 27.17
+  },
+  {
+    "id": "04_board",
+    "title": "A Goal I Did Not Plan",
+    "start_seconds": 37.59,
+    "duration_seconds": 50.34
+  },
+  {
+    "id": "06_gymn",
+    "title": "Gymnastics",
+    "start_seconds": 87.94,
+    "duration_seconds": 13.89
+  },
+  {
+    "id": "07_milo",
+    "title": "Progressive Overload",
+    "start_seconds": 101.83,
+    "duration_seconds": 31.74
+  },
+  {
+    "id": "09_mci",
+    "title": "The Order",
+    "start_seconds": 133.57,
+    "duration_seconds": 18.45
+  },
+  {
+    "id": "10_platforms",
+    "title": "Platforms, Not Numbers",
+    "start_seconds": 152.02,
+    "duration_seconds": 29.9
+  },
+  {
+    "id": "12_hollow",
+    "title": "Skill Over Power",
+    "start_seconds": 181.92,
+    "duration_seconds": 37.88
+  },
+  {
+    "id": "16_singles",
+    "title": "Double Unders",
+    "start_seconds": 219.8,
+    "duration_seconds": 47.19
+  },
+  {
+    "id": "21_mci2",
+    "title": "The Order",
+    "start_seconds": 266.99,
+    "duration_seconds": 12.36
+  },
+  {
+    "id": "22_mile",
+    "title": "A Mile, Then A Half",
+    "start_seconds": 279.34,
+    "duration_seconds": 39.96
+  },
+  {
+    "id": "24_swim",
+    "title": "Water and the Bike",
+    "start_seconds": 319.3,
+    "duration_seconds": 56.0
+  },
+  {
+    "id": "27_clearwater",
+    "title": "The Marathon",
+    "start_seconds": 375.3,
+    "duration_seconds": 46.05
+  },
+  {
+    "id": "29_surprise",
+    "title": "The Surprise",
+    "start_seconds": 421.35,
+    "duration_seconds": 89.83
+  },
+  {
+    "id": "34_payoff",
+    "title": "The Payoff",
+    "start_seconds": 511.18,
+    "duration_seconds": 41.49
+  },
+  {
+    "id": "36_cplayer",
+    "title": "Still A C Player",
+    "start_seconds": 552.67,
+    "duration_seconds": 48.66
+  },
+  {
+    "id": "39_ch36",
+    "title": "What This Is For",
+    "start_seconds": 601.33,
+    "duration_seconds": 16.03
+  },
+  {
+    "id": "40_outro",
+    "title": "Outro",
+    "start_seconds": 617.36,
+    "duration_seconds": 6.79
+  }
+]

@@ -12,10 +12,11 @@ Silicon Valley C Players is coming in 2027. A few chapters are finished early, a
 
 > “I build platforms and models, not products or specific numbers. Weak foundations in life, tech, marketing, or finance mean nothing lasting gets built.” — Clark Huang
 
-A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the hollow hold, the ring muscle-up, and double unders, a triathlon ladder from sprint to Olympic to half, and six official marathons, including a 3:03:55 Boston qualifier at 47, prepared with twenty weeks of training and nothing new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. Progressive overload, told through the legend of Milo of Croton, sits with the weightlifting. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
 
 - Page: https://clarkhuang.github.io/book/chapters/17b-building-blocks/ · Markdown: https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md
-- Video: not yet
+- Video: https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (10:24)
+- Transcript: https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md
 
 ## Chapter 36: Sick, Well, Fit
 

@@ -212,7 +212,16 @@
               "title": "CTO, Again and Again",
               "hook": "LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story.",
               "status": "outlined",
-              "needs_story": true
+              "needs_story": true,
+              "story_beats": [
+                {
+                  "title": "Nothing new on race day",
+                  "role": "sidebar",
+                  "cross_ref": "ch17b-building-blocks",
+                  "note": "Clark's story: when foundations are stable, BFCM is just another Thursday. The company-by-company stories are still needed. The marathon version is in Chapter 17b, Building Blocks.",
+                  "text": "I have a story for you. When foundations are stable, BFCM is just another Thursday. This is not AI, it's me.\n\nThere is a golden rule in training versus competition: nothing new on race day. BFCM is the company's race day. If you're prepared, then it's a Thursday. Don't listen to all the noise.\n\nDon't run around with the chickens. Be the pigs when the going gets tough. You've all heard the eggs-and-bacon story in Scrum. A chicken and a pig want to open a restaurant. \"What should we call it?\" says the pig. The chicken says, \"How about Ham & Eggs?\" The pig says, \"Uh no thanks. You'd be involved, but I'd be committed.\"\n\nHold others accountable. That's my only advice. The running version of this rule — twenty weeks of training for one Boston-qualifier shot, long runs that top out at 20 or 21 miles, not 26, and race day as just another Saturday — is in Chapter 17b, Building Blocks."
+                }
+              ]
             },
             {
               "id": "ch16-the-smarter-guy-in-the-room",
@@ -234,11 +243,11 @@
               "id": "ch17b-building-blocks",
               "n": "17b",
               "title": "Building Blocks",
-              "hook": "A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, Challenge Family triathlons, and a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations.",
+              "hook": "A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, gymnastics skills, a triathlon ladder from sprint to Olympic to half, and a 3:03:55 Boston qualifier at 47, under the rule that nothing is new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. The result came out of stacked foundations.",
               "status": "drafted",
               "needs_story": false,
               "url": "/book/chapters/17b-building-blocks/",
-              "finished_as": "the full text (video and audio will come later)"
+              "finished_as": "text, a full-chapter video and audio"
             },
             {
               "id": "ch18",

@@ -34,7 +34,7 @@ Clark Huang's belief, above, is the frame for this chapter; it is his view, not 
 
 Other chapters you can read now:
 
-- [Chapter 17b: Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md) (Themes along the way): A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+- [Chapter 17b: Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md) (Themes along the way): A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the hollow hold, the ring muscle-up, and double unders, a triathlon ladder from sprint to Olympic to half, and six official marathons, including a 3:03:55 Boston qualifier at 47, prepared with twenty weeks of training and nothing new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. Progressive overload, told through the legend of Milo of Croton, sits with the weightlifting. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter. Videobook, audio, captions and transcript (10:24).
 
 All of them: https://clarkhuang.github.io/book/chapters/index.md
 

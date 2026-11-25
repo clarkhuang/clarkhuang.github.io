@@ -1,34 +1,13 @@
-# Chapter 17b, Building Blocks — build notes
+# How the chapter 17b video was built
 
-Text-only v0 draft for staging. There is no videobook or audio track yet.
+The videobook for Chapter 17b, Building Blocks, was made with the same pipeline as the Software Engineering lessons and Chapter 36 on this site.
 
-## Source
+1. **Text.** The chapter (chapter.md) is a nonfiction interlude in Clark Huang's own voice, rewritten start to finish around the building-block stories he dictated: the hollow hold as the gymnastics foundation, the ring muscle-up and a false grip on the bottom of the rings, double unders (single unders, then penguin jumps, then doubles, then a few triple unders after 100 unbroken doubles), the running ladder through the Carlsbad half, the swim and bike ladders, and a triathlon distance ladder — sprint (Challenge Miami), Olympic (St. Anthony's), half (Challenge Daytona), with a full Ironman only as something ahead. Distances are given; triathlon dates and finish times are not. The Dunedin 5K is left out. Progressive overload is told through the legend of Milo of Croton (Greek, sixth century B.C., cited to Encyclopaedia Britannica as legend), then bodyweight work, added load, and a clean and jerk. Official marathon results already on the record stay named and dated. After the Boston qualifier, a race-day paragraph covers twenty weeks of training for one shot that year, nothing new on race day, long runs that top out at 20 or 21 miles, and race day as just another Saturday.
+2. **Script.** A scene script (40 scenes) narrates the chapter, including the race-day story after the Boston qualifier. Drawings are simple generated stick-figure graphics: a hollow hold on the floor, ring muscle-ups (false grip at the bottom of the ring, kip, and transition), penguin jumps and a real jump rope (handles and a flexible arc, not a hoop), the Milo calf-to-bull legend, bodyweight work then plates then a clean and jerk, a triathlon distance ladder, swimming, biking, and running, plus the race-day beats (a 20-week calendar, the same gel, water, and shoes in training and on race day, a nothing-new-on-race-day card, a calm start line, and a long-run chart capped at 20–21 miles). No photos, no real people's likenesses, no race-brand marks, no CrossFit logos.
+3. **Voice.** Clark Huang's custom xAI voice (text-to-speech), at speed 1.05, one clip per scene. No laugh tags.
+4. **Render.** 1920×1080 at 30 fps, rendered with Pillow and ffmpeg (the site's lesson renderer plus chapter-specific layouts).
+5. **Finish.** Loudness normalized to about −16 LUFS integrated with a true peak under −1 dBTP; captions built from the script and the measured scene timings; poster from an early frame.
 
-- Clark's own fitness journey, drafted from `/workspace/legacy/interviews/fitness-journey-notes.md` (private working notes, not in this repo) and the official results those notes cite.
-- Thread and issue: [issue #67](https://github.com/clarkhuang/clarkhuang.github.io/issues/67). This chapter references that issue; it does not close it.
-- Placement: first half, “Themes along the way,” after Chapter 17, “Falling and Getting Up,” and before reserved Chapter 18. Numbered **17b** so existing chapter numbers and the live Chapter 36 URL do not change. The outline already uses 7a and 7b, so 17b follows that scheme.
-- Genre: nonfiction, in Clark's own voice, not Charlie Hack's. Employer described generically. No private names, no family, therapy, or relationship detail.
+Not affiliated with or endorsed by CrossFit. CrossFit is a trademark of CrossFit, LLC.
 
-## Open questions
-
-See `OPEN-QUESTIONS.md` in this folder. The Quarterfinals year (2024) and the vision-board items Clark has given are now in the chapter. The business-specific items on the board are mentioned only as such.
-
-## How to add video later
-
-When Clark wants a videobook, follow the Chapter 36 path in `book-source/chapters/36-sick-well-fit/BUILD.md`: write a scene script from this chapter text, narrate it, render, then add `video`, `audio`, `captions`, `poster`, and `transcript.md` here and rebuild the chapter pages with:
-
-```bash
-SITE=. python3 sitegen/book_chapters.py
-SITE=. python3 sitegen/story_arc.py
-```
-
-Do not run a full `sitegen/gen.py` in place. After media lands, run `python3 sitegen/stamp_versions.py` and `python3 sitegen/check_site.py .`.
-
-## Rebuild the pages only
-
-```bash
-SITE=. python3 sitegen/book_chapters.py
-SITE=. python3 sitegen/story_arc.py
-```
-
-Then keep `book.json`, `llms.txt`, `llms-full.txt`, `sitemap.xml`, `search-index.json`, and the book landing-page mentions in sync with those outputs (the scoped path updates them directly).
+Runtime: 10:24 (624.13 seconds). Transcript: [transcript.md](transcript.md).

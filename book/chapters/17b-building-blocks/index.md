@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md (plus https://clarkhuang.github.io/book/chapters/17b-building-blocks/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Also read the chapter's transcript at https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md and https://clarkhuang.github.io/book.json. Cite section headings or video timestamps. This chapter is nonfiction: Clark Huang's views, with the sources it lists. Then help me apply it to my own team, and do not invent facts about my team; ask.
 
-Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, Challenge Family, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.
+Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results for the running events named in the chapter. The triathlon ladder names Challenge Miami (sprint), St. Anthony's Triathlon (Olympic), and Challenge Daytona (half), and talks about the standard distances more than the events. No dates or finish times are given for those triathlon races. A full Ironman is mentioned only as something ahead, not as a race he has done. The Milo of Croton calf-to-bull story is framed as a legend, after Encyclopaedia Britannica. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, REVEL, the Boston Athletic Association, Challenge, or Ironman; those names are used only as facts about training, races he did, or a distance he looks forward to.
 
 *How a result I never set as a goal came out of stacked foundations*
 
@@ -18,11 +18,11 @@ Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in
 
 ## The whole chapter, in short
 
-In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. Official results then tell the rest: Challenge Daytona in December 2020, a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
+In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. CrossFit is largely gymnastics-focused; the hollow hold on the ground is the gymnastics foundation, a ring muscle-up took years of practice, and double unders that hold up under fatigue took six years. Running, swimming, and the bike were ladders too. I started with a sprint-distance triathlon (Challenge Miami), then built to Olympic distance (St. Anthony's) and a half (Challenge Daytona). A full Ironman is something I look forward to: the building blocks are there, but maybe not the will, yet. Progressive overload — a little more, then a little more — is how strength is built; the legend of Milo of Croton carrying a calf until it was a bull is the classic picture of that. Double unders came after singles and penguin jumps; I am just starting triple unders, and can knock out a few, but only after mastering 100 unbroken doubles. Official marathon results then tell more of the stack: a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, run after twenty weeks with nothing new on race day, a Carlsbad half at sub-three-hour marathon pace, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
 
 ## Summary
 
-A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the hollow hold, the ring muscle-up, and double unders, a triathlon ladder from sprint to Olympic to half, and six official marathons, including a 3:03:55 Boston qualifier at 47, prepared with twenty weeks of training and nothing new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. Progressive overload, told through the legend of Milo of Croton, sits with the weightlifting. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
 
 ## The rule
 
@@ -30,17 +30,56 @@ Build the foundation, not the number. Learn the next step when you need it. Prac
 
 This rule is written so a person or an AI agent can follow it as a standing instruction.
 
+## Videobook and audio
+
+- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (10:24)
+- Published: Nov 25, 2026
+- Captions (VTT): https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt
+- Video chapters (JSON): https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json
+- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (10:24)
+- Audio captions (VTT): https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt
+- Transcript (as narrated): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md
+- How the video was built: https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/BUILD.md
+- Chapter text (Markdown source): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/chapter.md
+
+### Video chapters
+
+- 0:00 Title
+- 0:10 The Wake-up
+- 0:37 A Goal I Did Not Plan
+- 1:27 Gymnastics
+- 1:41 Progressive Overload
+- 2:13 The Order
+- 2:32 Platforms, Not Numbers
+- 3:01 Skill Over Power
+- 3:39 Double Unders
+- 4:26 The Order
+- 4:39 A Mile, Then A Half
+- 5:19 Water and the Bike
+- 6:15 The Marathon
+- 7:01 The Surprise
+- 8:31 The Payoff
+- 9:12 Still A C Player
+- 10:01 What This Is For
+- 10:17 Outro
+
 ## The chapter
 
 In 2018 I was a CTO at a SaaS company, spending my time building strong platforms for other people, and I realized I had built no foundation for myself. I was not feeling good about my body. I had gained weight without realizing it. I was always tired.
 
-This chapter is that story, in my own voice. It is not a fiction chapter, and it is not Charlie Hack's. The times and places below are from official race results, or from what I have already put on the record.
+This chapter is that story, in my own voice. It is not a fiction chapter, and it is not Charlie Hack's. The times and places below are from official race results, or from what I have already put on the record, including Instagram posts and reels I made at the time.
 
 ### A goal I did not plan
 
 In a Dale Carnegie course, a vision-board exercise produced a goal I had not planned: a triathlon. The board also included learning guitar — I bought a guitar and learned a few chords, but that has not gone anywhere yet — and starting to play piano again, which I had learned the fundamentals of when I was young. It talked about some career things, like retiring by the time I was 50, which I missed, but maybe not for long. And then some business-specific things.
 
-I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
+I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. I posted [an early reel from a 7 a.m. class at that gym](https://www.instagram.com/reel/CFyLR4XpEYi/). In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
+
+That gym is where the method started to click. CrossFit is largely gymnastics-focused, and gymnastics is bodyweight movement. Skill and positions come first, then the work you can do with them. Weightlifting is part of that work too.
+
+You master the bodyweight positions first, then you add load. Progressive overload is how you build strength over time: a little more, then a little more. The legend is of Milo of Croton, a Greek wrestler in the sixth century B.C., who carried a newborn calf every day until it was a grown bull. Fundamentals, then building blocks, then intensity, or more strength. It's all the same pattern.
+
+The order I kept coming back to is mechanics first, then consistency, and only then intensity. I was after virtuosity: years of practice, not a shortcut.
 
 That sequence is the method I actually used: not a complete program written in advance, but the next block, then the next one.
 
@@ -50,9 +89,33 @@ This is the same way I have tried to work in my career. I build platforms and mo
 
 The surprise later in this chapter is an example of that, not a contradiction of it. A time I never set as a goal, when I started, came out of the blocks I had already stacked.
 
-### First the swim, the bike, and the run
+### Skill over power
 
-My first official triathlon was the Challenge Daytona half-distance, in December 2020. It was a Challenge Family race, not an Ironman-brand event. I also did Challenge Miami, and other local races at various triathlon distances. I am not going to dwell on those here.
+A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. The gymnastics foundation is the hollow hold, just on the ground. It seems like nothing. But virtuosity in something as simple as a hollow hold is what makes ring muscle-ups easy later, after you stack strength and technique. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there. Years later I was still practicing that skill. In [a later session](https://www.instagram.com/reel/DNLz8UmRh8L/) I worked strict ring muscle-ups, with the same idea: strict before kip.
+
+That is a building block, the same as a platform at work: you stand on it later.
+
+### Double unders, then endurance
+
+Double unders are the same kind of block. You can't do them until you can do a long set of single unders. Then you learn the rhythm without the rope: penguin jumps. You jump higher, and your hands double-tap against your hips, twice per jump, so you understand the rhythm. Then finally double unders. I finally got them, but they only worked when I was fresh. In the middle of an extreme workout, under fatigue, they fell apart, because I had never tested them under load or under heavy breathing.
+
+The next block was endurance on top of the skill. That is what gets you to unbroken double unders when you are already tired. Today I can do 50, 75, or 100 double unders in a row, unbroken. That took six years. I kept them in the work along the way, including [a running-strength session](https://www.instagram.com/reel/CuiBNlgAnEL/) with sets of 25 double unders on the board. I'm just starting triple unders, and I can knock out a few. But it's only useful after I mastered 100 unbroken double unders.
+
+Mechanics first, then consistency, then intensity: a long set of singles, then doubles that hold up fresh, then doubles that hold up when you are breathing hard. The result was never the first step.
+
+### A mile, then a half
+
+Running was a ladder too. A mile seemed hard. Then the miles got faster. Then 5Ks, then 10Ks. Everyday runs became a minimum of 10K. Then I was building toward a half marathon.
+
+Finishing a half is one kind of endurance. Excelling at one is another. At the Carlsbad Half Marathon, on January 14, 2024, I ran 1:29:34 official, 89th of 3,395, and 4th in men 45–49. I [wrote afterward](https://www.instagram.com/p/C3EGdsZs6sX/) that the plan that day was to stick with the 1:30 pace group, and that I finished with fuel in the tank, at the end of a 70-mile untapered training week. That is sub-three-hour marathon pace, for a half. It came out of the same stack: the mile that had seemed hard, then the everyday 10K, then the longer work.
+
+### Water and the bike
+
+Swimming had its own first block. I was fearful of a couple of laps in a pool. I got to swimming 1.2 miles in open water, with waves.
+
+The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
+
+I started with a sprint-distance triathlon, Challenge Miami: about a 750-meter swim, a 20-kilometer bike, and a 5K run. Then I built to Olympic distance, at St. Anthony's Triathlon: 1.5 kilometers, 40 kilometers, and 10 kilometers. Then to a half, Challenge Daytona: 1.2 miles, 56 miles, and 13.1 miles. A full Ironman is something I look forward to: 2.4 miles, 112 miles, and 26.2 miles. The building blocks are there. Maybe not the will, yet.
 
 ### Then the marathon, the long way around
 
@@ -64,25 +127,27 @@ The drop from nearly six hours to 3:25 was not a secret workout. It was a founda
 
 ### The surprise
 
-On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the triathlon, and the races that came after. That time was also my Boston qualifier for 2024.
+On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the swim, the bike, the run, and the races that came after. That time was also my Boston qualifier for 2024.
+
+When I was gearing up for that Boston qualifying race, I had one opportunity that year. The twenty weeks of training before it prepared me because I took no shortcuts and put in the work. Race day seems like a big deal to most people: nerves, jitters. Why am I calm, cool, collected? Because it's just another Saturday. I'm running with the same legs I had the training week before. I sweat the same way, I ate the same things, I hydrated and took the same gels during my final training run of 20 miles. There is a golden rule in training versus competition: nothing new on race day. The marathon is 26.2 miles. In marathon training you actually never run the 26 miles. You run 20 or 21 miles at most. Not just 15, not "18 should be good enough," and not 26. Running 26 during training before your race-day 26.2 is not a good thing. If you do that, you won't recover fast enough for the actual race.
 
 A personal best like that is easy to misread as the point of the work. It was a result. The work was the stack underneath it.
 
 ### The payoff
 
-On January 14, 2024, I ran the Carlsbad Half Marathon in 1:29:34 official, 89th of 3,395, 4th in men 45–49. On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43.
+On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43. I had already [said so while tapering](https://www.instagram.com/p/C3EGdsZs6sX/): whether I hit the sub-3 or not, I was happy with the work I had put in.
 
-On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I wrote after the race, I just got close to the wall and ran parallel with it for 16 miles.
+On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I [wrote after the race](https://www.instagram.com/reel/C51JmonRxZA/), I just got close to the wall and ran parallel with it for 16 miles.
 
-After Boston I paused that stretch of marathon training. I kept going in other ways. In May 2024 I ran the Dunedin Hog Hustle 5K in 20:23, 3rd male and first masters. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
+After Boston I paused that stretch of marathon training. I kept going in other ways. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
 
 ### Still a C player
 
-I competed in the CrossFit Open from 2021 through 2024, in men 45–49, at CrossFit 9. I started where a C player starts. In the 2021 Open I reached wall walks at the cap in 21.1, and in 21.3 and 21.4 I got to the bar muscle-ups and could not do any. I qualified for the Age-Group Quarterfinals in 2024, but I did not compete officially. I did the workouts unofficially, and I scaled them, after Boston. I still call myself a C player in CrossFit.
+I competed in the CrossFit Open from 2021 through 2024, in men 45–49, at CrossFit 9. I started where a C player starts. In the 2021 Open I reached wall walks at the cap in 21.1, and in 21.3 and 21.4 I got to the bar muscle-ups and could not do any, as I [posted at the time](https://www.instagram.com/p/CM7cxlfMNyC/). I qualified for the Age-Group Quarterfinals in 2024, but I did not compete officially. I did the workouts unofficially, and I scaled them, after Boston, and [said so that week](https://www.instagram.com/reel/C6KZyYFM29k/). I still call myself a C player in CrossFit.
 
 The point is the same one as the rest of this book: I was not the best in the room. I kept stacking foundations, and I kept going.
 
-On December 7, 2025, for my 50th birthday, I did a 50-rep chipper bookended by a 5K run and a 5K row.
+On December 7, 2025, for my 50th birthday, I did a 50-rep chipper bookended by a 5K run and a 5K row, [as I posted that day](https://www.instagram.com/reel/DR-hnyiAcpf/).
 
 ### What this is for
 
@@ -95,24 +160,35 @@ The rule I take from this path is simple enough to follow on a Monday, and simpl
 Official results, and the Games profile, for the races and the Open years named above. Times below are official chip or net times unless noted.
 
 - CrossFit Games athlete profile (Open 2021–2024 listed under CrossFit 9, St. Petersburg): https://games.crossfit.com/athlete/1952037
-- Challenge Daytona, December 2020: a Challenge Family half-distance; official individual time not confirmed in this pass. Results index: https://challenge-daytona.com/race-information/results/
 - Clearwater Running Festival Marathon, April 25, 2021, bib 212, 5:56:24.2: https://www.millenniumrunning.com/wp-content/uploads/2014/09/Clearwater-Running-Festival-Marathon-Overall-Results.html
 - REVEL Big Cottonwood Marathon, September 10, 2022, bib 2656, 3:25:45 chip / 3:27:29 gun: https://results.laurelt.com/bcm/results?pk=7624702
 - REVEL Mt Charleston Marathon, April 1, 2023, bib 2441, age 47, 3:03:55 chip / 3:04:28 gun: https://results.laurelt.com/rmc/results?pk=7677125
 - Carlsbad Half Marathon, January 14, 2024, bib 2008, 1:29:34: https://live.chronotrack.com/event/76297/results/entry/65636373
 - Mesa Marathon, February 10, 2024, bib 4733, 3:18:43 chip / 3:18:51 gun: https://mesamarathon.com/results?pk=7701486
 - Boston Marathon, April 15, 2024, bib 8803, 3:43:27 net / 3:43:57 gun: https://results.baa.org/2024/?content=detail&fpid=list&pid=list&idp=9TGHS6FF19A6A7&lang=EN_CAP&event=R
-- Dunedin Hog Hustle 5K, May 4, 2024, bib 387, 20:23 chip: http://frrm.raceresults.space/2024/2024_DHH_5K_OA.htm
 - Carlsbad Marathon, January 19, 2025, bib 1572, 3:44:07.31: https://live.chronotrack.com/event/84013/results/entry/71622971
 - Publix Gasparilla 15K, February 23, 2025, bib 3288, 1:05:29.84: https://results2.xacte.com/#/e/2573/searchable/3288
 
-The 2021 Open details are from posts I made at the time. The Boston line “not my fastest but definitely the FUNNEST,” and the line about running parallel with the wall, are from the same.
+Instagram posts and reels I made at the time, also on the record:
+
+- CrossFit 9, early class reel, September 30, 2020: https://www.instagram.com/reel/CFyLR4XpEYi/
+- CrossFit Open 21.3 and 21.4, March 27, 2021: https://www.instagram.com/p/CM7cxlfMNyC/
+- Running-strength session with double unders, July 10, 2023: https://www.instagram.com/reel/CuiBNlgAnEL/
+- Carlsbad Half and Mesa taper, February 7, 2024: https://www.instagram.com/p/C3EGdsZs6sX/
+- Boston Marathon recap and the pause after, April 16, 2024: https://www.instagram.com/reel/C51JmonRxZA/
+- 2024 Age-Group Quarterfinal workouts, unofficial and scaled after Boston, April 24, 2024: https://www.instagram.com/reel/C6KZyYFM29k/
+- Strict ring muscle-ups, August 10, 2025: https://www.instagram.com/reel/DNLz8UmRh8L/
+- 50th-birthday 50-rep chipper, December 7, 2025: https://www.instagram.com/reel/DR-hnyiAcpf/
+
+The legend of Milo of Croton training by carrying a calf until it became a full-sized ox is told in Encyclopaedia Britannica (as legend, not as proven history): https://www.britannica.com/biography/Milo-of-Croton
+
+The 2021 Open 21.1 details, and the Boston line “not my fastest but definitely the FUNNEST,” are from posts I made at the time. The line about running parallel with the wall is from the April 16, 2024 reel above.
 
 This chapter is part of the Building Blocks thread first collected for the OpenBook in [issue #67](https://github.com/clarkhuang/clarkhuang.github.io/issues/67). It does not close that issue.
 
 ## How to cite
 
-Quote the chapter text and give the section heading. This chapter is nonfiction, in Clark Huang's own voice, with the official results listed in the Sources section. It is not a fiction chapter, and it is not told as Charlie Hack.
+Quote the chapter text and give the section heading. This chapter is nonfiction, in Clark Huang's own voice, with the official results and Instagram posts listed in the Sources section. It is not a fiction chapter, and it is not told as Charlie Hack.
 
 ## For agents
 
