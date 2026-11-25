@@ -1,6 +1,6 @@
 {
   "id": "book-preview",
-  "duration": 183.984,
+  "duration": 179.904,
   "scenes": [
     {
       "id": "01_dream",
@@ -23,83 +23,78 @@
       "duration": 4.68
     },
     {
-      "id": "06_kept_going",
-      "start": 33.936,
-      "duration": 7.728
-    },
-    {
       "id": "07_myth",
-      "start": 41.664,
+      "start": 33.936,
       "duration": 9.552
     },
     {
       "id": "08_straight",
-      "start": 51.216,
+      "start": 43.488,
       "duration": 7.728
     },
     {
       "id": "09_c_player",
-      "start": 58.944,
-      "duration": 8.64
+      "start": 51.216,
+      "duration": 12.288
     },
     {
       "id": "10_seventy",
-      "start": 67.584,
+      "start": 63.504,
       "duration": 4.368
     },
     {
       "id": "11_platforms",
-      "start": 71.952,
+      "start": 67.872,
       "duration": 7.728
     },
     {
       "id": "12_blocks",
-      "start": 79.68,
+      "start": 75.6,
       "duration": 8.64
     },
     {
       "id": "13_hollow",
-      "start": 88.32,
+      "start": 84.24,
       "duration": 11.688
     },
     {
       "id": "14_raceday",
-      "start": 100.008,
+      "start": 95.928,
       "duration": 11.064
     },
     {
       "id": "15_turn",
-      "start": 111.072,
+      "start": 106.992,
       "duration": 8.64
     },
     {
       "id": "16_ai",
-      "start": 119.712,
+      "start": 115.632,
       "duration": 12.6
     },
     {
       "id": "17_fit",
-      "start": 132.312,
+      "start": 128.232,
       "duration": 7.104
     },
     {
       "id": "18_payoff",
-      "start": 139.416,
+      "start": 135.336,
       "duration": 25.392
     },
     {
       "id": "19_bookend",
-      "start": 164.808,
+      "start": 160.728,
       "duration": 8.64
     },
     {
       "id": "20_more",
-      "start": 173.448,
+      "start": 169.368,
       "duration": 6.792
     },
     {
       "id": "21_close",
-      "start": 180.24,
+      "start": 176.16,
       "duration": 3.744
     }
   ]

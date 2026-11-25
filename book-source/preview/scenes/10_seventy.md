@@ -1,7 +1,7 @@
 # The 75th percentile
 
 - id: `10_seventy`
-- start: 67.58s (1:07)
+- start: 63.50s (1:03)
 - duration: 4.37s
 
 ## Performance text

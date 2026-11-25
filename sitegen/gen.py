@@ -684,7 +684,7 @@ def build():
 
 INTRO = [
  "Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.",
- "This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming.",
+ "This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming. An original instrumental music bed plays under the voice.",
  "Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.",
  "And from the outside, a C thing can look like an A thing. The applause is loud, and the real work is quieter. This book is about that gap, between what people saw and what was really going on.",
  "A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room. The richer guy, the more experienced, the wisest. The better father, the better brother, the better sister, the better daughter.",

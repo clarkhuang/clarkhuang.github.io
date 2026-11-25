@@ -24,99 +24,93 @@
     "duration_seconds": 4.68
   },
   {
-    "id": "06_kept_going",
-    "title": "I just kept going",
-    "start_seconds": 33.94,
-    "duration_seconds": 7.73
-  },
-  {
     "id": "07_myth",
     "title": "The A-player myth",
-    "start_seconds": 41.66,
+    "start_seconds": 33.94,
     "duration_seconds": 9.55
   },
   {
     "id": "08_straight",
     "title": "The straight-line myth",
-    "start_seconds": 51.22,
+    "start_seconds": 43.49,
     "duration_seconds": 7.73
   },
   {
     "id": "09_c_player",
     "title": "A C player",
-    "start_seconds": 58.94,
-    "duration_seconds": 8.64
+    "start_seconds": 51.22,
+    "duration_seconds": 12.29
   },
   {
     "id": "10_seventy",
     "title": "The 75th percentile",
-    "start_seconds": 67.58,
+    "start_seconds": 63.5,
     "duration_seconds": 4.37
   },
   {
     "id": "11_platforms",
     "title": "Platforms, not products",
-    "start_seconds": 71.95,
+    "start_seconds": 67.87,
     "duration_seconds": 7.73
   },
   {
     "id": "12_blocks",
     "title": "Building blocks",
-    "start_seconds": 79.68,
+    "start_seconds": 75.6,
     "duration_seconds": 8.64
   },
   {
     "id": "13_hollow",
     "title": "The hollow hold",
-    "start_seconds": 88.32,
+    "start_seconds": 84.24,
     "duration_seconds": 11.69
   },
   {
     "id": "14_raceday",
     "title": "Nothing new on race day",
-    "start_seconds": 100.01,
+    "start_seconds": 95.93,
     "duration_seconds": 11.06
   },
   {
     "id": "15_turn",
     "title": "The turn",
-    "start_seconds": 111.07,
+    "start_seconds": 106.99,
     "duration_seconds": 8.64
   },
   {
     "id": "16_ai",
     "title": "A.I. writes the code",
-    "start_seconds": 119.71,
+    "start_seconds": 115.63,
     "duration_seconds": 12.6
   },
   {
     "id": "17_fit",
     "title": "I strive for fit",
-    "start_seconds": 132.31,
+    "start_seconds": 128.23,
     "duration_seconds": 7.1
   },
   {
     "id": "18_payoff",
     "title": "The whole point",
-    "start_seconds": 139.42,
+    "start_seconds": 135.34,
     "duration_seconds": 25.39
   },
   {
     "id": "19_bookend",
     "title": "The story is still being written",
-    "start_seconds": 164.81,
+    "start_seconds": 160.73,
     "duration_seconds": 8.64
   },
   {
     "id": "20_more",
     "title": "More chapters are coming",
-    "start_seconds": 173.45,
+    "start_seconds": 169.37,
     "duration_seconds": 6.79
   },
   {
     "id": "21_close",
     "title": "Coming in 2027",
-    "start_seconds": 180.24,
+    "start_seconds": 176.16,
     "duration_seconds": 3.74
   }
 ]
