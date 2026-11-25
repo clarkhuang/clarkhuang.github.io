@@ -83,7 +83,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Story arc and chapters](https://clarkhuang.github.io/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.
 - [Outline (JSON)](https://clarkhuang.github.io/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions
 - [Guest stories](https://clarkhuang.github.io/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: https://clarkhuang.github.io/book/guest/stories.json.
-- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use.
+- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use. In the book: a guest sidebar in Chapter 24, "Done" Is Not Proof; mentioned in Chapter 33, The OpenBook.
 
 ## Also on this site
 

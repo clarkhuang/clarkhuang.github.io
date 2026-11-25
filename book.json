@@ -116,6 +116,35 @@
       }
     }
   ],
+  "guest_stories": {
+    "url": "https://clarkhuang.github.io/book/guest/",
+    "json_url": "https://clarkhuang.github.io/book/guest/stories.json",
+    "stories": [
+      {
+        "title": "I built the app. Would people use it every month?",
+        "by": "Himanshu Kumar",
+        "github": "himanshu112-wq",
+        "url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/",
+        "markdown_url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md",
+        "in_book": [
+          {
+            "chapter": "24",
+            "chapter_title": "\"Done\" Is Not Proof",
+            "role": "sidebar",
+            "note": "Himanshu Kumar got a working app into testers' hands; his open question was whether they would come back next month, at payday. Shipped is a step; coming back is the outcome. Clark's own story for this chapter is still needed.",
+            "story_arc_url": "https://clarkhuang.github.io/book/story-arc/#ch24-done-is-not-proof"
+          },
+          {
+            "chapter": "33",
+            "chapter_title": "The OpenBook",
+            "role": "mention",
+            "note": "The first outside guest story to land: Himanshu Kumar's, published under his own name.",
+            "story_arc_url": "https://clarkhuang.github.io/book/story-arc/#ch33-the-openbook"
+          }
+        ]
+      }
+    ]
+  },
   "preview": {
     "transcript_url": "https://clarkhuang.github.io/book-source/preview/transcript.md",
     "script_url": "https://clarkhuang.github.io/book-source/preview/script.md",
