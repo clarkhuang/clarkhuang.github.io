@@ -1,85 +1,106 @@
 {
+  "id": "book-preview",
+  "duration": 183.984,
   "scenes": [
     {
-      "id": "01_disclaimer",
+      "id": "01_dream",
       "start": 0.0,
-      "duration": 16.848
+      "duration": 11.688
     },
     {
       "id": "02_title",
-      "start": 16.848,
-      "duration": 2.232
+      "start": 11.688,
+      "duration": 1.92
     },
     {
-      "id": "03_middle",
-      "start": 19.08,
-      "duration": 8.016
+      "id": "03_disclaimer",
+      "start": 13.608,
+      "duration": 15.648
     },
     {
-      "id": "04_myth",
-      "start": 27.096,
-      "duration": 8.928
+      "id": "05_same_dream",
+      "start": 29.256,
+      "duration": 4.68
     },
     {
-      "id": "05_straight",
-      "start": 36.024,
-      "duration": 10.776
+      "id": "06_kept_going",
+      "start": 33.936,
+      "duration": 7.728
     },
     {
-      "id": "05_outside",
-      "start": 46.8,
-      "duration": 12.288
+      "id": "07_myth",
+      "start": 41.664,
+      "duration": 9.552
     },
     {
-      "id": "06_c_player",
-      "start": 59.088,
-      "duration": 16.56
+      "id": "08_straight",
+      "start": 51.216,
+      "duration": 7.728
     },
     {
-      "id": "07_platforms",
-      "start": 75.648,
+      "id": "09_c_player",
+      "start": 58.944,
+      "duration": 8.64
+    },
+    {
+      "id": "10_seventy",
+      "start": 67.584,
+      "duration": 4.368
+    },
+    {
+      "id": "11_platforms",
+      "start": 71.952,
+      "duration": 7.728
+    },
+    {
+      "id": "12_blocks",
+      "start": 79.68,
+      "duration": 8.64
+    },
+    {
+      "id": "13_hollow",
+      "start": 88.32,
       "duration": 11.688
     },
     {
-      "id": "08_blocks",
-      "start": 87.336,
+      "id": "14_raceday",
+      "start": 100.008,
       "duration": 11.064
     },
     {
-      "id": "09_kept_going",
-      "start": 98.4,
-      "duration": 11.376
+      "id": "15_turn",
+      "start": 111.072,
+      "duration": 8.64
     },
     {
-      "id": "10_turn",
-      "start": 109.776,
-      "duration": 8.016
+      "id": "16_ai",
+      "start": 119.712,
+      "duration": 12.6
     },
     {
-      "id": "11_thesis",
-      "start": 117.792,
-      "duration": 12.288
+      "id": "17_fit",
+      "start": 132.312,
+      "duration": 7.104
     },
     {
-      "id": "11_ladder",
-      "start": 130.08,
-      "duration": 18.072
+      "id": "18_payoff",
+      "start": 139.416,
+      "duration": 25.392
     },
     {
-      "id": "12_how_to",
-      "start": 148.152,
-      "duration": 11.688
+      "id": "19_bookend",
+      "start": 164.808,
+      "duration": 8.64
     },
     {
-      "id": "13_bookend",
-      "start": 159.84,
-      "duration": 15.936
+      "id": "20_more",
+      "start": 173.448,
+      "duration": 6.792
     },
     {
-      "id": "14_close",
-      "start": 175.776,
-      "duration": 4.08
+      "id": "21_close",
+      "start": 180.24,
+      "duration": 3.744
     }
-  ],
-  "total": 179.856
+  ]
 }

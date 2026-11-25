@@ -1,98 +1,122 @@
 [
   {
-    "id": "01_disclaimer",
-    "title": "Fair warning",
+    "id": "01_dream",
+    "title": "Dreaming in green",
     "start_seconds": 0.0,
-    "duration_seconds": 16.85
+    "duration_seconds": 11.69
   },
   {
     "id": "02_title",
     "title": "Silicon Valley C Players",
-    "start_seconds": 16.85,
-    "duration_seconds": 2.23
+    "start_seconds": 11.69,
+    "duration_seconds": 1.92
   },
   {
-    "id": "03_middle",
-    "title": "The middle of the book",
-    "start_seconds": 19.08,
-    "duration_seconds": 8.02
+    "id": "03_disclaimer",
+    "title": "Fair warning",
+    "start_seconds": 13.61,
+    "duration_seconds": 15.65
   },
   {
-    "id": "04_myth",
+    "id": "05_same_dream",
+    "title": "The same dream",
+    "start_seconds": 29.26,
+    "duration_seconds": 4.68
+  },
+  {
+    "id": "06_kept_going",
+    "title": "I just kept going",
+    "start_seconds": 33.94,
+    "duration_seconds": 7.73
+  },
+  {
+    "id": "07_myth",
     "title": "The A-player myth",
-    "start_seconds": 27.1,
-    "duration_seconds": 8.93
+    "start_seconds": 41.66,
+    "duration_seconds": 9.55
   },
   {
-    "id": "05_straight",
+    "id": "08_straight",
     "title": "The straight-line myth",
-    "start_seconds": 36.02,
-    "duration_seconds": 10.78
+    "start_seconds": 51.22,
+    "duration_seconds": 7.73
   },
   {
-    "id": "05_outside",
-    "title": "What people saw",
-    "start_seconds": 46.8,
-    "duration_seconds": 12.29
-  },
-  {
-    "id": "06_c_player",
+    "id": "09_c_player",
     "title": "A C player",
-    "start_seconds": 59.09,
-    "duration_seconds": 16.56
+    "start_seconds": 58.94,
+    "duration_seconds": 8.64
   },
   {
-    "id": "07_platforms",
+    "id": "10_seventy",
+    "title": "The 75th percentile",
+    "start_seconds": 67.58,
+    "duration_seconds": 4.37
+  },
+  {
+    "id": "11_platforms",
     "title": "Platforms, not products",
-    "start_seconds": 75.65,
+    "start_seconds": 71.95,
+    "duration_seconds": 7.73
+  },
+  {
+    "id": "12_blocks",
+    "title": "Building blocks",
+    "start_seconds": 79.68,
+    "duration_seconds": 8.64
+  },
+  {
+    "id": "13_hollow",
+    "title": "The hollow hold",
+    "start_seconds": 88.32,
     "duration_seconds": 11.69
   },
   {
-    "id": "08_blocks",
-    "title": "Building blocks",
-    "start_seconds": 87.34,
+    "id": "14_raceday",
+    "title": "Nothing new on race day",
+    "start_seconds": 100.01,
     "duration_seconds": 11.06
   },
   {
-    "id": "09_kept_going",
-    "title": "I just kept going",
-    "start_seconds": 98.4,
-    "duration_seconds": 11.38
-  },
-  {
-    "id": "10_turn",
+    "id": "15_turn",
     "title": "The turn",
-    "start_seconds": 109.78,
-    "duration_seconds": 8.02
+    "start_seconds": 111.07,
+    "duration_seconds": 8.64
   },
   {
-    "id": "11_thesis",
-    "title": "The thesis",
-    "start_seconds": 117.79,
-    "duration_seconds": 12.29
+    "id": "16_ai",
+    "title": "A.I. writes the code",
+    "start_seconds": 119.71,
+    "duration_seconds": 12.6
   },
   {
-    "id": "11_ladder",
-    "title": "The abstraction ladder",
-    "start_seconds": 130.08,
-    "duration_seconds": 18.07
+    "id": "17_fit",
+    "title": "I strive for fit",
+    "start_seconds": 132.31,
+    "duration_seconds": 7.1
   },
   {
-    "id": "12_how_to",
-    "title": "How to work now",
-    "start_seconds": 148.15,
-    "duration_seconds": 11.69
+    "id": "18_payoff",
+    "title": "The whole point",
+    "start_seconds": 139.42,
+    "duration_seconds": 25.39
   },
   {
-    "id": "13_bookend",
+    "id": "19_bookend",
     "title": "The story is still being written",
-    "start_seconds": 159.84,
-    "duration_seconds": 15.94
+    "start_seconds": 164.81,
+    "duration_seconds": 8.64
   },
   {
-    "id": "14_close",
+    "id": "20_more",
+    "title": "More chapters are coming",
+    "start_seconds": 173.45,
+    "duration_seconds": 6.79
+  },
+  {
+    "id": "21_close",
     "title": "Coming in 2027",
-    "start_seconds": 175.78,
-    "duration_seconds": 4.08
+    "start_seconds": 180.24,
+    "duration_seconds": 3.74
   }
 ]

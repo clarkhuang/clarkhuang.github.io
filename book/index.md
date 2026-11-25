@@ -42,7 +42,7 @@ All of them: https://clarkhuang.github.io/book/chapters/index.md
 
 Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
-This preview drops you into the middle of the book. Part Three. It's called C Things That Looked Like A Things.
+This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming.
 
 Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
@@ -62,7 +62,7 @@ Software engineering was never about writing code. Writing code was just the ted
 
 So software engineering practices have to be geared around that. That's what Software Engineering 101 and 201 are about, and it's the second half of this book: how to work now, and how companies should use AI.
 
-The book begins with a green-screen dream, and it ends by dreaming about AI. This part, in the middle, is the turn. It's free. It's open. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
+The book begins with a green-screen dream, and it ends by dreaming about AI. It's free. It's open. More chapters are coming. And when version one is ready, if you were around for any of it, you get to tell your side. The story is still being written.
 
 ## From the back cover
 
@@ -70,7 +70,7 @@ An embellished fictional dramatization about C players, the gap between applause
 
 Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.
 
-This preview is from the middle of the book: Part Three, C Things That Looked Like A Things, and the turn that follows. The Valley tells a story about A players. The real work looks like another Tuesday.
+This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. The Valley tells a story about A players. The 75th-percentile C player who stacks fundamentals across many areas beats the A player who is best at just one thing. More chapters are coming.
 
 The second half is about how to work now that, in Clark's own work, AI writes essentially all of the code he ships — his workflow, not a measured team result or a general industry figure — and how companies should use it.
 
@@ -78,7 +78,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Videobook preview
 
-- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (179.9s)
+- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (184.0s)
 - Published: Nov 22, 2026. Updated: Nov 24, 2026
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/videos/book-preview-chapters.json
@@ -88,7 +88,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Audio
 
-- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (179.9s)
+- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (184.0s)
 - Full audiobook: coming later
 - Captions (VTT): https://clarkhuang.github.io/audio/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/audio/book-preview-chapters.json
