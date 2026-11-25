@@ -50,11 +50,52 @@ def hook_text(ch):
     return hook
 
 
+GUEST_ROOT = "/book/guest/"
+
+
+def _guest_title(site, slug):
+    try:
+        import guest_stories as G
+        for st in G.load_stories(site):
+            if st["slug"] == slug:
+                return st
+    except Exception:
+        pass
+    return None
+
+
+def guest_refs_html(ch, site=None):
+    out = []
+    for g in ch.get("guest_refs") or []:
+        st = _guest_title(site or ".", g["slug"]) or {}
+        title = st.get("title") or g["slug"]
+        by = st.get("by") or ""
+        handle = f' (@{st["github"]})' if st.get("github") else ""
+        label = "Guest sidebar" if g.get("role") == "sidebar" else "Guest story"
+        out.append(f'<br><span class="guest-ref"><strong>{E(label)}:</strong> <a href="{GUEST_ROOT}{E(g["slug"])}/">{E(title)}</a>, by {E(by)}{E(handle)}. {E(g.get("note") or "")}</span>')
+    return "".join(out)
+
+
+def guest_refs_md(ch, site=None):
+    out = []
+    for g in ch.get("guest_refs") or []:
+        st = _guest_title(site or ".", g["slug"]) or {}
+        title = st.get("title") or g["slug"]
+        by = st.get("by") or ""
+        handle = f" (@{st['github']})" if st.get("github") else ""
+        label = "Guest sidebar" if g.get("role") == "sidebar" else "Guest story"
+        out.append(f" {label}: [{title}](https://clarkhuang.github.io{GUEST_ROOT}{g['slug']}/index.md), by {by}{handle}. {g.get('note') or ''}".rstrip())
+    return "".join(out)
+
+
 def status_label(ch):
     status = ch.get("status") or "planned"
     if ch.get("needs_story"):
         return f"{status} · needs a story"
     return status
+
+
+_SITE = ["."]
 
 
 def table_html(section):
@@ -79,7 +120,7 @@ def table_html(section):
         cells = [
             f'<th scope="row" class="ch">{E(str(n))}</th>',
             (f'<td class="ch-title"><a href="{E(c["url"])}">{E(title)}</a></td>' if c.get("url") else f'<td class="ch-title">{E(title)}</td>'),
-            f'<td class="ch-hook">{E(hook)}</td>',
+            f'<td class="ch-hook">{E(hook)}{guest_refs_html(c, _SITE[0])}</td>',
         ]
         if has_lessons:
             cells.append(f'<td class="ch-lessons">{E(c.get("lessons") or "—")}</td>')
@@ -185,6 +226,7 @@ def body_md(data):
                 hook = hook_text(c)
                 if c.get("url"):
                     hook = f"{hook} Read it: https://clarkhuang.github.io{c['url']}"
+                hook = (hook + guest_refs_md(c, _SITE[0])).replace("|", "/")
                 status = status_label(c)
                 if has_lessons:
                     lines.append(
@@ -217,6 +259,7 @@ def build_story_arc(site=None, page=None, write_prose_twins=None):
         page = G.page
         write_prose_twins = __import__("ai_friendly").write_prose_twins
     data = load_outline(site)
+    _SITE[0] = site
     page(
         "book/story-arc/index.html",
         PAGE_TITLE,

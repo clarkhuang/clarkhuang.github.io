@@ -118,6 +118,32 @@ def parse_story(path: Path) -> dict | None:
     }
 
 
+def book_refs(site: str) -> dict:
+    """slug -> chapters in book-source/outline.json that point at the story (guest_refs)."""
+    out = {}
+    path = Path(site) / "book-source" / "outline.json"
+    if not path.is_file():
+        return out
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for half in data.get("halves") or []:
+        for sec in half.get("sections") or []:
+            for ch in sec.get("chapters") or []:
+                for g in ch.get("guest_refs") or []:
+                    out.setdefault(g["slug"], []).append({
+                        "chapter": ch.get("n"), "chapter_title": ch.get("title"), "role": g.get("role") or "mention",
+                        "note": g.get("note") or "", "story_arc_url": f"{BASE}/book/story-arc/#{ch.get('id') or ''}",
+                    })
+    return out
+
+
+def refs_sentence(refs: list[dict]) -> str:
+    bits = []
+    for r in refs:
+        what = "a guest sidebar in" if r["role"] == "sidebar" else "mentioned in"
+        bits.append(f"{what} Chapter {r['chapter']}, {r['chapter_title']}")
+    return "; ".join(bits)
+
+
 def load_stories(site: str) -> list[dict]:
     folder = source_dir(site)
     if not folder.is_dir():
@@ -128,6 +154,9 @@ def load_stories(site: str) -> list[dict]:
         if rec:
             stories.append(rec)
     stories.sort(key=lambda s: (s.get("date") or "", s["slug"]), reverse=True)
+    refs = book_refs(site)
+    for st in stories:
+        st["in_book"] = refs.get(st["slug"], [])
     return stories
 
 
@@ -167,22 +196,37 @@ def byline_md(story: dict) -> str:
     return f"By {name}{date}."
 
 
+def in_book_html(story: dict) -> str:
+    refs = story.get("in_book") or []
+    if not refs:
+        return ""
+    items = "".join(
+        f'<li>{"Guest sidebar in" if r["role"] == "sidebar" else "Mentioned in"} <a href="/book/story-arc/#{E(r["story_arc_url"].split("#")[-1])}">Chapter {E(str(r["chapter"]))}, {E(r["chapter_title"])}</a>{(": " + E(r["note"])) if r["note"] else ""}</li>'
+        for r in refs)
+    return f'      <h2>In the book</h2>\n      <ul>{items}</ul>\n'
+
+
 def story_body_html(story: dict) -> str:
     title = E(story["title"])
     return f"""      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / <a href="/{PAGE_ROOT}/">Guest stories</a> / {title}</p>
       <h1>{title}</h1>
 {byline_html(story)}
 {paragraphs_html(story["story"])}
-      <p class="muted">This is a first-person guest story, published under the author’s name with written consent. Source: <a href="/{story['source_rel']}">{E(story['source_rel'])}</a>. The author is also listed on <a href="/contributors/">Contributors</a>.</p>
+{in_book_html(story)}      <p class="muted">This is a first-person guest story, published under the author’s name with written consent. Source: <a href="/{story['source_rel']}">{E(story['source_rel'])}</a>. The author is also listed on <a href="/contributors/">Contributors</a>.</p>
 """
 
 
 def story_body_md(story: dict) -> str:
+    refs = story.get("in_book") or []
+    in_book = (["## In the book", ""] + [
+        f"- {'Guest sidebar in' if r['role'] == 'sidebar' else 'Mentioned in'} [Chapter {r['chapter']}, {r['chapter_title']}]({r['story_arc_url']})" + (f": {r['note']}" if r['note'] else "")
+        for r in refs] + [""]) if refs else []
     return "\n".join([
         byline_md(story),
         "",
         story["story"].strip(),
         "",
+        *in_book,
         f"This is a first-person guest story, published under the author’s name with written consent. "
         f"Source: [{story['source_rel']}]({story['source_url']}). "
         f"The author is also listed on [Contributors]({BASE}/contributors/index.md).",
@@ -257,6 +301,7 @@ def write_stories_json(site: str, stories: list[dict]) -> None:
                 "markdown_url": s["markdown_url"],
                 "source_url": s["source_url"],
                 "lede": s.get("lede") or "",
+                "in_book": s.get("in_book") or [],
             }
             for s in stories
         ],
@@ -286,8 +331,9 @@ def llms_book_lines(site: str | None = None, stories: list[dict] | None = None) 
         handle = f" (@{s['github']})" if s.get("github") else ""
         date = f", {s['date_display']}" if s.get("date_display") else ""
         lede = s.get("lede") or "A first-person guest story."
+        inb = f" In the book: {refs_sentence(s['in_book'])}." if s.get("in_book") else ""
         lines.append(
-            f"- [{s['title']}]({s['markdown_url']}): Guest story by {by}{handle}{date}. {lede}"
+            f"- [{s['title']}]({s['markdown_url']}): Guest story by {by}{handle}{date}. {lede}{inb}"
         )
     return lines
 

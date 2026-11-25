@@ -1015,6 +1015,10 @@ def build_book():
                "video": video_meta,
                "chapters_url": f"{BASE}/book/chapters/",
                "chapters": BC.catalog(SITE, sys.modules[__name__]),
+               "guest_stories": {"url": f"{BASE}/book/guest/", "json_url": f"{BASE}/book/guest/stories.json",
+                                 "stories": [{"title": g["title"], "by": g.get("by") or None, "github": g.get("github") or None,
+                                              "url": g["page_url"], "markdown_url": g["markdown_url"], "in_book": g.get("in_book") or []}
+                                             for g in GUEST.load_stories(SITE)]},
                "preview": {"transcript_url": f"{BASE}/book-source/preview/transcript.md",
                            "script_url": f"{BASE}/book-source/preview/script.md",
                            "script_json_url": f"{BASE}/book-source/preview/script.json",
