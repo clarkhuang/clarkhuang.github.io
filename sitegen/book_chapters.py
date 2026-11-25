@@ -218,8 +218,11 @@ def catalog(site, G=None):
              "part": ch.get("part"), "status": ch.get("status", "drafted"), "nonfiction": bool(ch.get("nonfiction", True)),
              "summary": ch["summary"], "rule": ch.get("rule"),
              "page_url": BASE + ch["_url"], "markdown_url": BASE + ch["_url"] + "index.md", "agents_url": BASE + ch["_url"] + "AGENTS.md",
-             "text_url": BASE + ch["_src_url"] + "chapter.md", "transcript_url": BASE + ch["_src_url"] + "transcript.md",
-             "build_url": BASE + ch["_src_url"] + "BUILD.md", "outline_id": ch.get("outline_id")}
+             "text_url": BASE + ch["_src_url"] + "chapter.md", "outline_id": ch.get("outline_id")}
+        if os.path.isfile(os.path.join(ch["_dir"], "transcript.md")):
+            e["transcript_url"] = BASE + ch["_src_url"] + "transcript.md"
+        if os.path.isfile(os.path.join(ch["_dir"], "BUILD.md")):
+            e["build_url"] = BASE + ch["_src_url"] + "BUILD.md"
         if ch.get("thesis"):
             e["thesis"] = {"text": ch["thesis"], "by": ch.get("thesis_by") or "Clark Huang", "kind": "opinion"}
         if ch.get("_feat_text"):
@@ -251,10 +254,11 @@ def llms_lines(site):
     chs = load_chapters(site)
     if not chs:
         return []
-    lines = [f"- [Chapters you can read now]({BASE}/book/chapters/index.md): finished chapters of Silicon Valley C Players, each with the full text, a videobook and an audio track"]
+    lines = [f"- [Chapters you can read now]({BASE}/book/chapters/index.md): finished chapters of Silicon Valley C Players, each with the full text; some also have a videobook and an audio track"]
     for ch in chs:
         feat = f" Includes “{ch['_feat_title']}” and a prompt to score your company against it." if ch.get("_feat_text") else ""
-        lines.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md): {ch['summary']}{feat} Video, audio, captions and transcript: {BASE}{ch['_src_url']}transcript.md")
+        media = f" Video, audio, captions and transcript: {BASE}{ch['_src_url']}transcript.md" if ch.get("video") else " Text only for now."
+        lines.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md): {ch['summary']}{feat}{media}")
     return lines
 
 
@@ -336,25 +340,29 @@ def chapter_html(site, ch, m, prev_ch, next_ch):
                 f'        <p class="label" id="pv-{E(ch["bookmark"])}-h">The whole chapter, in short</p>\n'
                 f'        <p>{E(ch["preview"])}</p>\n      </section>\n')
     part = E(ch.get("part") or "")
+    lead = ch.get("contribute_lead") or "Disagree with a correlation, or know a better one?"
     body = (
         f'      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / <a href="/book/chapters/">Chapters</a> / Chapter {E(ch["n"])}</p>\n'
         f'      <h1>{E(ch["title"])}</h1>\n'
         f'      <p class="h1-status"><span class="badge">Chapter {E(ch["n"])}</span><span class="badge dim">{part}</span><span class="badge soon">{E(ch.get("badge") or "Drafted · v0")}</span></p>\n'
         + sub +
-        f'      <p class="muted">{E(ch.get("frame") or "")} <a href="/book/story-arc/#{E(ch.get("outline_id") or "")}">Where it sits in the book</a> · <a href="/book/editorial-policy/">Editorial policy</a></p>\n'
-        '      <section class="audiobox preview-lead" aria-labelledby="watch-h">\n'
-        '        <h2 id="watch-h">Watch the whole chapter</h2>\n'
-        f'        <p class="muted" style="font-size:14px;margin:0 0 12px">{E(ch.get("video_blurb") or "")}</p>\n'
-        + "".join(blocks) + chap_list +
-        '      </section>\n'
-        + featured_html(ch) + rule + audio +
+        f'      <p class="muted">{E(ch.get("frame") or "")} <a href="/book/story-arc/#{E(ch.get("outline_id") or "")}">Where it sits in the book</a> · <a href="/book/editorial-policy/">Editorial policy</a></p>\n')
+    if vpath:
+        body += (
+            '      <section class="audiobox preview-lead" aria-labelledby="watch-h">\n'
+            '        <h2 id="watch-h">Watch the whole chapter</h2>\n'
+            f'        <p class="muted" style="font-size:14px;margin:0 0 12px">{E(ch.get("video_blurb") or "")}</p>\n'
+            + "".join(blocks) + chap_list +
+            '      </section>\n')
+    body += (
+        featured_html(ch) + rule + audio +
         '      <article class="chapter-text" aria-labelledby="text-h">\n'
         '        <h2 id="text-h" class="label">Read the chapter</h2>\n'
         + md_to_html(body_markdown(ch), indent="        ") +
         '      </article>\n'
         '      <section aria-labelledby="ask-ch-h" style="margin-top:36px">\n'
         '        <h2 id="ask-ch-h">Ask, connect, contribute</h2>\n'
-        f'        <p>Disagree with a correlation, or know a better one? <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">File a correction</a> or <a href="/contribute/">contribute with your AI</a>. If it lands, you are credited on <a href="/contributors/">Contributors</a>.</p>\n'
+        f'        <p>{E(lead)} <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/new?template=correction.yml">File a correction</a> or <a href="/contribute/">contribute with your AI</a>. If it lands, you are credited on <a href="/contributors/">Contributors</a>.</p>\n'
         '        <div data-ask-book-mount></div>\n'
         '      </section>\n'
         + pager)
@@ -412,9 +420,14 @@ def chapter_md(site, ch, m):
             lines += ["### Video chapters", ""] + [f"- {mmss(c['start_seconds'])} {c['title']}" for c in m["chapters"]] + [""]
     shifted = re.sub(r"^(#{2,5}) ", lambda mm: "#" + mm.group(1) + " ", body_markdown(ch), flags=re.M)
     lines += ["## The chapter", "", shifted.rstrip(), ""]
-    lines += ["## How to cite", "", f"Quote the chapter text at {u} (or {u}index.md) and give the section heading, or a video timestamp ({BASE}{m['vpath'] or ''}#t=60). "
-              "This chapter is nonfiction: Clark Huang's views, with the sources listed in the chapter. Quotations from CrossFit material are from the cited public sources. "
-              "The made-up subscription-billing company is an illustration, not a real company.", ""]
+    cite = ch.get("cite") or (
+        f"Quote the chapter text at {u} (or {u}index.md) and give the section heading"
+        + (f", or a video timestamp ({BASE}{m['vpath']}#t=60)" if m.get("vpath") else "")
+        + ". This chapter is nonfiction: Clark Huang's views, with the sources listed in the chapter. "
+          "Quotations from CrossFit material are from the cited public sources. "
+          "The made-up subscription-billing company is an illustration, not a real company."
+    )
+    lines += ["## How to cite", "", cite, ""]
     return "\n".join(lines)
 
 
@@ -424,26 +437,32 @@ def index_html(chs, metas):
     for ch, m in zip(chs, metas):
         dates = m["dates"]
         dbit = (f'<span class="dates" {media_dates.attrs(dates)}>{media_dates.label_html(dates)}</span>' if dates else "")
+        progress = f'Text, videobook ({mmss(m["vdur"])}) and audio' if m["vpath"] else "Full text (video later)"
+        cta = "Read or watch" if m["vpath"] else "Read the chapter"
         rows.append(
             f'        <div class="card"><a class="card-body-link" href="{ch["_url"]}"><div class="card-meta"><span class="card-num">Chapter {E(ch["n"])} · {E(ch.get("part") or "")}</span>{dbit}</div>'
-            f'<h3>{E(ch["title"])}</h3>' + (f'<p class="thesis-mini">“{E(ch["thesis"])}” — {E(ch.get("thesis_by") or "Clark Huang")}</p>' if ch.get("thesis") else '') + f'<p>{E(ch["summary"])}</p><p class="progress">Text, videobook ({mmss(m["vdur"])}) and audio</p><span class="card-cta">Read or watch</span></a></div>'
+            f'<h3>{E(ch["title"])}</h3>' + (f'<p class="thesis-mini">“{E(ch["thesis"])}” — {E(ch.get("thesis_by") or "Clark Huang")}</p>' if ch.get("thesis") else '') + f'<p>{E(ch["summary"])}</p><p class="progress">{progress}</p><span class="card-cta">{cta}</span></a></div>'
             + (f'\n        <blockquote class="chapter-quote featured-mini"><p><strong>{E(ch["_feat_title"])}.</strong> {E(ch["_feat_text"])}</p></blockquote>' if ch.get("_feat_text") else ""))
     return (
         '      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / Chapters</p>\n'
         '      <h1>Chapters you can read now</h1>\n'
-        '      <p class="lede">Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text, a videobook of the whole chapter, and an audio track.</p>\n'
+        '      <p class="lede">Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text. Some also have a videobook of the whole chapter, and an audio track.</p>\n'
         '      <p>Drafts can change before version one. The full chapter list, with what is drafted, outlined and planned, is on the <a href="/book/story-arc/">story arc</a> page.</p>\n'
         '      <div class="cards">\n' + "\n".join(rows) + '\n      </div>\n'
         '      <p class="muted"><a href="/book/">Back to the book</a> · <a href="/book/story-arc/">Story arc and chapters</a> · <a href="/contribute/">Contribute with your AI</a></p>\n')
 
 
 def index_md(chs, metas):
-    lines = ["Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text, a videobook of the whole chapter, and an audio track. Drafts can change before version one.", ""]
+    lines = ["Silicon Valley C Players is coming in 2027. A few chapters are finished early, as v0 drafts, each with the full text. Some also have a videobook of the whole chapter, and an audio track. Drafts can change before version one.", ""]
     for ch, m in zip(chs, metas):
-        lines += [f"## Chapter {ch['n']}: {ch['title']}", ""] + ([f"> “{ch['thesis']}” — {ch.get('thesis_by') or 'Clark Huang'}", ""] if ch.get("thesis") else []) + [ch["summary"], "",
-                  f"- Page: {BASE}{ch['_url']} · Markdown: {BASE}{ch['_url']}index.md",
-                  f"- Video: {BASE}{m['vpath']} ({mmss(m['vdur'])})" if m["vpath"] else "- Video: not yet",
-                  f"- Transcript: {BASE}{ch['_src_url']}transcript.md", ""]
+        links = [f"- Page: {BASE}{ch['_url']} · Markdown: {BASE}{ch['_url']}index.md"]
+        if m["vpath"]:
+            links.append(f"- Video: {BASE}{m['vpath']} ({mmss(m['vdur'])})")
+            if os.path.isfile(os.path.join(ch["_dir"], "transcript.md")):
+                links.append(f"- Transcript: {BASE}{ch['_src_url']}transcript.md")
+        else:
+            links.append("- Video: not yet")
+        lines += [f"## Chapter {ch['n']}: {ch['title']}", ""] + ([f"> “{ch['thesis']}” — {ch.get('thesis_by') or 'Clark Huang'}", ""] if ch.get("thesis") else []) + [ch["summary"], ""] + links + [""]
         if ch.get("_feat_text"):
             lines += [f"### {ch['_feat_title']}", "", f"> {ch['_feat_text']}", "",
                       "Adapted from Greg Glassman's “World-Class Fitness in 100 Words” (CrossFit Journal, October 2002). Score your company against it:", "",
@@ -474,10 +493,10 @@ def build_book_chapters(G):
                              f"Chapter {ch['n']} of Silicon Valley C Players: {ch['title']}. Nonfiction: Clark Huang's views, with sources. "
                              "The index.md has the summary, the rule, links to the video, audio, captions and transcript, and the full chapter text.")
     G.page("book/chapters/index.html", "Chapters you can read now — Silicon Valley C Players",
-           "Finished early chapters of Silicon Valley C Players, a free OpenBook by Clark Huang: full text, a videobook of each chapter, and audio.",
+           "Finished early chapters of Silicon Valley C Players, a free OpenBook by Clark Huang: full text, and a videobook and audio where those exist.",
            index_html(chs, metas), "book")
     AF.write_prose_twins(site, "book/chapters/index.html", "Chapters you can read now", index_md(chs, metas),
-                         "Finished early chapters of Silicon Valley C Players, each with full text, a videobook and audio.")
+                         "Finished early chapters of Silicon Valley C Players, each with the full text. Some also have a videobook and audio.")
     return chs
 
 

@@ -70,6 +70,28 @@
   "chapters_url": "https://clarkhuang.github.io/book/chapters/",
   "chapters": [
     {
+      "id": "ch17b-building-blocks",
+      "number": "17b",
+      "title": "Building Blocks",
+      "subtitle": "How a result I never set as a goal came out of stacked foundations",
+      "part": "Themes along the way",
+      "status": "drafted",
+      "nonfiction": true,
+      "summary": "A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.",
+      "rule": "Build the foundation, not the number. Learn the next step when you need it. Practice the core movements until they are yours, then put them in combination. Keep going. Let the result emerge from the work you stacked, and measure the work you actually did. The same rule holds in life, in tech, in marketing, and in finance: if the foundation is weak, nothing lasting gets built. When you later apply AI to that work, put it on fundamentals you already understand.",
+      "page_url": "https://clarkhuang.github.io/book/chapters/17b-building-blocks/",
+      "markdown_url": "https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md",
+      "agents_url": "https://clarkhuang.github.io/book/chapters/17b-building-blocks/AGENTS.md",
+      "text_url": "https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/chapter.md",
+      "outline_id": "ch17b-building-blocks",
+      "build_url": "https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/BUILD.md",
+      "thesis": {
+        "text": "I build platforms and models, not products or specific numbers. Weak foundations in life, tech, marketing, or finance mean nothing lasting gets built.",
+        "by": "Clark Huang",
+        "kind": "opinion"
+      }
+    },
+    {
       "id": "ch36-sick-well-fit",
       "number": "36",
       "title": "Sick, Well, Fit",
@@ -83,9 +105,9 @@
       "markdown_url": "https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md",
       "agents_url": "https://clarkhuang.github.io/book/chapters/36-sick-well-fit/AGENTS.md",
       "text_url": "https://clarkhuang.github.io/book-source/chapters/36-sick-well-fit/chapter.md",
+      "outline_id": "ch36-how-companies-should-use-ai",
       "transcript_url": "https://clarkhuang.github.io/book-source/chapters/36-sick-well-fit/transcript.md",
       "build_url": "https://clarkhuang.github.io/book-source/chapters/36-sick-well-fit/BUILD.md",
-      "outline_id": "ch36-how-companies-should-use-ai",
       "thesis": {
         "text": "I strongly believe that AI is even more powerful to those that actually understand the fundamentals of the area they are applying AI to. Orders of magnitude more than the person vibing their way into a discipline AI gives them access to.",
         "by": "Clark Huang",

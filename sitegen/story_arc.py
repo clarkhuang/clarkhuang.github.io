@@ -151,7 +151,8 @@ def body_html(data):
     new = _readable(data)
     extra = [f'      <p class="muted">Right now: {cnt["drafted"]} drafted · {cnt["outlined"]} outlined · {cnt["planned"]} planned.</p>']
     for ch in new:
-        extra.append(f'      <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(str(ch.get("n")))}, <a href="{E(ch["url"])}">{E(ch.get("title") or "")}</a>, is finished: text, a full-chapter video and audio. <a href="#{E(ch.get("id") or "")}">See where it sits</a>.</p>')
+        finished = ch.get("finished_as") or "text, a full-chapter video and audio"
+        extra.append(f'      <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(str(ch.get("n")))}, <a href="{E(ch["url"])}">{E(ch.get("title") or "")}</a>, is finished: {E(finished)}. <a href="#{E(ch.get("id") or "")}">See where it sits</a>.</p>')
     parts = [
         '      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / Story arc and chapters</p>',
         "      <h1>Story arc and chapters</h1>",
@@ -196,7 +197,7 @@ def body_md(data):
         "",
         f"Right now: {cnt['drafted']} drafted, {cnt['outlined']} outlined, {cnt['planned']} planned.",
         "",
-        *sum(([f"**New:** Chapter {ch.get('n')}, [{ch.get('title')}](https://clarkhuang.github.io{ch['url']}index.md), is finished: text, a full-chapter video and audio.", ""] for ch in _readable(data)), []),
+        *sum(([f"**New:** Chapter {ch.get('n')}, [{ch.get('title')}](https://clarkhuang.github.io{ch['url']}index.md), is finished: {ch.get('finished_as') or 'text, a full-chapter video and audio'}.", ""] for ch in _readable(data)), []),
         "**This outline will change** as chapters are written, as interviews fill gaps, and as people contribute.",
         "",
         data["framing"],

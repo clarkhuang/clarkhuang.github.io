@@ -8,7 +8,9 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work.
 
-Right now: 7 drafted, 27 outlined, 12 planned.
+Right now: 8 drafted, 27 outlined, 12 planned.
+
+**New:** Chapter 17b, [Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md), is finished: the full text (video and audio will come later).
 
 **New:** Chapter 36, [Sick, Well, Fit: How Companies Should Use AI](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md), is finished: text, a full-chapter video and audio.
 
@@ -69,6 +71,7 @@ School days, then the jobs in career order, then the turn when AI came for the c
 | 15 | CTO, Again and Again | LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story. | outlined · needs a story |
 | 16 | The Smarter Guy in the Room | There's always someone smarter, richer, wiser. Stay humble, stay curious. A specific moment needs a story. | outlined · needs a story |
 | 17 | Falling and Getting Up | A failure, and getting back up. "I just kept going.". Needs a story. | planned · needs a story |
+| 17b | Building Blocks | A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, Challenge Family triathlons, and a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. A few details (what was on the vision board, and a soft confirm of the Quarterfinals year) are still open. Read it: https://clarkhuang.github.io/book/chapters/17b-building-blocks/ | drafted |
 | 18 | Untitled | A reserved chapter, included only if Clark chooses to put it in the book. Needs a story. | planned · needs a story |
 
 ### The turn: AI came for the coders first
