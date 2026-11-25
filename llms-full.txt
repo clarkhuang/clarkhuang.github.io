@@ -458,6 +458,8 @@ Index: https://clarkhuang.github.io/ai-tips/index.md
   - Rule: Treat memory like notes: say what matters in the prompt, don't assume a new chat knows, read your memory now and then, and fix or delete what's wrong.
 - Lesson 16: [Don't Fire and Forget](https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md) (published Nov 21, 2026) — Agents act on real systems, and a rule typed into a prompt is not a lock. Put the lock in access and approval settings, and keep the judgment for steps you can't undo.
   - Rule: Set the stop before you start: say what done looks like, limit what it can touch, require approval before delete, reset, push or send, and watch the first few steps.
+- Lesson 17: [Don't Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md) (published Nov 25, 2026) — A chat is not a locked room. Scan a paste for keys, tokens, passwords, and other secrets, replace them with placeholders, and if one slipped through, change that credential — asking the chat to forget it is not a fix.
+  - Rule: Scan before you paste. Replace secrets with placeholders. If one slipped through, change that credential. The chat cannot unsay it.
 
 ### Software Engineering 101
 

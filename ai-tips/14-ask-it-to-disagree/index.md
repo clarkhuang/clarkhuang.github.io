@@ -86,6 +86,7 @@ If it can't argue the other side, you didn't get a review. You got a nod.
 - Lesson 13: [Open the Source](https://clarkhuang.github.io/ai-tips/13-open-the-source/index.md) (available)
 - Lesson 15: [Treat Memory Like Notes](https://clarkhuang.github.io/ai-tips/15-treat-memory-like-notes/index.md) (available)
 - Lesson 16: [Don't Fire and Forget](https://clarkhuang.github.io/ai-tips/16-dont-fire-and-forget/index.md) (available)
+- Lesson 17: [Don't Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md) (available)
 
 ## For agents
 

@@ -617,6 +617,48 @@
               "title": "The habit"
             }
           ]
+        },
+        {
+          "id": "ai-tips/17",
+          "number": 17,
+          "title": "Don't Paste Secrets",
+          "status": "available",
+          "summary": "A chat is not a locked room. Scan a paste for keys, tokens, passwords, and other secrets, replace them with placeholders, and if one slipped through, change that credential — asking the chat to forget it is not a fix.",
+          "rule": "Scan before you paste. Replace secrets with placeholders. If one slipped through, change that credential. The chat cannot unsay it.",
+          "page_url": "https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/",
+          "video_url": "https://clarkhuang.github.io/videos/ai-tips-17-dont-paste-secrets.mp4",
+          "video_version": "95d08fa9",
+          "watched_key": "ai-tips/17@95d08fa9",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/ai-tips-17-dont-paste-secrets.jpg",
+          "markdown_url": "https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/index.md",
+          "agents_url": "https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/AGENTS.md",
+          "duration_seconds": 93.0,
+          "published": "2026-11-25",
+          "published_at": "2026-11-25T10:12:17-05:00",
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The problem"
+            },
+            {
+              "start_seconds": 21.9,
+              "title": "Why it happens"
+            },
+            {
+              "start_seconds": 32.4,
+              "title": "Where it shows up"
+            },
+            {
+              "start_seconds": 45.7,
+              "title": "The tell"
+            },
+            {
+              "start_seconds": 51.9,
+              "title": "The habit"
+            }
+          ],
+          "captions_url": "https://clarkhuang.github.io/videos/ai-tips-17-dont-paste-secrets.vtt",
+          "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/ai-tips-17"
         }
       ]
     },
