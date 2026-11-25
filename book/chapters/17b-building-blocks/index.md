@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md (plus https://clarkhuang.github.io/book/chapters/17b-building-blocks/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Also read the chapter's transcript at https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md and https://clarkhuang.github.io/book.json. Cite section headings or video timestamps. This chapter is nonfiction: Clark Huang's views, with the sources it lists. Then help me apply it to my own team, and do not invent facts about my team; ask.
 
-Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results for the running events named in the chapter. Half triathlons and the full triathlon are kept unnamed. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.
+Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results for the running events named in the chapter. Olympic-distance and half triathlons are kept unnamed. A full triathlon is mentioned only as something ahead, not as a race he has done. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.
 
 *How a result I never set as a goal came out of stacked foundations*
 
@@ -18,11 +18,11 @@ Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in
 
 ## The whole chapter, in short
 
-In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. CrossFit is largely gymnastics-focused; a ring muscle-up took years of practice, and double unders that hold up under fatigue took six years. Running, swimming, and the bike were ladders too. I did half triathlons, then a full triathlon — a 2.4-mile swim, a 112-mile bike, and a 26.2-mile run after that. Official marathon results then tell more of the stack: a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, a Carlsbad half at sub-three-hour marathon pace, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
+In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. CrossFit is largely gymnastics-focused; the hollow hold on the ground is the gymnastics foundation, a ring muscle-up took years of practice, and double unders that hold up under fatigue took six years. Running, swimming, and the bike were ladders too. I started with Olympic-distance triathlons, then built to half triathlons. A full triathlon is something I look forward to: the building blocks are there, but maybe not the will, yet. Official marathon results then tell more of the stack: a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, a Carlsbad half at sub-three-hour marathon pace, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
 
 ## Summary
 
-A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the ring muscle-up and double unders, half triathlons and a full triathlon, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the hollow hold, the ring muscle-up, and double unders, Olympic-distance and half triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. A full triathlon is something he looks forward to. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
 
 ## The rule
 
@@ -32,11 +32,11 @@ This rule is written so a person or an AI agent can follow it as a standing inst
 
 ## Videobook and audio
 
-- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (8:12)
+- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (8:16)
 - Published: Nov 25, 2026
 - Captions (VTT): https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt
 - Video chapters (JSON): https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json
-- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (8:12)
+- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (8:16)
 - Audio captions (VTT): https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt
 - Transcript (as narrated): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md
 - How the video was built: https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/BUILD.md
@@ -50,17 +50,17 @@ This rule is written so a person or an AI agent can follow it as a standing inst
 - 1:27 Gymnastics
 - 1:41 The Order
 - 2:00 Platforms, Not Numbers
-- 2:19 Skill Over Power
-- 2:54 Double Unders
-- 3:24 The Order
-- 3:37 A Mile, then a Half
-- 4:17 Water and the Bike
-- 4:51 The Marathon
-- 5:37 The Surprise
-- 6:11 The Payoff
-- 7:00 Still a C Player
-- 7:49 What This Is For
-- 8:05 Outro
+- 2:30 Skill Over Power
+- 3:08 Double Unders
+- 3:38 The Order
+- 3:51 A Mile, then a Half
+- 4:31 Water and the Bike
+- 5:03 The Marathon
+- 5:49 The Surprise
+- 6:23 The Payoff
+- 7:05 Still a C Player
+- 7:53 What This Is For
+- 8:09 Outro
 
 ## The chapter
 
@@ -86,7 +86,7 @@ The surprise later in this chapter is an example of that, not a contradiction of
 
 ### Skill over power
 
-A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there. Years later I was still practicing that skill. In [a later session](https://www.instagram.com/reel/DNLz8UmRh8L/) I worked strict ring muscle-ups, with the same idea: strict before kip.
+A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. The gymnastics foundation is the hollow hold, just on the ground. It seems like nothing. But virtuosity in something as simple as a hollow hold is what makes ring muscle-ups easy later, after you stack strength and technique. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there. Years later I was still practicing that skill. In [a later session](https://www.instagram.com/reel/DNLz8UmRh8L/) I worked strict ring muscle-ups, with the same idea: strict before kip.
 
 That is a building block, the same as a platform at work: you stand on it later.
 
@@ -110,7 +110,7 @@ Swimming had its own first block. I was fearful of a couple of laps in a pool. I
 
 The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
 
-I did half triathlons. Then I stacked further: a full triathlon. A 2.4-mile swim, a 112-mile bike, and then a 26.2-mile run after that. Stacking, and stacking, and stacking.
+I started with Olympic-distance triathlons. Then I built to half triathlons. A full triathlon is something I look forward to. The building blocks are there. Maybe not the will, yet.
 
 ### Then the marathon, the long way around
 
@@ -132,7 +132,7 @@ On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and f
 
 On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I [wrote after the race](https://www.instagram.com/reel/C51JmonRxZA/), I just got close to the wall and ran parallel with it for 16 miles.
 
-After Boston I paused that stretch of marathon training. I kept going in other ways. In May 2024 I ran the Dunedin Hog Hustle 5K in 20:23, 3rd male and first masters. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
+After Boston I paused that stretch of marathon training. I kept going in other ways. In January 2025 I ran the Carlsbad Marathon in 3:44:07. In February 2025 I ran the Publix Gasparilla 15K in 1:05:29.
 
 ### Still a C player
 
@@ -159,7 +159,6 @@ Official results, and the Games profile, for the races and the Open years named 
 - Carlsbad Half Marathon, January 14, 2024, bib 2008, 1:29:34: https://live.chronotrack.com/event/76297/results/entry/65636373
 - Mesa Marathon, February 10, 2024, bib 4733, 3:18:43 chip / 3:18:51 gun: https://mesamarathon.com/results?pk=7701486
 - Boston Marathon, April 15, 2024, bib 8803, 3:43:27 net / 3:43:57 gun: https://results.baa.org/2024/?content=detail&fpid=list&pid=list&idp=9TGHS6FF19A6A7&lang=EN_CAP&event=R
-- Dunedin Hog Hustle 5K, May 4, 2024, bib 387, 20:23 chip: http://frrm.raceresults.space/2024/2024_DHH_5K_OA.htm
 - Carlsbad Marathon, January 19, 2025, bib 1572, 3:44:07.31: https://live.chronotrack.com/event/84013/results/entry/71622971
 - Publix Gasparilla 15K, February 23, 2025, bib 3288, 1:05:29.84: https://results2.xacte.com/#/e/2573/searchable/3288
 
