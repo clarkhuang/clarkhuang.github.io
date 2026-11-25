@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md (plus https://clarkhuang.github.io/book/chapters/17b-building-blocks/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Also read the chapter's transcript at https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md and https://clarkhuang.github.io/book.json. Cite section headings or video timestamps. This chapter is nonfiction: Clark Huang's views, with the sources it lists. Then help me apply it to my own team, and do not invent facts about my team; ask.
 
-Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, Challenge Family, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.
+Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in the author's own voice, not Charlie Hack's. This is Clark Huang's own fitness journey, with official race results for the running events named in the chapter. Half triathlons and the full triathlon are kept unnamed. The employer is described generically, not by company name. Not affiliated with or endorsed by CrossFit, Orangetheory Fitness, REVEL, or the Boston Athletic Association; those names are used only as facts about training and races he did.
 
 *How a result I never set as a goal came out of stacked foundations*
 
@@ -18,17 +18,49 @@ Chapter 17b of *Silicon Valley C Players* (Themes along the way). Nonfiction, in
 
 ## The whole chapter, in short
 
-In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. Official results then tell the rest: Challenge Daytona in December 2020, a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
+In 2018 I was building platforms for other people and had built no foundation for myself: I was not feeling good about my body, I had gained weight without realizing it, and I was always tired. A Dale Carnegie vision-board exercise produced a triathlon I had not planned, along with learning guitar, picking piano back up, retiring by 50, and some business-specific things. I learned the next step as I needed it: Orangetheory in 2019, CrossFit 9 within six months, a Level 1 certification in 2022. CrossFit is largely gymnastics-focused; a ring muscle-up took years of practice, and double unders that hold up under fatigue took six years. Running, swimming, and the bike were ladders too. I did half triathlons, then a full triathlon — a 2.4-mile swim, a 112-mile bike, and a 26.2-mile run after that. Official marathon results then tell more of the stack: a first marathon of 5:56:24 in 2021, 3:25:45 in 2022, a 3:03:55 Boston qualifier at 47 in 2023, a Carlsbad half at sub-three-hour marathon pace, and Boston itself in 2024, “not my fastest but definitely the FUNNEST.” I qualified for the 2024 Age-Group Quarterfinals and did the workouts unofficially, scaled, after Boston. The point is the stack, not the number. Chapter 36 takes the same idea to how a company should use AI.
 
 ## Summary
 
-A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, Challenge Family triathlons, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
+A nonfiction interlude in Clark Huang's own voice: his fitness journey from a 2018 wake-up through Orangetheory, CrossFit, gymnastics skills like the ring muscle-up and double unders, half triathlons and a full triathlon, and six official marathons, including a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. The result came out of stacked foundations. He still calls himself a C player in CrossFit. A light turn toward Chapter 36, on how companies should use AI, closes the chapter.
 
 ## The rule
 
 Build the foundation, not the number. Learn the next step when you need it. Practice the core movements until they are yours, then put them in combination. Keep going. Let the result emerge from the work you stacked, and measure the work you actually did. The same rule holds in life, in tech, in marketing, and in finance: if the foundation is weak, nothing lasting gets built. When you later apply AI to that work, put it on fundamentals you already understand.
 
 This rule is written so a person or an AI agent can follow it as a standing instruction.
+
+## Videobook and audio
+
+- Video (the whole chapter, narrated in Clark's AI voice): https://clarkhuang.github.io/videos/book-17b-building-blocks.mp4 (8:12)
+- Published: Nov 25, 2026
+- Captions (VTT): https://clarkhuang.github.io/videos/book-17b-building-blocks.vtt
+- Video chapters (JSON): https://clarkhuang.github.io/videos/book-17b-building-blocks-chapters.json
+- Audio (MP3): https://clarkhuang.github.io/audio/book-17b-building-blocks.mp3 (8:12)
+- Audio captions (VTT): https://clarkhuang.github.io/audio/book-17b-building-blocks.vtt
+- Transcript (as narrated): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/transcript.md
+- How the video was built: https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/BUILD.md
+- Chapter text (Markdown source): https://clarkhuang.github.io/book-source/chapters/17b-building-blocks/chapter.md
+
+### Video chapters
+
+- 0:00 Title
+- 0:10 The Wake-up
+- 0:37 A Goal I Did Not Plan
+- 1:27 Gymnastics
+- 1:41 The Order
+- 2:00 Platforms, Not Numbers
+- 2:19 Skill Over Power
+- 2:54 Double Unders
+- 3:24 The Order
+- 3:37 A Mile, then a Half
+- 4:17 Water and the Bike
+- 4:51 The Marathon
+- 5:37 The Surprise
+- 6:11 The Payoff
+- 7:00 Still a C Player
+- 7:49 What This Is For
+- 8:05 Outro
 
 ## The chapter
 
@@ -42,6 +74,8 @@ In a Dale Carnegie course, a vision-board exercise produced a goal I had not pla
 
 I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
 
+That gym is where the method started to click. CrossFit is largely gymnastics-focused, and gymnastics is bodyweight movement. Skill and positions come first, then the work you can do with them. Weightlifting is part of that work too. The order I kept coming back to is mechanics first, then consistency, and only then intensity. I was after virtuosity: years of practice, not a shortcut.
+
 That sequence is the method I actually used: not a complete program written in advance, but the next block, then the next one.
 
 ### Platforms, not numbers
@@ -50,9 +84,33 @@ This is the same way I have tried to work in my career. I build platforms and mo
 
 The surprise later in this chapter is an example of that, not a contradiction of it. A time I never set as a goal, when I started, came out of the blocks I had already stacked.
 
-### First the swim, the bike, and the run
+### Skill over power
 
-My first official triathlon was the Challenge Daytona half-distance, in December 2020. It was a Challenge Family race, not an Ironman-brand event. I also did Challenge Miami, and other local races at various triathlon distances. I am not going to dwell on those here.
+A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there.
+
+That is a building block, the same as a platform at work: you stand on it later.
+
+### Double unders, then endurance
+
+Double unders are the same kind of block. You can't do them until you can do a long set of single unders. I finally got them, but they only worked when I was fresh. In the middle of an extreme workout, under fatigue, they fell apart, because I had never tested them under load or under heavy breathing.
+
+The next block was endurance on top of the skill. That is what gets you to unbroken double unders when you are already tired. Today I can do 50, 75, or 100 double unders in a row, unbroken. That took six years.
+
+Mechanics first, then consistency, then intensity: a long set of singles, then doubles that hold up fresh, then doubles that hold up when you are breathing hard. The result was never the first step.
+
+### A mile, then a half
+
+Running was a ladder too. A mile seemed hard. Then the miles got faster. Then 5Ks, then 10Ks. Everyday runs became a minimum of 10K. Then I was building toward a half marathon.
+
+Finishing a half is one kind of endurance. Excelling at one is another. At the Carlsbad Half Marathon, on January 14, 2024, I ran 1:29:34 official, 89th of 3,395, and 4th in men 45–49. That is sub-three-hour marathon pace, for a half. It came out of the same stack: the mile that had seemed hard, then the everyday 10K, then the longer work.
+
+### Water and the bike
+
+Swimming had its own first block. I was fearful of a couple of laps in a pool. I got to swimming 1.2 miles in open water, with waves.
+
+The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
+
+I did half triathlons. Then I stacked further: a full triathlon. A 2.4-mile swim, a 112-mile bike, and then a 26.2-mile run after that. Stacking, and stacking, and stacking.
 
 ### Then the marathon, the long way around
 
@@ -64,13 +122,13 @@ The drop from nearly six hours to 3:25 was not a secret workout. It was a founda
 
 ### The surprise
 
-On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the triathlon, and the races that came after. That time was also my Boston qualifier for 2024.
+On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the swim, the bike, the run, and the races that came after. That time was also my Boston qualifier for 2024.
 
 A personal best like that is easy to misread as the point of the work. It was a result. The work was the stack underneath it.
 
 ### The payoff
 
-On January 14, 2024, I ran the Carlsbad Half Marathon in 1:29:34 official, 89th of 3,395, 4th in men 45–49. On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43.
+On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43.
 
 On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I wrote after the race, I just got close to the wall and ran parallel with it for 16 miles.
 
@@ -95,7 +153,6 @@ The rule I take from this path is simple enough to follow on a Monday, and simpl
 Official results, and the Games profile, for the races and the Open years named above. Times below are official chip or net times unless noted.
 
 - CrossFit Games athlete profile (Open 2021–2024 listed under CrossFit 9, St. Petersburg): https://games.crossfit.com/athlete/1952037
-- Challenge Daytona, December 2020: a Challenge Family half-distance; official individual time not confirmed in this pass. Results index: https://challenge-daytona.com/race-information/results/
 - Clearwater Running Festival Marathon, April 25, 2021, bib 212, 5:56:24.2: https://www.millenniumrunning.com/wp-content/uploads/2014/09/Clearwater-Running-Festival-Marathon-Overall-Results.html
 - REVEL Big Cottonwood Marathon, September 10, 2022, bib 2656, 3:25:45 chip / 3:27:29 gun: https://results.laurelt.com/bcm/results?pk=7624702
 - REVEL Mt Charleston Marathon, April 1, 2023, bib 2441, age 47, 3:03:55 chip / 3:04:28 gun: https://results.laurelt.com/rmc/results?pk=7677125

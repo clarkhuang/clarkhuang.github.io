@@ -12,6 +12,8 @@ In a Dale Carnegie course, a vision-board exercise produced a goal I had not pla
 
 I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
 
+That gym is where the method started to click. CrossFit is largely gymnastics-focused, and gymnastics is bodyweight movement. Skill and positions come first, then the work you can do with them. Weightlifting is part of that work too. The order I kept coming back to is mechanics first, then consistency, and only then intensity. I was after virtuosity: years of practice, not a shortcut.
+
 That sequence is the method I actually used: not a complete program written in advance, but the next block, then the next one.
 
 ## Platforms, not numbers
@@ -20,9 +22,33 @@ This is the same way I have tried to work in my career. I build platforms and mo
 
 The surprise later in this chapter is an example of that, not a contradiction of it. A time I never set as a goal, when I started, came out of the blocks I had already stacked.
 
-## First the swim, the bike, and the run
+## Skill over power
 
-My first official triathlon was the Challenge Daytona half-distance, in December 2020. It was a Challenge Family race, not an Ironman-brand event. I also did Challenge Miami, and other local races at various triathlon distances. I am not going to dwell on those here.
+A ring muscle-up is one of those blocks. I spent years on it. I worked with a coach. We built the fundamental strengths first. Skill and technique override power and strength. The false grip is a gymnastics technique most people don't know about, and it is part of how the movement works. You don't muscle your way through the rings if the position isn't there.
+
+That is a building block, the same as a platform at work: you stand on it later.
+
+## Double unders, then endurance
+
+Double unders are the same kind of block. You can't do them until you can do a long set of single unders. I finally got them, but they only worked when I was fresh. In the middle of an extreme workout, under fatigue, they fell apart, because I had never tested them under load or under heavy breathing.
+
+The next block was endurance on top of the skill. That is what gets you to unbroken double unders when you are already tired. Today I can do 50, 75, or 100 double unders in a row, unbroken. That took six years.
+
+Mechanics first, then consistency, then intensity: a long set of singles, then doubles that hold up fresh, then doubles that hold up when you are breathing hard. The result was never the first step.
+
+## A mile, then a half
+
+Running was a ladder too. A mile seemed hard. Then the miles got faster. Then 5Ks, then 10Ks. Everyday runs became a minimum of 10K. Then I was building toward a half marathon.
+
+Finishing a half is one kind of endurance. Excelling at one is another. At the Carlsbad Half Marathon, on January 14, 2024, I ran 1:29:34 official, 89th of 3,395, and 4th in men 45–49. That is sub-three-hour marathon pace, for a half. It came out of the same stack: the mile that had seemed hard, then the everyday 10K, then the longer work.
+
+## Water and the bike
+
+Swimming had its own first block. I was fearful of a couple of laps in a pool. I got to swimming 1.2 miles in open water, with waves.
+
+The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
+
+I did half triathlons. Then I stacked further: a full triathlon. A 2.4-mile swim, a 112-mile bike, and then a 26.2-mile run after that. Stacking, and stacking, and stacking.
 
 ## Then the marathon, the long way around
 
@@ -34,13 +60,13 @@ The drop from nearly six hours to 3:25 was not a secret workout. It was a founda
 
 ## The surprise
 
-On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the triathlon, and the races that came after. That time was also my Boston qualifier for 2024.
+On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the swim, the bike, the run, and the races that came after. That time was also my Boston qualifier for 2024.
 
 A personal best like that is easy to misread as the point of the work. It was a result. The work was the stack underneath it.
 
 ## The payoff
 
-On January 14, 2024, I ran the Carlsbad Half Marathon in 1:29:34 official, 89th of 3,395, 4th in men 45–49. On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43.
+On February 10, 2024, at the Mesa Marathon, I was chasing a sub-3 that day and finished in 3:18:43.
 
 On April 15, 2024, I ran the Boston Marathon in 3:43:27 official (gun 3:43:57). I finished 12,784th overall, 8,590th among men, 1,456th in men 45–49. It was, as I wrote at the time, “not my fastest but definitely the FUNNEST.” As I wrote after the race, I just got close to the wall and ran parallel with it for 16 miles.
 
@@ -65,7 +91,6 @@ The rule I take from this path is simple enough to follow on a Monday, and simpl
 Official results, and the Games profile, for the races and the Open years named above. Times below are official chip or net times unless noted.
 
 - CrossFit Games athlete profile (Open 2021–2024 listed under CrossFit 9, St. Petersburg): https://games.crossfit.com/athlete/1952037
-- Challenge Daytona, December 2020: a Challenge Family half-distance; official individual time not confirmed in this pass. Results index: https://challenge-daytona.com/race-information/results/
 - Clearwater Running Festival Marathon, April 25, 2021, bib 212, 5:56:24.2: https://www.millenniumrunning.com/wp-content/uploads/2014/09/Clearwater-Running-Festival-Marathon-Overall-Results.html
 - REVEL Big Cottonwood Marathon, September 10, 2022, bib 2656, 3:25:45 chip / 3:27:29 gun: https://results.laurelt.com/bcm/results?pk=7624702
 - REVEL Mt Charleston Marathon, April 1, 2023, bib 2441, age 47, 3:03:55 chip / 3:04:28 gun: https://results.laurelt.com/rmc/results?pk=7677125
