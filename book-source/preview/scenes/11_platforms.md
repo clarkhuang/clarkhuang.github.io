@@ -1,7 +1,7 @@
 # Platforms, not products
 
 - id: `11_platforms`
-- start: 71.95s (1:11)
+- start: 67.87s (1:07)
 - duration: 7.73s
 
 ## Performance text

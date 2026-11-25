@@ -42,7 +42,7 @@ All of them: https://clarkhuang.github.io/book/chapters/index.md
 
 Fair warning. This is an embellished fictional dramatization that may or may not be based on true stories. The narrator is a guy named Charlie Hack, and any resemblance to me is mostly coincidental. Names, characters, companies and events are fictitious, or used fictitiously.
 
-This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming.
+This preview tells the story from the beginning to the end. It starts with dreaming in green, and it ends by dreaming about A.I. More chapters are coming. An original instrumental music bed plays under the voice; the source and license are in [MUSIC.md](https://clarkhuang.github.io/book-source/preview/music/MUSIC.md).
 
 Silicon Valley is very good at telling a story about A players. The people who look like they were always going to win, and the companies that look like they were always going to work. The myth is a straight line: a garage, a genius, a ticker symbol. But most of the real work looks nothing like that. It looks like another ordinary Tuesday, doing the next right thing.
 
@@ -78,7 +78,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Videobook preview
 
-- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (184.0s)
+- Videobook preview: https://clarkhuang.github.io/videos/book-preview.mp4 (182.4s)
 - Published: Nov 22, 2026. Updated: Nov 24, 2026
 - Captions (VTT): https://clarkhuang.github.io/videos/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/videos/book-preview-chapters.json
@@ -88,7 +88,7 @@ Silicon Valley C Players. Written and interviewed by AI, from Clark Huang's own 
 
 ## Audio
 
-- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (184.0s)
+- Book preview (audio): https://clarkhuang.github.io/audio/book-preview.mp3 (182.4s)
 - Full audiobook: coming later
 - Captions (VTT): https://clarkhuang.github.io/audio/book-preview.vtt
 - Chapters (JSON): https://clarkhuang.github.io/audio/book-preview-chapters.json

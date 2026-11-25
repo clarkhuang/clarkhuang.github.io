@@ -1,7 +1,7 @@
 # The whole point
 
 - id: `18_payoff`
-- start: 139.42s (2:19)
+- start: 135.34s (2:15)
 - duration: 25.39s
 
 ## Performance text

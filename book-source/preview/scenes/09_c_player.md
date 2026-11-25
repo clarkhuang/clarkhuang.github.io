@@ -1,13 +1,13 @@
 # A C player
 
 - id: `09_c_player`
-- start: 58.94s (0:58)
-- duration: 8.64s
+- start: 51.22s (0:51)
+- duration: 12.29s
 
 ## Performance text
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room.
+And from the outside, a C thing can look like an A thing. [pause] A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. [pause] Because there is always the smarter guy in the room.
 
 ## Spoken transcript
 
-A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room.
+And from the outside, a C thing can look like an A thing. A C player is not a failure. It's the person who was never the smartest in the room, and kept going anyway. Because there is always the smarter guy in the room.

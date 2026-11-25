@@ -1,7 +1,7 @@
 # The hollow hold
 
 - id: `13_hollow`
-- start: 88.32s (1:28)
+- start: 84.24s (1:24)
 - duration: 11.69s
 
 ## Performance text

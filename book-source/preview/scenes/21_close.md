@@ -1,7 +1,7 @@
 # Coming in 2027
 
 - id: `21_close`
-- start: 180.24s (3:00)
+- start: 176.16s (2:56)
 - duration: 3.74s
 
 ## Performance text
