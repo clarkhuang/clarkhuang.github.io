@@ -2,6 +2,6 @@
 
 None remaining for the facts now in the chapter.
 
-Olympic-distance and half triathlons are kept unnamed and undated on purpose, per Clark. Do not add race names, dates, or times for those events. A full triathlon is something he looks forward to — the building blocks are there, but maybe not the will yet — not a race he has done. Do not describe a completed full triathlon.
+The triathlon ladder names Challenge Miami (sprint), St. Anthony's Triathlon (Olympic), and Challenge Daytona (half), and a full Ironman only as something ahead. Talk about the standard distances more than the events. Do not add dates or finish times for those triathlon races. The Dunedin Hog Hustle 5K stays out.
 
-The coach in the ring muscle-up story stays unnamed. Weightlifting appears in the videobook; the narration does not invent lifts, loads, or PRs. The Dunedin Hog Hustle 5K is left out of this chapter, per Clark. The hollow hold on the ground is the gymnastics foundation named in the muscle-up section.
+The coach in the ring muscle-up story stays unnamed. The Milo of Croton calf-to-bull story is framed as a legend and cited to Encyclopaedia Britannica. Weightlifting narration does not invent lifts, loads, or PRs.

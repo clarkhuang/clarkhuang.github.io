@@ -3,19 +3,19 @@
     "id": "01_title",
     "title": "Title",
     "start_seconds": 0.0,
-    "duration_seconds": 10.43
+    "duration_seconds": 9.93
   },
   {
     "id": "02_wake",
     "title": "The Wake-up",
     "start_seconds": 10.43,
-    "duration_seconds": 27.16
+    "duration_seconds": 27.17
   },
   {
     "id": "04_board",
     "title": "A Goal I Did Not Plan",
     "start_seconds": 37.59,
-    "duration_seconds": 50.35
+    "duration_seconds": 50.34
   },
   {
     "id": "06_gymn",
@@ -24,81 +24,87 @@
     "duration_seconds": 13.89
   },
   {
-    "id": "07_mci",
-    "title": "The Order",
+    "id": "07_milo",
+    "title": "Progressive Overload",
     "start_seconds": 101.83,
+    "duration_seconds": 31.74
+  },
+  {
+    "id": "09_mci",
+    "title": "The Order",
+    "start_seconds": 133.57,
     "duration_seconds": 18.45
   },
   {
-    "id": "08_platforms",
+    "id": "10_platforms",
     "title": "Platforms, Not Numbers",
-    "start_seconds": 120.28,
+    "start_seconds": 152.02,
     "duration_seconds": 29.9
   },
   {
-    "id": "10_hollow",
+    "id": "12_hollow",
     "title": "Skill Over Power",
-    "start_seconds": 150.18,
+    "start_seconds": 181.92,
     "duration_seconds": 37.88
   },
   {
-    "id": "14_singles",
+    "id": "16_singles",
     "title": "Double Unders",
-    "start_seconds": 188.06,
-    "duration_seconds": 30.7
+    "start_seconds": 219.8,
+    "duration_seconds": 47.19
   },
   {
-    "id": "17_mci2",
+    "id": "21_mci2",
     "title": "The Order",
-    "start_seconds": 218.76,
+    "start_seconds": 266.99,
     "duration_seconds": 12.36
   },
   {
-    "id": "18_mile",
-    "title": "A Mile, then a Half",
-    "start_seconds": 231.12,
-    "duration_seconds": 39.95
+    "id": "22_mile",
+    "title": "A Mile, Then A Half",
+    "start_seconds": 279.34,
+    "duration_seconds": 39.96
   },
   {
-    "id": "20_swim",
+    "id": "24_swim",
     "title": "Water and the Bike",
-    "start_seconds": 271.07,
-    "duration_seconds": 32.85
+    "start_seconds": 319.3,
+    "duration_seconds": 56.0
   },
   {
-    "id": "23_clearwater",
+    "id": "27_clearwater",
     "title": "The Marathon",
-    "start_seconds": 303.92,
-    "duration_seconds": 46.04
+    "start_seconds": 375.3,
+    "duration_seconds": 46.05
   },
   {
-    "id": "25_surprise",
+    "id": "29_surprise",
     "title": "The Surprise",
-    "start_seconds": 349.96,
-    "duration_seconds": 33.55
+    "start_seconds": 421.35,
+    "duration_seconds": 33.54
   },
   {
-    "id": "27_payoff",
+    "id": "31_payoff",
     "title": "The Payoff",
-    "start_seconds": 383.51,
+    "start_seconds": 454.89,
     "duration_seconds": 41.49
   },
   {
-    "id": "29_cplayer",
-    "title": "Still a C Player",
-    "start_seconds": 425.0,
+    "id": "33_cplayer",
+    "title": "Still A C Player",
+    "start_seconds": 496.38,
     "duration_seconds": 48.66
   },
   {
-    "id": "32_ch36",
+    "id": "36_ch36",
     "title": "What This Is For",
-    "start_seconds": 473.66,
-    "duration_seconds": 16.02
+    "start_seconds": 545.04,
+    "duration_seconds": 16.03
   },
   {
-    "id": "33_outro",
+    "id": "37_outro",
     "title": "Outro",
-    "start_seconds": 489.68,
+    "start_seconds": 561.07,
     "duration_seconds": 6.79
   }
 ]

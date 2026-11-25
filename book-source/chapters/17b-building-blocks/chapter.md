@@ -12,7 +12,11 @@ In a Dale Carnegie course, a vision-board exercise produced a goal I had not pla
 
 I did not make a perfect plan. I learned what the next step needed. In 2019 I joined Orangetheory Fitness and started running and lifting. Within six months I moved to CrossFit, at CrossFit 9 in St. Petersburg, Florida, the gym I trained at from at least October 2020 through 2024. I posted [an early reel from a 7 a.m. class at that gym](https://www.instagram.com/reel/CFyLR4XpEYi/). In 2022 I earned a CrossFit Level 1 trainer certification. I studied the methodology, including its critics.
 
-That gym is where the method started to click. CrossFit is largely gymnastics-focused, and gymnastics is bodyweight movement. Skill and positions come first, then the work you can do with them. Weightlifting is part of that work too. The order I kept coming back to is mechanics first, then consistency, and only then intensity. I was after virtuosity: years of practice, not a shortcut.
+That gym is where the method started to click. CrossFit is largely gymnastics-focused, and gymnastics is bodyweight movement. Skill and positions come first, then the work you can do with them. Weightlifting is part of that work too.
+
+You master the bodyweight positions first, then you add load. Progressive overload is how you build strength over time: a little more, then a little more. The legend is of Milo of Croton, a Greek wrestler in the sixth century B.C., who carried a newborn calf every day until it was a grown bull. Fundamentals, then building blocks, then intensity, or more strength. It's all the same pattern.
+
+The order I kept coming back to is mechanics first, then consistency, and only then intensity. I was after virtuosity: years of practice, not a shortcut.
 
 That sequence is the method I actually used: not a complete program written in advance, but the next block, then the next one.
 
@@ -30,9 +34,9 @@ That is a building block, the same as a platform at work: you stand on it later.
 
 ## Double unders, then endurance
 
-Double unders are the same kind of block. You can't do them until you can do a long set of single unders. I finally got them, but they only worked when I was fresh. In the middle of an extreme workout, under fatigue, they fell apart, because I had never tested them under load or under heavy breathing.
+Double unders are the same kind of block. You can't do them until you can do a long set of single unders. Then you learn the rhythm without the rope: penguin jumps. You jump higher, and your hands double-tap against your hips, twice per jump, so you understand the rhythm. Then finally double unders. I finally got them, but they only worked when I was fresh. In the middle of an extreme workout, under fatigue, they fell apart, because I had never tested them under load or under heavy breathing.
 
-The next block was endurance on top of the skill. That is what gets you to unbroken double unders when you are already tired. Today I can do 50, 75, or 100 double unders in a row, unbroken. That took six years. I kept them in the work along the way, including [a running-strength session](https://www.instagram.com/reel/CuiBNlgAnEL/) with sets of 25 double unders on the board.
+The next block was endurance on top of the skill. That is what gets you to unbroken double unders when you are already tired. Today I can do 50, 75, or 100 double unders in a row, unbroken. That took six years. I kept them in the work along the way, including [a running-strength session](https://www.instagram.com/reel/CuiBNlgAnEL/) with sets of 25 double unders on the board. I'm just starting triple unders, and I can knock out a few. But it's only useful after I mastered 100 unbroken double unders.
 
 Mechanics first, then consistency, then intensity: a long set of singles, then doubles that hold up fresh, then doubles that hold up when you are breathing hard. The result was never the first step.
 
@@ -48,7 +52,7 @@ Swimming had its own first block. I was fearful of a couple of laps in a pool. I
 
 The bike started as leisurely rides of a few miles. Then 30-mile and 40-mile rides became an average Tuesday. Then, in a half triathlon, I rode 56 miles at a race pace of 20-plus miles per hour.
 
-I started with Olympic-distance triathlons. Then I built to half triathlons. A full triathlon is something I look forward to. The building blocks are there. Maybe not the will, yet.
+I started with a sprint-distance triathlon, Challenge Miami: about a 750-meter swim, a 20-kilometer bike, and a 5K run. Then I built to Olympic distance, at St. Anthony's Triathlon: 1.5 kilometers, 40 kilometers, and 10 kilometers. Then to a half, Challenge Daytona: 1.2 miles, 56 miles, and 13.1 miles. A full Ironman is something I look forward to: 2.4 miles, 112 miles, and 26.2 miles. The building blocks are there. Maybe not the will, yet.
 
 ## Then the marathon, the long way around
 
@@ -110,6 +114,8 @@ Instagram posts and reels I made at the time, also on the record:
 - 2024 Age-Group Quarterfinal workouts, unofficial and scaled after Boston, April 24, 2024: https://www.instagram.com/reel/C6KZyYFM29k/
 - Strict ring muscle-ups, August 10, 2025: https://www.instagram.com/reel/DNLz8UmRh8L/
 - 50th-birthday 50-rep chipper, December 7, 2025: https://www.instagram.com/reel/DR-hnyiAcpf/
+
+The legend of Milo of Croton training by carrying a calf until it became a full-sized ox is told in Encyclopaedia Britannica (as legend, not as proven history): https://www.britannica.com/biography/Milo-of-Croton
 
 The 2021 Open 21.1 details, and the Boston line “not my fastest but definitely the FUNNEST,” are from posts I made at the time. The line about running parallel with the wall is from the April 16, 2024 reel above.
 
