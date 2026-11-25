@@ -66,6 +66,8 @@ The drop from nearly six hours to 3:25 was not a secret workout. It was a founda
 
 On April 1, 2023, at 47, I ran the REVEL Mt Charleston Marathon in 3:03:55 chip, 3:04:28 gun, a 7:01 pace. I was 140th of 1,725, and 15th in men 45–49. I had never imagined a 3:03, and I had not set it as a goal when I started. It emerged from the building blocks: Orangetheory, CrossFit, the swim, the bike, the run, and the races that came after. That time was also my Boston qualifier for 2024.
 
+When I was gearing up for that Boston qualifying race, I had one opportunity that year. The twenty weeks of training before it prepared me because I took no shortcuts and put in the work. Race day seems like a big deal to most people: nerves, jitters. Why am I calm, cool, collected? Because it's just another Saturday. I'm running with the same legs I had the training week before. I sweat the same way, I ate the same things, I hydrated and took the same gels during my final training run of 20 miles. There is a golden rule in training versus competition: nothing new on race day. The marathon is 26.2 miles. In marathon training you actually never run the 26 miles. You run 20 or 21 miles at most. Not just 15, not "18 should be good enough," and not 26. Running 26 during training before your race-day 26.2 is not a good thing. If you do that, you won't recover fast enough for the actual race.
+
 A personal best like that is easy to misread as the point of the work. It was a result. The work was the stack underneath it.
 
 ## The payoff

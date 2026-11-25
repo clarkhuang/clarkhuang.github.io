@@ -56,10 +56,10 @@ School days, then the jobs in career order, then the turn when AI came for the c
 | Ch | Title | Hook | Status |
 |---|---|---|---|
 | 14 | The C Thing | The one that looked like an A to everyone. What people saw, and what was really going on. Needs a story. | planned · needs a story |
-| 15 | CTO, Again and Again | LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story. | outlined · needs a story |
+| 15 | CTO, Again and Again | LoanLark, LeaseLoop, Gumdrop.io, eSteward, HonestNest, in career order: the serial CTO. Each company needs a story. Sidebar: Nothing new on race day. When foundations are stable, BFCM is just another Thursday. BFCM is the company's race day; if you're prepared, it's a Thursday. The chicken-and-pig Scrum fable (involved vs committed). Hold others accountable; don't listen to the noise. The marathon version is in Chapter 17b, Building Blocks. The company-by-company stories are still needed. | outlined · has Clark's story · needs a story |
 | 16 | The Smarter Guy in the Room | There's always someone smarter, richer, wiser. Stay humble, stay curious. A specific moment needs a story. | outlined · needs a story |
 | 17 | Falling and Getting Up | A failure, and getting back up. "I just kept going.". Needs a story. | planned · needs a story |
-| 17b | Building Blocks | A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, gymnastics skills, a triathlon ladder from sprint to Olympic to half, and a 3:03:55 Boston qualifier at 47 that he never set as a goal when he started. A full Ironman is something he looks forward to. The result came out of stacked foundations. | drafted · read now |
+| 17b | Building Blocks | A nonfiction interlude in Clark's own voice: his fitness journey from a 2018 wake-up through CrossFit, gymnastics skills, a triathlon ladder from sprint to Olympic to half, and a 3:03:55 Boston qualifier at 47, under the rule that nothing is new on race day, that he never set as a goal when he started. A full Ironman is something he looks forward to. The result came out of stacked foundations. | drafted · read now |
 | 18 | Untitled | A reserved chapter, included only if Clark chooses to put it in the book. Needs a story. | planned · needs a story |
 
 ### The turn: AI came for the coders first
