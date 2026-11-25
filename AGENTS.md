@@ -24,6 +24,7 @@ Start here:
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
 - **Software Engineering 201: From Loop to Enterprise Systems** — complete, ten lessons: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
+- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. Newest: chapter 36, Sick, Well, Fit (how companies should use AI), finished, with a full-chapter video and Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
 

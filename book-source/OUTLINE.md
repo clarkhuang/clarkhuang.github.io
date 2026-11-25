@@ -103,7 +103,7 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 
 | Ch | Title | Hook | Site lessons | Status |
 |---|---|---|---|---|
-| 36 | How Companies Should Use AI | From one engineer and an agent to a company running a fleet. Needs a story. | New material | planned · needs a story |
+| 36 | [Sick, Well, Fit: How Companies Should Use AI](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/) | Most companies strive for well; AI rewards the ones that train to be fit: fundamentals first, then consistency, and only then intensity. Finished as a v0 draft, with a full-chapter video and Business Fitness in 100 Words. | New material; AI Tips "Know What the Bot Can Actually Reach", "Ask for Proof, Not 'Done'"; SE 201 Lesson 9 | drafted |
 | Epilogue | Epilogue: Dreaming in AI | Years after the green screen, dreaming again, this time about AI. Needs a story. | — | planned · needs a story |
 | — | The story is still being written | The book stays open, like a living repo. | — | outlined |
 | Appendix | Appendix: The Rules | Every rule from the how-to half, plus links to the site and llms.txt. | — | drafted |

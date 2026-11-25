@@ -7,9 +7,9 @@
     "https://clarkhuang.github.io/credits/",
     "https://clarkhuang.github.io/credits.json"
   ],
-  "generated": "2026-11-24 4:59 PM ET (America/New_York)",
+  "generated": "2026-11-25 8:08 AM ET (America/New_York)",
   "generated_by": "scripts/build_credits.py",
-  "note": "Credits list outside contributions that actually landed on the site. People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle. A name is never invented. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges. Filing an issue does not, by itself, add a credit.",
+  "note": "Credits list outside contributions that actually landed on the site. People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle, or by the name they consented to publish on a guest story. A name is never invented. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges. Filing an issue does not, by itself, add a credit.",
   "author": {
     "login": "clarkhuang",
     "url": "https://github.com/clarkhuang"
@@ -27,7 +27,8 @@
       "login": "himanshu112-wq",
       "url": "https://github.com/himanshu112-wq",
       "roles": [
-        "feedback"
+        "feedback",
+        "stories"
       ],
       "contributions": {
         "feedback": [
@@ -56,11 +57,29 @@
             "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/106",
             "role": "landed-in"
           }
+        ],
+        "stories": [
+          {
+            "number": 120,
+            "title": "Guest story: “I built the app. Would people use it every month?” about building Home Staff Ledger with AI.",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/120",
+            "role": "author",
+            "summary": "Guest story: “I built the app. Would people use it every month?” about building Home Staff Ledger with AI.",
+            "page_url": "https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/"
+          },
+          {
+            "number": 120,
+            "title": "Pull request #120",
+            "url": "https://github.com/clarkhuang/clarkhuang.github.io/pull/120",
+            "role": "landed-in"
+          }
         ]
       },
       "summaries": [
-        "Feedback in issue #80 that led to the reworded “AI writes essentially all the code” claim (point 4) and the book's public editorial policy (point 7)."
-      ]
+        "Feedback in issue #80 that led to the reworded “AI writes essentially all the code” claim (point 4) and the book's public editorial policy (point 7).",
+        "Guest story: “I built the app. Would people use it every month?” about building Home Staff Ledger with AI."
+      ],
+      "name": "Himanshu Kumar"
     }
   ]
 }

@@ -8,6 +8,10 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work.
 
+Right now: 7 drafted, 27 outlined, 12 planned.
+
+**New:** Chapter 36, [Sick, Well, Fit: How Companies Should Use AI](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md), is finished: text, a full-chapter video and audio.
+
 **This outline will change** as chapters are written, as interviews fill gaps, and as people contribute.
 
 An embellished fictional dramatization that may or may not be based on true stories. In the story chapters the narrator is Charlie Hack; people, companies, schools and places are fictional or used fictitiously. The how-to half is nonfiction: Clark Huang's views, with sources. Charlie Hack is the fictional narrator; Clark Huang is the author. Do not identify real people or companies behind the fictional names.
@@ -109,7 +113,7 @@ Each how-to chapter opens with a short story, then the rules. The site lessons a
 
 | Ch | Title | What goes in it | Site lessons | Status |
 |---|---|---|---|---|
-| 36 | How Companies Should Use AI | From one engineer and an agent to a company running a fleet. Needs a story. | New material | planned · needs a story |
+| 36 | Sick, Well, Fit: How Companies Should Use AI | Most companies strive for well; AI rewards the ones that train to be fit: fundamentals first, then consistency, and only then intensity. Finished as a v0 draft, with a full-chapter video and Business Fitness in 100 Words. Read it: https://clarkhuang.github.io/book/chapters/36-sick-well-fit/ | New material; AI Tips "Know What the Bot Can Actually Reach", "Ask for Proof, Not 'Done'"; SE 201 Lesson 9 | drafted |
 | Epilogue | Epilogue: Dreaming in AI | Years after the green screen, dreaming again, this time about AI. Needs a story. | — | planned · needs a story |
 | — | The story is still being written | The book stays open, like a living repo. | — | outlined |
 | Appendix | Appendix: The Rules | Every rule from the how-to half, plus links to the site and llms.txt. | — | drafted |

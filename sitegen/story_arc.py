@@ -74,11 +74,11 @@ def table_html(section):
         hook = hook_text(c)
         status = c.get("status") or "planned"
         badge = STATUS_CLASS.get(status, "badge dim")
-        label = status_label(c)
+        label = status_label(c) + (" · read now" if c.get("url") else "")
         cid = c.get("id") or ""
         cells = [
             f'<th scope="row" class="ch">{E(str(n))}</th>',
-            f'<td class="ch-title">{E(title)}</td>',
+            (f'<td class="ch-title"><a href="{E(c["url"])}">{E(title)}</a></td>' if c.get("url") else f'<td class="ch-title">{E(title)}</td>'),
             f'<td class="ch-hook">{E(hook)}</td>',
         ]
         if has_lessons:
@@ -92,12 +92,31 @@ def table_html(section):
     return "\n".join(rows)
 
 
+def _counts(data):
+    c = {"drafted": 0, "outlined": 0, "planned": 0}
+    for half in data["halves"]:
+        for sec in half["sections"]:
+            for ch in sec["chapters"]:
+                c[ch.get("status") or "planned"] = c.get(ch.get("status") or "planned", 0) + 1
+    return c
+
+
+def _readable(data):
+    return [ch for half in data["halves"] for sec in half["sections"] for ch in sec["chapters"] if ch.get("url")]
+
+
 def body_html(data):
+    cnt = _counts(data)
+    new = _readable(data)
+    extra = [f'      <p class="muted">Right now: {cnt["drafted"]} drafted · {cnt["outlined"]} outlined · {cnt["planned"]} planned.</p>']
+    for ch in new:
+        extra.append(f'      <p class="new-chapter-banner"><span class="badge">New</span> Chapter {E(str(ch.get("n")))}, <a href="{E(ch["url"])}">{E(ch.get("title") or "")}</a>, is finished: text, a full-chapter video and audio. <a href="#{E(ch.get("id") or "")}">See where it sits</a>.</p>')
     parts = [
         '      <p class="crumbs"><a href="/">Home</a> / <a href="/book/">Book</a> / Story arc and chapters</p>',
         "      <h1>Story arc and chapters</h1>",
         f'      <p class="h1-status"><span class="badge soon">Working outline</span></p>',
         f'      <p class="lede">{E(data["throughline"])}</p>',
+        *extra,
         f'      <p><strong>This outline will change</strong> as chapters are written, as interviews fill gaps, and as people contribute.</p>',
         f'      <p>{E(data["framing"])} See the <a href="/book/editorial-policy/">editorial policy</a> and the <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/NAMING-POLICY.md">naming policy</a>.</p>',
         '      <p>The book has two halves. The first follows the career arc: school days, then the jobs in career order, then the turn when AI came for the code writers. The second half is about this site — how to work now, the OpenBook itself, how agents can use and improve the site — and where it goes next.</p>',
@@ -130,9 +149,13 @@ def body_html(data):
 
 
 def body_md(data):
+    cnt = _counts(data)
     lines = [
         data["throughline"],
         "",
+        f"Right now: {cnt['drafted']} drafted, {cnt['outlined']} outlined, {cnt['planned']} planned.",
+        "",
+        *sum(([f"**New:** Chapter {ch.get('n')}, [{ch.get('title')}](https://clarkhuang.github.io{ch['url']}index.md), is finished: text, a full-chapter video and audio.", ""] for ch in _readable(data)), []),
         "**This outline will change** as chapters are written, as interviews fill gaps, and as people contribute.",
         "",
         data["framing"],
@@ -160,6 +183,8 @@ def body_md(data):
             for c in sec["chapters"]:
                 n = c.get("n") or "—"
                 hook = hook_text(c)
+                if c.get("url"):
+                    hook = f"{hook} Read it: https://clarkhuang.github.io{c['url']}"
                 status = status_label(c)
                 if has_lessons:
                     lines.append(

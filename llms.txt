@@ -75,10 +75,14 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Preview captions](https://clarkhuang.github.io/videos/book-preview.vtt): WebVTT for the videobook
 - [Preview chapters](https://clarkhuang.github.io/videos/book-preview-chapters.json): chapter titles and start times
 - [Preview scene scripts](https://clarkhuang.github.io/book-source/preview/scenes/): one markdown file per scene
+- [Chapters you can read now](https://clarkhuang.github.io/book/chapters/index.md): finished chapters of Silicon Valley C Players, each with the full text, a videobook and an audio track
+- [Chapter 36: Sick, Well, Fit](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md): Clark Huang's view is that AI is far more powerful in the hands of people who understand the fundamentals of the area they apply it to than for someone vibing their way in, and this chapter gives that view a picture: Greg Glassman's line from sickness through wellness to fitness. Most companies aim for well, a normal reading; fit is a margin, and making AI part of how a company operates is hard enough to need one. The chapter carries CrossFit's models over to a company one by one (markers, the hopper, three engines, work capacity, mechanics then consistency then intensity, the pyramid, virtuosity, benchmarks, scaling, luck, open scoring) and ends with "Business Fitness in 100 Words" and a rule a person or an agent can follow. Includes “Business Fitness in 100 Words” and a prompt to score your company against it. Video, audio, captions and transcript: https://clarkhuang.github.io/book-source/chapters/36-sick-well-fit/transcript.md
 - [Cover brief](https://clarkhuang.github.io/book-source/cover/PROMPT.md): how to describe or rebuild the cover
 - [How this book is edited](https://clarkhuang.github.io/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, a per-edition changelog of changed claims and sources, and a privacy note for Google Analytics 4 on the site
 - [Story arc and chapters](https://clarkhuang.github.io/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.
 - [Outline (JSON)](https://clarkhuang.github.io/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions
+- [Guest stories](https://clarkhuang.github.io/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: https://clarkhuang.github.io/book/guest/stories.json.
+- [I built the app. Would people use it every month?](https://clarkhuang.github.io/book/guest/himanshu112-wq-home-staff-ledger/index.md): Guest story by Himanshu Kumar (@himanshu112-wq), Nov 25, 2026. AI has made it possible to take an idea and build software other people can actually use.
 
 ## Also on this site
 

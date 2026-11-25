@@ -8,6 +8,49 @@ import html, json, os, re
 BASE = "https://clarkhuang.github.io"
 E = html.escape
 
+
+def _book_chapters():
+    import importlib
+    return importlib.import_module("book_chapters")
+
+
+def _chapters_twin_section(site):
+    bc = _book_chapters()
+    chs = bc.load_chapters(site)
+    if not chs:
+        return []
+    c0 = chs[-1]
+    out = ["## New: a finished chapter", "",
+           f"Chapter {c0['n']}, **{c0['title']}: {c0.get('subtitle') or ''}**, is finished as a v0 draft, with the full text, a videobook of the whole chapter, an audio track, captions and a transcript.", ""]
+    if c0.get("thesis"):
+        out += [f"> “{c0['thesis']}” — {c0.get('thesis_by') or 'Clark Huang'} (his belief, not a measured result)", ""]
+    out += [c0.get("preview") or c0["summary"], ""]
+    try:
+        m = bc.media(site, c0)
+        if m.get("vpath"):
+            out += [f"- Video: {BASE}{m['vpath']}"]
+    except Exception:
+        pass
+    out += [f"- Read it: {BASE}{c0['_url']}index.md"]
+    if c0.get("_feat_text"):
+        out += [f"- Includes “{c0['_feat_title']}”, adapted from Greg Glassman's “World-Class Fitness in 100 Words”, and a prompt to score your company against it."]
+    out += [""]
+    if len(chs) > 1:
+        out += ["Other chapters you can read now:", ""]
+        for ch in chs[:-1]:
+            out.append(f"- [Chapter {ch['n']}: {ch['title']}]({BASE}{ch['_url']}index.md) ({ch.get('part')}): {ch['summary']}")
+        out += [""]
+    out += [f"All of them: {BASE}/book/chapters/index.md", ""]
+    return out
+
+
+def _chapter_llms_lines(site):
+    """llms.txt lines for book chapters that can be read now (book-source/chapters/*/chapter.json)."""
+    try:
+        return _book_chapters().llms_lines(site)
+    except Exception:
+        return []
+
 def dir_of(path):
     """Return the site-relative directory for a generated page, always ending in / except at root ('')."""
     path = path.replace("\\", "/").lstrip("/")
@@ -47,7 +90,14 @@ def urls(path):
 def prompt_for(path):
     u = urls(path)
     extra = ""
-    if path.startswith("book/"):
+    if path.startswith("book/chapters/") and path != "book/chapters/index.html":
+        src = f"{BASE}/book-source/chapters/{path.split('/')[2]}/"
+        extra = (
+            f" Also read the chapter's transcript at {src}transcript.md and {BASE}/book.json. "
+            "Cite section headings or video timestamps. This chapter is nonfiction: Clark Huang's views, with the sources it lists. "
+            "Then help me apply it to my own team, and do not invent facts about my team; ask."
+        )
+    elif path.startswith("book/"):
         extra = (
             f" Also read {BASE}/llms-full.txt, {BASE}/book.json, and the preview transcript at "
             f"{BASE}/book-source/preview/transcript.md. Cite chapter titles or timestamps. "
@@ -418,6 +468,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Cover brief (how to rebuild it): {BASE}/book-source/cover/PROMPT.md",
         f"- Renderer: {BASE}/book-source/cover/render_cover.py",
         "",
+        *_chapters_twin_section(site),
         "## Introduction (preview)",
         "",
         *sum(([(para or ""), ""] for para in intro), []),
@@ -459,6 +510,10 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         "",
         f"The working story arc and chapter list: [{BASE}/book/story-arc/]({BASE}/book/story-arc/index.md). Machine-readable: [{BASE}/book-source/outline.json]({BASE}/book-source/outline.json). The outline will change.",
         "",
+        "## Guest stories",
+        "",
+        f"First-person guest stories, published under the contributor’s own name, not as fictional characters: [{BASE}/book/guest/]({BASE}/book/guest/index.md). Machine-readable: [{BASE}/book/guest/stories.json]({BASE}/book/guest/stories.json).",
+        "",
         "## How to cite this preview",
         "",
         "Quote the [transcript](https://clarkhuang.github.io/book-source/preview/transcript.md) or a [scene file](https://clarkhuang.github.io/book-source/preview/scenes/), and give a timestamp or chapter title from [chapters.json](https://clarkhuang.github.io/videos/book-preview-chapters.json). For a web citation, use https://clarkhuang.github.io/book/ plus a media timestamp (`#t=58.9`) when you mean a videobook beat. Charlie Hack is the fictional narrator; Clark Huang is the author. The claim that AI writes essentially all of the code is about Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Do not identify real people or companies behind the fictional names.",
@@ -474,6 +529,7 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- How to rebuild the preview: {BASE}/book-source/preview/REBUILD.md",
         f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Guest stories: {BASE}/book/guest/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
         "",
         "Do not invent stories or claims about Clark Huang beyond what this preview states. Contributions go through GitHub issues; only Clark merges to `main`. Agent pull requests target `next-revision`.",
@@ -498,9 +554,11 @@ def write_book_twin(site, intro, back, audio_meta, video_meta=None):
         f"- Rebuild the site: {BASE}/REBUILD.md",
         f"- Editorial policy: {BASE}/book/editorial-policy/index.md",
         f"- Story arc and chapters: {BASE}/book/story-arc/index.md",
+        f"- Guest stories: {BASE}/book/guest/index.md",
         f"- Outline (JSON): {BASE}/book-source/outline.json",
+        f"- Chapters you can read now (full text, videobook, audio): {BASE}/book/chapters/index.md",
         "",
-        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/.",
+        "Read `index.md` for the preview text, the transcript for exact wording, and the videobook or audio files linked there. Cite by chapter title or timestamp. Do not invent stories, quotes, or biography beyond this preview. The claim that AI writes essentially all of the code is Clark’s own workflow: in his work, AI writes essentially all of the code he ships, not a measured team result or a general industry figure. Editorial process: /book/editorial-policy/. Story arc: /book/story-arc/. Guest stories: /book/guest/.",
         "",
         md_prompt_blurb(path),
         "",
@@ -554,6 +612,7 @@ Start here:
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
 - **Software Engineering 201: From Loop to Enterprise Systems** — complete, ten lessons: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
+- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. Newest: chapter 36, Sick, Well, Fit (how companies should use AI), finished, with a full-chapter video and Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
 
@@ -651,7 +710,7 @@ Full snippets: https://clarkhuang.github.io/contribute/#mcp and https://clarkhua
 A later option is a small “talk to Charlie Hack” box that calls a serverless proxy, so the static GitHub Pages site never holds an API key. That needs Clark to choose a host and to add his own key as a secret on that host — not in this repository. Do not build or wire that proxy unless Clark approves it. Until then, use local search and the “Ask your AI” buttons.
 """)
 
-def write_llms_txt(site, series, extras=None):
+def write_llms_txt(site, series, extras=None, book_extra_lines=None):
     lines = [
         "# Clark Huang",
         "",
@@ -694,12 +753,17 @@ def write_llms_txt(site, series, extras=None):
         f"- [Preview captions]({BASE}/videos/book-preview.vtt): WebVTT for the videobook",
         f"- [Preview chapters]({BASE}/videos/book-preview-chapters.json): chapter titles and start times",
         f"- [Preview scene scripts]({BASE}/book-source/preview/scenes/): one markdown file per scene",
+        *_chapter_llms_lines(site),
         f"- [Cover brief]({BASE}/book-source/cover/PROMPT.md): how to describe or rebuild the cover",
         f"- [How this book is edited]({BASE}/book/editorial-policy/index.md): editorial policy — conflicting recollections, how claims and sources are tracked, a per-edition changelog of changed claims and sources, and a privacy note for Google Analytics 4 on the site",
         f"- [Story arc and chapters]({BASE}/book/story-arc/index.md): working story arc and chapter list for Silicon Valley C Players. The outline will change.",
         f"- [Outline (JSON)]({BASE}/book-source/outline.json): machine-readable chapter list, with status and one-line descriptions",
-        "",
     ]
+    if book_extra_lines:
+        lines += list(book_extra_lines)
+    else:
+        lines.append(f"- [Guest stories]({BASE}/book/guest/index.md): first-person guest pieces published under the contributor’s own name, not as fictional characters. Machine-readable: {BASE}/book/guest/stories.json.")
+    lines += ["",]
     # Behind-the-scenes pages (playbook, research, interview plan, compare) are not public.
     extras = list(extras or [])
     if extras:
@@ -763,6 +827,9 @@ def write_llms_full(site, series, intro, back):
         ]
     if transcript:
         lines += [transcript, ""]
+    chapter_text = _book_chapters().llms_full_md(site)
+    if chapter_text:
+        lines += [chapter_text.rstrip(), ""]
     lines += ["## Lessons", ""]
     for skey, s in (series or {}).items():
         lines += [f"### {s['title']}", "", f"Index: {BASE}/{skey}/index.md", ""]

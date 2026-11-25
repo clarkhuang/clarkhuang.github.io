@@ -271,6 +271,7 @@ def verify(site, repo=None):
                 html_files.append(os.path.join(root, f))
 
     lesson_pages = []
+    chapter_pages = []
     book_page = None
     series_pages = []
     home = None
@@ -288,6 +289,8 @@ def verify(site, repo=None):
             series_pages.append(path)
         elif re.match(r"(ai-tips|software-engineering-101|software-engineering-201)/[^/]+/index.html$", rel):
             lesson_pages.append((rel, path))
+        elif re.match(r"book/chapters/[^/]+/index.html$", rel):
+            chapter_pages.append((rel, path))
 
     def _has_published(text):
         return bool(DATE_ATTR_RE.search(text) and "Published " in text)
@@ -304,6 +307,19 @@ def verify(site, repo=None):
             errors.append(f"{rel}: VideoObject JSON-LD is missing uploadDate")
         if "data-new-at=" not in text or 'data-new hidden' not in text:
             errors.append(f"{rel}: lesson is missing a New-tag hook (data-new-at / data-new)")
+
+    for rel, path in chapter_pages:
+        text = open(path, encoding="utf-8").read()
+        if 'id="chapter-video"' not in text:
+            continue
+        if not _has_published(text):
+            errors.append(f"{rel}: chapter video is missing a publish date")
+        if '"@type": "VideoObject"' not in text and '"@type":"VideoObject"' not in text:
+            errors.append(f"{rel}: chapter page is missing VideoObject JSON-LD")
+        elif not JSONLD_UPLOAD_RE.search(text):
+            errors.append(f"{rel}: VideoObject JSON-LD is missing uploadDate")
+        if "data-new-at=" not in text or 'data-new hidden' not in text:
+            errors.append(f"{rel}: chapter video is missing a New-tag hook (data-new-at / data-new)")
 
     if book_page:
         text = open(book_page, encoding="utf-8").read()

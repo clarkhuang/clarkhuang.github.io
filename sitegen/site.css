@@ -414,3 +414,30 @@ main pre code{overflow-wrap:normal}
 .chapter-list .ch-status{white-space:nowrap}
 .arc-half{margin-top:36px}
 .arc-notes{margin-top:36px}
+
+/* Book chapters you can read now */
+.chapter-text{margin-top:32px;max-width:72ch}
+.chapter-text > h2:not(.label){margin-top:2.2em}
+.chapter-text h3{margin-top:1.6em}
+.chapter-text p,.chapter-text li{line-height:1.65}
+.chapter-text ul{padding-left:1.2em}
+.chapter-text li{margin:.35em 0}
+.chapter-text .chapter-quote{font-family:var(--sans);font-style:normal;font-size:1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.chapter-text .chapter-quote p{margin:0}
+.chapter-table th[scope="row"]{font-weight:600;min-width:9rem}
+.chapter-table td{color:var(--dim)}
+.featured-100 .featured-text{font-family:var(--display);font-size:1.15rem;font-weight:500;line-height:1.6}
+.featured-100 .credit{font-size:13px;margin-top:10px}
+.featured-100 h3.label{margin-top:16px;font-size:.86rem}
+.featured-100 .prompt-box pre{white-space:pre-wrap}
+.thesis{margin:20px 0 8px;max-width:64ch;border-left:4px solid var(--accent,#2f6f4f);padding:4px 0 4px 18px}
+.thesis blockquote{margin:0;font-family:var(--display);font-size:1.25rem;line-height:1.5}
+.thesis blockquote p{margin:0}
+.thesis figcaption{margin-top:8px;color:var(--dim);font-size:14px}
+.thesis-mini{font-style:italic;color:var(--dim)}
+.chapter-feature{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:20px;align-items:start;margin:16px 0}
+.chapter-feature .chapter-poster{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.chapter-feature h3{margin:.3em 0}
+@media (max-width:700px){.chapter-feature{grid-template-columns:1fr}}
+.new-chapter-banner{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px}
+.chapter-preview p:not(.label){font-weight:400;font-family:var(--sans);font-size:1.02rem;line-height:1.6;max-width:72ch}
