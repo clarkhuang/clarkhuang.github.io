@@ -88,11 +88,42 @@ def guest_refs_md(ch, site=None):
     return "".join(out)
 
 
+def story_beats_html(ch):
+    out = []
+    for b in ch.get("story_beats") or []:
+        label = "Sidebar" if b.get("role") == "sidebar" else "Clark's story"
+        title = b.get("title") or label
+        note = b.get("note") or ""
+        text = b.get("text") or ""
+        body = E(text).replace("\n", "<br>") if text else E(note)
+        # the text already includes the 17b cross-ref in prose; don't double-link unless no text
+        out.append(
+            f'<br><span class="story-beat"><strong>{E(label)}:</strong> {E(title)}. '
+            f'{body}</span>'
+        )
+    return "".join(out)
+
+
+def story_beats_md(ch):
+    out = []
+    for b in ch.get("story_beats") or []:
+        label = "Sidebar" if b.get("role") == "sidebar" else "Clark's story"
+        title = b.get("title") or label
+        note = b.get("note") or ""
+        text = b.get("text") or ""
+        body = (text or note).replace("\n", " ")
+        out.append(f" {label}: {title}. {body}".rstrip())
+    return "".join(out)
+
+
 def status_label(ch):
     status = ch.get("status") or "planned"
+    bits = [status]
+    if ch.get("story_beats"):
+        bits.append("has Clark's story")
     if ch.get("needs_story"):
-        return f"{status} · needs a story"
-    return status
+        bits.append("needs a story")
+    return " · ".join(bits)
 
 
 _SITE = ["."]
@@ -120,7 +151,7 @@ def table_html(section):
         cells = [
             f'<th scope="row" class="ch">{E(str(n))}</th>',
             (f'<td class="ch-title"><a href="{E(c["url"])}">{E(title)}</a></td>' if c.get("url") else f'<td class="ch-title">{E(title)}</td>'),
-            f'<td class="ch-hook">{E(hook)}{guest_refs_html(c, _SITE[0])}</td>',
+            f'<td class="ch-hook">{E(hook)}{guest_refs_html(c, _SITE[0])}{story_beats_html(c)}</td>',
         ]
         if has_lessons:
             cells.append(f'<td class="ch-lessons">{E(c.get("lessons") or "—")}</td>')
@@ -227,7 +258,7 @@ def body_md(data):
                 hook = hook_text(c)
                 if c.get("url"):
                     hook = f"{hook} Read it: https://clarkhuang.github.io{c['url']}"
-                hook = (hook + guest_refs_md(c, _SITE[0])).replace("|", "/")
+                hook = (hook + guest_refs_md(c, _SITE[0]) + story_beats_md(c)).replace("|", "/")
                 status = status_label(c)
                 if has_lessons:
                     lines.append(
