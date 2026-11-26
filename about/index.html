@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About this project — Clark Huang</title>
+  <meta name="description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/about/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="About this project — Clark Huang">
+  <meta property="og:description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta property="og:url" content="https://clarkhuang.github.io/about/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About this project — Clark Huang">
+  <meta name="twitter:description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About this project — Clark Huang", "description": "The learning project and a proposed SE 401 teaching platform.", "url": "https://clarkhuang.github.io/about/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/about/index.md"}}</script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    if (location.pathname.indexOf("/staging/") === 0) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-F50XBTM25X";
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", "G-F50XBTM25X", {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/software-engineering-301/">SE 301</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <details class="ai-use">
+        <summary>Use this page with your AI</summary>
+        <div class="ai-use-body">
+          <p>Copy the prompt below and paste it into ChatGPT, Claude, Grok, or any other chat tool. It points the tool at this page’s Markdown twin and at the site index, so it can read the material without browsing.</p>
+          <div class="ai-prompt" data-status-scope>
+            <pre id="ai-prompt-text" tabindex="0">Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/about/index.md (plus https://clarkhuang.github.io/about/AGENTS.md). Summarize this page, then act as my guide to Clark Huang&#x27;s site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.</pre>
+            <p class="tools"><button type="button" class="btn ghost" data-copy="ai-prompt-text" hidden>Copy prompt</button><span class="status" role="status" data-status></span></p>
+          </div>
+          <p class="ai-use-links">Machine-readable: <a href="index.md">this page in Markdown</a> · <a href="AGENTS.md">AGENTS.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+        </div>
+      </details>
+      <h1 id="about-this-project">About this project</h1>
+<p>Clark Huang started this public learning site around a question: what
+should an engineer still know how to do when an AI can write the code?
+The lessons follow the work from one change in SE 101, through whole
+systems in SE 201, to running the models and tools yourself in SE 301.
+The free OpenBook, <em>Silicon Valley C Players</em>, explores the same
+interest in fundamentals through stories and practical lessons.</p>
+<h2 id="eat-your-own-dogfood">Eat your own dogfood</h2>
+<p>Clark puts it plainly: “I despise marketing and sales.” That
+conviction shapes both the book and the site. When you depend on the
+same thing you offer someone else, you can tell them where it helped,
+where it failed, and what it cost. They can try it and reach their own
+conclusion.</p>
+<p>Take this site. SE 101 teaches readers to verify a change. When we
+added SE 301 to the navigation, we had to open the deployed homepage and
+follow the link ourselves. A successful merge alone would have told us
+nothing about what a reader could actually see. The February Mac Studio
+build will put the SE 301 playbook through the same test: start at first
+login, follow the published instructions, and correct the steps that
+fail.</p>
+<p>That is the public purpose behind the proposed foundation. A
+first-time builder should be able to read the same instructions, inspect
+the same code, see the running costs, and take their work elsewhere. If
+the shared infrastructure makes a lab affordable, publish what the
+subsidy buys. If a reader on a cheaper laptop finds a better way, give
+them credit and change the lesson.</p>
+<p>GitHub Pages at clarkhuang.github.io is the hosting infrastructure for this site. The courses, book, videos and public navigation work as static files. Optional features such as reader sync can call an external HTTPS service while the learning materials remain available to guests. SE 401 would evaluate other hosts for student applications only when a free tier is available. Each lab would document its free limits, what happens when they are reached, and how to export the project.</p>
+<h2 id="a-possible-se-401-build-something-someone-else-can-depend-on">A
+possible SE 401: build something someone else can depend on</h2>
+<p><a href="/software-engineering-401/">Explore the SE 401 goals and ten-lab outline</a>.</p><p>Imagine a product owner and a new engineer working together on a
+small application for a community organization. They start with a GitHub
+account, a real user and a written definition of success. Every pull
+request gets a preview. Before they invite the first user, they can
+explain who can see each record, how to undo a release, and what one
+more user will cost. After launch, they hand the service to another team
+that can actually operate it. That handoff would be their final
+exam.</p>
+<p>The proposed next step is a shared teaching platform. A project would
+get a web app, a preview environment, a budget and a named owner. Teams
+could expose a narrowly scoped MCP tool for agents and choose Postgres
+or MongoDB for persistence. A search lab could add vector retrieval once
+a team has examples that let it measure whether retrieval improves the
+answer.</p>
+<p>Communication would be a later part of the curriculum. A team could
+receive email at its own address on a teaching domain, use SendGrid to
+reply, or add a Twilio number for voice and SMS. WhatsApp, Instagram,
+Facebook and LinkedIn would be separate, opt-in integrations. Each
+project would operate under its own identity, permissions and spending
+limit. In a first lab, sending a message to a test inbox and showing
+what happens when delivery fails would be a successful outcome.</p>
+<h2 id="give-an-agent-the-course-url">Give an agent the course URL</h2>
+<p>A learner should be able to tell a fresh agent, “Read SE 401 and set
+up the first lab in my GitHub account.” The course would publish a
+discovery link in llms.txt, a Markdown guide for the learner, and a
+versioned, machine-readable recipe for each lab. The recipe would name
+the owner, required accounts and permissions, supported free tier,
+expected resources, and the checks that prove the app works. The recipes
+would live on GitHub Pages. The learner’s authorized agent would execute
+them in the learner’s environment.</p>
+<p>For a first lab, the agent would inspect the learner’s existing setup
+and show a plan. With approval, it would create the repository from a
+template, configure a preview deployment, provision the selected
+database, put scoped credentials in the runtime’s secret store, and wire
+up a read-only MCP tool. Provider adapters would use documented APIs or
+CLIs and identify any required browser step. If a provider asks the
+owner to verify an identity, accept terms, approve access or authorize a
+charge, the agent would save its place, explain exactly what is needed,
+and resume after confirmation.</p>
+<p>The test would start with a fresh GitHub account. The agent must
+return a working preview URL, write and read a sample record, retrieve
+that record through the authorized tool, and demonstrate that a second
+user cannot read it. Running the recipe again must reuse existing
+resources. The handoff would record resource IDs, versions, verified
+checks, cost limits, and steps to export or remove the lab. A second
+agent should be able to pick up that record and operate the app without
+the original conversation.</p>
+<h2
+id="clarks-work-at-ecio-and-the-idea-for-an-education-endowment">Clark’s
+work at eCIO and the idea for an education endowment</h2>
+<p>Clark Huang is the co-founder and CTO of eCIO, where he leads
+investment technology and technical operations. He helped build a firm
+that manages long-term funds for nonprofits. Its education clients
+include Redwood City Education Foundation, Bloomington Montessori School
+and Genesys Works. <a
+href="https://www.getecio.com/about-ecio-investment-advisor-for-nonprofits">Meet
+the eCIO team</a> · <a
+href="https://www.getecio.com/nonprofits/schools">See the schools and
+educational organizations eCIO serves</a>.</p>
+<p>Clark wants to bring that experience to this project. A free course
+can teach someone how to deploy an app today. A learner who keeps that
+app running next semester still needs a database, hosting and someone to
+turn to when it breaks. Clark’s vision is an education endowment whose
+distributions could pay for lab credits and shared infrastructure across
+successive cohorts. He would like eCIO to manage that endowment if the
+project establishes one. The fund and advisory appointment are
+proposals. If they go ahead, this page should identify who oversees the
+fund, what the adviser is paid, and how much reaches learners each
+year.</p>
+<h2 id="who-pays-for-the-lab">Who pays for the lab?</h2>
+<p>The goal is free access to the core learning experience. One idea is
+to sponsor a fixed amount of compute, storage and messaging per team. A
+team approaching its allowance could stop, apply for more sponsored
+credit or explicitly pay the published cost of continuing. A successful
+student project should have a clear path to its own hosting and provider
+accounts.</p>
+<p>An educational nonprofit and a long-term fund for learner access are
+possibilities. Decisions about governance, funding, partners and service
+availability are ahead of us. The work readers can use today is the
+published curriculum. The proposed platform gives us a specific question
+to test: can a new team build something useful, operate it within a
+budget, and teach the next team to do the same?</p>
+<p><a
+href="https://clarkhuang.github.io/software-engineering-301/">Explore SE
+301</a> · <a href="https://clarkhuang.github.io/contribute/">Contribute
+to the project</a></p>
+</div>
+<h2 id="a-proposed-fund-for-free-learner-access">A proposed fund for
+free learner access</h2>
+<p>A learner should be able to see what it costs to run a lab and who
+paid for it. One proposal is to accept gifts through a qualified
+educational charity or fiscal sponsor. The recipient would own the money
+and issue donor acknowledgments. Subject to the recipient’s approval and
+Schwab’s account requirements, longer-term assets could be held at
+Charles Schwab with eCIO as investment adviser. Clark’s role at eCIO,
+any fees and the adviser selection would be disclosed.</p>
+<p>Operating gifts could pay current bills for hosting, databases and
+capped communication credits. A separate long-term fund could support
+future cohorts through a documented spending policy. We would publish
+annual contributions, investment and administrative fees, amounts
+released for programs, and the cost per completed learner project. This
+is a funding proposal. A giving page would open only after a recipient,
+custody arrangements and gift terms are established.</p>
+</main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/contributors/">Contributors</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
+        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Watched progress and a last-visit time are saved only in first-party cookies in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

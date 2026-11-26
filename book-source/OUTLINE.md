@@ -6,7 +6,7 @@ The published preview is at [https://clarkhuang.github.io/book/](https://clarkhu
 
 **This outline will change** as chapters are written, as interviews fill gaps, and as people contribute.
 
-**Throughline:** A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work.
+**Throughline:** A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work. In the nonfiction half, Clark puts his advice to work on the book and site themselves. Readers can inspect the result, learn from the misses, and use what works to build something of their own.
 
 The book has two halves. The first follows the career arc: school days, then the jobs in career order, then the turn when AI came for the code writers. The second half is about this site — how to work now, the OpenBook itself, how agents can use and improve the site — and where it goes next.
 
