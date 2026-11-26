@@ -10,6 +10,8 @@ Take this site. SE 101 teaches readers to verify a change. When we added SE 301 
 
 That is the public purpose behind the proposed foundation. A first-time builder should be able to read the same instructions, inspect the same code, see the running costs, and take their work elsewhere. If the shared infrastructure makes a lab affordable, publish what the subsidy buys. If a reader on a cheaper laptop finds a better way, give them credit and change the lesson.
 
+The long-term goal is an AI-native cloud platform for small businesses. A small team could give its agent a business requirement and a budget, then use shared infrastructure to deploy a web app, connect its data, handle incoming messages and recover from a failed release. Those are capabilities a large company can staff internally. Here, each business would own its accounts and data and could export its application. The proposed funding model combines donated learning credits with transparent, minimal cost-recovery fees for ongoing business use.
+
 GitHub Pages at clarkhuang.github.io is the hosting infrastructure for this site. The courses, book, videos and public navigation work as static files. Optional features such as reader sync can call an external HTTPS service while the learning materials remain available to guests. SE 401 would evaluate other hosts for student applications only when a free tier is available. Each lab would document its free limits, what happens when they are reached, and how to export the project.
 
 ## A possible SE 401: build something someone else can depend on
