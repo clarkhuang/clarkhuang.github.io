@@ -1,0 +1,59 @@
+{
+  "releases": {
+    "9953cd8": "The first public page introduced the project and its planned courses.",
+    "88d2f3a": "Readers could follow links from Clark’s biography to the organizations where he works.",
+    "6c5ef1d": "The biography clarified Clark’s role at eCIO.",
+    "23ab018": "The homepage introduced Clark’s interests in AI-native engineering and investing.",
+    "73f0a9e": "Visitors could watch the first AI Tips and SE 101 lessons on the site and keep track of what they had watched.",
+    "5865d20": "The book page explained that the stories are fictional dramatizations.",
+    "f89b6a1": "A sample track gave readers a first listen to the book.",
+    "8b2d209": "A comparison page documented early experiments in building the site with different models.",
+    "c55caba": "Learners could complete all ten SE 101 lessons, resume a video and continue to the next lesson.",
+    "43c3413": "The AI Tips collection grew to sixteen episodes for people learning to work with AI.",
+    "f0e4451": "The opening lessons received new narration. Markdown and agent instructions made the material easier to use with an assistant.",
+    "34e1f86": "Readers could watch or listen to the OpenBook teaser, contribute a story, or copy the project. A staging site gave editors a place to review releases.",
+    "a34a04c": "The repository identified Clark as the reviewer for contributions.",
+    "87a13e1": "Readers could explore more of the book and ask questions against its published material.",
+    "5292526": "SE 201 introduced its enterprise systems curriculum and a new opening lesson.",
+    "b40cd5c": "Two recordings showed learners how to break a system into parts and integrate work from parallel agents.",
+    "4f19ba0": "The enterprise course added lessons that connect system design, governance and repeatable engineering practice.",
+    "dfa18fd": "A capstone took learners through one feature from planning to verification.",
+    "a3180cb": "Follow-up corrections refined the SE 201 material after the capstone was published.",
+    "ef1dbf1": "Readers gained a public story outline and editorial policy, and agents gained a first-party way to query the site.",
+    "d0b82a4": "The book preview received a new recording, and the live site introduced analytics.",
+    "a4d69cd": "A revised preview developed the book’s discussion of abstraction.",
+    "99601cf": "A contributors page gave public credit for outside feedback.",
+    "ca52e07": "Readers could see when a video was published and which videos appeared since their last visit.",
+    "c4e8cdc": "The enterprise operations recording completed the ten-lesson SE 201 course.",
+    "d279bd5": "Readers could explore the Sick, Well, Fit chapter and a guest account of building an application with AI.",
+    "9e1e140": "A new AI Tip covered handling secrets, and the guest story became part of the book outline.",
+    "10ede7c": "Building Blocks joined the book as a readable chapter about learning fundamentals.",
+    "d91828c": "The book’s introduction and back cover clarified its argument for building competence across disciplines.",
+    "0b86855": "Building Blocks gained a videobook, and its race-day example connected to a later career chapter.",
+    "ecb04f4": "The preview took readers from the opening green-screen dream to the book’s AI-era conclusion.",
+    "67efcd5": "The published preview gained an original music bed and a tighter narrative.",
+    "c57b006": "SE 301 gave learners a ten-lab local AI playbook and invited field reports from people running their own models.",
+    "ead497c": "The SE 401 outline and About page introduced the proposed teaching platform and its public purpose.",
+    "eaf0e9f": "The platform proposal explained how shared infrastructure might serve small businesses.",
+    "2821471": "The education roadmap connected the course sequence and book to a proposed nonprofit cohort experiment.",
+    "02615f1": "The reader service gained optional account synchronization, with account endpoints still disabled at this release.",
+    "ff2d0d7": "The repository added a production deployment configuration for the free-tier reader service.",
+    "755b5f3": "Readers gained optional GitHub sign-in and account-backed lesson progress on the live site.",
+    "dfadeef": "The primary navigation made GitHub sign-in, SE 401 and About easier to find."
+  },
+  "daily": {
+    "2026-11-21": ["The first learning library", "The launch moved from a course outline to sixteen AI Tips, a complete ten-lesson SE 101 sequence and a book sample. Learners could watch in place and pick up where they stopped.", ["9953cd8","c55caba","43c3413"]],
+    "2026-11-22": ["Readers became contributors", "People gained a way to contribute stories or take a copy of the project. Their AI assistants gained Markdown guides to the same pages, while editors gained a staging site for review.", ["f0e4451","34e1f86","87a13e1"]],
+    "2026-11-23": ["An enterprise systems capstone", "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification.", ["4f19ba0","dfa18fd"]],
+    "2026-11-24": ["A complete course and a clearer editorial record", "The final SE 201 recording completed the course. Video dates helped readers spot new material, while the public outline, policy and contributor credits made the book’s development easier to follow.", ["ef1dbf1","99601cf","ca52e07","c4e8cdc"]],
+    "2026-11-25": ["The book acquired voices beyond its preview", "Two nonfiction chapters, a guest contribution and a revised narrated preview gave readers several ways into the book. AI Tips also added a lesson on keeping secrets out of prompts.", ["d279bd5","9e1e140","0b86855","67efcd5"]],
+    "2026-11-26": ["From studying the workflow to running it", "SE 301 opened a path to running local models. SE 401 outlined how a future cohort might build for a nonprofit. On the live learning site, a reader could now use a GitHub account to carry lesson progress between visits.", ["c57b006","2821471","755b5f3","dfadeef"]]
+  },
+  "weekly": {
+    "2026-W47": ["A library people and their agents could use", "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders.", ["c55caba","f0e4451","34e1f86"]],
+    "2026-W48": ["Learning moved from individual tasks toward operating systems", "The enterprise capstone and the completed SE 201 sequence linked the individual engineering loop to team operation. SE 301 carried that progression onto learners’ own hardware. The proposed SE 401 cohort gave it a prospective real-world problem, while optional sign-in made longer study easier to resume.", ["dfa18fd","c4e8cdc","c57b006","2821471","755b5f3"]]
+  },
+  "monthly": {
+    "2026-11": ["An open engineering school takes shape", "November established two connected ways to learn. The courses teach and demonstrate engineering practice, while the OpenBook tells the stories behind it and invites outside experience. A reader can use the public material, copy the project, and now save progress to an account. The local-compute playbook and proposed community cohort describe where that foundation could lead.", ["34e1f86","c4e8cdc","d279bd5","c57b006","2821471","755b5f3"]]
+  }
+}

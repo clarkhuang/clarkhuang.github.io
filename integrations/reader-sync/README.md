@@ -71,3 +71,33 @@ within their own environment database. Keep the identity API's CORS allowlist
 at the exact Pages origin. The profile and progress APIs use separate
 authorization. Only a service URL (public information) goes in
 `assets/reader-endpoints.json`.
+
+
+### Visit-triggered wake-up
+
+Set `pagesHost` in `assets/reader-endpoints.json` to the published Pages hostname (without a scheme or path), and set independent HTTPS reader origins for staging and production. A visible canonical page can send a single anonymous GET to its environment’s `/healthz` after load. This can start a sleeping service before a guest clicks Sign in. A first-party timestamp throttles requests for 15 minutes per service. There is no scheduled ping, retry or polling, and a failed warm-up does not affect playback or login. A copy should set its own hostname and reader origins before enabling this behavior.
+
+### Account release notices
+
+A current Pages sign-in creates a second independent receipt limited to reader
+release notices. A reader who signed in before this feature can select
+**Enable update notices** to reconnect their existing reader session. Neither
+receipt grants access to the learning profile or playback history. Logout and
+expiry revoke both. Anonymous readers make no private notices API requests.
+
+The reader stores first and most recent login times, the latest visit
+(coalesced to five-minute intervals), the highest release sequence presented
+and the highest dismissed in its environment's `reader_notices` collection,
+keyed by the numeric GitHub account ID. The first login is the baseline.
+Subsequent logins and page views preserve unread releases until the reader
+dismisses the displayed batch. An older tab can dismiss that batch without
+clearing a newer release. The shared watermark applies to every signed-in
+device for that account.
+
+The source is the environment's public `change-log/history.json` on
+`PAGES_ORIGIN`, using first-parent release sequence and publication timestamps.
+Deploy the history feed before enabling notices. The reader caches valid
+responses for one minute per worker, bounds each fetch to two seconds and 2 MB,
+and backs off temporarily on failure. The box appears on Pages when unread
+releases are available. Guests, readers who have caught up, and courses viewed
+during a feed outage can keep using the ordinary site.

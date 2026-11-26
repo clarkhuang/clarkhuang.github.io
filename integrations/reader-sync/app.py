@@ -85,7 +85,7 @@ def create_app(config=None, database=None):
             if hits["count"] > 30:
                 abort(429)
         if request.method in {"POST", "PUT", "DELETE"}:
-            if request.endpoint in {"pair", "redeem", "pages_login"}:
+            if request.endpoint in {"pair", "redeem", "pages_login", "pages_changes"}:
                 return
             if request.endpoint == "save_progress" and request.headers.get("Authorization"):
                 return  # save_progress requires a scoped grant whenever this header is set.
@@ -146,6 +146,10 @@ def create_app(config=None, database=None):
         row = {"_id": digest(sid), "owner": str(identity["id"]), "login": identity.get("login"),
                "expires": now() + timedelta(days=7)}
         db.sessions.insert_one(row)
+        instant = now()
+        db.reader_notices.update_one({"_id": row["owner"]},
+                                     {"$setOnInsert": {"first_login_at": instant},
+                                      "$max": {"last_login_at": instant}}, upsert=True)
         session["sid"] = sid
         return row
 

@@ -47,13 +47,13 @@ a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible,video:focus-visible,audio:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.wrap,main > article.container{max-width:var(--max);margin:0 auto;padding:0 28px}
 .skip-link{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:8px 14px;border-radius:8px;z-index:20;font-weight:600}
 .skip-link:focus{left:12px}
 
 /* header */
 .site-header{border-bottom:1px solid var(--line);background:var(--header-bg);position:sticky;top:0;z-index:5}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;flex-wrap:wrap}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:6px 20px;padding-block:8px;min-height:68px;flex-wrap:wrap}
 .brand{display:flex;flex-direction:column;line-height:1.15;color:var(--text)}
 .brand:hover{text-decoration:none}
 .brand-name{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.02em}
@@ -283,7 +283,7 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 .ai-use-links a{font-weight:600}
 .md-twin{font-size:13px;color:var(--dimmer);margin:0 0 10px}
 @media (max-width:640px){
-  .wrap{padding:0 18px}
+  .wrap,main > article.container{padding:0 18px}
   .ai-use{margin:0 0 14px}
   .ai-use > summary{padding:7px 12px}
   main{padding-top:28px}
@@ -393,7 +393,7 @@ main pre code{overflow-wrap:normal}
   main section + section{margin-top:40px}
   a.card{padding:20px 18px 18px}
   .site-header .wrap{gap:4px 20px;padding-top:10px;padding-bottom:6px}
-  .site-header nav{flex-wrap:nowrap;justify-content:space-between;margin:0 -8px;width:calc(100% + 16px)}
+  .site-header nav{flex-wrap:wrap;justify-content:flex-start;margin:0 -8px;width:calc(100% + 16px)}
   .site-header nav a{padding:10px 8px;justify-content:center;white-space:nowrap}
   .footer-cols{grid-template-columns:1fr 1fr;gap:24px 20px}
   .footer-col a{padding:6px 0}
@@ -421,6 +421,7 @@ main pre code{overflow-wrap:normal}
 .chapter-text > h2:not(.label){margin-top:2.2em}
 .chapter-text h3{margin-top:1.6em}
 .chapter-text p,.chapter-text li{line-height:1.65}
+.chapter-text a{overflow-wrap:anywhere}
 .chapter-text ul{padding-left:1.2em}
 .chapter-text li{margin:.35em 0}
 .chapter-text .chapter-quote{font-family:var(--sans);font-style:normal;font-size:1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
@@ -442,3 +443,73 @@ main pre code{overflow-wrap:normal}
 @media (max-width:700px){.chapter-feature{grid-template-columns:1fr}}
 .new-chapter-banner{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px}
 .chapter-preview p:not(.label){font-weight:400;font-family:var(--sans);font-size:1.02rem;line-height:1.6;max-width:72ch}
+
+.site-header nav a.reader-sign-in{color:var(--text);box-shadow:inset 0 0 0 1px currentColor;white-space:nowrap}
+
+/* Long-form course guides share the header gutter and a narrower reading measure. */
+main > article.container > h1 {
+  max-width: 24ch;
+  font-size: clamp(2.15rem, 4.5vw, 3.75rem);
+  line-height: 1.09;
+  margin-block: .55em .45em;
+}
+main > article.container > :is(p, ul, ol, h2, h3) { max-width: 70ch; }
+main > article.container > :is(p, ul, ol) { overflow-wrap: anywhere; }
+main > article.container > h2,
+main > .wrap > p + h2 {
+  margin-block: clamp(2rem, 4vw, 3.25rem) .65rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+main > article.container > h3 { margin-block: 1.6rem .5rem; }
+main > article.container table {
+  width: 100%;
+  margin-block: 1.25rem 2rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: .96em;
+  line-height: 1.5;
+}
+main > article.container :is(th, td) {
+  text-align: start;
+  vertical-align: top;
+  padding: .8rem 1rem;
+  overflow-wrap: anywhere;
+}
+main > article.container th { background: var(--panel-hi); }
+main > article.container td { border-top: 1px solid var(--line); }
+@media (max-width: 640px) {
+  main > article.container :is(th, td) { padding: .55rem .45rem; }
+}
+
+.hero-cta + .bio { margin-top: 1.4rem; }
+.lab-index { max-width: 70ch; margin-block: 1.5rem; border-block: 1px solid var(--line); }
+.lab-index summary { cursor: pointer; font-weight: 600; padding-block: .75rem; }
+.lab-index li { padding-block: .2rem; }
+main :is(p,li) > a:not([class]) { text-decoration: underline; text-decoration-color: var(--accent-line); }
+main [id] { scroll-margin-top: 7rem; }
+@media (max-width:640px) { main [id] { scroll-margin-top: 1rem; } }
+.course-table { max-width: 100%; overflow-x: auto; margin-block: 1rem 2rem; }
+.course-table:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (max-width: 640px) { .course-table table { min-width: 36rem; } }
+.reader-changes{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:var(--panel)}
+.reader-changes h2{font-size:1.2rem;margin:0 0 .5rem}
+.reader-changes ul{padding-inline-start:1.25rem;margin:.5rem 0}
+.reader-changes button{font:inherit;cursor:pointer;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:8px;padding:.45em .8em;margin-inline-start:1em}
+.reader-changes [role=status]:empty{display:none}
+@media(max-width:380px){.reader-signed-prefix{display:none}}
+.site-header nav a.reader-sign-in[aria-label]{display:block;max-width:100%;white-space:normal;overflow-wrap:anywhere;}
+
+/* A wrapped tablet header scrolls away so in-page links and keyboard focus stay visible. */
+@media (min-width:641px) and (max-width:1024px){
+  .site-header{position:static}
+  .site-header nav a{min-height:44px;display:inline-flex;align-items:center}
+  main [id]{scroll-margin-top:1rem}
+}
+@media (min-width:1025px){
+  /* The signed-in profile and optional update link can wrap to an additional row. */
+  body:has(.reader-sign-in[aria-label]) main [id]{scroll-margin-top:10rem}
+}

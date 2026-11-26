@@ -23,11 +23,29 @@ jobs:
         with:
           ref: main
           path: prod
+          fetch-depth: 0
       - name: Checkout next-revision (staging)
         uses: actions/checkout@v4
         with:
           ref: next-revision
           path: staging-src
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh public change log from production history
+        run: |
+          set -euo pipefail
+          for checkout in prod staging-src; do
+            generator="$checkout/sitegen/change_log.py"
+            if [ -f "$generator" ]; then
+              python3 "$generator" --repo prod --ref HEAD
+            fi
+            if [ -f "$checkout/sitegen/about_state.py" ]; then
+              python3 "$checkout/sitegen/about_state.py"
+              python3 "$checkout/sitegen/about_state.py" --check
+            fi
+          done
       - name: Compose production at / and staging at /staging/
         run: |
           set -euo pipefail

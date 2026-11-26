@@ -105,3 +105,26 @@ Run this against production, and against staging after rewriting, before calling
 - [ ] **Noindex on staging.** Every staging HTML page has `noindex`. Root `robots.txt` has `Disallow: /staging/`. Staging is absent from the production sitemap and `llms.txt`.
 
 Nothing goes live until Clark merges to `main`.
+
+## Maintaining the public Change Log
+
+Use a full checkout and Python 3.12 or later. Fetch `origin/main`, then run
+`python3 sitegen/change_log.py --ref origin/main` from the repository root.
+Pass `--repo /path/to/production-checkout --ref HEAD` to preview from a separate
+checkout. Both site environments report production history. Direct commits and
+merges on the first-parent path each appear once. The sequence begins at the
+first commit. Dates use the commit’s integration time in America/Detroit.
+The timestamp is independent of when the Pages deployment finished.
+
+At release review, an editor or AI assistant should inspect each new mainline diff,
+its merged PR and the resulting public pages. Write one sentence on what changed
+for readers in `sitegen/change_log_editorial.json`, keyed by the short production
+SHA. Write separate daily, ISO-week and calendar-month retrospectives explaining
+the most significant outcome for that period. Cite production SHAs from that
+period. Distinguish plans from shipped features. A new release appears immediately
+in deployment builds with an editorial note pending until the reviewed copy lands.
+
+Regenerate and inspect `change-log/history.json` plus each HTML and Markdown view.
+The JSON is public and contains identical release records for all visitors.
+It contains no reader activity. Commit the reviewed notes and generated pages
+together, run `python3 sitegen/check_site.py .`, and review the staged result.

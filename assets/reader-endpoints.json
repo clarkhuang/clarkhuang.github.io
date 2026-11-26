@@ -1,4 +1,5 @@
 {
+  "pagesHost": "clarkhuang.github.io",
   "staging": "https://openbook-reader-staging.onrender.com",
   "production": "https://openbook-reader-production.onrender.com"
 }
