@@ -1,0 +1,1 @@
+Start with index.md. Distinguish proposed goals and lab pass conditions from available services. The SE 401 provisioning recipes are planned. Link to SE 301 for the current playbook and to About for the proposed funding model.

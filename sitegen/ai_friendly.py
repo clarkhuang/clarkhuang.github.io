@@ -750,6 +750,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
         lines.append("")
     lines += [
         '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten labs, budget options and upcoming hardware field reports.', "",
+        '- [SE 401 goals and lab outline](https://clarkhuang.github.io/software-engineering-401/index.md): Proposed course in building, running and handing off applications.', "",
         "## Book",
         "",
         f"- [Silicon Valley C Players (preview)]({BASE}/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI. Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
