@@ -2,6 +2,14 @@
 
 Clark Huang started this public learning site around a question: what should an engineer still know how to do when an AI can write the code? The lessons follow the work from one change in SE 101, through whole systems in SE 201, to running the models and tools yourself in SE 301. The free OpenBook, *Silicon Valley C Players*, explores the same interest in fundamentals through stories and practical lessons.
 
+## Who gets to build?
+
+Today, anyone can take a free lesson, inspect its source, and apply it to work they care about. A volunteer tracking food deliveries and a founder tracking customer orders can use the same first exercise. Pick one order, describe what should happen when it arrives twice, and show another person that the software handles it. Neither learner needs a credential or a foundation award to begin.
+
+The next test is whether someone else can reproduce our work. SE 301 puts the site’s own development workflow on local hardware. The February 2027 build is where we expect to learn which instructions survive first contact with a new machine. Readers working on smaller machines can contribute their results along the way.
+
+Longer term, Clark envisions a foundation that funds learning opportunities through mentorship and access to infrastructure. His role as eCIO’s co-founder and CTO gives him a place to look for real problems that nonprofits and their advisors share. A potential partner would help choose a problem, try the result and decide what evidence could be shared. The partnership, awards and funding model are proposals. The public curriculum would also serve people building for-profit ventures and internal systems. Anyone could take the code and run it elsewhere.
+
 ## Eat your own dogfood
 
 Clark puts it plainly: “I despise marketing and sales.” That conviction shapes both the book and the site. When you depend on the same thing you offer someone else, you can tell them where it helped, where it failed, and what it cost. They can try it and reach their own conclusion.

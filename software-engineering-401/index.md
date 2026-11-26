@@ -6,6 +6,12 @@ The long-term goal is an AI-native cloud platform for small businesses. A small 
 
 SE 401 pairs a new engineer with a product owner. Together they will build one small application for a real user and leave it in a state another team can operate. Our first customer will be this project itself. Reader progress, for example, gives us a concrete test: can someone stop a lesson on a laptop and resume it on a phone, while another reader’s progress stays private?
 
+## One possible first cohort
+
+A nonprofit and eCIO could bring one recent gift that staff had trouble identifying. A learner would replay the handoff with information staff already collect, record where someone had to ask a question, and compare a proposed destination fund or split with the actual subaccounting entry. The exercise could run alongside existing operations without changing the donor’s Giving Page or posting to a live account.
+
+If staff find the replay useful, they could test it over a defined period and count follow-up requests per eligible gift across both partners. A second nonprofit could try the workflow from a standard file import. Those experiments would tell us what travels beyond eCIO. A cohort might share an open-source release and, with both partners’ permission, a redacted walkthrough. These are starting hypotheses for the people doing the work to revise.
+
 ## What a learner should be able to do
 
 | Goal | Evidence we want to see |
