@@ -727,6 +727,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
         "",
         "## Site",
         "",
+        f"- [Change Log]({BASE}/change-log/index.md): daily, weekly and monthly editorial summaries; [release history JSON]({BASE}/change-log/history.json)",
         f"- [Home]({BASE}/index.md): about Clark Huang and the series on this site",
         f"- [AGENTS.md]({BASE}/AGENTS.md): how to navigate and what not to invent",
         f"- [llms-full.txt]({BASE}/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog",

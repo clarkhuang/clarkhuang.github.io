@@ -224,6 +224,7 @@ def write_robots_and_sitemap(series):
     guest_urls = GUEST.sitemap_urls(site=SITE)
     # Dedup while keeping a stable order; guest pages follow the book pages.
     urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/book/guest/"]
+    urls += [BASE + "/change-log/" + suffix for suffix in ("", "daily/", "weekly/", "monthly/", "archive/")]
     for u in guest_urls:
         if u not in urls:
             urls.append(u)
@@ -369,7 +370,7 @@ def page(path, title, desc, body, current="", main_class="", video=None):
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-cols">
-        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/contributors/">Contributors</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/contributors/">Contributors</a><a href="/book/">Book preview</a><a href="/change-log/">Change Log</a></nav>
 {AF.footer_twins()}        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p>{links}</nav>
       </div>
       <div class="footer-fine">
@@ -775,6 +776,8 @@ This log starts with the current public preview on the site. Earlier preview fil
 
 This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under `/staging/` do not send analytics hits.
 
+When you visit a published page, your browser may send one background request to the reader service so sign-in starts sooner. The service receives ordinary connection details such as your IP address. The request omits cookies, account information and the page address. A local timestamp limits requests to one per service per 15 minutes. Browsers that signal Save-Data, Global Privacy Control or Do Not Track skip it.
+
 Questions or a correction: [contribute with your AI](/contribute/), or see [takedowns](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md). The OpenBook process is also in the [book preview](/book/) and in [VERSIONING.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md).
 """.strip()
 
@@ -814,6 +817,7 @@ def build_editorial_policy():
       </ul>
       <h2 id="analytics">Privacy and analytics</h2>
       <p>This applies to the whole site, not only the book. The production site uses Google Analytics 4 to see which pages people read. IP addresses are anonymized. Google Signals and ads personalization are off, so the tag is not used for advertising. Watched-lesson progress, resume positions, and a last-visit timestamp stay in first-party cookies in your browser; they are not sent to Google. The last-visit cookie is used only to mark videos published or updated since your previous visit with a New tag. On a first visit, no New tags are shown. The comparison time is kept for the whole browsing session so the tags do not disappear when you open the next page. Pages under <code>/staging/</code> do not send analytics hits.</p>
+      <p>When you visit a published page, your browser may send one background request to the reader service so sign-in starts sooner. The service receives ordinary connection details such as your IP address. The request omits cookies, account information and the page address. A local timestamp limits requests to one per service per 15 minutes. Browsers that signal Save-Data, Global Privacy Control or Do Not Track skip it.</p>
       <p class="muted">Questions or a correction: <a href="/contribute/">contribute with your AI</a>, or see <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">takedowns</a>. The OpenBook process is also in the <a href="/book/">book preview</a> and in <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/book-source/VERSIONING.md">VERSIONING.md</a>.</p>
 """
     page("book/editorial-policy/index.html",

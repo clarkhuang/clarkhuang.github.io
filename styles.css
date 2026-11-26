@@ -53,7 +53,7 @@ img{max-width:100%;display:block}
 
 /* header */
 .site-header{border-bottom:1px solid var(--line);background:var(--header-bg);position:sticky;top:0;z-index:5}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;flex-wrap:wrap}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:6px 20px;padding-block:8px;min-height:68px;flex-wrap:wrap}
 .brand{display:flex;flex-direction:column;line-height:1.15;color:var(--text)}
 .brand:hover{text-decoration:none}
 .brand-name{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.02em}
@@ -495,4 +495,21 @@ main [id] { scroll-margin-top: 7rem; }
 .course-table { max-width: 100%; overflow-x: auto; margin-block: 1rem 2rem; }
 .course-table:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 @media (max-width: 640px) { .course-table table { min-width: 36rem; } }
-.site-header nav a.reader-sign-in[aria-label]{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.reader-changes{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:var(--panel)}
+.reader-changes h2{font-size:1.2rem;margin:0 0 .5rem}
+.reader-changes ul{padding-inline-start:1.25rem;margin:.5rem 0}
+.reader-changes button{font:inherit;cursor:pointer;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:8px;padding:.45em .8em;margin-inline-start:1em}
+.reader-changes [role=status]:empty{display:none}
+@media(max-width:380px){.reader-signed-prefix{display:none}}
+.site-header nav a.reader-sign-in[aria-label]{display:block;max-width:100%;white-space:normal;overflow-wrap:anywhere;}
+
+/* A wrapped tablet header scrolls away so in-page links and keyboard focus stay visible. */
+@media (min-width:641px) and (max-width:1024px){
+  .site-header{position:static}
+  .site-header nav a{min-height:44px;display:inline-flex;align-items:center}
+  main [id]{scroll-margin-top:1rem}
+}
+@media (min-width:1025px){
+  /* The signed-in profile and optional update link can wrap to an additional row. */
+  body:has(.reader-sign-in[aria-label]) main [id]{scroll-margin-top:10rem}
+}

@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 
 from flask import abort, jsonify, make_response, redirect, request, url_for
 from pymongo.errors import DuplicateKeyError
+from notices import register_notices
 
 
 def register_pages_login(app, db, pages_origin, env, now, current_session, authorize,
@@ -18,6 +19,8 @@ def register_pages_login(app, db, pages_origin, env, now, current_session, autho
 
     receipts = db.pages_logins
     receipts.create_index("expires", expireAfterSeconds=0)
+
+    receipts.create_index("notice_challenge", unique=True, sparse=True)
 
     def sha(value):
         return hashlib.sha256(value.encode("ascii")).hexdigest()
@@ -43,11 +46,18 @@ def register_pages_login(app, db, pages_origin, env, now, current_session, autho
         challenge = request.form.get("challenge", "")
         if not re.fullmatch(r"[0-9a-f]{64}", challenge):
             abort(400)
+        notice_challenge = request.form.get("notice_challenge")
+        if notice_challenge is not None and (not re.fullmatch(r"[0-9a-f]{64}", notice_challenge)
+                                             or challenge == notice_challenge):
+            abort(400)
         binding = secrets.token_urlsafe(32)
         try:
-            receipts.insert_one({"_id": challenge, "binding": sha(binding), "page": page,
+            row = {"_id": challenge, "binding": sha(binding), "page": page,
                                  "expires": now() + timedelta(minutes=10), "status": "pending",
-                                 "pkce": secrets.token_urlsafe(48)})
+                                 "pkce": secrets.token_urlsafe(48)}
+            if notice_challenge:
+                row["notice_challenge"] = notice_challenge
+            receipts.insert_one(row)
         except DuplicateKeyError:
             abort(409)
         response = redirect(url_for("continue_pages", challenge=challenge), code=303)
@@ -99,6 +109,15 @@ def register_pages_login(app, db, pages_origin, env, now, current_session, autho
             abort(502)
         return finish(row, establish_session(identity))
 
+    def receipt_session(field):
+        match = re.fullmatch(r"Bearer ([a-f0-9]{64})", request.headers.get("Authorization", ""))
+        receipt = receipts.find_one({field: sha(match[1]), "status": "issued",
+                                     "expires": {"$gt": now()}}) if match else None
+        return db.sessions.find_one({"_id": receipt["session_id"],
+                                     "expires": {"$gt": now()}}) if receipt else None
+
+    register_notices(app, db, pages_origin, env, now, lambda: receipt_session("notice_challenge"))
+
     @app.route("/api/pages/identity", methods=["GET", "OPTIONS"])
     def pages_identity():
         if request.headers.get("Origin") != pages_origin:
@@ -108,11 +127,7 @@ def register_pages_login(app, db, pages_origin, env, now, current_session, autho
             response.headers.update({"Access-Control-Allow-Headers": "Authorization",
                                      "Access-Control-Allow-Methods": "GET"})
         else:
-            match = re.fullmatch(r"Bearer ([a-f0-9]{64})", request.headers.get("Authorization", ""))
-            receipt = receipts.find_one({"_id": sha(match[1]), "status": "issued",
-                                         "expires": {"$gt": now()}}) if match else None
-            reader = db.sessions.find_one({"_id": receipt["session_id"],
-                                           "expires": {"$gt": now()}}) if receipt else None
+            reader = receipt_session("_id")
             response = jsonify({"login": reader["login"]} if reader else {})
             response.status_code = 200 if reader else 401
         response.headers["Access-Control-Allow-Origin"] = pages_origin

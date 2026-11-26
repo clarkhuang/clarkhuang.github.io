@@ -8,6 +8,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Site
 
+- [Change Log](https://clarkhuang.github.io/change-log/index.md): daily, weekly and monthly editorial summaries; [release history JSON](https://clarkhuang.github.io/change-log/history.json)
 - [Home](https://clarkhuang.github.io/index.md): about Clark Huang and the series on this site
 - [AGENTS.md](https://clarkhuang.github.io/AGENTS.md): how to navigate and what not to invent
 - [llms-full.txt](https://clarkhuang.github.io/llms-full.txt): fuller text of the book preview, cover description, and lesson catalog
