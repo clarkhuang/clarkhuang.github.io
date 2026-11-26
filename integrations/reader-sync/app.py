@@ -126,7 +126,7 @@ def create_app(config=None, database=None):
     @app.get("/callback")
     def callback():
         pending = session.pop("login", None)
-        if not pending or not hmac.compare_digest(request.args.get("state",""), pending[0]) or now().timestamp()-pending[2]>600:
+        if not pending or not hmac.compare_digest(request.args.get("state", "").encode(), pending[0].encode()) or now().timestamp()-pending[2]>600:
             abort(400)
         credentials = github_json("https://github.com/login/oauth/access_token", fields={
             "client_id": conf["GITHUB_CLIENT_ID"], "client_secret": conf["GITHUB_CLIENT_SECRET"],

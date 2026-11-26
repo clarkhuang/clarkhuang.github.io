@@ -18,6 +18,10 @@ class OAuthTests(unittest.TestCase):
         with patch("app.github_json", side_effect=responses):
             return self.client.get("/callback", query_string={"code": "test", "state": self.query["state"][0]})
 
+    def test_malformed_state_is_rejected(self):
+        response = self.client.get("/callback", query_string={"state": "無", "code": "test"})
+        self.assertEqual(response.status_code, 400)
+
     def test_refuses_extra_scopes(self):
         self.assertEqual(self.query["scope"], [""])
         self.assertEqual(self.callback([{"scope": "repo", "access_token": "test"}]).status_code, 403)
