@@ -12,6 +12,14 @@ The proposed next step is a shared teaching platform. A project would get a web 
 
 Communication would be a later part of the curriculum. A team could receive email at its own address on a teaching domain, use SendGrid to reply, or add a Twilio number for voice and SMS. WhatsApp, Instagram, Facebook and LinkedIn would be separate, opt-in integrations. Each project would operate under its own identity, permissions and spending limit. In a first lab, sending a message to a test inbox and showing what happens when delivery fails would be a successful outcome.
 
+## Give an agent the course URL
+
+A learner should be able to tell a fresh agent, “Read SE 401 and set up the first lab in my GitHub account.” The course would publish a discovery link in llms.txt, a Markdown guide for the learner, and a versioned, machine-readable recipe for each lab. The recipe would name the owner, required accounts and permissions, supported free tier, expected resources, and the checks that prove the app works. The recipes would live on GitHub Pages. The learner’s authorized agent would execute them in the learner’s environment.
+
+For a first lab, the agent would inspect the learner’s existing setup and show a plan. With approval, it would create the repository from a template, configure a preview deployment, provision the selected database, put scoped credentials in the runtime’s secret store, and wire up a read-only MCP tool. Provider adapters would use documented APIs or CLIs and identify any required browser step. If a provider asks the owner to verify an identity, accept terms, approve access or authorize a charge, the agent would save its place, explain exactly what is needed, and resume after confirmation.
+
+The test would start with a fresh GitHub account. The agent must return a working preview URL, write and read a sample record, retrieve that record through the authorized tool, and demonstrate that a second user cannot read it. Running the recipe again must reuse existing resources. The handoff would record resource IDs, versions, verified checks, cost limits, and steps to export or remove the lab. A second agent should be able to pick up that record and operate the app without the original conversation.
+
 ## Who pays for the lab?
 
 The goal is free access to the core learning experience. One idea is to sponsor a fixed amount of compute, storage and messaging per team. A team approaching its allowance could stop, apply for more sponsored credit or explicitly pay the published cost of continuing. A successful student project should have a clear path to its own hosting and provider accounts.
