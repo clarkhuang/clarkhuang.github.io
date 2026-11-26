@@ -5,8 +5,8 @@ import secrets
 from datetime import timedelta
 from urllib.parse import urlsplit
 
-from flask import abort, jsonify, make_response, redirect, request, url_for
-from pymongo.errors import DuplicateKeyError
+from flask import abort, jsonify, make_response, redirect, request, render_template, url_for
+from pymongo.errors import DuplicateKeyError, PyMongoError
 from notices import register_notices
 
 
@@ -37,6 +37,27 @@ def register_pages_login(app, db, pages_origin, env, now, current_session, autho
         if (env == "staging") != page.startswith("/staging/"):
             abort(400)
         return page
+
+    @app.get("/api/pages/ready")
+    def pages_ready():
+        if request.headers.get("Origin") != pages_origin:
+            abort(403)
+        try:
+            db.command("ping")
+            ready = True
+        except PyMongoError:
+            ready = False
+        response = jsonify(ready=ready, environment=env)
+        response.status_code = 200 if ready else 503
+        response.headers["Access-Control-Allow-Origin"] = pages_origin
+        response.vary.add("Origin")
+        return response
+
+    @app.get("/pages/login")
+    def recover_pages_login():
+        # A host cold-start interstitial may revisit the POST URL as a plain GET.
+        # Only the original Pages tab can create its browser-bound login challenge.
+        return render_template("pages-login-recovery.html")
 
     @app.post("/pages/login")
     def pages_login():
