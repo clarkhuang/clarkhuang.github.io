@@ -2,6 +2,8 @@
 
 **Course in development.** This is the public design and lab outline. The shared hosting platform, provider adapters and lab videos are planned. Start today with the [SE 301 playbook](/software-engineering-301/).
 
+The long-term goal is an AI-native cloud platform for small businesses. A small team could give its agent a business requirement and a budget, then use shared infrastructure to deploy a web app, connect its data, handle incoming messages and recover from a failed release. Those are capabilities a large company can staff internally. Here, each business would own its accounts and data and could export its application. The proposed funding model combines donated learning credits with transparent, minimal cost-recovery fees for ongoing business use.
+
 SE 401 pairs a new engineer with a product owner. Together they will build one small application for a real user and leave it in a state another team can operate. Our first customer will be this project itself. Reader progress, for example, gives us a concrete test: can someone stop a lesson on a laptop and resume it on a phone, while another reader’s progress stays private?
 
 ## What a learner should be able to do
