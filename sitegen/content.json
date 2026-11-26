@@ -472,7 +472,7 @@
      "The rule shown (credit the days paid for and not used) is one policy among several. Others charge the full price, or switch at the next renewal. The lesson's point is that a person has to pick one and write it down.",
      "A declined charge leaves the subscription on the monthly plan; the plan switches only after the charge succeeds.",
      "An idempotency key only helps if the payment processor supports one; many do, and they keep keys for a limited time. Lesson 8 covers this.",
-     "The double charge in the lesson gets past the key because two browser tabs produced two quotes, and so two keys. The fix is the fourth check, one open quote per subscription. A key built as in lesson 8 (this subscription, this billing period) would also have stopped it.",
+     "Two tabs can each see no open quote before either saves one. Enforce one pending plan change per subscription in the database, atomically, before charging. Both submissions must resolve to the same change, and every payment attempt for that change must reuse its stored payment key. After a timeout, reconcile the original attempt before starting another. The nightly check can flag a duplicate after money moves. Try it: submit the same change from two tabs at once and simulate a lost payment response. Verify one successful charge, one plan change, and an audit trail linking both requests to that change.",
      "Most pipeline steps are plain code, as lesson 8 says. The agent earns its place at the nightly reconcile, where working out why something doesn't match takes judgment.",
      "Lesson 9 covers the operator in full: an agent's own identity, the least access the job needs, a log of every action, and a person at any decision that moves money."
     ],
