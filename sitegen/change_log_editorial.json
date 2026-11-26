@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "SE 401 now explains how members could create an app with one GitHub sign-in and add sponsored hosting, AI, email, payments or phone service from one dashboard.",
-    "technical_summary": "The design maps Reader grants to proposed MCP tools and defines project provisioning, provider verification, usage limits and service shutdown."
+    "summary": "About now explains how nonprofit benefits could help fund teaching labs and what must be confirmed before sponsoring a member app.",
+    "technical_summary": "The repository records five provider programs, official eligibility sources and the open Render hosting question."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
