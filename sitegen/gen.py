@@ -621,8 +621,8 @@ def build():
     body = f"""      <section class="hero" aria-labelledby="about-heading">
         <div class="hero-copy">
           <h1 id="about-heading">Clark Huang</h1>
-          {BIO}
           <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a><a class="btn ghost" href="/book/chapters/36-sick-well-fit/">Chapter 36 (pre-release)</a></p>
+          {BIO}
         </div>
         {HERO_ART}
       </section>

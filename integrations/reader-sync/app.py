@@ -11,7 +11,7 @@ from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 from catalog import load_catalog
-from flask import Flask, abort, jsonify, redirect, render_template_string, request, session, url_for
+from flask import Flask, abort, jsonify, redirect, render_template, request, session, url_for
 from learning import register_learning
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
@@ -154,16 +154,12 @@ def create_app(config=None, database=None):
     @app.get("/")
     def home():
         if not valid(db.sessions, session.get("sid","")):
-            return '<a href="/login">Sign in with GitHub to save your learning profile</a>'
+            return render_template("profile.html", signed_in=False)
         owner = reader()
         p = db.profiles.find_one({"_id":owner}) or {}
         pair_key = session.get("pair", "")
         pairing = db.grants.find_one({"pair_id": digest(pair_key), "status": "pending", "expires": {"$gt": now()}})
-        return render_template_string("""<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1"><h1>Your learning profile</h1>
-        <form method="post" action="/profile">{% for key in fields %}<p><label>{{key|capitalize}} <input name="{{key}}" maxlength="240" value="{{p.get(key,'')}}"></label></p>{% endfor %}<button>Save profile</button></form>
-        {% if pairing %}<h2>Connect an agent</h2><p>Approve only if you started this connection. Agent: {{pairing.name}}. Access: {{pairing.scopes|join(', ')}}. Compare this code with your agent: <strong>{{pairing.user_code}}</strong>.</p><form method="post" action="/approve"><input type="hidden" name="pair_key" value="{{pair_key}}"><button>Approve agent</button></form>{% endif %}
-        <h2>Connected agents</h2>{% for g in grants %}<form method="post" action="/revoke/{{g._id}}">{{g.name}} · {{g.scopes|join(', ')}} <button>Revoke</button></form>{% endfor %}
-        <p><a href="/learn">Your lessons and bookmarks</a> · <a href="/api/progress">View saved progress as JSON</a></p><form method="post" action="/logout"><button>Sign out</button></form>""",
+        return render_template("profile.html", signed_in=True,
         fields=sorted(PROFILE_FIELDS),p=p,pairing=pairing,pair_key=pair_key,grants=db.grants.find({"owner":owner,"expires":{"$gt":now()}}))
     @app.post("/profile")
     def profile():
