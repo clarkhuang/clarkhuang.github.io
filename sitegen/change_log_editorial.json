@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "About now explains how nonprofit benefits could help fund teaching labs and what must be confirmed before sponsoring a member app.",
-    "technical_summary": "The repository records five provider programs, official eligibility sources and the open Render hosting question."
+    "summary": "The site footer now links the stable production site and staging preview. An Upcoming badge shows when the preview contains different public content.",
+    "technical_summary": "The deployment compares built Pages files before staging URL rewrites and links matching pages across environments."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
