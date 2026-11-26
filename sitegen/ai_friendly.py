@@ -398,6 +398,8 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         md_prompt_blurb(path),
         bio,
         "",
+        "Anyone curious about building software can start with one task they know well. Use SE 101 to make a small change and verify it, then use SE 201 to see what happens when several parts have to work together. Your project might serve a nonprofit, become a business, or simply make a weekly job easier. [Follow the project from today’s courses to the proposed foundation.](/about/)",
+        "",
         "## Series",
         "",
     ]

@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/book/story-arc/index.md (plus https://clarkhuang.github.io/book/story-arc/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask. Also read https://clarkhuang.github.io/llms-full.txt, https://clarkhuang.github.io/book.json, and the preview transcript at https://clarkhuang.github.io/book-source/preview/transcript.md. Cite chapter titles or timestamps. Charlie Hack is the fictional narrator; Clark Huang is the author. Do not identify real people or companies behind the fictional names.
 
-A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work. In the nonfiction half, Clark puts his advice to work on the book and site themselves. Readers can inspect the result, learn from the misses, and use what works to build something of their own.
+A C player who kept going, dreamed in green screen, watched AI come for the coders first, and now shows you how to work. In the nonfiction half, Clark puts his advice to work on the book and site themselves. Readers can inspect the result, learn from the misses, and use what works to build something of their own. The later chapters could follow one lesson from its first use on this site to a builder applying it elsewhere. One possible closing scene is a first funded cohort showing a nonprofit what it built and hearing what staff would change. That scene depends on what actually happens.
 
 Right now: 8 drafted, 27 outlined, 12 planned.
 
