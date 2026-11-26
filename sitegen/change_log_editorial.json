@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "The course guides now show what individuals, nonprofits and small businesses can build today. SE 301 and SE 401 connect the planned local AI studio to sponsored hosting for member-built apps. The Change Log and signed-in updates explain releases in plain language, and the course and funding sections are easier to read on smaller screens.",
-    "technical_summary": "All four change-log views retain their navigation order and expose their active page. Agent metadata keeps the release sequence, timestamp, pull request and commit evidence alongside the reader summary."
+    "summary": "AI Tips 1 now shows how to ask for help with a redacted error message. The copyable rule explains what you can share, and the lesson links to AI Tips 17 for more examples.",
+    "technical_summary": "The written lesson, agent rule, catalog and search index reflect the correction tracked in #181. The recording and transcript are preserved."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
