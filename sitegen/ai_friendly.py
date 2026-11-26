@@ -413,6 +413,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
             "",
         ]
     bits += [
+        '### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)\n\nThe ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).', "",
         f"### [Silicon Valley C Players]({BASE}/book/index.md)",
         "",
         "A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.",
@@ -748,6 +749,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
             lines.append(f"- Lesson {k}: {t} (coming soon)")
         lines.append("")
     lines += [
+        '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten labs, budget options and upcoming hardware field reports.', "",
         "## Book",
         "",
         f"- [Silicon Valley C Players (preview)]({BASE}/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI. Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.",
