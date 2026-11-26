@@ -4,6 +4,10 @@ In 101 you took one change from plan to proof. In 201 you connected those change
 
 This is the playbook for our February 2027 build. The hardware is ordered. Model choices are candidates. We will add measured throughput, power, usable context and accepted patches per hour after the machine arrives.
 
+## Already running local AI?
+
+Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148). Include your hardware, model, runtime and one reproducible result.
+
 ## Build along now on a 48 GB M4 Pro MacBook Pro
 
 Start on the laptop with the editor, site checkout, job queue and model gateway you intend to keep using after February. Choose a small coding model so the browser, editor and tests have room to run. Qwen2.5-Coder-7B-Instruct in a four-bit build is a reasonable first fixture. If you already have gpt-oss-20b working, run it against the same tasks as a comparison.

@@ -69,6 +69,8 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Lesson 9: Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (published Nov 24, 2026): A refund goes out at 3 a.m. and the log says "admin", a login people and agents share, so the log can't say who did it. This lesson answers the three questions lesson 8 ended on (whose name does the work run under,…
 - [Lesson 10: Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (published Nov 23, 2026): The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the…
 
+- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten labs, budget options and upcoming hardware field reports.
+
 ## Book
 
 - [Silicon Valley C Players (preview)](https://clarkhuang.github.io/book/index.md): a free OpenBook (audiobook and videobook preview), coming in 2027. An embellished fictional dramatization; the narrator is Charlie Hack; the how-to-work-with-AI half is nonfiction. Written and interviewed by AI. Greg Glassman noticed that the fittest person on earth might rank only in the 75th percentile at any single event. Good at everything beats best at one thing. That's a C player, and it's why C players, the ones who keep stacking fundamentals and never stop, end up outlasting the A players.

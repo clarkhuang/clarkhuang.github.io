@@ -28,6 +28,10 @@ From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loo
 
 10 of 10 lessons available.
 
+### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)
+
+The ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).
+
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
