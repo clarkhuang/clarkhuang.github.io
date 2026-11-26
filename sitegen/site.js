@@ -111,6 +111,42 @@
     else window.addEventListener("load", warm, {once: true});
   }
 
+  // A cold host may answer a POST with an HTML wake-up page and follow it with a GET.
+  // Probe with an anonymous GET first. Only a verifiable Reader reply unlocks the POST.
+  async function waitForReader(service, environment) {
+    var deadline = Date.now() + 90000;
+    var useLegacyProbe = true;
+    async function probe(path) {
+      var remaining = deadline - Date.now();
+      if (remaining <= 0) return null;
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, Math.min(8000, remaining));
+      try {
+        var response = await fetch(new URL(path, service), {mode: "cors", credentials: "omit",
+          referrerPolicy: "no-referrer", cache: "no-store", redirect: "error", signal: controller.signal});
+        if (response.type === "opaque" || response.redirected) return null;
+        if (!/^application\/json(?:;|$)/i.test(response.headers.get("Content-Type") || "")) return null;
+        return {status: response.status, data: await response.json()};
+      } catch (_) { return null; }
+      finally { clearTimeout(timer); }
+    }
+    for (var attempt = 0; attempt < 12 && Date.now() < deadline; attempt++) {
+      var reply = await probe("/api/pages/ready");
+      if (reply && reply.data && typeof reply.data.ready === "boolean") {
+        useLegacyProbe = false;
+        if (reply.status === 200 && reply.data.ready === true && reply.data.environment === environment) return;
+      } else if (useLegacyProbe && (!reply || reply.status === 404) && attempt % 3 === 0) {
+        // Older deployed readers already serve this exact CORS-visible signed-out response.
+        var older = await probe("/api/pages/identity");
+        if (older && older.status === 401 && older.data && typeof older.data === "object" &&
+            !Array.isArray(older.data) && Object.keys(older.data).length === 0) return;
+      }
+      var delay = Math.min(1500 + attempt * 1000, 8000, deadline - Date.now());
+      if (delay > 0 && attempt < 11) await new Promise(function (resolve) { setTimeout(resolve, delay); });
+    }
+    throw new Error("Reader startup timed out");
+  }
+
   function setupReaderAccount(link, service) {
     // A receipt can only ask for the GitHub handle attached to a live reader session.
     // The reader session cookie and GitHub credentials stay on the top-level reader origin.
@@ -143,6 +179,7 @@
     }
     var signedIn = false;
     var busy = false;
+    var loginAttempt = 0;
     var generation = 0;
     function hex(bytes) {
       return Array.from(bytes, function (n) { return n.toString(16).padStart(2, "0"); }).join("");
@@ -257,6 +294,7 @@
       }
     }
     function refresh() {
+      if (busy) return;
       var revision = ++generation;
       var candidate = pending.getItem(key + ".pending");
       var verifier = candidate || confirmed.getItem(key);
@@ -303,11 +341,30 @@
       if (busy) return;
       busy = true;
       ++generation;
-      var verifier = hex(window.crypto.getRandomValues(new Uint8Array(32)));
-      var noticeProof = hex(window.crypto.getRandomValues(new Uint8Array(32)));
-      Promise.all([verifier, noticeProof].map(function (proof) {
-        return window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(proof));
-      })).then(function (hashes) {
+      var attempt = ++loginAttempt;
+      var trigger = event.currentTarget;
+      var originalLabel = trigger.textContent;
+      trigger.setAttribute("aria-busy", "true");
+      trigger.textContent = "Starting sign-in…";
+      var status = doc.getElementById("reader-sign-in-status");
+      if (!status) {
+        status = doc.createElement("p");
+        status.id = "reader-sign-in-status";
+        status.setAttribute("role", "status");
+        var main = doc.querySelector("main") || doc.body;
+        (main.querySelector(".wrap") || main).prepend(status);
+      }
+      status.textContent = "Starting the learning service. You can stay on this page.";
+      var verifier, noticeProof;
+      waitForReader(service, location.pathname.indexOf("/staging/") === 0 ? "staging" : "production").then(function () {
+        if (attempt !== loginAttempt) throw new Error("Sign-in cancelled");
+        verifier = hex(window.crypto.getRandomValues(new Uint8Array(32)));
+        noticeProof = hex(window.crypto.getRandomValues(new Uint8Array(32)));
+        return Promise.all([verifier, noticeProof].map(function (proof) {
+          return window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(proof));
+        }));
+      }).then(function (hashes) {
+        if (attempt !== loginAttempt) return;
         pending.setItem(key + ".notice-pending", noticeProof);
         pending.setItem(key + ".pending", verifier);
         pending.setItem(key + ".view", location.pathname + location.search + location.hash);
@@ -325,13 +382,25 @@
         });
         doc.body.appendChild(form);
         form.submit();
-      }).catch(function () { location.assign(link.href); });
+      }).catch(function () {
+        if (attempt !== loginAttempt) return;
+        busy = false;
+        trigger.removeAttribute("aria-busy");
+        trigger.textContent = originalLabel;
+        status.textContent = "Sign-in couldn’t start. Select " + originalLabel + " to retry.";
+      });
     }
     link.addEventListener("click", startLogin);
     refresh();
     window.addEventListener("pageshow", function (event) {
-      busy = false;
-      if (event.persisted) refresh();
+      if (event.persisted) {
+        ++loginAttempt;
+        busy = false;
+        link.removeAttribute("aria-busy");
+        var status = doc.getElementById("reader-sign-in-status");
+        if (status) status.remove();
+        refresh();
+      }
     });
     window.addEventListener("storage", function (event) {
       if (event.key === key || event.key === key + ".dismissed" || event.key === null) refresh();
