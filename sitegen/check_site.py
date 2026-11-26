@@ -42,7 +42,9 @@ def resolve(site, page_rel, url):
 
 def main(site):
     site = os.path.abspath(site); errors = 0; pages = {}
-    for root, _, files in os.walk(site):
+    for root, dirs, files in os.walk(site):
+        if os.path.abspath(root) == os.path.abspath(site) and "integrations" in dirs:
+            dirs.remove("integrations")  # Server sources are excluded from the Pages artifact.
         for f in files:
             if f.endswith(".html"):
                 rel = os.path.relpath(os.path.join(root, f), site)

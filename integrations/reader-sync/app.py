@@ -7,9 +7,12 @@ import os
 import secrets
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlencode, urlsplit
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
-from flask import Flask, abort, jsonify, redirect, render_template_string, request, session
+from catalog import load_catalog
+from flask import Flask, abort, jsonify, redirect, render_template_string, request, session, url_for
+from learning import register_learning
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 
@@ -25,9 +28,15 @@ def github_json(url, *, fields=None, token=None):
     headers = {"Accept": "application/json", "User-Agent": "OpenBook-reader"}
     if token:
         headers["Authorization"] = "Bearer " + token
-    with urlopen(Request(url, data=urlencode(fields).encode() if fields else None,
-                         headers=headers), timeout=10) as response:
-        return json.load(response)
+    try:
+        with urlopen(Request(url, data=urlencode(fields).encode() if fields else None,
+                             headers=headers), timeout=10) as response:
+            payload = json.load(response)
+    except (URLError, TimeoutError, ValueError):
+        abort(502, "GitHub sign-in is temporarily unavailable.")
+    if not isinstance(payload, dict):
+        abort(502)
+    return payload
 
 def create_app(config=None, database=None):
     conf = os.environ if config is None else config
@@ -37,16 +46,17 @@ def create_app(config=None, database=None):
     origin = conf["READER_ORIGIN"].rstrip("/")
     if urlsplit(origin).scheme != "https" or urlsplit(origin).path:
         raise ValueError("READER_ORIGIN must be an HTTPS origin")
+    catalog = load_catalog()
     app = Flask(__name__)
     app.config.update(SECRET_KEY=conf["SESSION_SECRET"], SESSION_COOKIE_NAME="__Host-reader",
                       SESSION_COOKIE_SECURE=True, SESSION_COOKIE_HTTPONLY=True,
                       SESSION_COOKIE_SAMESITE="Lax", MAX_CONTENT_LENGTH=8192)
     db = database if database is not None else MongoClient(
         conf["MONGODB_URI"], serverSelectionTimeoutMS=6000, tz_aware=True)["reader_" + env]
-    for collection in (db.sessions, db.grants, db.pairs, db.limits):
+    for collection in (db.sessions, db.grants, db.limits):
         collection.create_index("expires", expireAfterSeconds=0)
     db.progress.create_index([("owner", 1), ("item", 1)], unique=True)
-    db.pairs.create_index("secret", unique=True)
+    db.grants.create_index("pair_id", unique=True, sparse=True)
     def valid(collection, key):
         return collection.find_one({"_id": digest(key), "expires": {"$gt": now()}})
     def reader():
@@ -59,7 +69,7 @@ def create_app(config=None, database=None):
         if auth:
             token = auth.removeprefix("Bearer ")
             grant = valid(db.grants, token) if auth.startswith("Bearer ") else None
-            if not grant or scope not in grant["scopes"]:
+            if not grant or grant.get("status", "issued") != "issued" or scope not in grant["scopes"]:
                 abort(403)
             return grant["owner"], grant["_id"]
         return reader(), "reader"
@@ -82,10 +92,29 @@ def create_app(config=None, database=None):
                 abort(403)
     @app.after_request
     def private(response):
+        response.headers.setdefault("Content-Security-Policy", "default-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'none'")
         response.headers.update({"Cache-Control": "no-store", "Referrer-Policy": "no-referrer",
-                                 "X-Content-Type-Options": "nosniff",
-                                 "Content-Security-Policy": "default-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'none'"})
+                                 "X-Content-Type-Options": "nosniff"})
         return response
+    @app.get("/.well-known/reader-sync.json")
+    def discovery():
+        return jsonify(version=1, environment=env, catalog="/api/catalog",
+                       pair={"method": "POST", "path": "/agent/pair", "fields": ["name", "scopes"]},
+                       redeem={"method": "POST", "path": "/agent/redeem", "fields": ["device_secret"]},
+                       scopes=sorted(SCOPES), profile="/api/profile", progress="/api/progress",
+                       instructions="Show the approval URL and comparison code to the reader. "
+                                    "Keep the device secret private. Use the issued bearer for the approved scopes.")
+
+    @app.get("/api/catalog")
+    def media_keys():
+        return jsonify({key: {"title": item["title"], "duration": item["duration"], "kind": item["kind"]}
+                        for key, item in catalog.items()})
+
+    @app.get("/healthz")
+    def health():
+        db.command("ping")
+        return "", 204
+
     @app.get("/login")
     def login():
         state, verifier = secrets.token_urlsafe(32), secrets.token_urlsafe(48)
@@ -93,19 +122,25 @@ def create_app(config=None, database=None):
         challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip("=")
         return redirect("https://github.com/login/oauth/authorize?" + urlencode({
             "client_id": conf["GITHUB_CLIENT_ID"], "redirect_uri": origin+"/callback",
-            "state": state, "code_challenge": challenge, "code_challenge_method": "S256"}))
+            "scope": "", "state": state, "code_challenge": challenge, "code_challenge_method": "S256"}))
     @app.get("/callback")
     def callback():
         pending = session.pop("login", None)
         if not pending or not hmac.compare_digest(request.args.get("state",""), pending[0]) or now().timestamp()-pending[2]>600:
             abort(400)
-        token = github_json("https://github.com/login/oauth/access_token", fields={
+        credentials = github_json("https://github.com/login/oauth/access_token", fields={
             "client_id": conf["GITHUB_CLIENT_ID"], "client_secret": conf["GITHUB_CLIENT_SECRET"],
-            "redirect_uri": origin+"/callback", "code": request.args.get("code",""), "code_verifier": pending[1]}).get("access_token")
+            "redirect_uri": origin+"/callback", "code": request.args.get("code",""), "code_verifier": pending[1]})
+        if credentials.get("scope", ""):
+            abort(403, "This reader only accepts public identity access.")
+        token = credentials.get("access_token")
         if not token:
             abort(401)
         identity = github_json("https://api.github.com/user", token=token)
-        owner = str(int(identity["id"]))
+        if type(identity.get("id")) is not int or identity["id"] <= 0:
+            abort(502)
+        owner = str(identity["id"])
+        next_item = session.get("learn_item")
         next_pair = session.get("pair")
         session.clear()
         if next_pair:
@@ -113,6 +148,8 @@ def create_app(config=None, database=None):
         sid = secrets.token_urlsafe(32)
         db.sessions.insert_one({"_id":digest(sid),"owner":owner,"expires":now()+timedelta(days=7)})
         session["sid"] = sid
+        if next_item is not None and not next_pair:
+            return redirect(url_for("learn", item=next_item or None))
         return redirect("/")
     @app.get("/")
     def home():
@@ -120,13 +157,14 @@ def create_app(config=None, database=None):
             return '<a href="/login">Sign in with GitHub to save your learning profile</a>'
         owner = reader()
         p = db.profiles.find_one({"_id":owner}) or {}
-        pairing = valid(db.pairs, session.get("pair",""))
+        pair_key = session.get("pair", "")
+        pairing = db.grants.find_one({"pair_id": digest(pair_key), "status": "pending", "expires": {"$gt": now()}})
         return render_template_string("""<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1"><h1>Your learning profile</h1>
         <form method="post" action="/profile">{% for key in fields %}<p><label>{{key|capitalize}} <input name="{{key}}" maxlength="240" value="{{p.get(key,'')}}"></label></p>{% endfor %}<button>Save profile</button></form>
-        {% if pairing %}<h2>Connect an agent</h2><p>Approve only if you started this connection. Agent: {{pairing.name}}. Access: {{pairing.scopes|join(', ')}}.</p><form method="post" action="/approve"><button>Approve agent</button></form>{% endif %}
+        {% if pairing %}<h2>Connect an agent</h2><p>Approve only if you started this connection. Agent: {{pairing.name}}. Access: {{pairing.scopes|join(', ')}}. Compare this code with your agent: <strong>{{pairing.user_code}}</strong>.</p><form method="post" action="/approve"><input type="hidden" name="pair_key" value="{{pair_key}}"><button>Approve agent</button></form>{% endif %}
         <h2>Connected agents</h2>{% for g in grants %}<form method="post" action="/revoke/{{g._id}}">{{g.name}} · {{g.scopes|join(', ')}} <button>Revoke</button></form>{% endfor %}
-        <p><a href="/api/progress">View saved progress</a></p><form method="post" action="/logout"><button>Sign out</button></form>""",
-        fields=sorted(PROFILE_FIELDS),p=p,pairing=pairing,grants=db.grants.find({"owner":owner,"expires":{"$gt":now()}}))
+        <p><a href="/learn">Your lessons and bookmarks</a> · <a href="/api/progress">View saved progress as JSON</a></p><form method="post" action="/logout"><button>Sign out</button></form>""",
+        fields=sorted(PROFILE_FIELDS),p=p,pairing=pairing,pair_key=pair_key,grants=db.grants.find({"owner":owner,"expires":{"$gt":now()}}))
     @app.post("/profile")
     def profile():
         owner = reader()
@@ -144,15 +182,17 @@ def create_app(config=None, database=None):
         return jsonify(list(db.progress.find({"owner":owner},{"owner":0,"actor":0,"_id":0})))
     @app.put("/api/progress")
     def save_progress():
-        import re
         owner,actor = principal("progress:write")
         data = request.get_json()
         if not isinstance(data,dict) or set(data)!={"item","revision","position","completed"}:
             abort(400)
         item,rev,pos,done = (data[k] for k in ("item","revision","position","completed"))
-        if not isinstance(item,str) or not re.fullmatch(r"[a-z0-9-]{1,40}/[a-z0-9-]{1,60}@[0-9a-f]{8}",item):
+        media = catalog.get(item) if isinstance(item, str) else None
+        if media is None:
             abort(400)
-        if type(rev)!=int or not 0<=rev<2**31 or type(pos) not in (float,int) or not 0<=pos<=86400 or type(done)!=bool:
+        if type(rev) != int or not 0 <= rev < 2**31 or type(done) != bool:
+            abort(400)
+        if type(pos) not in (float, int) or not 0 <= pos <= media["duration"]:
             abort(400)
         try:
             result = db.progress.update_one({"owner":owner,"item":item,"revision":rev},
@@ -170,32 +210,67 @@ def create_app(config=None, database=None):
         scopes,name = data.get("scopes"),data.get("name")
         if not isinstance(name,str) or not 1<=len(name)<=60 or not isinstance(scopes,list) or not scopes or not all(isinstance(s,str) and s in SCOPES for s in scopes):
             abort(400)
-        userkey,secret = secrets.token_urlsafe(24),secrets.token_urlsafe(32)
-        db.pairs.insert_one({"_id":digest(userkey),"secret":digest(secret),"scopes":sorted(set(scopes)),
-                             "name":name,"expires":now()+timedelta(minutes=5)})
-        return jsonify(approval_url=origin+"/connect/"+userkey,device_secret=secret,expires_in=300)
+        pair_key = secrets.token_urlsafe(24)
+        device_secret = secrets.token_urlsafe(32)
+        user_code = secrets.token_hex(4).upper()
+        user_code = user_code[:4] + "-" + user_code[4:]
+        expires = now() + timedelta(minutes=5)
+        db.grants.insert_one({
+            "_id": digest(agent_token(device_secret)), "pair_id": digest(pair_key),
+            "scopes": sorted(set(scopes)), "name": name, "user_code": user_code,
+            "status": "pending", "expires": expires, "pair_until": expires,
+        })
+        return jsonify(approval_url=origin + "/connect/" + pair_key, user_code=user_code,
+                       device_secret=device_secret, expires_in=300)
+
+    def agent_token(device_secret):
+        # Reproduce the same credential for a retry without storing it in the database.
+        return hmac.new(app.secret_key.encode(), b"reader-agent-v1:" + device_secret.encode(),
+                        hashlib.sha256).hexdigest()
+
     @app.get("/connect/<key>")
     def connect(key):
-        if not valid(db.pairs,key): abort(404)
-        session["pair"]=key
+        if not db.grants.find_one({"pair_id": digest(key), "status": "pending", "expires": {"$gt": now()}}):
+            abort(404)
+        session["pair"] = key
         return redirect("/")
+
     @app.post("/approve")
     def approve():
-        owner=reader()
-        key=session.pop("pair","")
-        if not db.pairs.update_one({"_id":digest(key),"owner":{"$exists":False},"expires":{"$gt":now()}},{"$set":{"owner":owner}}).matched_count:
+        owner = reader()
+        key = request.form.get("pair_key", "")
+        # A stale tab must never authorize a different agent or a different request.
+        if not key or key != session.get("pair"):
             abort(409)
+        result = db.grants.update_one(
+            {"pair_id": digest(key), "status": "pending", "expires": {"$gt": now()}},
+            {"$set": {"owner": owner, "status": "approved"}},
+        )
+        if not result.matched_count:
+            abort(409)
+        session.pop("pair", None)
         return redirect("/")
+
     @app.post("/agent/redeem")
     def redeem():
-        data=request.get_json()
-        secret=data.get("device_secret") if isinstance(data,dict) else None
-        if not isinstance(secret,str) or len(secret)>100: abort(400)
-        row=db.pairs.find_one_and_delete({"secret":digest(secret),"owner":{"$exists":True},"expires":{"$gt":now()}})
-        if not row: abort(403)
-        token=secrets.token_urlsafe(32)
-        db.grants.insert_one({"_id":digest(token),"owner":row["owner"],"name":row["name"],"scopes":row["scopes"],"expires":now()+timedelta(days=7)})
-        return jsonify(access_token=token,expires_in=604800)
+        data = request.get_json()
+        secret = data.get("device_secret") if isinstance(data, dict) else None
+        if not isinstance(secret, str) or not 1 <= len(secret) <= 100:
+            abort(400)
+        token = agent_token(secret)
+        instant = now()
+        grant_id = digest(token)
+        db.grants.update_one(
+            {"_id": grant_id, "status": "approved", "pair_until": {"$gt": instant}},
+            {"$set": {"status": "issued", "expires": instant + timedelta(days=7)}},
+        )
+        # Repeated calls during the original pairing window return the issued grant.
+        # Revocation deletes this same document, so a retry cannot resurrect a grant.
+        row = db.grants.find_one({"_id": grant_id, "status": "issued",
+                                  "pair_until": {"$gt": instant}, "expires": {"$gt": instant}})
+        if not row:
+            abort(403)
+        return jsonify(access_token=token, expires_in=int((row["expires"] - instant).total_seconds()))
     @app.post("/revoke/<key>")
     def revoke(key):
         db.grants.delete_one({"_id":key,"owner":reader()})
@@ -205,4 +280,5 @@ def create_app(config=None, database=None):
         db.sessions.delete_one({"_id":digest(session.get("sid",""))})
         session.clear()
         return redirect("/")
+    register_learning(app, db, catalog, env, lambda: valid(db.sessions, session.get("sid", "")))
     return app
