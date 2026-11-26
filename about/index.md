@@ -20,6 +20,12 @@ For a first lab, the agent would inspect the learner’s existing setup and show
 
 The test would start with a fresh GitHub account. The agent must return a working preview URL, write and read a sample record, retrieve that record through the authorized tool, and demonstrate that a second user cannot read it. Running the recipe again must reuse existing resources. The handoff would record resource IDs, versions, verified checks, cost limits, and steps to export or remove the lab. A second agent should be able to pick up that record and operate the app without the original conversation.
 
+## Clark’s work at eCIO and the idea for an education endowment
+
+Clark Huang is the co-founder and CTO of eCIO, where he leads investment technology and technical operations. He helped build a firm that manages long-term funds for nonprofits. Its education clients include Redwood City Education Foundation, Bloomington Montessori School and Genesys Works. [Meet the eCIO team](https://www.getecio.com/about-ecio-investment-advisor-for-nonprofits) · [See the schools and educational organizations eCIO serves](https://www.getecio.com/nonprofits/schools).
+
+Clark wants to bring that experience to this project. A free course can teach someone how to deploy an app today. A learner who keeps that app running next semester still needs a database, hosting and someone to turn to when it breaks. Clark’s vision is an education endowment whose distributions could pay for lab credits and shared infrastructure across successive cohorts. He would like eCIO to manage that endowment if the project establishes one. The fund and advisory appointment are proposals. If they go ahead, this page should identify who oversees the fund, what the adviser is paid, and how much reaches learners each year.
+
 ## Who pays for the lab?
 
 The goal is free access to the core learning experience. One idea is to sponsor a fixed amount of compute, storage and messaging per team. A team approaching its allowance could stop, apply for more sponsored credit or explicitly pay the published cost of continuing. A successful student project should have a clear path to its own hosting and provider accounts.
