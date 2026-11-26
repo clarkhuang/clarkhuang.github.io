@@ -8,25 +8,25 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Clark Huang is a software engineer and technology executive with more than 30 years in the field. He studied computer science, with a minor in music, at the University of California, Berkeley from 1993 to 1997. He is Chief Technology Officer at Truly Free and Truly Free Home, a role he has held since 2025, and Co-Founder and CTO of eCIO, a nonprofit investment advisor, and its sister company eVestech, where he oversees technology strategy and operational efficiency. A seasoned technologist and serial founder, he champions AI-native engineering, building teams and workflows where people and AI agents plan, build, and verify software together. He is also an active investor in private equity and special purpose vehicles focused on AI and technology.
 
-Anyone curious about building software can start with one task they know well. Use SE 101 to make a small change and verify it, then use SE 201 to see what happens when several parts have to work together. Your project might serve a nonprofit, become a business, or simply make a weekly job easier. [Follow the project from today’s courses to the proposed foundation.](/about/)
+Learn AI engineering by building something you can use. These free courses and labs are for curious individuals, nonprofits with limited resources, sole proprietors, and small businesses. Bring a real task, such as filling a volunteer shift or tracking a booking. Clark Huang plans to fund a nonprofit foundation alongside donors so approved builders can also run what they make on shared infrastructure. [Follow the project from today’s courses to the proposed foundation.](/about/)
 
 ## Series
 
 ### [AI Tips](https://clarkhuang.github.io/ai-tips/index.md)
 
-Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results.
+Practice asking an AI for an answer you can check. Start with an everyday task, such as finding an uncovered shift in a sample schedule.
 
 17 of 17 lessons available.
 
 ### [Software Engineering 101](https://clarkhuang.github.io/software-engineering-101/index.md)
 
-How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct.
+Take one small software change from a request to a result you can show. Practice on a booking form, a volunteer signup or a tool of your own.
 
 10 of 10 lessons available.
 
 ### [Software Engineering 201](https://clarkhuang.github.io/software-engineering-201/index.md)
 
-From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail, ending with a capstone that builds one feature end to end.
+Trace one feature across a whole system. Decide who sets the rule, how the parts share data, and what someone can check when a payment runs twice.
 
 10 of 10 lessons available.
 

@@ -2,6 +2,8 @@
 
 In 101 you took one change from plan to proof. In 201 you connected those changes into a system. In 301 you own the computer that runs the system. The graduation exercise is to take a real course correction from an issue to a verified page, then explain what it cost and what happens if the machine stops halfway through.
 
+Start with a job you could use on the computer you already have. For example, a small nonprofit could try producing a captioned training clip for new volunteers. Record how long one scene takes, what it costs, and whether a volunteer can follow the instructions. Those observations give you a reason to keep the setup, change the model or try a larger machine.
+
 This is the playbook for our February 2027 build. The hardware is ordered. Model choices are candidates. We will add measured throughput, power, usable context and accepted patches per hour after the machine arrives.
 
 ## Already running local AI?
@@ -90,6 +92,12 @@ Pick one unresolved chapter question. A mobile voice client uses a short-lived G
 Give one app a revocable inference-only key with a budget, rate limit and allowed model list. Keep company data separate from interviews and public-site workers. Record request ID, model revision, input/output tokens, status, latency and price version. Reconcile streaming, cancellation, retries and missing usage before generating a monthly shadow invoice. Compare its price and quality to hosted inference. Require a commercial-use license review and independent company approval before billing.
 
 For our machine, $25,799 divided by 36 months is $716.64 per month for hardware alone. Add measured electricity, storage, support and an allowance for downtime. A reserved-capacity agreement needs a defined service window and a recovery plan. Track successful work per dollar alongside tokens.
+
+## Prove one improvement on the laptop
+
+To test recursive self-improvement, choose one reported lab failure and save a failing example. Have a local model propose a correction, then ask an independent reviewer to run both the old and revised instructions from scratch. Record the outcome, elapsed time, model revision and token usage. Keep the example as a regression test. If the correction calls for new narration, send Clark the ticket and timestamp for validation.
+
+Replay the same case on the 512 GB Mac Studio in February. Compare a smaller local model with a frontier-class open-weight candidate on accepted fixes per hour, memory use and cost. Use those results to decide which models can serve member applications while site maintenance is running.
 
 ## 9. Rehearse the build and test the update loop
 

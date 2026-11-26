@@ -46,16 +46,16 @@ def current_state():
     book_text += ' The [story arc](/book/story-arc/) follows the career stories into the engineering lessons and the making of this site.'
     entries = [
         ("What you can use today", [
-            'Watch a lesson, read its transcript, or give the Markdown page to your assistant. The published video courses are ' + ', '.join(courses) + '.',
+            'Study the public courses in the format that works for you. Watch a video, follow the captions in SE 201, read a lesson transcript, or give the Markdown page to your assistant. The published courses are ' + ', '.join(courses) + '.',
             book_text,
             'The [Change Log](/change-log/) records what reached production. Its [full archive](/change-log/archive/) links each update to the public commit.'
         ]),
-        ("The next experiment", [
+        ("Hands-on training in SE 301", [
             '[SE 301](/software-engineering-301/) is the playbook for running this workflow on local compute. The planned February 2027 Studio build will test it against a real site change. Readers can already try the laptop path and share what they measure.'
         ]),
-        ("What a first cohort could prove", [
-            'The [SE 401 proposal](/software-engineering-401/) asks whether a team can build an affordable application that another organization can operate. One candidate comes from the work a nonprofit and an advisor may share: identifying a gift and reconciling its allocation. Staff could count the follow-ups on real cases, then see whether a second nonprofit can repeat the process with a standard file import.',
-            'That pilot, an education foundation and an eCIO advisory role are ideas to test. A possible ending for the book is a funded cohort showing what it built. That scene depends on a cohort actually doing the work and its partners agreeing to share the result.'
+        ("A possible first cohort with a nonprofit", [
+            'The [SE 401 proposal](/software-engineering-401/) asks whether a team can build an affordable application that another organization can operate. One candidate is work a nonprofit and its advisor could explore with eCIO. Staff would trace a gift from receipt to allocation. Staff could count the follow-ups on real cases, then see whether a second nonprofit can repeat the process with a standard file import.',
+            'A nonprofit would help choose the problem and decide which results to share. A possible ending for the book is a first funded cohort showing its work to the staff who use it. That scene depends on what the cohort actually builds.'
         ])
     ]
     return entries

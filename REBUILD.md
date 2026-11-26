@@ -129,6 +129,10 @@ The JSON is public and contains identical release records for all visitors.
 It contains no reader activity. Commit the reviewed notes and generated pages
 together, run `python3 sitegen/check_site.py .`, and review the staged result.
 
+## Reviewing recorded lessons
+
+Keep course descriptions aligned with the mission in About. Preserve recorded lessons during copy and layout changes. When a recording teaches something that conflicts with the mission or current AI engineering practice, find or open a correction issue. Include the lesson URL, timestamp and transcript excerpt, what has changed, a dated source or reproducible example, and the smallest proposed correction. Explain whether a text correction is sufficient or the recording needs revision. Present the issue to Clark and wait for his validation before rewriting the script, synthesizing narration, or replacing media. Track an approved revision through staging and production.
+
 ## Issue lifecycle
 
 1. **Before staging.** Find the existing ticket for the deliverable or create one with observable acceptance criteria. List the issue numbers in the implementation and production PRs using neutral references such as `Refs #123`. Automatic closing keywords can close a ticket as soon as a PR merges, before the deployment succeeds.

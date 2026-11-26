@@ -1,6 +1,6 @@
-# AGENTS.md — Full archive · Change Log
+# AGENTS.md — Full Archive · Change Log
 
-This folder is the public page “Full archive · Change Log” on Clark Huang’s learning site.
+This folder is the public page “Full Archive · Change Log” on Clark Huang’s learning site.
 
 - HTML: https://clarkhuang.github.io/change-log/archive/
 - Markdown: https://clarkhuang.github.io/change-log/archive/index.md

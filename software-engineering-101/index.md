@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/software-engineering-101/index.md (plus https://clarkhuang.github.io/software-engineering-101/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.
 
-Ten short lessons on building software when AI agents do much of the building. Each lesson ends with one rule, written so your agents can follow it too.
+Choose one change a user would notice. A sole proprietor might want a booking form to confirm the appointment time. Write down what the customer should see, build the change with an agent, then make a test booking and check the confirmation yourself. These ten lessons teach the plan, build and verify loop, with a rule you can give your agent at each step.
 
 10 of 10 lessons available.
 

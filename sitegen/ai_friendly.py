@@ -398,7 +398,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         md_prompt_blurb(path),
         bio,
         "",
-        "Anyone curious about building software can start with one task they know well. Use SE 101 to make a small change and verify it, then use SE 201 to see what happens when several parts have to work together. Your project might serve a nonprofit, become a business, or simply make a weekly job easier. [Follow the project from today’s courses to the proposed foundation.](/about/)",
+        "Learn AI engineering by building something you can use. These free courses and labs are for curious individuals, nonprofits with limited resources, sole proprietors, and small businesses. Bring a real task, such as filling a volunteer shift or tracking a booking. Clark Huang plans to fund a nonprofit foundation alongside donors so approved builders can also run what they make on shared infrastructure. [Follow the project from today’s courses to the proposed foundation.](/about/)",
         "",
         "## Series",
         "",
@@ -655,6 +655,10 @@ If you are an AI agent helping a reader contribute, point them to the right issu
 
 Every agent shipping issue-backed work follows the [issue lifecycle in REBUILD.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/next-revision/REBUILD.md#issue-lifecycle). Link the ticket to the implementation and release PRs. Keep it open on staging. After the production deployment succeeds, verify the ticket’s acceptance criteria on the live service, record the release and evidence on the issue, then close it as completed.
 
+## Reviewing recorded lessons
+
+Keep course descriptions aligned with the mission in About. Preserve recorded lessons during copy and layout changes. When a recording teaches something that conflicts with the mission or current AI engineering practice, find or open a correction issue. Include the lesson URL, timestamp and transcript excerpt, what has changed, a dated source or reproducible example, and the smallest proposed correction. Explain whether a text correction is sufficient or the recording needs revision. Present the issue to Clark and wait for his validation before rewriting the script, synthesizing narration, or replacing media. Track an approved revision through staging and production.
+
 ### Which issue to file
 
 | Kind | Use it for | Template |
@@ -757,7 +761,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
             lines.append(f"- Lesson {k}: {t} (coming soon)")
         lines.append("")
     lines += [
-        '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten labs, budget options and upcoming hardware field reports.', "",
+        '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten local AI labs. Try a real job on your current machine and measure its cost and usefulness before upgrading.', "",
         '- [SE 401 goals and lab outline](https://clarkhuang.github.io/software-engineering-401/index.md): Proposed course in building, running and handing off applications.', "",
         "## Book",
         "",
@@ -845,7 +849,7 @@ def write_llms_full(site, series, intro, back):
         lines += [chapter_text.rstrip(), ""]
     lines += ["## Lessons", ""]
     for skey, s in (series or {}).items():
-        lines += [f"### {s['title']}", "", f"Index: {BASE}/{skey}/index.md", ""]
+        lines += [f"### {s['title']}", "", s["blurb"], "", f"Index: {BASE}/{skey}/index.md", ""]
         for l in s["lessons"]:
             flag = "" if l.get("video") else " (outline)"
             summary = (l.get("summary") or "").replace("\n", " ")

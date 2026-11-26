@@ -62,6 +62,10 @@ If you are an AI agent helping a reader contribute, point them to the right issu
 
 Every agent shipping issue-backed work follows the [issue lifecycle in REBUILD.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/next-revision/REBUILD.md#issue-lifecycle). Link the ticket to the implementation and release PRs. Keep it open on staging. After the production deployment succeeds, verify the ticket’s acceptance criteria on the live service, record the release and evidence on the issue, then close it as completed.
 
+## Reviewing recorded lessons
+
+Keep course descriptions aligned with the mission in About. Preserve recorded lessons during copy and layout changes. When a recording teaches something that conflicts with the mission or current AI engineering practice, find or open a correction issue. Include the lesson URL, timestamp and transcript excerpt, what has changed, a dated source or reproducible example, and the smallest proposed correction. Explain whether a text correction is sufficient or the recording needs revision. Present the issue to Clark and wait for his validation before rewriting the script, synthesizing narration, or replacing media. Track an approved revision through staging and production.
+
 ### Which issue to file
 
 | Kind | Use it for | Template |
