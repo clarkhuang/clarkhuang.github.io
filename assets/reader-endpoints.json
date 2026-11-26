@@ -1,4 +1,4 @@
 {
   "staging": "https://openbook-reader-staging.onrender.com",
-  "production": null
+  "production": "https://openbook-reader-production.onrender.com"
 }
