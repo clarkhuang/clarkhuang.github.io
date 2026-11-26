@@ -28,4 +28,8 @@ Book, chapter, and OpenBook changes should target `next-revision`. Live lesson/s
 
 ## Issue
 
-Closes #
+Refs #…
+
+Acceptance criteria and staging evidence:
+
+Production release agents verify the live result, record evidence on each ticket, and close completed tickets. See [Issue lifecycle](https://github.com/clarkhuang/clarkhuang.github.io/blob/next-revision/REBUILD.md#issue-lifecycle).
