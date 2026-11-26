@@ -66,6 +66,13 @@ jobs:
             exit 1
           fi
           python3 "$SCRIPT" --prod prod --staging-src staging-src --out _site
+          # Add each version’s footer after staging links have been rewritten.
+          if [ -f prod/sitegen/release_footer.py ]; then
+            python3 prod/sitegen/release_footer.py prod staging-src _site
+          fi
+          if [ -f staging-src/sitegen/release_footer.py ]; then
+            python3 staging-src/sitegen/release_footer.py prod staging-src _site/staging --preview
+          fi
           # Safety checks
           test -f _site/index.html
           test -f _site/staging/index.html
