@@ -43,9 +43,17 @@ If staff find the replay useful, they could test it over a defined period and co
 
 ## Give an application a local AI task
 
-Imagine a volunteer coordinator who wants a weekly handoff from shift notes. In the proposed platform, their agent publishes the interface on their own GitHub Pages site. A project-scoped Render worker receives the request, queues a summarization task on the shared SE 301 inference service, and saves the draft in that project’s MongoDB data. The coordinator reviews it before sharing. The browser never needs a model-service credential.
+Imagine a volunteer coordinator who wants a weekly handoff from shift notes. In the proposed platform, their agent publishes the interface on their own GitHub Pages site. A project-scoped Render web service receives the request, queues a summarization task on the shared SE 301 inference service, and saves the draft in that project’s MongoDB data. The coordinator reviews it before sharing. The browser never needs a model-service credential.
 
 Each job would record its project, model, input and output tokens, compute time, result and funding source. A retry must reuse the job identifier so it cannot spend the same credit twice. A builder could inspect the usage, see how much the foundation or donors covered, and set a limit before enabling a recurring task. If the Studio is offline or a project reaches its cap, show the queued or paused state. Paid overages would require an explicit choice. The first shared deployment would have to demonstrate project isolation, accurate metering and recovery before opening it to members.
+
+## Test shared hosting and foundation-sponsored inference
+
+The pilot goal is to help two members build and deploy independent apps on a foundation-managed Render account. Each app would have its own service, credentials, data access and spending limit. A Render web service would accept requests and queue jobs. The foundation’s 512 GB Mac Studio would make an authenticated outbound connection to claim each job, run the model locally and return the result to the requesting app. An approved project could offer this AI feature free to its users within its grant. The foundation would budget for hosting, electricity and operating the machine.
+
+The Studio would also run a recursive self-improvement (RSI) experiment on the foundation’s own site. Start with a repeatable task, such as answering a learner’s question with the right lesson link. Save the current answers, let the agent propose an improvement, and compare both versions on held-out questions. A maintainer would review the results and approve a staging PR before a change reaches readers.
+
+Before inviting more members, have both apps request summaries while the site experiment runs. Measure answer quality, the wait for 95% of requests, completed jobs per hour and cost per completed job. Pause the Studio mid-job, bring it back, and show that each app receives its own result and is charged once. Use those results to set each project’s allowance and decide when the Studio can spare time for experiments.
 
 ## What stays on GitHub Pages
 

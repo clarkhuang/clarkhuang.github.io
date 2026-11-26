@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "Clark clarified his view of typical sales and marketing tactics on the About page.",
-    "technical_summary": "The About page and its Markdown edition carry the same revised quotation."
+    "summary": "SE 401 now lays out a two-app pilot for shared Render hosting and sponsored AI on the foundation’s Mac Studio.",
+    "technical_summary": "The proposed pilot measures concurrent member jobs, site improvement experiments, tenant isolation and recovery after interruption."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
