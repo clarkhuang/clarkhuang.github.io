@@ -73,9 +73,11 @@ def create_app(config=None, database=None):
                 upsert=True,return_document=True)
             if hits["count"] > 30:
                 abort(429)
-        if request.method in {"POST", "PUT", "DELETE"} and not request.headers.get("Authorization"):
+        if request.method in {"POST", "PUT", "DELETE"}:
             if request.endpoint in {"pair", "redeem"}:
                 return
+            if request.endpoint == "save_progress" and request.headers.get("Authorization"):
+                return  # save_progress requires a scoped grant whenever this header is set.
             if request.headers.get("Origin") != origin:
                 abort(403)
     @app.after_request

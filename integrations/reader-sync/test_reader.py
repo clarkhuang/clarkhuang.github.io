@@ -19,6 +19,12 @@ class ReaderTests(unittest.TestCase):
         self.a.post("/profile",data={"goal":"finish 301"},headers=self.headers)
         self.assertEqual(self.a.get("/api/profile").json["goal"],"finish 301")
         self.assertEqual(self.b.get("/api/profile").json,{})
+    def test_profile_requires_origin_even_with_authorization_header(self):
+        response = self.a.post("/profile", data={"goal": "unexpected"},
+                               headers={"Authorization": "Bearer invalid"})
+        self.assertEqual(response.status_code, 403)
+        self.assertEqual(self.a.get("/api/profile").json, {})
+
     def test_agent(self):
         pair=self.agent.post("/agent/pair",json={"name":"Coach","scopes":["progress:write"]}).json
         secret={"device_secret":pair["device_secret"]}
