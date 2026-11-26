@@ -484,3 +484,14 @@ main > article.container td { border-top: 1px solid var(--line); }
 @media (max-width: 640px) {
   main > article.container :is(th, td) { padding: .55rem .45rem; }
 }
+
+.hero-cta + .bio { margin-top: 1.4rem; }
+.lab-index { max-width: 70ch; margin-block: 1.5rem; border-block: 1px solid var(--line); }
+.lab-index summary { cursor: pointer; font-weight: 600; padding-block: .75rem; }
+.lab-index li { padding-block: .2rem; }
+main :is(p,li) > a:not([class]) { text-decoration: underline; text-decoration-color: var(--accent-line); }
+main [id] { scroll-margin-top: 7rem; }
+@media (max-width:640px) { main [id] { scroll-margin-top: 1rem; } }
+.course-table { max-width: 100%; overflow-x: auto; margin-block: 1rem 2rem; }
+.course-table:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (max-width: 640px) { .course-table table { min-width: 36rem; } }

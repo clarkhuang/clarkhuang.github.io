@@ -25,7 +25,7 @@
   if (script && script.src && window.fetch) {
     var nav = doc.querySelector('nav[aria-label="Primary"]');
     if (nav) {
-      [["SE 401", "software-engineering-401/"], ["About", "about/"]].forEach(function (entry) {
+      [["About", "about/"]].forEach(function (entry) {
         var url = new URL("../" + entry[1], script.src);
         if (Array.from(nav.links || nav.querySelectorAll("a")).some(function (a) { return a.href === url.href; })) return;
         var link = doc.createElement("a");

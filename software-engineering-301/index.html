@@ -50,7 +50,7 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
-      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/software-engineering-301/" aria-current="page">SE 301</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/software-engineering-301/" aria-current="page">SE 301</a><a href="/software-engineering-401/">SE 401</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
     </div>
   </header>
   <main id="main"><article class="container"><a href="/">Home</a> / Software Engineering 301
@@ -65,6 +65,7 @@ if the machine stops halfway through.</p>
 ordered. Model choices are candidates. We will add measured throughput,
 power, usable context and accepted patches per hour after the machine
 arrives.</p>
+<details class="lab-index"><summary>Jump to a lab</summary><ol><li><a href="#1-size-the-model-before-downloading-it">Size the model before downloading it</a></li><li><a href="#2-build-the-first-endpoint">Build the first endpoint</a></li><li><a href="#3-put-a-router-in-front-of-the-models">Put a router in front of the models</a></li><li><a href="#4-choose-how-the-minis-cooperate">Choose how the minis cooperate</a></li><li><a href="#5-give-the-coding-worker-a-finish-line">Give the coding worker a finish line</a></li><li><a href="#6-produce-one-lesson-people-can-use">Produce one lesson people can use</a></li><li><a href="#7-interview-the-author">Interview the author</a></li><li><a href="#8-meter-a-company-pilot">Meter a company pilot</a></li><li><a href="#9-rehearse-the-build-and-test-the-update-loop">Rehearse the build and test the update loop</a></li><li><a href="#10-build-the-actual-studio--february-2027-field-report">Build the actual studio • February 2027 field report</a></li></ol></details>
 <h2>Already running local AI?</h2><p>Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/148">Share your field notes</a>. Include your hardware, model, runtime and one reproducible result.</p>
 <h2 id="build-along-now-on-a-48-gb-m4-pro-macbook-pro">Build along now
 on a 48 GB M4 Pro MacBook Pro</h2>
@@ -74,7 +75,7 @@ coding model so the browser, editor and tests have room to run.
 Qwen2.5-Coder-7B-Instruct in a four-bit build is a reasonable first
 fixture. If you already have gpt-oss-20b working, run it against the
 same tasks as a comparison.</p>
-<table>
+<div class="course-table" role="region" aria-labelledby="build-along-now-on-a-48-gb-m4-pro-macbook-pro" tabindex="0"><table>
 <thead>
 <tr class="header">
 <th>Stage</th>
@@ -120,7 +121,7 @@ under a pilot company workload before offering a capacity
 commitment.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Laptop finish line:</strong> one testable patch, one
 resumable job, one captioned scene, and a private configuration
 repository containing aliases, pinned versions and replay fixtures. Keep
@@ -133,7 +134,7 @@ point for measuring the benefit of the upgrade.</p>
 from our order. The configured alternatives use retailer listings.
 Cluster totals exclude cables, switches, tax, displays and backup
 storage.</p>
-<table>
+<div class="course-table" role="region" aria-labelledby="choose-your-lab" tabindex="0"><table>
 <thead>
 <tr class="header">
 <th>Lab</th>
@@ -202,7 +203,7 @@ ports</strong></td>
 job and measure contention.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>For a new purchase aimed at one large model, the quoted 256 GB Studio
 saves $1,897 over four configured minis before networking. For a lab
 that grows one machine at a time, the minis let you buy the next worker

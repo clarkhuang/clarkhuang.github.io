@@ -119,7 +119,7 @@ FOOT_LINKS = [("GitHub","https://github.com/clarkhuang"),("LinkedIn","https://ww
 
 # Public nav only. Behind-the-scenes pages (compare, playbook, research, interview plan) are not published.
 NAV = [("Home","/",""),("AI Tips","/ai-tips/","ai-tips"),("SE 101","/software-engineering-101/","software-engineering-101"),
-       ("SE 201","/software-engineering-201/","software-engineering-201"),("SE 301","/software-engineering-301/","software-engineering-301"),("Book","/book/","book"),("Ask","/ask/","ask")]
+       ("SE 201","/software-engineering-201/","software-engineering-201"),("SE 301","/software-engineering-301/","software-engineering-301"),("SE 401","/software-engineering-401/","software-engineering-401"),("Book","/book/","book"),("Ask","/ask/","ask")]
 NAV_EXTRA = []
 
 def nav_items():
@@ -621,8 +621,8 @@ def build():
     body = f"""      <section class="hero" aria-labelledby="about-heading">
         <div class="hero-copy">
           <h1 id="about-heading">Clark Huang</h1>
-          {BIO}
           <p class="hero-cta"><a class="btn" href="/ai-tips/">Start with AI Tips</a><a class="btn ghost" href="/book/">Book preview</a><a class="btn ghost" href="/book/chapters/36-sick-well-fit/">Chapter 36 (pre-release)</a></p>
+          {BIO}
         </div>
         {HERO_ART}
       </section>
