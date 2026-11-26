@@ -4,6 +4,20 @@ In 101 you took one change from plan to proof. In 201 you connected those change
 
 This is the playbook for our February 2027 build. The hardware is ordered. Model choices are candidates. We will add measured throughput, power, usable context and accepted patches per hour after the machine arrives.
 
+## Build along now on a 48 GB M4 Pro MacBook Pro
+
+Start on the laptop with the editor, site checkout, job queue and model gateway you intend to keep using after February. Choose a small coding model so the browser, editor and tests have room to run. Qwen2.5-Coder-7B-Instruct in a four-bit build is a reasonable first fixture. If you already have gpt-oss-20b working, run it against the same tasks as a comparison.
+
+| Stage | On the 48 GB laptop now | On the 512 GB Studio in February |
+|---|---|---|
+| First request | Install llmster, load one model, run a short streamed answer and a structured tool call. Record the revision and memory use. | Restore the pinned configuration and replay both requests before installing larger models. |
+| Personal coding | Point OpenCode at a stable code-fast gateway alias. Work one real issue in a disposable worktree. Record time to an accepted patch. | Point the alias at Qwen3-Coder-Next. Keep using the laptop as your editing client. Compare the patch on the same base commit. |
+| Site worker | Keep a single queued job. Build a staging preview, interrupt it, resume it, and verify one change. | Move the durable queue and worker to the wired Studio. Rehearse reboot recovery before enabling unattended jobs. |
+| Media and interviews | Render one short scene with captions. Record one consented interview sample and check its timestamps. Keep recordings private. | Restore the approved assets, render the full lesson, and test concurrent editing while the render runs. |
+| Serving capacity | Meter a local test key and reconcile a cancelled stream. Save the fixtures and a sample invoice. | Load the reviewer alongside the coder. Measure personal latency under a pilot company workload before offering a capacity commitment. |
+
+**Laptop finish line:** one testable patch, one resumable job, one captioned scene, and a private configuration repository containing aliases, pinned versions and replay fixtures. Keep credentials in Keychain and copy private media using encrypted storage. On the Studio’s first login, restore those assets, reproduce the laptop baseline, then run Lab 10. This gives both machines a common starting point for measuring the benefit of the upgrade.
+
 ## Choose your lab
 
 US hardware prices checked November 26, 2026. The featured price is from our order. The configured alternatives use retailer listings. Cluster totals exclude cables, switches, tax, displays and backup storage.
