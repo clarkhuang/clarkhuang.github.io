@@ -19,13 +19,15 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 ## The lesson
 
-When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message, or email thread first, and the same question gets a specific, usable answer.
+Show the relevant excerpt so the assistant can answer a specific question. For example, paste “Password reset failed for [USER] because the link expired.” Then ask, “What should I check next?” Leave out the email address and reset link.
 
 ## The rule
 
-Paste first, ask second. Hand over the screenshot, document, error message, or email thread before you type a single word of your question.
+Paste first, ask second. Share only the part you have permission to share. Replace credentials and unnecessary personal details with placeholders, then ask your question.
 
 This rule is written so an AI agent can follow it as a standing instruction.
+
+[AI Tips 17: Don’t Paste Secrets](https://clarkhuang.github.io/ai-tips/17-dont-paste-secrets/)
 
 ## Transcript
 
