@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "SE 401 now has a build plan that starts with hosted AI, tests a real member workflow and later replays the same work on the foundation’s Studio.",
-    "technical_summary": "Seven field labs map the hosted baseline, provider comparison, two-project recovery tests and reviewed site improvements to the existing course and SE 301 handoff."
+    "summary": "SE 401 now explains how members could create an app with one GitHub sign-in and add sponsored hosting, AI, email, payments or phone service from one dashboard.",
+    "technical_summary": "The design maps Reader grants to proposed MCP tools and defines project provisioning, provider verification, usage limits and service shutdown."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
