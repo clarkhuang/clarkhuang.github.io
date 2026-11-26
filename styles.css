@@ -47,7 +47,7 @@ a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible,video:focus-visible,audio:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.wrap,main > article.container{max-width:var(--max);margin:0 auto;padding:0 28px}
 .skip-link{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:8px 14px;border-radius:8px;z-index:20;font-weight:600}
 .skip-link:focus{left:12px}
 
@@ -283,7 +283,7 @@ a.fmt:hover{border-color:var(--accent-line);text-decoration:none}
 .ai-use-links a{font-weight:600}
 .md-twin{font-size:13px;color:var(--dimmer);margin:0 0 10px}
 @media (max-width:640px){
-  .wrap{padding:0 18px}
+  .wrap,main > article.container{padding:0 18px}
   .ai-use{margin:0 0 14px}
   .ai-use > summary{padding:7px 12px}
   main{padding-top:28px}
@@ -421,6 +421,7 @@ main pre code{overflow-wrap:normal}
 .chapter-text > h2:not(.label){margin-top:2.2em}
 .chapter-text h3{margin-top:1.6em}
 .chapter-text p,.chapter-text li{line-height:1.65}
+.chapter-text a{overflow-wrap:anywhere}
 .chapter-text ul{padding-left:1.2em}
 .chapter-text li{margin:.35em 0}
 .chapter-text .chapter-quote{font-family:var(--sans);font-style:normal;font-size:1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
@@ -444,3 +445,42 @@ main pre code{overflow-wrap:normal}
 .chapter-preview p:not(.label){font-weight:400;font-family:var(--sans);font-size:1.02rem;line-height:1.6;max-width:72ch}
 
 .site-header nav a.reader-sign-in{color:var(--text);box-shadow:inset 0 0 0 1px currentColor;white-space:nowrap}
+
+/* Long-form course guides share the header gutter and a narrower reading measure. */
+main > article.container > h1 {
+  max-width: 24ch;
+  font-size: clamp(2.15rem, 4.5vw, 3.75rem);
+  line-height: 1.09;
+  margin-block: .55em .45em;
+}
+main > article.container > :is(p, ul, ol, h2, h3) { max-width: 70ch; }
+main > article.container > :is(p, ul, ol) { overflow-wrap: anywhere; }
+main > article.container > h2,
+main > .wrap > p + h2 {
+  margin-block: clamp(2rem, 4vw, 3.25rem) .65rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+main > article.container > h3 { margin-block: 1.6rem .5rem; }
+main > article.container table {
+  width: 100%;
+  margin-block: 1.25rem 2rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: .96em;
+  line-height: 1.5;
+}
+main > article.container :is(th, td) {
+  text-align: start;
+  vertical-align: top;
+  padding: .8rem 1rem;
+  overflow-wrap: anywhere;
+}
+main > article.container th { background: var(--panel-hi); }
+main > article.container td { border-top: 1px solid var(--line); }
+@media (max-width: 640px) {
+  main > article.container :is(th, td) { padding: .55rem .45rem; }
+}
