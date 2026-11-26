@@ -630,7 +630,7 @@ def build():
         <div class="section-head"><h2 id="series-heading">Learn</h2><p class="section-note">Short video lessons on AI-native software work. Your progress is remembered on this device. <button type="button" class="reset" data-reset-progress hidden>Reset progress</button><span class="status" role="status" data-status></span></p></div>
         <div class="cards">{cards}</div>
         <h2><a href="/software-engineering-301/">Software Engineering 301: Run Your Own AI Studio</a></h2><p>The ten-lab playbook is available now. Videos and R&amp;D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work.</p><p>Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/148">Share your field notes</a>.</p>
-        <p class="section-note">This site is also an open project. <a href="/contribute/">Contribute with your AI</a>, or <a href="/copy-this/">copy this for yourself</a>.</p>
+        <p class="section-note"><a href="/about/">About this project and the SE 401 vision</a>. This site is also an open project. <a href="/contribute/">Contribute with your AI</a>, or <a href="/copy-this/">copy this for yourself</a>.</p>
       </section>
       <section aria-labelledby="ask-connect-heading">
         <div class="section-head"><h2 id="ask-connect-heading">Ask, connect, contribute</h2><p class="section-note">Search the lessons and the book preview, or hook your own AI to this site.</p></div>
