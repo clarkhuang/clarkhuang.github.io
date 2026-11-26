@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 import mongomock
 from app import create_app
+from pymongo.errors import ConnectionFailure
 
 
 class PagesIdentityTests(unittest.TestCase):
@@ -19,6 +20,32 @@ class PagesIdentityTests(unittest.TestCase):
                                    PAGES_ORIGIN=self.pages, GITHUB_CLIENT_ID="test",
                                    GITHUB_CLIENT_SECRET="test", SESSION_SECRET="test"), self.db)
         self.client = self.app.test_client()
+
+    def test_ready_is_exact_origin_and_fails_closed_on_database_error(self):
+        path = "/api/pages/ready"
+        self.assertEqual(self.client.get(path).status_code, 403)
+        self.assertNotIn("Access-Control-Allow-Origin",
+                         self.client.get(path, headers={"Origin": self.reader}).headers)
+        with patch.object(self.db, "command", return_value={"ok": 1}) as ping:
+            response = self.client.get(path, headers={"Origin": self.pages})
+            ping.assert_called_once_with("ping")
+        self.assertEqual(response.json, {"ready": True, "environment": "staging"})
+        self.assertEqual(response.headers["Access-Control-Allow-Origin"], self.pages)
+        with patch.object(self.db, "command", side_effect=ConnectionFailure("test")):
+            response = self.client.get(path, headers={"Origin": self.pages})
+        self.assertEqual(response.status_code, 503)
+        self.assertFalse(response.json["ready"])
+
+    def test_cold_start_recovery_get_has_no_login_side_effect(self):
+        before = self.db.list_collection_names()
+        response = self.client.get("/pages/login?challenge=discarded&return=https://elsewhere.example/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(self.pages + "/staging/my-learning/", response.text)
+        self.assertNotIn("elsewhere.example", response.text)
+        self.assertNotIn("Set-Cookie", response.headers)
+        self.assertEqual(self.db.list_collection_names(), before)
+        self.assertEqual(self.db.pages_logins.count_documents({}), 0)
+        self.assertEqual(self.db.sessions.count_documents({}), 0)
 
     def start(self, page=None):
         proof = secrets.token_hex(32)
