@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Learning profile · OpenBook Reader</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}"></head><body><main>
+{% if signed_in %}<nav aria-label="Account"><a href="/learn">Your lessons</a></nav>
+<h1>Your learning profile</h1>
+        <form method="post" action="/profile">{% for key in fields %}<p><label>{{key|capitalize}} <input name="{{key}}" maxlength="240" value="{{p.get(key,'')}}"></label></p>{% endfor %}<button>Save profile</button></form>
+        {% if pairing %}<h2>Connect an agent</h2><p>Approve only if you started this connection. Agent: {{pairing.name}}. Access: {{pairing.scopes|join(', ')}}. Compare this code with your agent: <strong>{{pairing.user_code}}</strong>.</p><form method="post" action="/approve"><input type="hidden" name="pair_key" value="{{pair_key}}"><button>Approve agent</button></form>{% endif %}
+        <h2>Connected agents</h2>{% for g in grants %}<form method="post" action="/revoke/{{g._id}}">{{g.name}} · {{g.scopes|join(', ')}} <button>Revoke</button></form>{% else %}<p>No agents connected.</p>{% endfor %}
+        <p><a href="/learn">Your lessons and bookmarks</a> · <a href="/api/progress">View saved progress as JSON</a></p><form method="post" action="/logout"><button>Sign out</button></form>{% else %}<h1>Your learning profile</h1><p><a href="/login">Sign in with GitHub to save your learning profile</a></p>{% endif %}
+</main></body></html>

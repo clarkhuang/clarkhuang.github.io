@@ -2,6 +2,26 @@
 
 Clark Huang started this public learning site around a question: what should an engineer still know how to do when an AI can write the code? The lessons follow the work from one change in SE 101, through whole systems in SE 201, to running the models and tools yourself in SE 301. The free OpenBook, *Silicon Valley C Players*, explores the same interest in fundamentals through stories and practical lessons.
 
+<!-- BEGIN generated project state -->
+## What you can use today
+
+Watch a lesson, read its transcript, or give the Markdown page to your assistant. The published video courses are [AI Tips](/ai-tips/) (17 available), [Software Engineering 101](/software-engineering-101/) (10 available), [Software Engineering 201](/software-engineering-201/) (10 available).
+
+The [OpenBook](/book/) is listed as a preview. Its first complete edition is targeted for 2027. The chapter catalog links to [Building Blocks](/book/chapters/17b-building-blocks/), [Sick, Well, Fit](/book/chapters/36-sick-well-fit/). The [story arc](/book/story-arc/) follows the career stories into the engineering lessons and the making of this site.
+
+The [Change Log](/change-log/) records what reached production. Its [full archive](/change-log/archive/) links each update to the public commit.
+
+## The next experiment
+
+[SE 301](/software-engineering-301/) is the playbook for running this workflow on local compute. The planned February 2027 Studio build will test it against a real site change. Readers can already try the laptop path and share what they measure.
+
+## What a first cohort could prove
+
+The [SE 401 proposal](/software-engineering-401/) asks whether a team can build an affordable application that another organization can operate. One candidate comes from the work a nonprofit and an advisor may share: identifying a gift and reconciling its allocation. Staff could count the follow-ups on real cases, then see whether a second nonprofit can repeat the process with a standard file import.
+
+That pilot, an education foundation and an eCIO advisory role are ideas to test. A possible ending for the book is a funded cohort showing what it built. That scene depends on a cohort actually doing the work and its partners agreeing to share the result.
+<!-- END generated project state -->
+
 ## Who gets to build?
 
 Today, anyone can take a free lesson, inspect its source, and apply it to work they care about. A volunteer tracking food deliveries and a founder tracking customer orders can use the same first exercise. Pick one order, describe what should happen when it arrives twice, and show another person that the software handles it. Neither learner needs a credential or a foundation award to begin.

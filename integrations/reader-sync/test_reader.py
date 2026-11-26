@@ -22,6 +22,12 @@ class ReaderTests(unittest.TestCase):
         for client,owner in ((self.a,"1"),(self.b,"2")):
             self.db.sessions.insert_one({"_id":digest(owner),"owner":owner,"expires":now()+timedelta(hours=1)})
             with client.session_transaction() as sess: sess["sid"]=owner
+    def test_form_page_allows_same_origin_submission_only(self):
+        self.assertEqual(self.a.get("/").headers["Referrer-Policy"], "same-origin")
+        self.assertEqual(self.a.get("/api/profile").headers["Referrer-Policy"], "no-referrer")
+        self.assertEqual(self.a.post("/logout", headers={"Origin": "null"}).status_code, 403)
+        self.assertEqual(self.a.post("/logout", headers=self.headers).status_code, 302)
+
     def test_profiles_and_origin(self):
         self.assertEqual(self.a.post("/profile",data={"goal":"finish 301"}).status_code,403)
         self.a.post("/profile",data={"goal":"finish 301"},headers=self.headers)
