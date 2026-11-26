@@ -34,3 +34,12 @@ jobs:
           READER_TEST_MONGO: mongodb://localhost:27017
         run: python -m unittest test_reader -v
       - run: docker build -f integrations/reader-sync/Dockerfile -t reader-sync:test .
+      - name: Start the built image and verify the public reader catalog
+        run: |
+          docker run -d --rm --name reader-smoke --network host \
+            -e READER_ENV=staging -e READER_ORIGIN=https://reader.example \
+            -e SESSION_SECRET=test-only -e GITHUB_CLIENT_ID=test -e GITHUB_CLIENT_SECRET=test \
+            -e MONGODB_URI=mongodb://127.0.0.1:27017 reader-sync:test
+          trap 'docker stop reader-smoke' EXIT
+          curl --fail --retry 12 --retry-connrefused --retry-delay 1 http://localhost:8080/healthz
+          curl --fail --silent http://localhost:8080/api/catalog | python -c 'import json, sys; assert json.load(sys.stdin)'
