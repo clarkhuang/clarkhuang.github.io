@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 from catalog import load_catalog
 from flask import Flask, abort, jsonify, redirect, render_template, request, session, url_for
 from learning import register_learning
+from pages_login import register_pages_login
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 
@@ -75,7 +76,7 @@ def create_app(config=None, database=None):
         return reader(), "reader"
     @app.before_request
     def protect():
-        if request.endpoint in {"pair", "redeem", "login"}:
+        if request.endpoint in {"pair", "redeem", "login", "pages_login"}:
             minute = int(now().timestamp()) // 60
             bucket = digest(f"{request.endpoint}:{request.remote_addr}:{minute}")
             hits = db.limits.find_one_and_update({"_id":bucket},
@@ -84,7 +85,7 @@ def create_app(config=None, database=None):
             if hits["count"] > 30:
                 abort(429)
         if request.method in {"POST", "PUT", "DELETE"}:
-            if request.endpoint in {"pair", "redeem"}:
+            if request.endpoint in {"pair", "redeem", "pages_login"}:
                 return
             if request.endpoint == "save_progress" and request.headers.get("Authorization"):
                 return  # save_progress requires a scoped grant whenever this header is set.
@@ -93,7 +94,9 @@ def create_app(config=None, database=None):
     @app.after_request
     def private(response):
         response.headers.setdefault("Content-Security-Policy", "default-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'none'")
-        response.headers.update({"Cache-Control": "no-store", "Referrer-Policy": "no-referrer",
+        # Browsers use the document's referrer policy when constructing Origin for form POSTs.
+        form_page = response.status_code == 200 and response.mimetype == "text/html"
+        response.headers.update({"Cache-Control": "no-store", "Referrer-Policy": "same-origin" if form_page else "no-referrer",
                                  "X-Content-Type-Options": "nosniff"})
         return response
     @app.get("/.well-known/reader-sync.json")
@@ -115,22 +118,15 @@ def create_app(config=None, database=None):
         db.command("ping")
         return "", 204
 
-    @app.get("/login")
-    def login():
-        state, verifier = secrets.token_urlsafe(32), secrets.token_urlsafe(48)
-        session["login"] = [state, verifier, int(now().timestamp())]
+    def github_authorize(state, verifier):
         challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip("=")
         return redirect("https://github.com/login/oauth/authorize?" + urlencode({
             "client_id": conf["GITHUB_CLIENT_ID"], "redirect_uri": origin+"/callback",
             "scope": "", "state": state, "code_challenge": challenge, "code_challenge_method": "S256"}))
-    @app.get("/callback")
-    def callback():
-        pending = session.pop("login", None)
-        if not pending or not hmac.compare_digest(request.args.get("state", "").encode(), pending[0].encode()) or now().timestamp()-pending[2]>600:
-            abort(400)
+    def github_identity(verifier):
         credentials = github_json("https://github.com/login/oauth/access_token", fields={
             "client_id": conf["GITHUB_CLIENT_ID"], "client_secret": conf["GITHUB_CLIENT_SECRET"],
-            "redirect_uri": origin+"/callback", "code": request.args.get("code",""), "code_verifier": pending[1]})
+            "redirect_uri": origin+"/callback", "code": request.args.get("code",""), "code_verifier": verifier})
         if credentials.get("scope", ""):
             abort(403, "This reader only accepts public identity access.")
         token = credentials.get("access_token")
@@ -139,15 +135,44 @@ def create_app(config=None, database=None):
         identity = github_json("https://api.github.com/user", token=token)
         if type(identity.get("id")) is not int or identity["id"] <= 0:
             abort(502)
-        owner = str(identity["id"])
+        return identity
+
+    def establish_session(identity):
+        # Rotate the browser session. Existing Pages receipts must follow logout/account changes.
+        if session.get("sid"):
+            db.sessions.delete_one({"_id": digest(session["sid"])})
+        session.clear()
+        sid = secrets.token_urlsafe(32)
+        row = {"_id": digest(sid), "owner": str(identity["id"]), "login": identity.get("login"),
+               "expires": now() + timedelta(days=7)}
+        db.sessions.insert_one(row)
+        session["sid"] = sid
+        return row
+
+    pages_callback = register_pages_login(
+        app, db, conf.get("PAGES_ORIGIN", "https://clarkhuang.github.io"), env, now,
+        lambda: valid(db.sessions, session.get("sid", "")), github_authorize,
+        github_identity, establish_session)
+
+    @app.get("/login")
+    def login():
+        state, verifier = secrets.token_urlsafe(32), secrets.token_urlsafe(48)
+        session["login"] = [state, verifier, int(now().timestamp())]
+        return github_authorize(state, verifier)
+    @app.get("/callback")
+    def callback():
+        state = request.args.get("state", "")
+        if state.startswith("pages."):
+            return pages_callback(state)
+        pending = session.pop("login", None)
+        if not pending or not hmac.compare_digest(request.args.get("state", "").encode(), pending[0].encode()) or now().timestamp()-pending[2]>600:
+            abort(400)
+        identity = github_identity(pending[1])
         next_item = session.get("learn_item")
         next_pair = session.get("pair")
-        session.clear()
+        establish_session(identity)
         if next_pair:
             session["pair"] = next_pair
-        sid = secrets.token_urlsafe(32)
-        db.sessions.insert_one({"_id":digest(sid),"owner":owner,"expires":now()+timedelta(days=7)})
-        session["sid"] = sid
         if next_item is not None and not next_pair:
             return redirect(url_for("learn", item=next_item or None))
         return redirect("/")

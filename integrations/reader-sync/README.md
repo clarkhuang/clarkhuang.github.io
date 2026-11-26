@@ -47,3 +47,27 @@ For a free staging deployment on Render, create a Blueprint for this repository 
 ### Agent discovery
 
 Fetch `assets/reader-endpoints.json` from the static site and select the environment the reader is using. A null origin means account access has not been enabled there. At a configured origin, fetch `/.well-known/reader-sync.json` for pairing and API routes. GET /api/catalog lists the exact media keys and durations accepted by this deployment without exposing any reader state. Request only the scopes needed for the task. GET /api/progress requires progress:read. For a write, send PUT to that route with item, revision, position (seconds), and completed using progress:write. Start an unseen item at revision zero. A conflict returns 409; reload current progress with the reader’s permission before deciding whether to write again.
+
+### Sign in from a Pages article
+
+Set `PAGES_ORIGIN` to the HTTPS origin of your GitHub Pages site (default
+`https://clarkhuang.github.io`). The header signs the learner in via a top-level
+reader and GitHub navigation, then returns to the originating article. Staging
+accepts only paths under `/staging/`, and production accepts production paths.
+Search parameters and section anchors are restored by the original tab.
+
+GitHub tokens and reader session credentials stay off Pages. After sign-in
+Pages holds a display-only receipt that can retrieve the account's public
+GitHub handle. The receipt is stored in first-party browser storage, scoped to
+the configured service, and stops working at reader logout or session expiry
+(up to seven days). A tab with restricted persistent storage can keep the
+receipt for its own session. A browser with no usable session storage or
+Web Crypto can still open the hosted reader directly. Sessions created before
+handles were saved need one sign-in to populate that display value.
+
+Deploy the backend before deploying the header. Atlas reader roles need
+read/write/index permissions for the additional `pages_logins` collection
+within their own environment database. Keep the identity API's CORS allowlist
+at the exact Pages origin. The profile and progress APIs use separate
+authorization. Only a service URL (public information) goes in
+`assets/reader-endpoints.json`.
