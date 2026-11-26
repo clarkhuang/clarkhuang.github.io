@@ -1,3 +1,5 @@
 Start with index.md. Distinguish proposed goals and lab pass conditions from available services. The SE 401 provisioning recipes are planned. Link to SE 301 for the current playbook and to About for the proposed funding model.
 
 For the proposed one-signup path, describe what the builder would authorize, which GitHub repository they own, and which Render and MongoDB resources the platform would operate for their project. A recipe would check project isolation, meter usage against a budget, and provide a portable export. Use the GitHub Pages limits linked in the course when discussing commercial deployments. The eCIO pilot is a candidate project. No sponsoring award or student provisioning service is announced.
+
+When explaining the mission, distinguish public education and training from the proposed hosting awards for approved projects. Clark intends to contribute alongside other donors to a proposed nonprofit foundation. The current site teaches these skills and operates its own reader service.

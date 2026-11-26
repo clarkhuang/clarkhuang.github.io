@@ -580,6 +580,8 @@ This chapter borrows CrossFit’s models as a lens for companies. It is not an e
 
 ### AI Tips
 
+Practice asking an AI for an answer you can check. Start with an everyday task, such as finding an uncovered shift in a sample schedule.
+
 Index: https://clarkhuang.github.io/ai-tips/index.md
 
 - Lesson 1: [Paste First, Ask Second](https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md) (published Nov 21, 2026; updated Nov 22, 2026) — When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message, or email thread first, and the same question gets a specific, usable answer.
@@ -619,6 +621,8 @@ Index: https://clarkhuang.github.io/ai-tips/index.md
 
 ### Software Engineering 101
 
+Take one small software change from a request to a result you can show. Practice on a booking form, a volunteer signup or a tool of your own.
+
 Index: https://clarkhuang.github.io/software-engineering-101/index.md
 
 - Lesson 1: [Plan, Build, Verify (and When to Skip It)](https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/index.md) (published Nov 21, 2026; updated Nov 22, 2026) — How do you fix code you don't understand when you only get one shot? Split the work into four roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and report. Loop until the verifier runs out of serious things to say. Then: what that costs, and when a lighter path is good enough.
@@ -643,6 +647,8 @@ Index: https://clarkhuang.github.io/software-engineering-101/index.md
   - Rule: Never store, log, or send raw card data. Customer personal data stays out of logs, errors, test data, and your own working notes. Internal apps sit behind company sign-in, on every route. And any change that touches personal data or payments gets an independent review.
 
 ### Software Engineering 201
+
+Trace one feature across a whole system. Decide who sets the rule, how the parts share data, and what someone can check when a payment runs twice.
 
 Index: https://clarkhuang.github.io/software-engineering-201/index.md
 

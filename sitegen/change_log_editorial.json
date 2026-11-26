@@ -1,6 +1,6 @@
 {
   "release_note": {
-    "summary": "You can switch between daily, weekly and monthly updates or browse the full Change Log. Release notes now explain what changed for readers, including the updates shown after sign-in.",
+    "summary": "The course guides now show what individuals, nonprofits and small businesses can build today. SE 301 and SE 401 connect the planned local AI studio to sponsored hosting for member-built apps. The Change Log and signed-in updates explain releases in plain language, and the course and funding sections are easier to read on smaller screens.",
     "technical_summary": "All four change-log views retain their navigation order and expose their active page. Agent metadata keeps the release sequence, timestamp, pull request and commit evidence alongside the reader summary."
   },
   "releases": {

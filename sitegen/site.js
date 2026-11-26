@@ -204,7 +204,7 @@
       noticeBox.setAttribute("aria-labelledby", "reader-changes-heading");
       var heading = doc.createElement("h2");
       heading.id = "reader-changes-heading";
-      heading.textContent = "What’s changed since your last login";
+      heading.textContent = "What’s changed";
       var list = doc.createElement("ul");
       result.releases.forEach(function (entry) {
         if (!/^[a-f0-9]{40}$/.test(entry.sha)) return;
