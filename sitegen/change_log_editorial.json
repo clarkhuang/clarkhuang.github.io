@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "SE 401 now lays out a two-app pilot for shared Render hosting and sponsored AI on the foundation’s Mac Studio.",
-    "technical_summary": "The proposed pilot measures concurrent member jobs, site improvement experiments, tenant isolation and recovery after interruption."
+    "summary": "SE 401 now has a build plan that starts with hosted AI, tests a real member workflow and later replays the same work on the foundation’s Studio.",
+    "technical_summary": "Seven field labs map the hosted baseline, provider comparison, two-project recovery tests and reviewed site improvements to the existing course and SE 301 handoff."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
