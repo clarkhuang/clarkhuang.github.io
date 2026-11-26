@@ -33,6 +33,31 @@ class ReaderTests(unittest.TestCase):
         self.a.post("/profile",data={"goal":"finish 301"},headers=self.headers)
         self.assertEqual(self.a.get("/api/profile").json["goal"],"finish 301")
         self.assertEqual(self.b.get("/api/profile").json,{})
+    def test_profile_form_partial_updates_validation_and_manual_clear(self):
+        self.a.post("/profile", data={"goal": "build a site", "format": "transcript"}, headers=self.headers)
+        self.a.post("/profile", data={"hardware": "MacBook Air"}, headers=self.headers)
+        self.assertEqual(self.a.get("/api/profile").json, {
+            "goal": "build a site", "format": "transcript", "hardware": "MacBook Air"})
+        for bad in ({"format": "A" * 241}, {"goal": "two\nlines"}, {"invalid-key": "x"}, {}):
+            with self.subTest(bad=bad):
+                self.assertEqual(self.a.post("/profile", data=bad, headers=self.headers).status_code, 400)
+        response = self.a.post("/profile", data={"format": ""}, headers=self.headers, follow_redirects=True)
+        self.assertIn("Profile saved.", response.text)
+        self.assertIn("volunteer scheduling app", response.text)
+        self.assertEqual(self.a.get("/api/profile").json["format"], "")
+        self.assertEqual(self.b.get("/api/profile").json, {})
+
+    def test_hub_save_returns_to_the_environment_matched_pages_hub(self):
+        editor = self.a.get("/?source=hub")
+        self.assertIn('action="/profile?source=hub"', editor.text)
+        response = self.a.post("/profile?source=hub", data={"goal": "private example"},
+                               headers=self.headers, follow_redirects=True)
+        self.assertIn("https://clarkhuang.github.io/staging/my-learning/", response.text)
+        self.assertNotIn("private example", response.text)
+        self.assertEqual(self.b.get("/api/profile").json, {})
+        anonymous = self.agent.get("/?source=hub")
+        self.assertIn('href="/login?source=hub"', anonymous.text)
+
     def test_profile_requires_origin_even_with_authorization_header(self):
         response = self.a.post("/profile", data={"goal": "unexpected"},
                                headers={"Authorization": "Bearer invalid"})

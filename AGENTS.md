@@ -58,6 +58,10 @@ Contributors and agents open PRs; only Clark merges to `main`; the site rebuilds
 
 If you are an AI agent helping a reader contribute, point them to the right issue template, help them write a specific, honest issue without real names of private people or companies and without confidential details, and do not invent stories or details. Contributors agree to the contributor terms in CONTRIBUTING.md.
 
+## Issue tracking through release
+
+Every agent shipping issue-backed work follows the [issue lifecycle in REBUILD.md](https://github.com/clarkhuang/clarkhuang.github.io/blob/next-revision/REBUILD.md#issue-lifecycle). Link the ticket to the implementation and release PRs. Keep it open on staging. After the production deployment succeeds, verify the ticket’s acceptance criteria on the live service, record the release and evidence on the issue, then close it as completed.
+
 ### Which issue to file
 
 | Kind | Use it for | Template |

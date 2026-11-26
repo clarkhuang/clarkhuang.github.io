@@ -224,6 +224,7 @@ def write_robots_and_sitemap(series):
     guest_urls = GUEST.sitemap_urls(site=SITE)
     # Dedup while keeping a stable order; guest pages follow the book pages.
     urls = [BASE + "/", BASE + "/book/", BASE + "/book/editorial-policy/", BASE + "/book/story-arc/", BASE + "/book/guest/"]
+    urls.append(BASE + "/my-learning/")
     urls += [BASE + "/change-log/" + suffix for suffix in ("", "daily/", "weekly/", "monthly/", "archive/")]
     for u in guest_urls:
         if u not in urls:

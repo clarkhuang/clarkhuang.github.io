@@ -17,8 +17,20 @@ from pages_login import register_pages_login
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 
-SCOPES = {"profile:read", "progress:read", "progress:write"}
-PROFILE_FIELDS = {"goal", "hardware", "format"}
+SCOPE_LABELS = {
+    "profile:read": "Read your saved learning goal, hardware and preferred format",
+    "progress:read": "Read saved lesson and book playback positions and completion",
+    "progress:write": "Update playback positions and completion for published media",
+}
+SCOPES = set(SCOPE_LABELS)
+PROFILE_FIELDS = {
+    "goal": {"label": "Learning goal", "help": "Describe an outcome an assistant can use to choose a relevant lesson or exercise.",
+             "example": "Build a volunteer scheduling app and show that two people can use it."},
+    "hardware": {"label": "Computer and operating system", "help": "Describe the machine you can use so an assistant can suggest labs or local models that fit.",
+                 "example": "MacBook Air, Apple M2, 16 GB memory, macOS."},
+    "format": {"label": "Preferred learning format", "help": "Tell an assistant how to present a lesson or give you practice.",
+               "example": "Read the transcript first, then try a short hands-on lab."},
+}
 def now():
     return datetime.now(timezone.utc)
 
@@ -110,8 +122,8 @@ def create_app(config=None, database=None):
 
     @app.get("/api/catalog")
     def media_keys():
-        return jsonify({key: {"title": item["title"], "duration": item["duration"], "kind": item["kind"]}
-                        for key, item in catalog.items()})
+        fields = ("title", "duration", "kind", "series_id", "series_title", "content_id")
+        return jsonify({key: {field: item[field] for field in fields} for key, item in catalog.items()})
 
     @app.get("/healthz")
     def health():
@@ -153,15 +165,16 @@ def create_app(config=None, database=None):
         session["sid"] = sid
         return row
 
+    pages_origin = conf.get("PAGES_ORIGIN", "https://clarkhuang.github.io")
     pages_callback = register_pages_login(
-        app, db, conf.get("PAGES_ORIGIN", "https://clarkhuang.github.io"), env, now,
+        app, db, pages_origin, env, now,
         lambda: valid(db.sessions, session.get("sid", "")), github_authorize,
         github_identity, establish_session)
 
     @app.get("/login")
     def login():
         state, verifier = secrets.token_urlsafe(32), secrets.token_urlsafe(48)
-        session["login"] = [state, verifier, int(now().timestamp())]
+        session["login"] = [state, verifier, int(now().timestamp()), request.args.get("source") == "hub"]
         return github_authorize(state, verifier)
     @app.get("/callback")
     def callback():
@@ -177,26 +190,44 @@ def create_app(config=None, database=None):
         establish_session(identity)
         if next_pair:
             session["pair"] = next_pair
+        if not next_pair and len(pending) > 3 and pending[3]:
+            return redirect(url_for("home", source="hub"))
         if next_item is not None and not next_pair:
             return redirect(url_for("learn", item=next_item or None))
         return redirect("/")
     @app.get("/")
     def home():
         if not valid(db.sessions, session.get("sid","")):
-            return render_template("profile.html", signed_in=False)
+            return render_template("profile.html", signed_in=False, from_hub=request.args.get("source") == "hub")
         owner = reader()
         p = db.profiles.find_one({"_id":owner}) or {}
         pair_key = session.get("pair", "")
         pairing = db.grants.find_one({"pair_id": digest(pair_key), "status": "pending", "expires": {"$gt": now()}})
         return render_template("profile.html", signed_in=True,
-        fields=sorted(PROFILE_FIELDS),p=p,pairing=pairing,pair_key=pair_key,grants=db.grants.find({"owner":owner,"expires":{"$gt":now()}}))
+        from_hub=request.args.get("source") == "hub",fields=PROFILE_FIELDS,scope_labels=SCOPE_LABELS,saved=session.pop("profile_saved",False),
+        p=p,pairing=pairing,pair_key=pair_key,grants=db.grants.find({"owner":owner,"expires":{"$gt":now()}}))
     @app.post("/profile")
     def profile():
         owner = reader()
-        if set(request.form)-PROFILE_FIELDS or any(len(v)>240 for v in request.form.values()):
-            abort(400)
-        db.profiles.update_one({"_id":owner},{"$set":{k:request.form.get(k,"") for k in PROFILE_FIELDS}},upsert=True)
+        values = request.form.to_dict()
+        if not values or set(values).difference(PROFILE_FIELDS):
+            abort(400, "Submit one or more recognized profile fields.")
+        for key, value in values.items():
+            if (len(request.form.getlist(key)) != 1 or len(value.encode("utf-16-le")) > 480
+                    or any(ord(char) < 32 or ord(char) == 127 for char in value)):
+                abort(400, "Use a single line of up to 240 characters for each profile field.")
+        db.profiles.update_one({"_id": owner}, {"$set": values}, upsert=True)
+        if request.args.get("source") == "hub":
+            return redirect(url_for("profile_saved"), code=303)
+        session["profile_saved"] = True
         return redirect("/")
+    @app.get("/profile/saved")
+    def profile_saved():
+        # End the form submission on the reader origin, then return via ordinary navigation.
+        # Keeps form-action restricted to self and no profile fields cross this boundary.
+        root = "/staging" if env == "staging" else ""
+        return render_template("profile-saved.html", hub_url=pages_origin + root + "/my-learning/")
+
     @app.get("/api/profile")
     def get_profile():
         owner,_ = principal("profile:read")
@@ -305,5 +336,6 @@ def create_app(config=None, database=None):
         db.sessions.delete_one({"_id":digest(session.get("sid",""))})
         session.clear()
         return redirect("/")
-    register_learning(app, db, catalog, env, lambda: valid(db.sessions, session.get("sid", "")))
+    register_learning(app, db, catalog, env, pages_origin,
+                      lambda: valid(db.sessions, session.get("sid", "")))
     return app

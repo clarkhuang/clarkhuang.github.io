@@ -39,7 +39,8 @@
     "02615f1": "The reader service gained optional account synchronization, with account endpoints still disabled at this release.",
     "ff2d0d7": "The repository added a production deployment configuration for the free-tier reader service.",
     "755b5f3": "Readers gained optional GitHub sign-in and account-backed lesson progress on the live site.",
-    "dfadeef": "The primary navigation made GitHub sign-in, SE 401 and About easier to find."
+    "dfadeef": "The primary navigation made GitHub sign-in, SE 401 and About easier to find.",
+    "4268445": "Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started."
   },
   "daily": {
     "2026-11-21": ["The first learning library", "The launch moved from a course outline to sixteen AI Tips, a complete ten-lesson SE 101 sequence and a book sample. Learners could watch in place and pick up where they stopped.", ["9953cd8","c55caba","43c3413"]],
@@ -47,13 +48,13 @@
     "2026-11-23": ["An enterprise systems capstone", "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification.", ["4f19ba0","dfa18fd"]],
     "2026-11-24": ["A complete course and a clearer editorial record", "The final SE 201 recording completed the course. Video dates helped readers spot new material, while the public outline, policy and contributor credits made the book’s development easier to follow.", ["ef1dbf1","99601cf","ca52e07","c4e8cdc"]],
     "2026-11-25": ["The book acquired voices beyond its preview", "Two nonfiction chapters, a guest contribution and a revised narrated preview gave readers several ways into the book. AI Tips also added a lesson on keeping secrets out of prompts.", ["d279bd5","9e1e140","0b86855","67efcd5"]],
-    "2026-11-26": ["From studying the workflow to running it", "SE 301 opened a path to running local models. SE 401 outlined how a future cohort might build for a nonprofit. On the live learning site, a reader could now use a GitHub account to carry lesson progress between visits.", ["c57b006","2821471","755b5f3","dfadeef"]]
+    "2026-11-26": ["Readers can run the workflow and follow its changes", "SE 301 opened the local-compute playbook. SE 401 described a possible nonprofit cohort. GitHub sign-in now brings learners back to their original page, and the Change Log lets anyone trace what shipped. About separates the published material from the foundation proposal.", ["c57b006", "2821471", "755b5f3", "4268445"]]
   },
   "weekly": {
     "2026-W47": ["A library people and their agents could use", "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders.", ["c55caba","f0e4451","34e1f86"]],
-    "2026-W48": ["Learning moved from individual tasks toward operating systems", "The enterprise capstone and the completed SE 201 sequence linked the individual engineering loop to team operation. SE 301 carried that progression onto learners’ own hardware. The proposed SE 401 cohort gave it a prospective real-world problem, while optional sign-in made longer study easier to resume.", ["dfa18fd","c4e8cdc","c57b006","2821471","755b5f3"]]
+    "2026-W48": ["The site became a worked example of the courses", "The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use.", ["dfa18fd", "c4e8cdc", "c57b006", "2821471", "4268445"]]
   },
   "monthly": {
-    "2026-11": ["An open engineering school takes shape", "November established two connected ways to learn. The courses teach and demonstrate engineering practice, while the OpenBook tells the stories behind it and invites outside experience. A reader can use the public material, copy the project, and now save progress to an account. The local-compute playbook and proposed community cohort describe where that foundation could lead.", ["34e1f86","c4e8cdc","d279bd5","c57b006","2821471","755b5f3"]]
+    "2026-11": ["An open engineering school takes shape", "November brought together practical courses, the OpenBook and a contribution path for outside experience. Readers can watch a lesson, study its source or take a copy of the project. The new production archive gives them a way to check how that project evolves. About connects this work to the proposed foundation and names what a first cohort would still have to demonstrate.", ["34e1f86", "c4e8cdc", "d279bd5", "c57b006", "2821471", "4268445"]]
   }
 }
