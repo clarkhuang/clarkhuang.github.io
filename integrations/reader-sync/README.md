@@ -28,7 +28,7 @@ The site issues a one-time pairing code with a short expiry. The reader opens th
 
 ## Learning profile
 
-Start with the reader's chosen goal, hardware and unified memory, experience level, preferred lesson format and available study time. Make each field optional and editable. Track watched position separately from lab attempts, the learner's own confidence, and an exercise result with supporting evidence. A watched video alone cannot establish mastery. Show the evidence and reason behind each suggested next lab, let readers dismiss or correct it, and let an agent propose profile changes for approval. Keep profile:read, progress:write and profile:write independent. Carry completed prerequisites forward when a lesson is revised, while marking changed material for review. Use the smallest set of signals that improves the next learning decision.
+A reader can save an optional learning goal, computer and operating system, and preferred learning format. Course access is independent of these fields. A connected agent with `profile:read` can retrieve them to tailor its advice. The reader edits them in the account form. A provider-neutral prompt and a local JSON importer let an assistant draft entries for review. The importer accepts only `goal`, `hardware` and `format` text. Unknown or empty entries leave other fields alone. Saving requires a separate form submission. The reader service never sends the prompt or pasted draft to an AI provider. Playback and completion use the separate `progress:read` and `progress:write` grants.
 
 ### Run the backend
 

@@ -55,6 +55,16 @@
         parent.appendChild(link);
         return link;
       }
+      var privateLinks = doc.querySelector("[data-learning-account-links]");
+      if (privateLinks) {
+        var profileLink = doc.createElement("a");
+        profileLink.href = new URL("/?source=hub", service).href;
+        profileLink.textContent = "Learning profile";
+        privateLinks.appendChild(profileLink);
+        privateLinks.appendChild(doc.createTextNode(" · "));
+        addLink(privateLinks, "", "Account lessons and bookmarks");
+        privateLinks.hidden = false;
+      }
       if (nav) {
         var account = addLink(nav, "", "Sign in with GitHub");
         account.className = "reader-sign-in";
@@ -218,13 +228,16 @@
     function show(login, verifier) {
       signedIn = Boolean(login);
       link.textContent = signedIn ? "@" + login : "Sign in with GitHub";
-      link.href = new URL(signedIn ? "/" : "/learn", service).href;
+      link.href = signedIn ? new URL("../my-learning/", script.src).href : new URL("/learn", service).href;
+      var identity = doc.querySelector("[data-learning-identity]");
+      if (identity) identity.textContent = signedIn ? "Signed in as @" + login + "." :
+        "Use GitHub sign-in to access your private profile and account bookmarks.";
       if (signedIn) {
         var prefix = doc.createElement("span");
         prefix.className = "reader-signed-prefix";
         prefix.textContent = "Signed in as ";
         link.prepend(prefix);
-        link.setAttribute("aria-label", "Signed in as @" + login + ". Open learning profile");
+        link.setAttribute("aria-label", "Signed in as @" + login + ". Open My learning");
       } else link.removeAttribute("aria-label");
       if (upgrade) { upgrade.remove(); upgrade = null; }
       var notice;
@@ -380,6 +393,27 @@
     });
     return map;
   }
+  var localSection = doc.querySelector("[data-learning-local]");
+  if (localSection) {
+    var localLessonLinks = new Map(Array.from(doc.querySelectorAll("[data-local-key]"),
+      function (link) { return [link.dataset.localKey, link]; }));
+    var localPositions = Object.entries(readMap(C_VPOS)).reverse().concat(Object.entries(readMap(C_BOOK)).reverse());
+    var localList = localSection.querySelector("ul");
+    localPositions.forEach(function (entry) {
+      var source = localLessonLinks.get(entry[0]);
+      if (!source || entry[1] <= 0) return;
+      var seconds = Math.floor(entry[1]);
+      var row = doc.createElement("li");
+      var destination = doc.createElement("a");
+      destination.href = source.href || source.dataset.localPath;
+      destination.textContent = source.dataset.localLabel || source.textContent;
+      row.appendChild(destination);
+      row.appendChild(doc.createTextNode(" · " + Math.floor(seconds / 60) + ":" + String(seconds % 60).padStart(2, "0")));
+      localList.appendChild(row);
+    });
+    localSection.hidden = !localList.childElementCount;
+  }
+
   function writeMap(name, map, max) {
     var keys = Object.keys(map).filter(function (k) { return map[k] > 0; });
     if (max && keys.length > max) keys = keys.slice(keys.length - max);

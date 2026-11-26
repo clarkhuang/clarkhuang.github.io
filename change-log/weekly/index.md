@@ -10,11 +10,11 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Dates follow the production branch in America/Detroit. A release is dated when its commit entered main. Links open the supporting commit.
 
-## 2026-W48 · Learning moved from individual tasks toward operating systems
+## 2026-W48 · The site became a worked example of the courses
 
-The enterprise capstone and the completed SE 201 sequence linked the individual engineering loop to team operation. SE 301 carried that progression onto learners’ own hardware. The proposed SE 401 cohort gave it a prospective real-world problem, while optional sign-in made longer study easier to resume.
+The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use.
 
-[Commit dfa18fd](https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844) · [Commit c4e8cdc](https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9) · [Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit 2821471](https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496) · [Commit 755b5f3](https://github.com/clarkhuang/clarkhuang.github.io/commit/755b5f368da1ab5f6eb4a9c09e177bffbaa771bd)
+[Commit dfa18fd](https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844) · [Commit c4e8cdc](https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9) · [Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit 2821471](https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496) · [Commit 4268445](https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4)
 
 ## 2026-W47 · A library people and their agents could use
 

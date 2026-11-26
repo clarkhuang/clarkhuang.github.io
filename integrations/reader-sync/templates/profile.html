@@ -1,10 +1,74 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Learning profile · OpenBook Reader</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}"></head><body><main>
-{% if signed_in %}<nav aria-label="Account"><a href="/learn">Your lessons</a></nav>
-<h1>Your learning profile</h1>
-        <form method="post" action="/profile">{% for key in fields %}<p><label>{{key|capitalize}} <input name="{{key}}" maxlength="240" value="{{p.get(key,'')}}"></label></p>{% endfor %}<button>Save profile</button></form>
-        {% if pairing %}<h2>Connect an agent</h2><p>Approve only if you started this connection. Agent: {{pairing.name}}. Access: {{pairing.scopes|join(', ')}}. Compare this code with your agent: <strong>{{pairing.user_code}}</strong>.</p><form method="post" action="/approve"><input type="hidden" name="pair_key" value="{{pair_key}}"><button>Approve agent</button></form>{% endif %}
-        <h2>Connected agents</h2>{% for g in grants %}<form method="post" action="/revoke/{{g._id}}">{{g.name}} · {{g.scopes|join(', ')}} <button>Revoke</button></form>{% else %}<p>No agents connected.</p>{% endfor %}
-        <p><a href="/learn">Your lessons and bookmarks</a> · <a href="/api/progress">View saved progress as JSON</a></p><form method="post" action="/logout"><button>Sign out</button></form>{% else %}<h1>Your learning profile</h1><p><a href="/login">Sign in with GitHub to save your learning profile</a></p>{% endif %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning profile · OpenBook Reader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}">
+  {% if signed_in %}<script defer src="{{ url_for('static', filename='profile.js') }}"></script>{% endif %}
+</head>
+<body>{% include "reader-nav.html" %}
+<main id="reader-main" tabindex="-1">
+{% if signed_in %}
+  <h1>Your learning profile</h1>
+  <p>Save a few details that a learning assistant can use to suggest a next step. You choose which agents may read them. The course and player work with every field blank.</p>
+
+  {% if pairing %}
+  <section aria-labelledby="pair-heading">
+    <h2 id="pair-heading">Connect an agent</h2>
+    <p><strong>{{ pairing.name }}</strong> requests the permissions below. Compare this code with the one shown by your agent: <strong>{{ pairing.user_code }}</strong>.</p>
+    <ul>{% for scope in pairing.scopes %}<li>{{ scope_labels[scope] }} (<code>{{ scope }}</code>)</li>{% endfor %}</ul>
+    <form method="post" action="/approve">
+      <input type="hidden" name="pair_key" value="{{ pair_key }}">
+      <button>Approve agent</button>
+    </form>
+  </section>
+  {% endif %}
+
+  <details class="profile-ai" id="profile-ai">
+    <summary>Draft these fields with any AI assistant</summary>
+    <p>Copy this prompt into the assistant you already use. It can interview you or use details you confirm. A pasted reply stays in this tab until you review the fields and save them.</p>
+    <label for="profile-prompt">Prompt to copy</label>
+    <textarea id="profile-prompt" rows="7" readonly>Help me draft a learning profile for an AI-native software engineering course. Ask me what I want to build or learn, what computer I use (operating system, processor and memory if I know them), and how I like to learn. If you already know a detail, ask me to confirm it. I can skip any question. Keep private information out, including credentials, API keys, serial numbers and private project details. Return one JSON object with only the keys "goal", "hardware" and "format". Use a short plain-text description of at most 240 characters per value. Omit details I have not confirmed.</textarea>
+    <button type="button" id="profile-copy" hidden>Copy prompt</button>
+    <span id="profile-copy-status" role="status"></span>
+    <div id="profile-import-controls" hidden>
+      <label for="profile-json">Paste the assistant’s JSON reply</label>
+      <textarea id="profile-json" rows="5" maxlength="8192" autocomplete="off" spellcheck="false" aria-describedby="profile-import-help profile-import-status"></textarea>
+      <p class="field-help" id="profile-import-help">Apply a draft to preview it below. Omitted or empty values keep your current entries. Leave out secrets and identifying device numbers.</p>
+      <button type="button" id="profile-import">Apply draft to fields</button>
+      <p id="profile-import-status" role="status"></p>
+    </div>
+    <noscript><p>Copy the prompt manually, then type the parts of the reply you want into the fields below.</p></noscript>
+  </details>
+
+  <form method="post" action="{{ url_for('profile', source='hub' if from_hub else none) }}" id="learning-profile">
+    <h2>Profile details</h2>
+    <p>Each field is optional. Use up to 240 characters per field.</p>
+    {% for key, field in fields.items() %}
+    <div class="profile-field">
+      <label for="profile-{{ key }}">{{ field.label }}</label>
+      <input id="profile-{{ key }}" name="{{ key }}" maxlength="240" value="{{ p.get(key, '') }}" aria-describedby="profile-{{ key }}-help">
+      <p class="field-help" id="profile-{{ key }}-help">{{ field.help }} <span>Example: {{ field.example }}</span></p>
+    </div>
+    {% endfor %}
+    <button>{{ "Save profile and return" if from_hub else "Save profile" }}</button>
+    {% if saved %}<span role="status">Profile saved.</span>{% endif %}
+  </form>
+
+  <h2>Connected agents</h2>
+  <p>Copying the prompt gives an assistant only the text you choose to share. Connecting an agent is a separate step that requires your approval.</p>
+  <ul>{% for scope, description in scope_labels.items() %}<li><code>{{ scope }}</code> — {{ description }}.</li>{% endfor %}</ul>
+  <p>You edit profile fields yourself. Revoking a connection ends its future API access.</p>
+  {% for grant in grants %}
+  <form method="post" action="/revoke/{{ grant._id }}">
+    <p><strong>{{ grant.name }}</strong> · {{ grant.scopes|join(', ') }}
+    <button>Revoke <span class="visually-hidden">{{ grant.name }}</span></button></p>
+  </form>
+  {% else %}<p>No agents connected.</p>{% endfor %}
+  <p><a href="/learn">Your lessons and bookmarks</a> · <a href="/api/progress">View saved progress as JSON</a></p>
+  <form method="post" action="/logout"><button>Sign out</button></form>
+{% else %}
+  <h1>Your learning profile</h1><p><a href="{{ url_for('login', source='hub' if from_hub else none) }}">Sign in with GitHub to save your learning profile</a></p>
+{% endif %}
 </main></body></html>
