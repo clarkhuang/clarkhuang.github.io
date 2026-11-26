@@ -82,4 +82,8 @@ Clark Huang is the co-founder and CTO of eCIO, where he leads investment technol
 
 Clark wants to bring that experience to this project. A free course can teach someone how to deploy an app today. A learner who keeps that app running next semester still needs a database, hosting and someone to turn to when it breaks. Clark’s vision is an education endowment whose distributions could pay for lab credits and shared infrastructure across successive cohorts. He would like eCIO to manage that endowment if the project establishes one. The fund and advisory appointment are proposals. If they go ahead, this page should identify who oversees the fund, what the adviser is paid, and how much reaches learners each year.
 
+## How nonprofit benefits could help
+
+A donated software plan could help the team publish a course. A communications credit could pay for a volunteer reminder in a teaching lab. The proposed foundation would apply for programs it qualifies for and show each builder what their project allowance covers. For an independently run member app, we would confirm the provider permits that use before counting a discount toward its budget. [See the provider programs, eligibility requirements and open hosting question](https://github.com/clarkhuang/clarkhuang.github.io/blob/main/about/nonprofit-programs.md).
+
 [Explore SE 301](https://clarkhuang.github.io/software-engineering-301/) · [Contribute to the project](https://clarkhuang.github.io/contribute/)
