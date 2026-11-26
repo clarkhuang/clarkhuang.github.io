@@ -23,6 +23,18 @@
   // the learner follows a sign-in link to the configured service in a top-level tab.
   var script = doc.currentScript;
   if (script && script.src && window.fetch) {
+    var nav = doc.querySelector('nav[aria-label="Primary"]');
+    if (nav) {
+      [["SE 401", "software-engineering-401/"], ["About", "about/"]].forEach(function (entry) {
+        var url = new URL("../" + entry[1], script.src);
+        if (Array.from(nav.links || nav.querySelectorAll("a")).some(function (a) { return a.href === url.href; })) return;
+        var link = doc.createElement("a");
+        link.href = url.href;
+        link.textContent = entry[0];
+        if (location.pathname === url.pathname) link.setAttribute("aria-current", "page");
+        nav.appendChild(link);
+      });
+    }
     var endpoints = new URL("reader-endpoints.json", script.src);
     fetch(endpoints, {credentials: "omit"}).then(function (response) {
       if (!response.ok) throw new Error("Reader configuration unavailable");
@@ -40,9 +52,9 @@
         link.href = target.href;
         link.textContent = label;
         parent.appendChild(link);
+        return link;
       }
-      var nav = doc.querySelector('nav[aria-label="Primary"]');
-      if (nav) addLink(nav, "", "My learning");
+      if (nav) addLink(nav, "", "Sign in with GitHub").className = "reader-sign-in";
       doc.querySelectorAll("video[data-lesson-id],video[data-chapter],audio[data-chapter]").forEach(function (media) {
         var key = vkey(media.dataset.lessonId || media.dataset.chapter, ver(media));
         if (!key) return;
