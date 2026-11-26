@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About this project — Clark Huang</title>
-  <meta name="description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta name="description" content="Open engineering lessons for individuals, nonprofits and small businesses, and a proposed foundation to sponsor their projects.">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
@@ -12,13 +12,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Clark Huang">
   <meta property="og:title" content="About this project — Clark Huang">
-  <meta property="og:description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta property="og:description" content="Open engineering lessons for individuals, nonprofits and small businesses, and a proposed foundation to sponsor their projects.">
   <meta property="og:url" content="https://clarkhuang.github.io/about/">
   <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About this project — Clark Huang">
-  <meta name="twitter:description" content="The learning project and a proposed SE 401 teaching platform.">
+  <meta name="twitter:description" content="Open engineering lessons for individuals, nonprofits and small businesses, and a proposed foundation to sponsor their projects.">
   <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -86,9 +86,9 @@ interest in fundamentals through stories and practical lessons.</p>
 <!-- END generated project state -->
 
 <h2>Who gets to build?</h2>
-<p>Today, anyone can take a free lesson, inspect its source, and apply it to work they care about. A volunteer tracking food deliveries and a founder tracking customer orders can use the same first exercise. Pick one order, describe what should happen when it arrives twice, and show another person that the software handles it. Neither learner needs a credential or a foundation award to begin.</p>
-<p>The next test is whether someone else can reproduce our work. SE 301 puts the site’s own development workflow on local hardware. The February 2027 build is where we expect to learn which instructions survive first contact with a new machine. Readers working on smaller machines can contribute their results along the way.</p>
-<p>Longer term, Clark envisions a foundation that funds learning opportunities through mentorship and access to infrastructure. His role as eCIO’s co-founder and CTO gives him a place to look for real problems that nonprofits and their advisors share. A potential partner would help choose a problem, try the result and decide what evidence could be shared. The partnership, awards and funding model are proposals. The public curriculum would also serve people building for-profit ventures and internal systems. Anyone could take the code and run it elsewhere.</p>
+<p>The courses are open to anyone curious about building software with AI. An individual can start by asking an agent to fix one bug and proving the fix works. A nonprofit with a small staff might tackle a weekly delivery list. A sole proprietor might turn a customer request into a draft estimate they can check. A small business might help its team catch duplicate orders before they ship. Each builder brings a problem they know firsthand and a way to tell whether the software helped.</p>
+<p>Pick one case to work through. If a customer submits the same order twice, what should staff see? Write that down, give the example to your agent and test the result. A laptop and a free lesson are enough to start. The proposed SE 401 platform would help when you want someone else to use what you built.</p>
+<p>Clark envisions a foundation that would fund learning through mentorship and access to infrastructure. His role as eCIO’s co-founder and CTO gives him a place to explore problems that nonprofits and their advisors share. A nonprofit partner could help choose a problem, try the result and decide which findings to share. Other builders could apply the same lessons to a business, a community project or an internal tool.</p>
 <h2 id="eat-your-own-dogfood">Eat your own dogfood</h2>
 <p>Clark puts it plainly: “I despise marketing and sales.” That
 conviction shapes both the book and the site. When you depend on the
@@ -108,7 +108,7 @@ the same code, see the running costs, and take their work elsewhere. If
 the shared infrastructure makes a lab affordable, publish what the
 subsidy buys. If a reader on a cheaper laptop finds a better way, give
 them credit and change the lesson.</p>
-<p>The long-term goal is an AI-native cloud platform for small businesses. A small team could give its agent a business requirement and a budget, then use shared infrastructure to deploy a web app, connect its data, handle incoming messages and recover from a failed release. Those are capabilities a large company can staff internally. Here, each business would own its accounts and data and could export its application. The proposed funding model combines donated learning credits with transparent, minimal cost-recovery fees for ongoing business use.</p>
+<p>The long-term goal is shared infrastructure that a small team can operate through its own agent. The team would own its GitHub repository and could export its code and data. The SE 401 labs would ask the team to show a second person how to deploy the app, recover from an error and explain the monthly bill.</p>
 <p>GitHub Pages at clarkhuang.github.io is the hosting infrastructure for this site. The courses, book, videos and public navigation work as static files. Optional features such as reader sync can call an external HTTPS service while the learning materials remain available to guests. SE 401 would evaluate other hosts for student applications only when a free tier is available. Each lab would document its free limits, what happens when they are reached, and how to export the project.</p>
 <h2 id="a-possible-se-401-build-something-someone-else-can-depend-on">A
 possible SE 401: build something someone else can depend on</h2>
@@ -120,12 +120,7 @@ explain who can see each record, how to undo a release, and what one
 more user will cost. After launch, they hand the service to another team
 that can actually operate it. That handoff would be their final
 exam.</p>
-<p>The proposed next step is a shared teaching platform. A project would
-get a web app, a preview environment, a budget and a named owner. Teams
-could expose a narrowly scoped MCP tool for agents and choose Postgres
-or MongoDB for persistence. A search lab could add vector retrieval once
-a team has examples that let it measure whether retrieval improves the
-answer.</p>
+<p>The proposed platform would offer a Vercel-style deployment flow. You would sign in with GitHub and give your agent the course URL. With your approval, the agent would publish the educational frontend on your own GitHub Pages site. The platform would supply an isolated backend on Render and a project database on MongoDB from shared provider accounts. The goal is one signup for the builder. The platform operator would manage the provider accounts, credentials and usage limits.</p>
 <p>Communication would be a later part of the curriculum. A team could
 receive email at its own address on a teaching domain, use SendGrid to
 reply, or add a Twilio number for voice and SMS. WhatsApp, Instagram,
@@ -142,15 +137,7 @@ the owner, required accounts and permissions, supported free tier,
 expected resources, and the checks that prove the app works. The recipes
 would live on GitHub Pages. The learner’s authorized agent would execute
 them in the learner’s environment.</p>
-<p>For a first lab, the agent would inspect the learner’s existing setup
-and show a plan. With approval, it would create the repository from a
-template, configure a preview deployment, provision the selected
-database, put scoped credentials in the runtime’s secret store, and wire
-up a read-only MCP tool. Provider adapters would use documented APIs or
-CLIs and identify any required browser step. If a provider asks the
-owner to verify an identity, accept terms, approve access or authorize a
-charge, the agent would save its place, explain exactly what is needed,
-and resume after confirmation.</p>
+<p>For a first lab, the agent would show which repository it needs, what it intends to publish and how much sponsored usage the project has. After the owner approves, it would create a preview and call the platform to provision that project’s backend and database. Runtime secrets would stay with the service. The owner could see what the agent created, export the application and revoke access.</p>
 <p>The test would start with a fresh GitHub account. The agent must
 return a working preview URL, write and read a sample record, retrieve
 that record through the authorized tool, and demonstrate that a second
@@ -182,23 +169,8 @@ proposals. If they go ahead, this page should identify who oversees the
 fund, what the adviser is paid, and how much reaches learners each
 year.</p>
 <h2 id="who-pays-for-the-lab">Who pays for the lab?</h2>
-<p>The goal is free access to the core learning experience. One idea is
-to sponsor a fixed amount of compute, storage and messaging per team. A
-team approaching its allowance could stop, apply for more sponsored
-credit or explicitly pay the published cost of continuing. A successful
-student project should have a clear path to its own hosting and provider
-accounts.</p>
-<p>An educational nonprofit and a long-term fund for learner access are
-possibilities. Decisions about governance, funding, partners and service
-availability are ahead of us. The work readers can use today is the
-published curriculum. The proposed platform gives us a specific question
-to test: can a new team build something useful, operate it within a
-budget, and teach the next team to do the same?</p>
-<p><a
-href="https://clarkhuang.github.io/software-engineering-301/">Explore SE
-301</a> · <a href="https://clarkhuang.github.io/contribute/">Contribute
-to the project</a></p>
-</div>
+<p>The curriculum is free. For a hosted lab, the proposal is to meter each project’s compute, database storage and paid messages. A builder could see the allowance, usage to date and estimated cost of the next run. At the limit, they could pause, request additional credit, move the app to their own hosting or explicitly agree to cover further usage.</p>
+<p>Clark intends to put his own money into a private foundation if he establishes one. His proposed model would use that initial funding and future fundraising to sponsor approved builders and projects. A funded learner could concentrate on the people using the app while still learning what it costs to operate. Selection criteria, awards and funding arrangements remain open.</p>
 <h2 id="a-proposed-fund-for-free-learner-access">A proposed fund for
 free learner access</h2>
 <p>A learner should be able to see what it costs to run a lab and who
@@ -208,13 +180,12 @@ and issue donor acknowledgments. Subject to the recipient’s approval and
 Schwab’s account requirements, longer-term assets could be held at
 Charles Schwab with eCIO as investment adviser. Clark’s role at eCIO,
 any fees and the adviser selection would be disclosed.</p>
-<p>Operating gifts could pay current bills for hosting, databases and
-capped communication credits. A separate long-term fund could support
-future cohorts through a documented spending policy. We would publish
-annual contributions, investment and administrative fees, amounts
-released for programs, and the cost per completed learner project. This
-is a funding proposal. A giving page would open only after a recipient,
-custody arrangements and gift terms are established.</p>
+<p>Operating gifts could cover current hosting, databases and communication credits. A long-term fund could support future cohorts under a documented spending policy. The project would report contributions, fees, program spending and the cost per completed learner project. A donation page would follow selection of a recipient, custody arrangements and gift terms.</p>
+<p><a
+href="https://clarkhuang.github.io/software-engineering-301/">Explore SE
+301</a> · <a href="https://clarkhuang.github.io/contribute/">Contribute
+to the project</a></p>
+</div>
 </main>
   <footer class="site-footer">
     <div class="wrap">

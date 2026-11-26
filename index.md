@@ -8,7 +8,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Clark Huang is a software engineer and technology executive with more than 30 years in the field. He studied computer science, with a minor in music, at the University of California, Berkeley from 1993 to 1997. He is Chief Technology Officer at Truly Free and Truly Free Home, a role he has held since 2025, and Co-Founder and CTO of eCIO, a nonprofit investment advisor, and its sister company eVestech, where he oversees technology strategy and operational efficiency. A seasoned technologist and serial founder, he champions AI-native engineering, building teams and workflows where people and AI agents plan, build, and verify software together. He is also an active investor in private equity and special purpose vehicles focused on AI and technology.
 
-Anyone curious about building software can start with one task they know well. Use SE 101 to make a small change and verify it, then use SE 201 to see what happens when several parts have to work together. Your project might serve a nonprofit, become a business, or simply make a weekly job easier. [Follow the project from today’s courses to the proposed foundation.](/about/)
+Anyone curious about building software can start with one task they know well. Use SE 101 to make a small change and verify it, then use SE 201 to see what happens when several parts have to work together. Start with something you know firsthand: a volunteer shift your nonprofit struggles to fill, a booking you track by hand at your shop, or a tool you want to build for yourself. [Follow the project from today’s courses to the proposed foundation.](/about/)
 
 ## Series
 
