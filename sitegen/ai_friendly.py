@@ -727,6 +727,7 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
         "",
         "## Site",
         "",
+        f"- [My learning]({BASE}/my-learning/index.md): public directory of lessons and chapters; private profile and saved bookmarks open in the reader service.",
         f"- [Change Log]({BASE}/change-log/index.md): daily, weekly and monthly editorial summaries; [release history JSON]({BASE}/change-log/history.json)",
         f"- [Home]({BASE}/index.md): about Clark Huang and the series on this site",
         f"- [AGENTS.md]({BASE}/AGENTS.md): how to navigate and what not to invent",

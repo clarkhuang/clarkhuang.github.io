@@ -45,3 +45,68 @@ class SignedInLearning(unittest.TestCase):
         self.assertIn(b'data-position="0"', other.data)
         self.assertEqual(self.second.get("/learn", query_string={"item": "unknown"}).status_code, 404)
         self.assertIn(b"resume at 12 seconds", self.second.get("/learn").data)
+
+    def test_catalog_groups_formats_and_keeps_progress_on_each_link(self):
+        from html.parser import HTMLParser
+
+        class Works(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.rows = []
+                self.links = []
+                self.inside = False
+
+            def handle_starttag(self, tag, attrs):
+                if tag == "li":
+                    self.rows.append("")
+                    self.inside = True
+                if tag == "a" and self.inside:
+                    self.links.append(dict(attrs)["href"])
+
+            def handle_endtag(self, tag):
+                if tag == "li":
+                    self.inside = False
+
+            def handle_data(self, text):
+                if self.inside:
+                    self.rows[-1] += text
+
+        self.sign_in_at(self.first, 123)
+        preview = {e["kind"]: k for k, e in self.catalog.items() if e["content_id"] == "preview"}
+        for kind, key in preview.items():
+            response = self.first.put("/api/progress", headers={"Origin": self.origin}, json={
+                "item": key, "position": 33, "completed": kind == "audio", "revision": 0,
+            })
+            self.assertEqual(response.status_code, 200)
+        html = self.first.get("/learn").text
+        rows = Works()
+        rows.feed(html)
+        self.assertEqual(len(rows.rows), len({(e["series_id"], e["content_id"]) for e in self.catalog.values()}))
+        keys = [parse_qs(urlsplit(link).query)["item"][0] for link in rows.links]
+        self.assertCountEqual(keys, self.catalog.keys())
+        for title in {e["series_title"] for e in self.catalog.values()}:
+            self.assertIn("<h2>" + title + "</h2>", html)
+        preview_rows = [" ".join(text.split()) for text in rows.rows if "— preview" in text]
+        self.assertEqual(len(preview_rows), 1)
+        self.assertIn("Watch — resume at 33 seconds", preview_rows[0])
+        self.assertIn("Listen — completed", preview_rows[0])
+
+    def test_same_title_does_not_combine_different_works(self):
+        from learning import learning_sections
+        record = {"title": "Introduction", "series_id": "books", "series_title": "Books", "kind": "video"}
+        entries = {"a@001": dict(record, content_id="chapter-1"), "b@002": dict(record, content_id="chapter-2")}
+        section, = learning_sections(entries)
+        self.assertEqual(list(section["works"]), ["chapter-1", "chapter-2"])
+
+    def test_return_links_target_exact_public_player_without_account_data(self):
+        from catalog import SITE_ROOT
+        self.sign_in_at(self.first, 123)
+        for key, entry in self.catalog.items():
+            with self.subTest(key=key):
+                path = urlsplit(entry["page"]).path
+                article = (SITE_ROOT / path.strip("/") / "index.html").read_text()
+                self.assertIn('id="' + entry["anchor"] + '"', article)
+                html = self.first.get("/learn", query_string={"item": key}).text
+                href = f'href="https://clarkhuang.github.io/staging{path}#{entry["anchor"]}"'
+                self.assertIn(href, html)
+                self.assertLess(html.index(href), html.index('id="player"'))

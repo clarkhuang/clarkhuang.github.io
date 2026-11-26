@@ -45,6 +45,9 @@ jobs:
               python3 "$checkout/sitegen/about_state.py"
               python3 "$checkout/sitegen/about_state.py" --check
             fi
+            if [ -f "$checkout/sitegen/my_learning.py" ]; then
+              python3 "$checkout/sitegen/my_learning.py"
+            fi
           done
       - name: Compose production at / and staging at /staging/
         run: |

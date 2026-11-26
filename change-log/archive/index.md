@@ -10,7 +10,9 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Dates follow the production branch in America/Detroit. A release is dated when its commit entered main. Links open the supporting commit.
 
-40 production updates, newest first.
+41 production updates, newest first.
+
+- Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started. (Nov 26, 2026 · 15:05 EST) · [Commit 4268445](https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4)
 
 - The primary navigation made GitHub sign-in, SE 401 and About easier to find. (Nov 26, 2026 · 14:33 EST) · [Commit dfadeef](https://github.com/clarkhuang/clarkhuang.github.io/commit/dfadeef2aaf75ca84d6b416011b0f2d13f619b7c)
 

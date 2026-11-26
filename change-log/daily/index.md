@@ -10,11 +10,11 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Dates follow the production branch in America/Detroit. A release is dated when its commit entered main. Links open the supporting commit.
 
-## 2026-11-26 · From studying the workflow to running it
+## 2026-11-26 · Readers can run the workflow and follow its changes
 
-SE 301 opened a path to running local models. SE 401 outlined how a future cohort might build for a nonprofit. On the live learning site, a reader could now use a GitHub account to carry lesson progress between visits.
+SE 301 opened the local-compute playbook. SE 401 described a possible nonprofit cohort. GitHub sign-in now brings learners back to their original page, and the Change Log lets anyone trace what shipped. About separates the published material from the foundation proposal.
 
-[Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit 2821471](https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496) · [Commit 755b5f3](https://github.com/clarkhuang/clarkhuang.github.io/commit/755b5f368da1ab5f6eb4a9c09e177bffbaa771bd) · [Commit dfadeef](https://github.com/clarkhuang/clarkhuang.github.io/commit/dfadeef2aaf75ca84d6b416011b0f2d13f619b7c)
+[Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit 2821471](https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496) · [Commit 755b5f3](https://github.com/clarkhuang/clarkhuang.github.io/commit/755b5f368da1ab5f6eb4a9c09e177bffbaa771bd) · [Commit 4268445](https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4)
 
 ## 2026-11-25 · The book acquired voices beyond its preview
 

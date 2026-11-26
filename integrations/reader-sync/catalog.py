@@ -16,15 +16,17 @@ class BookPlayers(HTMLParser):
         self.page = page
         self.players = {}
         self.key = None
+        self.anchor = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag in {"video", "audio"}:
             self.key = None
+            self.anchor = attrs.get("id")
             if attrs.get("data-chapter") and attrs.get("data-video-version"):
                 self.key = attrs["data-chapter"] + "@" + attrs["data-video-version"]
         if self.key and tag in {"video", "audio", "source"} and attrs.get("src"):
-            self.players[urljoin(self.page, attrs["src"])] = self.key
+            self.players[urljoin(self.page, attrs["src"])] = (self.key, self.anchor)
 
     def handle_endtag(self, tag):
         if tag in {"audio", "video"}:
@@ -46,26 +48,29 @@ def load_catalog(root=SITE_ROOT):
                 if (root / urlsplit(candidate).path.lstrip("/")).is_file():
                     captions = candidate
             catalog[lesson["watched_key"]] = {
+                "series_id": series["id"], "series_title": series["title"], "content_id": lesson["id"],
                 "title": lesson["title"], "url": url, "page": lesson["page_url"],
                 "duration": lesson["duration_seconds"], "captions": captions, "kind": "video",
+                "anchor": "lesson-video",
             }
 
-    def add_tracks(page, title, tracks):
+    def add_tracks(content_id, page, title, tracks):
         players = BookPlayers(page)
         players.feed((root / urlsplit(page).path.strip("/") / "index.html").read_text())
         for kind, track in tracks:
             if track and track.get("url"):
-                key = players.players[track["url"]]
-                catalog[key] = {"title": title, "url": track["url"], "page": page,
+                key, anchor = players.players[track["url"]]
+                catalog[key] = {"series_id": "book", "series_title": book["title"], "content_id": content_id,
+                                "title": title, "url": track["url"], "page": page,
                                 "duration": track["duration_seconds"], "kind": kind,
-                                "captions": track.get("captions_url")}
+                                "captions": track.get("captions_url"), "anchor": anchor}
 
     preview_audio = next((t for t in book["audio"]["chapters"] if t["id"] == "preview"), {})
-    add_tracks(book["page_url"], book["title"] + " — preview", [
+    add_tracks("preview", book["page_url"], book["title"] + " — preview", [
         ("video", book.get("video")),
         ("audio", {**preview_audio, "captions_url": book["audio"].get("captions_url")}),
     ])
     for chapter in book["chapters"]:
-        add_tracks(chapter["page_url"], chapter["title"],
+        add_tracks(chapter["id"], chapter["page_url"], chapter["title"],
                    [(kind, chapter.get(kind)) for kind in ("video", "audio")])
     return catalog

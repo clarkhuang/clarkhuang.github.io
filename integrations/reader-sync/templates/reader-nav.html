@@ -1,0 +1,20 @@
+<a class="reader-skip" href="#reader-main">Skip to content</a>
+<header class="reader-header">
+  <div class="reader-header-inner">
+    <p class="reader-brand">Clark Huang <span>OpenBook Reader</span></p>
+    <nav aria-label="Main site">
+      <a href="{{ pages_url('/') }}">Back to site</a>
+      <a href="{{ pages_url('/ai-tips/') }}">AI Tips</a>
+      <a href="{{ pages_url('/software-engineering-101/') }}">SE 101</a>
+      <a href="{{ pages_url('/software-engineering-201/') }}">SE 201</a>
+      <a href="{{ pages_url('/software-engineering-301/') }}">SE 301</a>
+      <a href="{{ pages_url('/software-engineering-401/') }}">SE 401</a>
+      <a href="{{ pages_url('/book/') }}">Book</a>
+    </nav>
+    <nav aria-label="Reader account">
+      <a href="{{ pages_url('/my-learning/') }}">My learning</a>
+      <a href="{{ url_for('home') }}"{% if request.endpoint == 'home' %} aria-current="page"{% endif %}>Learning profile</a>
+      <a href="{{ url_for('learn') }}"{% if request.endpoint == 'learn' and not entry %} aria-current="page"{% endif %}>Your lessons</a>
+    </nav>
+  </div>
+</header>

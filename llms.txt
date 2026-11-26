@@ -8,6 +8,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Site
 
+- [My learning](https://clarkhuang.github.io/my-learning/index.md): public directory of lessons and chapters; private profile and saved bookmarks open in the reader service.
 - [Change Log](https://clarkhuang.github.io/change-log/index.md): daily, weekly and monthly editorial summaries; [release history JSON](https://clarkhuang.github.io/change-log/history.json)
 - [Home](https://clarkhuang.github.io/index.md): about Clark Huang and the series on this site
 - [AGENTS.md](https://clarkhuang.github.io/AGENTS.md): how to navigate and what not to invent

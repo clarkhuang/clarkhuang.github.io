@@ -1,26 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ entry.title if entry else 'Your lessons' }} · Reader</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}">
-<main>
-<nav aria-label="Account"><a href="/">Learning profile</a>{% if entry %} · <a href="{{ url_for('learn') }}">Your lessons</a>{% endif %}</nav>
+<link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}"></head><body>
+{% include "reader-nav.html" %}
+<main id="reader-main" tabindex="-1">
 {% if entry %}
 <h1>{{ entry.title }}</h1>
+<p><a href="{{ page_url }}{% if entry.anchor %}#{{ entry.anchor }}{% endif %}">Return to the {{ 'book' if entry.series_id == 'book' else 'lesson' }} page</a> for the transcript and learning materials.</p>
 {% if entry.kind == 'video' %}<video id="player" controls playsinline preload="metadata" crossorigin="anonymous" src="{{ media_url }}">
 {% else %}<audio id="player" controls preload="metadata" crossorigin="anonymous" src="{{ media_url }}">{% endif %}
 {% if captions_url %}<track kind="captions" srclang="en" label="English" src="{{ captions_url }}">{% endif %}
 {% if entry.kind == 'video' %}</video>{% else %}</audio>{% endif %}
 <p id="checkpoint" role="status" data-key="{{ key }}" data-revision="{{ record.get('revision', 0) }}" data-position="{{ record.get('position', 0) }}" data-completed="{{ 'true' if record.get('completed') else 'false' }}" data-duration="{{ entry.duration }}"></p>
 <button id="save" type="button">Save position</button>
-<p><a href="{{ page_url }}">Open the public lesson and transcript</a></p>
 <script defer src="{{ url_for('static', filename='reader-player.js') }}"></script>
 {% else %}
 <h1>Your lessons</h1>
-<ul>{% for key, entry in catalog.items() %}
-<li><a href="{{ url_for('learn', item=key) }}">{{ entry.title }} ({{ entry.kind }})</a>{% if progress.get(key) %} — {% if progress[key].completed %}completed{% else %}resume at {{ progress[key].position|int }} seconds{% endif %}{% endif %}</li>
-{% endfor %}</ul>
+{% for section in sections %}
+<section>
+<h2>{{ section.title }}</h2>
+<ul>
+{% for work in section.works.values() %}
+<li>
+  <strong>{{ work.title }}</strong>
+  <div class="playback-formats">
+  {% for key, kind in work.formats %}
+    {% set action = 'Watch' if kind == 'video' else 'Listen' %}
+    <span><a href="{{ url_for('learn', item=key) }}" aria-label="{{ action }} {{ work.title }}">{{ action }}</a>{% if progress.get(key) %} — {% if progress[key].completed %}completed{% else %}resume at {{ progress[key].position|int }} seconds{% endif %}{% endif %}</span>
+  {% endfor %}
+  </div>
+</li>
+{% endfor %}
+</ul>
+</section>
+{% endfor %}
 {% endif %}
-</main>
+</main></body>
 </html>
