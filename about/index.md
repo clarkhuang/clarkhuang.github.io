@@ -2,9 +2,19 @@
 
 Clark Huang started this public learning site around a question: what should an engineer still know how to do when an AI can write the code? The lessons follow the work from one change in SE 101, through whole systems in SE 201, to running the models and tools yourself in SE 301. The free OpenBook, *Silicon Valley C Players*, explores the same interest in fundamentals through stories and practical lessons.
 
+## Eat your own dogfood
+
+Clark puts it plainly: “I despise marketing and sales.” That conviction shapes both the book and the site. When you depend on the same thing you offer someone else, you can tell them where it helped, where it failed, and what it cost. They can try it and reach their own conclusion.
+
+Take this site. SE 101 teaches readers to verify a change. When we added SE 301 to the navigation, we had to open the deployed homepage and follow the link ourselves. A successful merge alone would have told us nothing about what a reader could actually see. The February Mac Studio build will put the SE 301 playbook through the same test: start at first login, follow the published instructions, and correct the steps that fail.
+
+That is the public purpose behind the proposed foundation. A first-time builder should be able to read the same instructions, inspect the same code, see the running costs, and take their work elsewhere. If the shared infrastructure makes a lab affordable, publish what the subsidy buys. If a reader on a cheaper laptop finds a better way, give them credit and change the lesson.
+
 GitHub Pages at clarkhuang.github.io is the hosting infrastructure for this site. The courses, book, videos and public navigation work as static files. Optional features such as reader sync can call an external HTTPS service while the learning materials remain available to guests. SE 401 would evaluate other hosts for student applications only when a free tier is available. Each lab would document its free limits, what happens when they are reached, and how to export the project.
 
 ## A possible SE 401: build something someone else can depend on
+
+[Explore the SE 401 goals and ten-lab outline](/software-engineering-401/).
 
 Imagine a product owner and a new engineer working together on a small application for a community organization. They start with a GitHub account, a real user and a written definition of success. Every pull request gets a preview. Before they invite the first user, they can explain who can see each record, how to undo a release, and what one more user will cost. After launch, they hand the service to another team that can actually operate it. That handoff would be their final exam.
 
@@ -31,5 +41,11 @@ Clark wants to bring that experience to this project. A free course can teach so
 The goal is free access to the core learning experience. One idea is to sponsor a fixed amount of compute, storage and messaging per team. A team approaching its allowance could stop, apply for more sponsored credit or explicitly pay the published cost of continuing. A successful student project should have a clear path to its own hosting and provider accounts.
 
 An educational nonprofit and a long-term fund for learner access are possibilities. Decisions about governance, funding, partners and service availability are ahead of us. The work readers can use today is the published curriculum. The proposed platform gives us a specific question to test: can a new team build something useful, operate it within a budget, and teach the next team to do the same?
+
+## A proposed fund for free learner access
+
+A learner should be able to see what it costs to run a lab and who paid for it. One proposal is to accept gifts through a qualified educational charity or fiscal sponsor. The recipient would own the money and issue donor acknowledgments. Subject to the recipient’s approval and Schwab’s account requirements, longer-term assets could be held at Charles Schwab with eCIO as investment adviser. Clark’s role at eCIO, any fees and the adviser selection would be disclosed.
+
+Operating gifts could pay current bills for hosting, databases and capped communication credits. A separate long-term fund could support future cohorts through a documented spending policy. We would publish annual contributions, investment and administrative fees, amounts released for programs, and the cost per completed learner project. This is a funding proposal. A giving page would open only after a recipient, custody arrangements and gift terms are established.
 
 [Explore SE 301](https://clarkhuang.github.io/software-engineering-301/) · [Contribute to the project](https://clarkhuang.github.io/contribute/)

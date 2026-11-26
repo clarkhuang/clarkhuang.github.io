@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software Engineering 401 — Clark Huang</title>
+  <meta name="description" content="Goals and proposed labs for building, operating and handing off AI-native applications.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://clarkhuang.github.io/software-engineering-401/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clark Huang">
+  <meta property="og:title" content="Software Engineering 401 — Clark Huang">
+  <meta property="og:description" content="Goals and proposed labs for building, operating and handing off AI-native applications.">
+  <meta property="og:url" content="https://clarkhuang.github.io/software-engineering-401/">
+  <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Software Engineering 401 — Clark Huang">
+  <meta name="twitter:description" content="Goals and proposed labs for building, operating and handing off AI-native applications.">
+  <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+  <link rel="help" href="AGENTS.md" title="Instructions for AI agents">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Software Engineering 401 — Clark Huang", "description": "Goals and proposed labs for building, operating and handing off AI-native applications.", "url": "https://clarkhuang.github.io/software-engineering-401/", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "author": {"@type": "Person", "name": "Clark Huang", "url": "https://clarkhuang.github.io/"}, "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "encoding": {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://clarkhuang.github.io/software-engineering-401/index.md"}}</script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    if (location.pathname.indexOf("/staging/") === 0) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-F50XBTM25X";
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", "G-F50XBTM25X", {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-name">Clark Huang</span><span class="brand-tag">AI-native software learning</span></a>
+      <nav aria-label="Primary"><a href="/">Home</a><a href="/ai-tips/">AI Tips</a><a href="/software-engineering-101/">SE 101</a><a href="/software-engineering-201/">SE 201</a><a href="/software-engineering-301/">SE 301</a><a href="/book/">Book</a><a href="/ask/">Ask</a></nav>
+    </div>
+  </header>
+  <main id="main"><article class="container"><a href="/">Home</a> / Software Engineering 401
+<h1 id="software-engineering-401--build-it-run-it-hand-it-off">Software
+Engineering 401 • Build it, run it, hand it off</h1>
+<p><strong>Course in development.</strong> This is the public design and
+lab outline. The shared hosting platform, provider adapters and lab
+videos are planned. Start today with the <a
+href="/software-engineering-301/">SE 301 playbook</a>.</p>
+<p>SE 401 pairs a new engineer with a product owner. Together they will
+build one small application for a real user and leave it in a state
+another team can operate. Our first customer will be this project
+itself. Reader progress, for example, gives us a concrete test: can
+someone stop a lesson on a laptop and resume it on a phone, while
+another reader’s progress stays private?</p>
+<h2 id="what-a-learner-should-be-able-to-do">What a learner should be
+able to do</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Goal</th>
+<th>Evidence we want to see</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Start with a GitHub account and a course URL</td>
+<td>A fresh agent discovers a versioned recipe, explains its resource
+plan and identifies every step requiring the owner.</td>
+</tr>
+<tr class="even">
+<td>Ship a useful first feature</td>
+<td>The product owner names a user and an observable outcome. The user
+can try it at a preview URL.</td>
+</tr>
+<tr class="odd">
+<td>Give people and agents appropriate access</td>
+<td>Two users can save their own data. An agent with a read grant can
+retrieve approved data, and revoking its grant ends access.</td>
+</tr>
+<tr class="even">
+<td>Keep the service affordable</td>
+<td>The team publishes a unit cost, a free allowance, and the behavior
+when that allowance runs out.</td>
+</tr>
+<tr class="odd">
+<td>Hand the application to another team</td>
+<td>A second team can deploy, recover, export and retire it using the
+repository and its own accounts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="proposed-lab-sequence">Proposed lab sequence</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Lab</th>
+<th>What the team builds</th>
+<th>How it earns a pass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Find the first user</td>
+<td>A one-page brief, a real constraint and an acceptance test</td>
+<td>The user can say what would make the feature worth keeping.</td>
+</tr>
+<tr class="even">
+<td>2. Teach an agent to provision</td>
+<td>A discoverable recipe with prerequisites, versions and owner
+prompts</td>
+<td>Interrupt setup and rerun it without duplicating paid or free
+resources.</td>
+</tr>
+<tr class="odd">
+<td>3. Put a preview behind a pull request</td>
+<td>A static frontend and an optional free-tier app runtime</td>
+<td>Follow the preview link on a phone and roll back one change.</td>
+</tr>
+<tr class="even">
+<td>4. Own the data model</td>
+<td>A Postgres or MongoDB implementation and an export format</td>
+<td>Restore a clean copy and explain which records each user may
+access.</td>
+</tr>
+<tr class="odd">
+<td>5. Give an agent one useful tool</td>
+<td>A narrowly scoped MCP tool</td>
+<td>Demonstrate authorization, isolation and revocation using two test
+identities.</td>
+</tr>
+<tr class="even">
+<td>6. Evaluate search</td>
+<td>A small benchmark for keyword and vector retrieval</td>
+<td>Publish which approach answered real questions accurately enough for
+the app.</td>
+</tr>
+<tr class="odd">
+<td>7. Handle an email end to end</td>
+<td>An inbound address on a teaching subdomain and a SendGrid test
+reply</td>
+<td>Replaying a delivery event creates one reply. A failed delivery is
+visible.</td>
+</tr>
+<tr class="even">
+<td>8. Add a communication channel</td>
+<td>One opt-in voice, SMS or WhatsApp use case through Twilio.
+Instagram, LinkedIn and Facebook are optional extensions subject to
+provider access.</td>
+<td>Demonstrate consent, opt-out and a spending limit with test
+users.</td>
+</tr>
+<tr class="odd">
+<td>9. Operate a shared lab</td>
+<td>Project ownership, quotas, recovery instructions and cost
+reporting</td>
+<td>One team reaching its limit leaves another team’s work
+available.</td>
+</tr>
+<tr class="even">
+<td>10. Hand it off</td>
+<td>A live app, an operating record and an agent-readable rebuild
+recipe</td>
+<td>A second team reproduces the app without the original chat and
+reports the steps that failed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-stays-on-github-pages">What stays on GitHub Pages</h2>
+<p>This site, its public playbooks and their machine-readable
+instructions stay on clarkhuang.github.io. The learner’s agent will
+provision external resources in an authorized environment. Each proposed
+runtime must offer a free tier. Metered services need an explicit
+allowance, sponsored credit or an owner-approved budget. The handoff
+will identify who owns each resource and how to remove it.</p>
+<h2 id="how-we-will-teach-it">How we will teach it</h2>
+<p>We will use our own workflows first and publish what survives contact
+with real users. The proposed foundation’s goal is to make that
+information and infrastructure accessible to the next generation of
+builders. The <a href="/about/">About page</a> explains Clark’s role at
+eCIO and his vision for funding learner access.</p>
+<p>Have you already built a shared teaching environment? <a
+href="/contribute/">Contribute an experience</a>: tell us who used it,
+what they built, the actual cost, and one thing the next cohort should
+do differently.</p>
+</article></main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav class="footer-col project-links" aria-label="This project"><p class="footer-h">This project</p><a href="/contribute/">Contribute with your AI</a><a href="/copy-this/">Copy this for yourself</a><a href="/ask/">Ask the Book</a><a href="/contributors/">Contributors</a><a href="/book/">Book preview</a></nav>
+        <nav class="footer-col md-twin" aria-label="For your AI"><p class="footer-h">For your AI</p><a href="index.md">index.md</a><a href="AGENTS.md">AGENTS.md</a><a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a></nav>
+        <nav class="footer-col footer-links" aria-label="Elsewhere"><p class="footer-h">Elsewhere</p><a href="https://github.com/clarkhuang">GitHub</a><a href="https://www.linkedin.com/in/clark-huang-technology">LinkedIn</a><a href="https://trulyfree.com/">Truly Free</a><a href="https://trulyfreehome.com/">Truly Free Home</a><a href="https://getecio.com/">eCIO</a><a href="https://evestech.com/">eVestech</a></nav>
+      </div>
+      <div class="footer-fine">
+        <p class="ai-line">This entire site and its content were created by AI processes, directed by Clark Huang.</p>
+        <p>© 2026 Clark Huang. Watched progress and a last-visit time are saved only in first-party cookies in your browser. The site uses Google Analytics 4 with privacy-friendly settings and no ads signals. <a href="/book/editorial-policy/#analytics">Privacy note</a>.</p>
+        <p class="legal-line"><em>Silicon Valley C Players</em> is an embellished fictional dramatization; names, characters, companies, and places in the story are fictitious or used fictitiously. Lessons and tips are the author's opinions, not professional, legal, or financial advice. Content © Clark Huang, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/clarkhuang/clarkhuang.github.io/blob/main/TAKEDOWN.md">Corrections and takedowns</a> or <a href="mailto:clark75-7bw9ct@mail.grokbot.com">clark75-7bw9ct@mail.grokbot.com</a>.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
