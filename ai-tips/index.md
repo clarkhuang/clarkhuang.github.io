@@ -14,11 +14,11 @@ You can start with a task you already know how to check. For a first exercise, g
 
 ### 01. [Paste First, Ask Second](https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md) (available)
 
-When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message, or email thread first, and the same question gets a specific, usable answer.
+Show the relevant excerpt so the assistant can answer a specific question. For example, paste “Password reset failed for [USER] because the link expired.” Then ask, “What should I check next?” Leave out the email address and reset link.
 
 Published: Nov 21, 2026. Updated: Nov 22, 2026
 
-**Rule:** Paste first, ask second. Hand over the screenshot, document, error message, or email thread before you type a single word of your question.
+**Rule:** Paste first, ask second. Share only the part you have permission to share. Replace credentials and unnecessary personal details with placeholders, then ask your question.
 
 ### 02. [Ask for Proof, Not “Done”](https://clarkhuang.github.io/ai-tips/02-ask-for-proof/index.md) (available)
 

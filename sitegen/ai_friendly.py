@@ -282,6 +282,8 @@ def write_lesson_twins(site, skey, series, lesson):
         bits += ["", "## Credit", "", credit]
     if lesson.get("notes"):
         bits += ["", f"## {NOTES_TITLE}", ""] + [f"- {n}" for n in lesson["notes"]]
+    if link := lesson.get("further_reading"):
+        bits += ["", f'[{link["title"]}]({BASE}{link["path"]})']
     tr = transcript_md(lesson.get("script"))
     if tr:
         bits += ["", tr.rstrip()]

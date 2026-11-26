@@ -478,6 +478,8 @@ def build():
                 if l.get("notes"):
                     notes = (f'\n          <h2 class="label notes-label">{E(AF.NOTES_TITLE)}</h2>\n          <ul class="notes">'
                              + "".join(f"<li>{E(n)}</li>" for n in l["notes"]) + "</ul>")
+                if link := l.get("further_reading"):
+                    notes += f'\n          <p><a href="{E(link["path"])}">{E(link["title"])}</a></p>'
                 cap_track = (f'\n        <track kind="captions" srclang="en" label="English" src="/videos/{l["captions"]}" default>' if l.get("captions") else "")
                 cap_meta = (f'<span aria-hidden="true">·</span><a href="/videos/{l["captions"]}">Captions (VTT)</a>' if l.get("captions") else "")
                 cap_meta += (f'<span aria-hidden="true">·</span><a href="{E(l["source_url"])}">How it was built</a>' if l.get("source_url") else "")
