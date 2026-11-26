@@ -128,3 +128,10 @@ Regenerate and inspect `change-log/history.json` plus each HTML and Markdown vie
 The JSON is public and contains identical release records for all visitors.
 It contains no reader activity. Commit the reviewed notes and generated pages
 together, run `python3 sitegen/check_site.py .`, and review the staged result.
+
+## Issue lifecycle
+
+1. **Before staging.** Find the existing ticket for the deliverable or create one with observable acceptance criteria. List the issue numbers in the implementation and production PRs using neutral references such as `Refs #123`. Automatic closing keywords can close a ticket as soon as a PR merges, before the deployment succeeds.
+2. **Verified on staging.** The releasing agent checks the actual staging page, API or workflow. Add a ticket comment with the implementation PR, deployed commit, staging link or workflow run and what passed. Keep the ticket open. Record missing checks or partial delivery explicitly.
+3. **Verified on production.** The agent promoting the release owns reconciliation. After deployment, check each ticket against its acceptance criteria on the production system. For changes spanning Pages and Reader, verify both deployments. Comment with the release PR, deployed commit or workflow run, live evidence and verification result. Close fully delivered tickets as completed. A merge, green CI or a staging URL alone is insufficient.
+4. **Exceptions and retries.** Keep blocked, partial, editorial-decision and ongoing feedback tickets open until their own completion conditions are met. Preserve the author’s reserved issues. If a release rolls back delivered work, reopen the affected ticket and link the rollback. Before retrying a release update, check the thread for the same deployment evidence to avoid duplicate comments.
