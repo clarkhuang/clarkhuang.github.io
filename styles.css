@@ -495,3 +495,4 @@ main [id] { scroll-margin-top: 7rem; }
 .course-table { max-width: 100%; overflow-x: auto; margin-block: 1rem 2rem; }
 .course-table:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 @media (max-width: 640px) { .course-table table { min-width: 36rem; } }
+.site-header nav a.reader-sign-in[aria-label]{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}

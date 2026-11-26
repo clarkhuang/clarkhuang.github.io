@@ -1,5 +1,5 @@
 /* Clark Huang — learning site. Progressive enhancement only: every video and audio works without it.
-   State lives in first-party cookies only (no localStorage, no third-party storage):
+   Guest progress lives in first-party cookies. Optional account sign-in stores an identity-only receipt separately. Guest cookies:
      watched  = "ai-tips/01@1a2b3c4d,se101/02@9f8e7d6c"         lessons played to ~90% or to the end, or marked by hand
      vpos     = "ai-tips/02@1a2b3c4d:73.4,se101/01@0a1b2c3d:12.0" video resume positions in seconds (newest last, max 20)
      book_pos = "preview@4226615c:31.2"                           audiobook/videobook bookmarks in seconds
@@ -54,7 +54,11 @@
         parent.appendChild(link);
         return link;
       }
-      if (nav) addLink(nav, "", "Sign in with GitHub").className = "reader-sign-in";
+      if (nav) {
+        var account = addLink(nav, "", "Sign in with GitHub");
+        account.className = "reader-sign-in";
+        setupReaderAccount(account, service);
+      }
       doc.querySelectorAll("video[data-lesson-id],video[data-chapter],audio[data-chapter]").forEach(function (media) {
         var key = vkey(media.dataset.lessonId || media.dataset.chapter, ver(media));
         if (!key) return;
@@ -64,6 +68,117 @@
         addLink(paragraph, key, media.tagName === "AUDIO" ? "Listen with account sync" : "Watch with account sync");
       });
     }).catch(function () { /* Guest playback works independently of account sync. */ });
+  }
+
+  function setupReaderAccount(link, service) {
+    // A receipt can only ask for the GitHub handle attached to a live reader session.
+    // The reader session cookie and GitHub credentials stay on the top-level reader origin.
+    var key = "reader.identity." + service.origin;
+    var pending;
+    var confirmed;
+    try {
+      pending = window.sessionStorage;
+      pending.getItem(key);
+      // Shared across ordinary tabs, falling back to this tab when storage is restricted.
+      try {
+        confirmed = window.localStorage;
+        confirmed.setItem(key + ".probe", "1");
+        confirmed.removeItem(key + ".probe");
+      } catch (_) { confirmed = pending; }
+      if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) return;
+    } catch (_) { return; }
+    // Restore search/filter and chapter-anchor state locally. The reader receives just the path.
+    var savedView = pending.getItem(key + ".view");
+    if (savedView) {
+      pending.removeItem(key + ".view");
+      try {
+        var original = new URL(savedView, location.origin);
+        if (original.origin === location.origin && original.pathname === location.pathname &&
+            (original.search || original.hash) && !location.search && !location.hash) {
+          location.replace(original.href);
+          return;
+        }
+      } catch (_) { /* An invalid saved view still leaves the learner on the requested page. */ }
+    }
+    var signedIn = false;
+    var busy = false;
+    var generation = 0;
+    function hex(bytes) {
+      return Array.from(bytes, function (n) { return n.toString(16).padStart(2, "0"); }).join("");
+    }
+    function show(login) {
+      signedIn = Boolean(login);
+      link.textContent = signedIn ? "@" + login : "Sign in with GitHub";
+      link.href = new URL(signedIn ? "/" : "/learn", service).href;
+      if (signedIn) link.setAttribute("aria-label", "Learning profile for @" + login);
+      else link.removeAttribute("aria-label");
+    }
+    function refresh() {
+      var revision = ++generation;
+      var candidate = pending.getItem(key + ".pending");
+      var verifier = candidate || confirmed.getItem(key);
+      if (!verifier) { show(null); return; }
+      fetch(new URL("/api/pages/identity", service), {
+        headers: {Authorization: "Bearer " + verifier},
+        credentials: "omit", cache: "no-store", referrerPolicy: "no-referrer"
+      }).then(function (response) {
+        if (revision !== generation) return;
+        if (response.status === 401 || response.status === 403) {
+          if (candidate) {
+            if (pending.getItem(key + ".pending") === candidate) pending.removeItem(key + ".pending");
+            refresh();
+          } else {
+            if (confirmed.getItem(key) === verifier) confirmed.removeItem(key);
+            show(null);
+          }
+        } else if (response.ok) {
+          return response.json().then(function (data) {
+            if (revision !== generation) return;
+            if (candidate && typeof data.login === "string" && data.login) {
+              confirmed.setItem(key, verifier);
+              pending.removeItem(key + ".pending");
+            }
+            show(typeof data.login === "string" && data.login);
+          });
+        } else show(null);
+      }).catch(function () { if (revision === generation) show(null); });
+    }
+    link.addEventListener("click", function (event) {
+      if (signedIn || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (busy) return;
+      busy = true;
+      ++generation;
+      var verifier = hex(window.crypto.getRandomValues(new Uint8Array(32)));
+      window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier)).then(function (hash) {
+        pending.setItem(key + ".pending", verifier);
+        pending.setItem(key + ".view", location.pathname + location.search + location.hash);
+        var form = doc.createElement("form");
+        form.method = "post";
+        form.action = new URL("/pages/login", service).href;
+        var fields = {page: location.pathname, challenge: hex(new Uint8Array(hash))};
+        Object.keys(fields).forEach(function (name) {
+          var input = doc.createElement("input");
+          input.type = "hidden";
+          input.name = name;
+          input.value = fields[name];
+          form.appendChild(input);
+        });
+        doc.body.appendChild(form);
+        form.submit();
+      }).catch(function () { location.assign(link.href); });
+    });
+    refresh();
+    window.addEventListener("pageshow", function (event) {
+      busy = false;
+      if (event.persisted) refresh();
+    });
+    window.addEventListener("storage", function (event) {
+      if (event.key === key || event.key === null) refresh();
+    });
+    doc.addEventListener("visibilitychange", function () {
+      if (doc.visibilityState === "visible") refresh();
+    });
   }
 
   /* ---------- cookies */
