@@ -15,7 +15,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-EXCLUDE_DIRS = {".git", ".github", ".venv", "node_modules", "__pycache__"}
+EXCLUDE_DIRS = {"integrations", ".git", ".github", ".venv", "node_modules", "__pycache__"}
 EXCLUDE_FILES = {".gitignore", ".gitattributes"}
 
 

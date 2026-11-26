@@ -1,0 +1,45 @@
+name: Reader sync checks
+on:
+  pull_request:
+    paths:
+      - 'integrations/reader-sync/**'
+      - 'assets/site.js'
+      - 'lessons.json'
+      - 'book.json'
+      - '.github/workflows/reader-sync.yml'
+permissions:
+  contents: read
+jobs:
+  reader:
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:8.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand({ping:1}).ok'"
+          --health-interval 5s --health-timeout 5s --health-retries 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r integrations/reader-sync/requirements.txt mongomock==4.3.0
+      - run: python -m unittest discover -s integrations/reader-sync -v
+      - run: node --test integrations/reader-sync/test_player.cjs
+      - name: Repeat reader integration tests on disposable MongoDB
+        working-directory: integrations/reader-sync
+        env:
+          READER_TEST_MONGO: mongodb://localhost:27017
+        run: python -m unittest test_reader -v
+      - run: docker build -f integrations/reader-sync/Dockerfile -t reader-sync:test .
+      - name: Start the built image and verify the public reader catalog
+        run: |
+          docker run -d --rm --name reader-smoke --network host \
+            -e READER_ENV=staging -e READER_ORIGIN=https://reader.example \
+            -e SESSION_SECRET=test-only -e GITHUB_CLIENT_ID=test -e GITHUB_CLIENT_SECRET=test \
+            -e MONGODB_URI=mongodb://127.0.0.1:27017 reader-sync:test
+          trap 'docker stop reader-smoke' EXIT
+          curl --fail --retry 12 --retry-connrefused --retry-delay 1 http://localhost:8080/healthz
+          curl --fail --silent http://localhost:8080/api/catalog | python -c 'import json, sys; assert json.load(sys.stdin)'

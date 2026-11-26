@@ -19,6 +19,41 @@
 
   var YEAR = 31536000, C_WATCHED = "watched", C_VPOS = "vpos", C_BOOK = "book_pos", C_LAST = "last_visit", C_REF = "visit_ref", VPOS_MAX = 20;
 
+  // Read the public service origins beside this script. Keep playing locally unless
+  // the learner follows a sign-in link to the configured service in a top-level tab.
+  var script = doc.currentScript;
+  if (script && script.src && window.fetch) {
+    var endpoints = new URL("reader-endpoints.json", script.src);
+    fetch(endpoints, {credentials: "omit"}).then(function (response) {
+      if (!response.ok) throw new Error("Reader configuration unavailable");
+      return response.json();
+    }).then(function (config) {
+      var staging = location.pathname.indexOf("/staging/") === 0;
+      var address = config[staging ? "staging" : "production"];
+      if (!address || config.staging === config.production) return;
+      var service = new URL(address);
+      if (service.protocol !== "https:" || service.origin !== address) return;
+      function addLink(parent, item, label) {
+        var target = new URL("/learn", service);
+        if (item) target.searchParams.set("item", item);
+        var link = doc.createElement("a");
+        link.href = target.href;
+        link.textContent = label;
+        parent.appendChild(link);
+      }
+      var nav = doc.querySelector('nav[aria-label="Primary"]');
+      if (nav) addLink(nav, "", "My learning");
+      doc.querySelectorAll("video[data-lesson-id],video[data-chapter],audio[data-chapter]").forEach(function (media) {
+        var key = vkey(media.dataset.lessonId || media.dataset.chapter, ver(media));
+        if (!key) return;
+        var paragraph = doc.createElement("p");
+        var container = media.closest(".player") || media;
+        container.parentNode.insertBefore(paragraph, container.nextSibling);
+        addLink(paragraph, key, media.tagName === "AUDIO" ? "Listen with account sync" : "Watch with account sync");
+      });
+    }).catch(function () { /* Guest playback works independently of account sync. */ });
+  }
+
   /* ---------- cookies */
   function getCookie(name) {
     var parts = doc.cookie ? doc.cookie.split("; ") : [];
