@@ -32,7 +32,7 @@ A nonprofit would help choose the problem and decide which results to share. A p
 
 ## Eat your own dogfood
 
-Clark puts it plainly: “I despise marketing and sales.” That conviction shapes both the book and the site. When you depend on the same thing you offer someone else, you can tell them where it helped, where it failed, and what it cost. They can try it and reach their own conclusion.
+Clark says, “I’m not a fan of typical sales and marketing tactics.” That view shapes both the book and the site. When you depend on the same thing you offer someone else, you can tell them where it helped, where it failed, and what it cost. They can try it and reach their own conclusion.
 
 Take this site. SE 101 teaches readers to verify a change. When we added SE 301 to the navigation, we had to open the deployed homepage and follow the link ourselves. A successful merge alone would have told us nothing about what a reader could actually see. The February Mac Studio build will put the SE 301 playbook through the same test: start at first login, follow the published instructions, and correct the steps that fail.
 

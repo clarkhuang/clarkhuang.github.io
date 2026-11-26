@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "AI Tips 1 now shows how to ask for help with a redacted error message. The copyable rule explains what you can share, and the lesson links to AI Tips 17 for more examples.",
-    "technical_summary": "The written lesson, agent rule, catalog and search index reflect the correction tracked in #181. The recording and transcript are preserved."
+    "summary": "Clark clarified his view of typical sales and marketing tactics on the About page.",
+    "technical_summary": "The About page and its Markdown edition carry the same revised quotation."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
