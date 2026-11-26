@@ -94,7 +94,9 @@ def create_app(config=None, database=None):
     @app.after_request
     def private(response):
         response.headers.setdefault("Content-Security-Policy", "default-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'none'")
-        response.headers.update({"Cache-Control": "no-store", "Referrer-Policy": "no-referrer",
+        # Browsers use the document's referrer policy when constructing Origin for form POSTs.
+        form_page = response.status_code == 200 and response.mimetype == "text/html"
+        response.headers.update({"Cache-Control": "no-store", "Referrer-Policy": "same-origin" if form_page else "no-referrer",
                                  "X-Content-Type-Options": "nosniff"})
         return response
     @app.get("/.well-known/reader-sync.json")
