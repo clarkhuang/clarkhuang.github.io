@@ -2,9 +2,13 @@
 
 **Course in development.** This is the public design and lab outline. The shared hosting platform, provider adapters and lab videos are planned. Start today with the [SE 301 playbook](/software-engineering-301/).
 
-The long-term goal is an AI-native cloud platform for small businesses. A small team could give its agent a business requirement and a budget, then use shared infrastructure to deploy a web app, connect its data, handle incoming messages and recover from a failed release. Those are capabilities a large company can staff internally. Here, each business would own its accounts and data and could export its application. The proposed funding model combines donated learning credits with transparent, minimal cost-recovery fees for ongoing business use.
+The aim of SE 401 is to teach people how to build an application others can rely on, then give approved projects a way to keep it running. The proposed foundation would help fund both the public labs and a shared hosting service. Anyone could study the recipes and take the code to a host of their choice.
 
-SE 401 pairs a new engineer with a product owner. Together they will build one small application for a real user and leave it in a state another team can operate. Our first customer will be this project itself. Reader progress, for example, gives us a concrete test: can someone stop a lesson on a laptop and resume it on a phone, while another reader’s progress stays private?
+Choose someone with a weekly task. A sole proprietor might turn a customer inquiry into a draft estimate. A nonprofit coordinator might plan tomorrow’s deliveries. An individual learning to code can take either example through the labs. A small business can bring a workflow of its own and judge the result with its staff.
+
+The proposed platform would give those builders a Vercel-style experience through an agent. Start with a GitHub account, give your agent the SE 401 URL and review its plan. With your authorization, it would publish the lab frontend under your own github.io address and request an isolated Render backend and MongoDB database from the shared platform. The platform operator would hold the provider accounts and keep each project’s credentials and data separate. The builder would sign up only with GitHub.
+
+The project’s own reader service gives the class a working example to study. A useful acceptance test is whether one reader can stop a lesson on a laptop and resume on a phone while a second reader’s bookmarks stay private. The shared provisioning service for student projects is a future build.
 
 ## One possible first cohort
 
@@ -37,12 +41,18 @@ If staff find the replay useful, they could test it over a defined period and co
 | 9. Operate a shared lab | Project ownership, quotas, recovery instructions and cost reporting | One team reaching its limit leaves another team’s work available. |
 | 10. Hand it off | A live app, an operating record and an agent-readable rebuild recipe | A second team reproduces the app without the original chat and reports the steps that failed. |
 
+## Give an application a local AI task
+
+Imagine a volunteer coordinator who wants a weekly handoff from shift notes. In the proposed platform, their agent publishes the interface on their own GitHub Pages site. A project-scoped Render worker receives the request, queues a summarization task on the shared SE 301 inference service, and saves the draft in that project’s MongoDB data. The coordinator reviews it before sharing. The browser never needs a model-service credential.
+
+Each job would record its project, model, input and output tokens, compute time, result and funding source. A retry must reuse the job identifier so it cannot spend the same credit twice. A builder could inspect the usage, see how much the foundation or donors covered, and set a limit before enabling a recurring task. If the Studio is offline or a project reaches its cap, show the queued or paused state. Paid overages would require an explicit choice. The first shared deployment would have to demonstrate project isolation, accurate metering and recovery before opening it to members.
+
 ## What stays on GitHub Pages
 
-This site, its public playbooks and their machine-readable instructions stay on clarkhuang.github.io. The learner’s agent will provision external resources in an authorized environment. Each proposed runtime must offer a free tier. Metered services need an explicit allowance, sponsored credit or an owner-approved budget. The handoff will identify who owns each resource and how to remove it.
+Clark’s courses, book and public playbooks stay on clarkhuang.github.io. For an educational project, a learner could own the repository and publish its frontend at an address such as your-name.github.io/delivery-lab/. An agent would request permission for that repository and a separate project grant for its backend. For a business moving on to online transactions or commercial software as a service, the handoff would include moving the frontend to a host that permits that use. [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
 
 ## How we will teach it
 
-We will use our own workflows first and publish what survives contact with real users. The proposed foundation’s goal is to make that information and infrastructure accessible to the next generation of builders. The [About page](/about/) explains Clark’s role at eCIO and his vision for funding learner access.
+A proposed nonprofit foundation, funded by Clark alongside other donors, would support course production, hands-on training and mentorship. Hosting would be a separate award with a project budget. Builders could see their Render, MongoDB and integration usage, check how much credit remains and export the app. If a project outgrows the award, its owner could move it or opt into a published cost-recovery arrangement. The [About page](/about/) explains the funding proposal and eCIO’s possible role.
 
 Have you already built a shared teaching environment? [Contribute an experience](/contribute/): tell us who used it, what they built, the actual cost, and one thing the next cohort should do differently.

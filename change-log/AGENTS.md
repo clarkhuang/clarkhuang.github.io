@@ -1,6 +1,6 @@
-# AGENTS.md — Change Log
+# AGENTS.md — Daily · Change Log
 
-This folder is the public page “Change Log” on Clark Huang’s learning site.
+This folder is the public page “Daily · Change Log” on Clark Huang’s learning site.
 
 - HTML: https://clarkhuang.github.io/change-log/
 - Markdown: https://clarkhuang.github.io/change-log/index.md

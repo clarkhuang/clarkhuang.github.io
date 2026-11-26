@@ -1,4 +1,8 @@
 {
+  "release_note": {
+    "summary": "The course guides now show what individuals, nonprofits and small businesses can build today. SE 301 and SE 401 connect the planned local AI studio to sponsored hosting for member-built apps. The Change Log and signed-in updates explain releases in plain language, and the course and funding sections are easier to read on smaller screens.",
+    "technical_summary": "All four change-log views retain their navigation order and expose their active page. Agent metadata keeps the release sequence, timestamp, pull request and commit evidence alongside the reader summary."
+  },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
     "88d2f3a": "Readers could follow links from Clark’s biography to the organizations where he works.",
@@ -40,7 +44,13 @@
     "ff2d0d7": "The repository added a production deployment configuration for the free-tier reader service.",
     "755b5f3": "Readers gained optional GitHub sign-in and account-backed lesson progress on the live site.",
     "dfadeef": "The primary navigation made GitHub sign-in, SE 401 and About easier to find.",
-    "4268445": "Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started."
+    "4268445": "Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started.",
+    "ece2c20": "Open My learning to find your profile and saved lessons. You can fill out the profile yourself or review a draft from an AI assistant before saving it.",
+    "67e256c": "If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed."
+  },
+  "technical": {
+    "ece2c20": "The Pages hub links to the reader’s account editor and versioned playback library. Profile drafts are previewed locally before an explicit save.",
+    "67e256c": "Pages checks the reader’s readiness before submitting its browser-bound sign-in request. The check handles service startup, a rolling deployment and database unavailability."
   },
   "daily": {
     "2026-11-21": ["The first learning library", "The launch moved from a course outline to sixteen AI Tips, a complete ten-lesson SE 101 sequence and a book sample. Learners could watch in place and pick up where they stopped.", ["9953cd8","c55caba","43c3413"]],
@@ -48,7 +58,7 @@
     "2026-11-23": ["An enterprise systems capstone", "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification.", ["4f19ba0","dfa18fd"]],
     "2026-11-24": ["A complete course and a clearer editorial record", "The final SE 201 recording completed the course. Video dates helped readers spot new material, while the public outline, policy and contributor credits made the book’s development easier to follow.", ["ef1dbf1","99601cf","ca52e07","c4e8cdc"]],
     "2026-11-25": ["The book acquired voices beyond its preview", "Two nonfiction chapters, a guest contribution and a revised narrated preview gave readers several ways into the book. AI Tips also added a lesson on keeping secrets out of prompts.", ["d279bd5","9e1e140","0b86855","67efcd5"]],
-    "2026-11-26": ["Readers can run the workflow and follow its changes", "SE 301 opened the local-compute playbook. SE 401 described a possible nonprofit cohort. GitHub sign-in now brings learners back to their original page, and the Change Log lets anyone trace what shipped. About separates the published material from the foundation proposal.", ["c57b006", "2821471", "755b5f3", "4268445"]]
+    "2026-11-26": ["Run models locally and pick up lessons across devices", "SE 301 opened its ten-lab local AI playbook, and SE 401 outlined a possible nonprofit cohort. My learning brings your profile and saved lessons together. When the account service needs time to start, you can wait or retry sign-in on the article you were reading.", ["c57b006", "2821471", "ece2c20", "67e256c"]]
   },
   "weekly": {
     "2026-W47": ["A library people and their agents could use", "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders.", ["c55caba","f0e4451","34e1f86"]],

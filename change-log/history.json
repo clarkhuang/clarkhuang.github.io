@@ -2,12 +2,34 @@
   "schema_version": 1,
   "releases": [
     {
+      "sha": "67e256cf7cb6bd596562ed12d942e7dccbbdf555",
+      "sequence": 43,
+      "published_at": "2026-11-26T16:15:42-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555",
+      "summary": "If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
+      "editorial": true,
+      "technical_summary": "Pages checks the reader’s readiness before submitting its browser-bound sign-in request. The check handles service startup, a rolling deployment and database unavailability.",
+      "pull_request": 178
+    },
+    {
+      "sha": "ece2c20513a2ecfe41ef482699686e0a0c8245f3",
+      "sequence": 42,
+      "published_at": "2026-11-26T16:02:23-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3",
+      "summary": "Open My learning to find your profile and saved lessons. You can fill out the profile yourself or review a draft from an AI assistant before saving it.",
+      "editorial": true,
+      "technical_summary": "The Pages hub links to the reader’s account editor and versioned playback library. Profile drafts are previewed locally before an explicit save.",
+      "pull_request": 172
+    },
+    {
       "sha": "42684455b160e92f89b09128e1dc8087963ab9f4",
       "sequence": 41,
       "published_at": "2026-11-26T15:05:51-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4",
       "summary": "Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 168
     },
     {
       "sha": "dfadeef2aaf75ca84d6b416011b0f2d13f619b7c",
@@ -15,7 +37,9 @@
       "published_at": "2026-11-26T14:33:54-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfadeef2aaf75ca84d6b416011b0f2d13f619b7c",
       "summary": "The primary navigation made GitHub sign-in, SE 401 and About easier to find.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 165
     },
     {
       "sha": "755b5f368da1ab5f6eb4a9c09e177bffbaa771bd",
@@ -23,7 +47,9 @@
       "published_at": "2026-11-26T14:27:43-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/755b5f368da1ab5f6eb4a9c09e177bffbaa771bd",
       "summary": "Readers gained optional GitHub sign-in and account-backed lesson progress on the live site.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 163
     },
     {
       "sha": "ff2d0d72b9998ee1f8eb030459970b49ddb5c81c",
@@ -31,7 +57,9 @@
       "published_at": "2026-11-26T14:13:50-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ff2d0d72b9998ee1f8eb030459970b49ddb5c81c",
       "summary": "The repository added a production deployment configuration for the free-tier reader service.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 161
     },
     {
       "sha": "02615f13409c3848ddadbdb5ccdc35bae7f8c49a",
@@ -39,7 +67,9 @@
       "published_at": "2026-11-26T12:50:12-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/02615f13409c3848ddadbdb5ccdc35bae7f8c49a",
       "summary": "The reader service gained optional account synchronization, with account endpoints still disabled at this release.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 158
     },
     {
       "sha": "2821471bb8990d37682cf63193a2f7536ea94496",
@@ -47,7 +77,9 @@
       "published_at": "2026-11-26T11:53:14-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
       "summary": "The education roadmap connected the course sequence and book to a proposed nonprofit cohort experiment.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 157
     },
     {
       "sha": "eaf0e9ff80b9828382e25b6bccac1cd5a493fbb2",
@@ -55,7 +87,9 @@
       "published_at": "2026-11-26T11:17:07-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/eaf0e9ff80b9828382e25b6bccac1cd5a493fbb2",
       "summary": "The platform proposal explained how shared infrastructure might serve small businesses.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 155
     },
     {
       "sha": "ead497c7e50eaa3176749d2c60d11c312eed5bc2",
@@ -63,7 +97,9 @@
       "published_at": "2026-11-26T11:16:07-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ead497c7e50eaa3176749d2c60d11c312eed5bc2",
       "summary": "The SE 401 outline and About page introduced the proposed teaching platform and its public purpose.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 153
     },
     {
       "sha": "c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
@@ -71,7 +107,9 @@
       "published_at": "2026-11-26T10:48:52-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
       "summary": "SE 301 gave learners a ten-lab local AI playbook and invited field reports from people running their own models.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 150
     },
     {
       "sha": "67efcd55c7148b3d95726d50426d0ee7687882da",
@@ -79,7 +117,9 @@
       "published_at": "2026-11-25T15:57:33-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/67efcd55c7148b3d95726d50426d0ee7687882da",
       "summary": "The published preview gained an original music bed and a tighter narrative.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 144
     },
     {
       "sha": "ecb04f42501b91925b948b8b594d2b16d8b4abdd",
@@ -87,7 +127,9 @@
       "published_at": "2026-11-25T14:57:21-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ecb04f42501b91925b948b8b594d2b16d8b4abdd",
       "summary": "The preview took readers from the opening green-screen dream to the book’s AI-era conclusion.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 141
     },
     {
       "sha": "0b86855791c291cdb6fd11affc36248f301dc394",
@@ -95,7 +137,9 @@
       "published_at": "2026-11-25T14:15:20-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/0b86855791c291cdb6fd11affc36248f301dc394",
       "summary": "Building Blocks gained a videobook, and its race-day example connected to a later career chapter.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 139
     },
     {
       "sha": "d91828c73a917a2ecfd3bbd768c25bc7973b5930",
@@ -103,7 +147,9 @@
       "published_at": "2026-11-25T11:02:50-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/d91828c73a917a2ecfd3bbd768c25bc7973b5930",
       "summary": "The book’s introduction and back cover clarified its argument for building competence across disciplines.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 132
     },
     {
       "sha": "10ede7c2ba9cc4122392400540711ff307b96b13",
@@ -111,7 +157,9 @@
       "published_at": "2026-11-25T10:47:13-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/10ede7c2ba9cc4122392400540711ff307b96b13",
       "summary": "Building Blocks joined the book as a readable chapter about learning fundamentals.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 130
     },
     {
       "sha": "9e1e140d906ead37abfb9286dd38d7d2e2f11647",
@@ -119,7 +167,9 @@
       "published_at": "2026-11-25T10:23:30-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/9e1e140d906ead37abfb9286dd38d7d2e2f11647",
       "summary": "A new AI Tip covered handling secrets, and the guest story became part of the book outline.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 127
     },
     {
       "sha": "d279bd577592cef001555a9fcc3f0d84ac612b9c",
@@ -127,7 +177,9 @@
       "published_at": "2026-11-25T10:12:44-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/d279bd577592cef001555a9fcc3f0d84ac612b9c",
       "summary": "Readers could explore the Sick, Well, Fit chapter and a guest account of building an application with AI.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 124
     },
     {
       "sha": "c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
@@ -135,7 +187,9 @@
       "published_at": "2026-11-24T18:29:52-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
       "summary": "The enterprise operations recording completed the ten-lesson SE 201 course.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 119
     },
     {
       "sha": "ca52e073428247a4003b943954f0eca7e019cfc9",
@@ -143,7 +197,9 @@
       "published_at": "2026-11-24T17:18:25-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ca52e073428247a4003b943954f0eca7e019cfc9",
       "summary": "Readers could see when a video was published and which videos appeared since their last visit.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 116
     },
     {
       "sha": "99601cf62b7a71cbb8e6be972c8bd776210de1f4",
@@ -151,7 +207,9 @@
       "published_at": "2026-11-24T17:07:10-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/99601cf62b7a71cbb8e6be972c8bd776210de1f4",
       "summary": "A contributors page gave public credit for outside feedback.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 114
     },
     {
       "sha": "a4d69cd7ac3733e8c83bdb0edc940855ed2cd0c3",
@@ -159,7 +217,9 @@
       "published_at": "2026-11-24T11:10:59-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/a4d69cd7ac3733e8c83bdb0edc940855ed2cd0c3",
       "summary": "A revised preview developed the book’s discussion of abstraction.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 112
     },
     {
       "sha": "d0b82a4328a77fd5d6c8f67bf4bc39022d698e06",
@@ -167,7 +227,9 @@
       "published_at": "2026-11-24T10:53:06-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/d0b82a4328a77fd5d6c8f67bf4bc39022d698e06",
       "summary": "The book preview received a new recording, and the live site introduced analytics.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 110
     },
     {
       "sha": "ef1dbf12a2fb89c0047471d4e2c6152499b64ec3",
@@ -175,7 +237,9 @@
       "published_at": "2026-11-24T09:23:12-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ef1dbf12a2fb89c0047471d4e2c6152499b64ec3",
       "summary": "Readers gained a public story outline and editorial policy, and agents gained a first-party way to query the site.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 106
     },
     {
       "sha": "a3180cbd142d7d6446ff337b689846ad21df9000",
@@ -183,7 +247,9 @@
       "published_at": "2026-11-23T21:27:08-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/a3180cbd142d7d6446ff337b689846ad21df9000",
       "summary": "Follow-up corrections refined the SE 201 material after the capstone was published.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 87
     },
     {
       "sha": "dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
@@ -191,7 +257,9 @@
       "published_at": "2026-11-23T17:49:00-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
       "summary": "A capstone took learners through one feature from planning to verification.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 85
     },
     {
       "sha": "4f19ba0c456e00490235181089cf704fbf342c24",
@@ -199,7 +267,9 @@
       "published_at": "2026-11-23T16:56:04-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/4f19ba0c456e00490235181089cf704fbf342c24",
       "summary": "The enterprise course added lessons that connect system design, governance and repeatable engineering practice.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 83
     },
     {
       "sha": "b40cd5cf7a7a8707491d069b65d6702653f7d36d",
@@ -207,7 +277,9 @@
       "published_at": "2026-11-22T15:04:29-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/b40cd5cf7a7a8707491d069b65d6702653f7d36d",
       "summary": "Two recordings showed learners how to break a system into parts and integrate work from parallel agents.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 78
     },
     {
       "sha": "5292526a2fd1a4f0c3b54f3f441f581640907432",
@@ -215,7 +287,9 @@
       "published_at": "2026-11-22T14:03:47-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/5292526a2fd1a4f0c3b54f3f441f581640907432",
       "summary": "SE 201 introduced its enterprise systems curriculum and a new opening lesson.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 76
     },
     {
       "sha": "87a13e1db7916f9f5817fd78a4270a91314b9d2c",
@@ -223,7 +297,9 @@
       "published_at": "2026-11-22T12:41:19-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/87a13e1db7916f9f5817fd78a4270a91314b9d2c",
       "summary": "Readers could explore more of the book and ask questions against its published material.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 71
     },
     {
       "sha": "a34a04caf65107e69a1ded19d9686dd5e5b31c22",
@@ -231,7 +307,9 @@
       "published_at": "2026-11-22T09:45:43-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/a34a04caf65107e69a1ded19d9686dd5e5b31c22",
       "summary": "The repository identified Clark as the reviewer for contributions.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
@@ -239,7 +317,9 @@
       "published_at": "2026-11-22T09:42:33-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
       "summary": "Readers could watch or listen to the OpenBook teaser, contribute a story, or copy the project. A staging site gave editors a place to review releases.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "f0e4451caf5a96698d2b4886a92ad4520318d962",
@@ -247,7 +327,9 @@
       "published_at": "2026-11-22T07:38:31-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/f0e4451caf5a96698d2b4886a92ad4520318d962",
       "summary": "The opening lessons received new narration. Markdown and agent instructions made the material easier to use with an assistant.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "43c3413dfbc59477f1b784ff2056085a02543c14",
@@ -255,7 +337,9 @@
       "published_at": "2026-11-21T21:08:41-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/43c3413dfbc59477f1b784ff2056085a02543c14",
       "summary": "The AI Tips collection grew to sixteen episodes for people learning to work with AI.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "c55cabacc3c34aade3153c659ba7ef19cdb67326",
@@ -263,7 +347,9 @@
       "published_at": "2026-11-21T20:54:15-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/c55cabacc3c34aade3153c659ba7ef19cdb67326",
       "summary": "Learners could complete all ten SE 101 lessons, resume a video and continue to the next lesson.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "8b2d209d545ba2a4ba12fe7693935552cd75a066",
@@ -271,7 +357,9 @@
       "published_at": "2026-11-21T19:25:04-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/8b2d209d545ba2a4ba12fe7693935552cd75a066",
       "summary": "A comparison page documented early experiments in building the site with different models.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "f89b6a106c3ad5da1c1108bc309f4a17e5515b62",
@@ -279,7 +367,9 @@
       "published_at": "2026-11-21T18:40:31-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/f89b6a106c3ad5da1c1108bc309f4a17e5515b62",
       "summary": "A sample track gave readers a first listen to the book.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "5865d20f7599c384439bb12b2a3690a0047d5ef3",
@@ -287,7 +377,9 @@
       "published_at": "2026-11-21T18:19:35-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/5865d20f7599c384439bb12b2a3690a0047d5ef3",
       "summary": "The book page explained that the stories are fictional dramatizations.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "73f0a9e1e0554a73ac9958cfe92b4b199245e783",
@@ -295,7 +387,9 @@
       "published_at": "2026-11-21T18:18:09-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/73f0a9e1e0554a73ac9958cfe92b4b199245e783",
       "summary": "Visitors could watch the first AI Tips and SE 101 lessons on the site and keep track of what they had watched.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "23ab018123f9c73689b055b3607475a6a85f2edd",
@@ -303,7 +397,9 @@
       "published_at": "2026-11-21T17:59:19-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/23ab018123f9c73689b055b3607475a6a85f2edd",
       "summary": "The homepage introduced Clark’s interests in AI-native engineering and investing.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "6c5ef1d11814ee7f22210bd26ccbe03ff186823c",
@@ -311,7 +407,9 @@
       "published_at": "2026-11-21T17:57:57-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/6c5ef1d11814ee7f22210bd26ccbe03ff186823c",
       "summary": "The biography clarified Clark’s role at eCIO.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "88d2f3ab27ee21593fbe914a443da5318f968d1d",
@@ -319,7 +417,9 @@
       "published_at": "2026-11-21T17:56:57-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/88d2f3ab27ee21593fbe914a443da5318f968d1d",
       "summary": "Readers could follow links from Clark’s biography to the organizations where he works.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     },
     {
       "sha": "9953cd8400c094c4536e0a77540484264e47ba68",
@@ -327,22 +427,24 @@
       "published_at": "2026-11-21T17:44:45-05:00",
       "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/9953cd8400c094c4536e0a77540484264e47ba68",
       "summary": "The first public page introduced the project and its planned courses.",
-      "editorial": true
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": null
     }
   ],
   "periods": {
     "daily": [
       {
         "period": "2026-11-26",
-        "title": "Readers can run the workflow and follow its changes",
-        "summary": "SE 301 opened the local-compute playbook. SE 401 described a possible nonprofit cohort. GitHub sign-in now brings learners back to their original page, and the Change Log lets anyone trace what shipped. About separates the published material from the foundation proposal.",
+        "title": "Run models locally and pick up lessons across devices",
+        "summary": "SE 301 opened its ten-lab local AI playbook, and SE 401 outlined a possible nonprofit cohort. My learning brings your profile and saved lessons together. When the account service needs time to start, you can wait or retry sign-in on the article you were reading.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/755b5f368da1ab5f6eb4a9c09e177bffbaa771bd",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
         ],
-        "release_count": 9,
+        "release_count": 11,
         "editorial": true,
         "unreviewed_count": 0
       },
@@ -377,10 +479,11 @@
       {
         "period": "2026-11-23",
         "title": "An enterprise systems capstone",
-        "summary": "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification.",
+        "summary": "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification. Follow-up corrections refined the SE 201 material after the capstone was published.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/4f19ba0c456e00490235181089cf704fbf342c24",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/a3180cbd142d7d6446ff337b689846ad21df9000"
         ],
         "release_count": 3,
         "editorial": true,
@@ -389,11 +492,12 @@
       {
         "period": "2026-11-22",
         "title": "Readers became contributors",
-        "summary": "People gained a way to contribute stories or take a copy of the project. Their AI assistants gained Markdown guides to the same pages, while editors gained a staging site for review.",
+        "summary": "People gained a way to contribute stories or take a copy of the project. Their AI assistants gained Markdown guides to the same pages, while editors gained a staging site for review. Two recordings showed learners how to break a system into parts and integrate work from parallel agents.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/f0e4451caf5a96698d2b4886a92ad4520318d962",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/87a13e1db7916f9f5817fd78a4270a91314b9d2c"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/87a13e1db7916f9f5817fd78a4270a91314b9d2c",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/b40cd5cf7a7a8707491d069b65d6702653f7d36d"
         ],
         "release_count": 6,
         "editorial": true,
@@ -417,26 +521,28 @@
       {
         "period": "2026-W48",
         "title": "The site became a worked example of the courses",
-        "summary": "The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use.",
+        "summary": "The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use. If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
         ],
-        "release_count": 25,
+        "release_count": 27,
         "editorial": true,
         "unreviewed_count": 0
       },
       {
         "period": "2026-W47",
         "title": "A library people and their agents could use",
-        "summary": "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders.",
+        "summary": "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders. Two recordings showed learners how to break a system into parts and integrate work from parallel agents.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c55cabacc3c34aade3153c659ba7ef19cdb67326",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/f0e4451caf5a96698d2b4886a92ad4520318d962",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/b40cd5cf7a7a8707491d069b65d6702653f7d36d"
         ],
         "release_count": 16,
         "editorial": true,
@@ -447,16 +553,17 @@
       {
         "period": "2026-11",
         "title": "An open engineering school takes shape",
-        "summary": "November brought together practical courses, the OpenBook and a contribution path for outside experience. Readers can watch a lesson, study its source or take a copy of the project. The new production archive gives them a way to check how that project evolves. About connects this work to the proposed foundation and names what a first cohort would still have to demonstrate.",
+        "summary": "November brought together practical courses, the OpenBook and a contribution path for outside experience. Readers can watch a lesson, study its source or take a copy of the project. The new production archive gives them a way to check how that project evolves. About connects this work to the proposed foundation and names what a first cohort would still have to demonstrate. If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/d279bd577592cef001555a9fcc3f0d84ac612b9c",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
         ],
-        "release_count": 41,
+        "release_count": 43,
         "editorial": true,
         "unreviewed_count": 0
       }

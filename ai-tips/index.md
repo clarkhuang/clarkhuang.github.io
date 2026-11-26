@@ -6,7 +6,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 > Read https://clarkhuang.github.io/llms.txt and https://clarkhuang.github.io/ai-tips/index.md (plus https://clarkhuang.github.io/ai-tips/AGENTS.md). Summarize this page, then act as my guide to Clark Huang's site: list related lessons, answer my questions citing page URLs, and quiz me if I ask.
 
-Short, practical lessons on working with AI assistants and agents. Each one names a common failure, explains why it happens, and leaves you with one habit to fix it.
+You can start with a task you already know how to check. For a first exercise, give an assistant a sample volunteer schedule with one shift left open. Ask it to name the gap and point to the row that proves it. No coding experience is needed. Each short lesson teaches a habit you can try again on your own work.
 
 17 of 17 lessons available.
 

@@ -21,7 +21,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## AI Tips
 
-- [Series index](https://clarkhuang.github.io/ai-tips/index.md): Short lessons on working with AI in everyday work: how these tools actually behave, the habits that catch mistakes early, and how to get more reliable results.
+- [Series index](https://clarkhuang.github.io/ai-tips/index.md): Practice asking an AI for an answer you can check. Start with an everyday task, such as finding an uncovered shift in a sample schedule.
 
 - [Lesson 1: Paste First, Ask Second](https://clarkhuang.github.io/ai-tips/01-paste-first-ask-second/index.md) (published Nov 21, 2026; updated Nov 22, 2026): When an AI gives you a useless answer, it is usually not the AI's fault: you described the problem instead of showing it. Without the real material, it can only guess. Paste the screenshot, document, error message,…
 - [Lesson 2: Ask for Proof, Not “Done”](https://clarkhuang.github.io/ai-tips/02-ask-for-proof/index.md) (published Nov 21, 2026; updated Nov 22, 2026): When a bot says “done”, it is usually reporting the status of the step it ran, not whether the outcome you wanted is true. Five short examples show the gap, and none of them is a bot misbehaving. The fix is to ask…
@@ -43,7 +43,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Software Engineering 101
 
-- [Series index](https://clarkhuang.github.io/software-engineering-101/index.md): How to think about building software now that AI agents do much of the building. Each lesson centers on one practical rule: the loop that makes one piece of work correct.
+- [Series index](https://clarkhuang.github.io/software-engineering-101/index.md): Take one small software change from a request to a result you can show. Practice on a booking form, a volunteer signup or a tool of your own.
 
 - [Lesson 1: Plan, Build, Verify (and When to Skip It)](https://clarkhuang.github.io/software-engineering-101/01-plan-build-verify/index.md) (published Nov 21, 2026; updated Nov 22, 2026): How do you fix code you don't understand when you only get one shot? Split the work into four roles: a person who owns the problem, a planner, a builder, and a verifier on a different model that can only read and…
 - [Lesson 2: Rigor Follows Risk](https://clarkhuang.github.io/software-engineering-101/02-rigor-follows-risk/index.md) (published Nov 21, 2026; updated Nov 22, 2026): A patch in ten minutes or the root cause in two days? Redeploy speed is only half the question: a redeploy fixes the code, but it doesn't undo what the code did. Product shape is uncertain and easy to change, so ship…
@@ -58,7 +58,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 
 ## Software Engineering 201
 
-- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): From Loop to Enterprise Systems: 101 gets one piece of work right with an AI loop. 201 is about whole systems: how building them changed across four eras, how to build them AI-native now, and the climb to agents that operate enterprise systems with governance, permissions, and an audit trail, ending with a capstone that builds one feature end to end.
+- [Series index](https://clarkhuang.github.io/software-engineering-201/index.md): Trace one feature across a whole system. Decide who sets the rule, how the parts share data, and what someone can check when a payment runs twice.
 
 - [Lesson 1: Four Eras of Building Systems](https://clarkhuang.github.io/software-engineering-201/01-four-eras-of-building-systems/index.md) (published Nov 23, 2026): How we build big systems has changed from thirty, twenty and ten years ago to now, with agents doing much of the building. One useful lens is that architecture bends around whatever is scarcest. Machines were scarce…
 - [Lesson 2: Build the Whole System, AI-Native](https://clarkhuang.github.io/software-engineering-201/02-build-the-whole-system-ai-native/index.md) (published Nov 23, 2026): After the four eras, the first step from one loop to enterprise systems: what changes when you build a whole app or system with AI instead of one fix. A system is AI-native when agents and people can both read it,…
@@ -71,7 +71,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Lesson 9: Agents That Operate Enterprise Systems](https://clarkhuang.github.io/software-engineering-201/09-agents-that-operate-enterprise-systems/index.md) (published Nov 24, 2026): A refund goes out at 3 a.m. and the log says "admin", a login people and agents share, so the log can't say who did it. This lesson answers the three questions lesson 8 ended on (whose name does the work run under,…
 - [Lesson 10: Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (published Nov 23, 2026): The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the…
 
-- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten labs, budget options and upcoming hardware field reports.
+- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten local AI labs. Try a real job on your current machine and measure its cost and usefulness before upgrading.
 
 - [SE 401 goals and lab outline](https://clarkhuang.github.io/software-engineering-401/index.md): Proposed course in building, running and handing off applications.
 
