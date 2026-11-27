@@ -13,7 +13,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md)
 - Video (MP4): https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.mp4
-- Duration: 3:34 (214.7 seconds)
+- Duration: 3:41 (221.5 seconds)
 - Published: Nov 26, 2026
 - Poster: https://clarkhuang.github.io/videos/posters/se301-01-size-the-model-run-the-first-endpoint.jpg
 - Captions (WebVTT): https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.vtt
@@ -22,17 +22,18 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 ## Chapters
 
 - [0:00] The question
-- [0:22] The floor
+- [0:23] The floor
 - [0:41] Headroom
 - [0:56] The ladder
-- [1:18] Candidates
-- [1:43] Context
-- [1:57] The endpoint
-- [2:20] The prompt
-- [2:41] The stop
-- [3:02] The rule
-- [3:17] Your turn
-- [3:27] Next
+- [1:20] Candidates
+- [1:26] Context
+- [1:39] The endpoint
+- [2:01] Replay a cancelled stream
+- [2:26] The prompt
+- [2:47] The stop
+- [3:08] The rule
+- [3:22] Your turn
+- [3:34] Next
 
 ## The lesson
 
@@ -56,11 +57,11 @@ This rule is written so an AI agent can follow it as a standing instruction.
 
 The prompt, pasted into a computer-use or terminal agent, does five things:
 
-1. **Read the machine.** OS, CPU, GPU, memory, free disk
-2. **Pick a tier.** From this ladder. Show the arithmetic.
-3. **Install one runtime.** llmster, MLX on Apple silicon, or Ollama
-4. **Send one request.** To the local endpoint. Read the reply.
-5. **Stop for you.** Name the action. Wait for a yes.
+1. **Stream.** Count from 1 to 20, one number per line.
+2. **Observe.** Did output arrive before the final event?
+3. **Cancel.** Stop the client during the stream.
+4. **Retry.** New request: reply with the word ready.
+5. **Check.** Save the reply and the server log.
 
 It waits for a named yes before an admin install, a firewall change, or a sign-in. Silence is not a yes. It does not take secrets, and it does not send local files off the machine.
 
@@ -182,7 +183,7 @@ If the request fails, print the status and the error body with any token-like st
 
 This is the script, with text-to-speech spellings made readable. It matches the captions.
 
-Software engineering 301. Run your own AI studio. Lesson one. Size the model. Then run the first endpoint.
+Your model fits on paper. Can your laptop still answer after you cancel its first stream? Start with a memory budget. Finish with two requests you can replay.
 
 ### The question
 
@@ -202,7 +203,7 @@ Load a small model first. On an Apple silicon Mac you already own, try a three t
 
 ### Candidates
 
-Larger names are candidates, not measurements. The November plan, for the ordered five hundred twelve gigabyte Studio, starts code on Qwen3 Coder Next and review on GLM 5.3 Flash, both MLX four-bit. The challengers are DeepSeek V4 Flash at eight-bit, and Qwen3 Coder 480B at four-bit. Measure speed and power after the machine arrives. Today, start small.
+These Studio candidates need testing on the actual hardware. Keep your small laptop baseline for comparison.
 
 ### Context
 
@@ -211,6 +212,10 @@ When it loads, run one prompt at 4K, at 16K, and at 32K. Write down peak memory,
 ### The endpoint
 
 Then build the endpoint. Write down the machine and the free disk. Install one pinned llmster runtime, and one model that fits. Bind it to loopback. One two seven point zero point zero point one. Not the open network. Send a completion, a stream, a cancel, and a tool call. Save them with the model manifest. A chat reply does not prove the tools.
+
+### Replay a cancelled stream
+
+Try this on your own endpoint. Ask for the numbers one through twenty, one per line, with streaming turned on. Watch for the first piece before the final one. Cancel halfway. Then send a fresh request: reply with the word ready. Save what actually happened on both requests. A stopped display alone cannot tell you whether the server stopped computing. Check the runtime log before you mark that part as passed.
 
 ### The prompt
 

@@ -1,6 +1,6 @@
 # Software Engineering 401 • Build it, run it, hand it off
 
-**Course in development.** This is the public design and lab outline. The shared hosting platform, provider adapters and lab videos are planned. Start today with the [SE 301 playbook](/software-engineering-301/).
+**Course in development.** This is the public design and lab outline. The shared hosting platform and provider adapters are planned. Watch [Lesson 1, Build the Baseline](/software-engineering-401/01-build-the-baseline/). Start today with the [SE 301 playbook](/software-engineering-301/).
 
 The aim of SE 401 is to teach people how to build an application others can rely on, then give approved projects a way to keep it running. The proposed foundation would help fund both the public labs and a shared hosting service. Anyone could study the recipes and take the code to a host of their choice.
 

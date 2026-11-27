@@ -1763,61 +1763,65 @@
           "rule": "Before a model is downloaded, write three things where the agent can read them: the weight floor, the memory you can spare, and the check that says the endpoint answered. If a step needs admin rights, a firewall change, or a sign-in, stop and ask. Do not paste secrets, and do not send local files off the machine.",
           "page_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/",
           "video_url": "https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.mp4",
-          "video_version": "cd4034f6",
-          "watched_key": "se301/01@cd4034f6",
+          "video_version": "c8e2b838",
+          "watched_key": "se301/01@c8e2b838",
           "poster_url": "https://clarkhuang.github.io/videos/posters/se301-01-size-the-model-run-the-first-endpoint.jpg",
           "markdown_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md",
           "agents_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md",
-          "duration_seconds": 214.7,
+          "duration_seconds": 221.5,
           "published": "2026-11-26",
-          "published_at": "2026-11-26T20:18:08-05:00",
+          "published_at": "2026-11-26T23:00:40-05:00",
           "chapters": [
             {
               "start_seconds": 0.0,
               "title": "The question"
             },
             {
-              "start_seconds": 22.4,
+              "start_seconds": 23.3,
               "title": "The floor"
             },
             {
-              "start_seconds": 41.1,
+              "start_seconds": 41.4,
               "title": "Headroom"
             },
             {
-              "start_seconds": 56.1,
+              "start_seconds": 56.4,
               "title": "The ladder"
             },
             {
-              "start_seconds": 78.7,
+              "start_seconds": 80.2,
               "title": "Candidates"
             },
             {
-              "start_seconds": 103.5,
+              "start_seconds": 86.4,
               "title": "Context"
             },
             {
-              "start_seconds": 117.9,
+              "start_seconds": 99.6,
               "title": "The endpoint"
             },
             {
-              "start_seconds": 140.8,
+              "start_seconds": 121.9,
+              "title": "Replay a cancelled stream"
+            },
+            {
+              "start_seconds": 147.0,
               "title": "The prompt"
             },
             {
-              "start_seconds": 161.3,
+              "start_seconds": 167.5,
               "title": "The stop"
             },
             {
-              "start_seconds": 182.8,
+              "start_seconds": 188.3,
               "title": "The rule"
             },
             {
-              "start_seconds": 197.1,
+              "start_seconds": 203.0,
               "title": "Your turn"
             },
             {
-              "start_seconds": 207.6,
+              "start_seconds": 214.4,
               "title": "Next"
             }
           ],

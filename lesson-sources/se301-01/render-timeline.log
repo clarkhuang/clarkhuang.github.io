@@ -1,15 +1,16 @@
 SE301 Lesson 1: Size the model, then run the first endpoint
 
-  01_title            0.00s +   8.62s  title
-  02_quiz             8.62s +  13.79s  quiz
-  03_floor           22.41s +  18.68s  floor
-  04_headroom        41.09s +  15.02s  headroom
-  05_ladder          56.11s +  22.62s  ladder
-  06_candidates      78.73s +  24.76s  candidates
-  07_context        103.50s +  14.39s  contexts
-  08_endpoint       117.89s +  22.94s  checklist
-  09_prompt         140.83s +  20.51s  steps
-  10_stop           161.33s +  21.42s  stop
-  11_rule           182.75s +  14.39s  rule
-  12_turn           197.15s +  10.45s  statement
-  13_close          207.59s +   7.08s  outro
+  01_title            0.00s +   8.91s  title
+  02_quiz             8.91s +  14.39s  quiz
+  03_floor           23.30s +  18.05s  floor
+  04_headroom        41.35s +  15.02s  headroom
+  05_ladder          56.37s +  23.85s  ladder
+  06_candidates      80.22s +   6.16s  candidates
+  07_context         86.39s +  13.19s  contexts
+  08_endpoint        99.58s +  22.33s  checklist
+  08b_replay        121.91s +  25.08s  steps
+  09_prompt         146.99s +  20.51s  steps
+  10_stop           167.50s +  20.79s  stop
+  11_rule           188.29s +  14.71s  rule
+  12_turn           203.00s +  11.36s  statement
+  13_close          214.36s +   7.08s  outro
