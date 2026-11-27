@@ -8,7 +8,7 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 This page lists the people whose contributions have landed on Clark Huang's learning site and the free OpenBook *Silicon Valley C Players*. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle, or the name the person consented to publish on a guest story. A name is never invented. You can choose how, or whether, you are listed when you file an issue.
 
-Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json) (also [credits.json](https://clarkhuang.github.io/credits.json)). Last generated 2026-11-25 8:08 AM ET (America/New_York).
+Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json) (also [credits.json](https://clarkhuang.github.io/credits.json)). Last generated 2026-11-27 3:57 PM ET (America/New_York).
 
 ## Author
 

@@ -7,7 +7,7 @@
     "https://clarkhuang.github.io/credits/",
     "https://clarkhuang.github.io/credits.json"
   ],
-  "generated": "2026-11-25 8:08 AM ET (America/New_York)",
+  "generated": "2026-11-27 3:57 PM ET (America/New_York)",
   "generated_by": "scripts/build_credits.py",
   "note": "Credits list outside contributions that actually landed on the site. People are listed by public GitHub display name when the profile has one, otherwise by GitHub handle, or by the name they consented to publish on a guest story. A name is never invented. A 'don't credit me' answer in the issue form removes a person. Bots are excluded. Only Clark Huang approves and merges. Filing an issue does not, by itself, add a credit.",
   "author": {

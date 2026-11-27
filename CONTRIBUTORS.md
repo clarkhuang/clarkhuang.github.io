@@ -4,7 +4,7 @@ Public list: https://clarkhuang.github.io/contributors/
 
 This file is the repository twin of the public Contributors page. Only outside contributions that have landed on the site are listed. Credits use a public GitHub display name when the profile has one, otherwise the GitHub handle, or the name the person consented to publish on a guest story.
 
-Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json). Last generated 2026-11-25 8:08 AM ET (America/New_York).
+Machine-readable: [contributors.json](https://clarkhuang.github.io/contributors.json). Last generated 2026-11-27 3:57 PM ET (America/New_York).
 
 ## Author
 
