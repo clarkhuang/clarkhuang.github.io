@@ -14,9 +14,9 @@ Friday, November 27, 2026
 
 ## The first SE 301 lesson is ready to run
 
-Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit.
+Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit. Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.
 
-[Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39)
+[Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39) · [Commit 1c28659](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5)
 
 Thursday, November 26, 2026
 

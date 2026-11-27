@@ -401,6 +401,8 @@ def extra_pages() -> list[dict]:
     pages = []
     for rel in (
         Path("index.md"),
+        Path("software-engineering-401/index.md"),
+        Path("about/index.md"),
         Path("ask/index.md"),
         Path("credits/index.md"),
         Path("contribute/index.md"),
@@ -437,6 +439,8 @@ def collect_markdown_for_llms() -> list[tuple[str, str, str]]:
     for rel in [
         Path("AGENTS.md"),
         Path("index.md"),
+        Path("software-engineering-401/index.md"),
+        Path("about/index.md"),
         Path("llms.txt"),
         Path("ask/index.md"),
         Path("ask/AGENTS.md"),

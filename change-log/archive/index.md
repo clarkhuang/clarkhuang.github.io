@@ -10,6 +10,8 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Browse updates to the courses, book and learning tools. Dates use Detroit time.
 
+- Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook. (Nov 27, 2026 · 12:38 EST) · [Commit 1c28659](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5) · [Pull request #206](https://github.com/clarkhuang/clarkhuang.github.io/pull/206) · The search index and full-text feed include the published pages. Staging search loads its own index. Refs #196.
+
 - The homepage book card now links both Building Blocks and Sick, Well, Fit as released chapter previews. (Nov 27, 2026 · 07:38 EST) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39) · [Pull request #202](https://github.com/clarkhuang/clarkhuang.github.io/pull/202)
 
 - SE 301 published its first video lesson, captions and agent-readable install prompt for sizing a model and starting a local endpoint. (Nov 27, 2026 · 07:12 EST) · [Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Pull request #200](https://github.com/clarkhuang/clarkhuang.github.io/pull/200)

@@ -34,6 +34,10 @@ Trace one feature across a whole system. Decide who sets the rule, how the parts
 
 The ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Lesson 1 is available: [Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md). Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).
 
+### [Software Engineering 401: Build it, run it, hand it off](https://clarkhuang.github.io/software-engineering-401/index.md)
+
+Explore the proposed member platform, course goals and build labs.
+
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
