@@ -38,7 +38,7 @@ The ten-lab playbook is available now. Videos and R&D field reports are coming, 
 
 A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.
 
-Chapter 36, [Sick, Well, Fit](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md), is pre-released in full.
+Chapter 17b, [Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/index.md), and Chapter 36, [Sick, Well, Fit](https://clarkhuang.github.io/book/chapters/36-sick-well-fit/index.md), are pre-released in full.
 
 ## Ask, connect, contribute
 
