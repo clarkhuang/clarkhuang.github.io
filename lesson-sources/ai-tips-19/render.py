@@ -75,7 +75,7 @@ def render(tmp, series="AI TIPS   /   19", frames=None):
         lines.append(f"file '{frame}'")
         listing.write_text("\n".join(lines))
         part=tmp/f"{n}.mp4"
-        run("ffmpeg","-loglevel","error","-y","-f","concat","-safe","0","-i",listing,"-i",audio,"-vf","fps=25,format=yuv420p","-af","loudnorm=I=-16:TP=-1.5:LRA=11,apad","-ar","48000","-c:a","aac","-b:a","160k","-c:v","libx264","-preset","veryfast","-shortest",part)
+        run("ffmpeg","-loglevel","error","-y","-f","concat","-safe","0","-i",listing,"-i",audio,"-vf","fps=25,format=yuv420p","-af","loudnorm=I=-16:TP=-1.5:LRA=11,apad","-ar","48000","-c:a","aac","-b:a","160k","-c:v","libx264","-preset","veryfast","-t",str(duration+hold),part)
         measured=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",part]))
         words=scene[-1].split(); start=elapsed
         for i in range(0,len(words),8):
