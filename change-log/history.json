@@ -2,6 +2,106 @@
   "schema_version": 1,
   "releases": [
     {
+      "sha": "0a98dfdd2522275cdf1495fe8fe88e3bb9702c39",
+      "sequence": 53,
+      "published_at": "2026-11-27T07:38:49-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39",
+      "summary": "The homepage book card now links both Building Blocks and Sick, Well, Fit as released chapter previews.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 202
+    },
+    {
+      "sha": "364f41aa9eacb2ec9a0adc954c2991d20485b9af",
+      "sequence": 52,
+      "published_at": "2026-11-27T07:12:25-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
+      "summary": "SE 301 published its first video lesson, captions and agent-readable install prompt for sizing a model and starting a local endpoint.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 200
+    },
+    {
+      "sha": "6fe2351c68b96b638bce8bcd27fba7a0b55432a2",
+      "sequence": 51,
+      "published_at": "2026-11-26T18:10:52-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/6fe2351c68b96b638bce8bcd27fba7a0b55432a2",
+      "summary": "The footer now lets readers move between stable production and the upcoming staging preview while keeping their current page when possible.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 198
+    },
+    {
+      "sha": "82df688517f9dbcf48cec794fa5e8a8bc006a697",
+      "sequence": 50,
+      "published_at": "2026-11-26T17:47:24-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
+      "summary": "About gained a sourced guide to nonprofit programs and the provider questions that must be answered before sponsoring member applications.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 195
+    },
+    {
+      "sha": "e1c8c5ae9182a56403d400b9aa3420c478f2e59f",
+      "sequence": 49,
+      "published_at": "2026-11-26T17:43:02-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/e1c8c5ae9182a56403d400b9aa3420c478f2e59f",
+      "summary": "SE 401 added a GitHub-only member-platform design with project-scoped data, credentials, limits and optional service adapters.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 193
+    },
+    {
+      "sha": "0aa7898e5648881b75c6fbd4c996cc3b91b0d696",
+      "sequence": 48,
+      "published_at": "2026-11-26T17:39:12-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/0aa7898e5648881b75c6fbd4c996cc3b91b0d696",
+      "summary": "A seven-step SE 401 field build plan now starts with hosted AI and preserves the evidence needed to replay the same work on local models.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 190
+    },
+    {
+      "sha": "2258972d6d3fcc7e1ffe70b118d348c85fcc3662",
+      "sequence": 47,
+      "published_at": "2026-11-26T17:35:52-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/2258972d6d3fcc7e1ffe70b118d348c85fcc3662",
+      "summary": "SE 401 now lays out a two-app pilot for shared Render hosting and sponsored AI on the foundation’s Mac Studio.",
+      "editorial": true,
+      "technical_summary": "The proposed pilot measures concurrent member jobs, site improvement experiments, tenant isolation and recovery after interruption.",
+      "pull_request": 189
+    },
+    {
+      "sha": "e7ddd12f448cebc4aae88d61f7bae2806b5bd66b",
+      "sequence": 46,
+      "published_at": "2026-11-26T17:31:28-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/e7ddd12f448cebc4aae88d61f7bae2806b5bd66b",
+      "summary": "Clark clarified his view of typical sales and marketing tactics on the About page.",
+      "editorial": true,
+      "technical_summary": "The About page and its Markdown edition carry the same revised quotation.",
+      "pull_request": 186
+    },
+    {
+      "sha": "b8b0a72a50b5f8d7e7c69a218b13d94ca6b17bef",
+      "sequence": 45,
+      "published_at": "2026-11-26T17:17:43-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/b8b0a72a50b5f8d7e7c69a218b13d94ca6b17bef",
+      "summary": "AI Tips now makes redaction part of the opening paste-first lesson, with a safe example and a link to the full lesson on handling secrets.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 184
+    },
+    {
+      "sha": "ad899e3a9a2ea6731c935e6f5f8d343c54bf3545",
+      "sequence": 44,
+      "published_at": "2026-11-26T17:07:47-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/ad899e3a9a2ea6731c935e6f5f8d343c54bf3545",
+      "summary": "The course guides now show what individuals, nonprofits and small businesses can build today. SE 301 and SE 401 connect the planned local AI studio to sponsored hosting for member-built apps. The Change Log and signed-in updates explain releases in plain language, and the course and funding sections are easier to read on smaller screens.",
+      "editorial": true,
+      "technical_summary": "All four change-log views retain their navigation order and expose their active page. Agent metadata keeps the release sequence, timestamp, pull request and commit evidence alongside the reader summary.",
+      "pull_request": 182
+    },
+    {
       "sha": "67e256cf7cb6bd596562ed12d942e7dccbbdf555",
       "sequence": 43,
       "published_at": "2026-11-26T16:15:42-05:00",
@@ -435,16 +535,32 @@
   "periods": {
     "daily": [
       {
+        "period": "2026-11-27",
+        "title": "The first SE 301 lesson is ready to run",
+        "summary": "Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit.",
+        "sources": [
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39"
+        ],
+        "release_count": 2,
+        "editorial": true,
+        "unreviewed_count": 0
+      },
+      {
         "period": "2026-11-26",
-        "title": "Run models locally and pick up lessons across devices",
-        "summary": "SE 301 opened its ten-lab local AI playbook, and SE 401 outlined a possible nonprofit cohort. My learning brings your profile and saved lessons together. When the account service needs time to start, you can wait or retry sign-in on the article you were reading.",
+        "title": "From a local playbook to a member-platform design",
+        "summary": "SE 301 opened its local AI playbook, while SE 401 defined a hosted-model build plan and a GitHub-only design for sponsored member applications. About documented possible nonprofit benefits and unresolved provider terms. Account-backed learning, safer paste-first guidance and stable/upcoming navigation improved the current site; the shared hosting service remained a proposal.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/b8b0a72a50b5f8d7e7c69a218b13d94ca6b17bef",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/0aa7898e5648881b75c6fbd4c996cc3b91b0d696",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/e1c8c5ae9182a56403d400b9aa3420c478f2e59f",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/6fe2351c68b96b638bce8bcd27fba7a0b55432a2"
         ],
-        "release_count": 11,
+        "release_count": 19,
         "editorial": true,
         "unreviewed_count": 0
       },
@@ -520,17 +636,20 @@
     "weekly": [
       {
         "period": "2026-W48",
-        "title": "The site became a worked example of the courses",
-        "summary": "The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use. If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
+        "title": "The curriculum moved from local practice toward a member-platform design",
+        "summary": "SE 201 finished with an end-to-end capstone, SE 301 published a local-compute playbook and first runnable lesson, and SE 401 mapped a hosted-model build plan plus a proposed GitHub-only member platform. About now records possible nonprofit benefits and the provider limits that still need answers. The OpenBook offers two released chapter previews, while the site’s account and release tools remain the working examples learners can inspect today.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/0aa7898e5648881b75c6fbd4c996cc3b91b0d696",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/e1c8c5ae9182a56403d400b9aa3420c478f2e59f",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39"
         ],
-        "release_count": 27,
+        "release_count": 37,
         "editorial": true,
         "unreviewed_count": 0
       },
@@ -552,18 +671,20 @@
     "monthly": [
       {
         "period": "2026-11",
-        "title": "An open engineering school takes shape",
-        "summary": "November brought together practical courses, the OpenBook and a contribution path for outside experience. Readers can watch a lesson, study its source or take a copy of the project. The new production archive gives them a way to check how that project evolves. About connects this work to the proposed foundation and names what a first cohort would still have to demonstrate. If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
+        "title": "An open engineering school and its first platform blueprint",
+        "summary": "November produced complete introductory and enterprise courses, seventeen AI Tips, two released OpenBook chapter previews, and a local-compute course whose first lesson can be run now. The contribution, account and release surfaces make the site itself a worked example. SE 401 and About describe a proposed sponsored member platform, while explicitly leaving shared hosting, provider adapters, funding awards and local inference as work to validate.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/d279bd577592cef001555a9fcc3f0d84ac612b9c",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/42684455b160e92f89b09128e1dc8087963ab9f4",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/e1c8c5ae9182a56403d400b9aa3420c478f2e59f",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39"
         ],
-        "release_count": 43,
+        "release_count": 53,
         "editorial": true,
         "unreviewed_count": 0
       }

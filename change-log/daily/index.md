@@ -10,13 +10,21 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Browse updates to the courses, book and learning tools. Dates use Detroit time.
 
+Friday, November 27, 2026
+
+## The first SE 301 lesson is ready to run
+
+Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit.
+
+[Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39)
+
 Thursday, November 26, 2026
 
-## Run models locally and pick up lessons across devices
+## From a local playbook to a member-platform design
 
-SE 301 opened its ten-lab local AI playbook, and SE 401 outlined a possible nonprofit cohort. My learning brings your profile and saved lessons together. When the account service needs time to start, you can wait or retry sign-in on the article you were reading.
+SE 301 opened its local AI playbook, while SE 401 defined a hosted-model build plan and a GitHub-only design for sponsored member applications. About documented possible nonprofit benefits and unresolved provider terms. Account-backed learning, safer paste-first guidance and stable/upcoming navigation improved the current site; the shared hosting service remained a proposal.
 
-[Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit 2821471](https://github.com/clarkhuang/clarkhuang.github.io/commit/2821471bb8990d37682cf63193a2f7536ea94496) · [Commit ece2c20](https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3) · [Commit 67e256c](https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555)
+[Commit c57b006](https://github.com/clarkhuang/clarkhuang.github.io/commit/c57b0062f61a11ee4df855466fb2fc1cb4c77a68) · [Commit ece2c20](https://github.com/clarkhuang/clarkhuang.github.io/commit/ece2c20513a2ecfe41ef482699686e0a0c8245f3) · [Commit 67e256c](https://github.com/clarkhuang/clarkhuang.github.io/commit/67e256cf7cb6bd596562ed12d942e7dccbbdf555) · [Commit b8b0a72](https://github.com/clarkhuang/clarkhuang.github.io/commit/b8b0a72a50b5f8d7e7c69a218b13d94ca6b17bef) · [Commit 0aa7898](https://github.com/clarkhuang/clarkhuang.github.io/commit/0aa7898e5648881b75c6fbd4c996cc3b91b0d696) · [Commit e1c8c5a](https://github.com/clarkhuang/clarkhuang.github.io/commit/e1c8c5ae9182a56403d400b9aa3420c478f2e59f) · [Commit 82df688](https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697) · [Commit 6fe2351](https://github.com/clarkhuang/clarkhuang.github.io/commit/6fe2351c68b96b638bce8bcd27fba7a0b55432a2)
 
 Wednesday, November 25, 2026
 
