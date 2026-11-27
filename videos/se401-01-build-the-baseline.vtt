@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Imagine the evening coordinator has thirty seconds to
+
+00:00:03.000 --> 00:00:06.000
+tell tomorrow's crew what changed. Before choosing an
+
+00:00:06.000 --> 00:00:09.000
+AI model, write one handoff you would trust.
+
+00:00:09.000 --> 00:00:11.555
+Read these three lines. Jo owns the crate
+
+00:00:11.555 --> 00:00:14.110
+pickup. The key has a location. The driver
+
+00:00:14.110 --> 00:00:16.665
+is still unconfirmed. Pause here and write the
+
+00:00:16.665 --> 00:00:18.900
+handoff you would give the morning crew.
+
+00:00:18.900 --> 00:00:21.300
+Here is one reference answer. It keeps the
+
+00:00:21.300 --> 00:00:23.700
+owner and deadline, points back to the source
+
+00:00:23.700 --> 00:00:26.100
+lines, and leaves the open question open. Save
+
+00:00:26.100 --> 00:00:28.500
+your version before looking at a model draft.
+
+00:00:28.500 --> 00:00:31.300
+Decide now what earns a pass. Could someone
+
+00:00:31.300 --> 00:00:34.100
+act on the deadline? Can you trace every
+
+00:00:34.100 --> 00:00:36.900
+statement? Would an unknown assignment still look unknown?
+
+00:00:36.900 --> 00:00:39.000
+These checks work with any model.
+
+00:00:39.000 --> 00:00:41.880
+Score this deliberately flawed draft. It sounds efficient:
+
+00:00:41.880 --> 00:00:44.760
+Jo drives Route B at nine. But that
+
+00:00:44.760 --> 00:00:47.640
+sentence joined two unrelated facts. Someone reading it
+
+00:00:47.640 --> 00:00:49.800
+might stop looking for a driver.
+
+00:00:49.800 --> 00:00:52.553
+Mark the exact claim that failed. Keep the
+
+00:00:52.553 --> 00:00:55.306
+original notes, reference answer, rubric, draft and decision
+
+00:00:55.306 --> 00:00:58.059
+together. When you run a real model, add
+
+00:00:58.059 --> 00:01:00.812
+its version, elapsed time and the edits the
+
+00:01:00.812 --> 00:01:01.500
+coordinator made.
+
+00:01:01.500 --> 00:01:03.900
+Try the exercise with a second set of
+
+00:01:03.900 --> 00:01:06.300
+fictional notes the model has never seen. Score
+
+00:01:06.300 --> 00:01:08.700
+its answer before you change the prompt. That
+
+00:01:08.700 --> 00:01:11.100
+gives you something to compare when the local
+
+00:01:11.100 --> 00:01:12.000
+Studio is ready.

@@ -56,6 +56,9 @@ def font(size, bold=False, serif=False):
     if bold:
         name += "-Bold"
     path = os.path.join(FONT_DIR, name + ".ttf")
+    if not os.path.isfile(path) and sys.platform == "darwin":
+        family = "Georgia" if serif else "Arial"
+        path = "/System/Library/Fonts/Supplemental/" + family + (" Bold" if bold else "") + ".ttf"
     return ImageFont.truetype(path, size)
 
 

@@ -17,7 +17,7 @@ FONT = Path(os.environ.get("VIDEO_FONT_DIR", "/System/Library/Fonts/Supplemental
 SCENES = json.loads((HERE / "scenes.json").read_text())
 
 
-def draw(scene, index, reveal, path):
+def draw(scene, index, reveal, path, series="AI TIPS   /   19", screenshot=None):
     title, label, *items, narration = scene
     canvas = Image.new("RGB", (1280, 720), "#112723")
     d = ImageDraw.Draw(canvas)
@@ -25,7 +25,7 @@ def draw(scene, index, reveal, path):
         font = ImageFont.truetype(str(FONT / (family + ".ttf")), size)
         assert x + d.textlength(text, font=font) < 1260, text
         d.text((x, y), text, font=font, fill=color)
-    line(65, 37, "AI TIPS   /   19", 27, "#B0E7B8", "Arial Bold")
+    line(65, 37, series, 27, "#B0E7B8", "Arial Bold")
     line(65, 99, title, 65, "#FAF4E5", "Georgia")
     d.rounded_rectangle((65,220,1215,584),24,fill="#F6F0DD")
     line(104,246,label,23,"#336052","Arial Bold")
@@ -33,6 +33,10 @@ def draw(scene, index, reveal, path):
         y=313+78*row
         d.line((104,y-9,1172,y-9),fill="#CECDBC",width=2)
         line(104,y,item,39 if index in (1,3,5) else 42,"#173A31","Courier New Bold" if index in (1,3,5) else "Arial")
+    if screenshot:
+        shot = Image.open(screenshot).convert("RGB")
+        shot.thumbnail((1128, 352))
+        canvas.paste(shot, ((1280-shot.width)//2, 224))
     for i in range(len(SCENES)):
         x=65+i*165
         d.rounded_rectangle((x,654,x+144,661),3,fill="#A0DFAC" if i<=index else "#3C5850")
@@ -48,7 +52,7 @@ def stamp(seconds):
     return f"{msec//3600000:02}:{msec//60000%60:02}:{msec//1000%60:02}.{msec%1000:03}"
 
 
-def render(tmp):
+def render(tmp, series="AI TIPS   /   19", frames=None):
     key=os.environ["XAI_API_KEY"]
     clips=[]
     cues=["WEBVTT",""]
@@ -64,7 +68,7 @@ def render(tmp):
         lines=[]
         for i,portion in enumerate([0.20,0.25,0.55],1):
             frame=tmp/f"{n}-{i}.png"
-            draw(scene,n,i,frame)
+            draw(scene,n,i,frame,series,(frames or {}).get(n))
             lines.extend([f"file '{frame}'",f"duration {duration*portion}"])
         lines.append(f"file '{frame}'")
         listing.write_text("\n".join(lines))
@@ -79,7 +83,7 @@ def render(tmp):
     listing=tmp/"clips.txt";listing.write_text("\n".join(clips))
     run("ffmpeg","-loglevel","error","-y","-f","concat","-safe","0","-i",listing,"-c","copy","-movflags","+faststart",ROOT/"videos"/(STEM+".mp4"))
     (ROOT/"videos"/(STEM+".vtt")).write_text("\n".join(cues))
-    draw(SCENES[0],0,3,ROOT/"videos/posters"/(STEM+".jpg"))
+    draw(SCENES[0],0,3,ROOT/"videos/posters"/(STEM+".jpg"),series)
 
 
 if __name__=="__main__":
