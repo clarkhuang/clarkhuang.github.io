@@ -287,7 +287,7 @@ def verify(site, repo=None):
             os.path.join("software-engineering-201", "index.html"),
         }:
             series_pages.append(path)
-        elif re.match(r"(ai-tips|software-engineering-101|software-engineering-201)/[^/]+/index.html$", rel):
+        elif re.match(r"(ai-tips|software-engineering-101|software-engineering-201|software-engineering-301)/[^/]+/index.html$", rel):
             lesson_pages.append((rel, path))
         elif re.match(r"book/chapters/[^/]+/index.html$", rel):
             chapter_pages.append((rel, path))

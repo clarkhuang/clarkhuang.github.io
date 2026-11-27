@@ -235,6 +235,10 @@ def write_robots_and_sitemap(series):
         urls.append(f"{BASE}/{skey}/")
         for l in s["lessons"]:
             urls.append(f"{BASE}/{skey}/{l['slug']}/")
+    # The SE 301 playbook is prose, not a content.json series. Keep its Lesson 1 page in the sitemap.
+    for extra in ("/software-engineering-301/", "/software-engineering-301/01-size-the-model-run-the-first-endpoint/"):
+        if os.path.isdir(os.path.join(SITE, extra.strip("/"))):
+            urls.append(BASE + extra)
     parts = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -633,7 +637,7 @@ def build():
       <section aria-labelledby="series-heading" data-status-scope>
         <div class="section-head"><h2 id="series-heading">Learn</h2><p class="section-note">Short video lessons on AI-native software work. Your progress is remembered on this device. <button type="button" class="reset" data-reset-progress hidden>Reset progress</button><span class="status" role="status" data-status></span></p></div>
         <div class="cards">{cards}</div>
-        <h2><a href="/software-engineering-301/">Software Engineering 301: Run Your Own AI Studio</a></h2><p>The ten-lab playbook is available now. Videos and R&amp;D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work.</p><p>Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/148">Share your field notes</a>.</p>
+        <h2><a href="/software-engineering-301/">Software Engineering 301: Run Your Own AI Studio</a></h2><p>The ten-lab playbook is available now. Videos and R&amp;D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Lesson 1 is available: <a href="/software-engineering-301/01-size-the-model-run-the-first-endpoint/">Size the model, then run the first endpoint</a>.</p><p>Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. <a href="https://github.com/clarkhuang/clarkhuang.github.io/issues/148">Share your field notes</a>.</p>
         <p>Learn AI engineering by building something you can use. These free courses and labs are for curious individuals, nonprofits with limited resources, sole proprietors, and small businesses. Bring a real task, such as filling a volunteer shift or tracking a booking. Clark Huang plans to fund a nonprofit foundation alongside donors so approved builders can also run what they make on shared infrastructure.</p>
         <p class="section-note"><a href="/about/">About this project</a> · <a href="/software-engineering-401/">SE 401 goals and lab outline</a>. This site is also an open project. <a href="/contribute/">Contribute with your AI</a>, or <a href="/copy-this/">copy this for yourself</a>.</p>
       </section>
@@ -667,6 +671,12 @@ def build():
                                "video_position": "vpos=<lesson id>@<version>:<seconds>[,...] (resume offer, cleared when the video ends)",
                                "last_visit": "last_visit=<unix seconds> (start of the most recent visit; first-party only)",
                                "visit_ref": "visit_ref=<unix seconds|first> (session cookie: frozen cutoff so New tags do not vanish mid-visit; a first visit shows no New tags)"}
+    # SE 301 is a hand-maintained playbook, not a content.json series.
+    _se301 = os.path.join(os.path.dirname(HERE), "lesson-sources", "se301-01")
+    if _se301 not in sys.path:
+        sys.path.insert(0, _se301)
+    import publish_page as se301_publish
+    se301_publish.update_lessons_json(lessons_json, write=False)
     json.dump(lessons_json, open(f"{SITE}/lessons.json", "w"), indent=2, ensure_ascii=False)
     build_book()
     AF.write_llms_full(SITE, SERIES, INTRO, BACK)

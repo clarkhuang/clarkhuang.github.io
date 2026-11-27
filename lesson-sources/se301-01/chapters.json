@@ -1,0 +1,50 @@
+[
+  {
+    "title": "The question",
+    "start_seconds": 8.62
+  },
+  {
+    "title": "The floor",
+    "start_seconds": 22.413
+  },
+  {
+    "title": "Headroom",
+    "start_seconds": 41.09
+  },
+  {
+    "title": "The ladder",
+    "start_seconds": 56.111
+  },
+  {
+    "title": "Candidates",
+    "start_seconds": 78.733
+  },
+  {
+    "title": "Context",
+    "start_seconds": 103.497
+  },
+  {
+    "title": "The endpoint",
+    "start_seconds": 117.89
+  },
+  {
+    "title": "The prompt",
+    "start_seconds": 140.826
+  },
+  {
+    "title": "The stop",
+    "start_seconds": 161.332
+  },
+  {
+    "title": "The rule",
+    "start_seconds": 182.752
+  },
+  {
+    "title": "Your turn",
+    "start_seconds": 197.146
+  },
+  {
+    "title": "Next",
+    "start_seconds": 207.595
+  }
+]

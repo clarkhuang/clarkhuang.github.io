@@ -5,3 +5,6 @@ interviews/
 
 __pycache__/
 *.pyc
+
+# SE 301 lesson renders stay on the build machine until Clark approves the media.
+lesson-sources/se301-01/build/
