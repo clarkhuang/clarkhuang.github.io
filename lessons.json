@@ -1743,6 +1743,88 @@
           "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se201-10"
         }
       ]
+    },
+    {
+      "id": "se301",
+      "title": "Software Engineering 301",
+      "subtitle": "Run Your Own AI Studio",
+      "page": "https://clarkhuang.github.io/software-engineering-301/",
+      "markdown_url": "https://clarkhuang.github.io/software-engineering-301/index.md",
+      "agents_url": "https://clarkhuang.github.io/software-engineering-301/AGENTS.md",
+      "status": "in progress",
+      "summary": "Learn to run a local AI studio on hardware you own. Size the model to the machine you have, run one local endpoint, and measure a real job before you upgrade.",
+      "lessons": [
+        {
+          "id": "se301/01",
+          "number": 1,
+          "title": "Size the model, then run the first endpoint",
+          "status": "available",
+          "summary": "Before you download a local model, size it to the machine you have. The weight floor is the parameter count times the bits per weight, divided by eight. That number is weights only. Add the runtime, the operating system, your other programs, and a context cache. On the playbook's 48 GB laptop, the first fixture is Qwen2.5-Coder-7B-Instruct in a four-bit build. Larger names for the ordered 512 GB Studio are candidates, not measurements. Then run one local endpoint on loopback and keep the reply. A chat reply does not, by itself, prove tool calls. The page includes one copy-paste prompt for a Mac with Apple silicon and for a Windows or Linux PC. The agent stops for a named yes before an admin install, a firewall change, or a sign-in. It does not take secrets, and it does not send local files off the machine.",
+          "rule": "Before a model is downloaded, write three things where the agent can read them: the weight floor, the memory you can spare, and the check that says the endpoint answered. If a step needs admin rights, a firewall change, or a sign-in, stop and ask. Do not paste secrets, and do not send local files off the machine.",
+          "page_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/",
+          "video_url": "https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.mp4",
+          "video_version": "cd4034f6",
+          "watched_key": "se301/01@cd4034f6",
+          "poster_url": "https://clarkhuang.github.io/videos/posters/se301-01-size-the-model-run-the-first-endpoint.jpg",
+          "markdown_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md",
+          "agents_url": "https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md",
+          "duration_seconds": 214.7,
+          "published": "2026-11-26",
+          "published_at": "2026-11-26T20:18:08-05:00",
+          "chapters": [
+            {
+              "start_seconds": 0.0,
+              "title": "The question"
+            },
+            {
+              "start_seconds": 22.4,
+              "title": "The floor"
+            },
+            {
+              "start_seconds": 41.1,
+              "title": "Headroom"
+            },
+            {
+              "start_seconds": 56.1,
+              "title": "The ladder"
+            },
+            {
+              "start_seconds": 78.7,
+              "title": "Candidates"
+            },
+            {
+              "start_seconds": 103.5,
+              "title": "Context"
+            },
+            {
+              "start_seconds": 117.9,
+              "title": "The endpoint"
+            },
+            {
+              "start_seconds": 140.8,
+              "title": "The prompt"
+            },
+            {
+              "start_seconds": 161.3,
+              "title": "The stop"
+            },
+            {
+              "start_seconds": 182.8,
+              "title": "The rule"
+            },
+            {
+              "start_seconds": 197.1,
+              "title": "Your turn"
+            },
+            {
+              "start_seconds": 207.6,
+              "title": "Next"
+            }
+          ],
+          "captions_url": "https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.vtt",
+          "source_url": "https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se301-01"
+        }
+      ]
     }
   ],
   "book": "https://clarkhuang.github.io/book.json",

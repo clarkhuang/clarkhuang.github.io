@@ -72,6 +72,7 @@ Optional: start with [https://clarkhuang.github.io/AGENTS.md](https://clarkhuang
 - [Lesson 10: Capstone: One Feature, End to End](https://clarkhuang.github.io/software-engineering-201/10-capstone-one-feature-end-to-end/index.md) (published Nov 23, 2026): The capstone builds one small feature of a made-up subscription-billing system end to end, using every lesson in the series in order: a customer on a $30 monthly plan switches to a $300 annual plan ten days into the…
 
 - [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten local AI labs. Try a real job on your current machine and measure its cost and usefulness before upgrading.
+- [SE 301 Lesson 1: Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md): Weight floor, one local loopback endpoint, and a copy-paste install prompt for Apple silicon and for Windows or Linux.
 
 - [SE 401 goals and lab outline](https://clarkhuang.github.io/software-engineering-401/index.md): Proposed course in building, running and handing off applications.
 
