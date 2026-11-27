@@ -625,7 +625,7 @@ def build():
               + book_date_bit + '</div>'
               + '<h3>Silicon Valley C Players</h3><p>A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Written and interviewed by AI.</p>'
               + '<p class="progress">Videobook and audio preview</p><span class="card-cta">Watch the preview</span></a>'
-              + '<p class="card-extra">Chapter 36, <a href="/book/chapters/36-sick-well-fit/">Sick, Well, Fit</a>, is pre-released in full.</p></div>')
+              + '<p class="card-extra">Chapter 17b, <a href="/book/chapters/17b-building-blocks/">Building Blocks</a>, and Chapter 36, <a href="/book/chapters/36-sick-well-fit/">Sick, Well, Fit</a>, are pre-released in full.</p></div>')
     body = f"""      <section class="hero" aria-labelledby="about-heading">
         <div class="hero-copy">
           <h1 id="about-heading">Clark Huang</h1>
