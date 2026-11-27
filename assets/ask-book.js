@@ -3,7 +3,7 @@
 (function () {
   "use strict";
 
-  var INDEX_URL = "/search-index.json";
+  var INDEX_URL = new URL("../search-index.json", document.currentScript.src).href;
   var SITE = "https://clarkhuang.github.io";
   var LLMS = SITE + "/llms-full.txt";
   var LLMS_SHORT = SITE + "/llms.txt";
@@ -47,14 +47,14 @@
     return out;
   }
 
-  function scoreEntry(entry, terms) {
+  function scoreEntry(entry, terms, phrase) {
     if (!terms.length) return 0;
     var title = (entry.title || "").toLowerCase();
     var rule = (entry.rule || "").toLowerCase();
     var summary = (entry.summary || "").toLowerCase();
     var body = (entry.text || "").toLowerCase();
     var series = (entry.series || "").toLowerCase();
-    var score = 0;
+    var score = terms.length > 1 && body.indexOf(phrase) !== -1 ? 12 : 0;
     var hits = 0;
     for (var i = 0; i < terms.length; i++) {
       var t = terms[i];
@@ -74,11 +74,12 @@
 
   function search(query, limit) {
     var terms = tokens(query);
+    var phrase = query.trim().toLowerCase();
     if (!index || !terms.length) return [];
     var scored = [];
     var entries = index.entries || [];
     for (var i = 0; i < entries.length; i++) {
-      var s = scoreEntry(entries[i], terms);
+      var s = scoreEntry(entries[i], terms, phrase);
       if (s > 0) scored.push({ entry: entries[i], score: s });
     }
     scored.sort(function (a, b) { return b.score - a.score; });
