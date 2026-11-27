@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.",
-    "technical_summary": "The search index and full-text feed include the published pages. Staging search loads its own index. Refs #196."
+    "summary": "About now reflects the first published SE 301 lesson, the expanded SE 401 member-platform design, the nonprofit programs guide and both released book chapters.",
+    "technical_summary": "The generated About state and editorial day, week and month summaries were reconciled against production through release #202. Current lessons remain separate from proposed foundation hosting, provider adapters and sponsored member applications."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",
@@ -46,7 +46,15 @@
     "dfadeef": "The primary navigation made GitHub sign-in, SE 401 and About easier to find.",
     "4268445": "Readers gained a public Change Log with links to production commits. About now connects the available courses and book chapters to the proposed foundation. GitHub sign-in returns learners to the page where they started.",
     "ece2c20": "Open My learning to find your profile and saved lessons. You can fill out the profile yourself or review a draft from an AI assistant before saving it.",
-    "67e256c": "If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed."
+    "67e256c": "If the learning service is waking up, GitHub sign-in now lets you wait on your article and retry there if needed.",
+    "b8b0a72": "AI Tips now makes redaction part of the opening paste-first lesson, with a safe example and a link to the full lesson on handling secrets.",
+    "2869c0a": "SE 401 described a shared Render and Mac Studio pilot while keeping live service promises dependent on measured capacity and provider terms.",
+    "0aa7898": "A seven-step SE 401 field build plan now starts with hosted AI and preserves the evidence needed to replay the same work on local models.",
+    "e1c8c5a": "SE 401 added a GitHub-only member-platform design with project-scoped data, credentials, limits and optional service adapters.",
+    "82df688": "About gained a sourced guide to nonprofit programs and the provider questions that must be answered before sponsoring member applications.",
+    "6fe2351": "The footer now lets readers move between stable production and the upcoming staging preview while keeping their current page when possible.",
+    "364f41a": "SE 301 published its first video lesson, captions and agent-readable install prompt for sizing a model and starting a local endpoint.",
+    "0a98dfd": "The homepage book card now links both Building Blocks and Sick, Well, Fit as released chapter previews."
   },
   "technical": {
     "ece2c20": "The Pages hub links to the reader’s account editor and versioned playback library. Profile drafts are previewed locally before an explicit save.",
@@ -58,13 +66,14 @@
     "2026-11-23": ["An enterprise systems capstone", "SE 201 connected its design and operating lessons with a worked feature. Learners could follow the decisions from the opening plan through verification.", ["4f19ba0","dfa18fd"]],
     "2026-11-24": ["A complete course and a clearer editorial record", "The final SE 201 recording completed the course. Video dates helped readers spot new material, while the public outline, policy and contributor credits made the book’s development easier to follow.", ["ef1dbf1","99601cf","ca52e07","c4e8cdc"]],
     "2026-11-25": ["The book acquired voices beyond its preview", "Two nonfiction chapters, a guest contribution and a revised narrated preview gave readers several ways into the book. AI Tips also added a lesson on keeping secrets out of prompts.", ["d279bd5","9e1e140","0b86855","67efcd5"]],
-    "2026-11-26": ["Run models locally and pick up lessons across devices", "SE 301 opened its ten-lab local AI playbook, and SE 401 outlined a possible nonprofit cohort. My learning brings your profile and saved lessons together. When the account service needs time to start, you can wait or retry sign-in on the article you were reading.", ["c57b006", "2821471", "ece2c20", "67e256c"]]
+    "2026-11-26": ["From a local playbook to a member-platform design", "SE 301 opened its local AI playbook, while SE 401 defined a hosted-model build plan and a GitHub-only design for sponsored member applications. About documented possible nonprofit benefits and unresolved provider terms. Account-backed learning, safer paste-first guidance and stable/upcoming navigation improved the current site; the shared hosting service remained a proposal.", ["c57b006", "ece2c20", "67e256c", "b8b0a72", "0aa7898", "e1c8c5a", "82df688", "6fe2351"]],
+    "2026-11-27": ["The first SE 301 lesson is ready to run", "Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit.", ["364f41a", "0a98dfd"]]
   },
   "weekly": {
     "2026-W47": ["A library people and their agents could use", "The opening weekend established the learning experience. A visitor could finish SE 101, listen to a book preview and bring an assistant to read the same material. The contribution and copy paths opened the work to other builders.", ["c55caba","f0e4451","34e1f86"]],
-    "2026-W48": ["The site became a worked example of the courses", "The enterprise course finished with an end-to-end capstone, and SE 301 extended that practice to learners’ own machines. The site now exposes its own release record, so a learner can follow a change from a plain-language explanation to its source. About places the proposed nonprofit cohort alongside the material people can already use.", ["dfa18fd", "c4e8cdc", "c57b006", "2821471", "4268445"]]
+    "2026-W48": ["The curriculum moved from local practice toward a member-platform design", "SE 201 finished with an end-to-end capstone, SE 301 published a local-compute playbook and first runnable lesson, and SE 401 mapped a hosted-model build plan plus a proposed GitHub-only member platform. About now records possible nonprofit benefits and the provider limits that still need answers. The OpenBook offers two released chapter previews, while the site’s account and release tools remain the working examples learners can inspect today.", ["dfa18fd", "c4e8cdc", "c57b006", "ece2c20", "0aa7898", "e1c8c5a", "82df688", "364f41a", "0a98dfd"]]
   },
   "monthly": {
-    "2026-11": ["An open engineering school takes shape", "November brought together practical courses, the OpenBook and a contribution path for outside experience. Readers can watch a lesson, study its source or take a copy of the project. The new production archive gives them a way to check how that project evolves. About connects this work to the proposed foundation and names what a first cohort would still have to demonstrate.", ["34e1f86", "c4e8cdc", "d279bd5", "c57b006", "2821471", "4268445"]]
+    "2026-11": ["An open engineering school and its first platform blueprint", "November produced complete introductory and enterprise courses, seventeen AI Tips, two released OpenBook chapter previews, and a local-compute course whose first lesson can be run now. The contribution, account and release surfaces make the site itself a worked example. SE 401 and About describe a proposed sponsored member platform, while explicitly leaving shared hosting, provider adapters, funding awards and local inference as work to validate.", ["34e1f86", "c4e8cdc", "d279bd5", "c57b006", "4268445", "e1c8c5a", "82df688", "364f41a", "0a98dfd"]]
   }
 }

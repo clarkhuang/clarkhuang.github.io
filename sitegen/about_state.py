@@ -51,10 +51,11 @@ def current_state():
             'The [Change Log](/change-log/) records what reached production. Its [full archive](/change-log/archive/) links each update to the public commit.'
         ]),
         ("Hands-on training in SE 301", [
-            '[SE 301](/software-engineering-301/) is the playbook for running this workflow on local compute. The planned February 2027 Studio build will test it against a real site change. Readers can already try the laptop path and share what they measure.'
+            '[SE 301](/software-engineering-301/) is the playbook for running this workflow on local compute. [Lesson 1](/software-engineering-301/01-size-the-model-run-the-first-endpoint/) is available now: size a model from its weight floor, start a local endpoint and save the smoke test as a baseline on a Mac, Windows PC or Linux machine. The planned February 2027 Studio build will replay that work and add measured results; the larger machine and shared local inference remain future work.'
         ]),
         ("A possible first cohort with a nonprofit", [
-            'The [SE 401 proposal](/software-engineering-401/) asks whether a team can build an affordable application that another organization can operate. One candidate is work a nonprofit and its advisor could explore with eCIO. Staff would trace a gift from receipt to allocation. Staff could count the follow-ups on real cases, then see whether a second nonprofit can repeat the process with a standard file import.',
+            'The [SE 401 proposal](/software-engineering-401/) now defines a seven-step field build plan that starts with hosted AI and later replays the same measured work on the project’s ordered Studio. It also describes a GitHub-only member dashboard, project-scoped data and credentials, usage limits, and optional email, payment and phone adapters. That build plan, the shared hosting service and provider adapters are designs, not operating services. The site’s signed-in Reader is the current working example.',
+            'The [nonprofit programs guide](/about/nonprofit-programs.md) records possible software and infrastructure benefits and the provider terms that must be confirmed before sponsoring an independently run member app. One candidate cohort is work a nonprofit and its advisor could explore with eCIO. Staff would trace a gift from receipt to allocation, count follow-ups on real cases and see whether a second nonprofit can repeat the process with a standard file import.',
             'A nonprofit would help choose the problem and decide which results to share. A possible ending for the book is a first funded cohort showing its work to the staff who use it. That scene depends on what the cohort actually builds.'
         ])
     ]
