@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.496
+You ask the bot to flag gaps in
+
+00:00:02.496 --> 00:00:04.992
+a volunteer roster. Eighty shifts later, you discover
+
+00:00:04.992 --> 00:00:07.488
+it counted every blank cell as a missing
+
+00:00:07.488 --> 00:00:07.800
+volunteer.
+
+00:00:07.800 --> 00:00:10.378
+Look at these two rows. Check-in needs a
+
+00:00:10.378 --> 00:00:12.956
+person. Standby is deliberately empty. The bot can
+
+00:00:12.956 --> 00:00:15.533
+repeat a reasonable guess eighty times before you
+
+00:00:15.533 --> 00:00:16.500
+see it once.
+
+00:00:16.500 --> 00:00:19.071
+Try a smaller instruction. Check the first three
+
+00:00:19.071 --> 00:00:21.643
+shifts only. For each gap, show the row
+
+00:00:21.643 --> 00:00:24.214
+and your reason. Then wait for my reply
+
+00:00:24.214 --> 00:00:25.500
+before scanning the rest.
+
+00:00:25.500 --> 00:00:28.532
+Now the mistake costs one correction. The bot
+
+00:00:28.532 --> 00:00:31.563
+flagged both blanks. You can see exactly which
+
+00:00:31.563 --> 00:00:32.700
+rule it inferred.
+
+00:00:32.700 --> 00:00:35.456
+Reply in the thread. Standby may be empty.
+
+00:00:35.456 --> 00:00:38.211
+Run those same three again and keep the
+
+00:00:38.211 --> 00:00:40.967
+rest on hold. One flag should survive: the
+
+00:00:40.967 --> 00:00:42.000
+empty check-in shift.
+
+00:00:42.000 --> 00:00:44.400
+Once the sample matches your judgment, give it
+
+00:00:44.400 --> 00:00:46.800
+the next batch. If it calls another agent,
+
+00:00:46.800 --> 00:00:49.200
+carry the same limit into that handoff. A
+
+00:00:49.200 --> 00:00:51.600
+small Slack request can start a much larger
+
+00:00:51.600 --> 00:00:51.900
+job.
+
+00:00:51.900 --> 00:00:54.557
+Before your next bulk request, finish this sentence:
+
+00:00:54.557 --> 00:00:57.214
+do the first how many, show me what,
+
+00:00:57.214 --> 00:00:59.871
+and stop where? Give the bot a checkpoint
+
+00:00:59.871 --> 00:01:01.200
+you can actually review.
