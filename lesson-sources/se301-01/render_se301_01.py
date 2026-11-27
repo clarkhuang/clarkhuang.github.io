@@ -409,9 +409,34 @@ def measure_loudness(path):
     return float(integrated.group(1)), float(peak.group(1))
 
 
+def _loudnorm_json(text):
+    start = text.rfind("{")
+    end = text.rfind("}")
+    if start == -1 or end <= start:
+        raise SystemExit("Could not read loudnorm measurement.")
+    return json.loads(text[start:end + 1])
+
+
 def loudnorm(src, dest):
-    """Match finish_se201.sh: -16 LUFS, true peak held to -1.5 dBTP (within ≤ -1)."""
-    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+    """Two-pass loudnorm to -16 LUFS, true peak held to -1.5 dBTP (within ≤ -1).
+
+    A single-pass filter often undershoots on this voice, and a loose limiter
+    (0.89) can let true peak exceed -1 dBTP after a trim. This matches
+    finish_se201.sh's tighter limiter (0.82) when a small gain pass is needed.
+    """
+    proc = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", src, "-af",
+         "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"],
+        capture_output=True, text=True,
+    )
+    m = _loudnorm_json(proc.stderr)
+    filt = (
+        "loudnorm=I=-16:TP=-1.5:LRA=11:"
+        f"measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+        f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:"
+        f"offset={m['target_offset']}:linear=true"
+    )
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-af", filt,
          "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-movflags", "+faststart", dest])
     for _ in range(3):
         integrated, peak = measure_loudness(dest)
@@ -422,7 +447,7 @@ def loudnorm(src, dest):
         gain = max(-3.0, min(3.0, -16 - integrated))
         tmp = dest + ".gain.mp4"
         run(["ffmpeg", "-v", "error", "-y", "-i", dest,
-             "-af", f"volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false",
+             "-af", f"volume={gain:.2f}dB,alimiter=limit=0.82:attack=2:release=40:level=false",
              "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-movflags", "+faststart", tmp])
         os.replace(tmp, dest)
     integrated, peak = measure_loudness(dest)

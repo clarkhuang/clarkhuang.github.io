@@ -1,6 +1,6 @@
 # AGENTS.md — Software Engineering 301, lesson 1: Size the model, then run the first endpoint
 
-This folder is the public draft of “Size the model, then run the first endpoint” on Clark Huang’s learning site. The video is not rendered.
+This folder is the public lesson “Size the model, then run the first endpoint” on Clark Huang’s learning site.
 
 - HTML: https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/
 - Markdown twin (summary, rule, transcript, install prompt): https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md

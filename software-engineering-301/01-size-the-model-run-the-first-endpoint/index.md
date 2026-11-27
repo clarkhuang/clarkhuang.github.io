@@ -1,6 +1,6 @@
 # Size the model, then run the first endpoint
 
-_Software Engineering 301 · Lesson 1 · draft, video not rendered_
+_Software Engineering 301 · Lesson 1_
 
 HTML page: https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/
 
@@ -12,25 +12,27 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 - Series agents file: [https://clarkhuang.github.io/software-engineering-301/AGENTS.md](https://clarkhuang.github.io/software-engineering-301/AGENTS.md)
 - Site index: [https://clarkhuang.github.io/llms.txt](https://clarkhuang.github.io/llms.txt)
 - This folder’s agents file: [https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/AGENTS.md)
-- Video: not rendered. Narration waits on approval of the script and facts file.
+- Video (MP4): https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.mp4
+- Duration: 3:34 (214.7 seconds)
+- Published: Nov 26, 2026
+- Poster: https://clarkhuang.github.io/videos/posters/se301-01-size-the-model-run-the-first-endpoint.jpg
+- Captions (WebVTT): https://clarkhuang.github.io/videos/se301-01-size-the-model-run-the-first-endpoint.vtt
 - How it was built (script source, facts, install prompt): https://github.com/clarkhuang/clarkhuang.github.io/tree/next-revision/lesson-sources/se301-01
 
-## Planned chapters
+## Chapters
 
-These are the chapter titles in the scene script. There is no video to seek yet.
-
-- The question
-- The floor
-- Headroom
-- The ladder
-- Candidates
-- Context
-- The endpoint
-- The prompt
-- The stop
-- The rule
-- Your turn
-- Next
+- [0:00] The question
+- [0:22] The floor
+- [0:41] Headroom
+- [0:56] The ladder
+- [1:18] Candidates
+- [1:43] Context
+- [1:57] The endpoint
+- [2:20] The prompt
+- [2:41] The stop
+- [3:02] The rule
+- [3:17] Your turn
+- [3:27] Next
 
 ## The lesson
 
@@ -42,9 +44,8 @@ Before a model is downloaded, write three things where the agent can read them: 
 
 This rule is written so an AI agent can follow it as a standing instruction.
 
-## What this draft does not claim
+## What this lesson does not claim
 
-- The video is not rendered. The script and facts.md are waiting for Clark's review. Do not treat this page as a recording.
 - The 40 GB, 160 GB, and 240 GB figures are weight floors from the playbook's formula. They are not measured file sizes.
 - Qwen3-Coder-Next, GLM-5.3-Flash, DeepSeek-V4-Flash, and Qwen3-Coder-480B are the playbook's November candidates for the ordered Studio. Throughput, power, and usable context are not measured yet.
 - The playbook's named machines are Apple silicon. The Windows and Linux path in the prompt applies the same weight floor, using LM Studio's headless docs or Ollama's local OpenAI-compatible API.
@@ -179,7 +180,7 @@ If the request fails, print the status and the error body with any token-like st
 
 ## Transcript
 
-This is the script, with text-to-speech spellings made readable. It has not been narrated.
+This is the script, with text-to-speech spellings made readable. It matches the captions.
 
 Software engineering 301. Run your own AI studio. Lesson one. Size the model. Then run the first endpoint.
 

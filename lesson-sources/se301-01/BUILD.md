@@ -3,7 +3,7 @@
 Lesson: **Size the model, then run the first endpoint** — Software Engineering 301.
 Page: https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/
 
-This folder is the source for the lesson. The public page is a draft. The video has not been rendered.
+This folder is the source for the lesson. The public page is a full video lesson. To rebuild the video, follow the render steps below, then copy the media into the site tree and run `publish_page.py`.
 
 | File | What it is |
 |---|---|
@@ -11,15 +11,15 @@ This folder is the source for the lesson. The public page is a draft. The video 
 | `se301-01-first-endpoint.json` | The scene script the renderer reads. |
 | `render_se301_01.py` | Pillow, NumPy, and ffmpeg. 1920×1080, 30 fps. Narrates, normalizes, writes MP4, captions, poster, and chapters. |
 | `make_vtt.py` | WebVTT from the scene script and the render timeline. |
-| `publish_page.py` | Writes the public `index.html`, `index.md`, and `AGENTS.md` from the script and the prompt. No video element. |
+| `publish_page.py` | Writes the public `index.html`, `index.md`, and `AGENTS.md` from the script and the prompt. Once the MP4, captions, and poster are in the site tree, it writes a full video lesson page. |
 | `install-prompt.md` | The copy-paste Mac and PC install prompt. Canonical text. |
 | `facts.md` | Every factual claim, with its source. Writer-added lines are marked for a yes or no. |
 | `brief.md` | The brief the lesson was written from. |
 | `claims-removed.md` | Claims that were available and left out. |
 
-## Do not render yet
+## Before you narrate
 
-Clark reviews `facts.md` and the scene script before any narration. `render_se301_01.py` will not write a silent or dummy MP4. It reads `XAI_API_KEY` from the environment at call time and never writes that key to a file, a log, or a command line.
+Clark reviews `facts.md` and the scene script before any narration. The first render was approved on November 26, 2026. `render_se301_01.py` will not write a silent or dummy MP4. It reads `XAI_API_KEY` from the environment at call time and never writes that key to a file, a log, or a command line.
 
 ## Check the drawings without a key
 
@@ -32,7 +32,7 @@ python3 sitegen/check_site.py .
 
 `--check` draws one frame per scene and exits. It does not open a network connection and does not write an MP4.
 
-## Render, after approval
+## Render, after approval (or to rebuild)
 
 From this folder, on the build machine:
 
@@ -59,10 +59,10 @@ Outputs land in `lesson-sources/se301-01/build/` (gitignored):
 
 ## After the media exists
 
-Copy the MP4, VTT, and poster into the site tree (`videos/` and `videos/posters/`). Then add the lesson to the public player. Do not add Software Engineering 301 to `sitegen/content.json` as a series: that generator would replace the playbook page. Keep the playbook, and point the lesson page at the new files. Run `python3 sitegen/stamp_versions.py` and `python3 sitegen/check_site.py .`. Open the pull request against `next-revision`. Only Clark merges to `main`.
+Copy the MP4, VTT, and poster into the site tree as `videos/se301-01-size-the-model-run-the-first-endpoint.mp4`, the matching `.vtt`, and `videos/posters/se301-01-size-the-model-run-the-first-endpoint.jpg`. Then run `python3 publish_page.py` from this folder so the public player, captions, chapters, and catalog entry are written. Do not add Software Engineering 301 to `sitegen/content.json` as a series: that generator would replace the playbook page. Keep the playbook, and point the lesson page at the new files. Run `python3 sitegen/stamp_versions.py` and `python3 sitegen/check_site.py .`. Open the pull request against `next-revision`. Only Clark merges to `main`.
 
 `REBUILD.md` in the site root says how to run the generator without rewriting other sections' pages.
 
 ## Authorship
 
-The script, the on-screen summary, the install prompt, and rule 1 were written for this lesson from the SE 301 playbook and the public docs listed in `facts.md`. They are not quotes from Clark. No one has listened to audio, because there is no audio yet.
+The script, the on-screen summary, the install prompt, and rule 1 were written for this lesson from the SE 301 playbook and the public docs listed in `facts.md`. They are not quotes from Clark. The first narration and render were completed after Clark approved the script. Listen to the final audio before merging to production if that review is still outstanding.

@@ -6,9 +6,9 @@ Start with a job you could use on the computer you already have. For example, a 
 
 This is the playbook for our February 2027 build. The hardware is ordered. Model choices are candidates. We will add measured throughput, power, usable context and accepted patches per hour after the machine arrives.
 
-## Lesson 1, in draft
+## Lesson 1
 
-[Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md) is the first video lesson, written and not yet narrated. It covers the weight floor, the first local endpoint, and a copy-paste install prompt for a Mac with Apple silicon or a Windows or Linux PC. The video renders after the script and the facts file are approved.
+[Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md) is the first video lesson. It covers the weight floor, the first local endpoint, and a copy-paste install prompt for a Mac with Apple silicon or a Windows or Linux PC.
 
 ## Already running local AI?
 
