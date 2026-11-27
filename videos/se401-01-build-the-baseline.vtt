@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.064
+Imagine the evening coordinator has thirty seconds to
+
+00:00:03.064 --> 00:00:06.128
+tell tomorrow's crew what changed. Before choosing an
+
+00:00:06.128 --> 00:00:09.192
+AI model, write one handoff you would trust.
+
+00:00:09.760 --> 00:00:12.739
+Read these three lines. Jo owns the crate
+
+00:00:12.739 --> 00:00:15.718
+pickup. The key has a location. The driver
+
+00:00:15.718 --> 00:00:18.697
+is still unconfirmed. Pause here and write the
+
+00:00:18.697 --> 00:00:21.304
+handoff you would give the morning crew.
+
+00:00:21.854 --> 00:00:24.572
+Here is one reference answer. It keeps the
+
+00:00:24.572 --> 00:00:27.290
+owner and deadline, points back to the source
+
+00:00:27.290 --> 00:00:30.008
+lines, and leaves the open question open. Save
+
+00:00:30.008 --> 00:00:32.726
+your version before looking at a model draft.
+
+00:00:33.294 --> 00:00:36.283
+Decide now what earns a pass. Could someone
+
+00:00:36.283 --> 00:00:39.272
+act on the deadline? Can you trace every
+
+00:00:39.272 --> 00:00:42.260
+statement? Would an unknown assignment still look unknown?
+
+00:00:42.260 --> 00:00:44.502
+These checks work with any model.
+
+00:00:45.054 --> 00:00:48.222
+Score this deliberately flawed draft. It sounds efficient:
+
+00:00:48.222 --> 00:00:51.390
+Jo drives Route B at nine. But that
+
+00:00:51.390 --> 00:00:54.558
+sentence joined two unrelated facts. Someone reading it
+
+00:00:54.558 --> 00:00:56.934
+might stop looking for a driver.
+
+00:00:57.494 --> 00:01:00.769
+Mark the exact claim that failed. Keep the
+
+00:01:00.769 --> 00:01:04.045
+original notes, reference answer, rubric, draft and decision
+
+00:01:04.045 --> 00:01:07.320
+together. When you run a real model, add
+
+00:01:07.320 --> 00:01:10.595
+its version, elapsed time and the edits the
+
+00:01:10.595 --> 00:01:11.414
+coordinator made.
+
+00:01:11.974 --> 00:01:14.334
+Here’s the rule to take with you. A
+
+00:01:14.334 --> 00:01:16.693
+handoff is ready when the next person can
+
+00:01:16.693 --> 00:01:19.053
+act on it and trace each claim to
+
+00:01:19.053 --> 00:01:21.412
+the notes. If nobody has a driver yet,
+
+00:01:21.412 --> 00:01:23.182
+the handoff should still say so.
+
+00:01:23.734 --> 00:01:26.796
+Your turn. Write three fictional shift notes and
+
+00:01:26.796 --> 00:01:29.858
+leave one assignment open. Write your own handoff
+
+00:01:29.858 --> 00:01:32.920
+first. Then give the notes to a model
+
+00:01:32.920 --> 00:01:35.983
+and score its reply. Did it preserve the
+
+00:01:35.983 --> 00:01:38.662
+gap? Keep both answers and your score.
+
+00:01:39.214 --> 00:01:41.929
+You now have a baseline: one small example
+
+00:01:41.929 --> 00:01:44.645
+you can trust. Bring it with you as
+
+00:01:44.645 --> 00:01:47.360
+the app grows. When you change a prompt
+
+00:01:47.360 --> 00:01:50.076
+or try another model, run those notes again
+
+00:01:50.076 --> 00:01:52.791
+and see what changed. See you in the
+
+00:01:52.791 --> 00:01:53.470
+next lab.

@@ -20,7 +20,7 @@
  "scenes": [
   {
    "id": "01_title",
-   "text": "Software engineering three oh one. Run your own A.I. studio. Lesson one. [pause] Size the model. Then run the first endpoint.",
+   "text": "Your model fits on paper. Can your laptop still answer after you cancel its first stream? Start with a memory budget. Finish with two requests you can replay.",
    "visual": "title",
    "chapter": "",
    "data": {
@@ -116,7 +116,7 @@
   },
   {
    "id": "06_candidates",
-   "text": "Larger names are candidates, not measurements. The November plan, for the ordered five hundred twelve gigabyte Studio, starts code on Qwen three Coder Next and review on G.L.M. five point three Flash, both M.L.X. four bit. [pause] The challengers are DeepSeek V four Flash at eight bit, and Qwen three Coder four eighty B at four bit. Measure speed and power after the machine arrives. Today, start small.",
+   "text": "These Studio candidates need testing on the actual hardware. Keep your small laptop baseline for comparison.",
    "visual": "candidates",
    "chapter": "Candidates",
    "data": {
@@ -185,6 +185,42 @@
      ]
     ],
     "foot": "A chat reply does not prove the tools."
+   }
+  },
+  {
+   "id": "08b_replay",
+   "text": "Try this on your own endpoint. Ask for the numbers one through twenty, one per line, with streaming turned on. Watch for the first piece before the final one. Cancel halfway. Then send a fresh request: reply with the word ready. Save what actually happened on both requests. A stopped display alone cannot tell you whether the server stopped computing. Check the runtime log before you mark that part as passed.",
+   "visual": "steps",
+   "chapter": "Replay a cancelled stream",
+   "data": {
+    "label": "REPLAY CARD  ·  TRY IT ON YOUR ENDPOINT",
+    "steps": [
+     [
+      "1",
+      "Stream",
+      "Count from 1 to 20, one number per line."
+     ],
+     [
+      "2",
+      "Observe",
+      "Did output arrive before the final event?"
+     ],
+     [
+      "3",
+      "Cancel",
+      "Stop the client during the stream."
+     ],
+     [
+      "4",
+      "Retry",
+      "New request: reply with the word ready."
+     ],
+     [
+      "5",
+      "Check",
+      "Save the reply and the server log."
+     ]
+    ]
    }
   },
   {

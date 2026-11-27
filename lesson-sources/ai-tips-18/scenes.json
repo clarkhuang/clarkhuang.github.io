@@ -1,0 +1,50 @@
+[
+  [
+    "Would you know when to call?",
+    "THE INVITATION",
+    "Book club meets online.",
+    "Thursday at 7 p.m. Eastern.",
+    "Your friend lives in Denver.",
+    "Imagine you're inviting a friend in Denver to your online book club. You wrote, Thursday at seven p.m. Eastern. The word Eastern matters. Your friend lives in a different time zone."
+  ],
+  [
+    "You ask AI for a shorter invite",
+    "YOUR CHAT",
+    "You: Make my invitation shorter.",
+    "AI: Book club, Thursday at 7!",
+    "Seven in which time zone?",
+    "You paste the invitation into your AI chat and ask, make this shorter. It replies, Book club, Thursday at seven! Would your friend know when to join? Read it once more. The time zone disappeared."
+  ],
+  [
+    "Save this little example",
+    "A NOTE YOU CAN REUSE",
+    "Request: Shorten the invitation.",
+    "Original: Thursday at 7 p.m. Eastern.",
+    "Must keep: the word Eastern.",
+    "Before fixing the invite, save a little note. Copy what you asked and the original invitation. Underneath, write what you needed: the shorter invite must still say Eastern. Now you have an example you can use again."
+  ],
+  [
+    "Try the request again",
+    "BACK IN THE CHAT",
+    "You: Shorten it. Keep the time zone.",
+    "AI: Book club, Thu at 7 p.m. Eastern.",
+    "Check: Is Eastern there? Yes.",
+    "Try again with the original invitation. This time say, shorten it and keep the time zone. Suppose the reply says, Book club, Thursday at seven p.m. Eastern. Look for the word you wrote down. There it is."
+  ],
+  [
+    "Your turn",
+    "TRY IT ONCE",
+    "Pick one reply you had to correct.",
+    "Save what you asked.",
+    "Write the detail it must keep.",
+    "Your turn. Think of one AI reply you had to correct. What single detail was missing? Put the request and that detail together in a note. That's the whole tip."
+  ],
+  [
+    "Keep that note",
+    "LOOKING AHEAD",
+    "Next time you change your request,",
+    "try the same example first.",
+    "See you in the next tip.",
+    "Keep that note for the next time you try a different way of asking. You'll already know what a good answer needs to keep. See you in the next tip."
+  ]
+]

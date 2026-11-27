@@ -3,209 +3,225 @@ WEBVTT
 NOTE SE301 Lesson 1: Size the model, then run the first endpoint — captions generated from the narration script
 
 1
-00:00:00.000 --> 00:00:03.859
-Software engineering 301. Run your own AI studio.
+00:00:00.000 --> 00:00:04.852
+Your model fits on paper. Can your laptop still answer after you cancel its first stream?
 
 2
-00:00:03.859 --> 00:00:08.270
-Lesson one. Size the model. Then run the first endpoint.
+00:00:04.852 --> 00:00:08.560
+Start with a memory budget. Finish with two requests you can replay.
 
 3
-00:00:08.620 --> 00:00:12.874
+00:00:08.910 --> 00:00:13.354
 Quick question. Before you download a local model, what do you check?
 
 4
-00:00:12.874 --> 00:00:15.587
+00:00:13.354 --> 00:00:16.188
 The product name? The memory on the sticker?
 
 5
-00:00:15.587 --> 00:00:18.114
+00:00:16.188 --> 00:00:18.828
 Or the weight floor, with room left over?
 
 6
-00:00:18.114 --> 00:00:20.026
+00:00:18.828 --> 00:00:20.825
 The floor, with room left over.
 
 7
-00:00:20.026 --> 00:00:22.060
+00:00:20.825 --> 00:00:22.950
 The sticker is the whole machine.
 
 8
-00:00:22.410 --> 00:00:24.055
+00:00:23.300 --> 00:00:24.888
 Start with the weight floor.
 
 9
-00:00:24.055 --> 00:00:27.404
+00:00:24.888 --> 00:00:28.122
 Parameter count, times bits per weight, divided by eight.
 
 10
-00:00:27.404 --> 00:00:30.165
+00:00:28.122 --> 00:00:30.788
 That is gigabytes of weights, and only weights.
 
 11
-00:00:30.165 --> 00:00:34.101
+00:00:30.788 --> 00:00:34.589
 Eighty billion parameters, at four-bits, starts at forty gigabytes.
 
 12
-00:00:34.101 --> 00:00:37.450
+00:00:34.589 --> 00:00:37.823
 Three hundred twenty billion starts at one hundred sixty.
 
 13
-00:00:37.450 --> 00:00:40.740
+00:00:37.823 --> 00:00:41.000
 Four hundred eighty billion starts at two hundred forty.
 
 14
-00:00:41.090 --> 00:00:42.998
+00:00:41.350 --> 00:00:43.258
 The floor is not the whole bill.
 
 15
-00:00:42.998 --> 00:00:49.677
+00:00:43.258 --> 00:00:49.937
 Add metadata, the runtime, the operating system, your other programs, and a context cache for each open session.
 
 16
-00:00:49.677 --> 00:00:55.760
+00:00:49.937 --> 00:00:56.020
 A two hundred forty gigabyte floor is a poor everyday choice on a two hundred fifty six gigabyte host.
 
 17
-00:00:56.110 --> 00:01:05.816
+00:00:56.370 --> 00:01:06.612
 Load a small model first. On an Apple silicon Mac you already own, try a three to eight billion parameter model, four-bit, only if memory permits.
 
 18
-00:01:05.816 --> 00:01:12.929
+00:01:06.612 --> 00:01:14.118
 The playbook's first fixture, on its forty eight gigabyte laptop, is Qwen2.5 Coder, 7B, Instruct, four-bit.
 
 19
-00:01:12.929 --> 00:01:15.987
+00:01:14.118 --> 00:01:17.345
 If gpt-oss-20b is already working, compare it.
 
 20
-00:01:15.987 --> 00:01:18.380
+00:01:17.345 --> 00:01:19.870
 Don't download it in order to start.
 
 21
-00:01:18.730 --> 00:01:21.929
-Larger names are candidates, not measurements.
+00:01:20.220 --> 00:01:23.478
+These Studio candidates need testing on the actual hardware.
 
 22
-00:01:21.929 --> 00:01:32.430
-The November plan, for the ordered five hundred twelve gigabyte Studio, starts code on Qwen3 Coder Next and review on GLM 5.3 Flash, both MLX four-bit.
+00:01:23.478 --> 00:01:26.030
+Keep your small laptop baseline for comparison.
 
 23
-00:01:32.430 --> 00:01:38.341
-The challengers are DeepSeek V4 Flash at eight-bit, and Qwen3 Coder 480B at four-bit.
-
-24
-00:01:38.341 --> 00:01:41.819
-Measure speed and power after the machine arrives.
-
-25
-00:01:41.819 --> 00:01:43.140
-Today, start small.
-
-26
-00:01:43.500 --> 00:01:48.019
+00:01:26.390 --> 00:01:30.522
 When it loads, run one prompt at 4K, at 16K, and at 32K.
 
-27
-00:01:48.019 --> 00:01:54.474
+24
+00:01:30.522 --> 00:01:36.426
 Write down peak memory, swap, time to first token, and output tokens per second.
 
-28
-00:01:54.474 --> 00:01:57.540
+25
+00:01:36.426 --> 00:01:39.230
 Stop when the wait misses your target.
 
-29
-00:01:57.890 --> 00:02:02.249
+26
+00:01:39.580 --> 00:01:43.822
 Then build the endpoint. Write down the machine and the free disk.
 
-30
-00:02:02.249 --> 00:02:06.213
+27
+00:01:43.822 --> 00:01:47.678
 Install one pinned llmster runtime, and one model that fits.
 
-31
-00:02:06.213 --> 00:02:10.638
+28
+00:01:47.678 --> 00:01:51.984
 Bind it to loopback. One two seven point zero point zero point one.
 
-32
-00:02:10.638 --> 00:02:15.724
+29
+00:01:51.984 --> 00:01:56.933
 Not the open network. Send a completion, a stream, a cancel, and a tool call.
 
-33
-00:02:15.724 --> 00:02:17.970
+30
+00:01:56.933 --> 00:01:59.118
 Save them with the model manifest.
 
-34
-00:02:17.970 --> 00:02:20.480
+31
+00:01:59.118 --> 00:02:01.560
 A chat reply does not prove the tools.
 
+32
+00:02:01.910 --> 00:02:03.742
+Try this on your own endpoint.
+
+33
+00:02:03.742 --> 00:02:08.566
+Ask for the numbers one through twenty, one per line, with streaming turned on.
+
+34
+00:02:08.566 --> 00:02:11.436
+Watch for the first piece before the final one.
+
 35
-00:02:20.830 --> 00:02:27.200
-One prompt on this page drives a computer-use agent, or a terminal agent, on a Mac or a PC.
+00:02:11.436 --> 00:02:15.649
+Cancel halfway. Then send a fresh request: reply with the word ready.
 
 36
-00:02:27.200 --> 00:02:32.450
-It reads the operating system, the CPU, the GPU, the memory, and free disk.
+00:02:15.649 --> 00:02:18.397
+Save what actually happened on both requests.
 
 37
-00:02:32.450 --> 00:02:38.120
-It picks a tier. It installs llmster, or MLX on Apple silicon, or Ollama on a PC.
+00:02:18.397 --> 00:02:23.098
+A stopped display alone cannot tell you whether the server stopped computing.
 
 38
-00:02:38.120 --> 00:02:40.990
-It sends one live request. Then it waits.
+00:02:23.098 --> 00:02:26.640
+Check the runtime log before you mark that part as passed.
 
 39
-00:02:41.330 --> 00:02:46.455
-It waits before any admin install, any firewall change, and any sign-in.
+00:02:26.990 --> 00:02:33.360
+One prompt on this page drives a computer-use agent, or a terminal agent, on a Mac or a PC.
 
 40
-00:02:46.455 --> 00:02:49.089
-You name the action, and you say yes.
+00:02:33.360 --> 00:02:38.610
+It reads the operating system, the CPU, the GPU, the memory, and free disk.
 
 41
-00:02:49.089 --> 00:02:53.645
-Silence is not a yes. Don't paste a key, a token, or a password.
+00:02:38.610 --> 00:02:44.280
+It picks a tier. It installs llmster, or MLX on Apple silicon, or Ollama on a PC.
 
 42
-00:02:53.645 --> 00:02:56.492
-Don't send a local file off the machine.
+00:02:44.280 --> 00:02:47.150
+It sends one live request. Then it waits.
 
 43
-00:02:56.492 --> 00:03:00.051
-The smoke test is one short sentence, to loopback.
+00:02:47.500 --> 00:02:52.472
+It waits before any admin install, any firewall change, and any sign-in.
 
 44
-00:03:00.051 --> 00:03:02.400
-The reply stays on your computer.
+00:02:52.472 --> 00:02:55.027
+You name the action, and you say yes.
 
 45
-00:03:02.750 --> 00:03:10.921
-Rule one, for your agents. Before a download, write the weight floor, the memory you can spare, and the check that says the endpoint answered.
+00:02:55.027 --> 00:02:59.446
+Silence is not a yes. Don't paste a key, a token, or a password.
 
 46
-00:03:10.921 --> 00:03:13.338
-Put that note where the agent can read it.
+00:02:59.446 --> 00:03:02.209
+Don't send a local file off the machine.
 
 47
-00:03:13.338 --> 00:03:16.790
-Admin rights, a firewall change, or a sign-in: stop and ask.
+00:03:02.209 --> 00:03:05.661
+The smoke test is one short sentence, to loopback.
 
 48
-00:03:17.150 --> 00:03:21.617
-Your turn. Open the prompt. Let the agent show you the tier it chose.
+00:03:05.661 --> 00:03:07.940
+The reply stays on your computer.
 
 49
-00:03:21.617 --> 00:03:24.401
-Say yes only to the install you understand.
+00:03:08.290 --> 00:03:16.647
+Rule one, for your agents. Before a download, write the weight floor, the memory you can spare, and the check that says the endpoint answered.
 
 50
-00:03:24.401 --> 00:03:27.250
-Keep the reply. That reply is your baseline.
+00:03:16.647 --> 00:03:19.119
+Put that note where the agent can read it.
 
 51
-00:03:27.590 --> 00:03:33.189
-Next in the playbook: a router in front of the models, with stable names like code-fast and review.
+00:03:19.119 --> 00:03:22.650
+Admin rights, a firewall change, or a sign-in: stop and ask.
 
 52
-00:03:33.189 --> 00:03:34.320
+00:03:23.000 --> 00:03:27.870
+Your turn. Open the prompt. Let the agent show you the tier it chose.
+
+53
+00:03:27.870 --> 00:03:30.905
+Say yes only to the install you understand.
+
+54
+00:03:30.905 --> 00:03:34.010
+Keep the reply. That reply is your baseline.
+
+55
+00:03:34.360 --> 00:03:39.959
+Next in the playbook: a router in front of the models, with stable names like code-fast and review.
+
+56
+00:03:39.959 --> 00:03:41.090
 See you in that lab.

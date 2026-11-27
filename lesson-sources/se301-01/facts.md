@@ -64,4 +64,4 @@ These lines are teaching instructions written for this lesson. They are not quot
 - No statement that the Ollama tag `qwen2.5-coder:7b` is four-bit. The prompt tells the agent to record the quant the tool prints.
 - No statement that a smoke-test reply proves tool calling. Scene 08 says the opposite. The prompt's first request is chat-only and says so.
 - No price, no electricity cost, no "our order" dollar figure.
-- The video, captions, and poster do not exist yet. `status` in the scene JSON says not to narrate until Clark approves the script and this file.
+- The cancellation replay is a learner exercise. Record observations from the local server when you run it.

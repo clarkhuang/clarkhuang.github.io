@@ -17,7 +17,7 @@ def sc(id, text, visual, data, chapter=""):
     S.append({"id": id, "text": text, "visual": visual, "chapter": chapter, "data": data})
 
 sc("01_title",
-   "Software engineering three oh one. Run your own A.I. studio. Lesson one. [pause] Size the model. Then run the first endpoint.",
+   "Your model fits on paper. Can your laptop still answer after you cancel its first stream? Start with a memory budget. Finish with two requests you can replay.",
    "title",
    {"kicker": "SOFTWARE ENGINEERING 301  ·  LESSON 1",
     "headline": "Size the model.\nThen run the first endpoint.",
@@ -73,10 +73,7 @@ sc("05_ladder",
    "The ladder")
 
 sc("06_candidates",
-   "Larger names are candidates, not measurements. The November plan, for the ordered five hundred twelve gigabyte Studio, "
-   "starts code on Qwen three Coder Next and review on G.L.M. five point three Flash, both M.L.X. four bit. [pause] "
-   "The challengers are DeepSeek V four Flash at eight bit, and Qwen three Coder four eighty B at four bit. "
-   "Measure speed and power after the machine arrives. Today, start small.",
+   "These Studio candidates need testing on the actual hardware. Keep your small laptop baseline for comparison.",
    "candidates",
    {"label": "512 GB STUDIO  ·  CANDIDATES, NOT MEASUREMENTS",
     "rows": [
@@ -112,6 +109,22 @@ sc("08_endpoint",
     ],
     "foot": "A chat reply does not prove the tools."},
    "The endpoint")
+
+sc("08b_replay",
+   "Try this on your own endpoint. Ask for the numbers one through twenty, one per line, with streaming turned on. "
+   "Watch for the first piece before the final one. Cancel halfway. Then send a fresh request: reply with the word ready. "
+   "Save what actually happened on both requests. A stopped display alone cannot tell you whether the server stopped computing. "
+   "Check the runtime log before you mark that part as passed.",
+   "steps",
+   {"label": "REPLAY CARD  ·  TRY IT ON YOUR ENDPOINT",
+    "steps": [
+        ["1", "Stream", "Count from 1 to 20, one number per line."],
+        ["2", "Observe", "Did output arrive before the final event?"],
+        ["3", "Cancel", "Stop the client during the stream."],
+        ["4", "Retry", "New request: reply with the word ready."],
+        ["5", "Check", "Save the reply and the server log."],
+    ]},
+   "Replay a cancelled stream")
 
 sc("09_prompt",
    "One prompt on this page drives a computer-use agent, or a terminal agent, on a Mac or a P.C. [pause] "
