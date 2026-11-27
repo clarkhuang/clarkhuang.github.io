@@ -32,7 +32,7 @@ Trace one feature across a whole system. Decide who sets the rule, how the parts
 
 ### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)
 
-The ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).
+The ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Lesson 1 is a draft, with no video yet: [Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md). Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).
 
 ### [Silicon Valley C Players](https://clarkhuang.github.io/book/index.md)
 

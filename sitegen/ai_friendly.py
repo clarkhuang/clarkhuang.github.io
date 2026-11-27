@@ -417,7 +417,7 @@ def write_home_twin(site, series, bio_html, extra_md=""):
             "",
         ]
     bits += [
-        '### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)\n\nThe ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).', "",
+        '### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)\n\nThe ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Lesson 1 is a draft, with no video yet: [Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md). Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).', "",
         f"### [Silicon Valley C Players]({BASE}/book/index.md)",
         "",
         "A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.",
@@ -763,7 +763,9 @@ def write_llms_txt(site, series, extras=None, book_extra_lines=None):
             lines.append(f"- Lesson {k}: {t} (coming soon)")
         lines.append("")
     lines += [
-        '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten local AI labs. Try a real job on your current machine and measure its cost and usefulness before upgrading.', "",
+        '- [SE 301 local AI playbook](https://clarkhuang.github.io/software-engineering-301/index.md): Ten local AI labs. Try a real job on your current machine and measure its cost and usefulness before upgrading.',
+        '- [SE 301 Lesson 1 (draft, no video yet): Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md): Weight floor, one local loopback endpoint, and a copy-paste install prompt for Apple silicon and for Windows or Linux.',
+        "",
         '- [SE 401 goals and lab outline](https://clarkhuang.github.io/software-engineering-401/index.md): Proposed course in building, running and handing off applications.', "",
         "## Book",
         "",

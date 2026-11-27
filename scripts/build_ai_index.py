@@ -406,6 +406,8 @@ def extra_pages() -> list[dict]:
         Path("contribute/index.md"),
         Path("copy-this/index.md"),
         Path("mcp/index.md"),
+        Path("software-engineering-301/index.md"),
+        Path("software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md"),
         Path("AGENTS.md"),
     ):
         path = ROOT / rel
