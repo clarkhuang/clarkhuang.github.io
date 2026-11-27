@@ -20,4 +20,8 @@ Score this deliberately flawed draft. It sounds efficient: Jo drives Route B at 
 
 Mark the exact claim that failed. Keep the original notes, reference answer, rubric, draft and decision together. When you run a real model, add its version, elapsed time and the edits the coordinator made.
 
-Try the exercise with a second set of fictional notes the model has never seen. Score its answer before you change the prompt. That gives you something to compare when the local Studio is ready.
+Here’s the rule to take with you. A handoff is ready when the next person can act on it and trace each claim to the notes. If nobody has a driver yet, the handoff should still say so.
+
+Your turn. Write three fictional shift notes and leave one assignment open. Write your own handoff first. Then give the notes to a model and score its reply. Did it preserve the gap? Keep both answers and your score.
+
+You now have a baseline: one small example you can trust. Bring it with you as the app grows. When you change a prompt or try another model, run those notes again and see what changed. See you in the next lab.

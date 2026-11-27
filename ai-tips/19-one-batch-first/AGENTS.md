@@ -1,1 +1,1 @@
-Read [the lesson](index.md) for its rule and transcript. The roster is a fictional teaching example.
+Read [the lesson](index.md) for its rule and transcript. The picnic is a fictional teaching example.

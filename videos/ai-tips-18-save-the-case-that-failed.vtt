@@ -1,70 +1,82 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.267
-These words are a heading in Software Engineering
+00:00:00.000 --> 00:00:02.979
+Imagine you're inviting a friend in Denver to
 
-00:00:02.267 --> 00:00:04.533
-four oh one. Yet a reader who searched
+00:00:02.979 --> 00:00:05.958
+your online book club. You wrote, Thursday at
 
-00:00:04.533 --> 00:00:06.800
-for that heading could miss the course entirely.
+00:00:05.958 --> 00:00:08.937
+seven p.m. Eastern. The word Eastern matters. Your
 
-00:00:06.800 --> 00:00:09.629
-Here is the old search, replayed from the
+00:00:08.937 --> 00:00:11.544
+friend lives in a different time zone.
 
-00:00:09.629 --> 00:00:12.457
-published revision. It returns results. Look for the
+00:00:18.960 --> 00:00:21.911
+You paste the invitation into your AI chat
 
-00:00:12.457 --> 00:00:15.286
-course itself. It's missing. A test that only
+00:00:21.911 --> 00:00:24.863
+and ask, make this shorter. It replies, Book
 
-00:00:15.286 --> 00:00:16.700
-counts results would pass.
+00:00:24.863 --> 00:00:27.814
+club, Thursday at seven! Would your friend know
 
-00:00:16.700 --> 00:00:19.318
-Save two things. The exact words the reader
+00:00:27.814 --> 00:00:30.765
+when to join? Read it once more. The
 
-00:00:19.318 --> 00:00:21.936
-typed, and where the reader needed to land.
+00:00:30.765 --> 00:00:31.872
+time zone disappeared.
 
-00:00:21.936 --> 00:00:24.555
-Search is broken is hard to replay. This
+00:00:40.120 --> 00:00:43.057
+Before fixing the invite, save a little note.
 
-00:00:24.555 --> 00:00:27.173
-little card tells another person exactly what to
+00:00:43.057 --> 00:00:45.994
+Copy what you asked and the original invitation.
 
-00:00:27.173 --> 00:00:27.500
-try.
+00:00:45.994 --> 00:00:48.931
+Underneath, write what you needed: the shorter invite
 
-00:00:27.500 --> 00:00:29.755
-Now use those same words on the corrected
+00:00:48.931 --> 00:00:51.868
+must still say Eastern. Now you have an
 
-00:00:29.755 --> 00:00:32.009
-site. There's the course. Open it. We still
+00:00:51.868 --> 00:00:53.704
+example you can use again.
 
-00:00:32.009 --> 00:00:33.700
-have one more thing to check.
+00:01:02.240 --> 00:01:05.250
+Try again with the original invitation. This time
 
-00:00:33.700 --> 00:00:36.189
-There is the heading we started with. Tomorrow
+00:01:05.250 --> 00:01:08.259
+say, shorten it and keep the time zone.
 
-00:00:36.189 --> 00:00:38.678
-the result might move down a place and
+00:01:08.259 --> 00:01:11.269
+Suppose the reply says, Book club, Thursday at
 
-00:00:38.678 --> 00:00:41.167
-still be perfectly useful. Test the outcome the
+00:01:11.269 --> 00:01:14.279
+seven p.m. Eastern. Look for the word you
 
-00:00:41.167 --> 00:00:42.100
-reader cares about.
+00:01:14.279 --> 00:01:16.160
+wrote down. There it is.
 
-00:00:42.100 --> 00:00:44.577
-After the next search rebuild, run that same
+00:01:24.920 --> 00:01:27.819
+Your turn. Think of one AI reply you
 
-00:00:44.577 --> 00:00:47.055
-case again. Think of the last thing you
+00:01:27.819 --> 00:01:30.718
+had to correct. What single detail was missing?
 
-00:00:47.055 --> 00:00:49.532
-had to correct twice. What example could you
+00:01:30.718 --> 00:01:33.618
+Put the request and that detail together in
 
-00:00:49.532 --> 00:00:51.700
-save today to catch it next time?
+00:01:33.618 --> 00:01:35.792
+a note. That's the whole tip.
+
+00:01:42.920 --> 00:01:45.013
+Keep that note for the next time you
+
+00:01:45.013 --> 00:01:47.106
+try a different way of asking. You'll already
+
+00:01:47.106 --> 00:01:49.198
+know what a good answer needs to keep.
+
+00:01:49.198 --> 00:01:50.768
+See you in the next tip.

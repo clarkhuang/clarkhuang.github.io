@@ -1,9 +1,50 @@
 [
-  ["One batch first", "THE REQUEST", "“Check every shift and flag the gaps.”", "Saturday roster · 80 shifts", "Fictional Slack exercise", "You ask the bot to flag gaps in a volunteer roster. Eighty shifts later, you discover it counted every blank cell as a missing volunteer."],
-  ["Where it goes wrong", "ROSTER EXCERPT", "09:00    Check-in    —", "09:30    Standby    —", "A blank can mean two things.", "Look at these two rows. Check-in needs a person. Standby is deliberately empty. The bot can repeat a reasonable guess eighty times before you see it once."],
-  ["Give it a stopping point", "YOUR SLACK MESSAGE", "“Check the first three shifts only.”", "“Show the row and your reason.”", "“Then wait for my reply.”", "Try a smaller instruction. Check the first three shifts only. For each gap, show the row and your reason. Then wait for my reply before scanning the rest."],
-  ["Read one result", "BOT REPLY  /  FIRST THREE", "09:00    Check-in    Flagged", "09:30    Standby    Flagged", "10:00    Setup       Assigned", "Now the mistake costs one correction. The bot flagged both blanks. You can see exactly which rule it inferred."],
-  ["Fix the rule in-thread", "YOUR REPLY", "“Standby may be empty.”", "“Rerun those same three.”", "“Keep the rest on hold.”", "Reply in the thread. Standby may be empty. Run those same three again and keep the rest on hold. One flag should survive: the empty check-in shift."],
-  ["Release the next batch", "VERIFIED SAMPLE", "09:00    Check-in    Needs cover", "09:30    Standby    Expected blank", "10:00    Setup       Assigned", "Once the sample matches your judgment, give it the next batch. If it calls another agent, carry the same limit into that handoff. A small Slack request can start a much larger job."],
-  ["Your turn", "THE COPYABLE RULE", "Run a small sample.", "Show the evidence.", "Wait before expanding.", "Before your next bulk request, finish this sentence: do the first how many, show me what, and stop where? Give the bot a checkpoint you can actually review."]
+  [
+    "Would you send this reminder?",
+    "A TEAM CHAT",
+    "Saturday picnic • setup at 9",
+    "Bring folding chairs",
+    "You need a short, friendly reminder.",
+    "Imagine you're organizing a picnic. Your team left you a list of reminders to tidy up. The first says, setup at nine, bring folding chairs. You want the reminders to sound friendly."
+  ],
+  [
+    "Ask for just one",
+    "YOU TYPE IN SLACK",
+    "Rewrite the first reminder only.",
+    "Make it friendly. Keep the details.",
+    "Stop there so I can read it.",
+    "In your team chat, ask the AI to rewrite the first reminder only. Say, make it friendly, keep the details, and stop there so I can read it. Now you can see what it thinks friendly means."
+  ],
+  [
+    "Read the first reply",
+    "THE AI WRITES",
+    "Come help us set up at nine!",
+    "Would a volunteer know",
+    "what to bring?",
+    "Here's a possible reply: Come help us set up at nine! Sounds friendly. But imagine you're the volunteer walking out the door. What were you supposed to take with you? The folding chairs."
+  ],
+  [
+    "Fix one together",
+    "YOU REPLY",
+    "Keep the chairs. Try that one again.",
+    "AI: Join us at nine for setup.",
+    "Please bring folding chairs!",
+    "Reply in the same chat: keep the chairs, and try that one again. Now it says, Join us at nine for setup. Please bring folding chairs! Read it back. Time, task, and chairs are all there."
+  ],
+  [
+    "Now give the go-ahead",
+    "YOUR TURN",
+    "Use that style for the rest.",
+    "Keep what to bring in every reminder.",
+    "Read the finished list before sending.",
+    "Now tell the AI to use that style for the rest and keep what to bring in every reminder. Give the finished list a read before sending it. One quick check up front saved you from fixing the same mistake in every line."
+  ],
+  [
+    "Start with one",
+    "LOOKING AHEAD",
+    "One example. One quick check.",
+    "Then decide whether to continue.",
+    "See you in the next tip.",
+    "Next time a job comes with a whole list, try saying these words: show me the first one, then wait. You can bring that habit to whatever you ask AI to help with next. See you in the next tip."
+  ]
 ]

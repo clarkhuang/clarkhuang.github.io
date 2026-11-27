@@ -1,7 +1,50 @@
 [
-["Save the case that failed","AI TIP 18","The course exists.","The search misses it.","Keep that exact query.","These words are a heading in Software Engineering four oh one. Yet a reader who searched for that heading could miss the course entirely."],
-["Replay the old search","BEFORE THE FIX","One GitHub sign-in for member apps","Actual search replay","Previous site revision","Here is the old search, replayed from the published revision. It returns results. Look for the course itself. It's missing. A test that only counts results would pass."],
-["Write the test card","EXPECTED OUTCOME","Input: the exact heading","Action: click the course result","Pass: the reader reaches that heading","Save two things. The exact words the reader typed, and where the reader needed to land. Search is broken is hard to replay. This little card tells another person exactly what to try."],
-["Try the same words","AFTER THE FIX","Same query","Course result visible","Follow the link","Now use those same words on the corrected site. There's the course. Open it. We still have one more thing to check."],
-["Check the destination","ON THE COURSE PAGE","One GitHub sign-in for member apps","Correct destination","Case passes","There is the heading we started with. Tomorrow the result might move down a place and still be perfectly useful. Test the outcome the reader cares about."],
-["Keep the example","THE RULE","Save the smallest safe input.","Write the expected outcome.","Replay after the next change.","After the next search rebuild, run that same case again. Think of the last thing you had to correct twice. What example could you save today to catch it next time?"]]
+  [
+    "Would you know when to call?",
+    "THE INVITATION",
+    "Book club meets online.",
+    "Thursday at 7 p.m. Eastern.",
+    "Your friend lives in Denver.",
+    "Imagine you're inviting a friend in Denver to your online book club. You wrote, Thursday at seven p.m. Eastern. The word Eastern matters. Your friend lives in a different time zone."
+  ],
+  [
+    "You ask AI for a shorter invite",
+    "YOUR CHAT",
+    "You: Make my invitation shorter.",
+    "AI: Book club, Thursday at 7!",
+    "Seven in which time zone?",
+    "You paste the invitation into your AI chat and ask, make this shorter. It replies, Book club, Thursday at seven! Would your friend know when to join? Read it once more. The time zone disappeared."
+  ],
+  [
+    "Save this little example",
+    "A NOTE YOU CAN REUSE",
+    "Request: Shorten the invitation.",
+    "Original: Thursday at 7 p.m. Eastern.",
+    "Must keep: the word Eastern.",
+    "Before fixing the invite, save a little note. Copy what you asked and the original invitation. Underneath, write what you needed: the shorter invite must still say Eastern. Now you have an example you can use again."
+  ],
+  [
+    "Try the request again",
+    "BACK IN THE CHAT",
+    "You: Shorten it. Keep the time zone.",
+    "AI: Book club, Thu at 7 p.m. Eastern.",
+    "Check: Is Eastern there? Yes.",
+    "Try again with the original invitation. This time say, shorten it and keep the time zone. Suppose the reply says, Book club, Thursday at seven p.m. Eastern. Look for the word you wrote down. There it is."
+  ],
+  [
+    "Your turn",
+    "TRY IT ONCE",
+    "Pick one reply you had to correct.",
+    "Save what you asked.",
+    "Write the detail it must keep.",
+    "Your turn. Think of one AI reply you had to correct. What single detail was missing? Put the request and that detail together in a note. That's the whole tip."
+  ],
+  [
+    "Keep that note",
+    "LOOKING AHEAD",
+    "Next time you change your request,",
+    "try the same example first.",
+    "See you in the next tip.",
+    "Keep that note for the next time you try a different way of asking. You'll already know what a good answer needs to keep. See you in the next tip."
+  ]
+]

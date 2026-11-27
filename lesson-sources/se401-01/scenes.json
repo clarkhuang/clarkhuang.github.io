@@ -1,8 +1,74 @@
 [
-["Before you call a model","SE 401   /   LAB 01","One coordinator. One handoff.","What has to survive the rewrite?","Worked example • fictional shift notes","Imagine the evening coordinator has thirty seconds to tell tomorrow's crew what changed. Before choosing an AI model, write one handoff you would trust."],
-["Read the source notes","SHIFT LOG   /   FIXTURE A","1   Jo: pick up crates by 9:00.","2   Van key: at the front desk.","3   Driver for Route B: unconfirmed.","Read these three lines. Jo owns the crate pickup. The key has a location. The driver is still unconfirmed. Pause here and write the handoff you would give the morning crew."],
-["Write the baseline","HUMAN REFERENCE","Jo collects crates by 9:00.  [1]","Van key at front desk.  [2]","Route B still needs a driver.  [3]","Here is one reference answer. It keeps the owner and deadline, points back to the source lines, and leaves the open question open. Save your version before looking at a model draft."],
-["Give it a rubric","CHECK EACH CLAIM","Owner and deadline preserved?","Every statement traceable?","Unknowns still marked open?","Decide now what earns a pass. Could someone act on the deadline? Can you trace every statement? Would an unknown assignment still look unknown? These checks work with any model."],
-["Catch the costly guess","ILLUSTRATIVE DRAFT","“Jo drives Route B at 9:00.”","Line 1 assigns crate pickup.","Line 3 leaves the driver open.","Score this deliberately flawed draft. It sounds efficient: Jo drives Route B at nine. But that sentence joined two unrelated facts. Someone reading it might stop looking for a driver."],
-["Record the correction","FIELD RECORD","Owner: wrong task → fail","Driver: unsupported → fail","Decision: return for correction","Mark the exact claim that failed. Keep the original notes, reference answer, rubric, draft and decision together. When you run a real model, add its version, elapsed time and the edits the coordinator made."],
-["Run the first lab","YOUR ASSIGNMENT","Write a second, unseen shift log.","Score a hosted model on it.","Keep it for the Studio replay.","Try the exercise with a second set of fictional notes the model has never seen. Score its answer before you change the prompt. That gives you something to compare when the local Studio is ready."]]
+  [
+    "Before you call a model",
+    "SE 401   /   LAB 01",
+    "One coordinator. One handoff.",
+    "What has to survive the rewrite?",
+    "Worked example • fictional shift notes",
+    "Imagine the evening coordinator has thirty seconds to tell tomorrow's crew what changed. Before choosing an AI model, write one handoff you would trust."
+  ],
+  [
+    "Read the source notes",
+    "SHIFT LOG   /   FIXTURE A",
+    "1   Jo: pick up crates by 9:00.",
+    "2   Van key: at the front desk.",
+    "3   Driver for Route B: unconfirmed.",
+    "Read these three lines. Jo owns the crate pickup. The key has a location. The driver is still unconfirmed. Pause here and write the handoff you would give the morning crew."
+  ],
+  [
+    "Write the baseline",
+    "HUMAN REFERENCE",
+    "Jo collects crates by 9:00.  [1]",
+    "Van key at front desk.  [2]",
+    "Route B still needs a driver.  [3]",
+    "Here is one reference answer. It keeps the owner and deadline, points back to the source lines, and leaves the open question open. Save your version before looking at a model draft."
+  ],
+  [
+    "Give it a rubric",
+    "CHECK EACH CLAIM",
+    "Owner and deadline preserved?",
+    "Every statement traceable?",
+    "Unknowns still marked open?",
+    "Decide now what earns a pass. Could someone act on the deadline? Can you trace every statement? Would an unknown assignment still look unknown? These checks work with any model."
+  ],
+  [
+    "Catch the costly guess",
+    "ILLUSTRATIVE DRAFT",
+    "“Jo drives Route B at 9:00.”",
+    "Line 1 assigns crate pickup.",
+    "Line 3 leaves the driver open.",
+    "Score this deliberately flawed draft. It sounds efficient: Jo drives Route B at nine. But that sentence joined two unrelated facts. Someone reading it might stop looking for a driver."
+  ],
+  [
+    "Record the correction",
+    "FIELD RECORD",
+    "Owner: wrong task → fail",
+    "Driver: unsupported → fail",
+    "Decision: return for correction",
+    "Mark the exact claim that failed. Keep the original notes, reference answer, rubric, draft and decision together. When you run a real model, add its version, elapsed time and the edits the coordinator made."
+  ],
+  [
+    "The rule for a handoff",
+    "TAKEAWAY",
+    "Keep each claim tied to a source.",
+    "Leave open assignments open.",
+    "Save the checks with your example.",
+    "Here’s the rule to take with you. A handoff is ready when the next person can act on it and trace each claim to the notes. If nobody has a driver yet, the handoff should still say so."
+  ],
+  [
+    "Your turn",
+    "FIRST LAB",
+    "Write three fresh shift notes.",
+    "Draft your own handoff first.",
+    "Score a model on the same notes.",
+    "Your turn. Write three fictional shift notes and leave one assignment open. Write your own handoff first. Then give the notes to a model and score its reply. Did it preserve the gap? Keep both answers and your score."
+  ],
+  [
+    "Bring your baseline",
+    "LOOKING AHEAD",
+    "One set of notes.",
+    "One handoff you trust.",
+    "A check you can run again.",
+    "You now have a baseline: one small example you can trust. Bring it with you as the app grows. When you change a prompt or try another model, run those notes again and see what changed. See you in the next lab."
+  ]
+]
