@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "The site footer now links the stable production site and staging preview. An Upcoming badge shows when the preview contains different public content.",
-    "technical_summary": "The deployment compares built Pages files before staging URL rewrites and links matching pages across environments."
+    "summary": "Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.",
+    "technical_summary": "The search index and full-text feed include the published pages. Staging search loads its own index. Refs #196."
   },
   "releases": {
     "9953cd8": "The first public page introduced the project and its planned courses.",

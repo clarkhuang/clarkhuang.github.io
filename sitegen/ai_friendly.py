@@ -418,6 +418,8 @@ def write_home_twin(site, series, bio_html, extra_md=""):
         ]
     bits += [
         '### [Software Engineering 301: Run Your Own AI Studio](https://clarkhuang.github.io/software-engineering-301/index.md)\n\nThe ten-lab playbook is available now. Videos and R&D field reports are coming, starting with a February 2027 build that puts a laptop and a 512 GB Mac Studio through the same real work. Lesson 1 is available: [Size the model, then run the first endpoint](https://clarkhuang.github.io/software-engineering-301/01-size-the-model-run-the-first-endpoint/index.md). Already running models on your own hardware? Tell us what you tried, what broke, and what you would do differently. [Share your field notes](https://github.com/clarkhuang/clarkhuang.github.io/issues/148).', "",
+        "### [Software Engineering 401: Build it, run it, hand it off](https://clarkhuang.github.io/software-engineering-401/index.md)", "",
+        "Explore the proposed member platform, course goals and build labs.", "",
         f"### [Silicon Valley C Players]({BASE}/book/index.md)",
         "",
         "A free OpenBook that begins by dreaming in green and ends by dreaming about AI. Self-published, written and interviewed by AI. Preview; coming in 2027.",
@@ -619,7 +621,7 @@ Start here:
 - **Software Engineering 101** — fundamentals for AI-native software work. Index: https://clarkhuang.github.io/software-engineering-101/index.md
 - **Software Engineering 201: From Loop to Enterprise Systems** — complete, ten lessons: from one AI loop to whole apps and systems built AI-native, then agents that operate enterprise systems, ending with a capstone that builds one feature end to end. Index: https://clarkhuang.github.io/software-engineering-201/index.md
 - **Silicon Valley C Players** — a free OpenBook, with an audiobook and videobook preview, coming in 2027. https://clarkhuang.github.io/book/index.md
-- **Chapters you can read now** — finished early chapters of the book (v0 drafts), each with the full text, a videobook of the whole chapter, an audio track, captions, and a transcript. Newest: chapter 36, Sick, Well, Fit (how companies should use AI), finished, with a full-chapter video and Business Fitness in 100 Words. https://clarkhuang.github.io/book/chapters/index.md
+- **Chapters you can read now** — Chapter 17b, [Building Blocks](https://clarkhuang.github.io/book/chapters/17b-building-blocks/), includes the full text and a 10:24 videobook. Chapter 36, Sick, Well, Fit, also includes a full-chapter video. [Chapter catalog](https://clarkhuang.github.io/book/chapters/index.md).
 
 Each available lesson has a video, a one-paragraph rule written so an agent can follow it as a standing instruction, and a full transcript in its `index.md`. The book page has a short videobook and audio preview of Silicon Valley C Players.
 
@@ -863,6 +865,9 @@ def write_llms_full(site, series, intro, back):
             if l.get("rule"):
                 lines.append(f"  - Rule: {l['rule']}")
         lines.append("")
+    for section in ("software-engineering-401", "about"):
+        with open(os.path.join(site, section, "index.md"), encoding="utf-8") as page:
+            lines += [f"Source: {BASE}/{section}/index.md", "", page.read().strip(), ""]
     lines += [
         "## Also on this site",
         "",
