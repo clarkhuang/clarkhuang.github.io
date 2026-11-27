@@ -4,18 +4,18 @@
 
 ## The rule
 
-Save the exact input and expected outcome. Replay the case after the fix and follow the result to its destination.
+When an AI misses a detail, save the original request and the fact a good answer must keep. Try the same request again and check that detail.
 
 ## Transcript
 
-These words are a heading in Software Engineering four oh one. Yet a reader who searched for that heading could miss the course entirely.
+Imagine you're inviting a friend in Denver to your online book club. You wrote, Thursday at seven p.m. Eastern. The word Eastern matters. Your friend lives in a different time zone.
 
-Here is the old search, replayed from the published revision. It returns results. Look for the course itself. It's missing. A test that only counts results would pass.
+You paste the invitation into your AI chat and ask, make this shorter. It replies, Book club, Thursday at seven! Would your friend know when to join? Read it once more. The time zone disappeared.
 
-Save two things. The exact words the reader typed, and where the reader needed to land. Search is broken is hard to replay. This little card tells another person exactly what to try.
+Before fixing the invite, save a little note. Copy what you asked and the original invitation. Underneath, write what you needed: the shorter invite must still say Eastern. Now you have an example you can use again.
 
-Now use those same words on the corrected site. There's the course. Open it. We still have one more thing to check.
+Try again with the original invitation. This time say, shorten it and keep the time zone. Suppose the reply says, Book club, Thursday at seven p.m. Eastern. Look for the word you wrote down. There it is.
 
-There is the heading we started with. Tomorrow the result might move down a place and still be perfectly useful. Test the outcome the reader cares about.
+Your turn. Think of one AI reply you had to correct. What single detail was missing? Put the request and that detail together in a note. That's the whole tip.
 
-After the next search rebuild, run that same case again. Think of the last thing you had to correct twice. What example could you save today to catch it next time?
+Keep that note for the next time you try a different way of asking. You'll already know what a good answer needs to keep. See you in the next tip.

@@ -38,8 +38,9 @@ def draw(scene, index, reveal, path, series="AI TIPS   /   19", screenshot=None)
         shot.thumbnail((1128, 352))
         canvas.paste(shot, ((1280-shot.width)//2, 224))
     for i in range(len(SCENES)):
-        x=65+i*165
-        d.rounded_rectangle((x,654,x+144,661),3,fill="#A0DFAC" if i<=index else "#3C5850")
+        step=1150/len(SCENES)
+        x=65+i*step
+        d.rounded_rectangle((x,654,x+step-12,661),3,fill="#A0DFAC" if i<=index else "#3C5850")
     canvas.save(path)
 
 
@@ -59,25 +60,26 @@ def render(tmp, series="AI TIPS   /   19", frames=None):
     elapsed=0
     for n,scene in enumerate(SCENES):
         audio=tmp/f"{n}.mp3"
-        payload={"text":scene[-1],"voice_id":"4lbl0krw73vf","speed":1.05,"language":"en"}
+        payload={"text":scene[-1],"voice_id":"4lbl0krw73vf","speed":0.95,"language":"en"}
         req=urllib.request.Request("https://api.x.ai/v1/tts",data=json.dumps(payload).encode(),headers={"Content-Type":"application/json","Authorization":"Bearer "+key})
         with urllib.request.urlopen(req,timeout=60) as response:
             audio.write_bytes(response.read())
         duration=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",audio]))
+        hold = 2.4 if n == len(SCENES)-1 else 0.55
         listing=tmp/f"{n}.txt"
         lines=[]
         for i,portion in enumerate([0.20,0.25,0.55],1):
             frame=tmp/f"{n}-{i}.png"
             draw(scene,n,i,frame,series,(frames or {}).get(n))
-            lines.extend([f"file '{frame}'",f"duration {duration*portion}"])
+            lines.extend([f"file '{frame}'",f"duration {duration*portion + (hold if i==3 else 0)}"])
         lines.append(f"file '{frame}'")
         listing.write_text("\n".join(lines))
         part=tmp/f"{n}.mp4"
-        run("ffmpeg","-loglevel","error","-y","-f","concat","-safe","0","-i",listing,"-i",audio,"-vf","fps=25,format=yuv420p","-af","loudnorm=I=-16:TP=-1.5:LRA=11","-ar","48000","-c:a","aac","-b:a","160k","-c:v","libx264","-preset","veryfast","-shortest",part)
+        run("ffmpeg","-loglevel","error","-y","-f","concat","-safe","0","-i",listing,"-i",audio,"-vf","fps=25,format=yuv420p","-af","loudnorm=I=-16:TP=-1.5:LRA=11,apad","-ar","48000","-c:a","aac","-b:a","160k","-c:v","libx264","-preset","veryfast","-shortest",part)
         measured=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",part]))
         words=scene[-1].split(); start=elapsed
         for i in range(0,len(words),8):
-            end=elapsed+measured*min(i+8,len(words))/len(words)
+            end=elapsed+duration*min(i+8,len(words))/len(words)
             cues.extend([f"{stamp(start)} --> {stamp(end)}"," ".join(words[i:i+8]),""]); start=end
         elapsed+=measured;clips.append(f"file '{part}'")
     listing=tmp/"clips.txt";listing.write_text("\n".join(clips))

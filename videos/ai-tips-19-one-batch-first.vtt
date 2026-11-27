@@ -1,85 +1,91 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.496
-You ask the bot to flag gaps in
+00:00:00.000 --> 00:00:03.060
+Imagine you're organizing a picnic. Your team left
 
-00:00:02.496 --> 00:00:04.992
-a volunteer roster. Eighty shifts later, you discover
+00:00:03.060 --> 00:00:06.120
+you a list of reminders to tidy up.
 
-00:00:04.992 --> 00:00:07.488
-it counted every blank cell as a missing
+00:00:06.120 --> 00:00:09.180
+The first says, setup at nine, bring folding
 
-00:00:07.488 --> 00:00:07.800
-volunteer.
+00:00:09.180 --> 00:00:12.240
+chairs. You want the reminders to sound friendly.
 
-00:00:07.800 --> 00:00:10.378
-Look at these two rows. Check-in needs a
+00:00:20.080 --> 00:00:22.799
+In your team chat, ask the AI to
 
-00:00:10.378 --> 00:00:12.956
-person. Standby is deliberately empty. The bot can
+00:00:22.799 --> 00:00:25.518
+rewrite the first reminder only. Say, make it
 
-00:00:12.956 --> 00:00:15.533
-repeat a reasonable guess eighty times before you
+00:00:25.518 --> 00:00:28.237
+friendly, keep the details, and stop there so
 
-00:00:15.533 --> 00:00:16.500
-see it once.
+00:00:28.237 --> 00:00:30.957
+I can read it. Now you can see
 
-00:00:16.500 --> 00:00:19.071
-Try a smaller instruction. Check the first three
+00:00:30.957 --> 00:00:32.656
+what it thinks friendly means.
 
-00:00:19.071 --> 00:00:21.643
-shifts only. For each gap, show the row
+00:00:40.680 --> 00:00:43.479
+Here's a possible reply: Come help us set
 
-00:00:21.643 --> 00:00:24.214
-and your reason. Then wait for my reply
+00:00:43.479 --> 00:00:46.277
+up at nine! Sounds friendly. But imagine you're
 
-00:00:24.214 --> 00:00:25.500
-before scanning the rest.
+00:00:46.277 --> 00:00:49.076
+the volunteer walking out the door. What were
 
-00:00:25.500 --> 00:00:28.532
-Now the mistake costs one correction. The bot
+00:00:49.076 --> 00:00:51.874
+you supposed to take with you? The folding
 
-00:00:28.532 --> 00:00:31.563
-flagged both blanks. You can see exactly which
+00:00:51.874 --> 00:00:52.224
+chairs.
 
-00:00:31.563 --> 00:00:32.700
-rule it inferred.
+00:00:59.640 --> 00:01:02.659
+Reply in the same chat: keep the chairs,
 
-00:00:32.700 --> 00:00:35.456
-Reply in the thread. Standby may be empty.
+00:01:02.659 --> 00:01:05.677
+and try that one again. Now it says,
 
-00:00:35.456 --> 00:00:38.211
-Run those same three again and keep the
+00:01:05.677 --> 00:01:08.696
+Join us at nine for setup. Please bring
 
-00:00:38.211 --> 00:00:40.967
-rest on hold. One flag should survive: the
+00:01:08.696 --> 00:01:11.715
+folding chairs! Read it back. Time, task, and
 
-00:00:40.967 --> 00:00:42.000
-empty check-in shift.
+00:01:11.715 --> 00:01:13.224
+chairs are all there.
 
-00:00:42.000 --> 00:00:44.400
-Once the sample matches your judgment, give it
+00:01:21.760 --> 00:01:24.162
+Now tell the AI to use that style
 
-00:00:44.400 --> 00:00:46.800
-the next batch. If it calls another agent,
+00:01:24.162 --> 00:01:26.564
+for the rest and keep what to bring
 
-00:00:46.800 --> 00:00:49.200
-carry the same limit into that handoff. A
+00:01:26.564 --> 00:01:28.967
+in every reminder. Give the finished list a
 
-00:00:49.200 --> 00:00:51.600
-small Slack request can start a much larger
+00:01:28.967 --> 00:01:31.369
+read before sending it. One quick check up
 
-00:00:51.600 --> 00:00:51.900
-job.
+00:01:31.369 --> 00:01:33.771
+front saved you from fixing the same mistake
 
-00:00:51.900 --> 00:00:54.557
-Before your next bulk request, finish this sentence:
+00:01:33.771 --> 00:01:34.672
+in every line.
 
-00:00:54.557 --> 00:00:57.214
-do the first how many, show me what,
+00:01:42.920 --> 00:01:45.502
+Next time a job comes with a whole
 
-00:00:57.214 --> 00:00:59.871
-and stop where? Give the bot a checkpoint
+00:01:45.502 --> 00:01:48.085
+list, try saying these words: show me the
 
-00:00:59.871 --> 00:01:01.200
-you can actually review.
+00:01:48.085 --> 00:01:50.667
+first one, then wait. You can bring that
+
+00:01:50.667 --> 00:01:53.250
+habit to whatever you ask AI to help
+
+00:01:53.250 --> 00:01:55.832
+with next. See you in the next tip.

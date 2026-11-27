@@ -1,88 +1,121 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.000
+00:00:00.000 --> 00:00:03.176
 Imagine the evening coordinator has thirty seconds to
 
-00:00:03.000 --> 00:00:06.000
+00:00:03.176 --> 00:00:06.352
 tell tomorrow's crew what changed. Before choosing an
 
-00:00:06.000 --> 00:00:09.000
+00:00:06.352 --> 00:00:09.528
 AI model, write one handoff you would trust.
 
-00:00:09.000 --> 00:00:11.555
+00:00:15.880 --> 00:00:18.859
 Read these three lines. Jo owns the crate
 
-00:00:11.555 --> 00:00:14.110
+00:00:18.859 --> 00:00:21.838
 pickup. The key has a location. The driver
 
-00:00:14.110 --> 00:00:16.665
+00:00:21.838 --> 00:00:24.817
 is still unconfirmed. Pause here and write the
 
-00:00:16.665 --> 00:00:18.900
+00:00:24.817 --> 00:00:27.424
 handoff you would give the morning crew.
 
-00:00:18.900 --> 00:00:21.300
+00:00:34.840 --> 00:00:37.642
 Here is one reference answer. It keeps the
 
-00:00:21.300 --> 00:00:23.700
+00:00:37.642 --> 00:00:40.444
 owner and deadline, points back to the source
 
-00:00:23.700 --> 00:00:26.100
+00:00:40.444 --> 00:00:43.246
 lines, and leaves the open question open. Save
 
-00:00:26.100 --> 00:00:28.500
+00:00:43.246 --> 00:00:46.048
 your version before looking at a model draft.
 
-00:00:28.500 --> 00:00:31.300
+00:00:53.320 --> 00:00:56.309
 Decide now what earns a pass. Could someone
 
-00:00:31.300 --> 00:00:34.100
+00:00:56.309 --> 00:00:59.298
 act on the deadline? Can you trace every
 
-00:00:34.100 --> 00:00:36.900
+00:00:59.298 --> 00:01:02.286
 statement? Would an unknown assignment still look unknown?
 
-00:00:36.900 --> 00:00:39.000
+00:01:02.286 --> 00:01:04.528
 These checks work with any model.
 
-00:00:39.000 --> 00:00:41.880
+00:01:11.800 --> 00:01:15.064
 Score this deliberately flawed draft. It sounds efficient:
 
-00:00:41.880 --> 00:00:44.760
+00:01:15.064 --> 00:01:18.328
 Jo drives Route B at nine. But that
 
-00:00:44.760 --> 00:00:47.640
+00:01:18.328 --> 00:01:21.592
 sentence joined two unrelated facts. Someone reading it
 
-00:00:47.640 --> 00:00:49.800
+00:01:21.592 --> 00:01:24.040
 might stop looking for a driver.
 
-00:00:49.800 --> 00:00:52.553
+00:01:31.880 --> 00:01:35.076
 Mark the exact claim that failed. Keep the
 
-00:00:52.553 --> 00:00:55.306
+00:01:35.076 --> 00:01:38.272
 original notes, reference answer, rubric, draft and decision
 
-00:00:55.306 --> 00:00:58.059
+00:01:38.272 --> 00:01:41.469
 together. When you run a real model, add
 
-00:00:58.059 --> 00:01:00.812
+00:01:41.469 --> 00:01:44.665
 its version, elapsed time and the edits the
 
-00:01:00.812 --> 00:01:01.500
+00:01:44.665 --> 00:01:45.464
 coordinator made.
 
-00:01:01.500 --> 00:01:03.900
-Try the exercise with a second set of
+00:01:54.000 --> 00:01:56.289
+Here’s the rule to take with you. A
 
-00:01:03.900 --> 00:01:06.300
-fictional notes the model has never seen. Score
+00:01:56.289 --> 00:01:58.578
+handoff is ready when the next person can
 
-00:01:06.300 --> 00:01:08.700
-its answer before you change the prompt. That
+00:01:58.578 --> 00:02:00.867
+act on it and trace each claim to
 
-00:01:08.700 --> 00:01:11.100
-gives you something to compare when the local
+00:02:00.867 --> 00:02:03.155
+the notes. If nobody has a driver yet,
 
-00:01:11.100 --> 00:01:12.000
-Studio is ready.
+00:02:03.155 --> 00:02:04.872
+the handoff should still say so.
+
+00:02:12.000 --> 00:02:14.924
+Your turn. Write three fictional shift notes and
+
+00:02:14.924 --> 00:02:17.849
+leave one assignment open. Write your own handoff
+
+00:02:17.849 --> 00:02:20.773
+first. Then give the notes to a model
+
+00:02:20.773 --> 00:02:23.697
+and score its reply. Did it preserve the
+
+00:02:23.697 --> 00:02:26.256
+gap? Keep both answers and your score.
+
+00:02:35.200 --> 00:02:37.915
+You now have a baseline: one small example
+
+00:02:37.915 --> 00:02:40.631
+you can trust. Bring it with you as
+
+00:02:40.631 --> 00:02:43.346
+the app grows. When you change a prompt
+
+00:02:43.346 --> 00:02:46.062
+or try another model, run those notes again
+
+00:02:46.062 --> 00:02:48.777
+and see what changed. See you in the
+
+00:02:48.777 --> 00:02:49.456
+next lab.

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>One Batch First — AI Tip 19</title>
-  <meta name="description" content="Run a small sample. Show the evidence for each decision. Wait for my reply before expanding the job, including work handed to another agent.">
+  <meta name="description" content="Ask the AI for one example and tell it to stop. Check the example, give one correction if needed, then tell it when to continue.">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0c1217" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
@@ -12,13 +12,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Clark Huang">
   <meta property="og:title" content="One Batch First — AI Tip 19">
-  <meta property="og:description" content="Run a small sample. Show the evidence for each decision. Wait for my reply before expanding the job, including work handed to another agent.">
+  <meta property="og:description" content="Ask the AI for one example and tell it to stop. Check the example, give one correction if needed, then tell it when to continue.">
   <meta property="og:url" content="https://clarkhuang.github.io/ai-tips/19-one-batch-first/">
   <meta property="og:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <meta property="og:image:alt" content="Clark Huang — AI-native software learning">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="One Batch First — AI Tip 19">
-  <meta name="twitter:description" content="Run a small sample. Show the evidence for each decision. Wait for my reply before expanding the job, including work handed to another agent.">
+  <meta name="twitter:description" content="Ask the AI for one example and tell it to stop. Check the example, give one correction if needed, then tell it when to continue.">
   <meta name="twitter:image" content="https://clarkhuang.github.io/assets/share.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,9 +59,9 @@
 <source src="/videos/ai-tips-19-one-batch-first.mp4" type="video/mp4">
 <track kind="captions" srclang="en" label="English" src="/videos/ai-tips-19-one-batch-first.vtt" default>
 </video></div>
-<p>In this fictional Slack exercise, a volunteer coordinator catches a mistaken rule after three shifts. Watch how the second request gives the bot a clear stopping point.</p>
-<div class="rulecard" data-status-scope><p class="label">The rule</p><p id="batch-rule">Run a small sample. Show the evidence for each decision. Wait for my reply before expanding the job, including work handed to another agent.</p><button type="button" class="btn ghost" data-copy="batch-rule" hidden>Copy rule</button><span class="status" role="status" data-status></span></div>
-<details><summary>Read the transcript</summary><p>You ask the bot to flag gaps in a volunteer roster. Eighty shifts later, you discover it counted every blank cell as a missing volunteer.</p><p>Look at these two rows. Check-in needs a person. Standby is deliberately empty. The bot can repeat a reasonable guess eighty times before you see it once.</p><p>Try a smaller instruction. Check the first three shifts only. For each gap, show the row and your reason. Then wait for my reply before scanning the rest.</p><p>Now the mistake costs one correction. The bot flagged both blanks. You can see exactly which rule it inferred.</p><p>Reply in the thread. Standby may be empty. Run those same three again and keep the rest on hold. One flag should survive: the empty check-in shift.</p><p>Once the sample matches your judgment, give it the next batch. If it calls another agent, carry the same limit into that handoff. A small Slack request can start a much larger job.</p><p>Before your next bulk request, finish this sentence: do the first how many, show me what, and stop where? Give the bot a checkpoint you can actually review.</p></details>
+<p>Practice a short Slack conversation with an AI assistant. Review one reminder together before asking for the rest.</p>
+<div class="rulecard" data-status-scope><p class="label">The rule</p><p id="batch-rule">Ask the AI for one example and tell it to stop. Check the example, give one correction if needed, then tell it when to continue.</p><button type="button" class="btn ghost" data-copy="batch-rule" hidden>Copy rule</button><span class="status" role="status" data-status></span></div>
+<details><summary>Read the transcript</summary><p>Imagine you&#x27;re organizing a picnic. Your team left you a list of reminders to tidy up. The first says, setup at nine, bring folding chairs. You want the reminders to sound friendly.</p><p>In your team chat, ask the AI to rewrite the first reminder only. Say, make it friendly, keep the details, and stop there so I can read it. Now you can see what it thinks friendly means.</p><p>Here&#x27;s a possible reply: Come help us set up at nine! Sounds friendly. But imagine you&#x27;re the volunteer walking out the door. What were you supposed to take with you? The folding chairs.</p><p>Reply in the same chat: keep the chairs, and try that one again. Now it says, Join us at nine for setup. Please bring folding chairs! Read it back. Time, task, and chairs are all there.</p><p>Now tell the AI to use that style for the rest and keep what to bring in every reminder. Give the finished list a read before sending it. One quick check up front saved you from fixing the same mistake in every line.</p><p>Next time a job comes with a whole list, try saying these words: show me the first one, then wait. You can bring that habit to whatever you ask AI to help with next. See you in the next tip.</p></details>
 </div></main><footer class="site-footer">
     <div class="wrap">
       <div class="footer-cols">
