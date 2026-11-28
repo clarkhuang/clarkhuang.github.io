@@ -12,11 +12,11 @@ Browse updates to the courses, book and learning tools. Dates use Detroit time.
 
 Friday, November 27, 2026
 
-## The first SE 301 lesson is ready to run
+## Two beginner AI tips and two engineering labs
 
-Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit. Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.
+Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit. AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work. The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.
 
-[Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39) · [Commit 1c28659](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5)
+[Commit 364f41a](https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39) · [Commit 5ecfa32](https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b) · [Commit 1c60ff4](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a)
 
 Thursday, November 26, 2026
 

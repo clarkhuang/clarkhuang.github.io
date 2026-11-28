@@ -2,6 +2,26 @@
   "schema_version": 1,
   "releases": [
     {
+      "sha": "1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a",
+      "sequence": 56,
+      "published_at": "2026-11-27T15:53:07-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a",
+      "summary": "The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.",
+      "editorial": true,
+      "technical_summary": "The generated About state and editorial day, week and month summaries were reconciled against production through release #202. Current lessons remain separate from proposed foundation hosting, provider adapters and sponsored member applications.",
+      "pull_request": 213
+    },
+    {
+      "sha": "5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b",
+      "sequence": 55,
+      "published_at": "2026-11-27T15:52:28-05:00",
+      "url": "https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b",
+      "summary": "AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work.",
+      "editorial": true,
+      "technical_summary": "",
+      "pull_request": 211
+    },
+    {
       "sha": "1c286595259a533019df8fe7393a74da8701bbd5",
       "sequence": 54,
       "published_at": "2026-11-27T12:38:03-05:00",
@@ -546,14 +566,15 @@
     "daily": [
       {
         "period": "2026-11-27",
-        "title": "The first SE 301 lesson is ready to run",
-        "summary": "Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit. Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.",
+        "title": "Two beginner AI tips and two engineering labs",
+        "summary": "Learners can now size a model, start a local endpoint and save a reproducible baseline with the first SE 301 video lesson and install prompt. The homepage book card also links both released chapter previews: Building Blocks and Sick, Well, Fit. AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work. The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a"
         ],
-        "release_count": 3,
+        "release_count": 5,
         "editorial": true,
         "unreviewed_count": 0
       },
@@ -647,8 +668,8 @@
     "weekly": [
       {
         "period": "2026-W48",
-        "title": "The curriculum moved from local practice toward a member-platform design",
-        "summary": "SE 201 finished with an end-to-end capstone, SE 301 published a local-compute playbook and first runnable lesson, and SE 401 mapped a hosted-model build plan plus a proposed GitHub-only member platform. About now records possible nonprofit benefits and the provider limits that still need answers. The OpenBook offers two released chapter previews, while the site’s account and release tools remain the working examples learners can inspect today. Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.",
+        "title": "From everyday AI practice to testing a model",
+        "summary": "SE 201 finished with an end-to-end capstone, SE 301 published a local-compute playbook and first runnable lesson, and SE 401 mapped a hosted-model build plan plus a proposed GitHub-only member platform. About now records possible nonprofit benefits and the provider limits that still need answers. The OpenBook offers two released chapter previews, while the site’s account and release tools remain the working examples learners can inspect today. AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work. The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/dfa18fd214bb7f2f4cf18702b405fff5dcdfe844",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
@@ -659,9 +680,10 @@
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a"
         ],
-        "release_count": 38,
+        "release_count": 40,
         "editorial": true,
         "unreviewed_count": 0
       },
@@ -683,8 +705,8 @@
     "monthly": [
       {
         "period": "2026-11",
-        "title": "An open engineering school and its first platform blueprint",
-        "summary": "November produced complete introductory and enterprise courses, seventeen AI Tips, two released OpenBook chapter previews, and a local-compute course whose first lesson can be run now. The contribution, account and release surfaces make the site itself a worked example. SE 401 and About describe a proposed sponsored member platform, while explicitly leaving shared hosting, provider adapters, funding awards and local inference as work to validate. Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook.",
+        "title": "Nineteen AI tips and the first SE 301 and SE 401 videos",
+        "summary": "November produced complete introductory and enterprise courses, nineteen AI Tips, two released OpenBook chapter previews, and a local-compute course whose first lesson can be run now. The contribution, account and release surfaces make the site itself a worked example. SE 401 and About describe a proposed sponsored member platform, while explicitly leaving shared hosting, provider adapters, funding awards and local inference as work to validate. AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work. The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.",
         "sources": [
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/34e1f861d43f3b2f6c87b1c05e3fde58be3cd420",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/c4e8cdcbe629c3aeb8e5bdbbed73b2bde0a320a9",
@@ -695,9 +717,10 @@
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/82df688517f9dbcf48cec794fa5e8a8bc006a697",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/364f41aa9eacb2ec9a0adc954c2991d20485b9af",
           "https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39",
-          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5"
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b",
+          "https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a"
         ],
-        "release_count": 54,
+        "release_count": 56,
         "editorial": true,
         "unreviewed_count": 0
       }

@@ -28,13 +28,35 @@ def as_html(line):
     return INLINE_LINK.sub(r'<a href="\2">\1</a>', escape(line, quote=True))
 
 
+def rendered_lesson_count(page):
+    """Count lesson folders that contain the complete public lesson surface."""
+    directory = ROOT / public_path(page).lstrip("/")
+    if not directory.is_dir():
+        return 0
+    count = 0
+    for lesson in directory.iterdir():
+        html = lesson / "index.html"
+        if (lesson.is_dir() and re.match(r"\d{2}-", lesson.name)
+                and html.exists() and (lesson / "index.md").exists()
+                and (lesson / "AGENTS.md").exists()
+                and "<video" in html.read_text()):
+            count += 1
+    return count
+
+
 def current_state():
     catalog = read("lessons.json")
     courses = []
     for series in catalog["series"]:
-        count = sum(lesson.get("status") == "available" and bool(lesson.get("video_url"))
-                    for lesson in series["lessons"])
+        catalog_count = sum(lesson.get("status") == "available" and bool(lesson.get("video_url"))
+                            for lesson in series["lessons"])
+        count = max(catalog_count, rendered_lesson_count(series["page"]))
         courses.append(f'[{series["title"]}]({public_path(series["page"])}) ({count} available)')
+    se401_page = "/software-engineering-401/"
+    if all(public_path(series["page"]) != se401_page for series in catalog["series"]):
+        se401_count = rendered_lesson_count("https://clarkhuang.github.io" + se401_page)
+        if se401_count:
+            courses.append(f'[Software Engineering 401]({se401_page}) ({se401_count} available)')
     book = read("book.json")
     chapters = ", ".join(f'[{chapter["title"]}]({public_path(chapter["page_url"])})'
                          for chapter in book["chapters"])
@@ -53,8 +75,9 @@ def current_state():
         ("Hands-on training in SE 301", [
             '[SE 301](/software-engineering-301/) is the playbook for running this workflow on local compute. [Lesson 1](/software-engineering-301/01-size-the-model-run-the-first-endpoint/) is available now: size a model from its weight floor, start a local endpoint and save the smoke test as a baseline on a Mac, Windows PC or Linux machine. The planned February 2027 Studio build will replay that work and add measured results; the larger machine and shared local inference remain future work.'
         ]),
-        ("A possible first cohort with a nonprofit", [
-            'The [SE 401 proposal](/software-engineering-401/) now defines a seven-step field build plan that starts with hosted AI and later replays the same measured work on the project’s ordered Studio. It also describes a GitHub-only member dashboard, project-scoped data and credentials, usage limits, and optional email, payment and phone adapters. That build plan, the shared hosting service and provider adapters are designs, not operating services. The site’s signed-in Reader is the current working example.',
+        ("SE 401 starts with a measured baseline", [
+            '[SE 401](/software-engineering-401/) is in development, and [Lesson 1, Build the Baseline](/software-engineering-401/01-build-the-baseline/) is available now. A learner writes a handoff from fictional shift notes, checks every claim against the notes, then uses the same rubric to score a model draft. Saving that example creates a baseline for later prompt and model comparisons.',
+            'The course also proposes a seven-step field build plan that starts with hosted AI and later replays the same measured work on the project’s ordered Studio. Its GitHub-only member dashboard, shared hosting service, project-scoped provider adapters and sponsored allowances are designs for future work. The site’s signed-in Reader is the current working example.',
             'The [nonprofit programs guide](/about/nonprofit-programs.md) records possible software and infrastructure benefits and the provider terms that must be confirmed before sponsoring an independently run member app. One candidate cohort is work a nonprofit and its advisor could explore with eCIO. Staff would trace a gift from receipt to allocation, count follow-ups on real cases and see whether a second nonprofit can repeat the process with a standard file import.',
             'A nonprofit would help choose the problem and decide which results to share. A possible ending for the book is a first funded cohort showing its work to the staff who use it. That scene depends on what the cohort actually builds.'
         ])
