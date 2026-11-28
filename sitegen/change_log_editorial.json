@@ -1,7 +1,7 @@
 {
   "release_note": {
-    "summary": "The release notes now link the four-video production release to the daily, weekly, monthly and archive entries.",
-    "technical_summary": "The generated About state and editorial day, week and month summaries were reconciled against production through release #202. Current lessons remain separate from proposed foundation hosting, provider adapters and sponsored member applications."
+    "summary": "About now lists all nineteen AI Tips and the first SE 401 video lab, while keeping the shared member platform and Studio inference in the proposed roadmap.",
+    "technical_summary": "The generated About state was reconciled against production through releases #211 and #213. It discovers complete lesson surfaces in the checkout so recently published lessons cannot be hidden by a stale catalog count."
   },
   "releases": {
     "5ecfa32": "AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work.",

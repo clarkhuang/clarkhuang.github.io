@@ -10,6 +10,10 @@ The HTML version of this page has a “Use this page with your AI” box at the 
 
 Browse updates to the courses, book and learning tools. Dates use Detroit time.
 
+- The release notes now link the four-video production release to the daily, weekly, monthly and archive entries. (Nov 27, 2026 · 15:53 EST) · [Commit 1c60ff4](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c60ff4bffbc33b2f1268b4b4a4c815c48ddbf1a) · [Pull request #213](https://github.com/clarkhuang/clarkhuang.github.io/pull/213) · The generated About state and editorial day, week and month summaries were reconciled against production through release #202. Current lessons remain separate from proposed foundation hosting, provider adapters and sponsored member applications.
+
+- AI Tips 18 and 19 show how to catch a missing detail and review one example before expanding a job. SE 301 Video 1 tests a local model endpoint. SE 401 Video 1 uses a shift handoff to show how to check a model’s work. (Nov 27, 2026 · 15:52 EST) · [Commit 5ecfa32](https://github.com/clarkhuang/clarkhuang.github.io/commit/5ecfa32c5bafc4537cb788ecb1b44c9d0644c57b) · [Pull request #211](https://github.com/clarkhuang/clarkhuang.github.io/pull/211)
+
 - Search now finds SE 401 and About, the Markdown homepage links to the course, and the chapter guide points readers to the Building Blocks videobook. (Nov 27, 2026 · 12:38 EST) · [Commit 1c28659](https://github.com/clarkhuang/clarkhuang.github.io/commit/1c286595259a533019df8fe7393a74da8701bbd5) · [Pull request #206](https://github.com/clarkhuang/clarkhuang.github.io/pull/206) · The search index and full-text feed include the published pages. Staging search loads its own index. Refs #196.
 
 - The homepage book card now links both Building Blocks and Sick, Well, Fit as released chapter previews. (Nov 27, 2026 · 07:38 EST) · [Commit 0a98dfd](https://github.com/clarkhuang/clarkhuang.github.io/commit/0a98dfdd2522275cdf1495fe8fe88e3bb9702c39) · [Pull request #202](https://github.com/clarkhuang/clarkhuang.github.io/pull/202)
